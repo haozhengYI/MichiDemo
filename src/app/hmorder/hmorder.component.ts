@@ -5,6 +5,8 @@ import { Subscription } from 'rxjs';
 import { HmService } from './../hm.service';
 import {HotelM} from './../hm.model';
 import { HttpClient } from '@angular/common/http';
+import {School} from './../school.model';
+import {Student} from './../st.model';
 @Component({
   selector: 'app-hmorder',
   templateUrl: './hmorder.component.html',
@@ -18,6 +20,14 @@ export class HmorderComponent implements OnInit {
   hotel : HotelM;
   managerID : any;
   hotelId: any;
+  schools : School[]  =[];
+  school : School[]  =[];
+  students :Student[]=[];
+  student : Student[]=[];
+  st : Student;
+  userAccount : any;
+  studentID : any;//存放studentID
+  studentName : any;
   private hotelMSub: Subscription;
 
   constructor(
@@ -27,9 +37,9 @@ export class HmorderComponent implements OnInit {
     public hmService: HmService) { 
       this.route.queryParams.subscribe(params => {
         this.managerID = params["managerID"];
-        this.hotelId = params["hotelID"];
+
        });
-       console.log("constructor+"+this.managerID);
+       console.log("管理员ID+"+this.managerID);
     }
 
     ngOnInit() {
@@ -38,28 +48,57 @@ export class HmorderComponent implements OnInit {
           for(let h of this.hotels){
               if(h.userAccount===this.managerID){
                 this.hotel = h;
-                console.log("ngOnInIT");
-              }
-          }
-      });
-      // select the particular order by hotel id
-      this.http.get<{orders: Order[]}>('http://localhost:3000/orders').subscribe((oData) => {
-          this.orders = oData.orders;
-          console.log("ng444");
-          console.log(this.orders);
-          for(let or of this.orders){
-              if(or.hotelId===this.hotelId){ 
-                this.order.push(or) ;
-                console.log("ng");
-                console.log(this.order);
               }
           }
       });
 
+      this.http.get<{students: Student[]}>('http://localhost:3000/students/').subscribe((Data) => {
+          this.students = Data.students;
+          console.log(this.students);
+          for(let st of this.students){  
+            this.student.push(st) ;
+          }
+      });
+
+      this.http.get<{schools: School[]}>('http://localhost:3000/schools').subscribe((Data) => {
+          this.schools = Data.schools;
+          for(let sc of this.schools){
+            for(let test of this.student){
+              if(sc.userAccount=== test._id ){//替换列表里面的名字
+                let studentName = test.firstName + " " + test.lastName;
+                sc.userAccount =studentName;
+                //console.log("此时变量为" +sc.userAccount + test.firstName);
+              }
+            }
+          this.school.push(sc);            
+          }
+      });
+      
+    
       this.hotelMSub = this.hmService.getHotelMUpdatedListener().subscribe((hotels: HotelM[]) => {
         this.hotels = hotels;
         });
-    }
+  }
+  sele(){
+
+    //console.log("输出"+st._id);
+    let temp0 = (document.getElementById("studName") as HTMLInputElement).value;
+    //console.log("输出" + temp0);
+    this.http.get<{schools: School[]}>('http://localhost:3000/studentschooldetail/'+temp0).subscribe((Data) => {
+          this.schools = Data.schools;
+          for(let sc of this.schools){
+            for(let test of this.student){
+              if(sc.userAccount=== test._id ){//替换列表里面的名字
+                let studentName = test.firstName + " " + test.lastName;
+                sc.userAccount =studentName;
+                console.log("此时变量为" +sc.userAccount + test.firstName);
+              }
+            }
+          this.school.push(sc); 
+          //window.location.reload(); 
+          }
+    });
+  }
 
   //direct to the hotel manage page
   hotelman(hotel) {
@@ -109,6 +148,25 @@ export class HmorderComponent implements OnInit {
     };
     this.router.navigate(['/hmorder'], navigationExtras);
   }
+  //direct to the register page
+  hmregister(hotel) {
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+       "managerID" : hotel.userAccount,
+      }
+    };
+    this.router.navigate(['/hmregister'], navigationExtras);
+  }
+
+  delete(s){
+    console.log(s._id);
+    this.http.delete('http://localhost:3000/schools/'+ s._id).subscribe((oooData) => {
+        console.log("删除这个申请项目成功");
+        window.location.reload();
+    });
+  }
+  
+
 
   ngOnDestroy() {
     this.hotelMSub.unsubscribe();

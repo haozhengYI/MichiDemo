@@ -134,7 +134,6 @@ export class HmcompComponent implements OnInit {
     const navigationExtras: NavigationExtras = {
       queryParams: {
        "managerID" : hotel.userAccount,
-       "hotelID" : hotel._id,
       }
     };
     this.router.navigate(['/hmorder'], navigationExtras);

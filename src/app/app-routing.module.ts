@@ -17,7 +17,15 @@ import {HmorderComponent} from './hmorder/hmorder.component';
 import { AdminHotelComponent } from './admin-hotel/admin-hotel.component';
 import { AdminOrderComponent } from './admin-order/admin-order.component';
 import { OrderViewComponent } from './hotel/order-view/order-view.component';
+import { HmregisterComponent} from './hmregister/hmregister.component';
+import {HmstudentComponent} from './hmstudent/hmstudent.component';
+import {HmaddschoolComponent} from './hmaddschool/hmaddschool.component';
+import {HmschoolComponent} from './hmschool/hmschool.component';
 
+import {StudentmainComponent} from './studentmain/studentmain.component';
+import {StudentaddrecommComponent} from './studentaddrecomm/studentaddrecomm.component';
+import {StudentinfoComponent} from './studentinfo/studentinfo.component';
+import {StudentrecComponent} from './studentrec/studentrec.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/mainpage', pathMatch: 'full' },
@@ -37,7 +45,17 @@ const routes: Routes = [
   { path: 'hmcomp', component: HmcompComponent },
   { path: 'hmorder', component: HmorderComponent },
   { path: 'adminorder', component:AdminOrderComponent},
-  { path: 'vieworder', component: OrderViewComponent}
+  { path: 'vieworder', component: OrderViewComponent},
+  
+  { path: 'hmregister', component: HmregisterComponent},
+  { path: 'hmstudent', component: HmstudentComponent},
+  { path: 'hmaddschool', component: HmaddschoolComponent},
+  { path: 'hmschool', component:HmschoolComponent},
+
+  { path: 'studentmain', component:StudentmainComponent},
+  { path: 'studentaddrecomm', component:StudentaddrecommComponent},
+  { path: 'studentinfo', component:StudentinfoComponent},
+  { path: 'studentrec', component:StudentrecComponent},
 ];
 
 @NgModule({

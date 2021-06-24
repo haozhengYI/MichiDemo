@@ -1,0 +1,110 @@
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" >{{student.firstName}} {{student.lastName}}</a>
+      </div>
+      <div class="nav  navbar-right">
+        <ul class="nav navbar-nav">
+          <li class="active"><a (click)="studentmain(student) ">Home</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              推荐人 <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a (click)="rec(student)">全部推荐人信息</a></li>
+              <li><a (click)="addRecom(student)">添加新的推荐人</a></li>
+            </ul>
+          </li>
+          <li class="nav navbar-nav navbar-right">
+            <a href="/mainpage">Log Out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+	<div id="tour" class="bg-1">
+		<div class="container">
+		  
+		  <h1 class="text-center">添加新推荐人</h1>
+		  <form (submit)="addschool(postForm)" #postForm="ngForm" ngNativeValidate>
+		  <table class="table table-bordered">
+			<tbody>
+				<tr>
+				  <td style="background-color: darkgray;" colspan="4" align="center"> <h3><b>推荐人个人信息</b></h3> <br>请确保信息无误，提交后不可更改  </td>
+				</tr>
+				<tr>
+				  <td style="background-color: darkgray;"> <b>名First Name</b> </td>
+				  <td><div class="input-group">		
+					<input class="form-control" id="firstName"  name="firstName"  placeholder="请输入推荐人名字" style="width: 400px;" ngModel required></div></td>
+				  <td style="background-color: darkgray;"><b>姓Last Name</b></td>
+				  <td><div class="input-group">		
+					<input class="form-control" id="lastName"  name="lastName"  placeholder="请输入推荐人姓氏" style="width: 400px;"  ngModel required></div></td>
+				</tr>
+				<tr>
+				  <td style="background-color: darkgray;"><b>性别 gender</b></td>
+				  <td><div class="input-group">		
+					<input class="form-control" id="gender"  name="gender"  placeholder="请输入推荐人性别" style="width: 400px;" ngModel required></div></td>
+				  <td style="background-color: darkgray;"><b>职称 title</b></td>
+				  <td><div class="input-group">		
+					<input class="form-control" id="title"  name="title"  placeholder="请输入推荐人职称" style="width: 400px;" ngModel required></div></td>
+				</tr>
+				<tr>
+				  <td style="background-color: darkgray;" ><b>学历 Educational Qualification</b></td>
+				  <td ><div class="input-group">		
+					<input class="form-control" id="education"  name="education"  placeholder="请输入推荐人学历" style="width: 400px;" ngModel></div></td>
+					<td style="background-color: darkgray;"><b>电话 Telephone</b></td>
+					<td><div class="input-group">		
+					  <input class="form-control" id="phone"  name="phone"   style="width: 400px;" ngModel></div></td>
+				</tr>
+				<tr>
+					<td style="background-color: darkgray;"><b>所在单位 Organization</b></td>
+					<td><div class="input-group">		
+					  <input class="form-control" id="organization"  name="organization"  placeholder="如果是教授请填写学校名称" style="width: 400px;" ngModel required></div></td>
+					<td style="background-color: darkgray;"><b>在此单位工作时间年限 Duration</b></td>
+					<td><div class="input-group">		
+					  <input class="form-control" id="duration"  name="duration"  placeholder="请输入数字即可" style="width: 400px;" ngModel></div></td>
+				</tr>
+				<tr>
+					<td style="background-color: darkgray;"><b>职务 Position</b></td>
+					<td><div class="input-group">		
+					  <input class="form-control" id="position"  name="position"   style="width: 400px;" ngModel></div></td>
+					<td style="background-color: darkgray;"><b>工作邮箱 Work Email</b></td>
+					<td><div class="input-group">		
+					  <input class="form-control" id="email"  name="email"  placeholder="请不要输入推荐人个人邮箱" style="width: 400px;" ngModel required></div></td>
+				</tr>
+				<tr>
+					<td style="background-color: darkgray;" colspan="1" ><b>通信地址 Postal Address</b></td>
+					<td colspan="3"><div class="input-group">		
+					  <input class="form-control" id="location"  name="location"  placeholder="请包含推荐人地址的 邮编" style="width: 800px;" ngModel required></div></td>
+				</tr>
+				<tr>
+					<td style="background-color: darkgray;" colspan="4" align="center"> <h3><b>推荐人对申请者详细描述</b></h3>  </td>
+				</tr>
+				<tr>
+					<td style="background-color: darkgray;" colspan="1" align="center"><b>1. 推荐人与申请者关系
+						Relationship to the applicant</b>  </td>
+					<td colspan="3"><div class="input-group">		
+					<input class="form-control" id="relation"  name="relation"  placeholder="教授请填写 instructor，上司请填写supervisor，或填写其他" style="width: 800px;"   ngModel required></div></td>
+				</tr>
+				<tr>
+					<td style="background-color: darkgray;" colspan="4" align="center"><b>2. 以时间为序描写推荐人与被推荐人关系发展，并说明你们的熟悉程度。</b> <br>
+						注：回答问题时可以先从第一次如何认识；进一步了解是通过某件事或某次活动等给推荐人留下深刻印象；进一步接触等等，如偶尔见面或密切接触，或教过一年课。
+						<p style="color:red">如果是教过你课程的老师，课程的中英文名称，上课时间区间（年，月），你的那门课程考试结果如何（如分数，排名等等），课堂表现如何？</p> 
+						  </td>
+				</tr>
+				<tr>
+					<td colspan="4"  align="center"><div class="input-group">		
+						<input class="form-control" id="other"  name="other"  style="width: 1000px; height:100px"  ngModel></div>
+						  </td>
+				</tr>
+				<tr>
+					<td colspan="4"  align="center"><button  class="btn btn-primary" >添加</button>
+						  </td>
+				</tr>
+			  </tbody>
+		  </table>
+		</form>
+		</div> 
+	</div>

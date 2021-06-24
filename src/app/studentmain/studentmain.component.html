@@ -1,0 +1,111 @@
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" >{{student.firstName}} {{student.lastName}}</a>
+      </div>
+      <div class="nav  navbar-right">
+        <ul class="nav navbar-nav">
+          <li class="active"><a (click)="studentmain(student)">Home</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              推荐人 <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a (click)="rec(student)">全部推荐人信息</a></li>
+              <li><a (click)="addRecom(student)">添加新的推荐人</a></li>
+            </ul>
+          </li>
+          <li class="nav navbar-nav navbar-right">
+            <a href="/mainpage">Log Out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+	  <div class="container-fluid">
+		<div class="row content">
+		  <div class="col-sm-3 sidenav">
+			  <h3></h3>
+			<ul class="nav nav-pills nav-stacked">
+			  <li class="active"><a (click)="studentmain(student)">Home-申请状态</a></li>
+				<li ><a >更改密码</a></li>
+				<li><a (click)="info(student)">完善个人信息</a></li>
+				<li><a (click)="rec(student)">推荐人信息</a></li>
+				<li><a (click)="addRecom(student)">添加推荐人</a></li>
+			</ul><br>	
+		  </div>
+	  
+		  <div class="col-sm-9">
+			<h3>
+				已添加的选校列表：
+				{{school.length}}
+			  </h3>
+			  <hr>
+			  <div class="panel-group" id="accordion" *ngIf="school.length > 0">
+				<div *ngFor="let k of school">
+				<div class="panel panel-success" *ngIf="k.state=='Offer'">
+				  <div class="panel-heading">
+					<h4 class="panel-title">
+					  <a data-toggle="collapse" data-parent="#accordion" 
+						href="#{{k._id}}">
+					  <b> {{k.univName}} </b> <br><small style="color: green;">{{k.state}}</small>
+					  </a>
+					</h4>
+				  </div>
+				  <div id="{{k._id}}" class="panel-collapse collapse in">
+					<div class="panel-body">
+						HHH
+					</div>
+				  </div>
+				</div>
+				<div class="panel panel-primary" *ngIf="k.state=='进行中'">
+					<div class="panel-heading">
+					  <h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+						  href="#{{k._id}}">
+						<b> {{k.univName}} </b> <br><small style="color: whitesmoke;">{{k.state}}</small>
+						</a>
+					  </h4>
+					</div>
+					<div id="{{k._id}}" class="panel-collapse collapse in">
+					  <div class="panel-body">
+						  HHH
+					  </div>
+					</div>
+				</div>
+				<div class="panel panel-warning" *ngIf="k.state=='已完成'">
+					<div class="panel-heading">
+					  <h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+						  href="#{{k._id}}">
+						<b> {{k.univName}} </b> <br><small style="color: goldenrod;">{{k.state}}</small>
+						</a>
+					  </h4>
+					</div>
+					<div id="{{k._id}}" class="panel-collapse collapse in">
+					  <div class="panel-body">
+						  HHH
+					  </div>
+					</div>
+				</div>
+				<div class="panel panel-default" *ngIf="k.state=='拒信'">
+					<div class="panel-heading">
+					  <h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+						  href="#{{k._id}}">
+						<b> {{k.univName}} </b> <br><small style="color: red;">{{k.state}}</small>
+						</a>
+					  </h4>
+					</div>
+					<div id="{{k._id}}" class="panel-collapse collapse in">
+					  <div class="panel-body">
+						  HHH
+					  </div>
+					</div>
+				</div>
+			  </div>
+			  
+		  </div>
+		</div>
+	</div>
+

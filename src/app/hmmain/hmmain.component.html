@@ -1,42 +1,76 @@
-<nav class="navbar navbar-inverse" role="navigation">
-	<div class="container-fluid">
-    <div class="navbar-header">
-			<a class="navbar-brand" >Hotel Manager Main Page</a>
-    </div>
-    <div class="nav  navbar-right">
-      <ul class="nav navbar-nav">
-        <li class="active"><a (click)="main(hotel)">HomePage</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-						Shortcut <b class="caret"></b>
-          </a>
-          <ul class="dropdown-menu">
-						<li><a (click)="modifyP(hotel)">Change Password</a></li>
-						<li><a (click)="comp(hotel)">Complete info</a></li>
-						<li class="divider"></li>
-						<li><a (click)="hotelman(hotel)">Manage Hotel</a></li>
-					</ul>
-        </li>
-        <li class="nav navbar-nav navbar-right">
-          <a href="/mainpage">Log Out</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-<ol class="breadcrumb">
-	<li><a (click)="main(hotel)">Home</a></li>
-	<li  class="active">{{hotel.userAccount}}</li>
+
+<header>
+	<nav class="navbar navbar-inverse" role="navigation">
+		<div class="container-fluid">
+		<div class="navbar-header">
+				<a class="navbar-brand" >一个很神秘的网页</a>
+		</div>
+		<div class="nav  navbar-right">
+		  <ul class="nav navbar-nav">
+			<li class="active"><a (click)="main(hotel)">HomePage</a></li>
+			<li class="dropdown">
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+				{{hotel.userAccount}} <b class="caret"></b>
+			  </a>
+			  <ul class="dropdown-menu">
+							<li><a (click)="modifyP(hotel)">Change Password</a></li>
+							<li><a (click)="comp(hotel)">Complete info</a></li>
+							<li class="divider"></li>
+				<li><a (click)="hotelman(hotel)">学生管理</a></li>
+				<li><a (click)="hmregister(hotel)">登记账号</a></li>
+						</ul>
+			</li>
+			<li class="nav navbar-nav navbar-right">
+			  <a href="/mainpage">Log Out</a>
+			</li>
+		  </ul>
+		</div>
+	  </div>
+	</nav>
+	
+  </header>
+  
+  <ol class="breadcrumb">
+	<li class="active">Home - {{hotel.userAccount}}</li>
 </ol>
-<div class="well well-lg"  >
-	<div align="center"><h1>Dear Account User : {{hotel.userAccount}}</h1></div>
+
+<div class="container-fluid">
+	<div class="row content">
+	  <div class="col-sm-3 sidenav">
+		<h4>{{hotel.userAccount}}  </h4>
+		<ul class="nav nav-pills nav-stacked">
+		  <li class="active"><a (click)="main(hotel)">Home</a></li>
+		  <li ><a (click)="modifyP(hotel)">Change Password</a></li>
+			<li><a (click)="comp(hotel)">Complete info</a></li>
+			<li><a (click)="hotelman(hotel)">Manage Student</a></li>
+			<li><a (click)="hmorder(hotel)">学生申请</a></li>
+			<li><a (click)="hmregister(hotel)">登记账号</a></li>
+		</ul><br>
+		
+	  </div>
+  
+	  <div class="col-sm-9">
+		<h4><small>RECENT POSTS</small></h4>
+		<hr>
+		<h2>I Love Food</h2>
+		<h5><span class="glyphicon glyphicon-time"></span> Post by Jane Dane, Sep 27, 2015.</h5>
+		<h5><span class="label label-danger">Food</span> <span class="label label-primary">Ipsum</span></h5><br>
+		<p>Food is my passion. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		<br><br>
+		
+		<h4><small>RECENT POSTS</small></h4>
+		<hr>
+		<h2>Officially Blogging</h2>
+		<h5><span class="glyphicon glyphicon-time"></span> Post by John Doe, Sep 24, 2015.</h5>
+		<h5><span class="label label-success">Lorem</span></h5><br>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		<hr>
+  
+
+		<br><br>
+	  </div>
+	</div>
 </div>
-<div id="main" align="center">
-	<a  class="list-group-item" (click)="hotelman(hotel)">
-		Manage Hotel
-	</a>
-	<a (click)="modifyP(hotel)" class="list-group-item">Change Password</a>
-	<a (click)="comp(hotel)" class="list-group-item">Complete info</a>
-	<a (click)="hmorder(hotel)" class="list-group-item">Order</a>
-	<a href="/mainpage" class="list-group-item">Log out</a>
-</div>
+
+  
+  

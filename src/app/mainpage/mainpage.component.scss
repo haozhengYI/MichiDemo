@@ -1,43 +1,47 @@
-.header{
-    height:70px;
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    padding-left:15px;
-    padding-right:15px;
-    background-color: gray;
-    text-align: center;
-    padding-top:1px;
-    position: fixed;
-    top:0px;
-}
-
-.footer{
-    position: fixed;
-    bottom: 0px;
-    height: 50px;
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    padding-left:15px;
-    padding-right:15px;
-    background-color: gray;
-    text-align: center;
-    padding-top:3px;
-}
-
-.body{
-    margin-top:70px;
-    margin-bottom:30px;
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    height:800px;
-}
-
-#gotologin123{
-    z-index: 2;
-    position: fixed;
-    right: 10%;
-    top:70px;
-}
+// .bg-login-image {
+//     background: url($login-image);
+//     background-position: center;
+//     background-size: cover;
+//   }
+  
+//   .bg-register-image {
+//     background: url($register-image);
+//     background-position: center;
+//     background-size: cover;
+//   }
+  
+//   .bg-password-image {
+//     background: url($password-image);
+//     background-position: center;
+//     background-size: cover;
+//   }
+  
+//   form.user {
+  
+//     .custom-checkbox.small {
+//       label {
+//         line-height: 1.5rem;
+//       }
+//     }
+  
+//     .form-control-user {
+//       font-size: 0.8rem;
+//       border-radius: 10rem;
+//       padding: 1.5rem 1rem;
+//     }
+  
+//     .btn-user {
+//       font-size: 0.8rem;
+//       border-radius: 10rem;
+//       padding: 0.75rem 1rem;
+//     }
+  
+//   }
+  
+//   .btn-google {
+//     @include button-variant($brand-google, $white);
+//   }
+  
+//   .btn-facebook {
+//     @include button-variant($brand-facebook, $white);
+//   }

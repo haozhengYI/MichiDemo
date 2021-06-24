@@ -1,0 +1,167 @@
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" >一个很神秘的网页</a>
+      </div>
+      <div class="nav  navbar-right">
+        <ul class="nav navbar-nav">
+          <li class="active"><a (click)="main(hotel)">HomePage</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Shortcut <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a (click)="modifyP(hotel)">Change Password</a></li>
+              <li><a (click)="comp(hotel)">Complete info</a></li>
+              <li class="divider"></li>
+              <li><a (click)="hotelman(hotel)">Manage Hotel</a></li>
+              <li><a (click)="hmorder(hotel)">Order</a></li>
+            </ul>
+          </li>
+          <li class="nav navbar-nav navbar-right">
+            <a href="/mainpage">Log Out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <ol class="breadcrumb">
+      <li><a (click)="main(hotel)">Home</a></li>
+      <li><a (click)="main(hotel)">{{hotel.userAccount}}</a></li>
+      <li><a (click)="hotelman(hotel)">Manage Student</a></li>
+      <li > <a (click)="hmstudent(hotel)"> {{student.firstName}} {{student.lastName}}</a></li>
+      <li class="active">添加项目</li>
+  </ol>
+
+  <div class="container-fluid">
+    <div class="row content">
+      <div class="col-sm-3 sidenav">
+      <h4>{{hotel.userAccount}}  </h4>
+      <ul class="nav nav-pills nav-stacked">
+        <li ><a (click)="main(hotel)">Home-{{hotel.userAccount}}</a></li>
+        <li ><a (click)="modifyP(hotel)">Change Password</a></li>
+        <li><a (click)="comp(hotel)">Complete info</a></li>
+        <li class="active"><a (click)="hotelman(hotel)">Manage Student</a></li>
+        <li><a (click)="hmorder(hotel)">学生申请</a></li>
+        <li><a (click)="hmregister(hotel)">登记账号</a></li>
+      </ul><br>
+      
+      </div>
+    
+      <div class="col-sm-9">
+        <h2>{{student.firstName}} {{student.lastName}}</h2>
+      <p>{{student.userAccount}}</p>
+      <hr>
+        <form (submit)="addschool(postForm)" #postForm="ngForm" ngNativeValidate>
+          <fieldset>
+            <legend>添加学校项目</legend>
+            <div class="form-group row">
+              <label for="staticEmail" class="col-sm-2 col-form-label">常用项目</label>
+              <div class="col-sm-10">
+                <div class="form-group" style="width:80%">
+                  <select class="form-control" id="exampleSelect1">
+                    <option>待测试</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">University</label>
+              <input type="text" class="form-control"  name="University" placeholder="Enter University" ngModel required>
+              <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">School</label>
+              <input type=text class="form-control" name="Uschool" placeholder="Enter School" ngModel required>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Major</label>
+              <input type=text class="form-control" name="major" placeholder="Enter Major" ngModel required>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Deadline 1</label>
+              <input class="form-control" name="ddl1" type="date" placeholder="date" style="width:50%" ngModel required>
+              <small class="form-text text-muted">若只有一个deadline，只需填写一个即可。</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Deadline 2</label>
+              <input class="form-control" name="ddl2" type="date" placeholder="date" style="width:50%" ngModel >
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Deadline 3</label>
+              <input class="form-control" name="ddl3" type="date" placeholder="date" style="width:50%" ngModel >
+            </div>  
+            
+            <fieldset class="form-group">
+              <legend>Interview</legend>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="interview" id="interview1" value="yes"  ngModel required>
+                  有面试
+                </label>
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="interview" id="interview2" value="no"  ngModel required>
+                  无面试
+                </label>
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="interview" id="interview3" value="other" ngModel required>
+                  未知
+                </label>
+              </div>
+            </fieldset>
+            <fieldset class="form-group">
+              <legend>Video Essay</legend>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="videoessay" id="videoessay1" value="无Video Essay"  ngModel required>
+                  无Video Essay
+                </label>
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="videoessay" id="videoessay2" value="有，在提交申请前" ngModel required>
+                  有，在提交申请前
+                </label>
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="videoessay" id="videoessay3" value="有，在提交申请后" ngModel required>
+                  有，在提交申请后
+                </label>
+              </div>
+            </fieldset>
+            <fieldset class="form-group">
+              <legend>学校link</legend>
+              <div class="form-check">
+                <input type="text" class="form-control"  name="link" placeholder="Enter Link" ngModel required>
+              </div>
+            </fieldset>
+            <fieldset class="form-group">
+              <legend>申请账号</legend>
+              <div class="form-check">
+                <input type="text" class="form-control"  name="applyAccount" placeholder="Enter Apply Account" >
+              </div>
+              <legend>申请密码</legend>
+              <div class="form-check">
+                <input type="text" class="form-control"  name="applyPassword" placeholder="Enter Apply Password" >
+              </div>
+            </fieldset>
+            
+            <fieldset class="form-group">
+              <legend>所需推荐信数量</legend>
+              <div class="form-check">
+                <input type="text" class="form-control"  name="recommNumber" placeholder="Enter Recommendation Letter Number" ngModel required>
+              </div>
+            </fieldset>
+
+            <button  class="btn btn-primary" >添加</button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  
+
+  

@@ -27,6 +27,7 @@ export class HMmainComponent implements OnInit {
     ) { 
       this.route.queryParams.subscribe(params => {
         this.managerID = params["managerID"];
+        //console.log(this.managerID);
        });
     }
     
@@ -39,7 +40,7 @@ export class HMmainComponent implements OnInit {
         for(let h of this.hotels){
             if(h.userAccount===this.managerID){
               this.hotel = h;
-              console.log(this.hotel);
+              console.log("管理者信息"+this.hotel);
             }
         }
         //this.hotel = this.hotels[0];
@@ -96,10 +97,19 @@ export class HMmainComponent implements OnInit {
     const navigationExtras: NavigationExtras = {
       queryParams: {
        "managerID" : hotel.userAccount,
-       "hotelID" : hotel._id,
       }
     };
     this.router.navigate(['/hmorder'], navigationExtras);
+  }
+
+  //direct to the register page
+  hmregister(hotel) {
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+       "managerID" : hotel.userAccount,
+      }
+    };
+    this.router.navigate(['/hmregister'], navigationExtras);
   }
 
   ngOnDestroy() {

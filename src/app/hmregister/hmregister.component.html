@@ -1,0 +1,102 @@
+<header>
+	<nav class="navbar navbar-inverse" role="navigation">
+		<div class="container-fluid">
+		<div class="navbar-header">
+				<a class="navbar-brand" >一个很神秘的网页</a>
+		</div>
+		<div class="nav  navbar-right">
+		  <ul class="nav navbar-nav">
+			<li class="active"><a (click)="main(hotel)">HomePage</a></li>
+			<li class="dropdown">
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+				{{hotel.userAccount}} <b class="caret"></b>
+			  </a>
+			  <ul class="dropdown-menu">
+							<li><a (click)="modifyP(hotel)">Change Password</a></li>
+							<li><a (click)="comp(hotel)">Complete info</a></li>
+							<li class="divider"></li>
+				<li><a (click)="hotelman(hotel)">学生管理</a></li>
+				<li><a (click)="hmorder(hotel)">学校申请</a></li>
+						</ul>
+			</li>
+			<li class="nav navbar-nav navbar-right">
+			  <a href="/mainpage">Log Out</a>
+			</li>
+		  </ul>
+		</div>
+	  </div>
+	</nav>
+	
+  </header>
+  
+  <ol class="breadcrumb">
+  <li><a (click)="main(hotel)">Home</a></li>
+	<li ><a (click)="main(hotel)">{{hotel.userAccount}}</a></li>
+  <li class="active">登记账号</li>
+</ol>
+
+<div class="container-fluid">
+	<div class="row content">
+	  <div class="col-sm-3 sidenav">
+		<h4>{{hotel.userAccount}}  </h4>
+		<ul class="nav nav-pills nav-stacked">
+		  <li ><a (click)="main(hotel)">Home</a></li>
+      <li ><a (click)="modifyP(hotel)">Change Password</a></li>
+      <li><a (click)="comp(hotel)">Complete info</a></li>
+      <li><a (click)="hotelman(hotel)">Manage Student</a></li>
+      <li><a (click)="hmorder(hotel)">学生申请</a></li>
+      <li class="active"><a (click)="hmregister(hotel)">登记账号</a></li>
+		</ul><br>
+		
+	  </div>
+  
+	  <div class="col-sm-9">
+      <div id="register">
+        
+        <table>
+          <tr>
+            <td>Create user account
+            </td>
+            <td><div class="input-group">		
+              <span class="input-group-addon">▽</span>
+              <input class="form-control" id="user-account" placeholder="e.g. abc@cde.com"  style="width: 385px; "></div>
+            </td>
+          </tr>
+          <tr>
+              <td>Create password</td>
+              <td><div class="input-group"><span class="input-group-addon"> △</span>
+                <input  class="form-control" type="password" id="user-password" placeholder="e.g. abc1234cc"  style="width: 385px; "></div>
+              </td>
+          </tr>
+          <tr>
+              <td>Confirm password
+              </td>
+              <td><div class="input-group"><span class="input-group-addon"><span class="glyphicon glyphicon-eye-close"></span></span>
+                <input  class="form-control"  type="password" id="confirm-password" style="width: 385px" style="width: 385px; "></div>
+              </td>
+          </tr>
+          <tr>
+            <td>Type
+            </td>
+            <td>
+              <span class="hint" id="hint4"></span>
+              <input type="radio" name="options" id="option-student" value="student"> Student
+              <input type="radio" name="options" id="option-manager" value="manager">   Manager
+            </td>
+        </tr>
+              <tr>
+                  <td>
+                    <button id="tutorial-button" class="btn btn-primary" (click)='tutorialmessage()'>Tutorial</button>
+                  </td>
+                  <td>
+                    <button id="join-button1" class="btn btn-primary" (click)="check()">Create Account</button>
+                  </td> 
+              </tr>
+        </table>
+        
+        
+      </div>
+	  </div>
+	</div>
+</div>
+

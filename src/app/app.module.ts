@@ -30,7 +30,15 @@ import { HmorderComponent } from './hmorder/hmorder.component';
 import { AdminHotelComponent } from './admin-hotel/admin-hotel.component';
 import { AdminOrderComponent } from './admin-order/admin-order.component';
 import { OrderViewComponent} from './hotel/order-view/order-view.component';
+import { HmregisterComponent } from './hmregister/hmregister.component';
+import { HmstudentComponent} from './hmstudent/hmstudent.component';
+import {HmaddschoolComponent} from './hmaddschool/hmaddschool.component';
+import {HmschoolComponent} from './hmschool/hmschool.component';
 
+import {StudentmainComponent} from './studentmain/studentmain.component';
+import {StudentaddrecommComponent} from './studentaddrecomm/studentaddrecomm.component';
+import {StudentinfoComponent} from './studentinfo/studentinfo.component';
+import {StudentrecComponent} from './studentrec/studentrec.component'
 
 @NgModule({
   declarations: [
@@ -60,7 +68,16 @@ import { OrderViewComponent} from './hotel/order-view/order-view.component';
 
     AdminOrderComponent,
 
-    OrderViewComponent
+    OrderViewComponent,
+    HmregisterComponent,
+    HmstudentComponent,
+    HmaddschoolComponent,
+    HmschoolComponent,
+
+    StudentmainComponent,
+    StudentaddrecommComponent,
+    StudentinfoComponent,
+    StudentrecComponent
 
   ],
   imports: [

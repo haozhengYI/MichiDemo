@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { HmService } from './../hm.service';
 import {HotelM} from './../hm.model';
 import { HttpClient } from '@angular/common/http';
+import {Student} from './../st.model';
 
 @Component({
   selector: 'app-hmmanage',
@@ -12,6 +13,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HmmanageComponent implements OnInit {
 
+  students: Student[] = [];//all the orders from database
+  student :Student[] = [];//the specific order selected by this hotel i
   hotels: HotelM[] = [];
   hotel : HotelM;
   managerID : any;
@@ -42,11 +45,22 @@ export class HmmanageComponent implements OnInit {
               this.location = this.hotel.location;
               this.phone=this.hotel.phone;
               this.price = this.hotel.price;
-              console.log("ngOnInIT");
-              console.log(this.hotel);
+              //console.log("管理员信息");
+              //console.log(this.hotel);
             }
         }
     });
+        // select the particular order by hotel id
+        this.http.get<{students: Student[]}>('http://localhost:3000/students').subscribe((oData) => {
+          this.students = oData.students;
+          console.log("全部学生信息");
+          console.log(this.students);
+          for(let st of this.students){
+              
+                this.student.push(st) ;
+              }
+           });
+      
     this.hotelMSub = this.hmService.getHotelMUpdatedListener().subscribe((hotels: HotelM[]) => {
       this.hotels = hotels;
       });
@@ -132,10 +146,32 @@ export class HmmanageComponent implements OnInit {
     const navigationExtras: NavigationExtras = {
       queryParams: {
        "managerID" : hotel.userAccount,
-       "hotelID" : hotel._id,
       }
     };
     this.router.navigate(['/hmorder'], navigationExtras);
+  }
+  
+  //direct to the register page
+  hmregister(hotel) {
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+       "managerID" : hotel.userAccount,
+      }
+    };
+    this.router.navigate(['/hmregister'], navigationExtras);
+  }
+
+  more(o){
+    console.log(o._id);
+    console.log(this.managerID);
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+       "managerID" : this.managerID,
+       "studentID" : o._id,
+      }
+    };
+    this.router.navigate(['/hmstudent'], navigationExtras);
+    
   }
 
   ngOnDestroy() {

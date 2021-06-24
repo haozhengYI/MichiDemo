@@ -132,7 +132,6 @@ export class LoginComponent implements OnInit {
         //create one resp in hotels database
         console.log(temp0);
         this.hmService.addHotel("",temp0,"", "", "","",  "", "", "", "");
-
       }
       (document.getElementById("user-account") as HTMLInputElement).style.borderColor="black";
       (document.getElementById("user-password") as HTMLInputElement).style.borderColor="black";

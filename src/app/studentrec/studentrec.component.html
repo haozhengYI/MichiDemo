@@ -1,0 +1,111 @@
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" >{{student.firstName}} {{student.lastName}}</a>
+      </div>
+      <div class="nav  navbar-right">
+        <ul class="nav navbar-nav">
+          <li class="active"><a (click)="studentmain(student)">Home</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              推荐人 <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a (click)="rec(student)">全部推荐人信息</a></li>
+              <li><a (click)="addRecom(student)">添加新的推荐人</a></li>
+            </ul>
+          </li>
+          <li class="nav navbar-nav navbar-right">
+            <a href="/mainpage">Log Out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+	  <div class="container-fluid">
+		<div class="row content">
+		  <div class="col-sm-3 sidenav">
+			  <h3></h3>
+			<ul class="nav nav-pills nav-stacked">
+			  <li ><a (click)="studentmain(student)">Home-申请状态</a></li>
+				<li ><a >更改密码</a></li>
+				<li ><a (click)="info(student)">完善个人信息</a></li>
+				<li  class="active"><a (click)="rec(student)">推荐人信息</a></li>
+				<li><a (click)="addRecom(student)">添加推荐人</a></li>
+			</ul><br>	
+		  </div>
+	  
+		  <div class="col-sm-9">
+			<h3>
+				学生所添加的推荐人总数：
+				<small class="text-muted">{{recommenders.length}}</small>
+			  </h3>
+			  <hr>
+			  <div class="panel-group" id="accordion" *ngIf="recommenders.length > 0">
+				<div class="panel panel-primary" *ngFor="let k of recommenders">
+				  <div class="panel-heading">
+					<h4 class="panel-title">
+					  <a data-toggle="collapse" data-parent="#accordion" 
+						href="#{{k._id}}">
+					  <b> {{k.firstName}} {{k.lastName}}</b>
+					  </a>
+					</h4>
+				  </div>
+				  <div id="{{k._id}}" class="panel-collapse collapse in">
+					<div class="panel-body">
+					  <table class="table table-hover">
+						<thead style="background-color: lightgray;">
+						  <tr>
+							<th scope="col" >性别</th>
+							<th scope="col" >职称title</th>
+							<th scope="col" >学历</th>
+							<th scope="col">Relationship</th>
+							<th scope="col">所在单位</th>
+						  </tr>
+						</thead>
+						<tbody >
+						  <tr class="table-dark" >
+							<td>{{k.gender}} </td>
+							<td>{{k.title}}</td>
+							<td>{{k.education}}</td>
+							<td>{{k.relation}}</td>
+							<td>{{k.organization}}</td>  
+						  </tr>
+						</tbody>
+						<thead style="background-color: lightgray;">
+						  <tr>
+							<th scope="col" >职务</th>
+							<th scope="col" >Email</th>
+							<th scope="col">电话</th>
+							<th scope="col" >地址</th>
+							<th scope="col">在此单位工作时间年限</th>
+						  </tr>
+						</thead>
+						<tbody >
+						  <tr class="table-dark" >
+							<td>{{k.position}} </td>
+							<td>{{k.email}}</td>
+							<td>{{k.phone}}</td>
+							<td>{{k.location}}</td>
+							<td>{{k.duration}}</td>  
+						  </tr>
+						</tbody>
+						<thead style="background-color: lightgray;">
+						  <tr>
+							<th colspan="5">其他信息（推荐人与被推荐人关系发展，以及熟悉程度）</th>
+						  </tr>
+						</thead>
+						<tbody>
+						  <tr>
+							<td colspan="5">{{k.other}}</td>
+						  </tr>
+						</tbody>
+					  </table>
+					</div>
+				  </div>
+				</div>
+			  </div>
+		  </div>
+		</div>
+	</div>
+

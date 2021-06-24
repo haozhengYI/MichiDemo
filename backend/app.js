@@ -2,11 +2,12 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+
 //mongoose.connect("mongodb://localhost/final", {useNewUrlParser:true});
 mongoose.connect('mongodb+srv://ding:wawxlyhz@product.xki9n.mongodb.net/Product?retryWrites=true&w=majority',{
   useNewUrlParser:true
 });
-
+//import "./style.scss"
 
 const Order = require('./model/order');
 
@@ -16,7 +17,15 @@ const User = require('./model/user');
 
 
 const Hotel = require('./model/hotel');
-
+const Student = require('./model/student');
+const School = require('./model/school');
+const Recommender = require('./model/recommender');
+const Recomletter = require('./model/recomletter');
+const Education = require('./model/education');
+const Experience = require('./model/experience');
+const Publication = require('./model/publication');
+const Activity = require('./model/activity');
+const Honor = require('./model/honor');
 
 
 app.use(bodyParser.json());
@@ -117,7 +126,6 @@ app.get('/hotelsearch/:searchName', (req,res,next)=>{
 
 
 // delete user detail by id//
-
 app.delete('/users/:id',(req, res, next) => {
   const id= req.params.id;
   User.remove({_id:id})
@@ -273,4 +281,1008 @@ app.get('/vieworder/:userId', (req,res,next) => {
 //     });
 //   });
 // });
+//student route----------------------------------------------------------------------------------------------------------------
+// display all students
+app.get('/students',(req, res, next) => {
+  Student.find().then(documents =>{
+    res.json({
+      students: documents
+    });
+  });
+});
+// user add student
+app.post('/studentadd', (req,res,next) =>{
+  const student = new Student({
+    userAccount:req.body.userAccount,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    phone: req.body.phone,
+    dob: req.body.dob, // 生日
+    currentAddress: req.body.currentAddress,
+    permanentAddress: req.body.permanentAddress,
+    gender: req.body.gender,
+    ssn: req.body.ssn,
+    passport: req.body.passport,//护照或绿卡号码
+    visa: req.body.visa,
+    appEmail: req.body.appEmail,//申请所用的邮箱账号
+    appPsw:req.body.appPsw,//申请所用的邮箱密码
+    citizen:req.body.citizen,//国籍
+    //标化成绩类
+    TOEFL:req.body.TOEFL,
+    TOEFLR:req.body.TOEFLR,//托福阅读
+    TOEFLL:req.body.TOEFLL,//托福听力
+    TOEFLS:req.body.TOEFLS,//托福口语
+    TOEFLW:req.body.TOEFLW,//托福写作
+    GRE: req.body.GRE,
+    GREV: req.body.GREV,//GRE Verbal部分成绩
+    GREVP: req.body.GREVP,
+    GREQ: req.body.GREQ,
+    GREQP: req.body.GREQP,
+    GREW: req.body.GREW,
+    GREWP: req.body.GREWP,
+    GMAT: req.body.GMAT,//GMAT 部分
+    GMATV: req.body.GMATV,
+    GMATVP: req.body.GMATVP,
+    GMATQ: req.body.GMATQ,
+    GMATQP: req.body.GMATQP,
+    GMATW: req.body.GMATW,
+    GMATWP: req.body.GMATWP,
+    GMATR: req.body.GMATR,
+    GMATRP: req.body.GMATRP,
+    OtherStandardTest: req.body.OtherStandardTest,//其他类标化成绩
+    //Skills & Hobbies
+    Language:req.body.Language, 
+    ComputerSkills: req.body.ComputerSkills,//计算机技能
+    OtherSkills: req.body.OtherSkills,//其他技能或证书
+    Hobbies: req.body.Hobbies,//爱好
+    //Professional Interest专业兴趣
+    Professional1: req.body.Professional1,
+    Professional2: req.body.Professional2,
+    Professional3: req.body.Professional3,
+    //Career Plan职业规划
+    CareerPlan1: req.body.CareerPlan1,
+    CareerPlan2: req.body.CareerPlan1,
+    //Personal Strength个人优势
+    Strength1: req.body.Strength1,
+    Strength2: req.body.Strength2,
+    //母亲信息
+    MomName: req.body.MomName,
+    MomAddress: req.body.MomAddress,
+    MomOrganazation: req.body.MomOrganazation,
+    MomJob: req.body.MomJob,
+    MomEducation:req.body.MomEducation,//母亲最高学历
+    MomSchool:req.body.MomSchool,//母亲毕业院校
+    MomGraduation: req.body.MomGraduation,//母亲毕业时间
+    MomPhone: req.body.MomPhone,
+    MomEmail: req.body.MomEmail,
+    //父亲信息
+    FatName: req.body.FatName,
+    FatAddress: req.body.FatAddress,
+    FatOrganazation: req.body.FatOrganazation,
+    FatJob: req.body.FatJob,
+    FatEducation:req.body.FatEducation,//母亲最高学历
+    FatSchool:req.body.FatSchool,//母亲毕业院校
+    FatGraduation: req.body.FatGraduation,//母亲毕业时间
+    FatPhone: req.body.FatPhone,
+    FatEmail: req.body.FatEmail,
+  });
+  student.save();
+  res.status(201).json({
+    message: 'POST SEND SUCCESFFULY'
+  });
+});
+
+
+
+// display student detail by id
+app.get('/studentdetail/:id', (req,res,next) =>{
+    Student.findById(req.params.id).then(documents =>{
+      console.log(documents);
+       res.json({
+         students: documents
+       });
+    });
+});
+
+//update student information include firstname as well
+app.put('/students/:userAccount', (req, res, next)=>{
+  const userAccount = req.params.userAccount;
+  // const updateOps ={};
+  // for(const ops of req.body){
+  //     updateOps[ops.propName] = ops.vaule;
+  // }
+  Student.update({userAccount: userAccount},{$set: 
+    //updateOps
+    {
+      userAccount:req.body.userAccount,
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      email: req.body.email,
+      phone: req.body.phone,
+      dob: req.body.dob, // 生日
+      currentAddress: req.body.currentAddress,
+      permanentAddress: req.body.permanentAddress,
+      gender: req.body.gender,
+      ssn: req.body.ssn,
+      passport: req.body.passport,//护照或绿卡号码
+      visa: req.body.visa,
+      appEmail: req.body.appEmail,//申请所用的邮箱账号
+      appPsw:req.body.appPsw,//申请所用的邮箱密码
+      citizen:req.body.citizen,//国籍
+      //标化成绩类
+      TOEFL:req.body.TOEFL,
+      TOEFLR:req.body.TOEFLR,//托福阅读
+      TOEFLL:req.body.TOEFLL,//托福听力
+      TOEFLS:req.body.TOEFLS,//托福口语
+      TOEFLW:req.body.TOEFLW,//托福写作
+      GRE: req.body.GRE,
+      GREV: req.body.GREV,//GRE Verbal部分成绩
+      GREVP: req.body.GREVP,
+      GREQ: req.body.GREQ,
+      GREQP: req.body.GREQP,
+      GREW: req.body.GREW,
+      GREWP: req.body.GREWP,
+      GMAT: req.body.GMAT,//GMAT 部分
+      GMATV: req.body.GMATV,
+      GMATVP: req.body.GMATVP,
+      GMATQ: req.body.GMATQ,
+      GMATQP: req.body.GMATQP,
+      GMATW: req.body.GMATW,
+      GMATWP: req.body.GMATWP,
+      GMATR: req.body.GMATR,
+      GMATRP: req.body.GMATRP,
+      OtherStandardTest: req.body.OtherStandardTest,//其他类标化成绩
+      //Skills & Hobbies
+      Language:req.body.Language, 
+      ComputerSkills: req.body.ComputerSkills,//计算机技能
+      OtherSkills: req.body.OtherSkills,//其他技能或证书
+      Hobbies: req.body.Hobbies,//爱好
+      //Professional Interest专业兴趣
+      Professional1: req.body.Professional1,
+      Professional2: req.body.Professional2,
+      Professional3: req.body.Professional3,
+      //Career Plan职业规划
+      CareerPlan1: req.body.CareerPlan1,
+      CareerPlan2: req.body.CareerPlan1,
+      //Personal Strength个人优势
+      Strength1: req.body.Strength1,
+      Strength2: req.body.Strength2,
+      //母亲信息
+      MomName: req.body.MomName,
+      MomAddress: req.body.MomAddress,
+      MomOrganazation: req.body.MomOrganazation,
+      MomJob: req.body.MomJob,
+      MomEducation:req.body.MomEducation,//母亲最高学历
+      MomSchool:req.body.MomSchool,//母亲毕业院校
+      MomGraduation: req.body.MomGraduation,//母亲毕业时间
+      MomPhone: req.body.MomPhone,
+      MomEmail: req.body.MomEmail,
+      //父亲信息
+      FatName: req.body.FatName,
+      FatAddress: req.body.FatAddress,
+      FatOrganazation: req.body.FatOrganazation,
+      FatJob: req.body.FatJob,
+      FatEducation:req.body.FatEducation,//母亲最高学历
+      FatSchool:req.body.FatSchool,//母亲毕业院校
+      FatGraduation: req.body.FatGraduation,//母亲毕业时间
+      FatPhone: req.body.FatPhone,
+      FatEmail: req.body.FatEmail,
+    }
+  })
+  .exec()
+  .then((result)=>{
+      console.log(result);
+      res.status(200).json(result);
+  })
+  .catch(err =>{
+      console.log(err);
+      res.status(500).json({
+          error: err
+      })
+  });
+  res.status(201).json({
+    message: 'Handling PUT requests to /Connections',
+  });
+});
+
+//school route----------------------------------------------------------------------------------------------------------------
+// manager add new school to student
+app.post('/schooladd', (req,res,next) =>{
+  const school = new School({
+    userAccount:req.body.userAccount,
+    state: req.body.state, //申请状态（四种：进行，完成，收到offer，收到拒信）
+    univName: req.body.univName,//大学名称
+    schoolName: req.body.schoolName,//学院名称
+    majorName: req.body.majorName,//专业名称
+    ddl1: req.body.ddl1,//DDL 1
+    ddl2: req.body.ddl2,//DDL 2
+    ddl3: req.body.ddl3,//DDL 3
+    interview: req.body.interview,//面试 （两种：有-参加时间，无，）
+    videoEssay: req.body.videoEssay, // videoEssay(三种：无，申请前完成，申请后完成)
+    link: req.body.link, //链接
+    applyAccount:req.body.applyAccount,//申请账号
+    applyPassword:req.body.applyPassword,//申请用密码
+    recommNumber:req.body.recommNumber,//所需要推荐信数量
+    other:req.body.other,
+  });
+  school.save();
+  res.status(201).json({
+    message: 'POST SEND SUCCESFFULY'
+  });
+});
+
+// display all schools 
+app.get('/schools',(req, res, next) => {
+  School.find().then(documents =>{
+    res.json({
+      schools: documents
+    });
+  });
+});
+
+// display school detail by particular school id
+app.get('/schooldetail/:id', (req,res,next) =>{
+    School.findById(req.params.id).then(documents =>{
+      console.log(documents);
+       res.json({
+         schools: documents
+       });
+    });
+});
+
+// display all school list by student id
+app.get('/studentschooldetail/:studentId', (req,res,next) =>{
+  const studentId = req.params.studentId;
+  School.find({userAccount: studentId}).then(documents =>{
+    res.json({
+      schools: documents
+    });
+  });
+});
+
+
+//update school information by id
+app.put('/schools/:id', (req, res, next)=>{
+  const id= req.params.id;
+  School.update({_id: id},{$set: 
+    //updateOps
+    {
+        userAccount:req.body.userAccount,
+        state: req.body.state, //申请状态（四种：进行，完成，收到offer，收到拒信）
+        univName: req.body.univName,//大学名称
+        schoolName: req.body.schoolName,//学院名称
+        majorName: req.body.majorName,//专业名称
+        ddl1: req.body.ddl1,//DDL 1
+        ddl2: req.body.ddl2,//DDL 2
+        ddl3: req.body.ddl3,//DDL 3
+        interview: req.body.interview,//面试 （两种：有-参加时间，无，）
+        videoEssay: req.body.videoEssay, // videoEssay(三种：无，申请前完成，申请后完成)
+        link: req.body.link, //链接
+        applyAccount:req.body.applyAccount,//申请账号
+        applyPassword:req.body.applyPassword,//申请用密码
+        recommNumber:req.body.recommNumber,//所需要推荐信数量
+        other:req.body.other,
+    }
+  })
+  .exec()
+  .then((result)=>{
+      console.log(result);
+      res.status(200).json(result);
+  })
+  .catch(err =>{
+      console.log(err);
+      res.status(500).json({
+          error: err
+      })
+  });
+  res.status(201).json({
+    message: 'Handling PUT requests to /Connections',
+  });
+});
+
+// delete school detail by id//
+app.delete('/schools/:id',(req, res, next) => {
+    const id= req.params.id;
+    School.remove({_id:id})
+    .exec()
+    .then(result=>{
+      res.status(200).json(result);
+    })
+    .catch(err=>{console.log(err);
+      res.status(500).json({
+        error:err
+      });
+    });
+  });
+
+//推荐人route------------------------------------------------------------------------------------------------------------------
+  // manager add new recommender to student
+app.post('/recommenderadd', (req,res,next) =>{
+  const recommender = new  Recommender({
+    userAccount:req.body.userAccount, //对应学生的id
+    firstName: req.body.firstName,//推荐人名字
+    lastName: req.body.lastName,
+    email: req.body.email,//推荐人email
+    phone: req.body.phone,//
+    title: req.body.title, // 推荐人职称
+    location: req.body.location,//地址
+    gender: req.body.gender,//性别
+    education:req.body.education, //学历
+    organization:req.body.organization, //所在单位
+    duration:req.body.duration,//在此单位工作时间年限
+    position:req.body.position, //职务
+    relation:req.body.relation,//与申请者关系
+    other:req.body.other,//其他信息
+  });
+  recommender.save();
+  res.status(201).json({
+    message: 'POST SEND SUCCESFFULY'
+  });
+});
+
+// display all recommenders 
+app.get('/recommenders',(req, res, next) => {
+    Recommender.find().then(documents =>{
+    res.json({
+      recommenders: documents
+    });
+  });
+});
+
+// display recommender detail by id
+app.get('/recommenderdetail/:id', (req,res,next) =>{
+    Recommender.findById(req.params.id).then(documents =>{
+      console.log(documents);
+       res.json({
+        recommender: documents
+       });
+    });
+});
+
+// display all recommenders list by student id
+app.get('/studentrecommenderdetail/:studentId', (req,res,next) =>{
+  const studentId = req.params.studentId;
+  Recommender.find({userAccount: studentId}).then(documents =>{
+    res.json({
+      recommenders: documents
+    });
+  });
+});
+
+
+//update recommender information by id
+app.put('/recommenders/:id', (req, res, next)=>{
+  const id= req.params.id;
+    Recommender.update({_id: id},{$set: 
+    //updateOps
+    {
+        userAccount:req.body.userAccount, //对应学生的id
+        firstName: req.body.firstName,//推荐人名字
+        lastName: req.body.lastName,
+        email: req.body.email,//推荐人email
+        phone: req.body.phone,//
+        title: req.body.title, // 推荐人职称
+        location: req.body.location,//地址
+        gender: req.body.gender,//性别
+        education:req.body.education, //学历
+        organization:req.body.organization, //所在单位
+        duration:req.body.duration,//在此单位工作时间年限
+        position:req.body.position, //职务
+        relation:req.body.relation,//与申请者关系
+        other:req.body.other,//其他信息
+    }
+  })
+  .exec()
+  .then((result)=>{
+      console.log(result);
+      res.status(200).json(result);
+  })
+  .catch(err =>{
+      console.log(err);
+      res.status(500).json({
+          error: err
+      })
+  });
+  res.status(201).json({
+    message: 'Update Successfully',
+  });
+});
+
+// delete recommender detail by id//
+app.delete('/recommenders/:id',(req, res, next) => {
+    const id= req.params.id;
+    Recommender.remove({_id:id})
+    .exec()
+    .then(result=>{
+      res.status(200).json(result);
+    })
+    .catch(err=>{console.log(err);
+      res.status(500).json({
+        error:err
+      });
+    });
+  });
+
+//推荐信route------------------------------------------------------------------------------------------------------------------
+// manager add new recommend letter to school
+app.post('/recomletteradd', (req,res,next) =>{
+  const recomletter = new  Recomletter({
+    schoolID:req.body.schoolID, //对应申请学校的id
+    studentID:req.body.studentID,//对应学生的id
+    recommender:req.body.recommender,//推荐人id
+    recommenderName:req.body.recommenderName,//推荐人名字
+    type:req.body.type,//推荐信为 acedemic / professional
+    state: req.body.state,//推荐信状态（提交/未提交/弃用）
+  });
+  recomletter.save();
+  res.status(201).json({
+    message: 'POST SEND SUCCESFFULY'
+  });
+});
+
+// display all recommender letters
+app.get('/recomletters',(req, res, next) => {
+    Recomletter.find().then(documents =>{
+    res.json({
+        recomletters: documents
+    });
+  });
+});
+
+// display recommend letter detail by id
+app.get('/recomletterdetail/:id', (req,res,next) =>{
+    Recomletter.findById(req.params.id).then(documents =>{
+      console.log(documents);
+       res.json({
+        recomletter: documents
+       });
+    });
+});
+
+// display all recommender letter list by school id
+app.get('/schoolrecomletterlist/:schoolId', (req,res,next) =>{
+    const schoolId = req.params.schoolId;
+    Recomletter.find({schoolID: schoolId}).then(documents =>{
+      res.json({
+        recomletters: documents
+      });
+    });
+  });
+
+//update recommende letter information by id
+app.put('/recomletters/:id', (req, res, next)=>{
+  const id= req.params.id;
+    Recomletter.update({_id: id},{$set: 
+    //updateOps
+    {
+        schoolID:req.body.schoolID, //对应申请学校的id
+        studentID:req.body.studentID,//对应学生的id
+        recommender:req.body.recommender,//推荐人id
+        recommenderName:req.body.recommenderName,//推荐人名字
+        type:req.body.type,//推荐信为 acedemic / professional
+        state: req.body.state,//推荐信状态（提交/未提交/弃用）
+    }
+  })
+  .exec()
+  .then((result)=>{
+      console.log(result);
+      res.status(200).json(result);
+  })
+  .catch(err =>{
+      console.log(err);
+      res.status(500).json({
+          error: err
+      })
+  });
+  res.status(201).json({
+    message: 'Update Successfully',
+  });
+});
+
+// delete recommende letter by id//
+app.delete('/recomletters/:id',(req, res, next) => {
+    const id= req.params.id;
+    Recomletter.remove({_id:id})
+    .exec()
+    .then(result=>{
+      res.status(200).json(result);
+    })
+    .catch(err=>{console.log(err);
+      res.status(500).json({
+        error:err
+      });
+    });
+});
+
+//学生教育背景------------------------------------------------------------------------------------------------------------------
+//add new educations to student
+app.post('/educationadd', (req,res,next) =>{
+  const education = new Education({
+    userAccount:req.body.userAccount,//存储学生ID
+    type: req.body.type,//类型：本科，研究生，高中
+    educationName: req.body.educationName,
+    educationLocation:req.body.educationLocation,
+    educationStart:req.body.educationStart,//在校起始日期
+    educationEnd:req.body.educationEnd,//在校结束日期
+    major: req.body.major,
+    Degree:req.body.Degree,
+    GPA:req.body.GPA,
+    MajorGPA:req.body.MajorGPA,//专业GPA
+    SecondDegree:req.body.SecondDegree,//双专业
+    SecondGPA:req.body.SecondGPA,//第二专业 GPA
+    other:req.body.other,
+  });
+  education.save();
+  res.status(201).json({
+    message: 'POST SEND SUCCESFFULY'
+  });
+});
+
+// display all educations 
+app.get('/educations',(req, res, next) => {
+    Education.find().then(documents =>{
+    res.json({
+        educations: documents
+    });
+  });
+});
+
+// display education detail by id
+app.get('/educationdetail/:id', (req,res,next) =>{
+    Education.findById(req.params.id).then(documents =>{
+      console.log(documents);
+       res.json({
+        education: documents
+       });
+    });
+});
+
+// display educations detail by student id
+app.get('/studenteducationlist/:studentId', (req,res,next) =>{
+    const studentId = req.params.studentId;
+    Education.find({userAccount: studentId}).then(documents =>{
+      res.json({
+        educations: documents
+      });
+    });
+  });
+
+
+
+//update education information by id
+app.put('/education/:id', (req, res, next)=>{
+  const id= req.params.id;
+  Education.update({_id: id},{$set: 
+    //updateOps
+    {
+        userAccount:req.body.userAccount,//存储学生ID
+        type: req.body.type,//类型：本科，研究生，高中
+        educationName: req.body.educationName,
+        educationLocation:req.body.educationLocation,
+        educationStart:req.body.educationStart,//在校起始日期
+        educationEnd:req.body.educationEnd,//在校结束日期
+        major: req.body.major,
+        Degree:req.body.Degree,
+        GPA:req.body.GPA,
+        MajorGPA:req.body.MajorGPA,//专业GPA
+        SecondDegree:req.body.SecondDegree,//双专业
+        SecondGPA:req.body.SecondGPA,//第二专业 GPA
+        other:req.body.other,
+    }
+  })
+  .exec()
+  .then((result)=>{
+      console.log(result);
+      res.status(200).json(result);
+  })
+  .catch(err =>{
+      console.log(err);
+      res.status(500).json({
+          error: err
+      })
+  });
+  res.status(201).json({
+    message: 'Handling PUT requests to /Connections',
+  });
+});
+
+// delete education detail by id//
+app.delete('/education/:id',(req, res, next) => {
+    const id= req.params.id;
+    Education.remove({_id:id})
+    .exec()
+    .then(result=>{
+      res.status(200).json(result);
+    })
+    .catch(err=>{console.log(err);
+      res.status(500).json({
+        error:err
+      });
+    });
+  });
+
+//工作经历------------------------------------------------------------------------------------------------------------------
+//add new experiences to student
+app.post('/experienceadd', (req,res,next) =>{
+  const experience = new Experience({
+    userAccount:req.body.userAccount,//存储学生ID
+    type: req.body.type,//类型：教学科研/工作经历
+    institution: req.body.institution,
+    institutionLocation:req.body.institutionLocation,
+    experienceStart:req.body.experienceStart,//经历起始日期
+    experienceEnd:req.body.experienceEnd,//经历结束日期
+    experienceposition: req.body.experienceposition,
+    responsibilities:req.body.responsibilities,
+    project:req.body.project,
+    achievement:req.body.achievement,
+  });
+  experience.save();
+  res.status(201).json({
+    message: 'POST SEND SUCCESFFULY'
+  });
+});
+
+// display all experiences 
+app.get('/experiences',(req, res, next) => {
+    Experience.find().then(documents =>{
+    res.json({
+        experiences: documents
+    });
+  });
+});
+
+// display experience detail by id
+app.get('/experiencetail/:id', (req,res,next) =>{
+    Experience.findById(req.params.id).then(documents =>{
+      console.log(documents);
+       res.json({
+        experience: documents
+       });
+    });
+});
+
+// display experience detail by student id
+app.get('/studentexperiencelist/:studentId', (req,res,next) =>{
+    const studentId = req.params.studentId;
+    Experience.find({userAccount: studentId}).then(documents =>{
+      res.json({
+        experiences: documents
+      });
+    });
+  });
+
+
+
+//update experience information by id
+app.put('/experience/:id', (req, res, next)=>{
+  const id= req.params.id;
+  Experience.update({_id: id},{$set: 
+    //updateOps
+    {
+        userAccount:req.body.userAccount,//存储学生ID
+        type: req.body.type,//类型：教学科研/工作经历
+        institution: req.body.institution,
+        institutionLocation:req.body.institutionLocation,
+        experienceStart:req.body.experienceStart,//经历起始日期
+        experienceEnd:req.body.experienceEnd,//经历结束日期
+        experienceposition: req.body.experienceposition,
+        responsibilities:req.body.responsibilities,
+        project:req.body.project,
+        achievement:req.body.achievement,
+    }
+  })
+  .exec()
+  .then((result)=>{
+      console.log(result);
+      res.status(200).json(result);
+  })
+  .catch(err =>{
+      console.log(err);
+      res.status(500).json({
+          error: err
+      })
+  });
+  res.status(201).json({
+    message: 'Handling PUT requests to /Connections',
+  });
+});
+
+// delete experience detail by id//
+app.delete('/experience/:id',(req, res, next) => {
+    const id= req.params.id;
+    Experience.remove({_id:id})
+    .exec()
+    .then(result=>{
+      res.status(200).json(result);
+    })
+    .catch(err=>{console.log(err);
+      res.status(500).json({
+        error:err
+      });
+    });
+  });
+
+//论文------------------------------------------------------------------------------------------------------------------
+//add new publication to student
+app.post('/publicationadd', (req,res,next) =>{
+  const publication = new Publication({
+    userAccount:req.body.userAccount,//存储学生ID
+    PublicationTitle: req.body.PublicationTitle,
+    PublicationJournal: req.body.PublicationJournal,//刊物
+    PublicationDate: req.body.PublicationDate,//时间
+    PublicationLink: req.body.PublicationLink,//链接
+    PublicationAuthors: req.body.PublicationAuthors,
+    PublicationAbstract: req.body.PublicationAbstract,
+    PublicationLevel:req.body.PublicationLevel,
+  });
+  publication.save();
+  res.status(201).json({
+    message: 'POST SEND SUCCESFFULY'
+  });
+});
+
+// display all publications 
+app.get('/publications',(req, res, next) => {
+    Publication.find().then(documents =>{
+    res.json({
+        publications: documents
+    });
+  });
+});
+
+// display publication detail by id
+app.get('/publicationdetail/:id', (req,res,next) =>{
+    Publication.findById(req.params.id).then(documents =>{
+      console.log(documents);
+       res.json({
+        publication: documents
+       });
+    });
+});
+
+// display publications detail by student id
+app.get('/studentpublicationlist/:studentId', (req,res,next) =>{
+    const studentId = req.params.studentId;
+    Publication.find({userAccount: studentId}).then(documents =>{
+      res.json({
+        publications: documents
+      });
+    });
+  });
+
+
+
+//update publication information by id
+app.put('/publication/:id', (req, res, next)=>{
+  const id= req.params.id;
+  Publication.update({_id: id},{$set: 
+    //updateOps
+    {
+        userAccount:req.body.userAccount,//存储学生ID
+        PublicationTitle: req.body.PublicationTitle,
+        PublicationJournal: req.body.PublicationJournal,//刊物
+        PublicationDate: req.body.PublicationDate,//时间
+        PublicationLink: req.body.PublicationLink,//链接
+        PublicationAuthors: req.body.PublicationAuthors,
+        PublicationAbstract: req.body.PublicationAbstract,
+        PublicationLevel:req.body.PublicationLevel,
+    }
+  })
+  .exec()
+  .then((result)=>{
+      console.log(result);
+      res.status(200).json(result);
+  })
+  .catch(err =>{
+      console.log(err);
+      res.status(500).json({
+          error: err
+      })
+  });
+  res.status(201).json({
+    message: 'Handling PUT requests to /Connections',
+  });
+});
+
+// delete publication detail by id//
+app.delete('/publication/:id',(req, res, next) => {
+    const id= req.params.id;
+    Publication.remove({_id:id})
+    .exec()
+    .then(result=>{
+      res.status(200).json(result);
+    })
+    .catch(err=>{console.log(err);
+      res.status(500).json({
+        error:err
+      });
+    });
+  });
+
+//课外活动------------------------------------------------------------------------------------------------------------------
+//add new activitys to student
+app.post('/activityadd', (req,res,next) =>{
+  const activity = new Activity({
+    userAccount:req.body.userAccount,//存储学生ID
+    activityOrganization: req.body.activityOrganization,
+    activityStart:req.body.activityStart,//起始日期
+    activityEnd:req.body.activityEnd,//结束日期
+    activityPosition: req.body.activityPosition,
+    activityDescription:req.body.activityDescription,
+  });
+  activity.save();
+  res.status(201).json({
+    message: 'POST SEND SUCCESFFULY'
+  });
+});
+
+// display all activitys 
+app.get('/activitys',(req, res, next) => {
+    Activity.find().then(documents =>{
+    res.json({
+        activitys: documents
+    });
+  });
+});
+
+// display activity detail by id
+app.get('/activitydetail/:id', (req,res,next) =>{
+    Activity.findById(req.params.id).then(documents =>{
+      console.log(documents);
+       res.json({
+        activity: documents
+       });
+    });
+});
+
+// display activitys detail by student id
+app.get('/studentactivitylist/:studentId', (req,res,next) =>{
+    const studentId = req.params.studentId;
+    Activity.find({userAccount: studentId}).then(documents =>{
+      res.json({
+        activitys: documents
+      });
+    });
+  });
+
+
+
+//update activity information by id
+app.put('/activity/:id', (req, res, next)=>{
+  const id= req.params.id;
+  Activity.update({_id: id},{$set: 
+    //updateOps
+    {
+        userAccount:req.body.userAccount,//存储学生ID
+        activityOrganization: req.body.activityOrganization,
+        activityOrganization: req.body.activityOrganization,
+        activityStart:req.body.activityStart,//起始日期
+        activityEnd:req.body.activityEnd,//结束日期
+        activityPosition: req.body.activityPosition,
+        activityDescription:req.body.activityDescription,
+    }
+  })
+  .exec()
+  .then((result)=>{
+      console.log(result);
+      res.status(200).json(result);
+  })
+  .catch(err =>{
+      console.log(err);
+      res.status(500).json({
+          error: err
+      })
+  });
+  res.status(201).json({
+    message: 'Handling PUT requests to /Connections',
+  });
+});
+
+// delete activity detail by id//
+app.delete('/activity/:id',(req, res, next) => {
+    const id= req.params.id;
+    Activity.remove({_id:id})
+    .exec()
+    .then(result=>{
+      res.status(200).json(result);
+    })
+    .catch(err=>{console.log(err);
+      res.status(500).json({
+        error:err
+      });
+    });
+  });
+//奖项------------------------------------------------------------------------------------------------------------------
+//add new honors to student
+app.post('/honoradd', (req,res,next) =>{
+  const honor = new Honor({
+    userAccount:req.body.userAccount,//存储学生ID
+    honorDate: req.body.honorDate,
+    prize:req.body.prize,
+    percentage:req.body.percentage,
+    grantor: req.body.grantor,
+  });
+  honor.save();
+  res.status(201).json({
+    message: 'POST SEND SUCCESFFULY'
+  });
+});
+
+
+// display all honors 
+app.get('/honors',(req, res, next) => {
+    Honor.find().then(documents =>{
+    res.json({
+        honors: documents
+    });
+  });
+});
+
+// display honor detail by id
+app.get('/honordetail/:id', (req,res,next) =>{
+    Honor.findById(req.params.id).then(documents =>{
+      console.log(documents);
+       res.json({
+        honor: documents
+       });
+    });
+});
+
+// display honors detail by student id
+app.get('/studenthonorlist/:studentId', (req,res,next) =>{
+    const studentId = req.params.studentId;
+    Honor.find({userAccount: studentId}).then(documents =>{
+      res.json({
+        honors: documents
+      });
+    });
+  });
+
+
+
+//update activity information by id
+app.put('/honor/:id', (req, res, next)=>{
+  const id= req.params.id;
+  Honor.update({_id: id},{$set: 
+    //updateOps
+    {
+        userAccount:req.body.userAccount,//存储学生ID
+        honorDate: req.body.honorDate,
+        prize:req.body.prize,
+        percentage:req.body.percentage,
+        grantor: req.body.grantor,
+    }
+  })
+  .exec()
+  .then((result)=>{
+      console.log(result);
+      res.status(200).json(result);
+  })
+  .catch(err =>{
+      console.log(err);
+      res.status(500).json({
+          error: err
+      })
+  });
+  res.status(201).json({
+    message: 'Handling PUT requests to /Connections',
+  });
+});
+
+// delete honor detail by id//
+app.delete('/honor/:id',(req, res, next) => {
+    const id= req.params.id;
+    Honor.remove({_id:id})
+    .exec()
+    .then(result=>{
+      res.status(200).json(result);
+    })
+    .catch(err=>{console.log(err);
+      res.status(500).json({
+        error:err
+      });
+    });
+  });
+
 module.exports = app;
