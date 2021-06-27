@@ -16,7 +16,7 @@ export class ExperienceService {
   constructor(private http: HttpClient) { }
   
   getExperience() : any {
-    this.http.get<{experiences: Experience[]}>('http://localhost:3000/experiences').subscribe((Data) => {
+    this.http.get<{experiences: Experience[]}>('/api/experiences').subscribe((Data) => {
         this.experiences = Data.experiences;
         this.experience = this.experiences[0];
         
@@ -54,7 +54,7 @@ export class ExperienceService {
         project:project,
         achievement:achievement,
     };
-    this.http.post('http://localhost:3000/experienceadd', experience).subscribe((responseData) =>{
+    this.http.post('/api/experienceadd', experience).subscribe((responseData) =>{
         this.experienceS.push(experience);
         this.experiencesUpdated.next([...this.experienceS]);
     });

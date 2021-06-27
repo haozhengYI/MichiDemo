@@ -19,7 +19,7 @@ export class SchoolService {
   constructor(private http: HttpClient) { }
   
   getSchool() : any {
-    this.http.get<{schools: School[]}>('http://localhost:3000/schools').subscribe((Data) => {
+    this.http.get<{schools: School[]}>('/api/schools').subscribe((Data) => {
         //console.log(Data);
         this.schools = Data.schools;
         console.log(this.schools[0].userAccount);
@@ -73,7 +73,7 @@ export class SchoolService {
         recommNumber:recommNumber,//推荐信数量
         other:other,
     };
-    this.http.post('http://localhost:3000/schooladd', school).subscribe((responseData) =>{
+    this.http.post('/api/schooladd', school).subscribe((responseData) =>{
         this.schoolS.push(school);
         this.schoolsUpdated.next([...this.schoolS]);
     });

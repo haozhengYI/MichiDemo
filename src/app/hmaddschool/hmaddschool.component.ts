@@ -77,7 +77,7 @@ export class HmaddschoolComponent implements OnInit {
     }  
 
   ngOnInit() {
-    this.http.get<{hotels: HotelM[]}>('http://localhost:3000/hotels').subscribe((Data) => {
+    this.http.get<{hotels: HotelM[]}>('/api/hotels').subscribe((Data) => {
         this.hotels = Data.hotels;
         for(let h of this.hotels){
             if(h.userAccount===this.managerID){
@@ -92,7 +92,7 @@ export class HmaddschoolComponent implements OnInit {
         }
     });
     //展示 学生个人信息
-    this.http.get<{students: Student[]}>('http://localhost:3000/students').subscribe((Data) => {
+    this.http.get<{students: Student[]}>('/api/students').subscribe((Data) => {
         this.students = Data.students;
         for(let h of this.students){
             if(h._id===this.studentID){

@@ -43,7 +43,7 @@ export class HmorderComponent implements OnInit {
     }
 
     ngOnInit() {
-      this.http.get<{hotels: HotelM[]}>('http://localhost:3000/hotels').subscribe((Data) => {
+      this.http.get<{hotels: HotelM[]}>('/api/hotels').subscribe((Data) => {
           this.hotels = Data.hotels;
           for(let h of this.hotels){
               if(h.userAccount===this.managerID){
@@ -52,7 +52,7 @@ export class HmorderComponent implements OnInit {
           }
       });
 
-      this.http.get<{students: Student[]}>('http://localhost:3000/students/').subscribe((Data) => {
+      this.http.get<{students: Student[]}>('/api/students/').subscribe((Data) => {
           this.students = Data.students;
           console.log(this.students);
           for(let st of this.students){  
@@ -60,7 +60,7 @@ export class HmorderComponent implements OnInit {
           }
       });
 
-      this.http.get<{schools: School[]}>('http://localhost:3000/schools').subscribe((Data) => {
+      this.http.get<{schools: School[]}>('/api/schools').subscribe((Data) => {
           this.schools = Data.schools;
           for(let sc of this.schools){
             for(let test of this.student){
@@ -84,7 +84,7 @@ export class HmorderComponent implements OnInit {
     //console.log("输出"+st._id);
     let temp0 = (document.getElementById("studName") as HTMLInputElement).value;
     //console.log("输出" + temp0);
-    this.http.get<{schools: School[]}>('http://localhost:3000/studentschooldetail/'+temp0).subscribe((Data) => {
+    this.http.get<{schools: School[]}>('/api/studentschooldetail/'+temp0).subscribe((Data) => {
           this.schools = Data.schools;
           for(let sc of this.schools){
             for(let test of this.student){
@@ -160,7 +160,7 @@ export class HmorderComponent implements OnInit {
 
   delete(s){
     console.log(s._id);
-    this.http.delete('http://localhost:3000/schools/'+ s._id).subscribe((oooData) => {
+    this.http.delete('/api/schools/'+ s._id).subscribe((oooData) => {
         console.log("删除这个申请项目成功");
         window.location.reload();
     });

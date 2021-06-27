@@ -16,7 +16,7 @@ export class ActivityService {
   constructor(private http: HttpClient) { }
   
   getActivity() : any {
-    this.http.get<{activitys: Activity[]}>('http://localhost:3000/activitys').subscribe((Data) => {
+    this.http.get<{activitys: Activity[]}>('/api/activitys').subscribe((Data) => {
         this.activitys = Data.activitys;
         this.activity = this.activitys[0];
         
@@ -47,7 +47,7 @@ export class ActivityService {
         activityDescription:activityDescription,
 
     };
-    this.http.post('http://localhost:3000/activityadd', activity).subscribe((responseData) =>{
+    this.http.post('/api/activityadd', activity).subscribe((responseData) =>{
         this.activityS.push(activity);
         this.activitysUpdated.next([...this.activityS]);
     });

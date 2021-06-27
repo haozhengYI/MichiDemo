@@ -181,7 +181,7 @@ export class HmregisterComponent implements OnInit {
 
 
   ngOnInit() {
-    this.http.get<{user: user[]}>('http://localhost:3000/users').subscribe((userData) => {
+    this.http.get<{user: user[]}>('/api/users').subscribe((userData) => {
 
     this.user = userData.user;
     console.log(userData.user);
@@ -189,7 +189,7 @@ export class HmregisterComponent implements OnInit {
 
     });
     //获取HotelM 信息列表
-    this.http.get<{hotels: HotelM[]}>('http://localhost:3000/hotels').subscribe((Data) => {
+    this.http.get<{hotels: HotelM[]}>('/api/hotels').subscribe((Data) => {
         this.hotels = Data.hotels;
         for(let h of this.hotels){
             if(h.userAccount===this.managerID){

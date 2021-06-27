@@ -68,7 +68,9 @@ export class MainpageComponent implements OnInit {
         }if(this.user[index].Role=="student"){
           alert("Welcome "+this.user[index].Role+"!");
           //console.log(this.user[index].UserAccount);
-          this.http.get<{students: Student[]}>('http://localhost:3000/students').subscribe((Data) => {
+          // API_PATH + '/students'
+          
+          this.http.get<{students: Student[]}>('/api/students').subscribe((Data) => {
               this.students = Data.students;
               console.log(this.students);
               for(let h of this.students){
@@ -119,7 +121,7 @@ export class MainpageComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.http.get<{user: user[]}>('http://localhost:3000/users').subscribe((userData) => {
+    this.http.get<{user: user[]}>('/api/users').subscribe((userData) => {
 
     this.user = userData.user;
     console.log(userData.user);

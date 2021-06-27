@@ -29,7 +29,7 @@ export class HmmodifypasssuccComponent implements OnInit {
 
   ngOnInit() {
     
-    this.http.get<{hotels: HotelM[]}>('http://localhost:3000/hotels').subscribe((Data) => {
+    this.http.get<{hotels: HotelM[]}>('/api/hotels').subscribe((Data) => {
         this.hotels = Data.hotels;
         for(let h of this.hotels){
             if(h.userAccount===this.managerID){

@@ -14,7 +14,7 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getUsers() {
-    this.http.get<{user: user[]}>('http://localhost:3000/users').subscribe((userData) => {
+    this.http.get<{user: user[]}>('/api/users').subscribe((userData) => {
        
     this.user = userData.user;
     //console.log(userData.user[0]); 
@@ -33,7 +33,7 @@ export class UserService {
       Role: Role
     };
     console.log(user.UserAccount);
-    this.http.post('http://localhost:3000/users', user).subscribe((responseData) =>{
+    this.http.post('/api/users', user).subscribe((responseData) =>{
         this.user.push(user);
         this.usersUpdated.next([...this.user]);
     });

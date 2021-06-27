@@ -51,7 +51,7 @@ export class HmstudentComponent implements OnInit {
     }
   
   ngOnInit() {
-    this.http.get<{hotels: HotelM[]}>('http://localhost:3000/hotels').subscribe((Data) => {
+    this.http.get<{hotels: HotelM[]}>('/api/hotels').subscribe((Data) => {
         this.hotels = Data.hotels;
         for(let h of this.hotels){
             if(h.userAccount===this.managerID){
@@ -66,7 +66,7 @@ export class HmstudentComponent implements OnInit {
         }
     });
     //展示 学生个人信息
-    this.http.get<{students: Student[]}>('http://localhost:3000/students').subscribe((Data) => {
+    this.http.get<{students: Student[]}>('/api/students').subscribe((Data) => {
         this.students = Data.students;
         for(let h of this.students){
             if(h._id===this.studentID){
@@ -79,12 +79,12 @@ export class HmstudentComponent implements OnInit {
         }
     });
     //展示 此学生 选校信息
-    this.http.get<{schools: School[]}>('http://localhost:3000/studentschooldetail/' + this.studentID).subscribe((orderData) => {
+    this.http.get<{schools: School[]}>('/api/studentschooldetail/' + this.studentID).subscribe((orderData) => {
           console.log(orderData);
           this.schools = orderData.schools;
       });
     //展示 此学生 推荐人信息
-    this.http.get<{recommenders: Recommender[]}>('http://localhost:3000/studentrecommenderdetail/' + this.studentID).subscribe((orderData) => {
+    this.http.get<{recommenders: Recommender[]}>('/api/studentrecommenderdetail/' + this.studentID).subscribe((orderData) => {
       console.log(orderData);
       this.recommenders = orderData.recommenders;
     });        
