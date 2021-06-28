@@ -43,66 +43,231 @@
 			  <hr>
 			  <div class="panel-group" id="accordion" *ngIf="school.length > 0">
 				<div *ngFor="let k of school">
-				<div class="panel panel-success" *ngIf="k.state=='Offer'">
-				  <div class="panel-heading">
+				<div class="panel panel-success"  *ngIf="k.state=='Offer'">
+				  <div class="panel-heading" >
 					<h4 class="panel-title">
 					  <a data-toggle="collapse" data-parent="#accordion" 
 						href="#{{k._id}}">
-					  <b> {{k.univName}} </b> <br><small style="color: green;">{{k.state}}</small>
+					  <b> {{k.univName}} </b> 【 {{k.majorName}} 】 <br><small style="color: green;">{{k.state}}</small>
 					  </a>
 					</h4>
 				  </div>
-				  <div id="{{k._id}}" class="panel-collapse collapse in">
+				  <div id="{{k._id}}" class="panel-collapse collapse">
 					<div class="panel-body">
-						HHH
+						<table class="table table-bordered" >
+							<tbody>
+							  <tr>
+								<td style="background-color: gainsboro;">Deadline 1 </td>
+								<td style="background-color: gainsboro;">Deadline 2</td>
+								<td style="background-color: gainsboro;">Deadline 3</td>
+								<td style="background-color: gainsboro;">需要推荐人数量</td>	
+							  </tr>
+							  <tr>
+								<td >{{k.ddl1}} </td>
+								<td >{{k.ddl2}}</td>
+								<td >{{k.ddl3}}</td>	
+								<td >{{k.recommNumber}}</td>
+							  </tr>
+							  <tr>
+								<td style="background-color: gainsboro;">申请账号</td>
+								<td colspan="3">	
+									{{k.applyAccount}}
+								</td>
+							  </tr>
+							  <tr>
+								<td style="background-color: gainsboro;">申请密码</td>
+								<td colspan="3">	
+									{{k.applyPassword}}
+								</td>
+							  </tr>
+							  <tr>
+								<td style="background-color: gainsboro;">项目链接</td>
+								<td colspan="3">	
+									{{k.link}}
+								</td>
+							  </tr>
+							  <tr>
+								<td colspan="3">	
+									
+								</td>
+								<td >详细</td>
+							  </tr>
+							  
+							</tbody>
+						</table>
 					</div>
 				  </div>
+				  <br>
 				</div>
 				<div class="panel panel-primary" *ngIf="k.state=='进行中'">
 					<div class="panel-heading">
 					  <h4 class="panel-title">
 						<a data-toggle="collapse" data-parent="#accordion" 
 						  href="#{{k._id}}">
-						<b> {{k.univName}} </b> <br><small style="color: whitesmoke;">{{k.state}}</small>
+						<b> {{k.univName}} </b>【 {{k.majorName}} 】 <br><small style="color: whitesmoke;">{{k.state}}</small>
 						</a>
 					  </h4>
 					</div>
-					<div id="{{k._id}}" class="panel-collapse collapse in">
+					<div id="{{k._id}}" class="panel-collapse collapse">
 					  <div class="panel-body">
-						  HHH
+						<table class="table table-bordered" >
+							<tbody>
+							  <tr>
+								<td style="background-color: gainsboro;">Deadline 1 </td>
+								<td style="background-color: gainsboro;">Deadline 2</td>
+								<td style="background-color: gainsboro;">Deadline 3</td>
+								<td style="background-color: gainsboro;">需要推荐人数量</td>	
+							  </tr>
+							  <tr>
+								<td >{{k.ddl1}} </td>
+								<td >{{k.ddl2}}</td>
+								<td >{{k.ddl3}}</td>	
+								<td >{{k.recommNumber}}</td>
+							  </tr>
+							  <tr>
+								<td style="background-color: gainsboro;">申请账号</td>
+								<td colspan="3">	
+									{{k.applyAccount}}
+								</td>
+							  </tr>
+							  <tr>
+								<td style="background-color: gainsboro;">申请密码</td>
+								<td colspan="3">	
+									{{k.applyPassword}}
+								</td>
+							  </tr>
+							  <tr>
+								<td style="background-color: gainsboro;">项目链接</td>
+								<td colspan="3">	
+									{{k.link}}
+								</td>
+							  </tr>
+							  <tr>
+								<td colspan="3">	
+									
+								</td>
+								<td >详细</td>
+							  </tr>
+							  
+							</tbody>
+						</table>
 					  </div>
 					</div>
+					<br>
 				</div>
 				<div class="panel panel-warning" *ngIf="k.state=='已完成'">
 					<div class="panel-heading">
 					  <h4 class="panel-title">
 						<a data-toggle="collapse" data-parent="#accordion" 
 						  href="#{{k._id}}">
-						<b> {{k.univName}} </b> <br><small style="color: goldenrod;">{{k.state}}</small>
+						<b> {{k.univName}} </b> 【 {{k.majorName}} 】  <br><small style="color: goldenrod;">{{k.state}}</small>
 						</a>
 					  </h4>
 					</div>
-					<div id="{{k._id}}" class="panel-collapse collapse in">
+					<div id="{{k._id}}" class="panel-collapse collapse">
 					  <div class="panel-body">
-						  HHH
+						<table class="table table-bordered" >
+							<tbody>
+							  <tr>
+								<td style="background-color: gainsboro;">Deadline 1 </td>
+								<td style="background-color: gainsboro;">Deadline 2</td>
+								<td style="background-color: gainsboro;">Deadline 3</td>
+								<td style="background-color: gainsboro;">需要推荐人数量</td>	
+							  </tr>
+							  <tr>
+								<td >{{k.ddl1}} </td>
+								<td >{{k.ddl2}}</td>
+								<td >{{k.ddl3}}</td>	
+								<td >{{k.recommNumber}}</td>
+							  </tr>
+							  <tr>
+								<td style="background-color: gainsboro;">申请账号</td>
+								<td colspan="3">	
+									{{k.applyAccount}}
+								</td>
+							  </tr>
+							  <tr>
+								<td style="background-color: gainsboro;">申请密码</td>
+								<td colspan="3">	
+									{{k.applyPassword}}
+								</td>
+							  </tr>
+							  <tr>
+								<td style="background-color: gainsboro;">项目链接</td>
+								<td colspan="3">	
+									{{k.link}}
+								</td>
+							  </tr>
+							  <tr>
+								<td colspan="3">	
+									
+								</td>
+								<td >详细</td>
+							  </tr>
+							  
+							</tbody>
+						</table>
 					  </div>
 					</div>
+					<br>
 				</div>
 				<div class="panel panel-default" *ngIf="k.state=='拒信'">
 					<div class="panel-heading">
 					  <h4 class="panel-title">
 						<a data-toggle="collapse" data-parent="#accordion" 
 						  href="#{{k._id}}">
-						<b> {{k.univName}} </b> <br><small style="color: red;">{{k.state}}</small>
+						<b> {{k.univName}} </b> 【 {{k.majorName}} 】  <br><small style="color: red;">{{k.state}}</small>
 						</a>
 					  </h4>
 					</div>
-					<div id="{{k._id}}" class="panel-collapse collapse in">
+					<div id="{{k._id}}" class="panel-collapse collapse">
 					  <div class="panel-body">
-						  HHH
+						<table class="table table-bordered" >
+							<tbody>
+							  <tr>
+								<td style="background-color: gainsboro;">Deadline 1 </td>
+								<td style="background-color: gainsboro;">Deadline 2</td>
+								<td style="background-color: gainsboro;">Deadline 3</td>
+								<td style="background-color: gainsboro;">需要推荐人数量</td>	
+							  </tr>
+							  <tr>
+								<td >{{k.ddl1}} </td>
+								<td >{{k.ddl2}}</td>
+								<td >{{k.ddl3}}</td>	
+								<td >{{k.recommNumber}}</td>
+							  </tr>
+							  <tr>
+								<td style="background-color: gainsboro;">申请账号</td>
+								<td colspan="3">	
+									{{k.applyAccount}}
+								</td>
+							  </tr>
+							  <tr>
+								<td style="background-color: gainsboro;">申请密码</td>
+								<td colspan="3">	
+									{{k.applyPassword}}
+								</td>
+							  </tr>
+							  <tr>
+								<td style="background-color: gainsboro;">项目链接</td>
+								<td colspan="3">	
+									{{k.link}}
+								</td>
+							  </tr>
+							  <tr>
+								<td colspan="3">	
+									
+								</td>
+								<td >详细</td>
+							  </tr>
+							  
+							</tbody>
+						</table>
 					  </div>
 					</div>
+					<br>
 				</div>
+				
 			  </div>
 			  
 		  </div>

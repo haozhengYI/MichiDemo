@@ -183,22 +183,64 @@
               此选校所添加的推荐信总数：
               <small class="text-muted">{{recomletters.length}}</small>
             </h4>
-            <div class="panel-group" id="accordion" *ngIf="recomletters.length > 0">
-              <div class="panel panel-primary" *ngFor="let l of recomletters">
-                <div class="panel-heading">
+            <div *ngIf="recomletters.length > 0">
+              <div class="panel-group" id="accordion" *ngFor="let l of recomletters">
+                <div class="panel panel-success" *ngIf="l.state=='已提交'">
+                  <div class="panel-heading">
+                      <div class="row">
+                        <div class="col-sm-10"><b>{{l.recommenderName}} </b></div>
+                        <div class="col-sm-2"><small>{{l.state}}</small></div>
+                      </div>
+                  </div>
+                  <div class="panel-body">
                     <div class="row">
-                      <div class="col-sm-10"><b>{{l.recommenderName}} </b></div>
-                      <div class="col-sm-2"><small>{{l.state}}</small></div>
+                      <div class="col-sm-6"><b>{{l.type}} </b></div>
+                      <div class="col-sm-5">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-primary" href="/anew/todel/@a.id" onclick="return confirm('你确定要更改这个推荐信状态吗?')" (click)="updateLetterNoSubmit(l)">未提交</button>
+                          <button type="button" class="btn btn-primary" href="/anew/todel/@a.id" onclick="return confirm('你确定要更改这个推荐信状态吗?')" (click)="updateLetterSubmit(l)">已提交</button>
+                          <button type="button" class="btn btn-primary" href="/anew/todel/@a.id" onclick="return confirm('你确定要更改这个推荐信状态吗?')" (click)="updateLetterDiscard(l)">弃用</button>
+                        </div>
+                      </div>
                     </div>
+                  </div>
                 </div>
-                <div class="panel-body">
-                  <div class="row">
-                    <div class="col-sm-6"><b>{{l.type}} </b></div>
-                    <div class="col-sm-5">
-                      <div class="btn-group">
-                        <button type="button" class="btn btn-primary" href="/anew/todel/@a.id" onclick="return confirm('你确定要更改这个推荐信状态吗?')" (click)="updateLetterNoSubmit(l)">未提交</button>
-                        <button type="button" class="btn btn-primary" href="/anew/todel/@a.id" onclick="return confirm('你确定要更改这个推荐信状态吗?')" (click)="updateLetterSubmit(l)">已提交</button>
-                        <button type="button" class="btn btn-primary" href="/anew/todel/@a.id" onclick="return confirm('你确定要更改这个推荐信状态吗?')" (click)="updateLetterDiscard(l)">弃用</button>
+                <div class="panel panel-default" *ngIf="l.state=='未提交'">
+                  <div class="panel-heading">
+                      <div class="row">
+                        <div class="col-sm-10"><b>{{l.recommenderName}} </b></div>
+                        <div class="col-sm-2"><small>{{l.state}}</small></div>
+                      </div>
+                  </div>
+                  <div class="panel-body">
+                    <div class="row">
+                      <div class="col-sm-6"><b>{{l.type}} </b></div>
+                      <div class="col-sm-5">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-primary" href="/anew/todel/@a.id" onclick="return confirm('你确定要更改这个推荐信状态吗?')" (click)="updateLetterNoSubmit(l)">未提交</button>
+                          <button type="button" class="btn btn-primary" href="/anew/todel/@a.id" onclick="return confirm('你确定要更改这个推荐信状态吗?')" (click)="updateLetterSubmit(l)">已提交</button>
+                          <button type="button" class="btn btn-primary" href="/anew/todel/@a.id" onclick="return confirm('你确定要更改这个推荐信状态吗?')" (click)="updateLetterDiscard(l)">弃用</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-danger" *ngIf="l.state=='弃用'">
+                  <div class="panel-heading">
+                      <div class="row">
+                        <div class="col-sm-10"><b>{{l.recommenderName}} </b></div>
+                        <div class="col-sm-2"><small>{{l.state}}</small></div>
+                      </div>
+                  </div>
+                  <div class="panel-body">
+                    <div class="row">
+                      <div class="col-sm-6"><b>{{l.type}} </b></div>
+                      <div class="col-sm-5">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-primary" href="/anew/todel/@a.id" onclick="return confirm('你确定要更改这个推荐信状态吗?')" (click)="updateLetterNoSubmit(l)">未提交</button>
+                          <button type="button" class="btn btn-primary" href="/anew/todel/@a.id" onclick="return confirm('你确定要更改这个推荐信状态吗?')" (click)="updateLetterSubmit(l)">已提交</button>
+                          <button type="button" class="btn btn-primary" href="/anew/todel/@a.id" onclick="return confirm('你确定要更改这个推荐信状态吗?')" (click)="updateLetterDiscard(l)">弃用</button>
+                        </div>
                       </div>
                     </div>
                   </div>

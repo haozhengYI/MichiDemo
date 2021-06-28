@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Project description 
 
-In this final project, we should build a site with angular/cli for the front-end and REST API for the back-end. We plan to design a website for traveller to find a hotel where they can stay the night, and for hotel manager to upload the information of their hotel to make more benefit. The traveller could also book more than one hotels at the same time and the information of all hotels could be viewed as an order. Plus, we have the third kind of user who is called the admin. The account and password of admin is granted by the system and the task of admin is to view and delete users (including traveller and hotel manager), hotels and orders information.
+In this project, I build a site with angular/cli for the front-end and REST API for the back-end.
 
 ## Project requirement
 
@@ -15,12 +15,6 @@ Follow the folder structure in assignment 7 and 8.
 Proper documentation.
 Every team member have multiple commits on GitHub.
 
-## Team member and the assigned part of the entire project 
-
-Yanfei Peng: Traveller component including view hotels, add to order and view orders.
-Haozheng Yi: Hotel manager component including upload hotel information and complete personal information.
-Enshu Shang: Admin component including view and delete order, user and hotel information.
-Mingchang Chen: Mainpage component, including main page, new user registration and old user login.
 
 ## Development server
 

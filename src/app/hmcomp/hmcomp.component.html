@@ -14,8 +14,6 @@
             <li><a (click)="modifyP(hotel)">Change Password</a></li>
             <li><a (click)="comp(hotel)">Complete info</a></li>
             <li class="divider"></li>
-            <li><a (click)="hotelman(hotel)">Manage Hotel</a></li>
-            <li><a (click)="hmorder(hotel)">Order</a></li>
           </ul>
         </li>
         <li class="nav navbar-nav navbar-right">
@@ -35,8 +33,7 @@
       <li ><a (click)="main(hotel)">Home-{{hotel.userAccount}}</a></li>
       <li ><a (click)="modifyP(hotel)">Change Password</a></li>
       <li class="active"><a (click)="comp(hotel)">Complete info</a></li>
-      <li ><a (click)="hotelman(hotel)">Managehotel</a></li>
-      <li ><a (click)="hmorder(hotel)">Order</a></li>
+      <li ><a (click)="hotelman(hotel)">Manage Student</a></li>
     </ul>
 </div>
 <div id="main" class="well well-lg" >
@@ -64,13 +61,7 @@
                         <input  class="form-control" value="{{hotel.email}}" [(ngModel)]="email"  id="email" placeholder="Please input Hotel Telephone" name="email" style="width: 385px; "></div>
                       </td>
                   </tr>
-                  <tr>
-                    <td>Hotel photos
-                    </td>
-                    <td><div class="input-group"><span class="input-group-addon"><span class="glyphicon glyphicon-eye-close"></span></span>
-                      <input class="form-control" value="{{hotel.image}}" [(ngModel)]="image"  id="image" placeholder="Please input Hotel Price" name="image" style="width: 385px; "></div>
-                    </td>
-                </tr>
+                  
                   <tr>
                       <td>
                       </td>
