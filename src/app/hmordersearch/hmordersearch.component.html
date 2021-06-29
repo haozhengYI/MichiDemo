@@ -51,16 +51,13 @@
         <tr>
           <th scope="col" colspan="5"><h3>
             申请项目总数：
-            <small class="text-muted">{{schools.length}}</small>
+            <small class="text-muted">{{school.length}}</small>
           </h3></th>
           <th scope="col" colspan="3">
             <form (submit)="sele(postForm)" #postForm="ngForm" ngNativeValidate>
               <div class="form-group" >
                 选择学生：
-                <select class="form-control" id="studName"  *ngIf="student.length > 0" ng-model="fLevelBefore" ng-change="changervar('fLevelBefore')">
-                  <option  *ngFor="let st of student"  value="{{st._id}}"> {{st.firstName}}  {{st.lastName}}  </option>
-                </select>
-                <button class="btn btn-primary">查询</button>
+               {{studentName}}
               </div>
             </form>
           </th>

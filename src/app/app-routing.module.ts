@@ -21,11 +21,14 @@ import { HmregisterComponent} from './hmregister/hmregister.component';
 import {HmstudentComponent} from './hmstudent/hmstudent.component';
 import {HmaddschoolComponent} from './hmaddschool/hmaddschool.component';
 import {HmschoolComponent} from './hmschool/hmschool.component';
+import {HmordersearchComponent} from './hmordersearch/hmordersearch.component';
 
 import {StudentmainComponent} from './studentmain/studentmain.component';
 import {StudentaddrecommComponent} from './studentaddrecomm/studentaddrecomm.component';
 import {StudentinfoComponent} from './studentinfo/studentinfo.component';
 import {StudentrecComponent} from './studentrec/studentrec.component';
+import {StudentschoolComponent} from './studentschool/studentschool.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/mainpage', pathMatch: 'full' },
@@ -51,11 +54,13 @@ const routes: Routes = [
   { path: 'hmstudent', component: HmstudentComponent},
   { path: 'hmaddschool', component: HmaddschoolComponent},
   { path: 'hmschool', component:HmschoolComponent},
+  { path: 'hmordersearch', component:HmordersearchComponent},
 
   { path: 'studentmain', component:StudentmainComponent},
   { path: 'studentaddrecomm', component:StudentaddrecommComponent},
   { path: 'studentinfo', component:StudentinfoComponent},
   { path: 'studentrec', component:StudentrecComponent},
+  { path: 'studentschool', component:StudentschoolComponent},
 ];
 
 @NgModule({

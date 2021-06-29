@@ -34,11 +34,13 @@ import { HmregisterComponent } from './hmregister/hmregister.component';
 import { HmstudentComponent} from './hmstudent/hmstudent.component';
 import {HmaddschoolComponent} from './hmaddschool/hmaddschool.component';
 import {HmschoolComponent} from './hmschool/hmschool.component';
+import {HmordersearchComponent} from './hmordersearch/hmordersearch.component';
 
 import {StudentmainComponent} from './studentmain/studentmain.component';
 import {StudentaddrecommComponent} from './studentaddrecomm/studentaddrecomm.component';
 import {StudentinfoComponent} from './studentinfo/studentinfo.component';
-import {StudentrecComponent} from './studentrec/studentrec.component'
+import {StudentrecComponent} from './studentrec/studentrec.component';
+import {StudentschoolComponent} from './studentschool/studentschool.component';
 
 @NgModule({
   declarations: [
@@ -73,11 +75,13 @@ import {StudentrecComponent} from './studentrec/studentrec.component'
     HmstudentComponent,
     HmaddschoolComponent,
     HmschoolComponent,
+    HmordersearchComponent,
 
     StudentmainComponent,
     StudentaddrecommComponent,
     StudentinfoComponent,
-    StudentrecComponent
+    StudentrecComponent,
+    StudentschoolComponent
 
   ],
   imports: [

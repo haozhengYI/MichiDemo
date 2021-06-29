@@ -115,6 +115,18 @@ export class StudentmainComponent implements OnInit {
     this.router.navigate(['/studentrec'], navigationExtras);
   }
 
+  //direct to the school detail page
+  schooldetail(k) {
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+       "studentUserAcc" : this.student.userAccount,
+       "studentID" : this.student._id,
+       "schoolID"  : k._id,
+      }
+    };
+    this.router.navigate(['/studentschool'], navigationExtras);
+  }
+
   ngOnDestroy() {
     this.stSub.unsubscribe();
   }
