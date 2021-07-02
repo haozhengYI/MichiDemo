@@ -37,7 +37,7 @@ export class StudentaddrecommComponent implements OnInit {
     }
   
     addschool(form: NgForm){
-      this.ngOnInit();
+      //this.ngOnInit();
       
       this.recommenderService.addRecommender("", this.studentID,form.value.firstName, form.value.lastName, form.value.email,
         form.value.phone, form.value.title, form.value.location, form.value.gender, form.value.education, form.value.organization,
@@ -47,6 +47,7 @@ export class StudentaddrecommComponent implements OnInit {
         const navigationExtras: NavigationExtras = {
           queryParams: {
            "studentUserAcc" : this.studentUserAcc,
+           "studentID" : this.studentID,
           }
         };
         this.router.navigate(['/studentmain'], navigationExtras);

@@ -141,116 +141,117 @@
 					</div>
 					<div id="demo" class="collapse"><hr>
 					  <p>请仔细填写，已经提交无法修改</p>
-					  <form (submit)="addEducation(postForm)" #postForm="ngForm" ngNativeValidate>
-					<fieldset class="form-group">
-					  <table class="table table-bordered" >
-						<tbody>
-						  <tr>
-							<td >类型</td>
-							<td colspan="4">	
-								<div class="form-check" >
-									<label class="form-check-label">
-									  <input type="radio" class="form-check-input" name="type" id="type1" value="高中"  ngModel required>
-									  高中
-									</label>
-									<label class="form-check-label">
-									  <input type="radio" class="form-check-input" name="type" id="type2" value="本科"  ngModel required>
-									  本科
-									</label>
-									<label class="form-check-label">
-									  <input type="radio" class="form-check-input" name="type" id="type3" value="研究生" ngModel required>
-									  研究生
-									</label>
-								  </div>
-							</td>	
-						  </tr>	
-						  <tr>
-							<td >University 学校</td>
-							<td colspan="4">	
-								<input class="form-control" id="educationName"  name="educationName" style="width: 800px;" ngModel>
-								<small class="form-text text-muted">请输入学校全称</small>
-							</td>	
-						  </tr>
-						  <tr>
-							<td >Address 学校地址</td>
-							<td colspan="4">	
-								<input class="form-control" id="educationLocation"  name="educationLocation" style="width: 800px;" ngModel>
-								<small class="form-text text-muted">地址请包含邮编</small>
-	
-							</td>
-						  </tr>
-						  <tr>
-							<td >在校日期 </td>
-							<td >From</td>
-							<td >	
-								<input class="form-control" id="educationStart"   name="educationStart" style="width: 200px;" ngModel>
-								<small class="form-text text-muted">格式MM/DD/YYYY</small>
-							</td>	
-							<td >To</td>
-							<td >	
-								<input class="form-control" id="educationEnd"   name="educationEnd" style="width: 200px;" ngModel>
-								<small class="form-text text-muted">格式MM/DD/YYYY</small>
-							</td>
-						  </tr>
-						  <tr>
-							<td >Major 专业 <br><small class="form-text text-muted">请仔细核对专业名称</small></td>
-							<td colspan="4">	
-								<input class="form-control" id="major"  name="major" style="width: 800px;" ngModel>
-							</td>
-						  </tr>
-						  <tr>
-							<td >Degree 学位 <br><small class="form-text text-muted">BS/BA/BM/BE（请务必核实学位名称）</small></td>
-							<td colspan="4">	
-								<input class="form-control" id="Degree"  name="Degree" style="width: 800px;" ngModel>
-							</td>
-						  </tr>
-						  <tr >
-							<td colspan="2">Overall GPA<br><small class="form-text text-muted">若成绩单直接体现则照此填写。</small>
-								<br><small class="form-text text-muted">若成绩单直接体现则照此填写。如不显示，简单计算方法：(单科成绩×学分)/ 总学分数</small>
-							</td>
-							<td colspan="3">	
-								<input class="form-control" id="GPA"  name="GPA" style="width: 400px;" ngModel>
-								<small class="form-text text-muted">格式为 XXX/100,  XXX/4.0  or  _____/_____</small>
-							</td>
-						  </tr>
-						  <tr>
-							<td >Major GPA 专业GPA <br><small class="form-text text-muted">如果有请如实填写</small></td>
-							<td colspan="4">	
-								<input class="form-control" id="MajorGPA"  name="MajorGPA" style="width: 800px;" ngModel>
-							</td>
-						  </tr>
-						  <tr>
-							<td >Second Degree or Minor 二学位或辅修</td>
-							<td colspan="4">	
-								<input class="form-control" id="SecondDegree"  name="SecondDegree" style="width: 800px;" ngModel>
-							</td>
-						  </tr>
-						  <tr >
-							<td colspan="2">Overall GPA<br><small class="form-text text-muted">若成绩单直接体现则照此填写。</small>
-								<br><small class="form-text text-muted">若成绩单直接体现则照此填写。如不显示，简单计算方法：(单科成绩×学分)/ 总学分数</small>
-							</td>
-							<td colspan="3">	
-								<input class="form-control" id="SecondGPA"  name="SecondGPA" style="width: 400px;" ngModel>
-								<small class="form-text text-muted">格式为 XXX/100,  XXX/4.0  or  _____/_____</small>
-							</td>
-						  </tr>
-						  <tr>
-							<td >其他信息</td>
-							<td colspan="4">	
-								<input class="form-control" id="other"  name="other" style="width: 800px;" ngModel>
-							</td>
-						  </tr>
-						  <tr>
-							<td colspan="4"></td>
-							<td >	
-								<button  class="btn btn-primary" >添加</button>
-							</td>
-						  </tr>
-						  
-						</tbody>
-					</table>
-					</fieldset>
+					
+					<form (submit)="addEducation(postForm)" #postForm="ngForm" ngNativeValidate>
+					
+						<table class="table table-bordered" >
+						  <tbody>
+							<tr>
+							  <td >类型</td>
+							  <td colspan="4">	
+								  <div class="form-check" >
+									  <label class="form-check-label">
+										<input type="radio" class="form-check-input" name="type" id="type1" value="高中"  ngModel required>
+										高中
+									  </label>
+									  <label class="form-check-label">
+										<input type="radio" class="form-check-input" name="type" id="type2" value="本科"  ngModel required>
+										本科
+									  </label>
+									  <label class="form-check-label">
+										<input type="radio" class="form-check-input" name="type" id="type3" value="研究生" ngModel required>
+										研究生
+									  </label>
+									</div>
+							  </td>	
+							</tr>	
+							<tr>
+							  <td >University 学校</td>
+							  <td colspan="4">	
+								  <input class="form-control" id="educationName"  name="educationName" style="width: 800px;" ngModel>
+								  <small class="form-text text-muted">请输入学校全称</small>
+							  </td>	
+							</tr>
+							<tr>
+							  <td >Address 学校地址</td>
+							  <td colspan="4">	
+								  <input class="form-control" id="educationLocation"  name="educationLocation" style="width: 800px;" ngModel>
+								  <small class="form-text text-muted">地址请包含邮编</small>
+	  
+							  </td>
+							</tr>
+							<tr>
+							  <td >在校日期 </td>
+							  <td >From</td>
+							  <td >	
+								  <input class="form-control" id="educationStart"   name="educationStart" style="width: 200px;" ngModel>
+								  <small class="form-text text-muted">格式MM/DD/YYYY</small>
+							  </td>	
+							  <td >To</td>
+							  <td >	
+								  <input class="form-control" id="educationEnd"   name="educationEnd" style="width: 200px;" ngModel>
+								  <small class="form-text text-muted">格式MM/DD/YYYY</small>
+							  </td>
+							</tr>
+							<tr>
+							  <td >Major 专业 <br><small class="form-text text-muted">请仔细核对专业名称</small></td>
+							  <td colspan="4">	
+								  <input class="form-control" id="major"  name="major" style="width: 800px;" ngModel>
+							  </td>
+							</tr>
+							<tr>
+							  <td >Degree 学位 <br><small class="form-text text-muted">BS/BA/BM/BE（请务必核实学位名称）</small></td>
+							  <td colspan="4">	
+								  <input class="form-control" id="Degree"  name="Degree" style="width: 800px;" ngModel>
+							  </td>
+							</tr>
+							<tr >
+							  <td colspan="2">Overall GPA<br><small class="form-text text-muted">若成绩单直接体现则照此填写。</small>
+								  <br><small class="form-text text-muted">若成绩单直接体现则照此填写。如不显示，简单计算方法：(单科成绩×学分)/ 总学分数</small>
+							  </td>
+							  <td colspan="3">	
+								  <input class="form-control" id="GPA"  name="GPA" style="width: 400px;" ngModel>
+								  <small class="form-text text-muted">格式为 XXX/100,  XXX/4.0  or  _____/_____</small>
+							  </td>
+							</tr>
+							<tr>
+							  <td >Major GPA 专业GPA <br><small class="form-text text-muted">如果有请如实填写</small></td>
+							  <td colspan="4">	
+								  <input class="form-control" id="MajorGPA"  name="MajorGPA" style="width: 800px;" ngModel>
+							  </td>
+							</tr>
+							<tr>
+							  <td >Second Degree or Minor 二学位或辅修</td>
+							  <td colspan="4">	
+								  <input class="form-control" id="SecondDegree"  name="SecondDegree" style="width: 800px;" ngModel>
+							  </td>
+							</tr>
+							<tr >
+							  <td colspan="2">Overall GPA<br><small class="form-text text-muted">若成绩单直接体现则照此填写。</small>
+								  <br><small class="form-text text-muted">若成绩单直接体现则照此填写。如不显示，简单计算方法：(单科成绩×学分)/ 总学分数</small>
+							  </td>
+							  <td colspan="3">	
+								  <input class="form-control" id="SecondGPA"  name="SecondGPA" style="width: 400px;" ngModel>
+								  <small class="form-text text-muted">格式为 XXX/100,  XXX/4.0  or  _____/_____</small>
+							  </td>
+							</tr>
+							<tr>
+							  <td >其他信息</td>
+							  <td colspan="4">	
+								  <input class="form-control" id="other"  name="other" style="width: 800px;" ngModel>
+							  </td>
+							</tr>
+							<tr>
+							  <td colspan="4"></td>
+							  <td >	
+								  <button  class="btn btn-primary" >添加</button>
+							  </td>
+							</tr>
+							
+						  </tbody>
+					  	</table> 
 					</form>
+
 					</div>
 					<div class="panel-group" id="accordion" *ngIf="education.length > 0">
 						<div class="panel panel-primary" *ngFor="let k of education">
@@ -1109,7 +1110,7 @@
 						</tbody>
 					</table>
 				  </div>
-				  <div id="family" class="tab-pane fade in active">
+				  <div id="family" class="tab-pane fade">
 					<hr>
 					<form id="form2" action="" method="post">
 					<table class="table table-bordered" >
