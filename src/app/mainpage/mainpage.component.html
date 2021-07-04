@@ -1,67 +1,525 @@
-<body class="bg-gradient-primary">
-    <div class="container">
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+            </button>
+            <a class="navbar-brand">
+                <img src="https://i.ibb.co/zrhz7DH/Wechat-IMG5.jpg" alt="Wechat-IMG5" border="0" style="width: 20%;">
+            </a>
+                
 
-        <!-- Outer Row -->
-        <div class="row justify-content-center">
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#instructor">教师团队</a></li>
+              <li><a href="#courses">王牌课程</a></li>
+              <li><a href="#case">学生案例</a></li>
+              <li><a href="#footer">联系我们</a></li>
+              <li><a >课程介绍</a></li>
+              <li><a >备考干货</a></li>
+              <li>
+                <a href="#" data-toggle="modal" data-target="#exampleModalCenter" >
+                    学生登录
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-            <div class="col-xl-10 col-lg-12 col-md-9">
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">学生登录入口</h5>
+                </div>
+                <div class="modal-body">
+                    <form class="user" >
+                        <div class="form-group">
+                            <input type="email" class="form-control form-control-user"
+                            id="login-user-account" aria-describedby="emailHelp"
+                                placeholder="Enter Email Address...">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control form-control-user"
+                            id="login-user-password" placeholder="Password">
+                        </div>
+                    </form>    
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn" style="background-color: #02351F; color:white" (click)="checklogin()" data-dismiss="modal">Log In</button>
+                </div>
+            </div>
+            </div>
+        </div>
 
-                <div class="card o-hidden border-0 shadow-lg my-5">
-                    <div class="card-body p-0">
-                        <!-- Nested Row within Card Body -->
-                        <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
-                            <div class="col-lg-6">
-                                <div class="p-5">
-                                    <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Welcome!</h1>
-                                    </div>
-                                    <form class="user">
-                                        <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
-                                            id="login-user-account" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address...">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                            id="login-user-password" placeholder="Password">
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Remember
-                                                    Me</label>
-                                            </div>
-                                        </div>
-                                        <a (click)="checklogin()" class="btn btn-primary btn-user btn-block">
-                                            Login
-                                        </a>
-                                        <hr>
-                                        <a href="" class="btn btn-google btn-user btn-block">
-                                            <i class="fab fa-google fa-fw"></i> Login with Google
-                                        </a>
-                                        <a href="" class="btn btn-facebook btn-user btn-block">
-                                            <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
-                                        </a>
-                                    </form>
-                                    <hr>
-                                    <div class="text-center">
-                                        <a class="small" href="">Forgot Password?</a>
-                                    </div>
-                                    <div class="text-center">
-                                        <a class="small" routerLink="/login">Create an Account!</a>
-                                    </div>
-                                </div>
+      </nav>
+
+
+
+      <div class="container" style="width: 100%;">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators" >
+            <li data-target="#myCarousel" data-slide-to="0" class="active" ></li>
+            <li data-target="#myCarousel" data-slide-to="1" ></li>
+            <li data-target="#myCarousel" data-slide-to="2" ></li>
+          </ol>
+      
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+      
+            <div class="item active">
+              <img src="https://www.w3schools.com/bootstrap/la.jpg" alt="Los Angeles" style="width:100%;">
+              <div class="carousel-caption">
+                <h3>Michi Academy</h3>
+                <p>目前市面上最完整、教研质量最高的SAT/GRE备考材料，乐于分享第一手的GMAT、托福考试材料与全球的留学生。致力于把效率灌输于每节课、每种考试以及学习习惯。</p>
+              </div>
+            </div>
+      
+            <div class="item">
+              <img src="https://www.w3schools.com/bootstrap/chicago.jpg" alt="Chicago" style="width:100%;">
+              <div class="carousel-caption">
+                <h3>为什么选择Michi</h3>
+                <p>学生选择我们，并不是因为他们会持续需要老师的帮助，而是可以从这里开始独立的留学之旅。
+                </p>
+              </div>
+            </div>
+          
+            <div class="item">
+              <img src="https://www.w3schools.com/bootstrap/ny.jpg" alt="New York" style="width:100%;">
+              <div class="carousel-caption">
+                <h3>Michi Academy</h3>
+                <p>10年的教育积累，学生好评率99%以上，因拥有自己的教学特色。</p>
+                <p><button class="btn btn-default btn-lg">入学测试</button>
+                </p>
+              </div>
+            </div>
+        
+          </div>
+      
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" style="color: white;"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" style="color: white;"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+
+    
+    <!-- Container (教师介绍 Section) -->
+    <div class="container" id="instructor">
+        <div class="section-title">
+            <br>
+            <h2>教师团队</h2>         
+            <br>
+            <h4>超过10年教学经验，核心教师团队</h4>
+          </div>
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="thumbnail">
+                            <img alt="300x200" src="http://www.yxprep.com/assets/img/woman.png" style="width: 30%;"/>
+                            <div class="caption">
+                                <h3>
+                                    Ms.Yuxin
+                                </h3>
+                                <p>
+                                    【负责人老师】
+                                </p>
+                                <p>
+                                    前波士顿教育学院招生官，双科硕士。拥有7年的教学经验，面授学生超万人次。曾在某北美东岸大型考培机构任教学总监。GRE阅读提分率100%。对教学的热忱让她不对创新授课方式，迭代考试材料，充分挖掘学生的潜能。
+                                </p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="thumbnail">
+                            <img alt="300x200" src="http://www.yxprep.com/assets/img/woman.png" style="width: 30%;"/>
+                            <div class="caption">
+                                <h3>
+                                    Ms.Shelly
+                                </h3>
+                                <p>
+                                    【数学/AMC专项老师】
+                                </p>
+                                <p>
+                                    纽约大学工程学硕士，善于从逻辑角度出发，通过归纳总结梳理完整的知识体系。在讲解与练习中，根据学生的具体情况对各个薄弱项进行重点攻克，从而极大的提高得分和提分效率。
+                                </p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="thumbnail">
+                            <img alt="300x200" src="http://www.yxprep.com/assets/img/man.png" style="width: 30%;"/>
+                            <div class="caption">
+                                <h3>
+                                    Mr.Rick
+                                </h3>
+                                <p>
+                                    【GRE/GMAT语文专项老师】
+                                </p>
+                                <p>
+                                    乔治亚大学，心理学博士。GRE填空和GMAT语法授课时长3年+。深谙逻辑之道。其独创的方程式解析法和词汇课大受SAT和GRE学生的欢迎。通过词根词缀的讲解也曾帮助数十位SSAT考生摆脱背单词的魔咒。
+                                </p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="thumbnail">
+                            <img alt="300x200" src="http://www.yxprep.com/assets/img/man.png" style="width: 30%;"/>
+                            <div class="caption">
+                                <h3>
+                                    Mr.Yi
+                                </h3>
+                                <p>
+                                    【托福教研组组长】
+                                </p>
+                                <p>
+                                    清华大学工作室背景。曾在国内某知名教学机构任职数年语法和写作教学教研主任，堪称基础语法专家。其独创的公式教学法可以让学生在不认识单词的情况下也能顺利拆解长难句的复杂逻辑关系，提高学生们在SAT、GRE阅读中的效率。
+                                </p>
+                                
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
-
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="thumbnail">
+                            <img alt="300x200" src="http://www.yxprep.com/assets/img/woman.png" style="width: 30%;"/>
+                            <div class="caption">
+                                <h3>
+                                    Ms. Claire
+                                </h3>
+                                <p>
+                                    【语法/写作专项老师】
+                                </p>
+                                <p>
+                                    全科语法老师。教育系背景出身的她从事近6年第二语言习得研究。精通汉语、日语和英语。善于引导学生从本质理解SAT语法和句法逻辑，在最短的时间内高效备考。
+                                </p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="thumbnail">
+                            <img alt="300x200" src="http://www.yxprep.com/assets/img/woman.png" style="width: 30%;"/>
+                            <div class="caption">
+                                <h3>
+                                    Ms.Qiu
+                                </h3>
+                                <p>
+                                    【AP/SAT Sub专项老师】
+                                </p>
+                                <p>
+                                    波士顿大学，生物医学博士。AP和SAT科目STEM项目专项老师。长达4年的教学过程中，邱老师的提分率一直稳居100%。量产AP 5分和SAT II 800的学生，加上她自带的学霸气质和亲和力，广受学生和家长的好评。
+                                </p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="thumbnail">
+                            <img alt="300x200" src="http://www.yxprep.com/assets/img/man.png" style="width: 30%;"/>
+                            <div class="caption">
+                                <h3>
+                                    Mr. Sean
+                                </h3>
+                                <p>
+                                    【阅读/写作专项老师】
+                                </p>
+                                <p>
+                                    纽约大学硕士。语言学背景给了他深厚的语法基础和写作能力。能够熟练的在英文和日语之间切换。6年的教学过程里，Sean老师为Michi团队开发了一套“interactive reading”的教学方法，从写作的角度出发，帮助学生掌握阅读技巧，从而达到高效备考。
+                                </p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="thumbnail">
+                            <img alt="300x200" src="http://www.yxprep.com/assets/img/woman.png" style="width: 30%;"/>
+                            <div class="caption">
+                                <h3>
+                                    Ms.Federico
+                                </h3>
+                                <p>
+                                    【AP/SAT Sub专项老师】
+                                </p>
+                                <p>
+                                    南加大心理学和法医人类学双学位。在应试和辅导行业拥有近10年的经验。在ACT和AP科目上，通过直接针对每个学生的学习风格和能力进行量身定制的教学方法，已帮助数百名学生实现了上大学的学习目标。
+                                </p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <!-- Container (王牌课程 Section) -->
+  <div id="courses" class="container-fluid">
+    <div class="section-title">
+        <br>
+        <h2>王牌课程</h2>         
+        <br>
+        <h4>
+        </h4>
+      </div>
+    <div class="row">
+      <div class="col-sm-8">
+        <h2>20小时GRE Verbal 155分冲刺营</h2><br>
+        <h4>这是一项专为常年徘徊在Verbal 146-150的选手准备的高效率产品。集结团队核心教研成员，只需8小时，打破你对GRE阅读“长，多，乱”的一切困扰，利用方程式的方法快速攻破填空。步骤化的解题技巧，是我们创造高分的核心。</h4><br>
+        <p ><strong>适用人群</strong></p>
+        <p>美本GPA 3.0以上；单词自主学习高能者</p>
+      </div>
+      <div class="col-sm-4">
+        
+        <img src="http://www.yxprep.com/assets/img/features-1.svg" alt="Wechat-IMG5" border="0" style="width: 100%;">
+      </div>
+    </div>
+  </div>
+  
+  <div class="container-fluid bg-grey">
+    <div class="row">
+      <div class="col-sm-4">
+        <img src="http://www.yxprep.com/assets/img/features-2.svg" alt="Wechat-IMG5" border="0" style="width: 100%;">
+        
+      </div>
+      <div class="col-sm-8">
+        <h2>8小时GRE阅读高分课程</h2><br>
+        <h4>一切基于读懂句子就会做阅读的方法都是耍流氓。2小时之内带你突破60秒读懂一篇GRE文章的束缚。1小时让你快速理解官方宣称的各种题型其实只考2种能力。先方法再套路，我们的阅读不止是为了考试。</h4><br>
+        <p ><strong>适用人群</strong></p>
+        <p>做过1次以上的GRE完整模考/考试学员；参加过6小时长难句集训学员</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-8">
+        <h2>SAT全科辅导1500冲刺</h2><br>
+        <h4>个性化定制的课程设计。快速定位和解决备考过程中的知识漏洞，审题问题，以及老师们常说的“偏科”。完整课时不超过50小时。只要你愿意负责完成作业，我们就负责带你冲刺1500。</h4><br>
+        <p ><strong>适用人群</strong></p>
+        <p>美高/国际高中3年在读生；SAT成绩1360+；阅读单科28+</p>
+      </div>
+      <div class="col-sm-4">
+        
+        <img src="http://www.yxprep.com/assets/img/features-3.svg" alt="Wechat-IMG5" border="0" style="width: 100%;">
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Container (学生案例) Section) -->
+  <div id="case" class="container">
+    <div class="section-title">
+        <br>
+        <h2>学生案例</h2>         
+        <br>
+        <h4>
+        </h4>
+      </div>
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="300x200" src="http://www.yxprep.com/assets/img/boy.png" style="width: 25%;"/>
+						<div >
+							<h3 class="caption">
+								吴*宇
+							</h3>
+							<p>
+								【就读院校】：伊利诺伊香槟大学
+							</p>
+							<p>
+								【入学成绩】：GRE：170+145
+							</p>
+                            <p>
+								【报名课程】：20小时GRE155冲刺营
+							</p>
+							<p>
+								【毕业成绩】：170+155
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="300x200" src="http://www.yxprep.com/assets/img/girl.png" style="width: 25%;"/>
+						<div >
+							<h3 class="caption">
+								陈*彰
+							</h3>
+							<p>
+								【就读院校】：伊利诺伊香槟大学
+							</p>
+							<p>
+								【入学成绩】：GRE：169+146
+							</p>
+                            <p>
+								【报名课程】：20小时GRE线上定制  
+							</p>
+							<p>
+								【毕业成绩】：170+158
+							</p>
+						</div>
+					</div>
+				</div>
+                <div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="300x200" src="http://www.yxprep.com/assets/img/boy.png" style="width: 25%;"/>
+						<div >
+							<h3 class="caption">
+								李*麟
+							</h3>
+							<p>
+								【就读院校】：亚利桑那州立大学
+							</p>
+							<p>
+								【入学成绩】：GMAT：550
+							</p>
+                            <p>
+								【报名课程】：20小时GMAT线上定制
+							</p>
+							<p>
+								【毕业成绩】：640
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="300x200" src="http://www.yxprep.com/assets/img/boy.png" style="width: 25%;"/>
+						<div >
+							<h3 class="caption">
+								赵*然
+							</h3>
+							<p>
+								【就读院校】：纽约大学SPS学院
+							</p>
+							<p>
+								【入学成绩】：GRE：169+148
+							</p>
+                            <p>
+								【报名课程】：16小时GRE线上定制  
+							</p>
+							<p>
+								【毕业成绩】：169+155
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="300x200" src="http://www.yxprep.com/assets/img/boy.png" style="width: 25%;"/>
+						<div >
+							<h3 class="caption">
+								王*旭
+							</h3>
+							<p>
+								【就读院校】：吉林大学
+							</p>
+							<p>
+								【入学成绩】：GRE：165+130
+							</p>
+                            <p>
+								【报名课程】：20小时GRE线上定制  
+							</p>
+							<p>
+								【毕业成绩】：168+152
+							</p>
+						</div>
+					</div>
+				</div>
+                <div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="300x200" src="http://www.yxprep.com/assets/img/boy.png" style="width: 25%;"/>
+						<div >
+							<h3 class="caption">
+								赵*喆
+							</h3>
+							<p>
+								【就读院校】：东北大学
+							</p>
+							<p>
+								【入学成绩】：SAT：1170
+							</p>
+                            <p>
+								【报名课程】：40小时SAT线上定制  
+							</p>
+							<p>
+								【【毕业成绩】：1440
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  </div>
+
+  <!-- Container (Footer Section) -->
+<div id="footer" class="panel-footer">
+    <h2 class="text-center" style="color: white;">联系我们</h2>
+    <br>
+    <div class="container" style="color: white;">
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <div class="row clearfix">
+                    <div class="col-md-4 column">
+                        <p>联系方式</p>
+                        <div class="container">
+                            <div class="row clearfix">
+                                <div class="col-md-12 column">
+                                    <address> <strong>Michi Academy Inc.</strong><br />  4199 Campus Dr, Suite 550<br /> Irvine, CA, 92612<br /> United States<br /></address>
+                                </div>
+                            </div>
+                        </div>
+                        <p><span class="glyphicon glyphicon-phone"></span>客服微信号: YuxinPREP</p>
+                        <p><span class="glyphicon glyphicon-envelope"></span>邮件: YuxinPREP@gmail.com</p>
+                    </div>
+                    <div class="col-md-4 column">
+                        <p>客服微信二维码</p>
+                        <div class="container">
+                            <img src="http://www.yxprep.com/assets/img/qr1.jpg" alt="Wechat-IMG5" border="0" style="width: 12%;">
+                        </div>
+                    </div>
+                    <div class="col-md-4 column">
+                        <p>公众号二维码</p>
+                        <div class="container">
+                            <img src="http://www.yxprep.com/assets/img/qr2.jpg" alt="Wechat-IMG5" border="0" style="width: 12%;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
 
     <!-- Bootstrap core JavaScript-->
     <script src="../../vendor/jquery/jquery.min.js"></script>
