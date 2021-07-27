@@ -1,0 +1,96 @@
+<header>
+	<nav class="navbar navbar-inverse" role="navigation">
+		<div class="container-fluid">
+		<div class="navbar-header">
+				<a class="navbar-brand" >一个很神秘的网页</a>
+		</div>
+		<div class="nav  navbar-right">
+		  <ul class="nav navbar-nav">
+			<li class="active"><a (click)="main(hotel)">HomePage</a></li>
+			<li class="dropdown">
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+				{{hotel.userAccount}} <b class="caret"></b>
+			  </a>
+			  <ul class="dropdown-menu">
+							<li><a (click)="modifyP(hotel)">Change Password</a></li>
+							<li><a (click)="comp(hotel)">Complete info</a></li>
+							<li class="divider"></li>
+						</ul>
+			</li>
+			<li class="nav navbar-nav navbar-right">
+			  <a href="/mainpage">Log Out</a>
+			</li>
+		  </ul>
+		</div>
+	  </div>
+	</nav>
+	
+  </header>
+  
+  <ol class="breadcrumb">
+  <li><a (click)="main(hotel)">Home</a></li>
+	<li ><a (click)="main(hotel)">{{hotel.userAccount}}</a></li>
+  <li class="active">Blog管理</li>
+</ol>
+
+<div class="container-fluid">
+	<div class="row content">
+	  <div class="col-sm-3 sidenav">
+		<h4>{{hotel.userAccount}}  </h4>
+		<ul class="nav nav-pills nav-stacked">
+		  <li ><a (click)="main(hotel)">Home</a></li>
+      <li ><a (click)="modifyP(hotel)">Change Password</a></li>
+      <li><a (click)="comp(hotel)">Complete info</a></li>
+      <li><a (click)="hotelman(hotel)">Manage Student</a></li>
+      <li><a (click)="hmorder(hotel)">学生申请</a></li>
+      <li><a (click)="hmregister(hotel)">登记账号</a></li>
+      <li class="active"><a (click)="hmblog(hotel)">Blog管理</a></li>
+		</ul><br>
+		
+	  </div>
+  
+	  <div class="col-sm-9">
+      <div class="container">
+        <div class="row clearfix">
+          <div class="col-md-12 column">
+            <div class="row clearfix">
+              <div class="col-md-7 column">
+                <div class="page-header">
+                  <h1>
+                    添加新的Blog文章 
+                  </h1>
+                </div>
+                <form (submit)="addblog(postForm)" #postForm="ngForm" ngNativeValidate>
+                  <div class="form-group">
+                     <label for="exampleInputEmail1">Blog 标题</label><input  class="form-control" name="blogTitle" ngModel >
+                  </div>
+                  <div class="form-group">
+                     <label for="exampleInputPassword1">Blog 副标题</label><input class="form-control" name="blogSubtitle" ngModel>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">图片链接</label><input  class="form-control" name="blogPicture" ngModel>
+                 </div>
+                 <div class="form-group">
+                    <label for="exampleInputPassword1">文章链接</label><input  class="form-control" name="blogLink" ngModel>
+                 </div>
+                 <div class="form-group">
+                  <label for="exampleInputPassword1">发布日期</label><input class="form-control" name="blogTime" type="date" placeholder="date" ngModel >
+               </div>
+                 <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+              </div>
+              <div class="col-md-3 column" *ngIf="blogs.length > 0">
+                <blockquote *ngFor="let b of blogs">
+                  <p>
+                   {{b.blogTitle}}
+                  </p> <small>{{b.blogTime}}</small>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+	  </div>
+	</div>
+</div>
+

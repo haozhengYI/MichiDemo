@@ -26,6 +26,7 @@ const Experience = require('./model/experience');
 const Publication = require('./model/publication');
 const Activity = require('./model/activity');
 const Honor = require('./model/honor');
+const Blog = require('./model/blog');
 
 
 app.use(bodyParser.json());
@@ -1284,5 +1285,78 @@ app.delete('/honor/:id',(req, res, next) => {
       });
     });
   });
+
+//Blog部分----------------------------------------------------------------------------------------------------------
+//add new blog 
+app.post('/blogadd', (req,res,next) =>{
+  const blog = new Blog({
+    blogTitle:req.body.blogTitle,//标题
+    blogSubtitle: req.body.blogSubtitle,//副标题
+    blogTime:req.body.blogTime,//发布日期
+    blogPicture:req.body.blogPicture,//图片
+    blogLink: req.body.blogLink,//link
+    countNumber:String,//计数
+  });
+  blog.save();
+  res.status(201).json({
+    message: 'POST SEND SUCCESFFULY'
+  });
+});
+
+// display all blogs 
+app.get('/blogs',(req, res, next) => {
+    Blog.find().then(documents =>{
+    res.json({
+        blogs: documents
+    });
+  });
+});
+
+
+//update blog information by id
+app.put('/blog/:id', (req, res, next)=>{
+  const id= req.params.id;
+  Blog.update({_id: id},{$set: 
+    //updateOps
+    {
+        blogTitle:req.body.blogTitle,//标题
+        blogSubtitle: req.body.blogSubtitle,//副标题
+        blogTime:req.body.blogTime,//发布日期
+        blogPicture:req.body.blogPicture,//图片
+        blogLink: req.body.blogLink,//link
+        countNumber:req.body.countNumber,//计数
+    }
+  })
+  .exec()
+  .then((result)=>{
+      console.log(result);
+      res.status(200).json(result);
+  })
+  .catch(err =>{
+      console.log(err);
+      res.status(500).json({
+          error: err
+      })
+  });
+  res.status(201).json({
+    message: 'Handling PUT requests to /Connections',
+  });
+});
+
+// delete blog detail by id//
+app.delete('/blog/:id',(req, res, next) => {
+    const id= req.params.id;
+    Blog.remove({_id:id})
+    .exec()
+    .then(result=>{
+      res.status(200).json(result);
+    })
+    .catch(err=>{console.log(err);
+      res.status(500).json({
+        error:err
+      });
+    });
+  });
+
 
 module.exports = app;

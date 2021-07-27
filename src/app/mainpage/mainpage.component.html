@@ -1,67 +1,69 @@
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="collapse bg-dark" id="navbarHeader">
         <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>                        
-            </button>
-            <a class="navbar-brand">
-                <img src="https://i.ibb.co/zrhz7DH/Wechat-IMG5.jpg" alt="Wechat-IMG5" border="0" style="width: 20%;">
-            </a>
-                
-
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+              <br>
+              <h4 class="text-white">Michi Academy </h4>
+              <p class="text-muted">申请系统登录入口</p>
+              <br>
+    
+    
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+              <br>
+              <form class="user" >
+                <div class="form-group">
+                    <input type="email" class="form-control form-control-user"
+                    id="login-user-account" aria-describedby="emailHelp"
+                        placeholder="Enter Email Address...">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control form-control-user"
+                    id="login-user-password" placeholder="Password">
+                </div>
+              </form>
+              <button type="button" class="btn" style="background-color: #02351F; color:white" (click)="checklogin()" data-dismiss="modal">Log In</button>
+              <br>
+              <br>
+            </div>
           </div>
-          <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="#instructor">教师团队</a></li>
-              <li><a href="#courses">王牌课程</a></li>
-              <li><a href="#case">学生案例</a></li>
-              <li><a href="#footer">联系我们</a></li>
-              <li><a >课程介绍</a></li>
-              <li><a >备考干货</a></li>
-              <li>
-                <a href="#" data-toggle="modal" data-target="#exampleModalCenter" >
-                    学生登录
+        </div>
+      </div>
+        <nav class="navbar navbar-default">
+            <div class="container">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>                        
+                </button>
+                <a class="navbar-brand">
+                    <img src="https://i.ibb.co/zrhz7DH/Wechat-IMG5.jpg" alt="Wechat-IMG5" border="0" style="width: 20%;">
                 </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalCenterTitle">学生登录入口</h5>
-                </div>
-                <div class="modal-body">
-                    <form class="user" >
-                        <div class="form-group">
-                            <input type="email" class="form-control form-control-user"
-                            id="login-user-account" aria-describedby="emailHelp"
-                                placeholder="Enter Email Address...">
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control form-control-user"
-                            id="login-user-password" placeholder="Password">
-                        </div>
-                    </form>    
-                </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn" style="background-color: #02351F; color:white" (click)="checklogin()" data-dismiss="modal">Log In</button>
-                </div>
+                    
+    
+              </div>
+              <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a (click)="main()">关于我们</a></li>
+                  <li><a (click)="class()" >王牌课程</a></li>
+                  <li><a  >留学申请</a></li>
+                  <li><a (click)="blog()">Blog</a></li>
+                  <li>
+                    <a data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                        学生登录
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
-            </div>
-        </div>
-
-      </nav>
-
+    
+    
+        </nav>
 
 
+    <!-- Container (滚动 Section) -->
       <div class="container" style="width: 100%;">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
@@ -115,12 +117,225 @@
         </div>
       </div>
 
-    
+    <!-- Container (Blog Section) -->
+    <div class="container-fluid" >
+        <div class="section-title">
+            <br>
+            <h2>是什么让线上课变成了形式而非模式?</h2>         
+            <br>
+            <h4>
+            </h4>
+          </div>
+        <div class="row ">
+            <div class="col-md-12">
+                <div>  
+                    <h4>
+                        美国大学课堂里有一个很流行的7/3/1理论，即10%是instruct，也就是我们常说的教学输出；30%是mentor或又称为coach，更多是教授指导学生使用方法；而剩下的70%则是practice，也就是实践即练习。先不说很多线下课老师忽视了教学输出和实践部分的匹配。线上课老师往往连最基本的指导和互动都会忽略，一不小心，就会变成大型“口嗨”现场，更别提如何去平衡占比最重的coach和practice。与其说我们现在抵触的是线上课这样的上课模式，不如说，我们抵触的，是为了上课而上课的形式。
+                    </h4>
+                    <p>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Container (近期课程 Section) -->
+  <div id="courses" class="container-fluid">
+    <div class="section-title">
+        <br>
+        <h2>近期课程</h2>         
+        <br>
+        <h4>
+        </h4>
+      </div>
+    <div class="row">
+      <div class="col-sm-8">
+        <h2>20小时GRE Verbal 155分冲刺营</h2><br>
+        <h4>这是一项专为常年徘徊在Verbal 146-150的选手准备的高效率产品。集结团队核心教研成员，只需8小时，打破你对GRE阅读“长，多，乱”的一切困扰，利用方程式的方法快速攻破填空。步骤化的解题技巧，是我们创造高分的核心。</h4><br>
+        <p ><strong>适用人群</strong></p>
+        <p>美本GPA 3.0以上；单词自主学习高能者</p>
+      </div>
+      <div class="col-sm-4">
+        
+        <img src="http://www.yxprep.com/assets/img/features-1.svg" alt="Wechat-IMG5" border="0" style="width: 100%;">
+      </div>
+    </div>
+  </div>
+  
+  <div class="container-fluid bg-grey">
+    <div class="row">
+      <div class="col-sm-4">
+        <img src="http://www.yxprep.com/assets/img/features-2.svg" alt="Wechat-IMG5" border="0" style="width: 100%;">
+        
+      </div>
+      <div class="col-sm-8">
+        <h2>8小时GRE阅读高分课程</h2><br>
+        <h4>一切基于读懂句子就会做阅读的方法都是耍流氓。2小时之内带你突破60秒读懂一篇GRE文章的束缚。1小时让你快速理解官方宣称的各种题型其实只考2种能力。先方法再套路，我们的阅读不止是为了考试。</h4><br>
+        <p ><strong>适用人群</strong></p>
+        <p>做过1次以上的GRE完整模考/考试学员；参加过6小时长难句集训学员</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-8">
+        <h2>SAT全科辅导1500冲刺</h2><br>
+        <h4>个性化定制的课程设计。快速定位和解决备考过程中的知识漏洞，审题问题，以及老师们常说的“偏科”。完整课时不超过50小时。只要你愿意负责完成作业，我们就负责带你冲刺1500。</h4><br>
+        <p ><strong>适用人群</strong></p>
+        <p>美高/国际高中3年在读生；SAT成绩1360+；阅读单科28+</p>
+      </div>
+      <div class="col-sm-4">
+        
+        <img src="http://www.yxprep.com/assets/img/features-3.svg" alt="Wechat-IMG5" border="0" style="width: 100%;">
+      </div>
+    </div>
+  </div>
+ 
+<!-- Container (申请案例) Section) -->
+  <div id="case" class="container">
+    <div class="section-title">
+        <br>
+        <h2>申请案例</h2>         
+        <br>
+        <h4>
+        </h4>
+      </div>
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="300x200" src="https://watchourcity.com/wp-content/uploads/2019/11/USC-logo-small-e1573767009559.jpg" style="width: 25%;"/>
+						<div>
+							<h4 class="caption">
+								University of Southern California
+							</h4>
+							<p>
+								【原生院校】：伊利诺伊香槟大学
+							</p>
+							<p>
+								【申请成绩】：GRE：170+145
+							</p>
+                            <p>
+								【录取专业】：XXXXX
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="300x200" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/The_University_of_California_UCLA.svg/1200px-The_University_of_California_UCLA.svg.png" style="width: 25%;"/>
+						<div >
+							<h4 class="caption">
+								University of California, Los Angeles
+							</h4>
+							<p>
+								【原生院校】：伊利诺伊香槟大学
+							</p>
+							<p>
+								【申请成绩】：GRE：170+145
+							</p>
+                            <p>
+								【录取专业】：XXXXX
+							</p>
+						</div>
+					</div>
+				</div>
+                <div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="300x200" src="https://upload.wikimedia.org/wikipedia/en/thumb/2/29/Harvard_shield_wreath.svg/1200px-Harvard_shield_wreath.svg.png" style="width: 25%;"/>
+						<div >
+							<h4 class="caption">
+								Harvard University
+							</h4>
+							<p>
+								【原生院校】：UCI
+							</p>
+							<p>
+								【申请成绩】：GRE：无
+							</p>
+                            <p>
+								【录取专业】：XXXXX
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="300x200" src="https://m.media-amazon.com/images/I/61Fa-pNEFXL._AC_SY450_.jpg" style="width: 22%;"/>
+						<div >
+							<h4 class="caption">
+								Columbia University
+							</h4>
+							<p>
+								【原生院校】：UMB
+							</p>
+							<p>
+								【申请成绩】：GRE：无
+							</p>
+                            <p>
+								【录取专业】：XXXXX
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="300x200" src="https://i.pinimg.com/originals/4a/21/25/4a2125ea3d703bee63e98de2913ba2ad.png" style="width: 25%;"/>
+						<div >
+							<h4 class="caption">
+								Massachusetts Institute of Technology
+							</h4>
+							<p>
+								【原生院校】：Canada
+							</p>
+							<p>
+								【申请成绩】：GRE：无
+							</p>
+                            <p>
+								【录取专业】：XXXXX
+							</p>
+						</div>
+					</div>
+				</div>
+                <div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="300x200" src="https://seeklogo.com/images/C/carnegie-mellon-university-logo-389DF9E4D6-seeklogo.com.png" style="width: 25%;"/>
+						<div >
+							<h4 class="caption">
+								Carnegie Mellon University
+							</h4>
+							<p>
+								【原生院校】：NEU
+							</p>
+							<p>
+								【申请成绩】：GRE：无
+							</p>
+                            <p>
+								【录取专业】：XXXXX
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  </div>
+
+
+
     <!-- Container (教师介绍 Section) -->
     <div class="container" id="instructor">
         <div class="section-title">
             <br>
-            <h2>教师团队</h2>         
+            <h2>关于我们</h2>         
             <br>
             <h4>超过10年教学经验，核心教师团队</h4>
           </div>
@@ -273,214 +488,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Container (王牌课程 Section) -->
-  <div id="courses" class="container-fluid">
-    <div class="section-title">
-        <br>
-        <h2>王牌课程</h2>         
-        <br>
-        <h4>
-        </h4>
-      </div>
-    <div class="row">
-      <div class="col-sm-8">
-        <h2>20小时GRE Verbal 155分冲刺营</h2><br>
-        <h4>这是一项专为常年徘徊在Verbal 146-150的选手准备的高效率产品。集结团队核心教研成员，只需8小时，打破你对GRE阅读“长，多，乱”的一切困扰，利用方程式的方法快速攻破填空。步骤化的解题技巧，是我们创造高分的核心。</h4><br>
-        <p ><strong>适用人群</strong></p>
-        <p>美本GPA 3.0以上；单词自主学习高能者</p>
-      </div>
-      <div class="col-sm-4">
-        
-        <img src="http://www.yxprep.com/assets/img/features-1.svg" alt="Wechat-IMG5" border="0" style="width: 100%;">
-      </div>
-    </div>
-  </div>
-  
-  <div class="container-fluid bg-grey">
-    <div class="row">
-      <div class="col-sm-4">
-        <img src="http://www.yxprep.com/assets/img/features-2.svg" alt="Wechat-IMG5" border="0" style="width: 100%;">
-        
-      </div>
-      <div class="col-sm-8">
-        <h2>8小时GRE阅读高分课程</h2><br>
-        <h4>一切基于读懂句子就会做阅读的方法都是耍流氓。2小时之内带你突破60秒读懂一篇GRE文章的束缚。1小时让你快速理解官方宣称的各种题型其实只考2种能力。先方法再套路，我们的阅读不止是为了考试。</h4><br>
-        <p ><strong>适用人群</strong></p>
-        <p>做过1次以上的GRE完整模考/考试学员；参加过6小时长难句集训学员</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-8">
-        <h2>SAT全科辅导1500冲刺</h2><br>
-        <h4>个性化定制的课程设计。快速定位和解决备考过程中的知识漏洞，审题问题，以及老师们常说的“偏科”。完整课时不超过50小时。只要你愿意负责完成作业，我们就负责带你冲刺1500。</h4><br>
-        <p ><strong>适用人群</strong></p>
-        <p>美高/国际高中3年在读生；SAT成绩1360+；阅读单科28+</p>
-      </div>
-      <div class="col-sm-4">
-        
-        <img src="http://www.yxprep.com/assets/img/features-3.svg" alt="Wechat-IMG5" border="0" style="width: 100%;">
-      </div>
-    </div>
-  </div>
- 
-  <!-- Container (学生案例) Section) -->
-  <div id="case" class="container">
-    <div class="section-title">
-        <br>
-        <h2>学生案例</h2>         
-        <br>
-        <h4>
-        </h4>
-      </div>
-	<div class="row clearfix">
-		<div class="col-md-12 column">
-			<div class="row">
-				<div class="col-md-4">
-					<div class="thumbnail">
-						<img alt="300x200" src="http://www.yxprep.com/assets/img/boy.png" style="width: 25%;"/>
-						<div >
-							<h3 class="caption">
-								吴*宇
-							</h3>
-							<p>
-								【就读院校】：伊利诺伊香槟大学
-							</p>
-							<p>
-								【入学成绩】：GRE：170+145
-							</p>
-                            <p>
-								【报名课程】：20小时GRE155冲刺营
-							</p>
-							<p>
-								【毕业成绩】：170+155
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="thumbnail">
-						<img alt="300x200" src="http://www.yxprep.com/assets/img/girl.png" style="width: 25%;"/>
-						<div >
-							<h3 class="caption">
-								陈*彰
-							</h3>
-							<p>
-								【就读院校】：伊利诺伊香槟大学
-							</p>
-							<p>
-								【入学成绩】：GRE：169+146
-							</p>
-                            <p>
-								【报名课程】：20小时GRE线上定制  
-							</p>
-							<p>
-								【毕业成绩】：170+158
-							</p>
-						</div>
-					</div>
-				</div>
-                <div class="col-md-4">
-					<div class="thumbnail">
-						<img alt="300x200" src="http://www.yxprep.com/assets/img/boy.png" style="width: 25%;"/>
-						<div >
-							<h3 class="caption">
-								李*麟
-							</h3>
-							<p>
-								【就读院校】：亚利桑那州立大学
-							</p>
-							<p>
-								【入学成绩】：GMAT：550
-							</p>
-                            <p>
-								【报名课程】：20小时GMAT线上定制
-							</p>
-							<p>
-								【毕业成绩】：640
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-    <div class="row clearfix">
-		<div class="col-md-12 column">
-			<div class="row">
-				<div class="col-md-4">
-					<div class="thumbnail">
-						<img alt="300x200" src="http://www.yxprep.com/assets/img/boy.png" style="width: 25%;"/>
-						<div >
-							<h3 class="caption">
-								赵*然
-							</h3>
-							<p>
-								【就读院校】：纽约大学SPS学院
-							</p>
-							<p>
-								【入学成绩】：GRE：169+148
-							</p>
-                            <p>
-								【报名课程】：16小时GRE线上定制  
-							</p>
-							<p>
-								【毕业成绩】：169+155
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="thumbnail">
-						<img alt="300x200" src="http://www.yxprep.com/assets/img/boy.png" style="width: 25%;"/>
-						<div >
-							<h3 class="caption">
-								王*旭
-							</h3>
-							<p>
-								【就读院校】：吉林大学
-							</p>
-							<p>
-								【入学成绩】：GRE：165+130
-							</p>
-                            <p>
-								【报名课程】：20小时GRE线上定制  
-							</p>
-							<p>
-								【毕业成绩】：168+152
-							</p>
-						</div>
-					</div>
-				</div>
-                <div class="col-md-4">
-					<div class="thumbnail">
-						<img alt="300x200" src="http://www.yxprep.com/assets/img/boy.png" style="width: 25%;"/>
-						<div >
-							<h3 class="caption">
-								赵*喆
-							</h3>
-							<p>
-								【就读院校】：东北大学
-							</p>
-							<p>
-								【入学成绩】：SAT：1170
-							</p>
-                            <p>
-								【报名课程】：40小时SAT线上定制  
-							</p>
-							<p>
-								【【毕业成绩】：1440
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-  </div>
 
   <!-- Container (Footer Section) -->
 <div id="footer" class="panel-footer">

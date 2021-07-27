@@ -161,6 +161,16 @@ export class HmmanageComponent implements OnInit {
     this.router.navigate(['/hmregister'], navigationExtras);
   }
 
+  //direct to the blog page
+  hmblog(hotel) {
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+       "managerID" : hotel.userAccount,
+      }
+    };
+    this.router.navigate(['/hmblog'], navigationExtras);
+  }
+
   more(o){
     console.log(o._id);
     console.log(this.managerID);

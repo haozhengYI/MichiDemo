@@ -1,56 +1,78 @@
-import { Component, OnInit,Input } from '@angular/core';
-import { ActivatedRoute,  NavigationExtras, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { BlockingProxy } from 'blocking-proxy';
+import { UserService } from '../user.service';
+import { ConstantPool } from '@angular/compiler';
+import { user } from '../user.model';
 import { Subscription } from 'rxjs';
-import { HmService } from '../hm.service';
-import {HotelM} from '../hm.model';
 import { HttpClient } from '@angular/common/http';
-import {Student} from '../st.model';
-import {School} from '../school.model';
-import {Recommender} from '../recom.model';
+import { getDefaultService } from 'selenium-webdriver/opera';
+import { userInfo } from 'os';
+import { ActivatedRoute,  NavigationExtras, Router } from '@angular/router';
+import {HmService} from '../hm.service';
+import {StService } from '../st.service';
+import {HotelM} from '../hm.model';
+import { Blog} from '../blog.model';
+import { NgForm } from '@angular/forms';
+import{BlogService} from '../blog.service';
 
 @Component({
-  selector: 'app-hmstudent',
-  templateUrl: './hmstudent.component.html',
-  styleUrls: ['./hmstudent.component.scss']
+  selector: 'app-hmblog',
+  templateUrl: './hmblog.component.html',
+  styleUrls: ['./hmblog.component.scss']
 })
-export class HmstudentComponent implements OnInit {
-
-  students: Student[] = [];//all the orders from database
-  student :Student;//the specific order selected by this hotel i
-
+export class HmblogComponent implements OnInit {
+  user: user[] = [];
   hotels: HotelM[] = [];
   hotel : HotelM;
+  blogs: Blog[] = [];
+  blog :Blog;
+  blogNum  : any;
+
   managerID : any;
-  studentID : any;//存选中的student ID
-  //hotel个人信息
   name: String;
   location:String;
   phone:String;
   price:String;
-  //student个人信息
-  //Slocation:String;
-  //Sname: String;
-
-  //school 信息
-  schools: School[] = [];
-  //推荐人信息
-  recommenders : Recommender[] = [];
   private hotelMSub: Subscription;
-  
 
+  // private usersSub: Subscription;
+  
   constructor(
-    private route: ActivatedRoute, 
-    private router: Router, 
+    private route: ActivatedRoute,
+    private router: Router,
+    public userService: UserService,
     private http: HttpClient,
+    public  stService :StService,
+    public blogService:BlogService,
     public hmService: HmService) { 
       this.route.queryParams.subscribe(params => {
         this.managerID = params["managerID"];
-        this.studentID = params["studentID"];
        });
-       console.log("学生 ID 为+"+this.studentID);
+       console.log("constructor+"+this.managerID);
     }
+    
+    addblog(form: NgForm){//form内的信息使用过html中的name来获取的
+      this.blogNum = this.blogs.length+1;
+      
+      console.log("blog" + form.value.blogTitle + "数组长度" + this.blogNum);
+      //console.log("School名" + form.value.Uschool + "ddl1为" + form.value.ddl1 + "面试" + form.value.interview);
+      this.blogService.addBlog("", form.value.blogTitle,form.value.blogSubtitle,form.value.blogTime,form.value.blogPicture, form.value.blogLink, 
+        this.blogNum );
+      alert("Add Blog Seccuss!!");
+        
+      window.location.reload();  
+    } 
   
+
   ngOnInit() {
+    this.http.get<{user: user[]}>('/api/users').subscribe((userData) => {
+
+    this.user = userData.user;
+    console.log(userData.user);
+    //console.log(this.user.length);
+
+    });
+    //获取HotelM 信息列表
     this.http.get<{hotels: HotelM[]}>('/api/hotels').subscribe((Data) => {
         this.hotels = Data.hotels;
         for(let h of this.hotels){
@@ -60,41 +82,27 @@ export class HmstudentComponent implements OnInit {
               this.location = this.hotel.location;
               this.phone=this.hotel.phone;
               this.price = this.hotel.price;
-              console.log("管理者信息");
+              console.log("ngOnInIT");
               console.log(this.hotel);
             }
         }
     });
-    //展示 学生个人信息
-    this.http.get<{students: Student[]}>('/api/students').subscribe((Data) => {
-        this.students = Data.students;
-        for(let h of this.students){
-            if(h._id===this.studentID){
-              this.student = h;
-              //this.Sname=this.student.name;
-              //this.Slocation = this.student.location;
-              console.log("Student Personal Information");
-              console.log(this.student);
-            }
+    //获取Blog 信息列表
+    this.http.get<{blogs: Blog[]}>('/api/blogs').subscribe((Data) => {
+        //this.blogs = Data.blogs;
+        for(var i=Data.blogs.length-1;i>=0;i--){
+          this.blogs.push(Data.blogs[i]);
         }
+        this.blogNum = this.blogs.length;
+        console.log("Blog数组的长度为" + this.blogNum);
+        console.log(this.blogs);
     });
-    //展示 此学生 选校信息
-    this.http.get<{schools: School[]}>('/api/studentschooldetail/' + this.studentID).subscribe((orderData) => {
-          console.log(orderData);
-          this.schools = orderData.schools;
-      });
-    //展示 此学生 推荐人信息
-    this.http.get<{recommenders: Recommender[]}>('/api/studentrecommenderdetail/' + this.studentID).subscribe((orderData) => {
-      console.log(orderData);
-      this.recommenders = orderData.recommenders;
-    });        
-      
+
+
     this.hotelMSub = this.hmService.getHotelMUpdatedListener().subscribe((hotels: HotelM[]) => {
       this.hotels = hotels;
       });
   }
-
-
   //direct to the hotel manage page
   hotelman(hotel) {
     const navigationExtras: NavigationExtras = {
@@ -144,7 +152,7 @@ export class HmstudentComponent implements OnInit {
     };
     this.router.navigate(['/hmorder'], navigationExtras);
   }
-  
+
   //direct to the register page
   hmregister(hotel) {
     const navigationExtras: NavigationExtras = {
@@ -155,29 +163,7 @@ export class HmstudentComponent implements OnInit {
     this.router.navigate(['/hmregister'], navigationExtras);
   }
 
-  //direct to the addschool page
-  hmaddschool(hotel,student) {
-    const navigationExtras: NavigationExtras = {
-      queryParams: {
-       "managerID" : hotel.userAccount,
-       "studentID" : this.student._id,
-      }
-    };
-    this.router.navigate(['/hmaddschool'], navigationExtras);
-  }
-  //direct to the school detail page
-  hmschooldetail(s) {
-    const navigationExtras: NavigationExtras = {
-      queryParams: {
-       "managerID" : this.managerID,
-       "studentID" : this.studentID,
-       "schoolID"  : s._id,
-      }
-    };
-    this.router.navigate(['/hmschool'], navigationExtras);
-  }
-  
-  //direct to the blog page
+  //direct to the register page
   hmblog(hotel) {
     const navigationExtras: NavigationExtras = {
       queryParams: {
@@ -190,4 +176,5 @@ export class HmstudentComponent implements OnInit {
   ngOnDestroy() {
     this.hotelMSub.unsubscribe();
   }
+
 }

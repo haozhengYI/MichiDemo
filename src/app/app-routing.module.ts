@@ -22,17 +22,22 @@ import {HmstudentComponent} from './hmstudent/hmstudent.component';
 import {HmaddschoolComponent} from './hmaddschool/hmaddschool.component';
 import {HmschoolComponent} from './hmschool/hmschool.component';
 import {HmordersearchComponent} from './hmordersearch/hmordersearch.component';
+import {HmblogComponent} from './hmblog/hmblog.component';
 
 import {StudentmainComponent} from './studentmain/studentmain.component';
 import {StudentaddrecommComponent} from './studentaddrecomm/studentaddrecomm.component';
 import {StudentinfoComponent} from './studentinfo/studentinfo.component';
 import {StudentrecComponent} from './studentrec/studentrec.component';
 import {StudentschoolComponent} from './studentschool/studentschool.component';
-
+import {MainclassComponent} from './mainclass/mainclass.component';
+import {MainblogComponent} from './mainblog/mainblog.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/mainpage', pathMatch: 'full' },
   {path: 'mainpage', component:MainpageComponent},
+  {path: 'mainclass', component:MainclassComponent},
+  {path: 'mainblog', component:MainblogComponent},
+
   {path: 'login', component:LoginComponent},
   {path: 'adminmainpage', component:AdminmainpageComponent},
   {path: 'hmmain', component:HMmainComponent},
@@ -48,12 +53,13 @@ const routes: Routes = [
   { path: 'hmcomp', component: HmcompComponent },
   { path: 'hmorder', component: HmorderComponent },
   { path: 'adminorder', component:AdminOrderComponent},
-  { path: 'vieworder', component: OrderViewComponent},
+  { path: 'hmblog', component: HmblogComponent},
   
   { path: 'hmregister', component: HmregisterComponent},
   { path: 'hmstudent', component: HmstudentComponent},
   { path: 'hmaddschool', component: HmaddschoolComponent},
   { path: 'hmschool', component:HmschoolComponent},
+  { path: 'hmordersearch', component:HmordersearchComponent},
   { path: 'hmordersearch', component:HmordersearchComponent},
 
   { path: 'studentmain', component:StudentmainComponent},

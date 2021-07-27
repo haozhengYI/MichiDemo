@@ -8,15 +8,15 @@ import { HttpClient } from '@angular/common/http';
 import { getDefaultService } from 'selenium-webdriver/opera';
 import { userInfo } from 'os';
 import { ActivatedRoute,  NavigationExtras, Router } from '@angular/router';
-import {HmService} from './../hm.service';
-import {Student} from '../../app/st.model';
+import {HmService} from '../hm.service';
+import {Student} from '../st.model';
 
 @Component({
-  selector: 'app-mainpage',
-  templateUrl: './mainpage.component.html',
-  styleUrls: ['./mainpage.component.scss']
+  selector: 'app-mainclass',
+  templateUrl: './mainclass.component.html',
+  styleUrls: ['./mainclass.component.scss']
 })
-export class MainpageComponent implements OnInit {
+export class MainclassComponent implements OnInit {
   
   user: user[] = [];
   students: Student[] = [];
@@ -130,7 +130,14 @@ export class MainpageComponent implements OnInit {
     });
   }
 
-  //direct to the 王牌课程 page
+  main() {
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+       
+      }
+    };
+    this.router.navigate(['/mainpage'], navigationExtras);
+  }
   class() {
     const navigationExtras: NavigationExtras = {
       queryParams: {
@@ -139,9 +146,9 @@ export class MainpageComponent implements OnInit {
     };
     this.router.navigate(['/mainclass'], navigationExtras);
   }
-
-  //direct to the Blog page
-  blog() {
+  
+   //direct to the Blog page
+   blog() {
     const navigationExtras: NavigationExtras = {
       queryParams: {
        

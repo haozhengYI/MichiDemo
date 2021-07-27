@@ -35,17 +35,22 @@ import { HmstudentComponent} from './hmstudent/hmstudent.component';
 import {HmaddschoolComponent} from './hmaddschool/hmaddschool.component';
 import {HmschoolComponent} from './hmschool/hmschool.component';
 import {HmordersearchComponent} from './hmordersearch/hmordersearch.component';
+import {HmblogComponent} from './hmblog/hmblog.component';
 
 import {StudentmainComponent} from './studentmain/studentmain.component';
 import {StudentaddrecommComponent} from './studentaddrecomm/studentaddrecomm.component';
 import {StudentinfoComponent} from './studentinfo/studentinfo.component';
 import {StudentrecComponent} from './studentrec/studentrec.component';
 import {StudentschoolComponent} from './studentschool/studentschool.component';
+import {MainclassComponent} from './mainclass/mainclass.component';
+import {MainblogComponent} from './mainblog/mainblog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainpageComponent,
+    MainclassComponent,
+    MainblogComponent,
     LoginComponent,
     HMmainComponent,
     HmmodifypassComponent,
@@ -76,6 +81,7 @@ import {StudentschoolComponent} from './studentschool/studentschool.component';
     HmaddschoolComponent,
     HmschoolComponent,
     HmordersearchComponent,
+    HmblogComponent,
 
     StudentmainComponent,
     StudentaddrecommComponent,

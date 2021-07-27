@@ -7512,7 +7512,7 @@ function initCanvas(canvas, config) {
 
 /**
  * Detects support for options object argument in addEventListener.
- * https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Safely_detecting_option_support
+ * https://developer.mozilla.org/en-US/docs/Web/api/EventTarget/addEventListener#Safely_detecting_option_support
  * @private
  */
 var supportsEventListenerOptions = (function() {
@@ -7861,7 +7861,7 @@ var platform_dom$2 = {
 /**
  * Provided for backward compatibility, use EventTarget.addEventListener instead.
  * EventTarget.addEventListener compatibility: Chrome, Opera 7, Safari, FF1.5+, IE9+
- * @see https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+ * @see https://developer.mozilla.org/en-US/docs/Web/api/EventTarget/addEventListener
  * @function Chart.helpers.addEvent
  * @deprecated since version 2.7.0
  * @todo remove at version 3
@@ -7872,7 +7872,7 @@ helpers$1.addEvent = addListener;
 /**
  * Provided for backward compatibility, use EventTarget.removeEventListener instead.
  * EventTarget.removeEventListener compatibility: Chrome, Opera 7, Safari, FF1.5+, IE9+
- * @see https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener
+ * @see https://developer.mozilla.org/en-US/docs/Web/api/EventTarget/removeEventListener
  * @function Chart.helpers.removeEvent
  * @deprecated since version 2.7.0
  * @todo remove at version 3

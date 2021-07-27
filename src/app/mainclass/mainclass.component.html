@@ -1,0 +1,409 @@
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+    <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+              <br>
+              <h4 class="text-white">Michi Academy </h4>
+              <p class="text-muted">申请系统登录入口</p>
+              <br>
+    
+    
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+              <br>
+              <form class="user" >
+                <div class="form-group">
+                    <input type="email" class="form-control form-control-user"
+                    id="login-user-account" aria-describedby="emailHelp"
+                        placeholder="Enter Email Address...">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control form-control-user"
+                    id="login-user-password" placeholder="Password">
+                </div>
+              </form>
+              <button type="button" class="btn" style="background-color: #02351F; color:white" (click)="checklogin()" data-dismiss="modal">Log In</button>
+              <br>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+        <nav class="navbar navbar-default">
+            <div class="container">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>                        
+                </button>
+                <a class="navbar-brand">
+                    <img src="https://i.ibb.co/zrhz7DH/Wechat-IMG5.jpg" alt="Wechat-IMG5" border="0" style="width: 20%;">
+                </a>
+                    
+    
+              </div>
+              <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a (click)="main()">关于我们</a></li>
+                  <li><a (click)="class()" >王牌课程</a></li>
+                  <li><a  >留学申请</a></li>
+                  <li><a (click)="blog()">Blog</a></li>
+                  <li>
+                    <a data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                        学生登录
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+    
+    
+        </nav>
+
+
+    <!-- Container (滚动 Section) -->
+      <div class="container" style="width: 100%;">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators" >
+            <li data-target="#myCarousel" data-slide-to="0" class="active" ></li>
+            <li data-target="#myCarousel" data-slide-to="1" ></li>
+            <li data-target="#myCarousel" data-slide-to="2" ></li>
+          </ol>
+      
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+      
+            <div class="item active">
+              <img src="https://www.runoob.com/try/bootstrap/layoutit/v3/default.jpg" alt="Los Angeles" style="width:100%;">
+              <div class="carousel-caption">
+                <h3>10年教育经验，有教有学</h3>
+                <p>学生教会老师自己的理解，老师纠正强化正确的解题思路</p>
+              </div>
+            </div>
+      
+            <div class="item">
+              <img src="https://www.runoob.com/try/bootstrap/layoutit/v3/default1.jpg" alt="Chicago" style="width:100%;">
+              <div class="carousel-caption">
+                <h3>学生提分率99%</h3>
+                <p>学生选择我们，并不是因为他们会持续需要老师的帮助，而是可以从这里开始独立的留学之旅。
+                </p>
+              </div>
+            </div>
+          
+            <div class="item">
+              <img src="https://www.runoob.com/try/bootstrap/layoutit/v3/default2.jpg" alt="New York" style="width:100%;">
+              <div class="carousel-caption">
+                <h3>独家教材，不练不学</h3>
+                <p>严格要求完成课前作业及学习准备，老师根据作业情况备课，针对性提高。</p>
+              </div>
+            </div>
+        
+          </div>
+      
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" style="color: white;"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" style="color: white;"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+
+    <!-- Container (Blog Section) -->
+    <div class="container-fluid" >
+        <div class="section-title">
+            <br>
+            <h2>为什么选择我们？</h2>         
+            <br>
+            <h4>
+            </h4>
+          </div>
+        <div class="row ">
+            <div class="col-md-12">
+                <div class="caption">  
+                    <h4>
+                        Michi Academy近5年的教育积累，学生好评率99%以上，因拥有自己的教学特色。
+                    </h4>
+                    <p>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Container (近期课程 Section) -->
+  <div id="courses" class="container-fluid">
+    <div class="section-title">
+        <br>
+        <h2>教学特色</h2>         
+        <br>
+        <h4>
+        </h4>
+      </div>
+      <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <div class="row clearfix">
+                    <div class="col-md-3 column">
+                        <img  src="https://i.ibb.co/vxmNnfH/Wechat-IMG3.jpg"  class="img-thumbnail" style="width: 100%;" />
+                    </div>
+                    <div class="col-md-3 column">
+                        <img src="https://i.ibb.co/fDc2HCH/Wechat-IMG7.jpg"  class="img-thumbnail" style="width: 100%;"/>
+                    </div>
+                    <div class="col-md-3 column">
+                        <img  src="https://i.ibb.co/GQTdV6T/Wechat-IMG5.png"   class="img-thumbnail" style="width: 100%;" />
+                    </div>
+                    <div class="col-md-3 column">
+                        <img src="https://i.ibb.co/kgYRF9d/Wechat-IMG4.jpg"  class="img-thumbnail" style="width: 100%;" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+    <!-- Container (近期课程 Section) -->
+    <div id="courses" class="container-fluid">
+        <div class="section-title">
+            <br>
+            <h2>近期课程</h2>         
+            <br>
+            <h4>
+            </h4>
+          </div>
+          <div class="container">
+            <div class="row clearfix">
+                <div class="col-md-12 column">
+                    <div class="row clearfix">
+                        <div class="col-md-3 column">
+                            <img  src="https://i.ibb.co/5Ffgs71/3.png" class="img-thumbnail"  style="width: 100%;" />
+                        </div>
+                        <div class="col-md-3 column">
+                            <img  src="https://i.ibb.co/6BT42yG/1.png" class="img-thumbnail"  style="width: 100%;"/>
+                        </div>
+                        <div class="col-md-3 column">
+                            <img  src="https://i.ibb.co/9NZ9ZSn/4.jpg" class="img-thumbnail"  style="width: 100%;"/>
+                        </div>
+                        <div class="col-md-3 column">
+                            <img src="https://i.ibb.co/5Ffgs71/3.png" class="img-thumbnail"  style="width: 100%;"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+
+
+  <!-- Container (学生案例) Section) -->
+  <div id="case" class="container">
+    <div class="section-title">
+        <br>
+        <h2>学生案例</h2>         
+        <br>
+        <h4>
+        </h4>
+      </div>
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="300x200" src="http://www.yxprep.com/assets/img/boy.png" style="width: 25%;"/>
+						<div >
+							<h3 class="caption">
+								吴*宇
+							</h3>
+							<p>
+								【就读院校】：伊利诺伊香槟大学
+							</p>
+							<p>
+								【入学成绩】：GRE：170+145
+							</p>
+                            <p>
+								【报名课程】：20小时GRE155冲刺营
+							</p>
+							<p>
+								【毕业成绩】：170+155
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="300x200" src="http://www.yxprep.com/assets/img/girl.png" style="width: 25%;"/>
+						<div >
+							<h3 class="caption">
+								陈*彰
+							</h3>
+							<p>
+								【就读院校】：伊利诺伊香槟大学
+							</p>
+							<p>
+								【入学成绩】：GRE：169+146
+							</p>
+                            <p>
+								【报名课程】：20小时GRE线上定制  
+							</p>
+							<p>
+								【毕业成绩】：170+158
+							</p>
+						</div>
+					</div>
+				</div>
+                <div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="300x200" src="http://www.yxprep.com/assets/img/boy.png" style="width: 25%;"/>
+						<div >
+							<h3 class="caption">
+								李*麟
+							</h3>
+							<p>
+								【就读院校】：亚利桑那州立大学
+							</p>
+							<p>
+								【入学成绩】：GMAT：550
+							</p>
+                            <p>
+								【报名课程】：20小时GMAT线上定制
+							</p>
+							<p>
+								【毕业成绩】：640
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="300x200" src="http://www.yxprep.com/assets/img/boy.png" style="width: 25%;"/>
+						<div >
+							<h3 class="caption">
+								赵*然
+							</h3>
+							<p>
+								【就读院校】：纽约大学SPS学院
+							</p>
+							<p>
+								【入学成绩】：GRE：169+148
+							</p>
+                            <p>
+								【报名课程】：16小时GRE线上定制  
+							</p>
+							<p>
+								【毕业成绩】：169+155
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="300x200" src="http://www.yxprep.com/assets/img/boy.png" style="width: 25%;"/>
+						<div >
+							<h3 class="caption">
+								王*旭
+							</h3>
+							<p>
+								【就读院校】：吉林大学
+							</p>
+							<p>
+								【入学成绩】：GRE：165+130
+							</p>
+                            <p>
+								【报名课程】：20小时GRE线上定制  
+							</p>
+							<p>
+								【毕业成绩】：168+152
+							</p>
+						</div>
+					</div>
+				</div>
+                <div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="300x200" src="http://www.yxprep.com/assets/img/boy.png" style="width: 25%;"/>
+						<div >
+							<h3 class="caption">
+								赵*喆
+							</h3>
+							<p>
+								【就读院校】：东北大学
+							</p>
+							<p>
+								【入学成绩】：SAT：1170
+							</p>
+                            <p>
+								【报名课程】：40小时SAT线上定制  
+							</p>
+							<p>
+								【【毕业成绩】：1440
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  </div>
+
+
+  <!-- Container (Footer Section) -->
+<div id="footer" class="panel-footer">
+    <h2 class="text-center" style="color: white;">联系我们</h2>
+    <br>
+    <div class="container" style="color: white;">
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <div class="row clearfix">
+                    <div class="col-md-4 column">
+                        <p>联系方式</p>
+                        <div class="container">
+                            <div class="row clearfix">
+                                <div class="col-md-12 column">
+                                    <address> <strong>Michi Academy Inc.</strong><br />  4199 Campus Dr, Suite 550<br /> Irvine, CA, 92612<br /> United States<br /></address>
+                                </div>
+                            </div>
+                        </div>
+                        <p><span class="glyphicon glyphicon-phone"></span>客服微信号: YuxinPREP</p>
+                        <p><span class="glyphicon glyphicon-envelope"></span>邮件: YuxinPREP@gmail.com</p>
+                    </div>
+                    <div class="col-md-4 column">
+                        <p>客服微信二维码</p>
+                        <div class="container">
+                            <img src="http://www.yxprep.com/assets/img/qr1.jpg" alt="Wechat-IMG5" border="0" style="width: 12%;">
+                        </div>
+                    </div>
+                    <div class="col-md-4 column">
+                        <p>公众号二维码</p>
+                        <div class="container">
+                            <img src="http://www.yxprep.com/assets/img/qr2.jpg" alt="Wechat-IMG5" border="0" style="width: 12%;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="../../vendor/jquery/jquery.min.js"></script>
+    <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="../../js/sb-admin-2.min.js"></script>
+
+</body>

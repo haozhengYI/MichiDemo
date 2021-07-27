@@ -164,6 +164,15 @@ export class HmordersearchComponent implements OnInit {
     this.router.navigate(['/hmschool'], navigationExtras);
   }
   
+  //direct to the blog page
+  hmblog(hotel) {
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+       "managerID" : hotel.userAccount,
+      }
+    };
+    this.router.navigate(['/hmblog'], navigationExtras);
+  }
 
 
   ngOnDestroy() {
