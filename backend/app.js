@@ -27,6 +27,8 @@ const Publication = require('./model/publication');
 const Activity = require('./model/activity');
 const Honor = require('./model/honor');
 const Blog = require('./model/blog');
+const Notif = require('./model/notif');
+const Statement = require('./model/statement');
 
 
 app.use(bodyParser.json());
@@ -1242,7 +1244,7 @@ app.get('/studenthonorlist/:studentId', (req,res,next) =>{
 
 
 
-//update activity information by id
+//update honor information by id
 app.put('/honor/:id', (req, res, next)=>{
   const id= req.params.id;
   Honor.update({_id: id},{$set: 
@@ -1358,5 +1360,103 @@ app.delete('/blog/:id',(req, res, next) => {
     });
   });
 
+//通知部分----------------------------------------------------------------------------------------------------------
+//add new notif 
+app.post('/notifadd', (req,res,next) =>{
+  const notif = new Notif({
+    userAccount:req.body.userAccount,//学生的id
+    content: req.body.content,//存储通知内容
+    ndate:req.body.ndate,//通知日期
+    nstate:req.body.nstate,//通知状态（"未读/已读"）
+    ntype:req.body.ntype,//通知类型（"紧急/一般/比较紧急")
+  });
+  notif.save();
+  res.status(201).json({
+    message: 'POST SEND SUCCESFFULY'
+  });
+});
+
+// display all notifs 
+app.get('/notifs',(req, res, next) => {
+    Notif.find().then(documents =>{
+    res.json({
+        notifs: documents
+    });
+  });
+});
+
+// display all notifs list by student id
+app.get('/notifdetail/:studentId', (req,res,next) =>{
+  const studentId = req.params.studentId;
+  Notif.find({userAccount: studentId}).then(documents =>{
+    res.json({
+      notifs: documents
+    });
+  });
+});
+
+//update 通知 information by id
+app.put('/notif/:id', (req, res, next)=>{
+  const id= req.params.id;
+  Notif.update({_id: id},{$set: 
+    //updateOps
+    {
+      userAccount:req.body.userAccount,//学生的id
+      content: req.body.content,//存储通知内容
+      ndate:req.body.ndate,//通知日期
+      nstate:req.body.nstate,//通知状态（"未读/已读"）
+      ntype:req.body.ntype,//通知类型（"紧急/一般/比较紧急")
+    }
+  })
+  .exec()
+  .then((result)=>{
+      console.log(result);
+      res.status(200).json(result);
+  })
+  .catch(err =>{
+      console.log(err);
+      res.status(500).json({
+          error: err
+      })
+  });
+  res.status(201).json({
+    message: 'Handling PUT requests to /Connections',
+  });
+});
+
+
+//文书部分----------------------------------------------------------------------------------------------------------
+//add new statement 
+app.post('/statementadd', (req,res,next) =>{
+  const statement = new Statement({
+    schoolID:req.body.schoolID, //对应申请学校的id
+    question: req.body.question,//题目内容
+    stype:req.body.stype,//文书种类(PS/SOP/Essay)
+    words:req.body.words,//字数
+  });
+  statement.save();
+  res.status(201).json({
+    message: 'POST SEND SUCCESFFULY'
+  });
+});
+
+// display all statements 
+app.get('/statements',(req, res, next) => {
+    Statement.find().then(documents =>{
+    res.json({
+        statements: documents
+    });
+  });
+});
+
+// display all statements list by school id
+app.get('/statementdetail/:schoolID', (req,res,next) =>{
+    const schoolID = req.params.schoolID;
+    Statement.find({schoolID: schoolID}).then(documents =>{
+      res.json({
+        statements: documents
+      });
+    });
+  });
 
 module.exports = app;

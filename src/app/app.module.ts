@@ -44,13 +44,20 @@ import {StudentrecComponent} from './studentrec/studentrec.component';
 import {StudentschoolComponent} from './studentschool/studentschool.component';
 import {MainclassComponent} from './mainclass/mainclass.component';
 import {MainblogComponent} from './mainblog/mainblog.component';
-
+import {StudyabroadComponent} from './studyabroad/studyabroad.component';
+import {ApplymasterComponent} from './applymaster/applymaster.component';
+import {ApplybachelorComponent} from './applybachelor/applybachelor.component';
+import {ApplyhighschoolComponent} from './applyhighschool/applyhighschool.component';
 @NgModule({
   declarations: [
     AppComponent,
     MainpageComponent,
     MainclassComponent,
     MainblogComponent,
+    StudyabroadComponent,
+    ApplymasterComponent,
+    ApplybachelorComponent,
+    ApplyhighschoolComponent,
     LoginComponent,
     HMmainComponent,
     HmmodifypassComponent,

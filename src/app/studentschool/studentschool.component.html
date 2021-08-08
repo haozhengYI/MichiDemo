@@ -30,7 +30,7 @@
 			  <li ><a (click)="studentmain(student)">Home-申请状态</a></li>
 				<li ><a >更改密码</a></li>
 				<li ><a (click)="info(student)">完善个人信息</a></li>
-				<li  class="active"><a (click)="rec(student)">推荐人信息</a></li>
+				<li ><a (click)="rec(student)">推荐人信息</a></li>
 				<li><a (click)="addRecom(student)">添加推荐人</a></li>
 			</ul><br>	
 		  </div>
@@ -43,7 +43,11 @@
 			</div>
 		  <br>
 		  <hr>
-		  <h3>申请项目详细</h3>
+		  <h3>申请项目详细
+			<a href="{{school.link}}">
+				<span class="glyphicon glyphicon-link"></span>
+			   </a>
+		  </h3>
 		  
 		  <br>
 		  <form id="form1" action="" method="post">
@@ -188,7 +192,35 @@
 				</div>
 			  </div>
 			</div>
-	
+		<hr>
+		<h3>文书</h3>
+		<div class="col-sm-8 tuijian">
+            <h4>
+              此选校所添加的文书总数：
+              <small class="text-muted">{{statements.length}}</small>
+            </h4>
+
+            <div class="container" *ngIf="statements.length > 0">
+              <div class="row clearfix" *ngFor="let st of statements">
+                <div class="col-md-8 column">
+                  <div class="panel panel-info" >
+                    <div class="panel-heading" >
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#{{st._id}}">
+                      <b> {{st.stype}} </b> （ {{st.words}} 字） <br>
+                      </a>
+                    </h4>
+                    </div>
+                    <div id="{{st._id}}" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      {{st.question}}
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 	
 		  </div>
 		</div>

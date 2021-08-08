@@ -12,11 +12,11 @@ import {HmService} from './../hm.service';
 import {Student} from '../../app/st.model';
 
 @Component({
-  selector: 'app-mainpage',
-  templateUrl: './mainpage.component.html',
-  styleUrls: ['./mainpage.component.scss']
+  selector: 'app-studyabroad',
+  templateUrl: './studyabroad.component.html',
+  styleUrls: ['./studyabroad.component.scss']
 })
-export class MainpageComponent implements OnInit {
+export class StudyabroadComponent implements OnInit {
   
   user: user[] = [];
   students: Student[] = [];
@@ -149,6 +149,7 @@ export class MainpageComponent implements OnInit {
     };
     this.router.navigate(['/mainblog'], navigationExtras);
   }
+
   //direct to the 留学 page
   abroad() {
     const navigationExtras: NavigationExtras = {
@@ -158,5 +159,31 @@ export class MainpageComponent implements OnInit {
     };
     this.router.navigate(['/studyabroad'], navigationExtras);
   }
-
+  //direct to the 硕士申请 page
+  master() {
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+       
+      }
+    };
+    this.router.navigate(['/applymaster'], navigationExtras);
+  }
+  //direct to the 本科申请 page
+  bachelor() {
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+       
+      }
+    };
+    this.router.navigate(['/applybachelor'], navigationExtras);
+  }
+  //direct to the 高中申请 page
+  highschool() {
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+       
+      }
+    };
+    this.router.navigate(['/applyhighschool'], navigationExtras);
+  }
 }

@@ -12,11 +12,11 @@ import {HmService} from './../hm.service';
 import {Student} from '../../app/st.model';
 
 @Component({
-  selector: 'app-mainpage',
-  templateUrl: './mainpage.component.html',
-  styleUrls: ['./mainpage.component.scss']
+  selector: 'app-applymaster',
+  templateUrl: './applymaster.component.html',
+  styleUrls: ['./applymaster.component.scss']
 })
-export class MainpageComponent implements OnInit {
+export class ApplymasterComponent implements OnInit {
   
   user: user[] = [];
   students: Student[] = [];
@@ -149,6 +149,7 @@ export class MainpageComponent implements OnInit {
     };
     this.router.navigate(['/mainblog'], navigationExtras);
   }
+
   //direct to the 留学 page
   abroad() {
     const navigationExtras: NavigationExtras = {
@@ -158,5 +159,4 @@ export class MainpageComponent implements OnInit {
     };
     this.router.navigate(['/studyabroad'], navigationExtras);
   }
-
 }

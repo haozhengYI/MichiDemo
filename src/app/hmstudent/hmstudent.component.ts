@@ -7,6 +7,9 @@ import { HttpClient } from '@angular/common/http';
 import {Student} from '../st.model';
 import {School} from '../school.model';
 import {Recommender} from '../recom.model';
+import {Notif} from '../notif.model';
+import{NotifService} from '../notif.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-hmstudent',
@@ -27,10 +30,10 @@ export class HmstudentComponent implements OnInit {
   location:String;
   phone:String;
   price:String;
-  //student个人信息
-  //Slocation:String;
-  //Sname: String;
-
+  //通知信息
+  notifs: Notif[] = [];
+  notif : Notif;
+  
   //school 信息
   schools: School[] = [];
   //推荐人信息
@@ -42,6 +45,7 @@ export class HmstudentComponent implements OnInit {
     private route: ActivatedRoute, 
     private router: Router, 
     private http: HttpClient,
+    public notifService:NotifService,
     public hmService: HmService) { 
       this.route.queryParams.subscribe(params => {
         this.managerID = params["managerID"];
@@ -50,6 +54,15 @@ export class HmstudentComponent implements OnInit {
        console.log("学生 ID 为+"+this.studentID);
     }
   
+    addNotif(form: NgForm){//
+       let content = (document.getElementById("exampleTextarea") as HTMLInputElement).value;
+       //console.log(content);
+      this.notifService.addNotif("",this.studentID, content, 
+         form.value.ddl1,"未读",form.value.type);
+      alert("发送通知成功!!" );  
+    }
+
+
   ngOnInit() {
     this.http.get<{hotels: HotelM[]}>('/api/hotels').subscribe((Data) => {
         this.hotels = Data.hotels;
@@ -87,14 +100,20 @@ export class HmstudentComponent implements OnInit {
     this.http.get<{recommenders: Recommender[]}>('/api/studentrecommenderdetail/' + this.studentID).subscribe((orderData) => {
       console.log(orderData);
       this.recommenders = orderData.recommenders;
-    });        
+    });    
+    
+    //展示 此学生通知信息
+    this.http.get<{notifs: Notif[]}>('/api/notifdetail/' + this.studentID).subscribe((o) => {
+      console.log(o);
+      this.notifs = o.notifs;
+    });   
       
     this.hotelMSub = this.hmService.getHotelMUpdatedListener().subscribe((hotels: HotelM[]) => {
       this.hotels = hotels;
       });
   }
 
-
+  
   //direct to the hotel manage page
   hotelman(hotel) {
     const navigationExtras: NavigationExtras = {

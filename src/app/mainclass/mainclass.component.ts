@@ -156,5 +156,14 @@ export class MainclassComponent implements OnInit {
     };
     this.router.navigate(['/mainblog'], navigationExtras);
   }
+  //direct to the 留学 page
+  abroad() {
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+       
+      }
+    };
+    this.router.navigate(['/studyabroad'], navigationExtras);
+  }
 
 }

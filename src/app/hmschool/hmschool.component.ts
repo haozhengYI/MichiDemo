@@ -10,6 +10,8 @@ import {Recommender} from '../recom.model';
 import {RecomletterService} from '../recletter.service';
 import {Recomletter} from '../recletter.model';
 import { NgForm } from '@angular/forms';
+import {Statement} from '../statement.model';
+import {StatementService} from '../statement.service';
 
 
 @Component({
@@ -64,6 +66,9 @@ export class HmschoolComponent implements OnInit {
   recomletters : Recomletter[] = [];
   recomletter : Recomletter;
 
+  //文书信息
+  statements : Statement[] = [];
+
   private hotelMSub: Subscription;
 
   constructor(
@@ -71,6 +76,7 @@ export class HmschoolComponent implements OnInit {
     private router: Router, 
     private http: HttpClient,
     public hmService: HmService,
+    public statementService:StatementService,
     public recomletterService : RecomletterService) { 
       this.route.queryParams.subscribe(params => {
         this.managerID = params["managerID"];
@@ -95,6 +101,17 @@ export class HmschoolComponent implements OnInit {
       this.recomletterService.addRecomletter("",this.schoolID, this.studentID,this.recommenderID, 
           this.recommenderName,form.value.type,"未提交");
       alert("添加推荐信成功!!" ); 
+      window.location.reload();  
+    }
+
+    addstatement(form: NgForm){//
+      let question = (document.getElementById("question") as HTMLInputElement).value;
+      let words = (document.getElementById("words") as HTMLInputElement).value;
+      console.log("题目" + question +"学校ID"+this.schoolID + "字数" + words + "类别" + form.value.stype);  
+
+      //console.log("推荐信种类为"+form.value.type +"学校ID"+this.schoolID);
+      this.statementService.addStatement("",this.schoolID, question,form.value.stype, words);
+      alert("添加文书成功!!" ); 
       window.location.reload();  
     }
 
@@ -163,6 +180,11 @@ export class HmschoolComponent implements OnInit {
       this.recomletters = Data.recomletters;
     }); 
     
+    //展示 这个选校的 文书 信息
+    this.http.get<{statements: Statement[]}>('/api/statementdetail/' + this.schoolID).subscribe((Data) => {
+      //console.log(Data);
+      this.statements = Data.statements;
+    }); 
       
     this.hotelMSub = this.hmService.getHotelMUpdatedListener().subscribe((hotels: HotelM[]) => {
       this.hotels = hotels;

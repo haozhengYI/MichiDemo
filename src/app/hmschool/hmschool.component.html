@@ -293,7 +293,79 @@
             
           </div>
         </div>
+      
 
+      <hr>
+      <h3>文书</h3>
+        <div class="row">
+          <div class="col-sm-4 tuijian">
+            <h4>
+              此选校所添加的文书总数：
+              <small class="text-muted">{{statements.length}}</small>
+            </h4>
+
+            <div class="container" *ngIf="statements.length > 0">
+              <div class="row clearfix" *ngFor="let st of statements">
+                <div class="col-md-6 column">
+                  <div class="panel panel-info" >
+                    <div class="panel-heading" >
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#{{st._id}}">
+                      <b> {{st.stype}} </b> （ {{st.words}} 字） <br>
+                      </a>
+                    </h4>
+                    </div>
+                    <div id="{{st._id}}" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      {{st.question}}
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 caozuo">
+            <form (submit)="addstatement(postForm)" #postForm="ngForm" ngNativeValidate>
+              <fieldset>
+                <legend>添加文书</legend>
+                <fieldset class="form-group">
+                  <legend>类别</legend>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input" name="stype" id="PS" value="Personal Statement"  ngModel required>
+                      Personal Statement
+                    </label>
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input" name="stype" id="SOP" value="Statement of Purpose"  ngModel required>
+                      Statement of Purpose
+                    </label>
+                    <br>
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input" name="stype" id="Essay" value="Essay" ngModel required>
+                      Essay
+                    </label>
+                    <br>
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input" name="stype" id="Rother" value="other" ngModel required>
+                      Other
+                    </label>
+                  </div>
+                </fieldset>
+                <div class="form-group">
+                  <label class="col-form-label mt-4" for="inputDefault">文书题目</label>
+                  <input type="text" class="form-control" placeholder="请填写文书题目" id="question" ngModel required>
+                </div>
+                <div class="form-group">
+                  <label class="col-form-label mt-4" for="inputDefault">字数要求</label>
+                  <input type="text" class="form-control" placeholder="请填写字数限制" id="words" ngModel required>
+                </div>
+                <button  class="btn btn-primary">添加</button>
+              </fieldset>
+            </form>
+            
+          </div>
+        </div>
 
       </div>
     </div>

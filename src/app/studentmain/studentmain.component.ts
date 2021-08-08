@@ -5,6 +5,7 @@ import {Student} from '../st.model';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute,  NavigationExtras,Router } from '@angular/router';
 import {School} from '../school.model';
+import {Notif} from '../notif.model';
 
 @Component({
   selector: 'app-studentmain',
@@ -20,6 +21,9 @@ export class StudentmainComponent implements OnInit {
   //school 信息
   schools: School[] = [];
   school: School[] = [];
+
+  notifs: Notif[] = [];
+  notif: Notif[] = [];
   private stSub: Subscription;
 
   constructor(
@@ -64,12 +68,48 @@ export class StudentmainComponent implements OnInit {
           console.log(this.school);    
       });
 
+      //展示 此学生通知信息
+    this.http.get<{notifs: Notif[]}>('/api/notifdetail/' + this.studentID).subscribe((o) => {
+      
+      this.notif = o.notifs;
+      for(let n of this.notif){
+        if(n.userAccount=== this.studentID){
+          this.notifs.push(n);
+          //console.log(this.school);
+        }
+      }
+
+    });   
+
  
 
 
     this.stSub = this.stService.getstudentsUpdatedListener().subscribe((students: Student[]) => {
     this.students = students;
     });
+  }
+  updateNotif(n){
+    const Notif = {
+      userAccount:n.userAccount,//学生的id
+      content: n.content,//存储通知内容
+      ndate:n.ndate,//通知日期
+      nstate:"已读",//通知状态（"未读/已读"）
+      ntype:n.ntype,//通知类型（"紧急/一般/比较紧急"）
+    }
+    this.http.put('/api/notif/' + n._id, Notif)
+      .subscribe((data) => {
+        const options = {
+          overlay: true,
+          overlayClickToClose: true,
+          showCloseButton: true,
+          duration: 5000
+        };
+        if (data[0] === undefined) {
+          console.log("Undefine");
+        }
+      })
+      alert("已读这条通知");
+      window.location.reload();  
   }
 
   //direct to the student main page

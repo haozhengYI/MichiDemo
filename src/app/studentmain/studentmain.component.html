@@ -36,6 +36,51 @@
 		  </div>
 	  
 		  <div class="col-sm-9">
+			<div *ngIf="notifs.length > 0">
+				<div *ngFor="let n of notifs">
+					<div *ngIf="n.nstate=='未读'">
+					<div class="alert alert-dismissible alert-warning" *ngIf="n.ntype=='比较紧急'">
+						<button type="button" class="close" data-dismiss="alert"aria-hidden="true">&times;</button>
+						<div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+							<div class="toast-header">
+							  <strong class="me-auto">未读{{n.ntype}}消息 </strong>
+							  <small>{{n.ndate}}</small>
+							</div>
+							<div class="toast-body">
+								{{n.content}}
+								<button type="button" class="btn btn-warning btn-sm" href="/anew/todel/@a.id"  (click)="updateNotif(n)">标记为已读消息</button>
+							</div>
+						</div>
+					</div>
+					<div class="alert alert-dismissible alert-success" *ngIf="n.ntype=='一般'">
+						<button type="button" class="close" data-dismiss="alert"aria-hidden="true">&times;</button>
+						<div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+							<div class="toast-header">
+							  <strong class="me-auto">未读{{n.ntype}}消息 </strong>
+							  <small>{{n.ndate}}</small>
+							</div>
+							<div class="toast-body">
+								{{n.content}}
+								<button type="button" class="btn btn-success btn-sm" href="/anew/todel/@a.id"  (click)="updateNotif(n)">标记为已读消息</button>
+							</div>
+						</div>
+					</div>
+					<div class="alert alert-dismissible alert-danger" *ngIf="n.ntype=='紧急'">
+						<button type="button" class="close" data-dismiss="alert"aria-hidden="true">&times;</button>
+						<div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+							<div class="toast-header">
+							  <strong class="me-auto">未读{{n.ntype}}消息 </strong>
+							  <small>{{n.ndate}}</small>
+							</div>
+							<div class="toast-body">
+								{{n.content}}
+								<button type="button" class="btn btn-danger btn-sm" href="/anew/todel/@a.id"  (click)="updateNotif(n)">标记为已读消息</button>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+			</div>
 			<h3>
 				已添加的选校列表：
 				{{school.length}}

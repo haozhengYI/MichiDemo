@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute,  NavigationExtras,Router } from '@angular/router';
 import {School} from '../school.model';
 import {Recomletter} from '../recletter.model';
+import {Statement} from '../statement.model';
 
 @Component({
   selector: 'app-studentschool',
@@ -42,6 +43,8 @@ export class StudentschoolComponent implements OnInit {
   //推荐信信息
   recomletters : Recomletter[] = [];
   recomletter : Recomletter;
+  //文书信息
+  statements : Statement[] = [];
 
   private stSub: Subscription;
 
@@ -107,6 +110,11 @@ export class StudentschoolComponent implements OnInit {
       this.recomletters = Data.recomletters;
     }); 
     
+    //展示 这个选校的 文书 信息
+    this.http.get<{statements: Statement[]}>('/api/statementdetail/' + this.schoolID).subscribe((Data) => {
+      //console.log(Data);
+      this.statements = Data.statements;
+    }); 
  
 
 

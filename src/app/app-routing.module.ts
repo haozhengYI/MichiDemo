@@ -31,12 +31,20 @@ import {StudentrecComponent} from './studentrec/studentrec.component';
 import {StudentschoolComponent} from './studentschool/studentschool.component';
 import {MainclassComponent} from './mainclass/mainclass.component';
 import {MainblogComponent} from './mainblog/mainblog.component';
+import {StudyabroadComponent} from './studyabroad/studyabroad.component';
+import {ApplymasterComponent} from './applymaster/applymaster.component';
+import {ApplybachelorComponent} from './applybachelor/applybachelor.component';
+import {ApplyhighschoolComponent} from './applyhighschool/applyhighschool.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/mainpage', pathMatch: 'full' },
   {path: 'mainpage', component:MainpageComponent},
   {path: 'mainclass', component:MainclassComponent},
   {path: 'mainblog', component:MainblogComponent},
+  {path: 'studyabroad', component:StudyabroadComponent},
+  {path: 'applymaster', component:ApplymasterComponent},
+  {path: 'applybachelor', component:ApplybachelorComponent},
+  {path: 'applyhighschool', component:ApplyhighschoolComponent},
 
   {path: 'login', component:LoginComponent},
   {path: 'adminmainpage', component:AdminmainpageComponent},
