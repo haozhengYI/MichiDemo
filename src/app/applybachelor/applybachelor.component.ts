@@ -129,7 +129,14 @@ export class ApplybachelorComponent implements OnInit {
 
     });
   }
-
+  main() {
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+       
+      }
+    };
+    this.router.navigate(['/mainpage'], navigationExtras);
+  }
   //direct to the 王牌课程 page
   class() {
     const navigationExtras: NavigationExtras = {
