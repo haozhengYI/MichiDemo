@@ -62,6 +62,7 @@ export class HmschoolComponent implements OnInit {
   recommenderID : String;
   recommenderName : any;
 
+
   //推荐信信息
   recomletters : Recomletter[] = [];
   recomletter : Recomletter;
@@ -88,6 +89,9 @@ export class HmschoolComponent implements OnInit {
   
     addrecomLetter(form: NgForm){//
       this.recommenderID = (document.getElementById("select") as HTMLInputElement).value;
+      let rtype1 = document.getElementById("Academic") as HTMLInputElement;
+      let rtype2 = document.getElementById("Professional") as HTMLInputElement;
+      let rtype3 = document.getElementById("Rother") as HTMLInputElement;
       //console.log("推荐人ID" + this.recommenderID );  
       for(let rec of this.recommenders){
          if(rec._id ===this.recommenderID){
@@ -96,10 +100,21 @@ export class HmschoolComponent implements OnInit {
           //console.log("推荐人名字为"+this.recommenderName);
         }
       }
-
-      //console.log("推荐信种类为"+form.value.type +"学校ID"+this.schoolID);
-      this.recomletterService.addRecomletter("",this.schoolID, this.studentID,this.recommenderID, 
-          this.recommenderName,form.value.type,"未提交");
+      if(rtype1.checked==true){
+        //console.log("推荐信种类为"+form.value.type +"学校ID"+this.schoolID);
+        this.recomletterService.addRecomletter("",this.schoolID, this.studentID,this.recommenderID, 
+            this.recommenderName,"Academic","未提交");
+      }
+      if(rtype2.checked==true){
+        //console.log("推荐信种类为"+form.value.type +"学校ID"+this.schoolID);
+        this.recomletterService.addRecomletter("",this.schoolID, this.studentID,this.recommenderID, 
+            this.recommenderName,"Professional","未提交");
+      }
+      if(rtype3.checked==true){
+        //console.log("推荐信种类为"+form.value.type +"学校ID"+this.schoolID);
+        this.recomletterService.addRecomletter("",this.schoolID, this.studentID,this.recommenderID, 
+            this.recommenderName,"Rother","未提交");
+      }
       alert("添加推荐信成功!!" ); 
       window.location.reload();  
     }
@@ -202,7 +217,7 @@ export class HmschoolComponent implements OnInit {
     (document.getElementById("ddl2") as HTMLInputElement).removeAttribute("disabled");
     (document.getElementById("ddl3") as HTMLInputElement).removeAttribute("disabled");
     (document.getElementById("interview") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("videoessay") as HTMLInputElement).removeAttribute("disabled");
+    (document.getElementById("videoEssay") as HTMLInputElement).removeAttribute("disabled");
     (document.getElementById("link") as HTMLInputElement).removeAttribute("disabled");
     (document.getElementById("applyAccount") as HTMLInputElement).removeAttribute("disabled");
     (document.getElementById("applyPassword") as HTMLInputElement).removeAttribute("disabled");

@@ -132,7 +132,7 @@
                 <td>Video Essay
                 </td>
                 <td><div class="input-group">
-                  <input class="form-control" value="{{school.videoEssay}}" [(ngModel)]="videoessay"  id="videoessay" disabled="" name="videoessay" style="width: 785px; "></div>
+                  <input class="form-control" value="{{school.videoEssay}}" [(ngModel)]="videoEssay"  id="videoEssay" disabled="" name="videoEssay" style="width: 785px; "></div>
                 </td>
               </tr>
               <tr>
@@ -273,15 +273,15 @@
                   <legend>类别</legend>
                   <div class="form-check">
                     <label class="form-check-label">
-                      <input type="radio" class="form-check-input" name="type" id="Academic" value="Academic"  ngModel required>
+                      <input type="radio" class="form-check-input" id="Academic" value="Academic"  ngModel required>
                       Academic 学术
                     </label>
                     <label class="form-check-label">
-                      <input type="radio" class="form-check-input" name="type" id="Professional" value="Professional"  ngModel required>
+                      <input type="radio" class="form-check-input" id="Professional" value="Professional"  ngModel required>
                       Professional 工作
                     </label>
                     <label class="form-check-label">
-                      <input type="radio" class="form-check-input" name="type" id="Rother" value="other" ngModel required>
+                      <input type="radio" class="form-check-input"  id="Rother" value="other" ngModel required>
                       other
                     </label>
                   </div>

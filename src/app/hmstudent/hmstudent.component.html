@@ -56,6 +56,15 @@
           <a class="nav-link " data-toggle="tab" href="#profile" >个人信息</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link " data-toggle="tab" href="#otherinfo" >补充信息</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " data-toggle="tab" href="#edu" >教育信息</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " data-toggle="tab" href="#exp" >工作经历</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" data-toggle="tab" href="#dropdown1">推荐人信息</a>
         </li>
         <li class="nav-item ">
@@ -67,33 +76,498 @@
       </ul>
       <div id="myTabContent" class="tab-content">
         <div class="tab-pane fade " id="profile">
-          <table class="table table-bordered">
-            <tbody>
-              <tr>
-                <td style="background-color: darkgray;" colspan="4" align="center"> <b>Personal information</b> </td>
-                
-              </tr>
-              <tr>
-                <td style="background-color: darkgray;"> <b>First Name</b> </td>
-                <td>{{student.firstName}}</td>
-                <td style="background-color: darkgray;"><b>Last Name</b></td>
-                <td>{{student.lastName}}</td>
-              </tr>
-              <tr>
-                <td style="background-color: darkgray;"><b>Email</b></td>
-                <td>{{student.email}}</td>
-                <td style="background-color: darkgray;"><b>Phone</b></td>
-                <td>{{student.phone}}</td>
-              </tr>
-              <tr>
-                <td style="background-color: darkgray;"><b>location</b></td>
-                <td>{{student.location}}</td>
-                <td style="background-color: darkgray;"><b>gender</b></td>
-                <td>{{student.gender}}</td>
-              </tr>
-            </tbody>
-          </table>
+          <div id="personal" >
+            <h3>基本信息</h3> 
+            <hr>
+            <table class="table table-bordered" >
+              <tbody>
+                <tr>
+                <td >名字 Firstname</td>
+                <td >	
+                  <input class="form-control" id="firstName" value="{{student.firstName}}" [(ngModel)]="firstName"  name="firstName" style="width: 200px;" disabled="">
+                </td>
+                <td >姓氏 Lastname</td>
+                <td ><input class="form-control" id="lastName" value="{{student.lastName}}" [(ngModel)]="lastName"  name="lastName" style="width: 200px;" disabled=""></td>
+                <td >性别 Gender</td>
+                <td><input class="form-control" id="gender" value="{{student.gender}}" [(ngModel)]="gender"  name="gender" style="width: 200px;" disabled=""></td>
+                </tr>
+                <tr>
+                <td >出生年月日 dob</td>
+                <td >	
+                  <input class="form-control" id="dob" value="{{student.dob}}" [(ngModel)]="dob"  name="dob" style="width: 200px;" disabled="">
+                  <small class="form-text text-muted">格式为MM/DD/YYYY</small>
+                </td>
+                <td >现住址 currentAddress	</td>
+                <td colspan="3"><input class="form-control" id="currentAddress" value="{{student.currentAddress}}" [(ngModel)]="currentAddress"  name="currentAddress" style="width: 500px;" disabled="">
+                  <small class="form-text text-muted">请填写英文地址，并包含邮编。</small></td>
+                </tr>
+                <tr>
+                <td >国籍</td>
+                <td >	
+                  <input class="form-control" id="citizen" value="{{student.citizen}}" [(ngModel)]="citizen"  name="citizen" style="width: 200px;" disabled="">
+                </td>
+                <td >永久居住地址 Permanent Address</td>
+                <td colspan="3"><input class="form-control" id="permanentAddress" value="{{student.permanentAddress}}" [(ngModel)]="permanentAddress"  name="permanentAddress" style="width:500px;" disabled="">
+                  <small class="form-text text-muted">请填写英文地址，并包含邮编。</small></td>
+                </tr>
+                <tr>
+                <td >电话 Cellphone</td>
+                <td >	
+                  <input class="form-control" id="phone" value="{{student.phone}}" [(ngModel)]="phone"  name="phone" style="width: 200px;" disabled="">
+                </td>
+                <td >邮箱 Email</td>
+                <td ><input class="form-control" id="email" value="{{student.email}}" [(ngModel)]="email"  name="email" style="width: 200px;" disabled=""></td>
+                <td >SSN </td>
+                <td><input class="form-control" id="ssn" value="{{student.ssn}}" [(ngModel)]="ssn"  name="ssn" style="width: 200px;" disabled=""></td>
+                </tr>
+                <tr>
+                <td >护照号 Passport</td>
+                <td colspan="2">	
+                  <input class="form-control" id="passport" value="{{student.passport}}" [(ngModel)]="passport"  name="passport" style="width: 200px;" disabled="">
+                </td>
+                <td >美签号码 Visa Number</td>
+                <td colspan="2"><input class="form-control" id="visa" value="{{student.visa}}" [(ngModel)]="visa"  name="visa" style="width: 200px;" disabled=""></td>
+                </tr>
+                <tr>
+                <td >用于申请的邮箱 Email</td>
+                <td colspan="2">	
+                  <input class="form-control" id="appEmail" value="{{student.appEmail}}" [(ngModel)]="appEmail"  name="appEmail" style="width: 200px;" disabled="">
+                </td>
+                <td >用于申请的邮箱密码 Password</td>
+                <td colspan="2"><input class="form-control" id="appPsw" value="{{student.appPsw}}" [(ngModel)]="appPsw"  name="appPsw" style="width: 200px;" disabled=""></td>
+                </tr> 
+              </tbody>
+            </table>
+
+          </div>
+          <div id="family" >
+            <h3>家庭信息</h3>
+            <hr>
+            <form id="form2" action="" method="post">
+            <table class="table table-bordered" >
+              <tbody>
+                <tr>
+                <td ></td>
+                <td >	
+                  Father 父亲
+                </td>
+                <td >Mother 母亲</td>
+                </tr>
+                <tr>
+                <td >姓名 <br> <small class="form-text text-muted">如是英文姓名，名字在前，姓氏在后</small></td>
+                <td >	
+                  <input class="form-control" id="MomName" value="{{student.MomName}}" [(ngModel)]="MomName"  name="MomName" style="width: 200px;" disabled="">
+                  
+                </td>
+                <td>
+                  <input class="form-control" id="FatName" value="{{student.FatName}}" [(ngModel)]="FatName"  name="FatName" style="width: 200px;" disabled="">
+                </td>
+                </tr>
+                <tr>
+                <td >Address 家庭住址 <br> <small class="form-text text-muted">请填写英文地址，并包含邮编。</small></td>
+                <td >	
+                  <input class="form-control" id="MomAddress" value="{{student.MomAddress}}" [(ngModel)]="MomAddress"  name="MomAddress" style="width: 400px;" disabled="">
+                  
+                </td>
+                <td>
+                  <input class="form-control" id="FatAddress" value="{{student.FatAddress}}" [(ngModel)]="FatAddress"  name="FatAddress" style="width: 400px;" disabled="">
+                </td>
+                </tr>
+                <tr>
+                <td >Organization Name & Address 所在公司名称与地址<br> <small class="form-text text-muted">公司地址请提供英文地址，并包含邮箱</small></td>
+                <td >	
+                  <input class="form-control" id="MomOrganazation" value="{{student.MomOrganazation}}" [(ngModel)]="MomOrganazation"  name="MomOrganazation" style="width: 400px;" disabled="">
+                  
+                </td>
+                <td>
+                  <input class="form-control" id="FatOrganazation" value="{{student.FatOrganazation}}" [(ngModel)]="FatOrganazation"  name="FatOrganazation" style="width: 400px;" disabled="">
+                </td>
+                </tr>
+                <tr>
+                <td >Position 职务 </td>
+                <td >	
+                  <input class="form-control" id="MomJob" value="{{student.MomJob}}" [(ngModel)]="MomJob"  name="MomJob" style="width: 200px;" disabled="">
+                  
+                </td>
+                <td>
+                  <input class="form-control" id="FatJob" value="{{student.FatJob}}" [(ngModel)]="FatJob"  name="FatJob" style="width: 200px;" disabled="">
+                </td>
+                </tr>
+                <tr>
+                <td >Level of Education 最高学历 </td>
+                <td >	
+                  <input class="form-control" id="MomEducation" value="{{student.MomEducation}}" [(ngModel)]="MomEducation"  name="MomEducation" style="width: 200px;" disabled="">
+                  
+                </td>
+                <td>
+                  <input class="form-control" id="FatEducation" value="{{student.FatEducation}}" [(ngModel)]="FatEducation"  name="FatEducation" style="width: 200px;" disabled="">
+                </td>
+                </tr>
+                <tr>
+                <td >School Name 毕业学校</td>
+                <td >	
+                  <input class="form-control" id="MomSchool" value="{{student.MomSchool}}" [(ngModel)]="MomSchool"  name="MomSchool" style="width: 200px;" disabled="">
+                  
+                </td>
+                <td>
+                  <input class="form-control" id="FatSchool" value="{{student.FatSchool}}" [(ngModel)]="FatSchool"  name="FatSchool" style="width: 200px;" disabled="">
+                </td>
+                </tr>
+                <tr>
+                <td >Year of Graduation 毕业时间</td>
+                <td >	
+                  <input class="form-control" id="MomGraduation" value="{{student.MomGraduation}}" [(ngModel)]="MomGraduation"  name="MomGraduation" style="width: 200px;" disabled="">
+                  
+                </td>
+                <td>
+                  <input class="form-control" id="FatGraduation" value="{{student.FatGraduation}}" [(ngModel)]="FatGraduation"  name="FatGraduation" style="width: 200px;" disabled="">
+                </td>
+                </tr>
+                <tr>
+                <td >Phone 电话 </td>
+                <td >	
+                  <input class="form-control" id="MomPhone" value="{{student.MomPhone}}" [(ngModel)]="MomPhone"  name="MomPhone" style="width: 200px;" disabled="">
+                  
+                </td>
+                <td>
+                  <input class="form-control" id="FatPhone" value="{{student.FatPhone}}" [(ngModel)]="FatPhone"  name="FatPhone" style="width: 200px;" disabled="">
+                </td>
+                </tr>
+                <tr>
+                <td >Email  邮箱  </td>
+                <td >	
+                  <input class="form-control" id="MomEmail" value="{{student.MomEmail}}" [(ngModel)]="MomEmail"  name="MomEmail" style="width: 200px;" disabled="">
+                  
+                </td>
+                <td>
+                  <input class="form-control" id="FatEmail" value="{{student.FatEmail}}" [(ngModel)]="FatEmail"  name="FatEmail" style="width: 200px;" disabled="">
+                </td>
+                </tr>
+              </tbody>
+            </table>
+            </form>
+          </div>
         </div>
+        <div class="tab-pane fade " id="otherinfo">               
+          <div id="standardtest" >
+            <h3>标化成绩</h3>
+            <hr>
+            <table class="table table-bordered" >
+              <tbody>
+                <tr>
+                  <td colspan="10">
+                    <h4>TOEFL/IELTS</h4> <small class="form-text text-muted">如果是IELTS成绩，请在总分中标记</small>
+                  </td>
+                </tr>
+                <tr>
+                <td >总分 Total Score</td>
+                <td >	
+                  <input class="form-control" id="TOEFL" value="{{student.TOEFL}}" [(ngModel)]="TOEFL"  name="TOEFL" style="width: 80px;" disabled="">
+                </td>
+                <td >阅读 Reading</td>
+                <td ><input class="form-control" id="TOEFLR" value="{{student.TOEFLR}}" [(ngModel)]="TOEFLR"  name="TOEFLR" style="width: 50px;" disabled=""></td>
+                <td >听力 Listening</td>
+                <td><input class="form-control" id="TOEFLL" value="{{student.TOEFLL}}" [(ngModel)]="TOEFLL"  name="TOEFLL" style="width: 50px;" disabled=""></td>
+                <td >口语 Speaking</td>
+                <td ><input class="form-control" id="TOEFLS" value="{{student.TOEFLS}}" [(ngModel)]="TOEFLS"  name="TOEFLS" style="width: 50px;" disabled=""></td>
+                <td >写作 Writing</td>
+                <td><input class="form-control" id="TOEFLW" value="{{student.TOEFLW}}" [(ngModel)]="TOEFLW"  name="TOEFLW" style="width: 50px;" disabled=""></td>
+                </tr>
+                <tr>
+                <td colspan="10">
+                  <h4>GRE</h4> <small class="form-text text-muted">如果没有考过GRE可以不填写</small>
+                </td>
+                </tr>
+                <tr>
+                <td >总分 Total Score</td>
+                <td >	
+                  <input class="form-control" id="GRE" value="{{student.GRE}}" [(ngModel)]="GRE"  name="GRE" style="width: 80px;" disabled="">
+                </td>
+                <td >Verbal</td>
+                <td ><input class="form-control" id="GREV" value="{{student.GREV}}" [(ngModel)]="GREV"  name="GREV" style="width: 80px;" disabled="">
+                </td>
+                <td >Percentile</td>
+                <td ><input class="form-control" id="GREVP" value="{{student.GREVP}}" [(ngModel)]="GREVP"  name="GREVP" style="width: 80px;" disabled="">
+                </td>
+                <td >Quantitative</td>
+                <td ><input class="form-control" id="GREQ" value="{{student.GREQ}}" [(ngModel)]="GREQ"  name="GREQ" style="width: 80px;" disabled="">
+                </td>
+                <td >Percentile</td>
+                <td ><input class="form-control" id="GREQP" value="{{student.GREQP}}" [(ngModel)]="GREQP"  name="GREQP" style="width: 80px;" disabled="">
+                </td>
+                </tr>
+                <tr>
+                <td colspan="2" ></td>
+                <td >Analytical Writing</td>
+                <td ><input class="form-control" id="GREW" value="{{student.GREW}}" [(ngModel)]="GREW"  name="GREW" style="width: 80px;" disabled="">
+                </td>
+                <td >Percentile</td>
+                <td ><input class="form-control" id="GREWP" value="{{student.GREWP}}" [(ngModel)]="GREWP"  name="GREWP" style="width: 80px;" disabled="">
+                </td>
+                <td colspan="4"></td>
+                </tr>
+                <tr>
+                <td colspan="10">
+                  <h4>GMAT</h4> <small class="form-text text-muted">如果没有考过GMAT可以不填写</small>
+                </td>
+                </tr>
+                <tr>
+                <td >总分 Total Score</td>
+                <td >	
+                  <input class="form-control" id="GMAT" value="{{student.GMAT}}" [(ngModel)]="GMAT"  name="GMAT" style="width: 80px;" disabled="">
+                </td>
+                <td >Verbal</td>
+                <td ><input class="form-control" id="GMATV" value="{{student.GMATV}}" [(ngModel)]="GMATV"  name="GMATV" style="width: 80px;" disabled="">
+                </td>
+                <td >Percentile</td>
+                <td ><input class="form-control" id="GMATVP" value="{{student.GMATVP}}" [(ngModel)]="GMATVP"  name="GMATVP" style="width: 80px;" disabled="">
+                </td>
+                <td >Quantitative</td>
+                <td ><input class="form-control" id="GMATQ" value="{{student.GMATQ}}" [(ngModel)]="GMATQ"  name="GMATQ" style="width: 80px;" disabled="">
+                </td>
+                <td >Percentile</td>
+                <td ><input class="form-control" id="GMATQP" value="{{student.GMATQP}}" [(ngModel)]="GMATQP"  name="GMATQP" style="width: 80px;" disabled="">
+                </td>
+                </tr>
+                <tr>
+                <td colspan="2" ></td>
+                <td >Analytical Writing</td>
+                <td ><input class="form-control" id="GMATW" value="{{student.GMATW}}" [(ngModel)]="GMATW"  name="GMATW" style="width: 80px;" disabled="">
+                </td>
+                <td >Percentile</td>
+                <td ><input class="form-control" id="GMATWP" value="{{student.GMATWP}}" [(ngModel)]="GMATWP"  name="GMATWP" style="width: 80px;" disabled="">
+                </td>
+                <td >Reasoning</td>
+                <td ><input class="form-control" id="GMATR" value="{{student.GMATR}}" [(ngModel)]="GMATR"  name="GMATR" style="width: 80px;" disabled="">
+                </td>
+                <td >Percentile</td>
+                <td ><input class="form-control" id="GMATRP" value="{{student.GMATRP}}" [(ngModel)]="GMATRP"  name="GMATRP" style="width: 80px;" disabled="">
+                </td>
+                </tr>
+                <tr>
+                <td colspan="2">
+                  <h4>Others</h4> 
+                </td>
+                <td colspan="8">
+                  <input class="form-control" id="OtherStandardTest" value="{{student.OtherStandardTest}}" [(ngModel)]="OtherStandardTest"  name="OtherStandardTest" style="width: 900px;" disabled="">
+                </td>
+                </tr>
+                
+              </tbody>
+            </table>
+            
+          </div>
+          <div id="skills" >
+            <h3>技能</h3>
+            <hr>
+            <table class="table table-bordered" >
+              <tbody>
+                <tr>
+                  <td colspan="2">
+                    <p>比如：计算机语言: C (2 yrs ) C++ JAVA (5 yrs )Python; 统计软件SPSS, SAS, Stata; 经济学软件Eview;会计软件UFIDA, ERP; 金融终端 Bloomberg Reuters </p> <br> <b>写明使用的时间长短，是否精通</b> 
+                  </td>
+                </tr>
+                <tr>
+                <td >Language Ability 语言能力</td>
+                <td style="width: 900px;">	
+                  <input class="form-control" id="Language" value="{{student.Language}}" [(ngModel)]="Language"  name="Language" style="width: 800px;" disabled="">
+    
+                </td>	
+                </tr>
+                <tr>
+                <td >Computer Skills 计算机技能</td>
+                <td style="width: 900px;">	
+                  <input class="form-control" id="ComputerSkills" value="{{student.ComputerSkills}}" [(ngModel)]="ComputerSkills"  name="ComputerSkills" style="width: 800px;" disabled="">
+    
+                </td>
+                </tr>
+                <tr>
+                <td >Other Skills & Certificates <br> 其他技能和证书 <br><small class="form-text text-muted">证书: CFA CPA 证券资格证等</small></td>
+                <td style="width: 900px;">	
+                  <input class="form-control" id="OtherSkills" value="{{student.OtherSkills}}" [(ngModel)]="OtherSkills"  name="OtherSkills" style="width: 800px;" disabled="">
+    
+                </td>	
+                </tr>
+                <tr>
+                <td >Hobbies 爱好 <br><small class="form-text text-muted">如： 10年的钢琴舞台演出经历， 6年书法训练获全国级奖项10次</small></td>
+                <td style="width: 900px;">	
+                  <input class="form-control" id="Hobbies" value="{{student.Hobbies}}" [(ngModel)]="Hobbies"  name="Hobbies" style="width: 800px;" disabled="">
+    
+                </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="tab-pane fade " id="edu">
+          <div id="Education">
+					<br>
+					<div class="panel-group" id="accordion" *ngIf="education.length > 0">
+						<div class="panel panel-primary" *ngFor="let e of education">
+						  <div class="panel-heading">
+							<h4 class="panel-title">
+							  <a data-toggle="collapse" data-parent="#accordion" 
+								href="#{{e._id}}">
+								<b>{{e.educationName}} </b> ({{e.type}})
+							  </a>
+							</h4>
+						  </div>
+						  <div id="{{e._id}}" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<table class="table table-bordered" >
+									<tbody>
+									  <tr >
+										<td style="width: 30%; background-color: lightgray;">University 学校</td>
+										<td colspan="4" style="width: 70%;">	
+											{{e.educationName}}
+										</td>	
+									  </tr>
+									  <tr>
+										<td style="background-color: lightgray;">Address 学校地址</td>
+										<td colspan="4">	
+											{{e.educationLocation}}
+										</td>
+									  </tr>
+									  <tr>
+										<td style="background-color: lightgray;">在校日期 </td>
+										<td style="background-color: lightgray;">From</td>
+										<td >	
+											{{e.educationStart}}
+										</td>	
+										<td style="background-color: lightgray;">To</td>
+										<td >	
+											{{e.educationEnd}}
+										</td>
+									  </tr>
+									  <tr>
+										<td style="background-color: lightgray;">Major 专业 </td>
+										<td colspan="4">	
+											{{e.major}}
+										</td>
+									  </tr>
+									  <tr>
+										<td style="background-color: lightgray;">Degree 学位 </td>
+										<td colspan="4">	
+											{{e.Degree}}
+										</td>
+									  </tr>
+									  <tr >
+										<td style="background-color: lightgray;">Overall GPA
+										</td>
+										<td colspan="4">	
+											{{e.GPA}}
+										</td>
+									  </tr>
+									  <tr>
+										<td style="background-color: lightgray;">Major GPA 专业GPA </td>
+										<td colspan="4">	
+											{{e.MajorGPA}}
+										</td>
+									  </tr>
+									  <tr>
+										<td style="background-color: lightgray;">Second Degree or Minor 二学位或辅修</td>
+										<td colspan="4">	
+											{{e.SecondDegree}}
+										</td>
+									  </tr>
+									  <tr >
+										<td style="background-color: lightgray;">Overall GPA
+										</td>
+										<td colspan="4">	
+											{{e.SecondGPA}}
+										</td>
+									  </tr>
+									  <tr>
+										<td style="background-color: lightgray;">其他信息</td>
+										<td colspan="4">	
+											{{e.other}}
+										</td>
+									  </tr>  
+									</tbody>
+								</table>
+							</div>
+						  </div>
+						</div>
+					</div>
+				  </div>
+
+        </div>
+        <div class="tab-pane fade " id="exp">
+          <br>
+          <div id="Experience">
+            <br>
+            <div class="panel-group" id="accordion" *ngIf="experience.length > 0">
+              <div class="panel panel-primary" *ngFor="let ex of experience">
+                <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" 
+                  href="#{{ex._id}}">
+                  <b>{{ex.institution}} </b> ({{ex.type}})
+                  </a>
+                </h4>
+                </div>
+                <div id="{{ex._id}}" class="panel-collapse collapse in">
+                <div class="panel-body">
+                  <table class="table table-bordered" >
+                    <tbody>
+                      <tr >
+                      <td style="width: 30%; background-color: lightgray;">Company/Institution <br> 公司/研究单位 </td>
+                      <td colspan="4" style="width: 70%;">	
+                        {{ex.institution}}
+                      </td>	
+                      </tr>
+                      <tr>
+                      <td style="background-color: lightgray;">Address 地址</td>
+                      <td colspan="4">	
+                        {{ex.institutionLocation}}
+                      </td>
+                      </tr>
+                      <tr>
+                      <td style="background-color: lightgray;">在职日期 </td>
+                      <td style="background-color: lightgray;">From</td>
+                      <td >	
+                        {{ex.experienceStart}}
+                      </td>	
+                      <td style="background-color: lightgray;">To</td>
+                      <td >	
+                        {{ex.experienceEnd}}
+                      </td>
+                      </tr>
+                      <tr>
+                      <td style="background-color: lightgray;">Position or Title 职位 </td>
+                      <td colspan="4">	
+                        {{ex.experienceposition}}
+                      </td>
+                      </tr>
+                      <tr>
+                      <td style="background-color: lightgray;">Responsibilities 职责 </td>
+                      <td colspan="4">	
+                        {{ex.responsibilities}}
+                      </td>
+                      </tr>
+                      <tr >
+                      <td style="background-color: lightgray;">Project  项目简介 
+                      </td>
+                      <td colspan="4">	
+                        {{ex.project}}
+                      </td>
+                      </tr>
+                      <tr>
+                      <td style="background-color: lightgray;">Achievement 成就 </td>
+                      <td colspan="4">	
+                        {{ex.achievement}}
+                      </td>
+                      </tr> 
+                    </tbody>
+                  </table>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
         <div class="tab-pane fade " id="dropdown1">
           <h3>
             学生所添加的推荐人总数：

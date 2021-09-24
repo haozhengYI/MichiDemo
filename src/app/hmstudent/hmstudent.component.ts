@@ -10,6 +10,8 @@ import {Recommender} from '../recom.model';
 import {Notif} from '../notif.model';
 import{NotifService} from '../notif.service';
 import { NgForm } from '@angular/forms';
+import {Education} from '../education.model';
+import {Experience} from '../experience.model';
 
 @Component({
   selector: 'app-hmstudent',
@@ -30,6 +32,12 @@ export class HmstudentComponent implements OnInit {
   location:String;
   phone:String;
   price:String;
+  //教育背景信息
+  educations : Education[] = [];
+  education : Education[] = [];
+  //工作背景信息
+  experiences : Experience[] = [];
+  experience : Experience[] = [];
   //通知信息
   notifs: Notif[] = [];
   notif : Notif;
@@ -91,6 +99,26 @@ export class HmstudentComponent implements OnInit {
             }
         }
     });
+    //展示 此学生 教育背景信息
+    this.http.get<{educations: Education[]}>('/api/educations/').subscribe((Data) => {
+      this.educations = Data.educations;
+          for(let y of this.educations){
+            if(y.userAccount=== this.studentID){
+              this.education.push(y);
+            }
+          }
+          console.log("学生的教育背景"+this.education);    
+      });
+    //展示 此学生 工作背景信息
+    this.http.get<{experiences: Experience[]}>('/api/experiences/').subscribe((Data) => {
+      this.experiences = Data.experiences;
+          for(let i of this.experiences){
+            if(i.userAccount=== this.studentID){
+              this.experience.push(i);
+            }
+          }
+          console.log("学生的工作背景"+this.experience);    
+      });
     //展示 此学生 选校信息
     this.http.get<{schools: School[]}>('/api/studentschooldetail/' + this.studentID).subscribe((orderData) => {
           console.log(orderData);
