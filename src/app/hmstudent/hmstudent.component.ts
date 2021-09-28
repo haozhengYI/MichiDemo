@@ -140,8 +140,21 @@ export class HmstudentComponent implements OnInit {
       this.hotels = hotels;
       });
   }
+  //教育经历修改
+  deleteE(e){
+    console.log(e._id);
+    this.http.delete('/api/education/'+ e._id).subscribe((oooData) => {     
+        window.location.reload();
+    });
+  }
+  //工作经历修改
+  deleteEx(ex){
+    console.log(ex._id);
+    this.http.delete('/api/experience/'+ ex._id).subscribe((oooData) => {     
+        window.location.reload();
+    });
+  }
 
-  
   //direct to the hotel manage page
   hotelman(hotel) {
     const navigationExtras: NavigationExtras = {
