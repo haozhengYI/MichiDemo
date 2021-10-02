@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 import {Student} from '../st.model';
 import {School} from '../school.model';
 import {Recommender} from '../recom.model';
+import {Recomletter} from '../recletter.model';
 import {Notif} from '../notif.model';
 import{NotifService} from '../notif.service';
 import { NgForm } from '@angular/forms';
@@ -14,11 +15,11 @@ import {Education} from '../education.model';
 import {Experience} from '../experience.model';
 
 @Component({
-  selector: 'app-hmstudent',
-  templateUrl: './hmstudent.component.html',
-  styleUrls: ['./hmstudent.component.scss']
+  selector: 'app-hmstudentrec',
+  templateUrl: './hmstudentrec.component.html',
+  styleUrls: ['./hmstudentrec.component.scss']
 })
-export class HmstudentComponent implements OnInit {
+export class HmstudentrecComponent implements OnInit {
 
   students: Student[] = [];//all the orders from database
   student :Student;//the specific order selected by this hotel i
@@ -32,20 +33,18 @@ export class HmstudentComponent implements OnInit {
   location:String;
   phone:String;
   price:String;
-  //教育背景信息
-  educations : Education[] = [];
-  education : Education[] = [];
-  //工作背景信息
-  experiences : Experience[] = [];
-  experience : Experience[] = [];
-  //通知信息
-  notifs: Notif[] = [];
-  notif : Notif;
+  
   
   //school 信息
   schools: School[] = [];
   //推荐人信息
+  recommenderID : String;
   recommenders : Recommender[] = [];
+  recommender : Recommender;
+  //推荐信信息
+  recomletters : Recomletter[] = [];
+
+
   private hotelMSub: Subscription;
   
 
@@ -58,17 +57,12 @@ export class HmstudentComponent implements OnInit {
       this.route.queryParams.subscribe(params => {
         this.managerID = params["managerID"];
         this.studentID = params["studentID"];
+        this.recommenderID = params["recommenderID"];
        });
-       console.log("学生 ID 为+"+this.studentID);
+       console.log("推荐人 ID 为+"+this.recommenderID);
+
     }
   
-    addNotif(form: NgForm){//
-       let content = (document.getElementById("exampleTextarea") as HTMLInputElement).value;
-       //console.log(content);
-      this.notifService.addNotif("",this.studentID, content, 
-         form.value.ddl1,"未读",form.value.type);
-      alert("发送通知成功!!" );  
-    }
 
 
   ngOnInit() {
@@ -99,42 +93,49 @@ export class HmstudentComponent implements OnInit {
             }
         }
     });
-    //展示 此学生 教育背景信息
-    this.http.get<{educations: Education[]}>('/api/educations/').subscribe((Data) => {
-      this.educations = Data.educations;
-          for(let y of this.educations){
-            if(y.userAccount=== this.studentID){
-              this.education.push(y);
+
+
+    //展示 此学生 推荐人特定信息
+    this.http.get<{recommenders: Recommender[]}>('/api/recommenders').subscribe((Data) => {
+        this.recommenders = Data.recommenders;
+        for(let r of this.recommenders){
+            if(r._id===this.recommenderID){
+              this.recommender = r;
+              //this.Sname=this.student.name;
+              //this.Slocation = this.student.location;
+              console.log("推荐人 Personal Information");
+              console.log(this.recommender);
             }
-          }
-          console.log("学生的教育背景"+this.education);    
-      });
-    //展示 此学生 工作背景信息
-    this.http.get<{experiences: Experience[]}>('/api/experiences/').subscribe((Data) => {
-      this.experiences = Data.experiences;
-          for(let i of this.experiences){
-            if(i.userAccount=== this.studentID){
-              this.experience.push(i);
+        }
+    });
+    //获取 包含此推荐人的所有推荐信
+    this.http.get<{recomletters: Recomletter[]}>('/api/recomletters').subscribe((Data) => {
+        for(let rl of Data.recomletters){
+            if(rl.recommender===this.recommenderID){
+              this.recomletters.push(rl);
             }
-          }
-          console.log("学生的工作背景"+this.experience);    
-      });
+        }
+        console.log("推荐信列表");
+        console.log(this.recomletters);
+    });
     //展示 此学生 选校信息
     this.http.get<{schools: School[]}>('/api/studentschooldetail/' + this.studentID).subscribe((orderData) => {
-          console.log(orderData);
-          this.schools = orderData.schools;
-      });
-    //展示 此学生 推荐人信息
-    this.http.get<{recommenders: Recommender[]}>('/api/studentrecommenderdetail/' + this.studentID).subscribe((orderData) => {
-      console.log(orderData);
-      this.recommenders = orderData.recommenders;
-    });    
+          console.log("学生全部列表");
+          console.log(orderData.schools);
+          for(let os of orderData.schools){
+            for(let rl of this.recomletters){
+              if(rl.schoolID===os._id){
+                os.state =rl.state;
+                this.schools.push(os);
+              }
+            }
+          }
+          console.log("学生新列表");
+          console.log(this.schools); 
+
+     });
+   
     
-    //展示 此学生通知信息
-    this.http.get<{notifs: Notif[]}>('/api/notifdetail/' + this.studentID).subscribe((o) => {
-      console.log(o);
-      this.notifs = o.notifs;
-    });   
       
     this.hotelMSub = this.hmService.getHotelMUpdatedListener().subscribe((hotels: HotelM[]) => {
       this.hotels = hotels;
@@ -237,18 +238,6 @@ export class HmstudentComponent implements OnInit {
     this.router.navigate(['/hmschool'], navigationExtras);
   }
   
-  //direct to the 推荐人更多信息 page
-  studentrec(k) {
-    const navigationExtras: NavigationExtras = {
-      queryParams: {
-       "managerID" : this.managerID,
-       "studentID" : this.student._id,
-       "recommenderID" : k._id,
-      }
-    };
-    this.router.navigate(['/hmstudentrec'], navigationExtras);
-  }
-
   //direct to the blog page
   hmblog(hotel) {
     const navigationExtras: NavigationExtras = {

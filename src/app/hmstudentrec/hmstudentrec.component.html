@@ -1,0 +1,106 @@
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" >一个很神秘的网页</a>
+      </div>
+      <div class="nav  navbar-right">
+        <ul class="nav navbar-nav">
+          <li class="active"><a (click)="main(hotel)">HomePage</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Shortcut <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a (click)="modifyP(hotel)">Change Password</a></li>
+              <li><a (click)="comp(hotel)">Complete info</a></li>
+              <li class="divider"></li>
+              <li><a (click)="hotelman(hotel)">Manage Hotel</a></li>
+              <li><a (click)="hmorder(hotel)">Order</a></li>
+            </ul>
+          </li>
+          <li class="nav navbar-nav navbar-right">
+            <a href="/mainpage">Log Out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <ol class="breadcrumb">
+      <li><a (click)="main(hotel)">Home</a></li>
+      <li><a (click)="main(hotel)">{{hotel.userAccount}}</a></li>
+      <li><a (click)="hotelman(hotel)">Manage Student</a></li>
+      <li>{{student.firstName}} {{student.lastName}}</li>
+      <li class="active">{{recommender.firstName}} {{recommender.lastName}}
+      </li>
+  </ol>
+
+  <div class="container-fluid">
+    <div class="row content">
+      <div class="col-sm-3 sidenav">
+      <h4>{{hotel.userAccount}}  </h4>
+      <ul class="nav nav-pills nav-stacked">
+        <li ><a (click)="main(hotel)">Home-{{hotel.userAccount}}</a></li>
+        <li ><a (click)="modifyP(hotel)">Change Password</a></li>
+        <li><a (click)="comp(hotel)">Complete info</a></li>
+        <li class="active"><a (click)="hotelman(hotel)">Manage Student</a></li>
+        <li><a (click)="hmorder(hotel)">学生申请</a></li>
+        <li><a (click)="hmregister(hotel)">登记账号</a></li>
+        <li ><a (click)="hmblog(hotel)">Blog管理</a></li>
+      </ul><br>
+      
+      </div>
+    
+      <div class="col-sm-9">
+        <h2>{{student.firstName}} {{student.lastName}}</h2>
+      <p>{{student.userAccount}}</p>
+
+      <hr>
+      选定推荐人为：{{recommender.firstName}} {{recommender.lastName}} 
+      <br>
+      推荐人与学生关系：{{recommender.relation}}
+      <br>
+      <b>如果没有显示出列表，请刷新。目前该功能暂不稳定</b>
+
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col" colspan="7"><h3>
+              此推荐人提交添加项目总数：
+              <small class="text-muted">{{schools.length}}</small>
+            </h3></th>
+            
+          </tr>
+        </thead>
+        <thead>
+          <tr>
+            <th scope="col" style="width:80px">States</th>
+            <th scope="col" style="width:200px">University</th>
+            <th scope="col" style="width:200px">School</th>
+            <th scope="col" style="width:200px">Major</th>
+            <th scope="col" style="width:90px">Deadline 1</th>
+            <th scope="col" style="width:90px">Deadline 2</th>
+            <th scope="col" style="width:90px">Deadline 3</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="schools.length > 0">
+          <tr class="table-dark"  *ngFor="let s of schools">
+            <th scope="row">{{s.state}}</th>
+            <td>{{s.univName}}</td>
+            <td>{{s.schoolName}}</td>
+            <td>{{s.majorName}}</td>
+            <td>{{s.ddl1}}</td>
+            <td>{{s.ddl2}}</td>
+            <td>{{s.ddl3}}</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+
+      </div>
+    </div>
+  </div>
+  
+  
+
+  
