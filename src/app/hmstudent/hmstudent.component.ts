@@ -12,6 +12,9 @@ import{NotifService} from '../notif.service';
 import { NgForm } from '@angular/forms';
 import {Education} from '../education.model';
 import {Experience} from '../experience.model';
+import * as XLSX from 'xlsx';
+import * as FileSaver from 'file-saver';
+
 
 @Component({
   selector: 'app-hmstudent',
@@ -27,6 +30,7 @@ export class HmstudentComponent implements OnInit {
   hotel : HotelM;
   managerID : any;
   studentID : any;//存选中的student ID
+  studentName: any;
   //hotel个人信息
   name: String;
   location:String;
@@ -48,11 +52,13 @@ export class HmstudentComponent implements OnInit {
   recommenders : Recommender[] = [];
   private hotelMSub: Subscription;
   
+  excelData = [];
 
   constructor(
     private route: ActivatedRoute, 
     private router: Router, 
     private http: HttpClient,
+    //private htt: Http,
     public notifService:NotifService,
     public hmService: HmService) { 
       this.route.queryParams.subscribe(params => {
@@ -92,10 +98,10 @@ export class HmstudentComponent implements OnInit {
         for(let h of this.students){
             if(h._id===this.studentID){
               this.student = h;
-              //this.Sname=this.student.name;
+              this.studentName = this.student.firstName + " " + this.student.lastName;
               //this.Slocation = this.student.location;
               console.log("Student Personal Information");
-              console.log(this.student);
+              console.log(this.studentName);
             }
         }
     });
@@ -153,6 +159,23 @@ export class HmstudentComponent implements OnInit {
     this.http.delete('/api/experience/'+ ex._id).subscribe((oooData) => {     
         window.location.reload();
     });
+  }
+  //将json数组生成excel
+  exportAsExcelFile() {
+    let json = this.schools;
+    const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(json);
+    const workbook: XLSX.WorkBook = { Sheets: { 'data': worksheet }, SheetNames: ['data'] };
+    const excelBuffer: any = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
+        //这里类型如果不正确，下载出来的可能是类似xml文件的东西或者是类似二进制的东西等
+    this.saveAsExcelFile(excelBuffer, this.studentName+"的选校列表");
+  }
+ 
+  private saveAsExcelFile(buffer: any, fileName: string) {
+    const data: Blob = new Blob([buffer], {
+        type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8'
+    });
+    FileSaver.saveAs(data, fileName + '_export_' + new Date().getTime() + '.xls');
+        // 如果写成.xlsx,可能不能打开下载的文件，这可能与Excel版本有关
   }
 
   //direct to the hotel manage page
