@@ -33,7 +33,7 @@ export class HMmainComponent implements OnInit {
     
 
   ngOnInit() {
-    this.http.get<{hotels: HotelM[]}>('/api/hotels').subscribe((Data) => {
+    this.http.get<{hotels: HotelM[]}>('http://localhost:3000/hotels').subscribe((Data) => {
         //console.log(Data);
         this.hotels = Data.hotels;
         //console.log(this.hotels[0].email);

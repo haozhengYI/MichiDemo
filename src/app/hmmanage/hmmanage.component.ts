@@ -36,7 +36,7 @@ export class HmmanageComponent implements OnInit {
     }
   
   ngOnInit() {
-    this.http.get<{hotels: HotelM[]}>('/api/hotels').subscribe((Data) => {
+    this.http.get<{hotels: HotelM[]}>('http://localhost:3000/hotels').subscribe((Data) => {
         this.hotels = Data.hotels;
         for(let h of this.hotels){
             if(h.userAccount===this.managerID){
@@ -51,7 +51,7 @@ export class HmmanageComponent implements OnInit {
         }
     });
         // select the particular order by hotel id
-        this.http.get<{students: Student[]}>('/api/students').subscribe((oData) => {
+        this.http.get<{students: Student[]}>('http://localhost:3000/students').subscribe((oData) => {
           this.students = oData.students;
           console.log("全部学生信息");
           console.log(this.students);
@@ -81,7 +81,7 @@ export class HmmanageComponent implements OnInit {
       price: this.price,
     }
     console.log(Hotel.price+"ddddd"+Hotel.userAccount);
-    this.http.put('/api/hotels/' + this.hotel.userAccount, Hotel)
+    this.http.put('http://localhost:3000/hotels/' + this.hotel.userAccount, Hotel)
       .subscribe((data) => {
         const options = {
           overlay: true,

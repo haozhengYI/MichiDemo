@@ -16,7 +16,7 @@ export class HonorService {
   constructor(private http: HttpClient) { }
   
   getHonor() : any {
-    this.http.get<{honors: Honor[]}>('/api/honors').subscribe((Data) => {
+    this.http.get<{honors: Honor[]}>('http://localhost:3000/honors').subscribe((Data) => {
         this.honors = Data.honors;
         this.honor = this.honors[0];
         
@@ -44,7 +44,7 @@ export class HonorService {
         percentage:percentage,
         grantor: grantor,
     };
-    this.http.post('/api/honoradd', honor).subscribe((responseData) =>{
+    this.http.post('http://localhost:3000/honoradd', honor).subscribe((responseData) =>{
         this.honorS.push(honor);
         this.honorsUpdated.next([...this.honorS]);
     });

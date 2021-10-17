@@ -27,7 +27,7 @@ export class HotelDetailComponent implements OnInit {
     }
     id = +this.route.snapshot.paramMap.get('id');
     ngOnInit() {
-      this.http.get<{hotels: Hotel}>('/api/hoteldetail/' + this.hotelId).subscribe((hotelData) => {
+      this.http.get<{hotels: Hotel}>('http://localhost:3000/hoteldetail/' + this.hotelId).subscribe((hotelData) => {
         console.log(hotelData.hotels);
         this.hotel = hotelData.hotels;
         // console.log(this.hotel.name);

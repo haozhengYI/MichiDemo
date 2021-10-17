@@ -24,7 +24,7 @@ export class OrderViewComponent implements OnInit {
     });
    }
   ngOnInit() {
-      this.http.get<{orders: Order[]}>('/api/vieworder/' + this.userId).subscribe((orderData) => {
+      this.http.get<{orders: Order[]}>('http://localhost:3000/vieworder/' + this.userId).subscribe((orderData) => {
           console.log(orderData);
           this.orders = orderData.orders;
       });

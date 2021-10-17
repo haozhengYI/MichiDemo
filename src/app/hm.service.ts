@@ -15,7 +15,7 @@ export class HmService {
   constructor(private http: HttpClient) { }
   
   getHotelM() : any {
-    this.http.get<{hotels: HotelM[]}>('/api/hotels').subscribe((Data) => {
+    this.http.get<{hotels: HotelM[]}>('http://localhost:3000/hotels').subscribe((Data) => {
         //console.log(Data);
         this.hotels = Data.hotels;
         //console.log(this.hotels[0].email);
@@ -57,7 +57,7 @@ export class HmService {
       image: image,
       price: price
     };
-    this.http.post('/api/hoteladd', hotel).subscribe((responseData) =>{
+    this.http.post('http://localhost:3000/hoteladd', hotel).subscribe((responseData) =>{
         this.hotelM.push(hotel);
         this.hotelMUpdated.next([...this.hotelM]);
     });
