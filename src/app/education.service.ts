@@ -16,7 +16,7 @@ export class EducationService {
   constructor(private http: HttpClient) { }
   
   getEducation() : any {
-    this.http.get<{educations: Education[]}>('http://localhost:3000/educations').subscribe((Data) => {
+    this.http.get<{educations: Education[]}>('/api/educations').subscribe((Data) => {
         this.educations = Data.educations;
         this.education = this.educations[0];
         
@@ -60,7 +60,7 @@ export class EducationService {
       SecondGPA:SecondGPA,//第二专业 GPA
       other:other,
     };
-    this.http.post('http://localhost:3000/educationadd', education).subscribe((responseData) =>{
+    this.http.post('/api/educationadd', education).subscribe((responseData) =>{
         this.educationS.push(education);
         this.educationsUpdated.next([...this.educationS]);
     });

@@ -35,7 +35,7 @@ export class HmcompComponent implements OnInit {
 
   ngOnInit() {
 
-    this.http.get<{hotels: HotelM[]}>('http://localhost:3000/hotels').subscribe((Data) => {
+    this.http.get<{hotels: HotelM[]}>('/api/hotels').subscribe((Data) => {
         this.hotels = Data.hotels;
         for(let h of this.hotels){
             if(h.userAccount===this.managerID){
@@ -69,7 +69,7 @@ export class HmcompComponent implements OnInit {
       image: this.image,
       price: this.hotel.price,
     }
-    this.http.put('http://localhost:3000/hotels/' + this.hotel.userAccount, Hotel)
+    this.http.put('/api/hotels/' + this.hotel.userAccount, Hotel)
       .subscribe((data) => {
         const options = {
           overlay: true,

@@ -16,7 +16,7 @@ export class RecomletterService {
   constructor(private http: HttpClient) { }
   
   getRecomletter() : any {
-    this.http.get<{recomletters: Recomletter[]}>('http://localhost:3000/recomletters').subscribe((Data) => {
+    this.http.get<{recomletters: Recomletter[]}>('/api/recomletters').subscribe((Data) => {
         this.recomletters = Data.recomletters;
         this.recomletter = this.recomletters[0];
         
@@ -46,7 +46,7 @@ export class RecomletterService {
       type:type,//推荐信为 acedemic / professional
       state: state,//推荐信状态（提交/未提交/弃用）
     };
-    this.http.post('http://localhost:3000/recomletteradd', recomletter).subscribe((responseData) =>{
+    this.http.post('/api/recomletteradd', recomletter).subscribe((responseData) =>{
         this.recomletterS.push(recomletter);
         this.recomlettersUpdated.next([...this.recomletterS]);
     });

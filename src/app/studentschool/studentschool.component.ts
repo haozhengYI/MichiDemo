@@ -65,7 +65,7 @@ export class StudentschoolComponent implements OnInit {
   ngOnInit() {
 
 
-    this.http.get<{students: Student[]}>('http://localhost:3000/students').subscribe((Data) => {
+    this.http.get<{students: Student[]}>('/api/students').subscribe((Data) => {
         
         this.students = Data.students;
         for(let h of this.students){
@@ -80,7 +80,7 @@ export class StudentschoolComponent implements OnInit {
     });
 
      //展示 申请项目的详细信息
-    this.http.get<{schools: School[]}>('http://localhost:3000/schools').subscribe((Data) => {
+    this.http.get<{schools: School[]}>('/api/schools').subscribe((Data) => {
           //console.log(orderData);
           this.schools = Data.schools;
           for(let s of this.schools){
@@ -105,13 +105,13 @@ export class StudentschoolComponent implements OnInit {
         }
       });
     //展示 这个选校的 推荐信 信息
-    this.http.get<{recomletters: Recomletter[]}>('http://localhost:3000/schoolrecomletterlist/' + this.schoolID).subscribe((Data) => {
+    this.http.get<{recomletters: Recomletter[]}>('/api/schoolrecomletterlist/' + this.schoolID).subscribe((Data) => {
       //console.log(Data);
       this.recomletters = Data.recomletters;
     }); 
     
     //展示 这个选校的 文书 信息
-    this.http.get<{statements: Statement[]}>('http://localhost:3000/statementdetail/' + this.schoolID).subscribe((Data) => {
+    this.http.get<{statements: Statement[]}>('/api/statementdetail/' + this.schoolID).subscribe((Data) => {
       //console.log(Data);
       this.statements = Data.statements;
     }); 

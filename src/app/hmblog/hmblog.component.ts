@@ -65,7 +65,7 @@ export class HmblogComponent implements OnInit {
   
 
   ngOnInit() {
-    this.http.get<{user: user[]}>('http://localhost:3000/users').subscribe((userData) => {
+    this.http.get<{user: user[]}>('/api/users').subscribe((userData) => {
 
     this.user = userData.user;
     console.log(userData.user);
@@ -73,7 +73,7 @@ export class HmblogComponent implements OnInit {
 
     });
     //获取HotelM 信息列表
-    this.http.get<{hotels: HotelM[]}>('http://localhost:3000/hotels').subscribe((Data) => {
+    this.http.get<{hotels: HotelM[]}>('/api/hotels').subscribe((Data) => {
         this.hotels = Data.hotels;
         for(let h of this.hotels){
             if(h.userAccount===this.managerID){
@@ -88,7 +88,7 @@ export class HmblogComponent implements OnInit {
         }
     });
     //获取Blog 信息列表
-    this.http.get<{blogs: Blog[]}>('http://localhost:3000/blogs').subscribe((Data) => {
+    this.http.get<{blogs: Blog[]}>('/api/blogs').subscribe((Data) => {
         //this.blogs = Data.blogs;
         for(var i=Data.blogs.length-1;i>=0;i--){
           this.blogs.push(Data.blogs[i]);

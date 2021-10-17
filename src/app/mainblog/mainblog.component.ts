@@ -72,7 +72,7 @@ export class MainblogComponent implements OnInit {
           //console.log(this.user[index].UserAccount);
           // API_PATH + '/students'
           
-          this.http.get<{students: Student[]}>('http://localhost:3000/students').subscribe((Data) => {
+          this.http.get<{students: Student[]}>('/api/students').subscribe((Data) => {
               this.students = Data.students;
               console.log(this.students);
               for(let h of this.students){
@@ -123,7 +123,7 @@ export class MainblogComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.http.get<{user: user[]}>('http://localhost:3000/users').subscribe((userData) => {
+    this.http.get<{user: user[]}>('/api/users').subscribe((userData) => {
 
     this.user = userData.user;
     console.log(userData.user);
@@ -132,7 +132,7 @@ export class MainblogComponent implements OnInit {
     });
 
     //获取Blog 信息列表
-    this.http.get<{blogs: Blog[]}>('http://localhost:3000/blogs').subscribe((Data) => {
+    this.http.get<{blogs: Blog[]}>('/api/blogs').subscribe((Data) => {
         //this.blogs = Data.blogs;
         for(var i=Data.blogs.length-1;i>=0;i--){
           this.blogs.push(Data.blogs[i]);

@@ -16,7 +16,7 @@ export class StatementService {
   constructor(private http: HttpClient) { }
   
   getStatement() : any {
-    this.http.get<{statements: Statement[]}>('http://localhost:3000/statements').subscribe((Data) => {
+    this.http.get<{statements: Statement[]}>('/api/statements').subscribe((Data) => {
         this.statements = Data.statements;
         this.statement = this.statements[0];
         
@@ -42,7 +42,7 @@ export class StatementService {
         stype:stype,//文书种类(PS/SOP/Essay)
         words:words,//字数
     };
-    this.http.post('http://localhost:3000/statementadd', statement).subscribe((responseData) =>{
+    this.http.post('/api/statementadd', statement).subscribe((responseData) =>{
         this.statementS.push(statement);
         this.statementsUpdated.next([...this.statementS]);
     });

@@ -54,7 +54,7 @@ export class StudentaddrecommComponent implements OnInit {
     } 
 
   ngOnInit() {
-    this.http.get<{students: Student[]}>('http://localhost:3000/students').subscribe((Data) => {
+    this.http.get<{students: Student[]}>('/api/students').subscribe((Data) => {
         
         this.students = Data.students;
         for(let h of this.students){

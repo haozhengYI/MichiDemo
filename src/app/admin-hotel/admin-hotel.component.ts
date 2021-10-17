@@ -27,14 +27,14 @@ export class AdminHotelComponent implements OnInit {
     
   }
 
-  ngOnInit() { this.http.get<{hotels: HotelM[]}>('http://localhost:3000/hotels').subscribe((Data) => {
+  ngOnInit() { this.http.get<{hotels: HotelM[]}>('/api/hotels').subscribe((Data) => {
     this.hotels = Data.hotels;
     console.log(this.hotels);
 });
   }
   delete(h){
     console.log(h._id);
-    this.http.delete('http://localhost:3000/users/'+ h._id).subscribe((oooData) => {
+    this.http.delete('/api/users/'+ h._id).subscribe((oooData) => {
         console.log("chenggong");
         window.location.reload();
     });

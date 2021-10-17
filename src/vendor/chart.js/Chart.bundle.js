@@ -7512,7 +7512,7 @@ function initCanvas(canvas, config) {
 
 /**
  * Detects support for options object argument in addEventListener.
- * https://developer.mozilla.org/en-US/docs/Webhttp://localhost:3000/EventTarget/addEventListener#Safely_detecting_option_support
+ * https://developer.mozilla.org/en-US/docs/Web/api/EventTarget/addEventListener#Safely_detecting_option_support
  * @private
  */
 var supportsEventListenerOptions = (function() {
@@ -7861,7 +7861,7 @@ var platform_dom$2 = {
 /**
  * Provided for backward compatibility, use EventTarget.addEventListener instead.
  * EventTarget.addEventListener compatibility: Chrome, Opera 7, Safari, FF1.5+, IE9+
- * @see https://developer.mozilla.org/en-US/docs/Webhttp://localhost:3000/EventTarget/addEventListener
+ * @see https://developer.mozilla.org/en-US/docs/Web/api/EventTarget/addEventListener
  * @function Chart.helpers.addEvent
  * @deprecated since version 2.7.0
  * @todo remove at version 3
@@ -7872,7 +7872,7 @@ helpers$1.addEvent = addListener;
 /**
  * Provided for backward compatibility, use EventTarget.removeEventListener instead.
  * EventTarget.removeEventListener compatibility: Chrome, Opera 7, Safari, FF1.5+, IE9+
- * @see https://developer.mozilla.org/en-US/docs/Webhttp://localhost:3000/EventTarget/removeEventListener
+ * @see https://developer.mozilla.org/en-US/docs/Web/api/EventTarget/removeEventListener
  * @function Chart.helpers.removeEvent
  * @deprecated since version 2.7.0
  * @todo remove at version 3
@@ -18056,7 +18056,7 @@ var moment = createCommonjsModule(function (module, exports) {
      * Return a human readable representation of a moment that can
      * also be evaluated to get a new moment which is the same
      *
-     * @link https://nodejs.org/dist/latest/docshttp://localhost:3000/util.html#util_custom_inspect_function_on_objects
+     * @link https://nodejs.org/dist/latest/docs/api/util.html#util_custom_inspect_function_on_objects
      */
     function inspect () {
         if (!this.isValid()) {

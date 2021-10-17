@@ -24,7 +24,7 @@ export class AdminmainpageComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.http.get<{user: user[]}>('http://localhost:3000/users').subscribe((Data) => {
+    this.http.get<{user: user[]}>('/api/users').subscribe((Data) => {
         this.user = Data.user;
         console.log(this.user);
     });
@@ -32,7 +32,7 @@ export class AdminmainpageComponent implements OnInit {
 
   delete(u){
     console.log(u._id);
-    this.http.delete('http://localhost:3000/users/'+ u._id).subscribe((oooData) => {
+    this.http.delete('/api/users/'+ u._id).subscribe((oooData) => {
         console.log("chenggong");
         window.location.reload();
     });

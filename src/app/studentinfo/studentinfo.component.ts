@@ -69,7 +69,7 @@ export class StudentinfoComponent implements OnInit {
   ngOnInit() {
 
 
-    this.http.get<{students: Student[]}>('http://localhost:3000/students').subscribe((Data) => {
+    this.http.get<{students: Student[]}>('/api/students').subscribe((Data) => {
         
         this.students = Data.students;
         for(let h of this.students){
@@ -83,7 +83,7 @@ export class StudentinfoComponent implements OnInit {
 
     });
     //展示 此学生 选校信息
-    this.http.get<{schools: School[]}>('http://localhost:3000/schools/').subscribe((orderData) => {
+    this.http.get<{schools: School[]}>('/api/schools/').subscribe((orderData) => {
       this.schools = orderData.schools;
       console.log(this.studentID)
           for(let x of this.schools){
@@ -95,7 +95,7 @@ export class StudentinfoComponent implements OnInit {
           console.log(this.school);    
       });
       //展示 此学生 教育背景信息
-    this.http.get<{educations: Education[]}>('http://localhost:3000/educations/').subscribe((Data) => {
+    this.http.get<{educations: Education[]}>('/api/educations/').subscribe((Data) => {
       this.educations = Data.educations;
           for(let y of this.educations){
             if(y.userAccount=== this.studentID){
@@ -105,7 +105,7 @@ export class StudentinfoComponent implements OnInit {
           console.log("学生的教育背景"+this.education);    
       });
       //展示 此学生 工作背景信息
-    this.http.get<{experiences: Experience[]}>('http://localhost:3000/experiences/').subscribe((Data) => {
+    this.http.get<{experiences: Experience[]}>('/api/experiences/').subscribe((Data) => {
       this.experiences = Data.experiences;
           for(let i of this.experiences){
             if(i.userAccount=== this.studentID){
@@ -115,7 +115,7 @@ export class StudentinfoComponent implements OnInit {
           console.log("学生的工作背景"+this.experience);    
       });
       //展示 此学生 论文信息
-    this.http.get<{publications: Publication[]}>('http://localhost:3000/publications/').subscribe((Data) => {
+    this.http.get<{publications: Publication[]}>('/api/publications/').subscribe((Data) => {
       this.publications = Data.publications;
           for(let p of this.publications){
             if(p.userAccount=== this.studentID){
@@ -125,7 +125,7 @@ export class StudentinfoComponent implements OnInit {
           console.log("学生的论文"+this.publication);    
       });
       //展示 此学生 课外活动信息
-    this.http.get<{activitys: Activity[]}>('http://localhost:3000/activitys/').subscribe((Data) => {
+    this.http.get<{activitys: Activity[]}>('/api/activitys/').subscribe((Data) => {
       this.activitys = Data.activitys;
           for(let a of this.activitys){
             if(a.userAccount=== this.studentID){
@@ -135,7 +135,7 @@ export class StudentinfoComponent implements OnInit {
           console.log("学生的课外活动"+this.activity);    
       });
       //展示 此学生 奖项信息
-    this.http.get<{honors: Honor[]}>('http://localhost:3000/honors/').subscribe((Data) => {
+    this.http.get<{honors: Honor[]}>('/api/honors/').subscribe((Data) => {
       this.honors = Data.honors;
           for(let h of this.honors){
             if(h.userAccount=== this.studentID){
@@ -306,7 +306,7 @@ export class StudentinfoComponent implements OnInit {
         FatPhone: (document.getElementById("FatPhone") as HTMLInputElement).value,
         FatEmail: (document.getElementById("FatEmail") as HTMLInputElement).value,
     }
-    this.http.put('http://localhost:3000/students/' + this.studentUserAcc, Student)
+    this.http.put('/api/students/' + this.studentUserAcc, Student)
       .subscribe((data) => {
         const options = {
           overlay: true,

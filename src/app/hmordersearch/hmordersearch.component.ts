@@ -45,7 +45,7 @@ export class HmordersearchComponent implements OnInit {
     }
 
     ngOnInit() {
-      this.http.get<{hotels: HotelM[]}>('http://localhost:3000/hotels').subscribe((Data) => {
+      this.http.get<{hotels: HotelM[]}>('/api/hotels').subscribe((Data) => {
           this.hotels = Data.hotels;
           for(let h of this.hotels){
               if(h.userAccount===this.managerID){
@@ -54,7 +54,7 @@ export class HmordersearchComponent implements OnInit {
           }
       });
 
-      this.http.get<{students: Student[]}>('http://localhost:3000/students/').subscribe((Data) => {
+      this.http.get<{students: Student[]}>('/api/students/').subscribe((Data) => {
           this.students = Data.students;
           console.log(this.students);
           for(let st of this.students){  
@@ -67,7 +67,7 @@ export class HmordersearchComponent implements OnInit {
 
       
       //展示 此学生 选校信息
-    this.http.get<{schools: School[]}>('http://localhost:3000/studentschooldetail/' + this.studentID).subscribe((orderData) => {
+    this.http.get<{schools: School[]}>('/api/studentschooldetail/' + this.studentID).subscribe((orderData) => {
       console.log("此学生选校列表");
       console.log(orderData);
       this.school = orderData.schools;
@@ -147,7 +147,7 @@ export class HmordersearchComponent implements OnInit {
 
   delete(s){
     console.log(s._id);
-    this.http.delete('http://localhost:3000/schools/'+ s._id).subscribe((oooData) => {
+    this.http.delete('/api/schools/'+ s._id).subscribe((oooData) => {
         console.log("删除这个申请项目成功");
         window.location.reload();
     });
