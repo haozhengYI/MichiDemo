@@ -21,7 +21,7 @@ export class StService {
   constructor(private http: HttpClient) { }
   
   getStudent() : any {
-    this.http.get<{students: Student[]}>('/api/students').subscribe((Data) => {
+    this.http.get<{students: Student[]}>('http://localhost:3000/students').subscribe((Data) => {
         //console.log(Data);
         this.students = Data.students;
         console.log(this.students[0].userAccount);
@@ -191,7 +191,7 @@ export class StService {
       FatPhone: FatPhone,
       FatEmail: FatEmail,
     };
-    this.http.post('/api/studentadd', student).subscribe((responseData) =>{
+    this.http.post('http://localhost:3000/studentadd', student).subscribe((responseData) =>{
         this.studentS.push(student);
         this.studentsUpdated.next([...this.studentS]);
     });

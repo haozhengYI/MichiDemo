@@ -36,7 +36,7 @@ export class HmmodifypassComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.http.get<{hotels: HotelM[]}>('/api/hotels').subscribe((Data) => {
+    this.http.get<{hotels: HotelM[]}>('http://localhost:3000/hotels').subscribe((Data) => {
         this.hotels = Data.hotels;
         for(let h of this.hotels){
             if(h.userAccount===this.managerID){
@@ -46,7 +46,7 @@ export class HmmodifypassComponent implements OnInit {
             }
         }
     });
-    this.http.get<{user: users[]}>('/api/users').subscribe((uData) => {
+    this.http.get<{user: users[]}>('http://localhost:3000/users').subscribe((uData) => {
         this.user = uData.user;
         for(let u of this.user){
             if(u.UserAccount===this.managerID){
@@ -94,7 +94,7 @@ export class HmmodifypassComponent implements OnInit {
       Role: this.us.Role,
     }
     console.log("User object" + User.UserPassword +"  "+ User.Role);
-    this.http.put('/api/users/' + this.hotel.userAccount, User)
+    this.http.put('http://localhost:3000/users/' + this.hotel.userAccount, User)
       .subscribe((data) => {
         const options = {
           overlay: true,

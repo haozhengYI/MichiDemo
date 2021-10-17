@@ -16,7 +16,7 @@ export class BlogService {
   constructor(private http: HttpClient) { }
   
   getActivity() : any {
-    this.http.get<{blogs: Blog[]}>('/api/blogs').subscribe((Data) => {
+    this.http.get<{blogs: Blog[]}>('http://localhost:3000/blogs').subscribe((Data) => {
         this.blogs = Data.blogs;
         this.blog = this.blogs[0];
         
@@ -46,7 +46,7 @@ export class BlogService {
       blogLink: blogLink,//link
       countNumber:countNumber,
     };
-    this.http.post('/api/blogadd', blog).subscribe((responseData) =>{
+    this.http.post('http://localhost:3000/blogadd', blog).subscribe((responseData) =>{
         this.blogS.push(blog);
         this.blogsUpdated.next([...this.blogS]);
     });

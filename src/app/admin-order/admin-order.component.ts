@@ -24,7 +24,7 @@ export class AdminOrderComponent implements OnInit {
     private http: HttpClient) { }
 
   ngOnInit() {
-    this.http.get<{orders: Order[]}>('/api/orders').subscribe((Data) => {
+    this.http.get<{orders: Order[]}>('http://localhost:3000/orders').subscribe((Data) => {
     this.orders = Data.orders;
     console.log(this.orders);
 });

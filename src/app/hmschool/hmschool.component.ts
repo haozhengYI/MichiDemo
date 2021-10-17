@@ -131,7 +131,7 @@ export class HmschoolComponent implements OnInit {
     }
 
   ngOnInit() {
-    this.http.get<{hotels: HotelM[]}>('/api/hotels').subscribe((Data) => {
+    this.http.get<{hotels: HotelM[]}>('http://localhost:3000/hotels').subscribe((Data) => {
         this.hotels = Data.hotels;
         for(let h of this.hotels){
             if(h.userAccount===this.managerID){
@@ -147,7 +147,7 @@ export class HmschoolComponent implements OnInit {
     });
     
     //展示 学生个人信息
-    this.http.get<{students: Student[]}>('/api/students').subscribe((Data) => {
+    this.http.get<{students: Student[]}>('http://localhost:3000/students').subscribe((Data) => {
         this.students = Data.students;
         for(let h of this.students){
             if(h._id===this.studentID){
@@ -159,7 +159,7 @@ export class HmschoolComponent implements OnInit {
         }
     });
      //展示 申请项目的详细信息
-    this.http.get<{schools: School[]}>('/api/schools').subscribe((Data) => {
+    this.http.get<{schools: School[]}>('http://localhost:3000/schools').subscribe((Data) => {
           //console.log(orderData);
           this.schools = Data.schools;
           for(let s of this.schools){
@@ -184,19 +184,19 @@ export class HmschoolComponent implements OnInit {
         }
       });
     //展示 此学生 推荐人信息
-    this.http.get<{recommenders: Recommender[]}>('/api/studentrecommenderdetail/' + this.studentID).subscribe((orderData) => {
+    this.http.get<{recommenders: Recommender[]}>('http://localhost:3000/studentrecommenderdetail/' + this.studentID).subscribe((orderData) => {
       //console.log(orderData);
       this.recommenders = orderData.recommenders;
     }); 
 
     //展示 这个选校的 推荐信 信息
-    this.http.get<{recomletters: Recomletter[]}>('/api/schoolrecomletterlist/' + this.schoolID).subscribe((Data) => {
+    this.http.get<{recomletters: Recomletter[]}>('http://localhost:3000/schoolrecomletterlist/' + this.schoolID).subscribe((Data) => {
       //console.log(Data);
       this.recomletters = Data.recomletters;
     }); 
     
     //展示 这个选校的 文书 信息
-    this.http.get<{statements: Statement[]}>('/api/statementdetail/' + this.schoolID).subscribe((Data) => {
+    this.http.get<{statements: Statement[]}>('http://localhost:3000/statementdetail/' + this.schoolID).subscribe((Data) => {
       //console.log(Data);
       this.statements = Data.statements;
     }); 
@@ -247,7 +247,7 @@ export class HmschoolComponent implements OnInit {
         recommNumber:this.recommNumber,//推荐信数量
         other:this.other,
     }
-    this.http.put('/api/schools/' + this.schoolID, School)
+    this.http.put('http://localhost:3000/schools/' + this.schoolID, School)
       .subscribe((data) => {
         const options = {
           overlay: true,
@@ -281,7 +281,7 @@ export class HmschoolComponent implements OnInit {
         recommNumber:this.recommNumber,//推荐信数量
         other:this.other,
     }
-    this.http.put('/api/schools/' + this.schoolID, School)
+    this.http.put('http://localhost:3000/schools/' + this.schoolID, School)
       .subscribe((data) => {
         const options = {
           overlay: true,
@@ -315,7 +315,7 @@ export class HmschoolComponent implements OnInit {
         recommNumber:this.recommNumber,//推荐信数量
         other:this.other,
     }
-    this.http.put('/api/schools/' + this.schoolID, School)
+    this.http.put('http://localhost:3000/schools/' + this.schoolID, School)
       .subscribe((data) => {
         const options = {
           overlay: true,
@@ -348,7 +348,7 @@ export class HmschoolComponent implements OnInit {
         recommNumber:this.recommNumber,//推荐信数量
         other:this.other,
     }
-    this.http.put('/api/schools/' + this.schoolID, School)
+    this.http.put('http://localhost:3000/schools/' + this.schoolID, School)
       .subscribe((data) => {
         const options = {
           overlay: true,
@@ -374,7 +374,7 @@ export class HmschoolComponent implements OnInit {
         type:l.type,//推荐信为 acedemic / professional
         state: "未提交",//推荐信状态（提交/未提交/弃用）
     }
-    this.http.put('/api/recomletters/' + l._id, Recomletter)
+    this.http.put('http://localhost:3000/recomletters/' + l._id, Recomletter)
       .subscribe((data) => {
         const options = {
           overlay: true,
@@ -399,7 +399,7 @@ export class HmschoolComponent implements OnInit {
         type:l.type,//推荐信为 acedemic / professional
         state: "已提交",//推荐信状态（提交/未提交/弃用）
     }
-    this.http.put('/api/recomletters/' + l._id, Recomletter)
+    this.http.put('http://localhost:3000/recomletters/' + l._id, Recomletter)
       .subscribe((data) => {
         const options = {
           overlay: true,
@@ -424,7 +424,7 @@ export class HmschoolComponent implements OnInit {
         type:l.type,//推荐信为 acedemic / professional
         state: "弃用",//推荐信状态（提交/未提交/弃用）
     }
-    this.http.put('/api/recomletters/' + l._id, Recomletter)
+    this.http.put('http://localhost:3000/recomletters/' + l._id, Recomletter)
       .subscribe((data) => {
         const options = {
           overlay: true,

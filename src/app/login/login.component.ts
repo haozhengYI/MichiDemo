@@ -217,7 +217,7 @@ export class LoginComponent implements OnInit {
 
 
   ngOnInit() {
-    this.http.get<{user: user[]}>('/api/users').subscribe((userData) => {
+    this.http.get<{user: user[]}>('http://localhost:3000/users').subscribe((userData) => {
 
     this.user = userData.user;
     console.log(userData.user);

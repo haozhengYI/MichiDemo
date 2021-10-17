@@ -75,7 +75,7 @@ export class HmstudentComponent implements OnInit {
 
 
   ngOnInit() {
-    this.http.get<{hotels: HotelM[]}>('/api/hotels').subscribe((Data) => {
+    this.http.get<{hotels: HotelM[]}>('http://localhost:3000/hotels').subscribe((Data) => {
         this.hotels = Data.hotels;
         for(let h of this.hotels){
             if(h.userAccount===this.managerID){
@@ -90,7 +90,7 @@ export class HmstudentComponent implements OnInit {
         }
     });
     //展示 学生个人信息
-    this.http.get<{students: Student[]}>('/api/students').subscribe((Data) => {
+    this.http.get<{students: Student[]}>('http://localhost:3000/students').subscribe((Data) => {
         this.students = Data.students;
         for(let h of this.students){
             if(h._id===this.studentID){
@@ -104,7 +104,7 @@ export class HmstudentComponent implements OnInit {
         }
     });
     //展示 此学生 教育背景信息
-    this.http.get<{educations: Education[]}>('/api/educations/').subscribe((Data) => {
+    this.http.get<{educations: Education[]}>('http://localhost:3000/educations/').subscribe((Data) => {
       this.educations = Data.educations;
           for(let y of this.educations){
             if(y.userAccount=== this.studentID){
@@ -114,7 +114,7 @@ export class HmstudentComponent implements OnInit {
           console.log("学生的教育背景"+this.education);    
       });
     //展示 此学生 工作背景信息
-    this.http.get<{experiences: Experience[]}>('/api/experiences/').subscribe((Data) => {
+    this.http.get<{experiences: Experience[]}>('http://localhost:3000/experiences/').subscribe((Data) => {
       this.experiences = Data.experiences;
           for(let i of this.experiences){
             if(i.userAccount=== this.studentID){
@@ -124,18 +124,18 @@ export class HmstudentComponent implements OnInit {
           console.log("学生的工作背景"+this.experience);    
       });
     //展示 此学生 选校信息
-    this.http.get<{schools: School[]}>('/api/studentschooldetail/' + this.studentID).subscribe((orderData) => {
+    this.http.get<{schools: School[]}>('http://localhost:3000/studentschooldetail/' + this.studentID).subscribe((orderData) => {
           console.log(orderData);
           this.schools = orderData.schools;
       });
     //展示 此学生 推荐人信息
-    this.http.get<{recommenders: Recommender[]}>('/api/studentrecommenderdetail/' + this.studentID).subscribe((orderData) => {
+    this.http.get<{recommenders: Recommender[]}>('http://localhost:3000/studentrecommenderdetail/' + this.studentID).subscribe((orderData) => {
       console.log(orderData);
       this.recommenders = orderData.recommenders;
     });    
     
     //展示 此学生通知信息
-    this.http.get<{notifs: Notif[]}>('/api/notifdetail/' + this.studentID).subscribe((o) => {
+    this.http.get<{notifs: Notif[]}>('http://localhost:3000/notifdetail/' + this.studentID).subscribe((o) => {
       console.log(o);
       this.notifs = o.notifs;
     });   
@@ -147,14 +147,14 @@ export class HmstudentComponent implements OnInit {
   //教育经历修改
   deleteE(e){
     console.log(e._id);
-    this.http.delete('/api/education/'+ e._id).subscribe((oooData) => {     
+    this.http.delete('http://localhost:3000/education/'+ e._id).subscribe((oooData) => {     
         window.location.reload();
     });
   }
   //工作经历修改
   deleteEx(ex){
     console.log(ex._id);
-    this.http.delete('/api/experience/'+ ex._id).subscribe((oooData) => {     
+    this.http.delete('http://localhost:3000/experience/'+ ex._id).subscribe((oooData) => {     
         window.location.reload();
     });
   }

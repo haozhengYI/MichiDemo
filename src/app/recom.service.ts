@@ -16,7 +16,7 @@ export class RecommenderService {
   constructor(private http: HttpClient) { }
   
   getRecommender() : any {
-    this.http.get<{recommenders: Recommender[]}>('/api/recommenders').subscribe((Data) => {
+    this.http.get<{recommenders: Recommender[]}>('http://localhost:3000/recommenders').subscribe((Data) => {
         //console.log(Data);
         this.recommenders = Data.recommenders;
         //console.log(this.recommenders[0].userAccount);
@@ -68,7 +68,7 @@ export class RecommenderService {
       relation:relation,//与申请者关系
       other:other,//其他信息
     };
-    this.http.post('/api/recommenderadd', recommender).subscribe((responseData) =>{
+    this.http.post('http://localhost:3000/recommenderadd', recommender).subscribe((responseData) =>{
         this.recommenderS.push(recommender);
         this.recommendersUpdated.next([...this.recommenderS]);
     });

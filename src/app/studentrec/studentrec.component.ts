@@ -41,7 +41,7 @@ export class StudentrecComponent implements OnInit {
   ngOnInit() {
 
 
-    this.http.get<{students: Student[]}>('/api/students').subscribe((Data) => {
+    this.http.get<{students: Student[]}>('http://localhost:3000/students').subscribe((Data) => {
         
         this.students = Data.students;
         for(let h of this.students){
@@ -55,7 +55,7 @@ export class StudentrecComponent implements OnInit {
 
     });
     //展示 此学生 选校信息
-    this.http.get<{schools: School[]}>('/api/schools/').subscribe((orderData) => {
+    this.http.get<{schools: School[]}>('http://localhost:3000/schools/').subscribe((orderData) => {
       this.schools = orderData.schools;
       console.log(this.studentID)
           for(let x of this.schools){
@@ -68,7 +68,7 @@ export class StudentrecComponent implements OnInit {
       });
 
     //展示 此学生 推荐人信息
-    this.http.get<{recommenders: Recommender[]}>('/api/studentrecommenderdetail/' + this.studentID).subscribe((orderData) => {
+    this.http.get<{recommenders: Recommender[]}>('http://localhost:3000/studentrecommenderdetail/' + this.studentID).subscribe((orderData) => {
       console.log(orderData);
       this.recommenders = orderData.recommenders;
     });  

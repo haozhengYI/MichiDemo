@@ -16,7 +16,7 @@ export class NotifService {
   constructor(private http: HttpClient) { }
   
   getNotif() : any {
-    this.http.get<{notifs: Notif[]}>('/api/notifs').subscribe((Data) => {
+    this.http.get<{notifs: Notif[]}>('http://localhost:3000/notifs').subscribe((Data) => {
         this.notifs = Data.notifs;
         this.notif = this.notifs[0];
         
@@ -44,7 +44,7 @@ export class NotifService {
         nstate:nstate,//通知状态（"未读/已读"）
         ntype:ntype,//通知类型（"紧急/一般/比较紧急"）
     };
-    this.http.post('/api/notifadd', notif).subscribe((responseData) =>{
+    this.http.post('http://localhost:3000/notifadd', notif).subscribe((responseData) =>{
         this.notifS.push(notif);
         this.notifsUpdated.next([...this.notifS]);
     });

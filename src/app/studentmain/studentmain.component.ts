@@ -42,7 +42,7 @@ export class StudentmainComponent implements OnInit {
   ngOnInit() {
 
 
-    this.http.get<{students: Student[]}>('/api/students').subscribe((Data) => {
+    this.http.get<{students: Student[]}>('http://localhost:3000/students').subscribe((Data) => {
         
         this.students = Data.students;
         for(let h of this.students){
@@ -56,7 +56,7 @@ export class StudentmainComponent implements OnInit {
 
     });
     //展示 此学生 选校信息
-    this.http.get<{schools: School[]}>('/api/schools/').subscribe((orderData) => {
+    this.http.get<{schools: School[]}>('http://localhost:3000/schools/').subscribe((orderData) => {
       this.schools = orderData.schools;
       console.log(this.studentID)
           for(let x of this.schools){
@@ -69,7 +69,7 @@ export class StudentmainComponent implements OnInit {
       });
 
       //展示 此学生通知信息
-    this.http.get<{notifs: Notif[]}>('/api/notifdetail/' + this.studentID).subscribe((o) => {
+    this.http.get<{notifs: Notif[]}>('http://localhost:3000/notifdetail/' + this.studentID).subscribe((o) => {
       
       this.notif = o.notifs;
       for(let n of this.notif){
@@ -96,7 +96,7 @@ export class StudentmainComponent implements OnInit {
       nstate:"已读",//通知状态（"未读/已读"）
       ntype:n.ntype,//通知类型（"紧急/一般/比较紧急"）
     }
-    this.http.put('/api/notif/' + n._id, Notif)
+    this.http.put('http://localhost:3000/notif/' + n._id, Notif)
       .subscribe((data) => {
         const options = {
           overlay: true,

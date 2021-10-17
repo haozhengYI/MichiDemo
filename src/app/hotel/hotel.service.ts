@@ -24,7 +24,7 @@ export class HotelService {
 
   }
   getHotels() {
-    this.http.get<{hotels: Hotel[]}>('/api/hotels').subscribe((hotelData) => {
+    this.http.get<{hotels: Hotel[]}>('http://localhost:3000/hotels').subscribe((hotelData) => {
       console.log(hotelData);
       this.hotels = hotelData.hotels;
       this.hotelsUpdated.next([...this.hotels]);
@@ -48,7 +48,7 @@ export class HotelService {
   //     image: image,
   //     price: price
   //   };
-  //   this.http.post('/api/hoteladd', hotel).subscribe((responseData) =>{
+  //   this.http.post('http://localhost:3000/hoteladd', hotel).subscribe((responseData) =>{
   //       this.hotels.push(hotel);
   //       this.hotelsUpdated.next([...this.hotels]);
   //   });
@@ -95,7 +95,7 @@ export class HotelService {
       image: image,
       price: price
     };
-    this.http.post('/api/hoteladd', hotel).subscribe((responseData) =>{
+    this.http.post('http://localhost:3000/hoteladd', hotel).subscribe((responseData) =>{
         this.hotelM.push(hotel);
         this.hotelMUpdated.next([...this.hotelM]);
     });
@@ -113,7 +113,7 @@ export class HotelService {
         hotelName : hotelName,
         userId: userId
     };
-    this.http.post('/api/hotelbook', order).subscribe((responseData)=>{
+    this.http.post('http://localhost:3000/hotelbook', order).subscribe((responseData)=>{
         this.orders.push(order);
         this.orderUpdated.next([...this.orders]);
     });

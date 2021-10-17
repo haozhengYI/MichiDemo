@@ -16,7 +16,7 @@ export class PublicationService {
   constructor(private http: HttpClient) { }
   
   getPublication() : any {
-    this.http.get<{publications: Publication[]}>('/api/publications').subscribe((Data) => {
+    this.http.get<{publications: Publication[]}>('http://localhost:3000/publications').subscribe((Data) => {
         this.publications = Data.publications;
         this.publication = this.publications[0];
         
@@ -50,7 +50,7 @@ export class PublicationService {
         PublicationAbstract: PublicationAbstract,
         PublicationLevel:PublicationLevel,
     };
-    this.http.post('/api/publicationadd', publication).subscribe((responseData) =>{
+    this.http.post('http://localhost:3000/publicationadd', publication).subscribe((responseData) =>{
         this.publicationS.push(publication);
         this.publicationsUpdated.next([...this.publicationS]);
     });

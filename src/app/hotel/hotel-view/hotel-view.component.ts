@@ -41,7 +41,7 @@ export class HotelViewComponent implements OnInit {
   onSearch(form: NgForm) {
     const searchName = form.value.searchName;
     console.log(searchName);
-    this.http.get<{hotels: Hotel[]}>('/api/hotelsearch/' + searchName).subscribe((hotelData) => {
+    this.http.get<{hotels: Hotel[]}>('http://localhost:3000/hotelsearch/' + searchName).subscribe((hotelData) => {
       console.log(hotelData);
       this.hotels = hotelData.hotels;
     });
