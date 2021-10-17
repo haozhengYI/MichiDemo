@@ -45,7 +45,7 @@ export class MainpageComponent implements OnInit {
       (document.getElementById("login-user-password") as HTMLInputElement).value=null;
       return;
     }else{//See if the account exist
-      console.log(this.user);
+      //console.log(this.user);
       for(var index = 0; index<this.user.length;index++){
         if(temp9==this.user[index].UserAccount){
           //alert("find");
@@ -57,7 +57,7 @@ export class MainpageComponent implements OnInit {
           //this.user.length = this.user.length+1;
           //window.open("/hmmain","_self");
           //direct to the hotel manager page
-          console.log(this.user[index].UserAccount);
+          //console.log(this.user[index].UserAccount);
           const navigationExtras: NavigationExtras = {
             queryParams: {
              "managerID" : this.user[index].UserAccount,
@@ -72,7 +72,7 @@ export class MainpageComponent implements OnInit {
           
           this.http.get<{students: Student[]}>('/api/students').subscribe((Data) => {
               this.students = Data.students;
-              console.log(this.students);
+              //console.log(this.students);
               for(let h of this.students){
                   if(h.userAccount==this.user[index].UserAccount){
                     this.studentID = h._id;
@@ -111,7 +111,7 @@ export class MainpageComponent implements OnInit {
           continue;
         }
       }if(index==this.user.length){
-          console.log(index);
+          //console.log(index);
           alert("No such account.");
           (document.getElementById("login-user-account") as HTMLInputElement).value=null;
           (document.getElementById("login-user-password") as HTMLInputElement).value=null;
@@ -124,8 +124,8 @@ export class MainpageComponent implements OnInit {
     this.http.get<{user: user[]}>('/api/users').subscribe((userData) => {
 
     this.user = userData.user;
-    console.log(userData.user);
-    console.log(this.user.length);
+    //console.log(userData.user);
+    //console.log(this.user.length);
 
     });
   }

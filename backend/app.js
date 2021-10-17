@@ -345,7 +345,7 @@ app.post('/studentadd', (req,res,next) =>{
     Professional3: req.body.Professional3,
     //Career Plan职业规划
     CareerPlan1: req.body.CareerPlan1,
-    CareerPlan2: req.body.CareerPlan1,
+    CareerPlan2: req.body.CareerPlan2,
     //Personal Strength个人优势
     Strength1: req.body.Strength1,
     Strength2: req.body.Strength2,
@@ -447,7 +447,7 @@ app.put('/students/:userAccount', (req, res, next)=>{
       Professional3: req.body.Professional3,
       //Career Plan职业规划
       CareerPlan1: req.body.CareerPlan1,
-      CareerPlan2: req.body.CareerPlan1,
+      CareerPlan2: req.body.CareerPlan2,
       //Personal Strength个人优势
       Strength1: req.body.Strength1,
       Strength2: req.body.Strength2,
