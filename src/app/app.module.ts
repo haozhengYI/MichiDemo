@@ -15,6 +15,10 @@ import { HmmodifypasssuccComponent } from './hmmodifypasssucc/hmmodifypasssucc.c
 import { HmmanageComponent } from './hmmanage/hmmanage.component';
 
 import { AdminComponent } from './admin/admin.component';
+// import { FullCalendarModule } from '@fullcalendar/angular'; 
+// import dayGridPlugin from '@fullcalendar/daygrid';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
 // View All Hotels
 import { HotelViewComponent } from './hotel/hotel-view/hotel-view.component';
@@ -49,6 +53,12 @@ import {StudyabroadComponent} from './studyabroad/studyabroad.component';
 import {ApplymasterComponent} from './applymaster/applymaster.component';
 import {ApplybachelorComponent} from './applybachelor/applybachelor.component';
 import {ApplyhighschoolComponent} from './applyhighschool/applyhighschool.component';
+
+// FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+//   dayGridPlugin,
+
+// ]);
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -103,6 +113,11 @@ import {ApplyhighschoolComponent} from './applyhighschool/applyhighschool.compon
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    //FullCalendarModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    }),
     HttpClientModule
   ],
   providers: [],

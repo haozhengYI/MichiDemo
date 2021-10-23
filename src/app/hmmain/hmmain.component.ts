@@ -1,10 +1,49 @@
 import { Component, Input, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ViewChild,
+  TemplateRef,
+} from '@angular/core';
+import {
+  startOfDay,
+  endOfDay,
+  subDays,
+  addDays,
+  endOfMonth,
+  isSameDay,
+  isSameMonth,
+  addHours,
+} from 'date-fns';
+import {
+  CalendarEvent,
+  CalendarEventAction,
+  CalendarEventTimesChangedEvent,
+  CalendarView,
+} from 'angular-calendar';
 import { Subscription } from 'rxjs';
 import { HmService } from './../hm.service';
 import {HotelM} from './../hm.model';
 import { HttpClient } from '@angular/common/http';
 import { HotelService } from '../hotel/hotel.service';
+import {School} from './../school.model';
+import {Student} from './../st.model';
 import { ActivatedRoute,  NavigationExtras,Router } from '@angular/router';
+
+const colors: any = {
+  red: {
+    primary: '#ad2121',
+    secondary: '#FAE3E3',
+  },
+  blue: {
+    primary: '#1e90ff',
+    secondary: '#D1E8FF',
+  },
+  yellow: {
+    primary: '#e3bc08',
+    secondary: '#FDF1BA',
+  },
+};
+
 
 @Component({
   selector: 'app-hmmain',
@@ -14,10 +53,33 @@ import { ActivatedRoute,  NavigationExtras,Router } from '@angular/router';
 export class HMmainComponent implements OnInit {
   hotels: HotelM[] = [];
   hotel : HotelM;
-  //managerID = "test234@qq.com";
+
+  view: CalendarView = CalendarView.Month;
+  CalendarView = CalendarView;
+  viewDate: Date = new Date();
+  modalData: {
+    event: CalendarEvent;
+  };
+
+  events: CalendarEvent[] = [
+    // {
+    //   start: startOfDay(new Date("2021/10/31")),
+    //   title: 'An event with no end date',
+    //   color: colors.yellow,
+    // },
+  ];
+
+
+  activeDayIsOpen: boolean = true;
+
   managerID : any;
+  schools : School[]  =[];
+  school : School[]  =[];
+  students :Student[]=[];
+  student : Student[]=[];
 
   private hotelMSub: Subscription;
+
 
   constructor(
     public hmService: HmService,
@@ -46,12 +108,99 @@ export class HMmainComponent implements OnInit {
         //this.hotel = this.hotels[0];
         console.log("happy"+this.hotel.email);
     });
-    // this.hotel  = this.hmService.getHotelM();
-    // console.log("From Return");
-    // console.log(this.hotel)
+
     this.hotelMSub = this.hmService.getHotelMUpdatedListener().subscribe((hotels: HotelM[]) => {
     this.hotels = hotels;
     });
+
+    this.http.get<{students: Student[]}>('http://localhost:3000/students/').subscribe((Data) => {
+          this.students = Data.students;
+          console.log(this.students);
+          for(let st of this.students){  
+            this.student.push(st) ;
+          }
+      });
+
+      this.http.get<{schools: School[]}>('http://localhost:3000/schools').subscribe((Data) => {
+          this.schools = Data.schools;
+          for(let sc of this.schools){
+            if(sc.state==="进行中"){ //筛选原始school列表中 状态为进行中的数组
+              for(let test of this.student){
+                if(sc.userAccount=== test._id ){//替换列表里面的名字
+                  let studentName = test.firstName + " " + test.lastName;
+                  sc.userAccount =studentName;
+                  //console.log("此时变量为" +sc.userAccount + test.firstName);
+                }
+              }
+              this.school.push(sc); //输出新数组
+            }           
+          }
+          console.log("新选校列表为" + this.school.length);
+          
+          for(let s of  this.school){
+            if(s.ddl1 !=" "){
+              let data = s.ddl1;
+              let tit = s.userAccount+ " 【 "+ s.univName + "】 "+ s.majorName;
+              this.addEvent(tit,data);
+            }  
+            if(s.ddl2 !=" "){
+              let data = s.ddl2;
+              let tit = s.userAccount+ " 【 "+ s.univName + "】 "+ s.majorName;
+              this.addEvent2(tit,data);
+            }
+            if(s.ddl3 !=" "){
+              let data = s.ddl3;
+              let tit = s.userAccount+ " 【 "+ s.univName + "】 "+ s.majorName;
+              this.addEvent3(tit,data);
+            }
+          }
+      });
+
+  }
+  
+  addEvent(tit,data){
+    this.events = [
+      ...this.events,
+      {
+        title: tit,
+        start: startOfDay(new Date(data)),
+        color: colors.red,
+      },
+    ];
+  }
+  addEvent2(tit,data){
+    this.events = [
+      ...this.events,
+      {
+        title: tit,
+        start: startOfDay(new Date(data)),
+        color: colors.yellow,
+      },
+    ];
+  }
+  addEvent3(tit,data){
+    this.events = [
+      ...this.events,
+      {
+        title: tit,
+        start: startOfDay(new Date(data)),
+        color: colors.blue,
+      },
+    ];
+  }
+
+  dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
+    if (isSameMonth(date, this.viewDate)) {
+      if (
+        (isSameDay(this.viewDate, date) && this.activeDayIsOpen === true) ||
+        events.length === 0
+      ) {
+        this.activeDayIsOpen = false;
+      } else {
+        this.activeDayIsOpen = true;
+      }
+      this.viewDate = date;
+    }
   }
   //direct to the hotel manage page
   hotelman(hotel) {

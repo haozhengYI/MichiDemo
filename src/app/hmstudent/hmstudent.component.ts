@@ -172,7 +172,7 @@ export class HmstudentComponent implements OnInit {
     const data: Blob = new Blob([buffer], {
         type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8'
     });
-    FileSaver.saveAs(data, fileName + '_export_' + new Date().getTime() + '.xls');
+    FileSaver.saveAs(data, fileName + '_export_' + new Date().getTime() + '.xlsx');
         // 如果写成.xlsx,可能不能打开下载的文件，这可能与Excel版本有关
   }
 

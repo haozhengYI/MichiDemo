@@ -49,9 +49,94 @@
 		</ul><br>
 		
 	  </div>
-  
+
 	  <div class="col-sm-9">
+
+		<div>
+			<div class="row text-center">
+				<div class="col-md-4">
+				  <div class="btn-group">
+					<div
+					  class="btn btn-primary"
+					  mwlCalendarPreviousView
+					  [view]="view"
+					  [(viewDate)]="viewDate"
+					  (viewDateChange)="closeOpenMonthViewDay()"
+					>
+					  Previous
+					</div>
+					<div
+					  class="btn btn-outline-secondary"
+					  mwlCalendarToday
+					  [(viewDate)]="viewDate"
+					>
+					  Today
+					</div>
+					<div
+					  class="btn btn-primary"
+					  mwlCalendarNextView
+					  [view]="view"
+					  [(viewDate)]="viewDate"
+					  (viewDateChange)="closeOpenMonthViewDay()"
+					>
+					  Next
+					</div>
+				  </div>
+				</div>
+				<div class="col-md-4">
+				  <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
+				</div>
+				<div class="col-md-4">
+				  <div class="btn-group">
+					<div
+					  class="btn btn-primary"
+					  (click)="setView(CalendarView.Month)"
+					  [class.active]="view === CalendarView.Month"
+					>
+					  Month
+					</div>
+					<div
+					  class="btn btn-primary"
+					  (click)="setView(CalendarView.Week)"
+					  [class.active]="view === CalendarView.Week"
+					>
+					  Week
+					</div>
+					<div
+					  class="btn btn-primary"
+					  (click)="setView(CalendarView.Day)"
+					  [class.active]="view === CalendarView.Day"
+					>
+					  Day
+					</div>
+				  </div>
+				</div>
+			</div>
+			  <br/>
+			  <div [ngSwitch]="view">
+				<mwl-calendar-month-view
+				  *ngSwitchCase="CalendarView.Month"
+				  [viewDate]="viewDate"
+				  [events]="events"
+				  [refresh]="refresh"
+				  [activeDayIsOpen]="activeDayIsOpen"
+				  (dayClicked)="dayClicked($event.day)"
+				  (eventClicked)="handleEvent('Clicked', $event.event)"
+				  (eventTimesChanged)="eventTimesChanged($event)"
+				>
+				</mwl-calendar-month-view>
+			  </div>		  
+		</div>
+
+
 		<h4><small>更新日志</small></h4>
+		<hr>
+		<h2>Version 2.10</h2>
+		<h5><span class="glyphicon glyphicon-time"></span> Post by Yi, Oct 22, 2021.</h5>
+		<h5><span class="label label-success">管理员系统</span> </h5><br>
+		<p>1. 新增日历事项</p>
+
+
 		<hr>
 		<h2>Version 2.9</h2>
 		<h5><span class="glyphicon glyphicon-time"></span> Post by Yi, Oct 16, 2021.</h5>
