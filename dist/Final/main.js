@@ -609,34 +609,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _hmmodifypasssucc_hmmodifypasssucc_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./hmmodifypasssucc/hmmodifypasssucc.component */ "./src/app/hmmodifypasssucc/hmmodifypasssucc.component.ts");
 /* harmony import */ var _hmmanage_hmmanage_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./hmmanage/hmmanage.component */ "./src/app/hmmanage/hmmanage.component.ts");
 /* harmony import */ var _admin_admin_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./admin/admin.component */ "./src/app/admin/admin.component.ts");
-/* harmony import */ var _hotel_hotel_view_hotel_view_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./hotel/hotel-view/hotel-view.component */ "./src/app/hotel/hotel-view/hotel-view.component.ts");
-/* harmony import */ var _hotel_hotel_detail_hotel_detail_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./hotel/hotel-detail/hotel-detail.component */ "./src/app/hotel/hotel-detail/hotel-detail.component.ts");
-/* harmony import */ var _hotel_hotel_book_hotel_book_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./hotel/hotel-book/hotel-book.component */ "./src/app/hotel/hotel-book/hotel-book.component.ts");
-/* harmony import */ var _hotel_hotel_add_hotel_add_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./hotel/hotel-add/hotel-add.component */ "./src/app/hotel/hotel-add/hotel-add.component.ts");
-/* harmony import */ var _adminmainpage_adminmainpage_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./adminmainpage/adminmainpage.component */ "./src/app/adminmainpage/adminmainpage.component.ts");
-/* harmony import */ var _hmcomp_hmcomp_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./hmcomp/hmcomp.component */ "./src/app/hmcomp/hmcomp.component.ts");
-/* harmony import */ var _hmorder_hmorder_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./hmorder/hmorder.component */ "./src/app/hmorder/hmorder.component.ts");
-/* harmony import */ var _admin_hotel_admin_hotel_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./admin-hotel/admin-hotel.component */ "./src/app/admin-hotel/admin-hotel.component.ts");
-/* harmony import */ var _admin_order_admin_order_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./admin-order/admin-order.component */ "./src/app/admin-order/admin-order.component.ts");
-/* harmony import */ var _hotel_order_view_order_view_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./hotel/order-view/order-view.component */ "./src/app/hotel/order-view/order-view.component.ts");
-/* harmony import */ var _hmregister_hmregister_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./hmregister/hmregister.component */ "./src/app/hmregister/hmregister.component.ts");
-/* harmony import */ var _hmstudent_hmstudent_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./hmstudent/hmstudent.component */ "./src/app/hmstudent/hmstudent.component.ts");
-/* harmony import */ var _hmaddschool_hmaddschool_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./hmaddschool/hmaddschool.component */ "./src/app/hmaddschool/hmaddschool.component.ts");
-/* harmony import */ var _hmschool_hmschool_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./hmschool/hmschool.component */ "./src/app/hmschool/hmschool.component.ts");
-/* harmony import */ var _hmordersearch_hmordersearch_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./hmordersearch/hmordersearch.component */ "./src/app/hmordersearch/hmordersearch.component.ts");
-/* harmony import */ var _hmblog_hmblog_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./hmblog/hmblog.component */ "./src/app/hmblog/hmblog.component.ts");
-/* harmony import */ var _hmstudentrec_hmstudentrec_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./hmstudentrec/hmstudentrec.component */ "./src/app/hmstudentrec/hmstudentrec.component.ts");
-/* harmony import */ var _studentmain_studentmain_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./studentmain/studentmain.component */ "./src/app/studentmain/studentmain.component.ts");
-/* harmony import */ var _studentaddrecomm_studentaddrecomm_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./studentaddrecomm/studentaddrecomm.component */ "./src/app/studentaddrecomm/studentaddrecomm.component.ts");
-/* harmony import */ var _studentinfo_studentinfo_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./studentinfo/studentinfo.component */ "./src/app/studentinfo/studentinfo.component.ts");
-/* harmony import */ var _studentrec_studentrec_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./studentrec/studentrec.component */ "./src/app/studentrec/studentrec.component.ts");
-/* harmony import */ var _studentschool_studentschool_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./studentschool/studentschool.component */ "./src/app/studentschool/studentschool.component.ts");
-/* harmony import */ var _mainclass_mainclass_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./mainclass/mainclass.component */ "./src/app/mainclass/mainclass.component.ts");
-/* harmony import */ var _mainblog_mainblog_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./mainblog/mainblog.component */ "./src/app/mainblog/mainblog.component.ts");
-/* harmony import */ var _studyabroad_studyabroad_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./studyabroad/studyabroad.component */ "./src/app/studyabroad/studyabroad.component.ts");
-/* harmony import */ var _applymaster_applymaster_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./applymaster/applymaster.component */ "./src/app/applymaster/applymaster.component.ts");
-/* harmony import */ var _applybachelor_applybachelor_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./applybachelor/applybachelor.component */ "./src/app/applybachelor/applybachelor.component.ts");
-/* harmony import */ var _applyhighschool_applyhighschool_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./applyhighschool/applyhighschool.component */ "./src/app/applyhighschool/applyhighschool.component.ts");
+/* harmony import */ var angular_calendar__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! angular-calendar */ "./node_modules/angular-calendar/fesm5/angular-calendar.js");
+/* harmony import */ var angular_calendar_date_adapters_date_fns__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! angular-calendar/date-adapters/date-fns */ "./node_modules/angular-calendar/date-adapters/esm/date-fns/index.js");
+/* harmony import */ var _hotel_hotel_view_hotel_view_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./hotel/hotel-view/hotel-view.component */ "./src/app/hotel/hotel-view/hotel-view.component.ts");
+/* harmony import */ var _hotel_hotel_detail_hotel_detail_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./hotel/hotel-detail/hotel-detail.component */ "./src/app/hotel/hotel-detail/hotel-detail.component.ts");
+/* harmony import */ var _hotel_hotel_book_hotel_book_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./hotel/hotel-book/hotel-book.component */ "./src/app/hotel/hotel-book/hotel-book.component.ts");
+/* harmony import */ var _hotel_hotel_add_hotel_add_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./hotel/hotel-add/hotel-add.component */ "./src/app/hotel/hotel-add/hotel-add.component.ts");
+/* harmony import */ var _adminmainpage_adminmainpage_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./adminmainpage/adminmainpage.component */ "./src/app/adminmainpage/adminmainpage.component.ts");
+/* harmony import */ var _hmcomp_hmcomp_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./hmcomp/hmcomp.component */ "./src/app/hmcomp/hmcomp.component.ts");
+/* harmony import */ var _hmorder_hmorder_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./hmorder/hmorder.component */ "./src/app/hmorder/hmorder.component.ts");
+/* harmony import */ var _admin_hotel_admin_hotel_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./admin-hotel/admin-hotel.component */ "./src/app/admin-hotel/admin-hotel.component.ts");
+/* harmony import */ var _admin_order_admin_order_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./admin-order/admin-order.component */ "./src/app/admin-order/admin-order.component.ts");
+/* harmony import */ var _hotel_order_view_order_view_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./hotel/order-view/order-view.component */ "./src/app/hotel/order-view/order-view.component.ts");
+/* harmony import */ var _hmregister_hmregister_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./hmregister/hmregister.component */ "./src/app/hmregister/hmregister.component.ts");
+/* harmony import */ var _hmstudent_hmstudent_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./hmstudent/hmstudent.component */ "./src/app/hmstudent/hmstudent.component.ts");
+/* harmony import */ var _hmaddschool_hmaddschool_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./hmaddschool/hmaddschool.component */ "./src/app/hmaddschool/hmaddschool.component.ts");
+/* harmony import */ var _hmschool_hmschool_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./hmschool/hmschool.component */ "./src/app/hmschool/hmschool.component.ts");
+/* harmony import */ var _hmordersearch_hmordersearch_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./hmordersearch/hmordersearch.component */ "./src/app/hmordersearch/hmordersearch.component.ts");
+/* harmony import */ var _hmblog_hmblog_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./hmblog/hmblog.component */ "./src/app/hmblog/hmblog.component.ts");
+/* harmony import */ var _hmstudentrec_hmstudentrec_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./hmstudentrec/hmstudentrec.component */ "./src/app/hmstudentrec/hmstudentrec.component.ts");
+/* harmony import */ var _studentmain_studentmain_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./studentmain/studentmain.component */ "./src/app/studentmain/studentmain.component.ts");
+/* harmony import */ var _studentaddrecomm_studentaddrecomm_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./studentaddrecomm/studentaddrecomm.component */ "./src/app/studentaddrecomm/studentaddrecomm.component.ts");
+/* harmony import */ var _studentinfo_studentinfo_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./studentinfo/studentinfo.component */ "./src/app/studentinfo/studentinfo.component.ts");
+/* harmony import */ var _studentrec_studentrec_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./studentrec/studentrec.component */ "./src/app/studentrec/studentrec.component.ts");
+/* harmony import */ var _studentschool_studentschool_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./studentschool/studentschool.component */ "./src/app/studentschool/studentschool.component.ts");
+/* harmony import */ var _mainclass_mainclass_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./mainclass/mainclass.component */ "./src/app/mainclass/mainclass.component.ts");
+/* harmony import */ var _mainblog_mainblog_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./mainblog/mainblog.component */ "./src/app/mainblog/mainblog.component.ts");
+/* harmony import */ var _studyabroad_studyabroad_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./studyabroad/studyabroad.component */ "./src/app/studyabroad/studyabroad.component.ts");
+/* harmony import */ var _applymaster_applymaster_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./applymaster/applymaster.component */ "./src/app/applymaster/applymaster.component.ts");
+/* harmony import */ var _applybachelor_applybachelor_component__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./applybachelor/applybachelor.component */ "./src/app/applybachelor/applybachelor.component.ts");
+/* harmony import */ var _applyhighschool_applyhighschool_component__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./applyhighschool/applyhighschool.component */ "./src/app/applyhighschool/applyhighschool.component.ts");
 
 
 
@@ -649,6 +651,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+// import { FullCalendarModule } from '@fullcalendar/angular'; 
+// import dayGridPlugin from '@fullcalendar/daygrid';
 
 
 // View All Hotels
@@ -683,6 +689,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+// FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+//   dayGridPlugin,
+// ]);
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -691,46 +700,51 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
                 _mainpage_mainpage_component__WEBPACK_IMPORTED_MODULE_7__["MainpageComponent"],
-                _mainclass_mainclass_component__WEBPACK_IMPORTED_MODULE_36__["MainclassComponent"],
-                _mainblog_mainblog_component__WEBPACK_IMPORTED_MODULE_37__["MainblogComponent"],
-                _studyabroad_studyabroad_component__WEBPACK_IMPORTED_MODULE_38__["StudyabroadComponent"],
-                _applymaster_applymaster_component__WEBPACK_IMPORTED_MODULE_39__["ApplymasterComponent"],
-                _applybachelor_applybachelor_component__WEBPACK_IMPORTED_MODULE_40__["ApplybachelorComponent"],
-                _applyhighschool_applyhighschool_component__WEBPACK_IMPORTED_MODULE_41__["ApplyhighschoolComponent"],
+                _mainclass_mainclass_component__WEBPACK_IMPORTED_MODULE_38__["MainclassComponent"],
+                _mainblog_mainblog_component__WEBPACK_IMPORTED_MODULE_39__["MainblogComponent"],
+                _studyabroad_studyabroad_component__WEBPACK_IMPORTED_MODULE_40__["StudyabroadComponent"],
+                _applymaster_applymaster_component__WEBPACK_IMPORTED_MODULE_41__["ApplymasterComponent"],
+                _applybachelor_applybachelor_component__WEBPACK_IMPORTED_MODULE_42__["ApplybachelorComponent"],
+                _applyhighschool_applyhighschool_component__WEBPACK_IMPORTED_MODULE_43__["ApplyhighschoolComponent"],
                 _login_login_component__WEBPACK_IMPORTED_MODULE_8__["LoginComponent"],
                 _hmmain_hmmain_component__WEBPACK_IMPORTED_MODULE_9__["HMmainComponent"],
                 _hmmodifypass_hmmodifypass_component__WEBPACK_IMPORTED_MODULE_10__["HmmodifypassComponent"],
                 _hmmodifypasssucc_hmmodifypasssucc_component__WEBPACK_IMPORTED_MODULE_11__["HmmodifypasssuccComponent"],
                 _hmmanage_hmmanage_component__WEBPACK_IMPORTED_MODULE_12__["HmmanageComponent"],
                 _admin_admin_component__WEBPACK_IMPORTED_MODULE_13__["AdminComponent"],
-                _hotel_hotel_view_hotel_view_component__WEBPACK_IMPORTED_MODULE_14__["HotelViewComponent"],
-                _hotel_hotel_detail_hotel_detail_component__WEBPACK_IMPORTED_MODULE_15__["HotelDetailComponent"],
-                _hotel_hotel_book_hotel_book_component__WEBPACK_IMPORTED_MODULE_16__["HotelBookComponent"],
-                _hotel_hotel_add_hotel_add_component__WEBPACK_IMPORTED_MODULE_17__["HotelAddComponent"],
-                _adminmainpage_adminmainpage_component__WEBPACK_IMPORTED_MODULE_18__["AdminmainpageComponent"],
-                _hmcomp_hmcomp_component__WEBPACK_IMPORTED_MODULE_19__["HmcompComponent"],
-                _adminmainpage_adminmainpage_component__WEBPACK_IMPORTED_MODULE_18__["AdminmainpageComponent"],
-                _hmorder_hmorder_component__WEBPACK_IMPORTED_MODULE_20__["HmorderComponent"],
-                _admin_hotel_admin_hotel_component__WEBPACK_IMPORTED_MODULE_21__["AdminHotelComponent"],
-                _admin_order_admin_order_component__WEBPACK_IMPORTED_MODULE_22__["AdminOrderComponent"],
-                _hotel_order_view_order_view_component__WEBPACK_IMPORTED_MODULE_23__["OrderViewComponent"],
-                _hmregister_hmregister_component__WEBPACK_IMPORTED_MODULE_24__["HmregisterComponent"],
-                _hmstudent_hmstudent_component__WEBPACK_IMPORTED_MODULE_25__["HmstudentComponent"],
-                _hmaddschool_hmaddschool_component__WEBPACK_IMPORTED_MODULE_26__["HmaddschoolComponent"],
-                _hmschool_hmschool_component__WEBPACK_IMPORTED_MODULE_27__["HmschoolComponent"],
-                _hmordersearch_hmordersearch_component__WEBPACK_IMPORTED_MODULE_28__["HmordersearchComponent"],
-                _hmblog_hmblog_component__WEBPACK_IMPORTED_MODULE_29__["HmblogComponent"],
-                _hmstudentrec_hmstudentrec_component__WEBPACK_IMPORTED_MODULE_30__["HmstudentrecComponent"],
-                _studentmain_studentmain_component__WEBPACK_IMPORTED_MODULE_31__["StudentmainComponent"],
-                _studentaddrecomm_studentaddrecomm_component__WEBPACK_IMPORTED_MODULE_32__["StudentaddrecommComponent"],
-                _studentinfo_studentinfo_component__WEBPACK_IMPORTED_MODULE_33__["StudentinfoComponent"],
-                _studentrec_studentrec_component__WEBPACK_IMPORTED_MODULE_34__["StudentrecComponent"],
-                _studentschool_studentschool_component__WEBPACK_IMPORTED_MODULE_35__["StudentschoolComponent"]
+                _hotel_hotel_view_hotel_view_component__WEBPACK_IMPORTED_MODULE_16__["HotelViewComponent"],
+                _hotel_hotel_detail_hotel_detail_component__WEBPACK_IMPORTED_MODULE_17__["HotelDetailComponent"],
+                _hotel_hotel_book_hotel_book_component__WEBPACK_IMPORTED_MODULE_18__["HotelBookComponent"],
+                _hotel_hotel_add_hotel_add_component__WEBPACK_IMPORTED_MODULE_19__["HotelAddComponent"],
+                _adminmainpage_adminmainpage_component__WEBPACK_IMPORTED_MODULE_20__["AdminmainpageComponent"],
+                _hmcomp_hmcomp_component__WEBPACK_IMPORTED_MODULE_21__["HmcompComponent"],
+                _adminmainpage_adminmainpage_component__WEBPACK_IMPORTED_MODULE_20__["AdminmainpageComponent"],
+                _hmorder_hmorder_component__WEBPACK_IMPORTED_MODULE_22__["HmorderComponent"],
+                _admin_hotel_admin_hotel_component__WEBPACK_IMPORTED_MODULE_23__["AdminHotelComponent"],
+                _admin_order_admin_order_component__WEBPACK_IMPORTED_MODULE_24__["AdminOrderComponent"],
+                _hotel_order_view_order_view_component__WEBPACK_IMPORTED_MODULE_25__["OrderViewComponent"],
+                _hmregister_hmregister_component__WEBPACK_IMPORTED_MODULE_26__["HmregisterComponent"],
+                _hmstudent_hmstudent_component__WEBPACK_IMPORTED_MODULE_27__["HmstudentComponent"],
+                _hmaddschool_hmaddschool_component__WEBPACK_IMPORTED_MODULE_28__["HmaddschoolComponent"],
+                _hmschool_hmschool_component__WEBPACK_IMPORTED_MODULE_29__["HmschoolComponent"],
+                _hmordersearch_hmordersearch_component__WEBPACK_IMPORTED_MODULE_30__["HmordersearchComponent"],
+                _hmblog_hmblog_component__WEBPACK_IMPORTED_MODULE_31__["HmblogComponent"],
+                _hmstudentrec_hmstudentrec_component__WEBPACK_IMPORTED_MODULE_32__["HmstudentrecComponent"],
+                _studentmain_studentmain_component__WEBPACK_IMPORTED_MODULE_33__["StudentmainComponent"],
+                _studentaddrecomm_studentaddrecomm_component__WEBPACK_IMPORTED_MODULE_34__["StudentaddrecommComponent"],
+                _studentinfo_studentinfo_component__WEBPACK_IMPORTED_MODULE_35__["StudentinfoComponent"],
+                _studentrec_studentrec_component__WEBPACK_IMPORTED_MODULE_36__["StudentrecComponent"],
+                _studentschool_studentschool_component__WEBPACK_IMPORTED_MODULE_37__["StudentschoolComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_6__["AppRoutingModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
+                //FullCalendarModule,
+                angular_calendar__WEBPACK_IMPORTED_MODULE_14__["CalendarModule"].forRoot({
+                    provide: angular_calendar__WEBPACK_IMPORTED_MODULE_14__["DateAdapter"],
+                    useFactory: angular_calendar_date_adapters_date_fns__WEBPACK_IMPORTED_MODULE_15__["adapterFactory"],
+                }),
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"]
             ],
             providers: [],
@@ -2229,7 +2243,7 @@ var HmcompComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<header>\n\t<nav class=\"navbar navbar-inverse\" role=\"navigation\">\n\t\t<div class=\"container-fluid\">\n\t\t<div class=\"navbar-header\">\n\t\t\t\t<a class=\"navbar-brand\" >一个很神秘的网页</a>\n\t\t</div>\n\t\t<div class=\"nav  navbar-right\">\n\t\t  <ul class=\"nav navbar-nav\">\n\t\t\t<li class=\"active\"><a (click)=\"main(hotel)\">HomePage</a></li>\n\t\t\t<li class=\"dropdown\">\n\t\t\t  <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n\t\t\t\t{{hotel.userAccount}} <b class=\"caret\"></b>\n\t\t\t  </a>\n\t\t\t  <ul class=\"dropdown-menu\">\n\t\t\t\t\t\t\t<li><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n\t\t\t\t\t\t\t<li><a (click)=\"comp(hotel)\">Complete info</a></li>\n\t\t\t\t\t\t\t<li class=\"divider\"></li>\n\t\t\t\t<li><a (click)=\"hotelman(hotel)\">学生管理</a></li>\n\t\t\t\t<li><a (click)=\"hmregister(hotel)\">登记账号</a></li>\n\t\t\t\t\t\t</ul>\n\t\t\t</li>\n\t\t\t<li class=\"nav navbar-nav navbar-right\">\n\t\t\t  <a href=\"/mainpage\">Log Out</a>\n\t\t\t</li>\n\t\t  </ul>\n\t\t</div>\n\t  </div>\n\t</nav>\n\t\n  </header>\n  \n  <ol class=\"breadcrumb\">\n\t<li class=\"active\">Home - {{hotel.userAccount}}</li>\n</ol>\n\n<div class=\"container-fluid\">\n\t<div class=\"row content\">\n\t  <div class=\"col-sm-3 sidenav\">\n\t\t<h4>{{hotel.userAccount}}  </h4>\n\t\t<ul class=\"nav nav-pills nav-stacked\">\n\t\t  <li class=\"active\"><a (click)=\"main(hotel)\">Home</a></li>\n\t\t  <li ><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n\t\t\t<li><a (click)=\"comp(hotel)\">Complete info</a></li>\n\t\t\t<li><a (click)=\"hotelman(hotel)\">Manage Student</a></li>\n\t\t\t<li><a (click)=\"hmorder(hotel)\">学生申请</a></li>\n\t\t\t<li><a (click)=\"hmregister(hotel)\">登记账号</a></li>\n\t\t\t<li ><a (click)=\"hmblog(hotel)\">Blog管理</a></li>\n\t\t</ul><br>\n\t\t\n\t  </div>\n  \n\t  <div class=\"col-sm-9\">\n\t\t<h4><small>更新日志</small></h4>\n\t\t<hr>\n\t\t<h2>Version 2.9</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Oct 16, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> <span class=\"label label-danger\">学生系统</span></h5><br>\n\t\t<p>1. Debug学生系统不能修改职业规划</p>\n\t\t<p>2. Debug管理员系统无法下载学生列表</p>\n\n\t\t<hr>\n\t\t<h2>Version 2.8</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Oct 08, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> </h5><br>\n\t\t<p>1. 新增管理员系统中，可以下载学生的选校列表</p>\n\n\t\t<hr>\n\t\t<h2>Version 2.7</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Oct 02, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> </h5><br>\n\t\t<p>1. 新增管理员系统中，可以查看推荐人被引用的全部列表</p>\n\t\t\n\n\t\t<hr>\n\t\t<h2>Version 2.6</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Sep 27, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> <span class=\"label label-primary\">主页</span></h5><br>\n\t\t<p>1. 新增管理员系统中，对于学生的工作经历和教育背景 信息删除功能</p>\n\t\t<p>2. 添加 主页-留学申请 页面中其他服务内容，包含文书、咨询、简历修改</p><br>\n\n\n\t\t<hr>\n\t\t<h2>Version 2.5</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Sep 23, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span><span class=\"label label-primary\">主页</span></h5><br>\n\t\t<p>1. 新增管理员系统中可以查询学生的个人信息，包含工作经历，教育背景等信息</p><br>\n\t\t<p>2. 更新 主页-留学申请-研究生申请 页面中Q&A部分信息</p><br>\n\t\t<hr>\n\t\n\t\t<h2>Version 2.4</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Aug 21, 2021.</h5>\n\t\t<h5><span class=\"label label-primary\">主页</span></h5><br>\n\t\t<p>1. 新增 主页-留学生请 页面，及其子项（高中、本科、研究生）</p><br>\n\t\t<hr>\n\n\t\t<h2>Version 2.3</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Aug 08, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span><span class=\"label label-danger\">学生系统</span></h5><br>\n\t\t<p>1. 新增 通知系统</p><br>\n\t\t<p>1. 新增 文书系统</p><br>\n\t\t<hr>\n\n\t\t<br><br>\n\t  </div>\n\t</div>\n</div>\n\n  \n  "
+module.exports = "\n<header>\n\t<nav class=\"navbar navbar-inverse\" role=\"navigation\">\n\t\t<div class=\"container-fluid\">\n\t\t<div class=\"navbar-header\">\n\t\t\t\t<a class=\"navbar-brand\" >一个很神秘的网页</a>\n\t\t</div>\n\t\t<div class=\"nav  navbar-right\">\n\t\t  <ul class=\"nav navbar-nav\">\n\t\t\t<li class=\"active\"><a (click)=\"main(hotel)\">HomePage</a></li>\n\t\t\t<li class=\"dropdown\">\n\t\t\t  <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n\t\t\t\t{{hotel.userAccount}} <b class=\"caret\"></b>\n\t\t\t  </a>\n\t\t\t  <ul class=\"dropdown-menu\">\n\t\t\t\t\t\t\t<li><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n\t\t\t\t\t\t\t<li><a (click)=\"comp(hotel)\">Complete info</a></li>\n\t\t\t\t\t\t\t<li class=\"divider\"></li>\n\t\t\t\t<li><a (click)=\"hotelman(hotel)\">学生管理</a></li>\n\t\t\t\t<li><a (click)=\"hmregister(hotel)\">登记账号</a></li>\n\t\t\t\t\t\t</ul>\n\t\t\t</li>\n\t\t\t<li class=\"nav navbar-nav navbar-right\">\n\t\t\t  <a href=\"/mainpage\">Log Out</a>\n\t\t\t</li>\n\t\t  </ul>\n\t\t</div>\n\t  </div>\n\t</nav>\n\t\n  </header>\n  \n  <ol class=\"breadcrumb\">\n\t<li class=\"active\">Home - {{hotel.userAccount}}</li>\n</ol>\n\n<div class=\"container-fluid\">\n\t<div class=\"row content\">\n\t  <div class=\"col-sm-3 sidenav\">\n\t\t<h4>{{hotel.userAccount}}  </h4>\n\t\t<ul class=\"nav nav-pills nav-stacked\">\n\t\t  <li class=\"active\"><a (click)=\"main(hotel)\">Home</a></li>\n\t\t  <li ><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n\t\t\t<li><a (click)=\"comp(hotel)\">Complete info</a></li>\n\t\t\t<li><a (click)=\"hotelman(hotel)\">Manage Student</a></li>\n\t\t\t<li><a (click)=\"hmorder(hotel)\">学生申请</a></li>\n\t\t\t<li><a (click)=\"hmregister(hotel)\">登记账号</a></li>\n\t\t\t<li ><a (click)=\"hmblog(hotel)\">Blog管理</a></li>\n\t\t</ul><br>\n\t\t\n\t  </div>\n\n\t  <div class=\"col-sm-9\">\n\n\t\t<div>\n\t\t\t<div class=\"row text-center\">\n\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t  <div class=\"btn-group\">\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  mwlCalendarPreviousView\n\t\t\t\t\t  [view]=\"view\"\n\t\t\t\t\t  [(viewDate)]=\"viewDate\"\n\t\t\t\t\t  (viewDateChange)=\"closeOpenMonthViewDay()\"\n\t\t\t\t\t>\n\t\t\t\t\t  Previous\n\t\t\t\t\t</div>\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-outline-secondary\"\n\t\t\t\t\t  mwlCalendarToday\n\t\t\t\t\t  [(viewDate)]=\"viewDate\"\n\t\t\t\t\t>\n\t\t\t\t\t  Today\n\t\t\t\t\t</div>\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  mwlCalendarNextView\n\t\t\t\t\t  [view]=\"view\"\n\t\t\t\t\t  [(viewDate)]=\"viewDate\"\n\t\t\t\t\t  (viewDateChange)=\"closeOpenMonthViewDay()\"\n\t\t\t\t\t>\n\t\t\t\t\t  Next\n\t\t\t\t\t</div>\n\t\t\t\t  </div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t  <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t  <div class=\"btn-group\">\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  (click)=\"setView(CalendarView.Month)\"\n\t\t\t\t\t  [class.active]=\"view === CalendarView.Month\"\n\t\t\t\t\t>\n\t\t\t\t\t  Month\n\t\t\t\t\t</div>\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  (click)=\"setView(CalendarView.Week)\"\n\t\t\t\t\t  [class.active]=\"view === CalendarView.Week\"\n\t\t\t\t\t>\n\t\t\t\t\t  Week\n\t\t\t\t\t</div>\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  (click)=\"setView(CalendarView.Day)\"\n\t\t\t\t\t  [class.active]=\"view === CalendarView.Day\"\n\t\t\t\t\t>\n\t\t\t\t\t  Day\n\t\t\t\t\t</div>\n\t\t\t\t  </div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t  <br/>\n\t\t\t  <div [ngSwitch]=\"view\">\n\t\t\t\t<mwl-calendar-month-view\n\t\t\t\t  *ngSwitchCase=\"CalendarView.Month\"\n\t\t\t\t  [viewDate]=\"viewDate\"\n\t\t\t\t  [events]=\"events\"\n\t\t\t\t  [refresh]=\"refresh\"\n\t\t\t\t  [activeDayIsOpen]=\"activeDayIsOpen\"\n\t\t\t\t  (dayClicked)=\"dayClicked($event.day)\"\n\t\t\t\t  (eventClicked)=\"handleEvent('Clicked', $event.event)\"\n\t\t\t\t  (eventTimesChanged)=\"eventTimesChanged($event)\"\n\t\t\t\t>\n\t\t\t\t</mwl-calendar-month-view>\n\t\t\t  </div>\t\t  \n\t\t</div>\n\n\n\t\t<h4><small>更新日志</small></h4>\n\t\t<hr>\n\t\t<h2>Version 2.10</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Oct 22, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> </h5><br>\n\t\t<p>1. 新增日历事项</p>\n\n\n\t\t<hr>\n\t\t<h2>Version 2.9</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Oct 16, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> <span class=\"label label-danger\">学生系统</span></h5><br>\n\t\t<p>1. Debug学生系统不能修改职业规划</p>\n\t\t<p>2. Debug管理员系统无法下载学生列表</p>\n\n\t\t<hr>\n\t\t<h2>Version 2.8</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Oct 08, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> </h5><br>\n\t\t<p>1. 新增管理员系统中，可以下载学生的选校列表</p>\n\n\t\t<hr>\n\t\t<h2>Version 2.7</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Oct 02, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> </h5><br>\n\t\t<p>1. 新增管理员系统中，可以查看推荐人被引用的全部列表</p>\n\t\t\n\n\t\t<hr>\n\t\t<h2>Version 2.6</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Sep 27, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> <span class=\"label label-primary\">主页</span></h5><br>\n\t\t<p>1. 新增管理员系统中，对于学生的工作经历和教育背景 信息删除功能</p>\n\t\t<p>2. 添加 主页-留学申请 页面中其他服务内容，包含文书、咨询、简历修改</p><br>\n\n\n\t\t<hr>\n\t\t<h2>Version 2.5</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Sep 23, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span><span class=\"label label-primary\">主页</span></h5><br>\n\t\t<p>1. 新增管理员系统中可以查询学生的个人信息，包含工作经历，教育背景等信息</p><br>\n\t\t<p>2. 更新 主页-留学申请-研究生申请 页面中Q&A部分信息</p><br>\n\t\t<hr>\n\t\n\t\t<h2>Version 2.4</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Aug 21, 2021.</h5>\n\t\t<h5><span class=\"label label-primary\">主页</span></h5><br>\n\t\t<p>1. 新增 主页-留学生请 页面，及其子项（高中、本科、研究生）</p><br>\n\t\t<hr>\n\n\t\t<h2>Version 2.3</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Aug 08, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span><span class=\"label label-danger\">学生系统</span></h5><br>\n\t\t<p>1. 新增 通知系统</p><br>\n\t\t<p>1. 新增 文书系统</p><br>\n\t\t<hr>\n\n\t\t<br><br>\n\t  </div>\n\t</div>\n</div>\n\n  \n  "
 
 /***/ }),
 
@@ -2256,14 +2270,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HMmainComponent", function() { return HMmainComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _hm_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../hm.service */ "./src/app/hm.service.ts");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/index.js");
+/* harmony import */ var angular_calendar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angular-calendar */ "./node_modules/angular-calendar/fesm5/angular-calendar.js");
+/* harmony import */ var _hm_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../hm.service */ "./src/app/hm.service.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 
 
 
 
 
+
+
+var colors = {
+    red: {
+        primary: '#ad2121',
+        secondary: '#FAE3E3',
+    },
+    blue: {
+        primary: '#1e90ff',
+        secondary: '#D1E8FF',
+    },
+    yellow: {
+        primary: '#e3bc08',
+        secondary: '#FDF1BA',
+    },
+};
 var HMmainComponent = /** @class */ (function () {
     function HMmainComponent(hmService, http, route, router) {
         var _this = this;
@@ -2272,6 +2304,21 @@ var HMmainComponent = /** @class */ (function () {
         this.route = route;
         this.router = router;
         this.hotels = [];
+        this.view = angular_calendar__WEBPACK_IMPORTED_MODULE_3__["CalendarView"].Month;
+        this.CalendarView = angular_calendar__WEBPACK_IMPORTED_MODULE_3__["CalendarView"];
+        this.viewDate = new Date();
+        this.events = [
+        // {
+        //   start: startOfDay(new Date("2021/10/31")),
+        //   title: 'An event with no end date',
+        //   color: colors.yellow,
+        // },
+        ];
+        this.activeDayIsOpen = true;
+        this.schools = [];
+        this.school = [];
+        this.students = [];
+        this.student = [];
         this.route.queryParams.subscribe(function (params) {
             _this.managerID = params["managerID"];
             //console.log(this.managerID);
@@ -2293,12 +2340,93 @@ var HMmainComponent = /** @class */ (function () {
             //this.hotel = this.hotels[0];
             console.log("happy" + _this.hotel.email);
         });
-        // this.hotel  = this.hmService.getHotelM();
-        // console.log("From Return");
-        // console.log(this.hotel)
         this.hotelMSub = this.hmService.getHotelMUpdatedListener().subscribe(function (hotels) {
             _this.hotels = hotels;
         });
+        this.http.get('/api/students/').subscribe(function (Data) {
+            _this.students = Data.students;
+            console.log(_this.students);
+            for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
+                var st = _a[_i];
+                _this.student.push(st);
+            }
+        });
+        this.http.get('/api/schools').subscribe(function (Data) {
+            _this.schools = Data.schools;
+            for (var _i = 0, _a = _this.schools; _i < _a.length; _i++) {
+                var sc = _a[_i];
+                if (sc.state === "进行中") { //筛选原始school列表中 状态为进行中的数组
+                    for (var _b = 0, _c = _this.student; _b < _c.length; _b++) {
+                        var test = _c[_b];
+                        if (sc.userAccount === test._id) { //替换列表里面的名字
+                            var studentName = test.firstName + " " + test.lastName;
+                            sc.userAccount = studentName;
+                            //console.log("此时变量为" +sc.userAccount + test.firstName);
+                        }
+                    }
+                    _this.school.push(sc); //输出新数组
+                }
+            }
+            console.log("新选校列表为" + _this.school.length);
+            for (var _d = 0, _e = _this.school; _d < _e.length; _d++) {
+                var s = _e[_d];
+                if (s.ddl1 != " ") {
+                    var data = s.ddl1;
+                    var tit = s.userAccount + " 【 " + s.univName + "】 " + s.majorName;
+                    _this.addEvent(tit, data);
+                }
+                if (s.ddl2 != " ") {
+                    var data = s.ddl2;
+                    var tit = s.userAccount + " 【 " + s.univName + "】 " + s.majorName;
+                    _this.addEvent2(tit, data);
+                }
+                if (s.ddl3 != " ") {
+                    var data = s.ddl3;
+                    var tit = s.userAccount + " 【 " + s.univName + "】 " + s.majorName;
+                    _this.addEvent3(tit, data);
+                }
+            }
+        });
+    };
+    HMmainComponent.prototype.addEvent = function (tit, data) {
+        this.events = this.events.concat([
+            {
+                title: tit,
+                start: Object(date_fns__WEBPACK_IMPORTED_MODULE_2__["startOfDay"])(new Date(data)),
+                color: colors.red,
+            },
+        ]);
+    };
+    HMmainComponent.prototype.addEvent2 = function (tit, data) {
+        this.events = this.events.concat([
+            {
+                title: tit,
+                start: Object(date_fns__WEBPACK_IMPORTED_MODULE_2__["startOfDay"])(new Date(data)),
+                color: colors.yellow,
+            },
+        ]);
+    };
+    HMmainComponent.prototype.addEvent3 = function (tit, data) {
+        this.events = this.events.concat([
+            {
+                title: tit,
+                start: Object(date_fns__WEBPACK_IMPORTED_MODULE_2__["startOfDay"])(new Date(data)),
+                color: colors.blue,
+            },
+        ]);
+    };
+    HMmainComponent.prototype.dayClicked = function (_a) {
+        var date = _a.date, events = _a.events;
+        if (Object(date_fns__WEBPACK_IMPORTED_MODULE_2__["isSameMonth"])(date, this.viewDate)) {
+            if ((Object(date_fns__WEBPACK_IMPORTED_MODULE_2__["isSameDay"])(this.viewDate, date) && this.activeDayIsOpen === true) ||
+                events.length === 0) {
+                this.activeDayIsOpen = false;
+            }
+            else {
+                this.activeDayIsOpen = true;
+            }
+            this.viewDate = date;
+        }
     };
     //direct to the hotel manage page
     HMmainComponent.prototype.hotelman = function (hotel) {
@@ -2372,10 +2500,10 @@ var HMmainComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./hmmain.component.html */ "./src/app/hmmain/hmmain.component.html"),
             styles: [__webpack_require__(/*! ./hmmain.component.scss */ "./src/app/hmmain/hmmain.component.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_hm_service__WEBPACK_IMPORTED_MODULE_2__["HmService"],
-            _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_hm_service__WEBPACK_IMPORTED_MODULE_4__["HmService"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClient"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_6__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"]])
     ], HMmainComponent);
     return HMmainComponent;
 }());
@@ -4232,7 +4360,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _notif_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../notif.service */ "./src/app/notif.service.ts");
 /* harmony import */ var xlsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! xlsx */ "./node_modules/xlsx/xlsx.js");
 /* harmony import */ var xlsx__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(xlsx__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var file_saver__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! file-saver */ "./node_modules/file-saver/FileSaver.js");
+/* harmony import */ var file_saver__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! file-saver */ "./node_modules/file-saver/dist/FileSaver.min.js");
 /* harmony import */ var file_saver__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(file_saver__WEBPACK_IMPORTED_MODULE_7__);
 
 
@@ -4377,7 +4505,7 @@ var HmstudentComponent = /** @class */ (function () {
         var data = new Blob([buffer], {
             type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8'
         });
-        file_saver__WEBPACK_IMPORTED_MODULE_7__["saveAs"](data, fileName + '_export_' + new Date().getTime() + '.xls');
+        file_saver__WEBPACK_IMPORTED_MODULE_7__["saveAs"](data, fileName + '_export_' + new Date().getTime() + '.xlsx');
         // 如果写成.xlsx,可能不能打开下载的文件，这可能与Excel版本有关
     };
     //direct to the hotel manage page
