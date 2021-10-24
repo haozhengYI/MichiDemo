@@ -21,6 +21,7 @@ import { HmregisterComponent} from './hmregister/hmregister.component';
 import {HmstudentComponent} from './hmstudent/hmstudent.component';
 import {HmaddschoolComponent} from './hmaddschool/hmaddschool.component';
 import {HmschoolComponent} from './hmschool/hmschool.component';
+import {HmoschoolComponent} from './hmoschool/hmoschool.component';
 import {HmordersearchComponent} from './hmordersearch/hmordersearch.component';
 import {HmblogComponent} from './hmblog/hmblog.component';
 import {HmstudentrecComponent} from './hmstudentrec/hmstudentrec.component';
@@ -69,6 +70,7 @@ const routes: Routes = [
   { path: 'hmstudentrec', component: HmstudentrecComponent},
   { path: 'hmaddschool', component: HmaddschoolComponent},
   { path: 'hmschool', component:HmschoolComponent},
+  { path: 'hmoschool', component:HmoschoolComponent},
   { path: 'hmordersearch', component:HmordersearchComponent},
   { path: 'hmordersearch', component:HmordersearchComponent},
 

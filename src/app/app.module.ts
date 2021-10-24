@@ -38,6 +38,7 @@ import { HmregisterComponent } from './hmregister/hmregister.component';
 import { HmstudentComponent} from './hmstudent/hmstudent.component';
 import {HmaddschoolComponent} from './hmaddschool/hmaddschool.component';
 import {HmschoolComponent} from './hmschool/hmschool.component';
+import {HmoschoolComponent} from './hmoschool/hmoschool.component';
 import {HmordersearchComponent} from './hmordersearch/hmordersearch.component';
 import {HmblogComponent} from './hmblog/hmblog.component';
 import {HmstudentrecComponent} from './hmstudentrec/hmstudentrec.component';
@@ -98,6 +99,7 @@ import {ApplyhighschoolComponent} from './applyhighschool/applyhighschool.compon
     HmstudentComponent,
     HmaddschoolComponent,
     HmschoolComponent,
+    HmoschoolComponent,
     HmordersearchComponent,
     HmblogComponent,
     HmstudentrecComponent,

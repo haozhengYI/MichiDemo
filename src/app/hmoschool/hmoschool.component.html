@@ -1,0 +1,269 @@
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" >一个很神秘的网页</a>
+      </div>
+      <div class="nav  navbar-right">
+        <ul class="nav navbar-nav">
+          <li class="active"><a (click)="main(hotel)">HomePage</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Shortcut <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a (click)="modifyP(hotel)">Change Password</a></li>
+              <li><a (click)="comp(hotel)">Complete info</a></li>
+              <li class="divider"></li>
+              <li><a (click)="hotelman(hotel)">Manage Hotel</a></li>
+              <li><a (click)="hmorder(hotel)">Order</a></li>
+            </ul>
+          </li>
+          <li class="nav navbar-nav navbar-right">
+            <a href="/mainpage">Log Out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>
+  <ol class="breadcrumb">
+      <li><a (click)="main(hotel)">Home</a></li>
+      <li><a (click)="main(hotel)">{{hotel.userAccount}}</a></li>
+      <li><a (click)="hotelman(hotel)">Manage Student</a></li>
+      <li >  {{fullName}}  </li>
+      <li class="active"> 申请项目详细</li>
+  </ol>
+
+  <div class="container-fluid">
+    <div class="row content">
+      <div class="col-sm-3 sidenav">
+      <h4>{{hotel.userAccount}}  </h4>
+      <ul class="nav nav-pills nav-stacked">
+        <li ><a (click)="main(hotel)">Home-{{hotel.userAccount}}</a></li>
+        <li ><a (click)="modifyP(hotel)">Change Password</a></li>
+        <li><a (click)="comp(hotel)">Complete info</a></li>
+        <li><a (click)="hotelman(hotel)">Manage Student</a></li>
+        <li><a (click)="hmorder(hotel)">学生申请</a></li>
+        <li><a (click)="hmregister(hotel)">登记账号</a></li>
+        <li ><a (click)="hmblog(hotel)">Blog管理</a></li>
+      </ul><br>
+      
+      </div>
+    
+      <div class="col-sm-9">
+        <h2>{{fullName}} </h2>  
+      <hr>
+      <h5>此页面仅为展示信息，需要进行修改时请采用传统方式</h5>
+
+      <br>
+      <hr>
+      <h3>申请项目详细       
+        <a href="{{school.link}}">
+         <span class="glyphicon glyphicon-link"></span>
+        </a>
+      </h3>
+
+      <br>
+      <form id="form1" action="" method="post">
+        <table>
+              <tr>
+                <td>University
+                </td>
+                <td><div class="input-group">		
+                  <input class="form-control" id="univName" value="{{school.univName}}" [(ngModel)]="univName"  name="univName" style="width: 785px;" disabled=""></div>
+                </td>
+              </tr>
+              <tr>
+                  <td>School</td>
+                  <td><div class="input-group">
+                    <input  class="form-control" id="schoolName" [(ngModel)]="schoolName" value="{{school.schoolName}}"  name="schoolName" style="width: 785px;" disabled=""></div>
+                  </td>
+              </tr>
+              <tr>
+                  <td>Major
+                  </td>
+                  <td><div class="input-group">
+                    <input  class="form-control" value="{{school.majorName}}" [(ngModel)]="majorName"  id="majorName"  name="majorName" disabled="" style="width: 785px;"></div>
+                  </td>
+              </tr>
+              <tr>
+                <td>Deadline 1
+                </td>
+                <td><div class="input-group">
+                  <input class="form-control" value="{{school.ddl1}}" [(ngModel)]="ddl1"  id="ddl1"  name="ddl1" disabled="" style="width: 785px; "></div>
+                </td>
+              </tr>
+              <tr>
+                <td>Deadline 2
+                </td>
+                <td><div class="input-group">
+                  <input class="form-control" value="{{school.ddl2}}" [(ngModel)]="ddl2"  id="ddl2" name="ddl2"  disabled="" style="width: 785px; "></div>
+                </td>
+              </tr>
+              <tr>
+                <td>Deadline 3
+                </td>
+                <td><div class="input-group">
+                  <input class="form-control" value="{{school.ddl3}}" [(ngModel)]="ddl3"  id="ddl3"  name="ddl3" disabled="" style="width: 785px; "></div>
+                </td>
+              </tr>
+              
+              <tr>
+                <td>Interview
+                </td>
+                <td><div class="input-group">
+                  <input class="form-control" value="{{school.interview}}" [(ngModel)]="interview"  id="interview" disabled="" name="interview" style="width: 785px; "></div>
+                </td>
+              </tr>
+              <tr>
+                <td>Video Essay
+                </td>
+                <td><div class="input-group">
+                  <input class="form-control" value="{{school.videoEssay}}" [(ngModel)]="videoEssay"  id="videoEssay" disabled="" name="videoEssay" style="width: 785px; "></div>
+                </td>
+              </tr>
+              <tr>
+                <td>Link
+                </td>
+                <td>
+                  <div class="input-group">
+                  <input class="form-control" value="{{school.link}}" [(ngModel)]="link"  id="link"  name="link" disabled="" style="width: 785px; ">
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>申请账号
+                </td>
+                <td><div class="input-group">
+                  <input class="form-control" value="{{school.applyAccount}}" [(ngModel)]="applyAccount"  id="applyAccount" disabled="" name="applyAccount" style="width: 785px; "></div>
+                </td>
+              </tr>
+              <tr>
+                <td>申请密码
+                </td>
+                <td><div class="input-group">
+                  <input class="form-control" value="{{school.applyPassword}}" [(ngModel)]="applyPassword"  id="applyPassword" disabled="" name="applyPassword" style="width: 785px; "></div>
+                </td>
+              </tr>
+              <tr>
+                <td>推荐信数量
+                </td>
+                <td><div class="input-group">
+                  <input class="form-control" value="{{school.recommNumber}}" [(ngModel)]="recommNumber"  id="recommNumber" disabled="" name="recommNumber" style="width: 785px; "></div>
+                </td>
+              </tr>
+              <tr>
+                <td>备注
+                </td>
+                <td><div class="input-group">
+                  <input class="form-control" value="{{school.other}}" [(ngModel)]="other"  id="other"  name="other" disabled="" style="width: 785px; "></div>
+                </td>
+              </tr>
+        </table>
+      </form>
+      <hr>
+      <h3>推荐信</h3>
+        <div class="row">
+          <div class="col-sm-4 tuijian">
+            <h4>
+              此选校所添加的推荐信总数：
+              <small class="text-muted">{{recomletters.length}}</small>
+            </h4>
+            <div *ngIf="recomletters.length > 0">
+              <div class="panel-group" id="accordion" *ngFor="let l of recomletters">
+                <div class="panel panel-success" *ngIf="l.state=='已提交'">
+                  <div class="panel-heading">
+                      <div class="row">
+                        <div class="col-sm-10"><b>{{l.recommenderName}} </b></div>
+                        <div class="col-sm-2"><small>{{l.state}}</small></div>
+                      </div>
+                  </div>
+                  <div class="panel-body">
+                    <div class="row">
+                      <div class="col-sm-6"><b>{{l.type}} </b></div>
+                      <div class="col-sm-5">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default" *ngIf="l.state=='未提交'">
+                  <div class="panel-heading">
+                      <div class="row">
+                        <div class="col-sm-10"><b>{{l.recommenderName}} </b></div>
+                        <div class="col-sm-2"><small>{{l.state}}</small></div>
+                      </div>
+                  </div>
+                  <div class="panel-body">
+                    <div class="row">
+                      <div class="col-sm-6"><b>{{l.type}} </b></div>
+                      <div class="col-sm-5">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-danger" *ngIf="l.state=='弃用'">
+                  <div class="panel-heading">
+                      <div class="row">
+                        <div class="col-sm-10"><b>{{l.recommenderName}} </b></div>
+                        <div class="col-sm-2"><small>{{l.state}}</small></div>
+                      </div>
+                  </div>
+                  <div class="panel-body">
+                    <div class="row">
+                      <div class="col-sm-6"><b>{{l.type}} </b></div>
+                      <div class="col-sm-5">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 caozuo">            
+          </div>
+        </div>
+      
+
+      <hr>
+      <h3>文书</h3>
+        <div class="row">
+          <div class="col-sm-4 tuijian">
+            <h4>
+              此选校所添加的文书总数：
+              <small class="text-muted">{{statements.length}}</small>
+            </h4>
+
+            <div class="container" *ngIf="statements.length > 0">
+              <div class="row clearfix" *ngFor="let st of statements">
+                <div class="col-md-6 column">
+                  <div class="panel panel-info" >
+                    <div class="panel-heading" >
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#{{st._id}}">
+                      <b> {{st.stype}} </b> （ {{st.words}} 字） <br>
+                      </a>
+                    </h4>
+                    </div>
+                    <div id="{{st._id}}" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      {{st.question}}
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 caozuo">
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  
+
+  
+
+  

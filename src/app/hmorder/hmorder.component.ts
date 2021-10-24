@@ -179,11 +179,11 @@ export class HmorderComponent implements OnInit {
     const navigationExtras: NavigationExtras = {
       queryParams: {
        "managerID" : this.managerID,
-       "studentID" : s.userAccount,
+       "fullName" : s.userAccount,
        "schoolID"  : s._id,
       }
     };
-    this.router.navigate(['/hmschool'], navigationExtras);
+    this.router.navigate(['/hmoschool'], navigationExtras);
   }
 
   //direct to the blog page

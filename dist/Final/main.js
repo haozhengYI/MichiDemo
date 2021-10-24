@@ -424,20 +424,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _hmstudent_hmstudent_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./hmstudent/hmstudent.component */ "./src/app/hmstudent/hmstudent.component.ts");
 /* harmony import */ var _hmaddschool_hmaddschool_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./hmaddschool/hmaddschool.component */ "./src/app/hmaddschool/hmaddschool.component.ts");
 /* harmony import */ var _hmschool_hmschool_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./hmschool/hmschool.component */ "./src/app/hmschool/hmschool.component.ts");
-/* harmony import */ var _hmordersearch_hmordersearch_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./hmordersearch/hmordersearch.component */ "./src/app/hmordersearch/hmordersearch.component.ts");
-/* harmony import */ var _hmblog_hmblog_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./hmblog/hmblog.component */ "./src/app/hmblog/hmblog.component.ts");
-/* harmony import */ var _hmstudentrec_hmstudentrec_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./hmstudentrec/hmstudentrec.component */ "./src/app/hmstudentrec/hmstudentrec.component.ts");
-/* harmony import */ var _studentmain_studentmain_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./studentmain/studentmain.component */ "./src/app/studentmain/studentmain.component.ts");
-/* harmony import */ var _studentaddrecomm_studentaddrecomm_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./studentaddrecomm/studentaddrecomm.component */ "./src/app/studentaddrecomm/studentaddrecomm.component.ts");
-/* harmony import */ var _studentinfo_studentinfo_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./studentinfo/studentinfo.component */ "./src/app/studentinfo/studentinfo.component.ts");
-/* harmony import */ var _studentrec_studentrec_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./studentrec/studentrec.component */ "./src/app/studentrec/studentrec.component.ts");
-/* harmony import */ var _studentschool_studentschool_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./studentschool/studentschool.component */ "./src/app/studentschool/studentschool.component.ts");
-/* harmony import */ var _mainclass_mainclass_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./mainclass/mainclass.component */ "./src/app/mainclass/mainclass.component.ts");
-/* harmony import */ var _mainblog_mainblog_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./mainblog/mainblog.component */ "./src/app/mainblog/mainblog.component.ts");
-/* harmony import */ var _studyabroad_studyabroad_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./studyabroad/studyabroad.component */ "./src/app/studyabroad/studyabroad.component.ts");
-/* harmony import */ var _applymaster_applymaster_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./applymaster/applymaster.component */ "./src/app/applymaster/applymaster.component.ts");
-/* harmony import */ var _applybachelor_applybachelor_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./applybachelor/applybachelor.component */ "./src/app/applybachelor/applybachelor.component.ts");
-/* harmony import */ var _applyhighschool_applyhighschool_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./applyhighschool/applyhighschool.component */ "./src/app/applyhighschool/applyhighschool.component.ts");
+/* harmony import */ var _hmoschool_hmoschool_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./hmoschool/hmoschool.component */ "./src/app/hmoschool/hmoschool.component.ts");
+/* harmony import */ var _hmordersearch_hmordersearch_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./hmordersearch/hmordersearch.component */ "./src/app/hmordersearch/hmordersearch.component.ts");
+/* harmony import */ var _hmblog_hmblog_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./hmblog/hmblog.component */ "./src/app/hmblog/hmblog.component.ts");
+/* harmony import */ var _hmstudentrec_hmstudentrec_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./hmstudentrec/hmstudentrec.component */ "./src/app/hmstudentrec/hmstudentrec.component.ts");
+/* harmony import */ var _studentmain_studentmain_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./studentmain/studentmain.component */ "./src/app/studentmain/studentmain.component.ts");
+/* harmony import */ var _studentaddrecomm_studentaddrecomm_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./studentaddrecomm/studentaddrecomm.component */ "./src/app/studentaddrecomm/studentaddrecomm.component.ts");
+/* harmony import */ var _studentinfo_studentinfo_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./studentinfo/studentinfo.component */ "./src/app/studentinfo/studentinfo.component.ts");
+/* harmony import */ var _studentrec_studentrec_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./studentrec/studentrec.component */ "./src/app/studentrec/studentrec.component.ts");
+/* harmony import */ var _studentschool_studentschool_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./studentschool/studentschool.component */ "./src/app/studentschool/studentschool.component.ts");
+/* harmony import */ var _mainclass_mainclass_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./mainclass/mainclass.component */ "./src/app/mainclass/mainclass.component.ts");
+/* harmony import */ var _mainblog_mainblog_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./mainblog/mainblog.component */ "./src/app/mainblog/mainblog.component.ts");
+/* harmony import */ var _studyabroad_studyabroad_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./studyabroad/studyabroad.component */ "./src/app/studyabroad/studyabroad.component.ts");
+/* harmony import */ var _applymaster_applymaster_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./applymaster/applymaster.component */ "./src/app/applymaster/applymaster.component.ts");
+/* harmony import */ var _applybachelor_applybachelor_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./applybachelor/applybachelor.component */ "./src/app/applybachelor/applybachelor.component.ts");
+/* harmony import */ var _applyhighschool_applyhighschool_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./applyhighschool/applyhighschool.component */ "./src/app/applyhighschool/applyhighschool.component.ts");
+
 
 
 
@@ -478,12 +480,12 @@ __webpack_require__.r(__webpack_exports__);
 var routes = [
     { path: '', redirectTo: '/mainpage', pathMatch: 'full' },
     { path: 'mainpage', component: _mainpage_mainpage_component__WEBPACK_IMPORTED_MODULE_3__["MainpageComponent"] },
-    { path: 'mainclass', component: _mainclass_mainclass_component__WEBPACK_IMPORTED_MODULE_31__["MainclassComponent"] },
-    { path: 'mainblog', component: _mainblog_mainblog_component__WEBPACK_IMPORTED_MODULE_32__["MainblogComponent"] },
-    { path: 'studyabroad', component: _studyabroad_studyabroad_component__WEBPACK_IMPORTED_MODULE_33__["StudyabroadComponent"] },
-    { path: 'applymaster', component: _applymaster_applymaster_component__WEBPACK_IMPORTED_MODULE_34__["ApplymasterComponent"] },
-    { path: 'applybachelor', component: _applybachelor_applybachelor_component__WEBPACK_IMPORTED_MODULE_35__["ApplybachelorComponent"] },
-    { path: 'applyhighschool', component: _applyhighschool_applyhighschool_component__WEBPACK_IMPORTED_MODULE_36__["ApplyhighschoolComponent"] },
+    { path: 'mainclass', component: _mainclass_mainclass_component__WEBPACK_IMPORTED_MODULE_32__["MainclassComponent"] },
+    { path: 'mainblog', component: _mainblog_mainblog_component__WEBPACK_IMPORTED_MODULE_33__["MainblogComponent"] },
+    { path: 'studyabroad', component: _studyabroad_studyabroad_component__WEBPACK_IMPORTED_MODULE_34__["StudyabroadComponent"] },
+    { path: 'applymaster', component: _applymaster_applymaster_component__WEBPACK_IMPORTED_MODULE_35__["ApplymasterComponent"] },
+    { path: 'applybachelor', component: _applybachelor_applybachelor_component__WEBPACK_IMPORTED_MODULE_36__["ApplybachelorComponent"] },
+    { path: 'applyhighschool', component: _applyhighschool_applyhighschool_component__WEBPACK_IMPORTED_MODULE_37__["ApplyhighschoolComponent"] },
     { path: 'login', component: _login_login_component__WEBPACK_IMPORTED_MODULE_4__["LoginComponent"] },
     { path: 'adminmainpage', component: _adminmainpage_adminmainpage_component__WEBPACK_IMPORTED_MODULE_5__["AdminmainpageComponent"] },
     { path: 'hmmain', component: _hmmain_hmmain_component__WEBPACK_IMPORTED_MODULE_10__["HMmainComponent"] },
@@ -499,19 +501,20 @@ var routes = [
     { path: 'hmcomp', component: _hmcomp_hmcomp_component__WEBPACK_IMPORTED_MODULE_15__["HmcompComponent"] },
     { path: 'hmorder', component: _hmorder_hmorder_component__WEBPACK_IMPORTED_MODULE_16__["HmorderComponent"] },
     { path: 'adminorder', component: _admin_order_admin_order_component__WEBPACK_IMPORTED_MODULE_18__["AdminOrderComponent"] },
-    { path: 'hmblog', component: _hmblog_hmblog_component__WEBPACK_IMPORTED_MODULE_24__["HmblogComponent"] },
+    { path: 'hmblog', component: _hmblog_hmblog_component__WEBPACK_IMPORTED_MODULE_25__["HmblogComponent"] },
     { path: 'hmregister', component: _hmregister_hmregister_component__WEBPACK_IMPORTED_MODULE_19__["HmregisterComponent"] },
     { path: 'hmstudent', component: _hmstudent_hmstudent_component__WEBPACK_IMPORTED_MODULE_20__["HmstudentComponent"] },
-    { path: 'hmstudentrec', component: _hmstudentrec_hmstudentrec_component__WEBPACK_IMPORTED_MODULE_25__["HmstudentrecComponent"] },
+    { path: 'hmstudentrec', component: _hmstudentrec_hmstudentrec_component__WEBPACK_IMPORTED_MODULE_26__["HmstudentrecComponent"] },
     { path: 'hmaddschool', component: _hmaddschool_hmaddschool_component__WEBPACK_IMPORTED_MODULE_21__["HmaddschoolComponent"] },
     { path: 'hmschool', component: _hmschool_hmschool_component__WEBPACK_IMPORTED_MODULE_22__["HmschoolComponent"] },
-    { path: 'hmordersearch', component: _hmordersearch_hmordersearch_component__WEBPACK_IMPORTED_MODULE_23__["HmordersearchComponent"] },
-    { path: 'hmordersearch', component: _hmordersearch_hmordersearch_component__WEBPACK_IMPORTED_MODULE_23__["HmordersearchComponent"] },
-    { path: 'studentmain', component: _studentmain_studentmain_component__WEBPACK_IMPORTED_MODULE_26__["StudentmainComponent"] },
-    { path: 'studentaddrecomm', component: _studentaddrecomm_studentaddrecomm_component__WEBPACK_IMPORTED_MODULE_27__["StudentaddrecommComponent"] },
-    { path: 'studentinfo', component: _studentinfo_studentinfo_component__WEBPACK_IMPORTED_MODULE_28__["StudentinfoComponent"] },
-    { path: 'studentrec', component: _studentrec_studentrec_component__WEBPACK_IMPORTED_MODULE_29__["StudentrecComponent"] },
-    { path: 'studentschool', component: _studentschool_studentschool_component__WEBPACK_IMPORTED_MODULE_30__["StudentschoolComponent"] },
+    { path: 'hmoschool', component: _hmoschool_hmoschool_component__WEBPACK_IMPORTED_MODULE_23__["HmoschoolComponent"] },
+    { path: 'hmordersearch', component: _hmordersearch_hmordersearch_component__WEBPACK_IMPORTED_MODULE_24__["HmordersearchComponent"] },
+    { path: 'hmordersearch', component: _hmordersearch_hmordersearch_component__WEBPACK_IMPORTED_MODULE_24__["HmordersearchComponent"] },
+    { path: 'studentmain', component: _studentmain_studentmain_component__WEBPACK_IMPORTED_MODULE_27__["StudentmainComponent"] },
+    { path: 'studentaddrecomm', component: _studentaddrecomm_studentaddrecomm_component__WEBPACK_IMPORTED_MODULE_28__["StudentaddrecommComponent"] },
+    { path: 'studentinfo', component: _studentinfo_studentinfo_component__WEBPACK_IMPORTED_MODULE_29__["StudentinfoComponent"] },
+    { path: 'studentrec', component: _studentrec_studentrec_component__WEBPACK_IMPORTED_MODULE_30__["StudentrecComponent"] },
+    { path: 'studentschool', component: _studentschool_studentschool_component__WEBPACK_IMPORTED_MODULE_31__["StudentschoolComponent"] },
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -625,20 +628,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _hmstudent_hmstudent_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./hmstudent/hmstudent.component */ "./src/app/hmstudent/hmstudent.component.ts");
 /* harmony import */ var _hmaddschool_hmaddschool_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./hmaddschool/hmaddschool.component */ "./src/app/hmaddschool/hmaddschool.component.ts");
 /* harmony import */ var _hmschool_hmschool_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./hmschool/hmschool.component */ "./src/app/hmschool/hmschool.component.ts");
-/* harmony import */ var _hmordersearch_hmordersearch_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./hmordersearch/hmordersearch.component */ "./src/app/hmordersearch/hmordersearch.component.ts");
-/* harmony import */ var _hmblog_hmblog_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./hmblog/hmblog.component */ "./src/app/hmblog/hmblog.component.ts");
-/* harmony import */ var _hmstudentrec_hmstudentrec_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./hmstudentrec/hmstudentrec.component */ "./src/app/hmstudentrec/hmstudentrec.component.ts");
-/* harmony import */ var _studentmain_studentmain_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./studentmain/studentmain.component */ "./src/app/studentmain/studentmain.component.ts");
-/* harmony import */ var _studentaddrecomm_studentaddrecomm_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./studentaddrecomm/studentaddrecomm.component */ "./src/app/studentaddrecomm/studentaddrecomm.component.ts");
-/* harmony import */ var _studentinfo_studentinfo_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./studentinfo/studentinfo.component */ "./src/app/studentinfo/studentinfo.component.ts");
-/* harmony import */ var _studentrec_studentrec_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./studentrec/studentrec.component */ "./src/app/studentrec/studentrec.component.ts");
-/* harmony import */ var _studentschool_studentschool_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./studentschool/studentschool.component */ "./src/app/studentschool/studentschool.component.ts");
-/* harmony import */ var _mainclass_mainclass_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./mainclass/mainclass.component */ "./src/app/mainclass/mainclass.component.ts");
-/* harmony import */ var _mainblog_mainblog_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./mainblog/mainblog.component */ "./src/app/mainblog/mainblog.component.ts");
-/* harmony import */ var _studyabroad_studyabroad_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./studyabroad/studyabroad.component */ "./src/app/studyabroad/studyabroad.component.ts");
-/* harmony import */ var _applymaster_applymaster_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./applymaster/applymaster.component */ "./src/app/applymaster/applymaster.component.ts");
-/* harmony import */ var _applybachelor_applybachelor_component__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./applybachelor/applybachelor.component */ "./src/app/applybachelor/applybachelor.component.ts");
-/* harmony import */ var _applyhighschool_applyhighschool_component__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./applyhighschool/applyhighschool.component */ "./src/app/applyhighschool/applyhighschool.component.ts");
+/* harmony import */ var _hmoschool_hmoschool_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./hmoschool/hmoschool.component */ "./src/app/hmoschool/hmoschool.component.ts");
+/* harmony import */ var _hmordersearch_hmordersearch_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./hmordersearch/hmordersearch.component */ "./src/app/hmordersearch/hmordersearch.component.ts");
+/* harmony import */ var _hmblog_hmblog_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./hmblog/hmblog.component */ "./src/app/hmblog/hmblog.component.ts");
+/* harmony import */ var _hmstudentrec_hmstudentrec_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./hmstudentrec/hmstudentrec.component */ "./src/app/hmstudentrec/hmstudentrec.component.ts");
+/* harmony import */ var _studentmain_studentmain_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./studentmain/studentmain.component */ "./src/app/studentmain/studentmain.component.ts");
+/* harmony import */ var _studentaddrecomm_studentaddrecomm_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./studentaddrecomm/studentaddrecomm.component */ "./src/app/studentaddrecomm/studentaddrecomm.component.ts");
+/* harmony import */ var _studentinfo_studentinfo_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./studentinfo/studentinfo.component */ "./src/app/studentinfo/studentinfo.component.ts");
+/* harmony import */ var _studentrec_studentrec_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./studentrec/studentrec.component */ "./src/app/studentrec/studentrec.component.ts");
+/* harmony import */ var _studentschool_studentschool_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./studentschool/studentschool.component */ "./src/app/studentschool/studentschool.component.ts");
+/* harmony import */ var _mainclass_mainclass_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./mainclass/mainclass.component */ "./src/app/mainclass/mainclass.component.ts");
+/* harmony import */ var _mainblog_mainblog_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./mainblog/mainblog.component */ "./src/app/mainblog/mainblog.component.ts");
+/* harmony import */ var _studyabroad_studyabroad_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./studyabroad/studyabroad.component */ "./src/app/studyabroad/studyabroad.component.ts");
+/* harmony import */ var _applymaster_applymaster_component__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./applymaster/applymaster.component */ "./src/app/applymaster/applymaster.component.ts");
+/* harmony import */ var _applybachelor_applybachelor_component__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./applybachelor/applybachelor.component */ "./src/app/applybachelor/applybachelor.component.ts");
+/* harmony import */ var _applyhighschool_applyhighschool_component__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./applyhighschool/applyhighschool.component */ "./src/app/applyhighschool/applyhighschool.component.ts");
 
 
 
@@ -689,6 +693,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 // FullCalendarModule.registerPlugins([ // register FullCalendar plugins
 //   dayGridPlugin,
 // ]);
@@ -700,12 +705,12 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
                 _mainpage_mainpage_component__WEBPACK_IMPORTED_MODULE_7__["MainpageComponent"],
-                _mainclass_mainclass_component__WEBPACK_IMPORTED_MODULE_38__["MainclassComponent"],
-                _mainblog_mainblog_component__WEBPACK_IMPORTED_MODULE_39__["MainblogComponent"],
-                _studyabroad_studyabroad_component__WEBPACK_IMPORTED_MODULE_40__["StudyabroadComponent"],
-                _applymaster_applymaster_component__WEBPACK_IMPORTED_MODULE_41__["ApplymasterComponent"],
-                _applybachelor_applybachelor_component__WEBPACK_IMPORTED_MODULE_42__["ApplybachelorComponent"],
-                _applyhighschool_applyhighschool_component__WEBPACK_IMPORTED_MODULE_43__["ApplyhighschoolComponent"],
+                _mainclass_mainclass_component__WEBPACK_IMPORTED_MODULE_39__["MainclassComponent"],
+                _mainblog_mainblog_component__WEBPACK_IMPORTED_MODULE_40__["MainblogComponent"],
+                _studyabroad_studyabroad_component__WEBPACK_IMPORTED_MODULE_41__["StudyabroadComponent"],
+                _applymaster_applymaster_component__WEBPACK_IMPORTED_MODULE_42__["ApplymasterComponent"],
+                _applybachelor_applybachelor_component__WEBPACK_IMPORTED_MODULE_43__["ApplybachelorComponent"],
+                _applyhighschool_applyhighschool_component__WEBPACK_IMPORTED_MODULE_44__["ApplyhighschoolComponent"],
                 _login_login_component__WEBPACK_IMPORTED_MODULE_8__["LoginComponent"],
                 _hmmain_hmmain_component__WEBPACK_IMPORTED_MODULE_9__["HMmainComponent"],
                 _hmmodifypass_hmmodifypass_component__WEBPACK_IMPORTED_MODULE_10__["HmmodifypassComponent"],
@@ -727,14 +732,15 @@ var AppModule = /** @class */ (function () {
                 _hmstudent_hmstudent_component__WEBPACK_IMPORTED_MODULE_27__["HmstudentComponent"],
                 _hmaddschool_hmaddschool_component__WEBPACK_IMPORTED_MODULE_28__["HmaddschoolComponent"],
                 _hmschool_hmschool_component__WEBPACK_IMPORTED_MODULE_29__["HmschoolComponent"],
-                _hmordersearch_hmordersearch_component__WEBPACK_IMPORTED_MODULE_30__["HmordersearchComponent"],
-                _hmblog_hmblog_component__WEBPACK_IMPORTED_MODULE_31__["HmblogComponent"],
-                _hmstudentrec_hmstudentrec_component__WEBPACK_IMPORTED_MODULE_32__["HmstudentrecComponent"],
-                _studentmain_studentmain_component__WEBPACK_IMPORTED_MODULE_33__["StudentmainComponent"],
-                _studentaddrecomm_studentaddrecomm_component__WEBPACK_IMPORTED_MODULE_34__["StudentaddrecommComponent"],
-                _studentinfo_studentinfo_component__WEBPACK_IMPORTED_MODULE_35__["StudentinfoComponent"],
-                _studentrec_studentrec_component__WEBPACK_IMPORTED_MODULE_36__["StudentrecComponent"],
-                _studentschool_studentschool_component__WEBPACK_IMPORTED_MODULE_37__["StudentschoolComponent"]
+                _hmoschool_hmoschool_component__WEBPACK_IMPORTED_MODULE_30__["HmoschoolComponent"],
+                _hmordersearch_hmordersearch_component__WEBPACK_IMPORTED_MODULE_31__["HmordersearchComponent"],
+                _hmblog_hmblog_component__WEBPACK_IMPORTED_MODULE_32__["HmblogComponent"],
+                _hmstudentrec_hmstudentrec_component__WEBPACK_IMPORTED_MODULE_33__["HmstudentrecComponent"],
+                _studentmain_studentmain_component__WEBPACK_IMPORTED_MODULE_34__["StudentmainComponent"],
+                _studentaddrecomm_studentaddrecomm_component__WEBPACK_IMPORTED_MODULE_35__["StudentaddrecommComponent"],
+                _studentinfo_studentinfo_component__WEBPACK_IMPORTED_MODULE_36__["StudentinfoComponent"],
+                _studentrec_studentrec_component__WEBPACK_IMPORTED_MODULE_37__["StudentrecComponent"],
+                _studentschool_studentschool_component__WEBPACK_IMPORTED_MODULE_38__["StudentschoolComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -2243,7 +2249,7 @@ var HmcompComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<header>\n\t<nav class=\"navbar navbar-inverse\" role=\"navigation\">\n\t\t<div class=\"container-fluid\">\n\t\t<div class=\"navbar-header\">\n\t\t\t\t<a class=\"navbar-brand\" >一个很神秘的网页</a>\n\t\t</div>\n\t\t<div class=\"nav  navbar-right\">\n\t\t  <ul class=\"nav navbar-nav\">\n\t\t\t<li class=\"active\"><a (click)=\"main(hotel)\">HomePage</a></li>\n\t\t\t<li class=\"dropdown\">\n\t\t\t  <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n\t\t\t\t{{hotel.userAccount}} <b class=\"caret\"></b>\n\t\t\t  </a>\n\t\t\t  <ul class=\"dropdown-menu\">\n\t\t\t\t\t\t\t<li><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n\t\t\t\t\t\t\t<li><a (click)=\"comp(hotel)\">Complete info</a></li>\n\t\t\t\t\t\t\t<li class=\"divider\"></li>\n\t\t\t\t<li><a (click)=\"hotelman(hotel)\">学生管理</a></li>\n\t\t\t\t<li><a (click)=\"hmregister(hotel)\">登记账号</a></li>\n\t\t\t\t\t\t</ul>\n\t\t\t</li>\n\t\t\t<li class=\"nav navbar-nav navbar-right\">\n\t\t\t  <a href=\"/mainpage\">Log Out</a>\n\t\t\t</li>\n\t\t  </ul>\n\t\t</div>\n\t  </div>\n\t</nav>\n\t\n  </header>\n  \n  <ol class=\"breadcrumb\">\n\t<li class=\"active\">Home - {{hotel.userAccount}}</li>\n</ol>\n\n<div class=\"container-fluid\">\n\t<div class=\"row content\">\n\t  <div class=\"col-sm-3 sidenav\">\n\t\t<h4>{{hotel.userAccount}}  </h4>\n\t\t<ul class=\"nav nav-pills nav-stacked\">\n\t\t  <li class=\"active\"><a (click)=\"main(hotel)\">Home</a></li>\n\t\t  <li ><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n\t\t\t<li><a (click)=\"comp(hotel)\">Complete info</a></li>\n\t\t\t<li><a (click)=\"hotelman(hotel)\">Manage Student</a></li>\n\t\t\t<li><a (click)=\"hmorder(hotel)\">学生申请</a></li>\n\t\t\t<li><a (click)=\"hmregister(hotel)\">登记账号</a></li>\n\t\t\t<li ><a (click)=\"hmblog(hotel)\">Blog管理</a></li>\n\t\t</ul><br>\n\t\t\n\t  </div>\n\n\t  <div class=\"col-sm-9\">\n\n\t\t<div>\n\t\t\t<div class=\"row text-center\">\n\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t  <div class=\"btn-group\">\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  mwlCalendarPreviousView\n\t\t\t\t\t  [view]=\"view\"\n\t\t\t\t\t  [(viewDate)]=\"viewDate\"\n\t\t\t\t\t  (viewDateChange)=\"closeOpenMonthViewDay()\"\n\t\t\t\t\t>\n\t\t\t\t\t  Previous\n\t\t\t\t\t</div>\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-outline-secondary\"\n\t\t\t\t\t  mwlCalendarToday\n\t\t\t\t\t  [(viewDate)]=\"viewDate\"\n\t\t\t\t\t>\n\t\t\t\t\t  Today\n\t\t\t\t\t</div>\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  mwlCalendarNextView\n\t\t\t\t\t  [view]=\"view\"\n\t\t\t\t\t  [(viewDate)]=\"viewDate\"\n\t\t\t\t\t  (viewDateChange)=\"closeOpenMonthViewDay()\"\n\t\t\t\t\t>\n\t\t\t\t\t  Next\n\t\t\t\t\t</div>\n\t\t\t\t  </div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t  <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t  <div class=\"btn-group\">\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  (click)=\"setView(CalendarView.Month)\"\n\t\t\t\t\t  [class.active]=\"view === CalendarView.Month\"\n\t\t\t\t\t>\n\t\t\t\t\t  Month\n\t\t\t\t\t</div>\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  (click)=\"setView(CalendarView.Week)\"\n\t\t\t\t\t  [class.active]=\"view === CalendarView.Week\"\n\t\t\t\t\t>\n\t\t\t\t\t  Week\n\t\t\t\t\t</div>\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  (click)=\"setView(CalendarView.Day)\"\n\t\t\t\t\t  [class.active]=\"view === CalendarView.Day\"\n\t\t\t\t\t>\n\t\t\t\t\t  Day\n\t\t\t\t\t</div>\n\t\t\t\t  </div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t  <br/>\n\t\t\t  <div [ngSwitch]=\"view\">\n\t\t\t\t<mwl-calendar-month-view\n\t\t\t\t  *ngSwitchCase=\"CalendarView.Month\"\n\t\t\t\t  [viewDate]=\"viewDate\"\n\t\t\t\t  [events]=\"events\"\n\t\t\t\t  [refresh]=\"refresh\"\n\t\t\t\t  [activeDayIsOpen]=\"activeDayIsOpen\"\n\t\t\t\t  (dayClicked)=\"dayClicked($event.day)\"\n\t\t\t\t  (eventClicked)=\"handleEvent('Clicked', $event.event)\"\n\t\t\t\t  (eventTimesChanged)=\"eventTimesChanged($event)\"\n\t\t\t\t>\n\t\t\t\t</mwl-calendar-month-view>\n\t\t\t  </div>\t\t  \n\t\t</div>\n\n\n\t\t<h4><small>更新日志</small></h4>\n\t\t<hr>\n\t\t<h2>Version 2.10</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Oct 22, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> </h5><br>\n\t\t<p>1. 新增日历事项</p>\n\n\n\t\t<hr>\n\t\t<h2>Version 2.9</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Oct 16, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> <span class=\"label label-danger\">学生系统</span></h5><br>\n\t\t<p>1. Debug学生系统不能修改职业规划</p>\n\t\t<p>2. Debug管理员系统无法下载学生列表</p>\n\n\t\t<hr>\n\t\t<h2>Version 2.8</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Oct 08, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> </h5><br>\n\t\t<p>1. 新增管理员系统中，可以下载学生的选校列表</p>\n\n\t\t<hr>\n\t\t<h2>Version 2.7</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Oct 02, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> </h5><br>\n\t\t<p>1. 新增管理员系统中，可以查看推荐人被引用的全部列表</p>\n\t\t\n\n\t\t<hr>\n\t\t<h2>Version 2.6</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Sep 27, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> <span class=\"label label-primary\">主页</span></h5><br>\n\t\t<p>1. 新增管理员系统中，对于学生的工作经历和教育背景 信息删除功能</p>\n\t\t<p>2. 添加 主页-留学申请 页面中其他服务内容，包含文书、咨询、简历修改</p><br>\n\n\n\t\t<hr>\n\t\t<h2>Version 2.5</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Sep 23, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span><span class=\"label label-primary\">主页</span></h5><br>\n\t\t<p>1. 新增管理员系统中可以查询学生的个人信息，包含工作经历，教育背景等信息</p><br>\n\t\t<p>2. 更新 主页-留学申请-研究生申请 页面中Q&A部分信息</p><br>\n\t\t<hr>\n\t\n\t\t<h2>Version 2.4</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Aug 21, 2021.</h5>\n\t\t<h5><span class=\"label label-primary\">主页</span></h5><br>\n\t\t<p>1. 新增 主页-留学生请 页面，及其子项（高中、本科、研究生）</p><br>\n\t\t<hr>\n\n\t\t<h2>Version 2.3</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Aug 08, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span><span class=\"label label-danger\">学生系统</span></h5><br>\n\t\t<p>1. 新增 通知系统</p><br>\n\t\t<p>1. 新增 文书系统</p><br>\n\t\t<hr>\n\n\t\t<br><br>\n\t  </div>\n\t</div>\n</div>\n\n  \n  "
+module.exports = "\n<header>\n\t<nav class=\"navbar navbar-inverse\" role=\"navigation\">\n\t\t<div class=\"container-fluid\">\n\t\t<div class=\"navbar-header\">\n\t\t\t\t<a class=\"navbar-brand\" >一个很神秘的网页</a>\n\t\t</div>\n\t\t<div class=\"nav  navbar-right\">\n\t\t  <ul class=\"nav navbar-nav\">\n\t\t\t<li class=\"active\"><a (click)=\"main(hotel)\">HomePage</a></li>\n\t\t\t<li class=\"dropdown\">\n\t\t\t  <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n\t\t\t\t{{hotel.userAccount}} <b class=\"caret\"></b>\n\t\t\t  </a>\n\t\t\t  <ul class=\"dropdown-menu\">\n\t\t\t\t\t\t\t<li><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n\t\t\t\t\t\t\t<li><a (click)=\"comp(hotel)\">Complete info</a></li>\n\t\t\t\t\t\t\t<li class=\"divider\"></li>\n\t\t\t\t<li><a (click)=\"hotelman(hotel)\">学生管理</a></li>\n\t\t\t\t<li><a (click)=\"hmregister(hotel)\">登记账号</a></li>\n\t\t\t\t\t\t</ul>\n\t\t\t</li>\n\t\t\t<li class=\"nav navbar-nav navbar-right\">\n\t\t\t  <a href=\"/mainpage\">Log Out</a>\n\t\t\t</li>\n\t\t  </ul>\n\t\t</div>\n\t  </div>\n\t</nav>\n\t\n  </header>\n  \n  <ol class=\"breadcrumb\">\n\t<li class=\"active\">Home - {{hotel.userAccount}}</li>\n</ol>\n\n<div class=\"container-fluid\">\n\t<div class=\"row content\">\n\t  <div class=\"col-sm-3 sidenav\">\n\t\t<h4>{{hotel.userAccount}}  </h4>\n\t\t<ul class=\"nav nav-pills nav-stacked\">\n\t\t  <li class=\"active\"><a (click)=\"main(hotel)\">Home</a></li>\n\t\t  <li ><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n\t\t\t<li><a (click)=\"comp(hotel)\">Complete info</a></li>\n\t\t\t<li><a (click)=\"hotelman(hotel)\">Manage Student</a></li>\n\t\t\t<li><a (click)=\"hmorder(hotel)\">学生申请</a></li>\n\t\t\t<li><a (click)=\"hmregister(hotel)\">登记账号</a></li>\n\t\t\t<li ><a (click)=\"hmblog(hotel)\">Blog管理</a></li>\n\t\t</ul><br>\n\t\t\n\t  </div>\n\n\t  <div class=\"col-sm-9\">\n\t\t<div>\n\t\t\t<div class=\"row text-center\">\n\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t  <div class=\"btn-group\">\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  mwlCalendarPreviousView\n\t\t\t\t\t  [view]=\"view\"\n\t\t\t\t\t  [(viewDate)]=\"viewDate\"\n\t\t\t\t\t  (viewDateChange)=\"closeOpenMonthViewDay()\"\n\t\t\t\t\t>\n\t\t\t\t\t  Previous\n\t\t\t\t\t</div>\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-outline-secondary\"\n\t\t\t\t\t  mwlCalendarToday\n\t\t\t\t\t  [(viewDate)]=\"viewDate\"\n\t\t\t\t\t>\n\t\t\t\t\t  Today\n\t\t\t\t\t</div>\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  mwlCalendarNextView\n\t\t\t\t\t  [view]=\"view\"\n\t\t\t\t\t  [(viewDate)]=\"viewDate\"\n\t\t\t\t\t  (viewDateChange)=\"closeOpenMonthViewDay()\"\n\t\t\t\t\t>\n\t\t\t\t\t  Next\n\t\t\t\t\t</div>\n\t\t\t\t  </div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t  <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t  <div class=\"btn-group\">\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  (click)=\"setView(CalendarView.Month)\"\n\t\t\t\t\t  [class.active]=\"view === CalendarView.Month\"\n\t\t\t\t\t>\n\t\t\t\t\t  Month\n\t\t\t\t\t</div>\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  (click)=\"setView(CalendarView.Week)\"\n\t\t\t\t\t  [class.active]=\"view === CalendarView.Week\"\n\t\t\t\t\t>\n\t\t\t\t\t  Week\n\t\t\t\t\t</div>\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  (click)=\"setView(CalendarView.Day)\"\n\t\t\t\t\t  [class.active]=\"view === CalendarView.Day\"\n\t\t\t\t\t>\n\t\t\t\t\t  Day\n\t\t\t\t\t</div>\n\t\t\t\t  </div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t  <br/>\n\t\t\t  <div [ngSwitch]=\"view\">\n\t\t\t\t<mwl-calendar-month-view\n\t\t\t\t  *ngSwitchCase=\"CalendarView.Month\"\n\t\t\t\t  [viewDate]=\"viewDate\"\n\t\t\t\t  [events]=\"events\"\n\t\t\t\t  [refresh]=\"refresh\"\n\t\t\t\t  [activeDayIsOpen]=\"activeDayIsOpen\"\n\t\t\t\t  (dayClicked)=\"dayClicked($event.day)\"\n\t\t\t\t  (eventClicked)=\"handleEvent('Clicked', $event.event)\"\n\t\t\t\t  (eventTimesChanged)=\"eventTimesChanged($event)\"\n\t\t\t\t>\n\t\t\t\t</mwl-calendar-month-view>\n\t\t\t\t<mwl-calendar-week-view\n\t\t\t\t\t*ngSwitchCase=\"CalendarView.Week\"\n\t\t\t\t\t[viewDate]=\"viewDate\"\n\t\t\t\t\t[events]=\"events\"\n\t\t\t\t\t[refresh]=\"refresh\"\n\t\t\t\t\t(eventClicked)=\"handleEvent('Clicked', $event.event)\"\n\t\t\t\t\t(eventTimesChanged)=\"eventTimesChanged($event)\"\n\t\t\t\t>\n\t\t\t\t</mwl-calendar-week-view>\n\t\t\t\t<mwl-calendar-day-view\n\t\t\t\t\t*ngSwitchCase=\"CalendarView.Day\"\n\t\t\t\t\t[viewDate]=\"viewDate\"\n\t\t\t\t\t[events]=\"events\"\n\t\t\t\t\t[refresh]=\"refresh\"\n\t\t\t\t\t(eventClicked)=\"handleEvent('Clicked', $event.event)\"\n\t\t\t\t\t(eventTimesChanged)=\"eventTimesChanged($event)\"\n\t\t\t\t>\n\t\t\t\t</mwl-calendar-day-view>\n\t\t\t  </div>\t\t  \n\t\t</div>\n\n\n\t\t<h4><small>更新日志</small></h4>\n\t\t<hr>\n\t\t<h2>Version 2.11</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Oct 24, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> <span class=\"label label-danger\">学生系统</span></h5><br>\n\t\t<p>1. 新增查看日历事项中具体信息</p>\n\t\t<p>2. 学生系统中增加日历视图功能</p>\n\t\t<p>3. Debug 部分页面无法获取学生个人信息</p>\n\n\t\t<hr>\n\t\t<h2>Version 2.10</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Oct 22, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> </h5><br>\n\t\t<p>1. 新增日历事项</p>\n\n\n\t\t<hr>\n\t\t<h2>Version 2.9</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Oct 16, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> <span class=\"label label-danger\">学生系统</span></h5><br>\n\t\t<p>1. Debug学生系统不能修改职业规划</p>\n\t\t<p>2. Debug管理员系统无法下载学生列表</p>\n\n\t\t<hr>\n\t\t<h2>Version 2.8</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Oct 08, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> </h5><br>\n\t\t<p>1. 新增管理员系统中，可以下载学生的选校列表</p>\n\n\t\t<hr>\n\t\t<h2>Version 2.7</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Oct 02, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> </h5><br>\n\t\t<p>1. 新增管理员系统中，可以查看推荐人被引用的全部列表</p>\n\t\t\n\n\t\t<hr>\n\t\t<h2>Version 2.6</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Sep 27, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> <span class=\"label label-primary\">主页</span></h5><br>\n\t\t<p>1. 新增管理员系统中，对于学生的工作经历和教育背景 信息删除功能</p>\n\t\t<p>2. 添加 主页-留学申请 页面中其他服务内容，包含文书、咨询、简历修改</p><br>\n\n\n\t\t<hr>\n\t\t<h2>Version 2.5</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Sep 23, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span><span class=\"label label-primary\">主页</span></h5><br>\n\t\t<p>1. 新增管理员系统中可以查询学生的个人信息，包含工作经历，教育背景等信息</p><br>\n\t\t<p>2. 更新 主页-留学申请-研究生申请 页面中Q&A部分信息</p><br>\n\t\t<hr>\n\t\n\t\t<h2>Version 2.4</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Aug 21, 2021.</h5>\n\t\t<h5><span class=\"label label-primary\">主页</span></h5><br>\n\t\t<p>1. 新增 主页-留学生请 页面，及其子项（高中、本科、研究生）</p><br>\n\t\t<hr>\n\n\t\t<h2>Version 2.3</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Aug 08, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span><span class=\"label label-danger\">学生系统</span></h5><br>\n\t\t<p>1. 新增 通知系统</p><br>\n\t\t<p>1. 新增 文书系统</p><br>\n\t\t<hr>\n\n\t\t<br><br>\n\t  </div>\n\t</div>\n</div>\n\n  \n  "
 
 /***/ }),
 
@@ -2373,47 +2379,73 @@ var HMmainComponent = /** @class */ (function () {
                 if (s.ddl1 != " ") {
                     var data = s.ddl1;
                     var tit = s.userAccount + " 【 " + s.univName + "】 " + s.majorName;
-                    _this.addEvent(tit, data);
+                    var url = s._id;
+                    var fullName = s.userAccount;
+                    _this.addEvent(tit, data, url, fullName);
                 }
                 if (s.ddl2 != " ") {
                     var data = s.ddl2;
                     var tit = s.userAccount + " 【 " + s.univName + "】 " + s.majorName;
-                    _this.addEvent2(tit, data);
+                    var url = s._id;
+                    var fullName = s.userAccount;
+                    _this.addEvent2(tit, data, url, fullName);
                 }
                 if (s.ddl3 != " ") {
                     var data = s.ddl3;
                     var tit = s.userAccount + " 【 " + s.univName + "】 " + s.majorName;
-                    _this.addEvent3(tit, data);
+                    var url = s._id;
+                    var fullName = s.userAccount;
+                    _this.addEvent3(tit, data, url, fullName);
                 }
             }
         });
     };
-    HMmainComponent.prototype.addEvent = function (tit, data) {
+    HMmainComponent.prototype.addEvent = function (tit, data, url, fullName) {
         this.events = this.events.concat([
             {
                 title: tit,
                 start: Object(date_fns__WEBPACK_IMPORTED_MODULE_2__["startOfDay"])(new Date(data)),
                 color: colors.red,
+                id: url,
+                meta: fullName,
             },
         ]);
     };
-    HMmainComponent.prototype.addEvent2 = function (tit, data) {
+    HMmainComponent.prototype.addEvent2 = function (tit, data, url, fullName) {
         this.events = this.events.concat([
             {
                 title: tit,
                 start: Object(date_fns__WEBPACK_IMPORTED_MODULE_2__["startOfDay"])(new Date(data)),
                 color: colors.yellow,
+                id: url,
+                meta: fullName,
             },
         ]);
     };
-    HMmainComponent.prototype.addEvent3 = function (tit, data) {
+    HMmainComponent.prototype.addEvent3 = function (tit, data, url, fullName) {
         this.events = this.events.concat([
             {
                 title: tit,
                 start: Object(date_fns__WEBPACK_IMPORTED_MODULE_2__["startOfDay"])(new Date(data)),
                 color: colors.blue,
+                id: url,
+                meta: fullName,
             },
         ]);
+    };
+    HMmainComponent.prototype.setView = function (view) {
+        this.view = view;
+    };
+    HMmainComponent.prototype.handleEvent = function (action, event) {
+        console.log("输出测试" + event.meta);
+        var navigationExtras = {
+            queryParams: {
+                "managerID": this.managerID,
+                "fullName": event.meta,
+                "schoolID": event.id,
+            }
+        };
+        this.router.navigate(['/hmoschool'], navigationExtras);
     };
     HMmainComponent.prototype.dayClicked = function (_a) {
         var date = _a.date, events = _a.events;
@@ -3259,11 +3291,11 @@ var HmorderComponent = /** @class */ (function () {
         var navigationExtras = {
             queryParams: {
                 "managerID": this.managerID,
-                "studentID": s.userAccount,
+                "fullName": s.userAccount,
                 "schoolID": s._id,
             }
         };
-        this.router.navigate(['/hmschool'], navigationExtras);
+        this.router.navigate(['/hmoschool'], navigationExtras);
     };
     //direct to the blog page
     HmorderComponent.prototype.hmblog = function (hotel) {
@@ -3497,6 +3529,331 @@ var HmordersearchComponent = /** @class */ (function () {
             _hm_service__WEBPACK_IMPORTED_MODULE_3__["HmService"]])
     ], HmordersearchComponent);
     return HmordersearchComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/hmoschool/hmoschool.component.html":
+/*!****************************************************!*\
+  !*** ./src/app/hmoschool/hmoschool.component.html ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<nav class=\"navbar navbar-inverse\" role=\"navigation\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n        <a class=\"navbar-brand\" >一个很神秘的网页</a>\n      </div>\n      <div class=\"nav  navbar-right\">\n        <ul class=\"nav navbar-nav\">\n          <li class=\"active\"><a (click)=\"main(hotel)\">HomePage</a></li>\n          <li class=\"dropdown\">\n            <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n              Shortcut <b class=\"caret\"></b>\n            </a>\n            <ul class=\"dropdown-menu\">\n              <li><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n              <li><a (click)=\"comp(hotel)\">Complete info</a></li>\n              <li class=\"divider\"></li>\n              <li><a (click)=\"hotelman(hotel)\">Manage Hotel</a></li>\n              <li><a (click)=\"hmorder(hotel)\">Order</a></li>\n            </ul>\n          </li>\n          <li class=\"nav navbar-nav navbar-right\">\n            <a href=\"/mainpage\">Log Out</a>\n          </li>\n        </ul>\n      </div>\n    </div>\n</nav>\n  <ol class=\"breadcrumb\">\n      <li><a (click)=\"main(hotel)\">Home</a></li>\n      <li><a (click)=\"main(hotel)\">{{hotel.userAccount}}</a></li>\n      <li><a (click)=\"hotelman(hotel)\">Manage Student</a></li>\n      <li >  {{fullName}}  </li>\n      <li class=\"active\"> 申请项目详细</li>\n  </ol>\n\n  <div class=\"container-fluid\">\n    <div class=\"row content\">\n      <div class=\"col-sm-3 sidenav\">\n      <h4>{{hotel.userAccount}}  </h4>\n      <ul class=\"nav nav-pills nav-stacked\">\n        <li ><a (click)=\"main(hotel)\">Home-{{hotel.userAccount}}</a></li>\n        <li ><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n        <li><a (click)=\"comp(hotel)\">Complete info</a></li>\n        <li><a (click)=\"hotelman(hotel)\">Manage Student</a></li>\n        <li><a (click)=\"hmorder(hotel)\">学生申请</a></li>\n        <li><a (click)=\"hmregister(hotel)\">登记账号</a></li>\n        <li ><a (click)=\"hmblog(hotel)\">Blog管理</a></li>\n      </ul><br>\n      \n      </div>\n    \n      <div class=\"col-sm-9\">\n        <h2>{{fullName}} </h2>  \n      <hr>\n      <h5>此页面仅为展示信息，需要进行修改时请采用传统方式</h5>\n\n      <br>\n      <hr>\n      <h3>申请项目详细       \n        <a href=\"{{school.link}}\">\n         <span class=\"glyphicon glyphicon-link\"></span>\n        </a>\n      </h3>\n\n      <br>\n      <form id=\"form1\" action=\"\" method=\"post\">\n        <table>\n              <tr>\n                <td>University\n                </td>\n                <td><div class=\"input-group\">\t\t\n                  <input class=\"form-control\" id=\"univName\" value=\"{{school.univName}}\" [(ngModel)]=\"univName\"  name=\"univName\" style=\"width: 785px;\" disabled=\"\"></div>\n                </td>\n              </tr>\n              <tr>\n                  <td>School</td>\n                  <td><div class=\"input-group\">\n                    <input  class=\"form-control\" id=\"schoolName\" [(ngModel)]=\"schoolName\" value=\"{{school.schoolName}}\"  name=\"schoolName\" style=\"width: 785px;\" disabled=\"\"></div>\n                  </td>\n              </tr>\n              <tr>\n                  <td>Major\n                  </td>\n                  <td><div class=\"input-group\">\n                    <input  class=\"form-control\" value=\"{{school.majorName}}\" [(ngModel)]=\"majorName\"  id=\"majorName\"  name=\"majorName\" disabled=\"\" style=\"width: 785px;\"></div>\n                  </td>\n              </tr>\n              <tr>\n                <td>Deadline 1\n                </td>\n                <td><div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.ddl1}}\" [(ngModel)]=\"ddl1\"  id=\"ddl1\"  name=\"ddl1\" disabled=\"\" style=\"width: 785px; \"></div>\n                </td>\n              </tr>\n              <tr>\n                <td>Deadline 2\n                </td>\n                <td><div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.ddl2}}\" [(ngModel)]=\"ddl2\"  id=\"ddl2\" name=\"ddl2\"  disabled=\"\" style=\"width: 785px; \"></div>\n                </td>\n              </tr>\n              <tr>\n                <td>Deadline 3\n                </td>\n                <td><div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.ddl3}}\" [(ngModel)]=\"ddl3\"  id=\"ddl3\"  name=\"ddl3\" disabled=\"\" style=\"width: 785px; \"></div>\n                </td>\n              </tr>\n              \n              <tr>\n                <td>Interview\n                </td>\n                <td><div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.interview}}\" [(ngModel)]=\"interview\"  id=\"interview\" disabled=\"\" name=\"interview\" style=\"width: 785px; \"></div>\n                </td>\n              </tr>\n              <tr>\n                <td>Video Essay\n                </td>\n                <td><div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.videoEssay}}\" [(ngModel)]=\"videoEssay\"  id=\"videoEssay\" disabled=\"\" name=\"videoEssay\" style=\"width: 785px; \"></div>\n                </td>\n              </tr>\n              <tr>\n                <td>Link\n                </td>\n                <td>\n                  <div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.link}}\" [(ngModel)]=\"link\"  id=\"link\"  name=\"link\" disabled=\"\" style=\"width: 785px; \">\n                  </div>\n                </td>\n              </tr>\n              <tr>\n                <td>申请账号\n                </td>\n                <td><div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.applyAccount}}\" [(ngModel)]=\"applyAccount\"  id=\"applyAccount\" disabled=\"\" name=\"applyAccount\" style=\"width: 785px; \"></div>\n                </td>\n              </tr>\n              <tr>\n                <td>申请密码\n                </td>\n                <td><div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.applyPassword}}\" [(ngModel)]=\"applyPassword\"  id=\"applyPassword\" disabled=\"\" name=\"applyPassword\" style=\"width: 785px; \"></div>\n                </td>\n              </tr>\n              <tr>\n                <td>推荐信数量\n                </td>\n                <td><div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.recommNumber}}\" [(ngModel)]=\"recommNumber\"  id=\"recommNumber\" disabled=\"\" name=\"recommNumber\" style=\"width: 785px; \"></div>\n                </td>\n              </tr>\n              <tr>\n                <td>备注\n                </td>\n                <td><div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.other}}\" [(ngModel)]=\"other\"  id=\"other\"  name=\"other\" disabled=\"\" style=\"width: 785px; \"></div>\n                </td>\n              </tr>\n        </table>\n      </form>\n      <hr>\n      <h3>推荐信</h3>\n        <div class=\"row\">\n          <div class=\"col-sm-4 tuijian\">\n            <h4>\n              此选校所添加的推荐信总数：\n              <small class=\"text-muted\">{{recomletters.length}}</small>\n            </h4>\n            <div *ngIf=\"recomletters.length > 0\">\n              <div class=\"panel-group\" id=\"accordion\" *ngFor=\"let l of recomletters\">\n                <div class=\"panel panel-success\" *ngIf=\"l.state=='已提交'\">\n                  <div class=\"panel-heading\">\n                      <div class=\"row\">\n                        <div class=\"col-sm-10\"><b>{{l.recommenderName}} </b></div>\n                        <div class=\"col-sm-2\"><small>{{l.state}}</small></div>\n                      </div>\n                  </div>\n                  <div class=\"panel-body\">\n                    <div class=\"row\">\n                      <div class=\"col-sm-6\"><b>{{l.type}} </b></div>\n                      <div class=\"col-sm-5\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"panel panel-default\" *ngIf=\"l.state=='未提交'\">\n                  <div class=\"panel-heading\">\n                      <div class=\"row\">\n                        <div class=\"col-sm-10\"><b>{{l.recommenderName}} </b></div>\n                        <div class=\"col-sm-2\"><small>{{l.state}}</small></div>\n                      </div>\n                  </div>\n                  <div class=\"panel-body\">\n                    <div class=\"row\">\n                      <div class=\"col-sm-6\"><b>{{l.type}} </b></div>\n                      <div class=\"col-sm-5\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"panel panel-danger\" *ngIf=\"l.state=='弃用'\">\n                  <div class=\"panel-heading\">\n                      <div class=\"row\">\n                        <div class=\"col-sm-10\"><b>{{l.recommenderName}} </b></div>\n                        <div class=\"col-sm-2\"><small>{{l.state}}</small></div>\n                      </div>\n                  </div>\n                  <div class=\"panel-body\">\n                    <div class=\"row\">\n                      <div class=\"col-sm-6\"><b>{{l.type}} </b></div>\n                      <div class=\"col-sm-5\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n          <div class=\"col-sm-4 caozuo\">            \n          </div>\n        </div>\n      \n\n      <hr>\n      <h3>文书</h3>\n        <div class=\"row\">\n          <div class=\"col-sm-4 tuijian\">\n            <h4>\n              此选校所添加的文书总数：\n              <small class=\"text-muted\">{{statements.length}}</small>\n            </h4>\n\n            <div class=\"container\" *ngIf=\"statements.length > 0\">\n              <div class=\"row clearfix\" *ngFor=\"let st of statements\">\n                <div class=\"col-md-6 column\">\n                  <div class=\"panel panel-info\" >\n                    <div class=\"panel-heading\" >\n                    <h4 class=\"panel-title\">\n                      <a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#{{st._id}}\">\n                      <b> {{st.stype}} </b> （ {{st.words}} 字） <br>\n                      </a>\n                    </h4>\n                    </div>\n                    <div id=\"{{st._id}}\" class=\"panel-collapse collapse\">\n                    <div class=\"panel-body\">\n                      {{st.question}}\n                    </div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n          <div class=\"col-sm-4 caozuo\">\n\n          </div>\n        </div>\n\n      </div>\n    </div>\n  </div>\n\n  \n\n  \n\n  "
+
+/***/ }),
+
+/***/ "./src/app/hmoschool/hmoschool.component.scss":
+/*!****************************************************!*\
+  !*** ./src/app/hmoschool/hmoschool.component.scss ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/* Set height of the grid so .sidenav can be 100% (adjust if needed) */\n.row.content {\n  height: 1500px; }\n/* Set gray background color and 100% height */\n.sidenav {\n  background-color: #f1f1f1;\n  height: 100%; }\n/* On small screens, set height to 'auto' for sidenav and grid */\n@media screen and (max-width: 767px) {\n  .sidenav {\n    height: auto;\n    padding: 15px; }\n  .row.content {\n    height: auto; } }\n.tuijian {\n  width: 600px; }\n.caozuo {\n  width: 300px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9lY28vRG9jdW1lbnRzL01pY2hpL01pY2hpL3NyYy9hcHAvaG1vc2Nob29sL2htb3NjaG9vbC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxzRUFBQTtBQUNBO0VBQWMsY0FBYyxFQUFBO0FBRTVCLDhDQUFBO0FBQ0E7RUFDRSx5QkFBeUI7RUFDekIsWUFBWSxFQUFBO0FBSWQsZ0VBQUE7QUFDQTtFQUNFO0lBQ0UsWUFBWTtJQUNaLGFBQWEsRUFBQTtFQUVmO0lBQWMsWUFBWSxFQUFBLEVBQUc7QUFHL0I7RUFDRSxZQUFZLEVBQUE7QUFFZDtFQUNFLFlBQVksRUFBQSIsImZpbGUiOiJzcmMvYXBwL2htb3NjaG9vbC9obW9zY2hvb2wuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKiBTZXQgaGVpZ2h0IG9mIHRoZSBncmlkIHNvIC5zaWRlbmF2IGNhbiBiZSAxMDAlIChhZGp1c3QgaWYgbmVlZGVkKSAqL1xuLnJvdy5jb250ZW50IHtoZWlnaHQ6IDE1MDBweH1cbiAgICBcbi8qIFNldCBncmF5IGJhY2tncm91bmQgY29sb3IgYW5kIDEwMCUgaGVpZ2h0ICovXG4uc2lkZW5hdiB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmMWYxZjE7XG4gIGhlaWdodDogMTAwJTtcbn1cblxuXG4vKiBPbiBzbWFsbCBzY3JlZW5zLCBzZXQgaGVpZ2h0IHRvICdhdXRvJyBmb3Igc2lkZW5hdiBhbmQgZ3JpZCAqL1xuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogNzY3cHgpIHtcbiAgLnNpZGVuYXYge1xuICAgIGhlaWdodDogYXV0bztcbiAgICBwYWRkaW5nOiAxNXB4O1xuICB9XG4gIC5yb3cuY29udGVudCB7aGVpZ2h0OiBhdXRvO30gXG59XG5cbi50dWlqaWFue1xuICB3aWR0aDogNjAwcHg7XG59XG4uY2FvenVve1xuICB3aWR0aDogMzAwcHg7XG59XG4iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/hmoschool/hmoschool.component.ts":
+/*!**************************************************!*\
+  !*** ./src/app/hmoschool/hmoschool.component.ts ***!
+  \**************************************************/
+/*! exports provided: HmoschoolComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HmoschoolComponent", function() { return HmoschoolComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _hm_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../hm.service */ "./src/app/hm.service.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _recletter_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../recletter.service */ "./src/app/recletter.service.ts");
+/* harmony import */ var _statement_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../statement.service */ "./src/app/statement.service.ts");
+
+
+
+
+
+
+
+var HmoschoolComponent = /** @class */ (function () {
+    function HmoschoolComponent(route, router, http, hmService, statementService, recomletterService) {
+        var _this = this;
+        this.route = route;
+        this.router = router;
+        this.http = http;
+        this.hmService = hmService;
+        this.statementService = statementService;
+        this.recomletterService = recomletterService;
+        this.students = []; //all the orders from database
+        this.hotels = [];
+        this.schools = [];
+        //推荐人信息
+        this.recommenders = [];
+        //推荐信信息
+        this.recomletters = [];
+        //文书信息
+        this.statements = [];
+        this.route.queryParams.subscribe(function (params) {
+            _this.managerID = params["managerID"];
+            _this.fullName = params["fullName"];
+            _this.schoolID = params["schoolID"];
+        });
+        console.log(" school的ID为" + this.schoolID);
+    }
+    HmoschoolComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.http.get('/api/hotels').subscribe(function (Data) {
+            _this.hotels = Data.hotels;
+            for (var _i = 0, _a = _this.hotels; _i < _a.length; _i++) {
+                var h = _a[_i];
+                if (h.userAccount === _this.managerID) {
+                    _this.hotel = h;
+                    _this.name = _this.hotel.name;
+                    _this.location = _this.hotel.location;
+                    _this.phone = _this.hotel.phone;
+                    _this.price = _this.hotel.price;
+                    console.log("管理者信息");
+                    console.log(_this.hotel);
+                }
+            }
+        });
+        //展示 申请项目的详细信息
+        this.http.get('/api/schools').subscribe(function (Data) {
+            //console.log(orderData);
+            _this.schools = Data.schools;
+            for (var _i = 0, _a = _this.schools; _i < _a.length; _i++) {
+                var s = _a[_i];
+                if (s._id === _this.schoolID) {
+                    //console.log("进入了吗");
+                    _this.school = s;
+                    _this.studentID = s.userAccount;
+                    console.log("进入了吗" + _this.studentID);
+                    _this.state = _this.school.state; //申请状态（四种：进行，完成，收到offer，收到拒信）
+                    _this.univName = _this.school.univName; //大学名称
+                    _this.schoolName = _this.school.schoolName; //学院名称
+                    _this.majorName = _this.school.majorName; //专业名称
+                    _this.ddl1 = _this.school.ddl1; //DDL 1
+                    _this.ddl2 = _this.school.ddl2; //DDL 2
+                    _this.ddl3 = _this.school.ddl3; //DDL 3
+                    _this.interview = _this.school.interview; //面试 （两种：有-参加时间，无，）
+                    _this.videoEssay = _this.school.videoEssay; // videoEssay(三种：无，申请前完成，申请后完成)
+                    _this.link = _this.school.link; //链接
+                    _this.applyAccount = _this.school.applyAccount; //申请账号
+                    _this.applyPassword = _this.school.applyPassword; //申请用密码
+                    _this.recommNumber = _this.school.recommNumber; //推荐信数量
+                    _this.other = _this.school.other;
+                }
+            }
+        });
+        //展示 学生个人信息
+        this.http.get('/api/students').subscribe(function (Data) {
+            _this.students = Data.students;
+            for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
+                var h = _a[_i];
+                if (h._id === _this.studentID) {
+                    _this.student = h;
+                    console.log("Student Personal Information");
+                    console.log(_this.student);
+                }
+            }
+        });
+        //展示 此学生 推荐人信息
+        this.http.get('/api/studentrecommenderdetail/' + this.studentID).subscribe(function (orderData) {
+            //console.log(orderData);
+            _this.recommenders = orderData.recommenders;
+        });
+        //展示 这个选校的 推荐信 信息
+        this.http.get('/api/schoolrecomletterlist/' + this.schoolID).subscribe(function (Data) {
+            //console.log(Data);
+            _this.recomletters = Data.recomletters;
+        });
+        //展示 这个选校的 文书 信息
+        this.http.get('/api/statementdetail/' + this.schoolID).subscribe(function (Data) {
+            //console.log(Data);
+            _this.statements = Data.statements;
+        });
+        this.hotelMSub = this.hmService.getHotelMUpdatedListener().subscribe(function (hotels) {
+            _this.hotels = hotels;
+        });
+    };
+    HmoschoolComponent.prototype.updateLetterNoSubmit = function (l) {
+        var Recomletter = {
+            schoolID: l.schoolID,
+            studentID: l.studentID,
+            recommender: l.recommender,
+            recommenderName: l.recommenderName,
+            type: l.type,
+            state: "未提交",
+        };
+        this.http.put('/api/recomletters/' + l._id, Recomletter)
+            .subscribe(function (data) {
+            var options = {
+                overlay: true,
+                overlayClickToClose: true,
+                showCloseButton: true,
+                duration: 5000
+            };
+            if (data[0] === undefined) {
+                console.log("Undefine");
+            }
+        });
+        alert("更新推荐信状态成功!!");
+        window.location.reload();
+    };
+    HmoschoolComponent.prototype.updateLetterSubmit = function (l) {
+        var Recomletter = {
+            schoolID: l.schoolID,
+            studentID: l.studentID,
+            recommender: l.recommender,
+            recommenderName: l.recommenderName,
+            type: l.type,
+            state: "已提交",
+        };
+        this.http.put('/api/recomletters/' + l._id, Recomletter)
+            .subscribe(function (data) {
+            var options = {
+                overlay: true,
+                overlayClickToClose: true,
+                showCloseButton: true,
+                duration: 5000
+            };
+            if (data[0] === undefined) {
+                console.log("Undefine");
+            }
+        });
+        alert("更新推荐信状态成功!!");
+        window.location.reload();
+    };
+    HmoschoolComponent.prototype.updateLetterDiscard = function (l) {
+        var Recomletter = {
+            schoolID: l.schoolID,
+            studentID: l.studentID,
+            recommender: l.recommender,
+            recommenderName: l.recommenderName,
+            type: l.type,
+            state: "弃用",
+        };
+        this.http.put('/api/recomletters/' + l._id, Recomletter)
+            .subscribe(function (data) {
+            var options = {
+                overlay: true,
+                overlayClickToClose: true,
+                showCloseButton: true,
+                duration: 5000
+            };
+            if (data[0] === undefined) {
+                console.log("Undefine");
+            }
+        });
+        alert("更新推荐信状态成功!!");
+        window.location.reload();
+    };
+    //direct to the hotel manage page
+    HmoschoolComponent.prototype.hotelman = function (hotel) {
+        var navigationExtras = {
+            queryParams: {
+                "managerID": hotel.userAccount,
+            }
+        };
+        this.router.navigate(['/hmmanage'], navigationExtras);
+    };
+    //direct to the modify password page
+    HmoschoolComponent.prototype.modifyP = function (hotel) {
+        var navigationExtras = {
+            queryParams: {
+                "managerID": hotel.userAccount,
+            }
+        };
+        this.router.navigate(['/hmmodifypass'], navigationExtras);
+    };
+    //direct to the complete information page
+    HmoschoolComponent.prototype.comp = function (hotel) {
+        var navigationExtras = {
+            queryParams: {
+                "managerID": hotel.userAccount,
+            }
+        };
+        this.router.navigate(['/hmcomp'], navigationExtras);
+    };
+    //direct to the hotel manager main page
+    HmoschoolComponent.prototype.main = function (hotel) {
+        var navigationExtras = {
+            queryParams: {
+                "managerID": hotel.userAccount,
+            }
+        };
+        this.router.navigate(['/hmmain'], navigationExtras);
+    };
+    //direct to the hotel order 
+    HmoschoolComponent.prototype.hmorder = function (hotel) {
+        var navigationExtras = {
+            queryParams: {
+                "managerID": hotel.userAccount,
+            }
+        };
+        this.router.navigate(['/hmorder'], navigationExtras);
+    };
+    //direct to the register page
+    HmoschoolComponent.prototype.hmregister = function (hotel) {
+        var navigationExtras = {
+            queryParams: {
+                "managerID": hotel.userAccount,
+            }
+        };
+        this.router.navigate(['/hmregister'], navigationExtras);
+    };
+    //direct to the addschool page
+    HmoschoolComponent.prototype.hmaddschool = function (hotel, student) {
+        var navigationExtras = {
+            queryParams: {
+                "managerID": hotel.userAccount,
+                "studentID": this.student._id,
+            }
+        };
+        this.router.navigate(['/hmaddschool'], navigationExtras);
+    };
+    //direct to the register page
+    HmoschoolComponent.prototype.hmstudent = function (hotel) {
+        var navigationExtras = {
+            queryParams: {
+                "managerID": hotel.userAccount,
+                "studentID": this.studentID,
+            }
+        };
+        this.router.navigate(['/hmstudent'], navigationExtras);
+    };
+    //direct to the blog page
+    HmoschoolComponent.prototype.hmblog = function (hotel) {
+        var navigationExtras = {
+            queryParams: {
+                "managerID": hotel.userAccount,
+            }
+        };
+        this.router.navigate(['/hmblog'], navigationExtras);
+    };
+    HmoschoolComponent.prototype.ngOnDestroy = function () {
+        this.hotelMSub.unsubscribe();
+    };
+    HmoschoolComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-hmoschool',
+            template: __webpack_require__(/*! ./hmoschool.component.html */ "./src/app/hmoschool/hmoschool.component.html"),
+            styles: [__webpack_require__(/*! ./hmoschool.component.scss */ "./src/app/hmoschool/hmoschool.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"],
+            _hm_service__WEBPACK_IMPORTED_MODULE_3__["HmService"],
+            _statement_service__WEBPACK_IMPORTED_MODULE_6__["StatementService"],
+            _recletter_service__WEBPACK_IMPORTED_MODULE_5__["RecomletterService"]])
+    ], HmoschoolComponent);
+    return HmoschoolComponent;
 }());
 
 
@@ -7630,7 +7987,7 @@ var StudentinfoComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-inverse\" role=\"navigation\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n        <a class=\"navbar-brand\" >{{student.firstName}} {{student.lastName}}</a>\n      </div>\n      <div class=\"nav  navbar-right\">\n        <ul class=\"nav navbar-nav\">\n          <li class=\"active\"><a (click)=\"studentmain(student)\">Home</a></li>\n          <li class=\"dropdown\">\n            <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n              推荐人 <b class=\"caret\"></b>\n            </a>\n            <ul class=\"dropdown-menu\">\n              <li><a (click)=\"rec(student)\">全部推荐人信息</a></li>\n              <li><a (click)=\"addRecom(student)\">添加新的推荐人</a></li>\n            </ul>\n          </li>\n          <li class=\"nav navbar-nav navbar-right\">\n            <a href=\"/mainpage\">Log Out</a>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </nav>\n\t  <div class=\"container-fluid\">\n\t\t<div class=\"row content\">\n\t\t  <div class=\"col-sm-3 sidenav\">\n\t\t\t  <h3></h3>\n\t\t\t<ul class=\"nav nav-pills nav-stacked\">\n\t\t\t  <li class=\"active\"><a (click)=\"studentmain(student)\">Home-申请状态</a></li>\n\t\t\t\t<li ><a >更改密码</a></li>\n\t\t\t\t<li><a (click)=\"info(student)\">完善个人信息</a></li>\n\t\t\t\t<li><a (click)=\"rec(student)\">推荐人信息</a></li>\n\t\t\t\t<li><a (click)=\"addRecom(student)\">添加推荐人</a></li>\n\t\t\t</ul><br>\t\n\t\t  </div>\n\t  \n\t\t  <div class=\"col-sm-9\">\n\t\t\t<div *ngIf=\"notifs.length > 0\">\n\t\t\t\t<div *ngFor=\"let n of notifs\">\n\t\t\t\t\t<div *ngIf=\"n.nstate=='未读'\">\n\t\t\t\t\t<div class=\"alert alert-dismissible alert-warning\" *ngIf=\"n.ntype=='比较紧急'\">\n\t\t\t\t\t\t<button type=\"button\" class=\"close\" data-dismiss=\"alert\"aria-hidden=\"true\">&times;</button>\n\t\t\t\t\t\t<div class=\"toast show\" role=\"alert\" aria-live=\"assertive\" aria-atomic=\"true\">\n\t\t\t\t\t\t\t<div class=\"toast-header\">\n\t\t\t\t\t\t\t  <strong class=\"me-auto\">未读{{n.ntype}}消息 </strong>\n\t\t\t\t\t\t\t  <small>{{n.ndate}}</small>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"toast-body\">\n\t\t\t\t\t\t\t\t{{n.content}}\n\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-warning btn-sm\" href=\"/anew/todel/@a.id\"  (click)=\"updateNotif(n)\">标记为已读消息</button>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"alert alert-dismissible alert-success\" *ngIf=\"n.ntype=='一般'\">\n\t\t\t\t\t\t<button type=\"button\" class=\"close\" data-dismiss=\"alert\"aria-hidden=\"true\">&times;</button>\n\t\t\t\t\t\t<div class=\"toast show\" role=\"alert\" aria-live=\"assertive\" aria-atomic=\"true\">\n\t\t\t\t\t\t\t<div class=\"toast-header\">\n\t\t\t\t\t\t\t  <strong class=\"me-auto\">未读{{n.ntype}}消息 </strong>\n\t\t\t\t\t\t\t  <small>{{n.ndate}}</small>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"toast-body\">\n\t\t\t\t\t\t\t\t{{n.content}}\n\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-success btn-sm\" href=\"/anew/todel/@a.id\"  (click)=\"updateNotif(n)\">标记为已读消息</button>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"alert alert-dismissible alert-danger\" *ngIf=\"n.ntype=='紧急'\">\n\t\t\t\t\t\t<button type=\"button\" class=\"close\" data-dismiss=\"alert\"aria-hidden=\"true\">&times;</button>\n\t\t\t\t\t\t<div class=\"toast show\" role=\"alert\" aria-live=\"assertive\" aria-atomic=\"true\">\n\t\t\t\t\t\t\t<div class=\"toast-header\">\n\t\t\t\t\t\t\t  <strong class=\"me-auto\">未读{{n.ntype}}消息 </strong>\n\t\t\t\t\t\t\t  <small>{{n.ndate}}</small>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"toast-body\">\n\t\t\t\t\t\t\t\t{{n.content}}\n\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-danger btn-sm\" href=\"/anew/todel/@a.id\"  (click)=\"updateNotif(n)\">标记为已读消息</button>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<h3>\n\t\t\t\t已添加的选校列表：\n\t\t\t\t{{school.length}}\n\t\t\t  </h3>\n\t\t\t  <hr>\n\t\t\t  <div class=\"panel-group\" id=\"accordion\" *ngIf=\"school.length > 0\">\n\t\t\t\t<div *ngFor=\"let k of school\">\n\t\t\t\t<div class=\"panel panel-success\"  *ngIf=\"k.state=='Offer'\">\n\t\t\t\t  <div class=\"panel-heading\" >\n\t\t\t\t\t<h4 class=\"panel-title\">\n\t\t\t\t\t  <a data-toggle=\"collapse\" data-parent=\"#accordion\" \n\t\t\t\t\t\thref=\"#{{k._id}}\">\n\t\t\t\t\t  <b> {{k.univName}} </b> 【 {{k.majorName}} 】 <br><small style=\"color: green;\">{{k.state}}</small>\n\t\t\t\t\t  </a>\n\t\t\t\t\t</h4>\n\t\t\t\t  </div>\n\t\t\t\t  <div id=\"{{k._id}}\" class=\"panel-collapse collapse\">\n\t\t\t\t\t<div class=\"panel-body\">\n\t\t\t\t\t\t<table class=\"table table-bordered\" >\n\t\t\t\t\t\t\t<tbody>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 1 </td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 2</td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 3</td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">需要推荐人数量</td>\t\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td >{{k.ddl1}} </td>\n\t\t\t\t\t\t\t\t<td >{{k.ddl2}}</td>\n\t\t\t\t\t\t\t\t<td >{{k.ddl3}}</td>\t\n\t\t\t\t\t\t\t\t<td >{{k.recommNumber}}</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">申请账号</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.applyAccount}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">申请密码</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.applyPassword}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">项目链接</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.link}}\n\t\t\t\t\t\t\t\t\t<a href=\"{{k.link}}\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"glyphicon glyphicon-link\"></span>\n\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t<td >\n\t\t\t\t\t\t\t\t\t<button href=\"/anew/todel/@a.id\" (click)=\"schooldetail(k)\">More</button>\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  \n\t\t\t\t\t\t\t</tbody>\n\t\t\t\t\t\t</table>\n\t\t\t\t\t</div>\n\t\t\t\t  </div>\n\t\t\t\t  <br>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"panel panel-primary\" *ngIf=\"k.state=='进行中'\">\n\t\t\t\t\t<div class=\"panel-heading\">\n\t\t\t\t\t  <h4 class=\"panel-title\">\n\t\t\t\t\t\t<a data-toggle=\"collapse\" data-parent=\"#accordion\" \n\t\t\t\t\t\t  href=\"#{{k._id}}\">\n\t\t\t\t\t\t<b> {{k.univName}} </b>【 {{k.majorName}} 】 <br><small style=\"color: whitesmoke;\">{{k.state}}</small>\n\t\t\t\t\t\t</a>\n\t\t\t\t\t  </h4>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div id=\"{{k._id}}\" class=\"panel-collapse collapse\">\n\t\t\t\t\t  <div class=\"panel-body\">\n\t\t\t\t\t\t<table class=\"table table-bordered\" >\n\t\t\t\t\t\t\t<tbody>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 1 </td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 2</td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 3</td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">需要推荐人数量</td>\t\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td >{{k.ddl1}} </td>\n\t\t\t\t\t\t\t\t<td >{{k.ddl2}}</td>\n\t\t\t\t\t\t\t\t<td >{{k.ddl3}}</td>\t\n\t\t\t\t\t\t\t\t<td >{{k.recommNumber}}</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">申请账号</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.applyAccount}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">申请密码</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.applyPassword}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">项目链接</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.link}}\n\t\t\t\t\t\t\t\t\t<a href=\"{{k.link}}\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"glyphicon glyphicon-link\"></span>\n\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t<td >\n\t\t\t\t\t\t\t\t\t<button href=\"/anew/todel/@a.id\" (click)=\"schooldetail(k)\">More</button>\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  \n\t\t\t\t\t\t\t</tbody>\n\t\t\t\t\t\t</table>\n\t\t\t\t\t  </div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<br>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"panel panel-warning\" *ngIf=\"k.state=='已完成'\">\n\t\t\t\t\t<div class=\"panel-heading\">\n\t\t\t\t\t  <h4 class=\"panel-title\">\n\t\t\t\t\t\t<a data-toggle=\"collapse\" data-parent=\"#accordion\" \n\t\t\t\t\t\t  href=\"#{{k._id}}\">\n\t\t\t\t\t\t<b> {{k.univName}} </b> 【 {{k.majorName}} 】  <br><small style=\"color: goldenrod;\">{{k.state}}</small>\n\t\t\t\t\t\t</a>\n\t\t\t\t\t  </h4>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div id=\"{{k._id}}\" class=\"panel-collapse collapse\">\n\t\t\t\t\t  <div class=\"panel-body\">\n\t\t\t\t\t\t<table class=\"table table-bordered\" >\n\t\t\t\t\t\t\t<tbody>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 1 </td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 2</td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 3</td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">需要推荐人数量</td>\t\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td >{{k.ddl1}} </td>\n\t\t\t\t\t\t\t\t<td >{{k.ddl2}}</td>\n\t\t\t\t\t\t\t\t<td >{{k.ddl3}}</td>\t\n\t\t\t\t\t\t\t\t<td >{{k.recommNumber}}</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">申请账号</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.applyAccount}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">申请密码</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.applyPassword}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">项目链接</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.link}}\n\t\t\t\t\t\t\t\t\t<a href=\"{{k.link}}\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"glyphicon glyphicon-link\"></span>\n\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t \n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t<td >\n\t\t\t\t\t\t\t\t\t<button href=\"/anew/todel/@a.id\" (click)=\"schooldetail(k)\">More</button>\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  \n\t\t\t\t\t\t\t</tbody>\n\t\t\t\t\t\t</table>\n\t\t\t\t\t  </div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<br>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"panel panel-default\" *ngIf=\"k.state=='拒信'\">\n\t\t\t\t\t<div class=\"panel-heading\">\n\t\t\t\t\t  <h4 class=\"panel-title\">\n\t\t\t\t\t\t<a data-toggle=\"collapse\" data-parent=\"#accordion\" \n\t\t\t\t\t\t  href=\"#{{k._id}}\">\n\t\t\t\t\t\t<b> {{k.univName}} </b> 【 {{k.majorName}} 】  <br><small style=\"color: red;\">{{k.state}}</small>\n\t\t\t\t\t\t</a>\n\t\t\t\t\t  </h4>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div id=\"{{k._id}}\" class=\"panel-collapse collapse\">\n\t\t\t\t\t  <div class=\"panel-body\">\n\t\t\t\t\t\t<table class=\"table table-bordered\" >\n\t\t\t\t\t\t\t<tbody>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 1 </td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 2</td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 3</td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">需要推荐人数量</td>\t\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td >{{k.ddl1}} </td>\n\t\t\t\t\t\t\t\t<td >{{k.ddl2}}</td>\n\t\t\t\t\t\t\t\t<td >{{k.ddl3}}</td>\t\n\t\t\t\t\t\t\t\t<td >{{k.recommNumber}}</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">申请账号</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.applyAccount}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">申请密码</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.applyPassword}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">项目链接</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.link}}\n\t\t\t\t\t\t\t\t\t<a href=\"{{k.link}}\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"glyphicon glyphicon-link\"></span>\n\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t<td >\n\t\t\t\t\t\t\t\t\t<button href=\"/anew/todel/@a.id\" (click)=\"schooldetail(k)\">More</button>\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  \n\t\t\t\t\t\t\t</tbody>\n\t\t\t\t\t\t</table>\n\t\t\t\t\t  </div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<br>\n\t\t\t\t</div>\n\t\t\t\t\n\t\t\t  </div>\n\t\t\t  \n\t\t  </div>\n\t\t</div>\n\t</div>\n\n"
+module.exports = "<nav class=\"navbar navbar-inverse\" role=\"navigation\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n        <a class=\"navbar-brand\" >{{student.firstName}} {{student.lastName}}</a>\n      </div>\n      <div class=\"nav  navbar-right\">\n        <ul class=\"nav navbar-nav\">\n          <li class=\"active\"><a (click)=\"studentmain(student)\">Home</a></li>\n          <li class=\"dropdown\">\n            <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n              推荐人 <b class=\"caret\"></b>\n            </a>\n            <ul class=\"dropdown-menu\">\n              <li><a (click)=\"rec(student)\">全部推荐人信息</a></li>\n              <li><a (click)=\"addRecom(student)\">添加新的推荐人</a></li>\n            </ul>\n          </li>\n          <li class=\"nav navbar-nav navbar-right\">\n            <a href=\"/mainpage\">Log Out</a>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </nav>\n\t  <div class=\"container-fluid\">\n\t\t<div class=\"row content\">\n\t\t  <div class=\"col-sm-3 sidenav\">\n\t\t\t  <h3></h3>\n\t\t\t<ul class=\"nav nav-pills nav-stacked\">\n\t\t\t  <li class=\"active\"><a (click)=\"studentmain(student)\">Home-申请状态</a></li>\n\t\t\t\t<li ><a >更改密码</a></li>\n\t\t\t\t<li><a (click)=\"info(student)\">完善个人信息</a></li>\n\t\t\t\t<li><a (click)=\"rec(student)\">推荐人信息</a></li>\n\t\t\t\t<li><a (click)=\"addRecom(student)\">添加推荐人</a></li>\n\t\t\t</ul><br>\t\n\t\t  </div>\n\t  \n\t\t  <div class=\"col-sm-9\">\n\t\t\t<div *ngIf=\"notifs.length > 0\">\n\t\t\t\t<div *ngFor=\"let n of notifs\">\n\t\t\t\t\t<div *ngIf=\"n.nstate=='未读'\">\n\t\t\t\t\t<div class=\"alert alert-dismissible alert-warning\" *ngIf=\"n.ntype=='比较紧急'\">\n\t\t\t\t\t\t<button type=\"button\" class=\"close\" data-dismiss=\"alert\"aria-hidden=\"true\">&times;</button>\n\t\t\t\t\t\t<div class=\"toast show\" role=\"alert\" aria-live=\"assertive\" aria-atomic=\"true\">\n\t\t\t\t\t\t\t<div class=\"toast-header\">\n\t\t\t\t\t\t\t  <strong class=\"me-auto\">未读{{n.ntype}}消息 </strong>\n\t\t\t\t\t\t\t  <small>{{n.ndate}}</small>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"toast-body\">\n\t\t\t\t\t\t\t\t{{n.content}}\n\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-warning btn-sm\" href=\"/anew/todel/@a.id\"  (click)=\"updateNotif(n)\">标记为已读消息</button>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"alert alert-dismissible alert-success\" *ngIf=\"n.ntype=='一般'\">\n\t\t\t\t\t\t<button type=\"button\" class=\"close\" data-dismiss=\"alert\"aria-hidden=\"true\">&times;</button>\n\t\t\t\t\t\t<div class=\"toast show\" role=\"alert\" aria-live=\"assertive\" aria-atomic=\"true\">\n\t\t\t\t\t\t\t<div class=\"toast-header\">\n\t\t\t\t\t\t\t  <strong class=\"me-auto\">未读{{n.ntype}}消息 </strong>\n\t\t\t\t\t\t\t  <small>{{n.ndate}}</small>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"toast-body\">\n\t\t\t\t\t\t\t\t{{n.content}}\n\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-success btn-sm\" href=\"/anew/todel/@a.id\"  (click)=\"updateNotif(n)\">标记为已读消息</button>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"alert alert-dismissible alert-danger\" *ngIf=\"n.ntype=='紧急'\">\n\t\t\t\t\t\t<button type=\"button\" class=\"close\" data-dismiss=\"alert\"aria-hidden=\"true\">&times;</button>\n\t\t\t\t\t\t<div class=\"toast show\" role=\"alert\" aria-live=\"assertive\" aria-atomic=\"true\">\n\t\t\t\t\t\t\t<div class=\"toast-header\">\n\t\t\t\t\t\t\t  <strong class=\"me-auto\">未读{{n.ntype}}消息 </strong>\n\t\t\t\t\t\t\t  <small>{{n.ndate}}</small>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"toast-body\">\n\t\t\t\t\t\t\t\t{{n.content}}\n\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-danger btn-sm\" href=\"/anew/todel/@a.id\"  (click)=\"updateNotif(n)\">标记为已读消息</button>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-sm-10\">\n\t\t\t\t<h4>已添加的选校列表：{{school.length}}</h4>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-sm-2\">\n\t\t\t\t\t<button type=\"button\" class=\"btn btn-info\" data-toggle=\"collapse\" data-target=\"#demo\">日历视图</button>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div id=\"demo\" class=\"collapse\">\n\t\t\t<h5>请注意：日历视图的日期要比真实deadline提前一天！红色点为round1，黄色为round2，蓝色为round3！已完成的项目不会显示在日历视图中</h5>\n\t\t\t<hr>\n\t\t\t<div>\n\t\t\t\t<div class=\"row text-center\">\n\t\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t\t  <div class=\"btn-group\">\n\t\t\t\t\t\t<div\n\t\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t\t  mwlCalendarPreviousView\n\t\t\t\t\t\t  [view]=\"view\"\n\t\t\t\t\t\t  [(viewDate)]=\"viewDate\"\n\t\t\t\t\t\t  (viewDateChange)=\"closeOpenMonthViewDay()\"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t  Previous\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div\n\t\t\t\t\t\t  class=\"btn btn-outline-secondary\"\n\t\t\t\t\t\t  mwlCalendarToday\n\t\t\t\t\t\t  [(viewDate)]=\"viewDate\"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t  Today\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div\n\t\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t\t  mwlCalendarNextView\n\t\t\t\t\t\t  [view]=\"view\"\n\t\t\t\t\t\t  [(viewDate)]=\"viewDate\"\n\t\t\t\t\t\t  (viewDateChange)=\"closeOpenMonthViewDay()\"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t  Next\n\t\t\t\t\t\t</div>\n\t\t\t\t\t  </div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t\t  <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t\t  <div class=\"btn-group\">\n\t\t\t\t\t\t<div\n\t\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t\t  (click)=\"setView(CalendarView.Month)\"\n\t\t\t\t\t\t  [class.active]=\"view === CalendarView.Month\"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t  Month\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div\n\t\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t\t  (click)=\"setView(CalendarView.Week)\"\n\t\t\t\t\t\t  [class.active]=\"view === CalendarView.Week\"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t  Week\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div\n\t\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t\t  (click)=\"setView(CalendarView.Day)\"\n\t\t\t\t\t\t  [class.active]=\"view === CalendarView.Day\"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t  Day\n\t\t\t\t\t\t</div>\n\t\t\t\t\t  </div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t  <br/>\n\t\t\t\t  <div [ngSwitch]=\"view\">\n\t\t\t\t\t<mwl-calendar-month-view\n\t\t\t\t\t  *ngSwitchCase=\"CalendarView.Month\"\n\t\t\t\t\t  [viewDate]=\"viewDate\"\n\t\t\t\t\t  [events]=\"events\"\n\t\t\t\t\t  [refresh]=\"refresh\"\n\t\t\t\t\t  [activeDayIsOpen]=\"activeDayIsOpen\"\n\t\t\t\t\t  (dayClicked)=\"dayClicked($event.day)\"\n\t\t\t\t\t  (eventClicked)=\"handleEvent('Clicked', $event.event)\"\n\t\t\t\t\t  (eventTimesChanged)=\"eventTimesChanged($event)\"\n\t\t\t\t\t>\n\t\t\t\t\t</mwl-calendar-month-view>\n\t\t\t\t\t<mwl-calendar-week-view\n\t\t\t\t\t\t*ngSwitchCase=\"CalendarView.Week\"\n\t\t\t\t\t\t[viewDate]=\"viewDate\"\n\t\t\t\t\t\t[events]=\"events\"\n\t\t\t\t\t\t[refresh]=\"refresh\"\n\t\t\t\t\t\t(eventClicked)=\"handleEvent('Clicked', $event.event)\"\n\t\t\t\t\t\t(eventTimesChanged)=\"eventTimesChanged($event)\"\n\t\t\t\t\t>\n\t\t\t\t\t</mwl-calendar-week-view>\n\t\t\t\t\t<mwl-calendar-day-view\n\t\t\t\t\t\t*ngSwitchCase=\"CalendarView.Day\"\n\t\t\t\t\t\t[viewDate]=\"viewDate\"\n\t\t\t\t\t\t[events]=\"events\"\n\t\t\t\t\t\t[refresh]=\"refresh\"\n\t\t\t\t\t\t(eventClicked)=\"handleEvent('Clicked', $event.event)\"\n\t\t\t\t\t\t(eventTimesChanged)=\"eventTimesChanged($event)\"\n\t\t\t\t\t>\n\t\t\t\t\t</mwl-calendar-day-view>\n\t\t\t\t  </div>\t\t  \n\t\t\t</div>\n\n\t\t\t</div>\n\t\t\t  <hr>\n\t\t\t  <div class=\"panel-group\" id=\"accordion\" *ngIf=\"school.length > 0\">\n\t\t\t\t<div *ngFor=\"let k of school\">\n\t\t\t\t<div class=\"panel panel-success\"  *ngIf=\"k.state=='Offer'\">\n\t\t\t\t  <div class=\"panel-heading\" >\n\t\t\t\t\t<h4 class=\"panel-title\">\n\t\t\t\t\t  <a data-toggle=\"collapse\" data-parent=\"#accordion\" \n\t\t\t\t\t\thref=\"#{{k._id}}\">\n\t\t\t\t\t  <b> {{k.univName}} </b> 【 {{k.majorName}} 】 <br><small style=\"color: green;\">{{k.state}}</small>\n\t\t\t\t\t  </a>\n\t\t\t\t\t</h4>\n\t\t\t\t  </div>\n\t\t\t\t  <div id=\"{{k._id}}\" class=\"panel-collapse collapse\">\n\t\t\t\t\t<div class=\"panel-body\">\n\t\t\t\t\t\t<table class=\"table table-bordered\" >\n\t\t\t\t\t\t\t<tbody>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 1 </td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 2</td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 3</td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">需要推荐人数量</td>\t\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td >{{k.ddl1}} </td>\n\t\t\t\t\t\t\t\t<td >{{k.ddl2}}</td>\n\t\t\t\t\t\t\t\t<td >{{k.ddl3}}</td>\t\n\t\t\t\t\t\t\t\t<td >{{k.recommNumber}}</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">申请账号</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.applyAccount}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">申请密码</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.applyPassword}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">项目链接</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.link}}\n\t\t\t\t\t\t\t\t\t<a href=\"{{k.link}}\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"glyphicon glyphicon-link\"></span>\n\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t<td >\n\t\t\t\t\t\t\t\t\t<button href=\"/anew/todel/@a.id\" (click)=\"schooldetail(k)\">More</button>\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  \n\t\t\t\t\t\t\t</tbody>\n\t\t\t\t\t\t</table>\n\t\t\t\t\t</div>\n\t\t\t\t  </div>\n\t\t\t\t  <br>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"panel panel-primary\" *ngIf=\"k.state=='进行中'\">\n\t\t\t\t\t<div class=\"panel-heading\">\n\t\t\t\t\t  <h4 class=\"panel-title\">\n\t\t\t\t\t\t<a data-toggle=\"collapse\" data-parent=\"#accordion\" \n\t\t\t\t\t\t  href=\"#{{k._id}}\">\n\t\t\t\t\t\t<b> {{k.univName}} </b>【 {{k.majorName}} 】 <br><small style=\"color: whitesmoke;\">{{k.state}}</small>\n\t\t\t\t\t\t</a>\n\t\t\t\t\t  </h4>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div id=\"{{k._id}}\" class=\"panel-collapse collapse\">\n\t\t\t\t\t  <div class=\"panel-body\">\n\t\t\t\t\t\t<table class=\"table table-bordered\" >\n\t\t\t\t\t\t\t<tbody>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 1 </td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 2</td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 3</td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">需要推荐人数量</td>\t\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td >{{k.ddl1}} </td>\n\t\t\t\t\t\t\t\t<td >{{k.ddl2}}</td>\n\t\t\t\t\t\t\t\t<td >{{k.ddl3}}</td>\t\n\t\t\t\t\t\t\t\t<td >{{k.recommNumber}}</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">申请账号</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.applyAccount}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">申请密码</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.applyPassword}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">项目链接</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.link}}\n\t\t\t\t\t\t\t\t\t<a href=\"{{k.link}}\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"glyphicon glyphicon-link\"></span>\n\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t<td >\n\t\t\t\t\t\t\t\t\t<button href=\"/anew/todel/@a.id\" (click)=\"schooldetail(k)\">More</button>\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  \n\t\t\t\t\t\t\t</tbody>\n\t\t\t\t\t\t</table>\n\t\t\t\t\t  </div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<br>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"panel panel-warning\" *ngIf=\"k.state=='已完成'\">\n\t\t\t\t\t<div class=\"panel-heading\">\n\t\t\t\t\t  <h4 class=\"panel-title\">\n\t\t\t\t\t\t<a data-toggle=\"collapse\" data-parent=\"#accordion\" \n\t\t\t\t\t\t  href=\"#{{k._id}}\">\n\t\t\t\t\t\t<b> {{k.univName}} </b> 【 {{k.majorName}} 】  <br><small style=\"color: goldenrod;\">{{k.state}}</small>\n\t\t\t\t\t\t</a>\n\t\t\t\t\t  </h4>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div id=\"{{k._id}}\" class=\"panel-collapse collapse\">\n\t\t\t\t\t  <div class=\"panel-body\">\n\t\t\t\t\t\t<table class=\"table table-bordered\" >\n\t\t\t\t\t\t\t<tbody>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 1 </td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 2</td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 3</td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">需要推荐人数量</td>\t\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td >{{k.ddl1}} </td>\n\t\t\t\t\t\t\t\t<td >{{k.ddl2}}</td>\n\t\t\t\t\t\t\t\t<td >{{k.ddl3}}</td>\t\n\t\t\t\t\t\t\t\t<td >{{k.recommNumber}}</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">申请账号</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.applyAccount}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">申请密码</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.applyPassword}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">项目链接</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.link}}\n\t\t\t\t\t\t\t\t\t<a href=\"{{k.link}}\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"glyphicon glyphicon-link\"></span>\n\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t \n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t<td >\n\t\t\t\t\t\t\t\t\t<button href=\"/anew/todel/@a.id\" (click)=\"schooldetail(k)\">More</button>\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  \n\t\t\t\t\t\t\t</tbody>\n\t\t\t\t\t\t</table>\n\t\t\t\t\t  </div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<br>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"panel panel-default\" *ngIf=\"k.state=='拒信'\">\n\t\t\t\t\t<div class=\"panel-heading\">\n\t\t\t\t\t  <h4 class=\"panel-title\">\n\t\t\t\t\t\t<a data-toggle=\"collapse\" data-parent=\"#accordion\" \n\t\t\t\t\t\t  href=\"#{{k._id}}\">\n\t\t\t\t\t\t<b> {{k.univName}} </b> 【 {{k.majorName}} 】  <br><small style=\"color: red;\">{{k.state}}</small>\n\t\t\t\t\t\t</a>\n\t\t\t\t\t  </h4>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div id=\"{{k._id}}\" class=\"panel-collapse collapse\">\n\t\t\t\t\t  <div class=\"panel-body\">\n\t\t\t\t\t\t<table class=\"table table-bordered\" >\n\t\t\t\t\t\t\t<tbody>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 1 </td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 2</td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 3</td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">需要推荐人数量</td>\t\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td >{{k.ddl1}} </td>\n\t\t\t\t\t\t\t\t<td >{{k.ddl2}}</td>\n\t\t\t\t\t\t\t\t<td >{{k.ddl3}}</td>\t\n\t\t\t\t\t\t\t\t<td >{{k.recommNumber}}</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">申请账号</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.applyAccount}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">申请密码</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.applyPassword}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">项目链接</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.link}}\n\t\t\t\t\t\t\t\t\t<a href=\"{{k.link}}\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"glyphicon glyphicon-link\"></span>\n\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t<td >\n\t\t\t\t\t\t\t\t\t<button href=\"/anew/todel/@a.id\" (click)=\"schooldetail(k)\">More</button>\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  \n\t\t\t\t\t\t\t</tbody>\n\t\t\t\t\t\t</table>\n\t\t\t\t\t  </div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<br>\n\t\t\t\t</div>\n\t\t\t\t\n\t\t\t  </div>\n\t\t\t  \n\t\t  </div>\n\t\t</div>\n\t</div>\n\n"
 
 /***/ }),
 
@@ -7657,14 +8014,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StudentmainComponent", function() { return StudentmainComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _st_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../st.service */ "./src/app/st.service.ts");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/index.js");
+/* harmony import */ var angular_calendar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angular-calendar */ "./node_modules/angular-calendar/fesm5/angular-calendar.js");
+/* harmony import */ var _st_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../st.service */ "./src/app/st.service.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 
 
 
 
 
+
+
+var colors = {
+    red: {
+        primary: '#ad2121',
+        secondary: '#FAE3E3',
+    },
+    blue: {
+        primary: '#1e90ff',
+        secondary: '#D1E8FF',
+    },
+    yellow: {
+        primary: '#e3bc08',
+        secondary: '#FDF1BA',
+    },
+};
 var StudentmainComponent = /** @class */ (function () {
     function StudentmainComponent(stService, http, route, router) {
         var _this = this;
@@ -7672,6 +8047,18 @@ var StudentmainComponent = /** @class */ (function () {
         this.http = http;
         this.route = route;
         this.router = router;
+        //日历部分
+        this.view = angular_calendar__WEBPACK_IMPORTED_MODULE_3__["CalendarView"].Month;
+        this.CalendarView = angular_calendar__WEBPACK_IMPORTED_MODULE_3__["CalendarView"];
+        this.viewDate = new Date();
+        this.events = [
+        // {
+        //   start: startOfDay(new Date("2021/10/31")),
+        //   title: 'An event with no end date',
+        //   color: colors.yellow,
+        // },
+        ];
+        this.activeDayIsOpen = true;
         this.students = [];
         //school 信息
         this.schools = [];
@@ -7709,6 +8096,28 @@ var StudentmainComponent = /** @class */ (function () {
                 }
             }
             console.log(_this.school);
+            for (var _b = 0, _c = _this.school; _b < _c.length; _b++) {
+                var s = _c[_b];
+                if (s.state === "进行中") {
+                    if (s.ddl1 != " ") {
+                        var data = s.ddl1;
+                        var tit = " 【 " + s.univName + "】 " + s.majorName;
+                        var url = s._id;
+                        var fullName = s.userAccount;
+                        _this.addEvent(tit, data);
+                    }
+                    if (s.ddl2 != " ") {
+                        var data = s.ddl2;
+                        var tit = " 【 " + s.univName + "】 " + s.majorName;
+                        _this.addEvent2(tit, data);
+                    }
+                    if (s.ddl3 != " ") {
+                        var data = s.ddl3;
+                        var tit = " 【 " + s.univName + "】 " + s.majorName;
+                        _this.addEvent3(tit, data);
+                    }
+                }
+            }
         });
         //展示 此学生通知信息
         this.http.get('/api/notifdetail/' + this.studentID).subscribe(function (o) {
@@ -7747,6 +8156,49 @@ var StudentmainComponent = /** @class */ (function () {
         });
         alert("已读这条通知");
         window.location.reload();
+    };
+    StudentmainComponent.prototype.addEvent = function (tit, data) {
+        this.events = this.events.concat([
+            {
+                title: tit,
+                start: Object(date_fns__WEBPACK_IMPORTED_MODULE_2__["startOfDay"])(new Date(data)),
+                color: colors.red,
+            },
+        ]);
+    };
+    StudentmainComponent.prototype.addEvent2 = function (tit, data) {
+        this.events = this.events.concat([
+            {
+                title: tit,
+                start: Object(date_fns__WEBPACK_IMPORTED_MODULE_2__["startOfDay"])(new Date(data)),
+                color: colors.yellow,
+            },
+        ]);
+    };
+    StudentmainComponent.prototype.addEvent3 = function (tit, data) {
+        this.events = this.events.concat([
+            {
+                title: tit,
+                start: Object(date_fns__WEBPACK_IMPORTED_MODULE_2__["startOfDay"])(new Date(data)),
+                color: colors.blue,
+            },
+        ]);
+    };
+    StudentmainComponent.prototype.setView = function (view) {
+        this.view = view;
+    };
+    StudentmainComponent.prototype.dayClicked = function (_a) {
+        var date = _a.date, events = _a.events;
+        if (Object(date_fns__WEBPACK_IMPORTED_MODULE_2__["isSameMonth"])(date, this.viewDate)) {
+            if ((Object(date_fns__WEBPACK_IMPORTED_MODULE_2__["isSameDay"])(this.viewDate, date) && this.activeDayIsOpen === true) ||
+                events.length === 0) {
+                this.activeDayIsOpen = false;
+            }
+            else {
+                this.activeDayIsOpen = true;
+            }
+            this.viewDate = date;
+        }
     };
     //direct to the student main page
     StudentmainComponent.prototype.studentmain = function (student) {
@@ -7808,10 +8260,10 @@ var StudentmainComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./studentmain.component.html */ "./src/app/studentmain/studentmain.component.html"),
             styles: [__webpack_require__(/*! ./studentmain.component.scss */ "./src/app/studentmain/studentmain.component.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_st_service__WEBPACK_IMPORTED_MODULE_2__["StService"],
-            _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_st_service__WEBPACK_IMPORTED_MODULE_4__["StService"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClient"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_6__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"]])
     ], StudentmainComponent);
     return StudentmainComponent;
 }());

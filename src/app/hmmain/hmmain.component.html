@@ -51,7 +51,6 @@
 	  </div>
 
 	  <div class="col-sm-9">
-
 		<div>
 			<div class="row text-center">
 				<div class="col-md-4">
@@ -125,11 +124,37 @@
 				  (eventTimesChanged)="eventTimesChanged($event)"
 				>
 				</mwl-calendar-month-view>
+				<mwl-calendar-week-view
+					*ngSwitchCase="CalendarView.Week"
+					[viewDate]="viewDate"
+					[events]="events"
+					[refresh]="refresh"
+					(eventClicked)="handleEvent('Clicked', $event.event)"
+					(eventTimesChanged)="eventTimesChanged($event)"
+				>
+				</mwl-calendar-week-view>
+				<mwl-calendar-day-view
+					*ngSwitchCase="CalendarView.Day"
+					[viewDate]="viewDate"
+					[events]="events"
+					[refresh]="refresh"
+					(eventClicked)="handleEvent('Clicked', $event.event)"
+					(eventTimesChanged)="eventTimesChanged($event)"
+				>
+				</mwl-calendar-day-view>
 			  </div>		  
 		</div>
 
 
 		<h4><small>更新日志</small></h4>
+		<hr>
+		<h2>Version 2.11</h2>
+		<h5><span class="glyphicon glyphicon-time"></span> Post by Yi, Oct 24, 2021.</h5>
+		<h5><span class="label label-success">管理员系统</span> <span class="label label-danger">学生系统</span></h5><br>
+		<p>1. 新增查看日历事项中具体信息</p>
+		<p>2. 学生系统中增加日历视图功能</p>
+		<p>3. Debug 部分页面无法获取学生个人信息</p>
+
 		<hr>
 		<h2>Version 2.10</h2>
 		<h5><span class="glyphicon glyphicon-time"></span> Post by Yi, Oct 22, 2021.</h5>

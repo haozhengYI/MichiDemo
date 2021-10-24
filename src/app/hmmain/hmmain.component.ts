@@ -24,7 +24,6 @@ import { Subscription } from 'rxjs';
 import { HmService } from './../hm.service';
 import {HotelM} from './../hm.model';
 import { HttpClient } from '@angular/common/http';
-import { HotelService } from '../hotel/hotel.service';
 import {School} from './../school.model';
 import {Student} from './../st.model';
 import { ActivatedRoute,  NavigationExtras,Router } from '@angular/router';
@@ -57,9 +56,6 @@ export class HMmainComponent implements OnInit {
   view: CalendarView = CalendarView.Month;
   CalendarView = CalendarView;
   viewDate: Date = new Date();
-  modalData: {
-    event: CalendarEvent;
-  };
 
   events: CalendarEvent[] = [
     // {
@@ -141,54 +137,81 @@ export class HMmainComponent implements OnInit {
             if(s.ddl1 !=" "){
               let data = s.ddl1;
               let tit = s.userAccount+ " 【 "+ s.univName + "】 "+ s.majorName;
-              this.addEvent(tit,data);
+              let url= s._id;
+              let fullName = s.userAccount;
+              this.addEvent(tit,data,url,fullName);
             }  
             if(s.ddl2 !=" "){
               let data = s.ddl2;
               let tit = s.userAccount+ " 【 "+ s.univName + "】 "+ s.majorName;
-              this.addEvent2(tit,data);
+              let url= s._id;
+              let fullName = s.userAccount;
+              this.addEvent2(tit,data,url,fullName);
             }
             if(s.ddl3 !=" "){
               let data = s.ddl3;
               let tit = s.userAccount+ " 【 "+ s.univName + "】 "+ s.majorName;
-              this.addEvent3(tit,data);
+              let url= s._id;
+              let fullName = s.userAccount;
+              this.addEvent3(tit,data,url,fullName);
             }
           }
       });
 
   }
   
-  addEvent(tit,data){
+  addEvent(tit,data,url,fullName){
     this.events = [
       ...this.events,
       {
         title: tit,
         start: startOfDay(new Date(data)),
         color: colors.red,
+        id:url,
+        meta:fullName,
       },
     ];
   }
-  addEvent2(tit,data){
+  addEvent2(tit,data,url,fullName){
     this.events = [
       ...this.events,
       {
         title: tit,
         start: startOfDay(new Date(data)),
         color: colors.yellow,
+        id:url,
+        meta:fullName,
       },
     ];
   }
-  addEvent3(tit,data){
+  addEvent3(tit,data,url,fullName){
     this.events = [
       ...this.events,
       {
         title: tit,
         start: startOfDay(new Date(data)),
         color: colors.blue,
+        id:url,
+        meta:fullName,
       },
     ];
   }
 
+  setView(view: CalendarView) {
+    this.view = view;
+  }
+  handleEvent(action: string, event: CalendarEvent): void {
+    console.log("输出测试" + event.meta);
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+       "managerID" : this.managerID,
+       "fullName" : event.meta,
+       "schoolID"  : event.id,
+      }
+    };
+    this.router.navigate(['/hmoschool'], navigationExtras);
+
+  }
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
       if (
