@@ -158,6 +158,13 @@ export class HmstudentComponent implements OnInit {
         window.location.reload();
     });
   }
+  //推荐人删除
+  deleteRD(k){
+    console.log(k._id);
+    this.http.delete('http://localhost:3000/recommenders/'+ k._id).subscribe((oooData) => {     
+        window.location.reload();
+    });
+  }
   //将json数组生成excel
   exportAsExcelFile() {
     let json = this.schools;

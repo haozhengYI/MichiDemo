@@ -206,8 +206,20 @@ export class HmschoolComponent implements OnInit {
       });
   }
 
- 
-
+  //文书修改
+  deleteST(st){
+    console.log("文书ID为"+st._id);
+    this.http.delete('http://localhost:3000/statements/'+ st._id).subscribe((oooData) => {     
+        window.location.reload();
+    });
+  }
+  //推荐信修改
+  deleteRL(l){
+    console.log("推荐信ID为"+l._id);
+    this.http.delete('http://localhost:3000/recomletters/'+ l._id).subscribe((oooData) => {     
+        window.location.reload();
+    });
+  }
   modify(){
     //console.log("进去了吗？？？");
     (document.getElementById("univName") as HTMLInputElement).removeAttribute("disabled");

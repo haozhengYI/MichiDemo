@@ -183,6 +183,7 @@
         </table>
       </form>
       <hr>
+      
       <h3>推荐信</h3>
         <div class="row">
           <div class="col-sm-4 tuijian">
@@ -203,13 +204,25 @@
                     <div class="row">
                       <div class="col-sm-6"><b>{{l.type}} </b></div>
                       <div class="col-sm-5">
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel-footer">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <button  class="btn btn-danger btn-sm" href="/anew/todel/@a.id"  (click)="deleteRL(l)">Delete</button>
+                      </div>
+                      <div class="col-sm-5">
                         <div class="btn-group">
                           <button type="button" class="btn btn-primary" href="/anew/todel/@a.id" onclick="return confirm('你确定要更改这个推荐信状态吗?')" (click)="updateLetterNoSubmit(l)">未提交</button>
                           <button type="button" class="btn btn-primary" href="/anew/todel/@a.id" onclick="return confirm('你确定要更改这个推荐信状态吗?')" (click)="updateLetterSubmit(l)">已提交</button>
                           <button type="button" class="btn btn-primary" href="/anew/todel/@a.id" onclick="return confirm('你确定要更改这个推荐信状态吗?')" (click)="updateLetterDiscard(l)">弃用</button>
                         </div>
+                        
                       </div>
                     </div>
+                    
                   </div>
                 </div>
                 <div class="panel panel-default" *ngIf="l.state=='未提交'">
@@ -223,13 +236,25 @@
                     <div class="row">
                       <div class="col-sm-6"><b>{{l.type}} </b></div>
                       <div class="col-sm-5">
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel-footer">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <button  class="btn btn-danger btn-sm" href="/anew/todel/@a.id"  (click)="deleteRL(l)">Delete</button>
+                      </div>
+                      <div class="col-sm-5">
                         <div class="btn-group">
                           <button type="button" class="btn btn-primary" href="/anew/todel/@a.id" onclick="return confirm('你确定要更改这个推荐信状态吗?')" (click)="updateLetterNoSubmit(l)">未提交</button>
                           <button type="button" class="btn btn-primary" href="/anew/todel/@a.id" onclick="return confirm('你确定要更改这个推荐信状态吗?')" (click)="updateLetterSubmit(l)">已提交</button>
                           <button type="button" class="btn btn-primary" href="/anew/todel/@a.id" onclick="return confirm('你确定要更改这个推荐信状态吗?')" (click)="updateLetterDiscard(l)">弃用</button>
                         </div>
+                        
                       </div>
                     </div>
+                    
                   </div>
                 </div>
                 <div class="panel panel-danger" *ngIf="l.state=='弃用'">
@@ -243,13 +268,25 @@
                     <div class="row">
                       <div class="col-sm-6"><b>{{l.type}} </b></div>
                       <div class="col-sm-5">
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel-footer">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <button  class="btn btn-danger btn-sm" href="/anew/todel/@a.id"  (click)="deleteRL(l)">Delete</button>
+                      </div>
+                      <div class="col-sm-5">
                         <div class="btn-group">
                           <button type="button" class="btn btn-primary" href="/anew/todel/@a.id" onclick="return confirm('你确定要更改这个推荐信状态吗?')" (click)="updateLetterNoSubmit(l)">未提交</button>
                           <button type="button" class="btn btn-primary" href="/anew/todel/@a.id" onclick="return confirm('你确定要更改这个推荐信状态吗?')" (click)="updateLetterSubmit(l)">已提交</button>
                           <button type="button" class="btn btn-primary" href="/anew/todel/@a.id" onclick="return confirm('你确定要更改这个推荐信状态吗?')" (click)="updateLetterDiscard(l)">弃用</button>
                         </div>
+                        
                       </div>
                     </div>
+                    
                   </div>
                 </div>
               </div>
@@ -316,9 +353,21 @@
                     </h4>
                     </div>
                     <div id="{{st._id}}" class="panel-collapse collapse">
-                    <div class="panel-body">
-                      {{st.question}}
-                    </div>
+                      <div class="panel-body">
+                        {{st.question}}
+                      </div>
+                      <div class="panel-footer">
+                        <div class="row">
+                          <div class="col-sm-10">
+                            
+                          </div>
+                          <div class="col-sm-2">
+                            <button  class="btn btn-danger" href="/anew/todel/@a.id"  (click)="deleteST(st)">Delete</button>
+                            
+                          </div>
+                        </div>
+                        
+                      </div>
                     </div>
                   </div>
                 </div>

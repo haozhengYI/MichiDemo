@@ -1459,4 +1459,18 @@ app.get('/statementdetail/:schoolID', (req,res,next) =>{
     });
   });
 
+// delete statements detail by id//
+app.delete('/statements/:id',(req, res, next) => {
+  const id= req.params.id;
+  Statement.remove({_id:id})
+  .exec()
+  .then(result=>{
+    res.status(200).json(result);
+  })
+  .catch(err=>{console.log(err);
+    res.status(500).json({
+      error:err
+    });
+  });
+});
 module.exports = app;
