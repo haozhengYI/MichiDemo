@@ -14,7 +14,8 @@ import {Student} from './../st.model';
 export class HmmanageComponent implements OnInit {
 
   students: Student[] = [];//all the orders from database
-  student :Student[] = [];//the specific order selected by this hotel i
+  student :Student[] = [];//2022学生
+  student2 :Student[] = []; // 2021级学生人数
   hotels: HotelM[] = [];
   hotel : HotelM;
   managerID : any;
@@ -55,11 +56,14 @@ export class HmmanageComponent implements OnInit {
           this.students = oData.students;
           console.log("全部学生信息");
           console.log(this.students);
-          for(let st of this.students){
-              
-                this.student.push(st) ;
-              }
-           });
+          for(var i=oData.students.length-1;i>=20;i--){
+            this.student.push(oData.students[i]);
+          }
+          for(var x=19;x>=0;x--){
+            this.student2.push(oData.students[x]);
+          }
+
+        });
       
     this.hotelMSub = this.hmService.getHotelMUpdatedListener().subscribe((hotels: HotelM[]) => {
       this.hotels = hotels;

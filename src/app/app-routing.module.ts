@@ -30,6 +30,7 @@ import {StudentmainComponent} from './studentmain/studentmain.component';
 import {StudentaddrecommComponent} from './studentaddrecomm/studentaddrecomm.component';
 import {StudentinfoComponent} from './studentinfo/studentinfo.component';
 import {StudentrecComponent} from './studentrec/studentrec.component';
+import {StudentresComponent} from './studentresume/studentresume.component';
 import {StudentschoolComponent} from './studentschool/studentschool.component';
 import {MainclassComponent} from './mainclass/mainclass.component';
 import {MainblogComponent} from './mainblog/mainblog.component';
@@ -78,6 +79,7 @@ const routes: Routes = [
   { path: 'studentaddrecomm', component:StudentaddrecommComponent},
   { path: 'studentinfo', component:StudentinfoComponent},
   { path: 'studentrec', component:StudentrecComponent},
+  { path: 'studentresume', component:StudentresComponent},
   { path: 'studentschool', component:StudentschoolComponent},
 ];
 

@@ -18,11 +18,11 @@ import {Honor} from '../honor.model';
 import {HonorService} from '../honor.service';
 
 @Component({
-  selector: 'app-studentinfo',
-  templateUrl: './studentinfo.component.html',
-  styleUrls: ['./studentinfo.component.scss']
+  selector: 'app-studentresume',
+  templateUrl: './studentresume.component.html',
+  styleUrls: ['./studentresume.component.scss']
 })
-export class StudentinfoComponent implements OnInit {
+export class StudentresComponent implements OnInit {
   students: Student[] = [];
   student : Student;
 
@@ -151,157 +151,93 @@ export class StudentinfoComponent implements OnInit {
     });
   }
 
-  modifyPersonal(){
-    //个人信息部分
-    (document.getElementById("firstName") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("lastName") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("gender") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("dob") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("currentAddress") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("citizen") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("permanentAddress") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("phone") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("email") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("ssn") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("passport") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("visa") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("appEmail") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("appPsw") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("visa") as HTMLInputElement).removeAttribute("disabled");
-    //标化成绩部分
-    (document.getElementById("TOEFL") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("TOEFLR") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("TOEFLL") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("TOEFLS") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("TOEFLW") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("GRE") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("GREV") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("GREVP") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("GREQ") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("GREQP") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("GREW") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("GREWP") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("GMAT") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("GMATV") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("GMATVP") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("GMATQ") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("GMATQP") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("GMATW") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("GMATWP") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("GMATR") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("GMATRP") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("OtherStandardTest") as HTMLInputElement).removeAttribute("disabled");
-
-    //Professional Interest专业兴趣
-    (document.getElementById("Professional1") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("Professional2") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("Professional3") as HTMLInputElement).removeAttribute("disabled");
-    //Career Plan职业规划
-    (document.getElementById("CareerPlan1") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("CareerPlan2") as HTMLInputElement).removeAttribute("disabled");
-    //Personal Strength个人优势
-    (document.getElementById("Strength1") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("Strength2") as HTMLInputElement).removeAttribute("disabled");
-    //母亲信息
-    (document.getElementById("MomName") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("MomAddress") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("MomOrganazation") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("MomJob") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("MomEducation") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("MomSchool") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("MomGraduation") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("MomPhone") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("MomEmail") as HTMLInputElement).removeAttribute("disabled");
-    //父亲信息
-    (document.getElementById("FatName") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("FatAddress") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("FatOrganazation") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("FatJob") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("FatEducation") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("FatSchool") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("FatGraduation") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("FatPhone") as HTMLInputElement).removeAttribute("disabled");
-    (document.getElementById("FatEmail") as HTMLInputElement).removeAttribute("disabled");
+  modifyPersonal(){  
+    //Skills & Hobbies
+    (document.getElementById("Language") as HTMLInputElement).removeAttribute("disabled");
+    (document.getElementById("ComputerSkills") as HTMLInputElement).removeAttribute("disabled");
+    (document.getElementById("OtherSkills") as HTMLInputElement).removeAttribute("disabled");
+    (document.getElementById("Hobbies") as HTMLInputElement).removeAttribute("disabled");
 
     (document.getElementById("updatePersonal") as HTMLInputElement).removeAttribute("disabled");
     (document.getElementById("modifyPersonal") as HTMLInputElement).setAttribute("disabled","");   
+       
   }
   updatePersonal(){
     const Student = {
-        userAccount:this.studentUserAcc,//学生account
-        firstName: (document.getElementById("firstName") as HTMLInputElement).value,
-        lastName: (document.getElementById("lastName") as HTMLInputElement).value,
-        email: (document.getElementById("email") as HTMLInputElement).value,
-        phone: (document.getElementById("phone") as HTMLInputElement).value,
-        dob: (document.getElementById("dob") as HTMLInputElement).value, // 生日
-        currentAddress: (document.getElementById("currentAddress") as HTMLInputElement).value,
-        permanentAddress: (document.getElementById("permanentAddress") as HTMLInputElement).value,
-        gender: (document.getElementById("gender") as HTMLInputElement).value,
-        ssn: (document.getElementById("ssn") as HTMLInputElement).value,
-        passport: (document.getElementById("passport") as HTMLInputElement).value,//护照或绿卡号码
-        visa: (document.getElementById("visa") as HTMLInputElement).value,
-        appEmail: (document.getElementById("appEmail") as HTMLInputElement).value,//申请所用的邮箱账号
-        appPsw:(document.getElementById("appPsw") as HTMLInputElement).value,//申请所用的邮箱密码
-        citizen:(document.getElementById("citizen") as HTMLInputElement).value,//国籍
-        //标化成绩类
-        TOEFL:(document.getElementById("TOEFL") as HTMLInputElement).value,
-        TOEFLR:(document.getElementById("TOEFLR") as HTMLInputElement).value,//托福阅读
-        TOEFLL:(document.getElementById("TOEFLL") as HTMLInputElement).value,//托福听力
-        TOEFLS:(document.getElementById("TOEFLS") as HTMLInputElement).value,//托福口语
-        TOEFLW:(document.getElementById("TOEFLW") as HTMLInputElement).value,//托福写作
-        GRE: (document.getElementById("GRE") as HTMLInputElement).value,
-        GREV: (document.getElementById("GREV") as HTMLInputElement).value,//GRE Verbal部分成绩
-        GREVP: (document.getElementById("GREVP") as HTMLInputElement).value,
-        GREQ: (document.getElementById("GREQ") as HTMLInputElement).value,
-        GREQP: (document.getElementById("GREQP") as HTMLInputElement).value,
-        GREW: (document.getElementById("GREW") as HTMLInputElement).value,
-        GREWP: (document.getElementById("GREWP") as HTMLInputElement).value,
-        GMAT: (document.getElementById("GMAT") as HTMLInputElement).value,//GMAT 部分
-        GMATV: (document.getElementById("GMATV") as HTMLInputElement).value,
-        GMATVP: (document.getElementById("GMATVP") as HTMLInputElement).value,
-        GMATQ: (document.getElementById("GMATQ") as HTMLInputElement).value,
-        GMATQP: (document.getElementById("GMATQP") as HTMLInputElement).value,
-        GMATW: (document.getElementById("GMATW") as HTMLInputElement).value,
-        GMATWP: (document.getElementById("GMATWP") as HTMLInputElement).value,
-        GMATR: (document.getElementById("GMATR") as HTMLInputElement).value,
-        GMATRP: (document.getElementById("GMATRP") as HTMLInputElement).value,
-        OtherStandardTest: (document.getElementById("OtherStandardTest") as HTMLInputElement).value,//其他类标化成绩
-        //Skills & Hobbies
-        Language: this.student.Language, 
-        ComputerSkills: this.student.ComputerSkills,//计算机技能
-        OtherSkills: this.student.OtherSkills,//其他技能或证书
-        Hobbies: this.student.Hobbies,//爱好
-        //Professional Interest专业兴趣
-        Professional1: (document.getElementById("Professional1") as HTMLInputElement).value,
-        Professional2: (document.getElementById("Professional2") as HTMLInputElement).value,
-        Professional3: (document.getElementById("Professional3") as HTMLInputElement).value,
-        //Career Plan职业规划
-        CareerPlan1: (document.getElementById("CareerPlan1") as HTMLInputElement).value,
-        CareerPlan2: (document.getElementById("CareerPlan2") as HTMLInputElement).value,
-        //Personal Strength个人优势
-        Strength1: (document.getElementById("Strength1") as HTMLInputElement).value,
-        Strength2: (document.getElementById("Strength2") as HTMLInputElement).value,
-        //母亲信息
-        MomName: (document.getElementById("MomName") as HTMLInputElement).value,
-        MomAddress: (document.getElementById("MomAddress") as HTMLInputElement).value,
-        MomOrganazation: (document.getElementById("MomOrganazation") as HTMLInputElement).value,
-        MomJob: (document.getElementById("MomJob") as HTMLInputElement).value,
-        MomEducation:(document.getElementById("MomEducation") as HTMLInputElement).value,//母亲最高学历
-        MomSchool:(document.getElementById("MomSchool") as HTMLInputElement).value,//母亲毕业院校
-        MomGraduation: (document.getElementById("MomGraduation") as HTMLInputElement).value,//母亲毕业时间
-        MomPhone: (document.getElementById("MomPhone") as HTMLInputElement).value,
-        MomEmail: (document.getElementById("MomEmail") as HTMLInputElement).value,
-        //父亲信息
-        FatName: (document.getElementById("FatName") as HTMLInputElement).value,
-        FatAddress: (document.getElementById("FatAddress") as HTMLInputElement).value,
-        FatOrganazation: (document.getElementById("FatOrganazation") as HTMLInputElement).value,
-        FatJob: (document.getElementById("FatJob") as HTMLInputElement).value,
-        FatEducation:(document.getElementById("FatEducation") as HTMLInputElement).value,
-        FatSchool:(document.getElementById("FatSchool") as HTMLInputElement).value,
-        FatGraduation: (document.getElementById("FatGraduation") as HTMLInputElement).value,
-        FatPhone: (document.getElementById("FatPhone") as HTMLInputElement).value,
-        FatEmail: (document.getElementById("FatEmail") as HTMLInputElement).value,
-    }
+      userAccount:this.studentUserAcc,//学生account
+      firstName: this.student.firstName,
+      lastName: this.student.lastName,
+      email: this.student.email,
+      phone: this.student.phone,
+      dob: this.student.dob, // 生日
+      currentAddress: this.student.currentAddress,
+      permanentAddress: this.student.permanentAddress,
+      gender: this.student.gender,
+      ssn: this.student.ssn,
+      passport: this.student.passport,//护照或绿卡号码
+      visa: this.student.visa,
+      appEmail: this.student.appEmail,//申请所用的邮箱账号
+      appPsw:this.student.appPsw,//申请所用的邮箱密码
+      citizen:this.student.citizen,//国籍
+      //标化成绩类
+      TOEFL:this.student.TOEFL,
+      TOEFLR:this.student.TOEFLR,//托福阅读
+      TOEFLL:this.student.TOEFLL,//托福听力
+      TOEFLS:this.student.TOEFLS,//托福口语
+      TOEFLW:this.student.TOEFLW,//托福写作
+      GRE: this.student.GRE,
+      GREV: this.student.GREV,//GRE Verbal部分成绩
+      GREVP: this.student.GREVP,
+      GREQ: this.student.GREQ,
+      GREQP: this.student.GREQP,
+      GREW: this.student.GREW,
+      GREWP: this.student.GREWP,
+      GMAT: this.student.GMAT,//GMAT 部分
+      GMATV: this.student.GMATV,
+      GMATVP: this.student.GMATVP,
+      GMATQ: this.student.GMATQ,
+      GMATQP: this.student.GMATQP,
+      GMATW: this.student.GMATW,
+      GMATWP: this.student.GMATWP,
+      GMATR: this.student.GMATR,
+      GMATRP: this.student.GMATRP,
+      OtherStandardTest: this.student.OtherStandardTest,//其他类标化成绩
+      //Skills & Hobbies
+      Language:(document.getElementById("Language") as HTMLInputElement).value, 
+      ComputerSkills: (document.getElementById("ComputerSkills") as HTMLInputElement).value,//计算机技能
+      OtherSkills: (document.getElementById("OtherSkills") as HTMLInputElement).value,//其他技能或证书
+      Hobbies: (document.getElementById("Hobbies") as HTMLInputElement).value,//爱好
+      //Professional Interest专业兴趣
+      Professional1: this.student.Professional1,
+      Professional2: this.student.Professional2,
+      Professional3: this.student.Professional3,
+      //Career Plan职业规划
+      CareerPlan1: this.student.CareerPlan1,
+      CareerPlan2: this.student.CareerPlan2,
+      //Personal Strength个人优势
+      Strength1: this.student.Strength1,
+      Strength2: this.student.Strength2,
+      //母亲信息
+      MomName: this.student.MomName,
+      MomAddress: this.student.MomAddress,
+      MomOrganazation: this.student.MomOrganazation,
+      MomJob: this.student.MomJob,
+      MomEducation:this.student.MomEducation,//母亲最高学历
+      MomSchool:this.student.MomSchool,//母亲毕业院校
+      MomGraduation: this.student.MomGraduation,//母亲毕业时间
+      MomPhone: this.student.MomPhone,
+      MomEmail: this.student.MomEmail,
+      //父亲信息
+      FatName: this.student.FatName,
+      FatAddress: this.student.FatAddress,
+      FatOrganazation: this.student.FatOrganazation,
+      FatJob: this.student.FatJob,
+      FatEducation:this.student.FatEducation,
+      FatSchool:this.student.FatSchool,
+      FatGraduation: this.student.FatGraduation,
+      FatPhone: this.student.FatPhone,
+      FatEmail: this.student.FatEmail,
+  }
     this.http.put('http://localhost:3000/students/' + this.studentUserAcc, Student)
       .subscribe((data) => {
         const options = {
@@ -309,14 +245,12 @@ export class StudentinfoComponent implements OnInit {
           overlayClickToClose: true,
           showCloseButton: true,
           duration: 5000
-        };
-        if (data[0] === undefined) {
-          console.log("Undefine");
         }
       })
-      alert("更新项目信息成功!!" + (document.getElementById("firstName") as HTMLInputElement).value);
+      alert("更新项目信息成功!!" + this.student.firstName);
     window.location.reload();  
   }
+
   addEducation(form: NgForm){//form内的信息使用过html中的name来获取的
     let educationType = "";
     let type1 = document.getElementById("type1") as HTMLInputElement;
@@ -437,6 +371,16 @@ export class StudentinfoComponent implements OnInit {
     this.router.navigate(['/studentmain'], navigationExtras);
   }
   
+  //direct to the 更新个人信息 page
+  info(student) {
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+       "studentUserAcc" : student.userAccount,
+       "studentID" : student._id,
+      }
+    };
+    this.router.navigate(['/studentinfo'], navigationExtras);
+  }
   //direct to the 添加推荐人 page
   addRecom(student) {
     const navigationExtras: NavigationExtras = {

@@ -166,6 +166,17 @@ export class StudentschoolComponent implements OnInit {
     this.router.navigate(['/studentrec'], navigationExtras);
   }
 
+  //direct to the 简历信息 page
+  resume(student) {
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+       "studentUserAcc" : student.userAccount,
+       "studentID" : this.studentID,
+      }
+    };
+    this.router.navigate(['/studentresume'], navigationExtras);
+  }
+
   ngOnDestroy() {
     this.stSub.unsubscribe();
   }
