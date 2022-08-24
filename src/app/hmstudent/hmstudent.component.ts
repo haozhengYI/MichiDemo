@@ -9,6 +9,8 @@ import {School} from '../school.model';
 import {Recommender} from '../recom.model';
 import {Notif} from '../notif.model';
 import{NotifService} from '../notif.service';
+import {Task} from  '../task.model';
+import { TaskService } from '../task.service';
 import { NgForm } from '@angular/forms';
 import {Education} from '../education.model';
 import {Experience} from '../experience.model';
@@ -44,6 +46,9 @@ export class HmstudentComponent implements OnInit {
   //通知信息
   notifs: Notif[] = [];
   notif : Notif;
+  //进度信息
+  tasks: Task[] = [];
+  task : Task;
   
   //school 信息
   schools: School[] = [];
@@ -57,6 +62,7 @@ export class HmstudentComponent implements OnInit {
     private router: Router, 
     private http: HttpClient,
     public notifService:NotifService,
+    public taskService:TaskService,
     public hmService: HmService) { 
       this.route.queryParams.subscribe(params => {
         this.managerID = params["managerID"];
@@ -71,7 +77,16 @@ export class HmstudentComponent implements OnInit {
       this.notifService.addNotif("",this.studentID, content, 
          form.value.ddl1,"未读",form.value.type);
       alert("发送通知成功!!" );  
+      window.location.reload();  
     }
+    addTask(form: NgForm){//
+      let cont = (document.getElementById("exampleText") as HTMLInputElement).value;
+      console.log(cont + "负责人" + form.value.ttype);
+     this.taskService.addTask("",this.studentID, this.studentName, form.value.ttype,cont, 
+        form.value.tddl,"未完成","");
+     alert("更新进度成功!!" );  
+     window.location.reload();  
+   }
 
 
   ngOnInit() {
@@ -139,6 +154,14 @@ export class HmstudentComponent implements OnInit {
       console.log(o);
       this.notifs = o.notifs;
     });   
+    //展示 此学生进度信息
+     this.http.get<{tasks: Task[]}>('http://localhost:3000/taskdetail/' + this.studentID).subscribe((o) => {
+      console.log(o);
+      //this.tasks = o.tasks;
+      for(var i=o.tasks.length-1;i>=0;i--){
+        this.tasks.push(o.tasks[i]);
+      }
+    });  
       
     this.hotelMSub = this.hmService.getHotelMUpdatedListener().subscribe((hotels: HotelM[]) => {
       this.hotels = hotels;
@@ -202,14 +225,14 @@ export class HmstudentComponent implements OnInit {
     this.router.navigate(['/hmmodifypass'], navigationExtras);
   }
 
-  //direct to the complete information page
+  //direct to the task page
   comp(hotel) {
     const navigationExtras: NavigationExtras = {
       queryParams: {
        "managerID" : hotel.userAccount,
       }
     };
-    this.router.navigate(['/hmcomp'], navigationExtras);
+    this.router.navigate(['/hmtask'], navigationExtras);
   }
 
   //direct to the hotel manager main page

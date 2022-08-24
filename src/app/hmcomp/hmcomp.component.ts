@@ -4,6 +4,8 @@ import { HmService } from './../hm.service';
 import {HotelM} from './../hm.model';
 import { HttpClient } from '@angular/common/http';
 import { HotelService } from '../hotel/hotel.service';
+import {Task} from  '../task.model';
+import { TaskService } from '../task.service';
 import { ActivatedRoute,  NavigationExtras,Router } from '@angular/router';
 
 @Component({
@@ -20,12 +22,16 @@ export class HmcompComponent implements OnInit {
   lastName:String;
   email:String;
   image:String;
+    //进度信息
+    tasks: Task[] = [];
+    task : Task;
   private hotelMSub: Subscription;
 
   constructor(
     private route: ActivatedRoute, 
     private router: Router, 
     private http: HttpClient,
+    public taskService:TaskService,
     public hmService: HmService) { 
       this.route.queryParams.subscribe(params => {
         this.managerID = params["managerID"];
@@ -49,46 +55,22 @@ export class HmcompComponent implements OnInit {
             }
         }
     });
+
+    //展示 此学生进度信息
+    this.http.get<{tasks: Task[]}>('http://localhost:3000/tasks').subscribe((o) => {
+      //console.log("测试"+ o[1]);
+      //this.tasks = o.tasks;
+      for(var i=o.tasks.length-1;i>=0;i--){
+        this.tasks.push(o.tasks[i]);
+      }
+      //console.log("测试2"+this.tasks[1].tstate);
+    });  
+
     this.hotelMSub = this.hmService.getHotelMUpdatedListener().subscribe((hotels: HotelM[]) => {
       this.hotels = hotels;
       });
   }
 
-  //update hotel information like price or other
-  updateProfile()
-  {
-    console.log("Inside Update")
-    const Hotel = {
-      userAccount:this.hotel.userAccount,
-      firstName: this.firstName,
-      lastName: this.lastName,
-      email: this.email,
-      phone: this.hotel.phone,
-      name: this.hotel.name,
-      location: this.hotel.location,
-      image: this.image,
-      price: this.hotel.price,
-    }
-    this.http.put('http://localhost:3000/hotels/' + this.hotel.userAccount, Hotel)
-      .subscribe((data) => {
-        const options = {
-          overlay: true,
-          overlayClickToClose: true,
-          showCloseButton: true,
-          duration: 5000
-        };
-        if (data[0] === undefined) {
-          console.log("Undefine");
-        }
-      })
-      const navigationExtras: NavigationExtras = {
-        queryParams: {
-         "managerID" : this.hotel.userAccount,
-        }
-      };
-      //console.log("hahah"+hotel.userAccount);
-      this.router.navigate(['/hmmodifypasssucc'], navigationExtras);
-  }
 
   //direct to the hotel manage page
   hotelman(hotel) {
@@ -116,7 +98,7 @@ export class HmcompComponent implements OnInit {
        "managerID" : hotel.userAccount,
       }
     };
-    this.router.navigate(['/hmcomp'], navigationExtras);
+    this.router.navigate(['/hmtask'], navigationExtras);
   }
 
   //direct to the hotel manager main page
@@ -137,6 +119,25 @@ export class HmcompComponent implements OnInit {
       }
     };
     this.router.navigate(['/hmorder'], navigationExtras);
+  }
+  //direct to the register page
+  hmregister(hotel) {
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+       "managerID" : hotel.userAccount,
+      }
+    };
+    this.router.navigate(['/hmregister'], navigationExtras);
+  }
+
+  //direct to the blog page
+  hmblog(hotel) {
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+       "managerID" : hotel.userAccount,
+      }
+    };
+    this.router.navigate(['/hmblog'], navigationExtras);
   }
 
   ngOnDestroy() {

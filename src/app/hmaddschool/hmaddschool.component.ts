@@ -64,7 +64,7 @@ export class HmaddschoolComponent implements OnInit {
       //console.log("School名" + form.value.Uschool + "ddl1为" + form.value.ddl1 + "面试" + form.value.interview);
       this.schoolService.addSchool("", this.studentID,"进行中",form.value.University, form.value.Uschool, form.value.major,
         form.value.ddl1, form.value.ddl2, form.value.ddl3, form.value.interview, form.value.videoessay, form.value.link,
-         form.value.applyAccount, form.value.applyPassword,form.value.recommNumber,"" );
+        "", "",form.value.recommNumber,form.value.applyAccount );
         alert("Add School Seccuss!!");
         console.log("推荐信" + form.value.recommNumber);
         const navigationExtras: NavigationExtras = {
@@ -139,7 +139,7 @@ export class HmaddschoolComponent implements OnInit {
        "managerID" : hotel.userAccount,
       }
     };
-    this.router.navigate(['/hmcomp'], navigationExtras);
+    this.router.navigate(['/hmtask'], navigationExtras);
   }
 
   //direct to the hotel manager main page

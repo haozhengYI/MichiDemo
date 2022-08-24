@@ -39,8 +39,8 @@
       <ul class="nav nav-pills nav-stacked">
         <li ><a (click)="main(hotel)">Home-{{hotel.userAccount}}</a></li>
         <li ><a (click)="modifyP(hotel)">Change Password</a></li>
-        <li><a (click)="comp(hotel)">Complete info</a></li>
-        <li class="active"><a (click)="hotelman(hotel)">Manage Student</a></li>
+        <li><a (click)="comp(hotel)">进度更新</a></li>
+        <li class="active"><a (click)="hotelman(hotel)">学生管理</a></li>
         <li><a (click)="hmorder(hotel)">学生申请</a></li>
         <li><a (click)="hmregister(hotel)">登记账号</a></li>
         <li ><a (click)="hmblog(hotel)">Blog管理</a></li>
@@ -72,6 +72,9 @@
         </li>
         <li class="nav-item ">
           <a class="nav-link active" data-toggle="tab" href="#dropdown3">发送通知</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link active" data-toggle="tab" href="#dropdown4">进度更新</a>
         </li>
       </ul>
       <div id="myTabContent" class="tab-content">
@@ -780,6 +783,64 @@
                         <p>
                          {{n.content}}
                         </p> <small>{{n.ndate}}  {{n.nstate}}</small>
+                      </blockquote>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          
+        </div>
+        <div class="tab-pane fade " id="dropdown4">
+          <div class="col-sm-9">
+            <div class="container">
+              <div class="row clearfix">
+                <div class="col-md-12 column">
+                  <div class="row clearfix">
+                    <div class="col-md-7 column">
+                      <br>
+                      <form (submit)="addTask(postForm)" #postForm="ngForm" ngNativeValidate>
+                        <fieldset>
+                          <fieldset class="form-group">
+                            <div class="form-check">
+                              <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="ttype" id="yuxin" value="yuxin"  ngModel required>
+                                yuxin &nbsp;
+                              </label>
+                              <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="ttype" id="yi" value="小伊"  ngModel required>
+                                小伊 &nbsp;
+                              </label>
+                              <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="ttype" id="dasong" value="大松" ngModel required>
+                                大松 &nbsp;
+                              </label>
+                              <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="ttype" id="oth" value="其他" ngModel required>
+                                其他 &nbsp;
+                              </label>
+                            </div>
+                          </fieldset>
+                          <div class="form-group">
+                            <label for="exampleTextarea" class="form-label mt-4">进度内容</label>
+                            <input class="form-control" id="exampleText" rows="3" style="margin-top: 0px; margin-bottom: 0px; height: 108px;" ngModel required>
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputPassword1">进度发布日期</label>
+                            <input class="form-control" name="tddl" type="date" placeholder="date" style="width:50%" ngModel required>
+                          </div>
+              
+                          <button  class="btn btn-primary">更新进度</button>
+                        </fieldset>
+                      </form>
+                    </div>
+                    <div class="col-md-3 column" *ngIf="tasks.length > 0">
+                      <blockquote *ngFor="let ts of tasks">
+                        <p>
+                         {{ts.content}}
+                        </p> <b style="font-size: 12px;">{{ts.assigned}} </b><small>{{ts.tdate}}  {{ts.tstate}}</small>
                       </blockquote>
                     </div>
                   </div>

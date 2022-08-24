@@ -129,7 +129,7 @@ export class HmblogComponent implements OnInit {
        "managerID" : hotel.userAccount,
       }
     };
-    this.router.navigate(['/hmcomp'], navigationExtras);
+    this.router.navigate(['/hmtask'], navigationExtras);
   }
 
   //direct to the hotel manager main page

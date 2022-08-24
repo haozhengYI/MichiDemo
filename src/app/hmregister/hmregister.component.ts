@@ -10,6 +10,8 @@ import { userInfo } from 'os';
 import { ActivatedRoute,  NavigationExtras, Router } from '@angular/router';
 import {HmService} from '../hm.service';
 import {StService } from '../st.service';
+import {Task} from  '../task.model';
+import { TaskService } from '../task.service';
 import {HotelM} from './../hm.model';
 import { Student} from './../st.model';
 
@@ -27,6 +29,10 @@ export class HmregisterComponent implements OnInit {
   location:String;
   phone:String;
   price:String;
+  //进度信息
+  tasks: Task[] = [];
+  task : Task;
+  
   private hotelMSub: Subscription;
 
   // private usersSub: Subscription;
@@ -177,9 +183,6 @@ export class HmregisterComponent implements OnInit {
   }
   }
 
-
-
-
   ngOnInit() {
     this.http.get<{user: user[]}>('http://localhost:3000/users').subscribe((userData) => {
 
@@ -203,6 +206,17 @@ export class HmregisterComponent implements OnInit {
             }
         }
     });
+
+        //展示 此学生进度信息
+        this.http.get<{tasks: Task[]}>('http://localhost:3000/tasks').subscribe((o) => {
+          //console.log("测试"+ o[1]);
+          //this.tasks = o.tasks;
+          for(var i=o.tasks.length-1;i>=0;i--){
+            this.tasks.push(o.tasks[i]);
+          }
+          //console.log("测试2"+this.tasks[1].tstate);
+        });  
+    
     this.hotelMSub = this.hmService.getHotelMUpdatedListener().subscribe((hotels: HotelM[]) => {
       this.hotels = hotels;
       });
@@ -233,7 +247,7 @@ export class HmregisterComponent implements OnInit {
        "managerID" : hotel.userAccount,
       }
     };
-    this.router.navigate(['/hmcomp'], navigationExtras);
+    this.router.navigate(['/hmtask'], navigationExtras);
   }
 
   //direct to the hotel manager main page

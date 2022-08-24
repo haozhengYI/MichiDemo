@@ -1,3 +1,5 @@
+
+
 <header>
 	<nav class="navbar navbar-inverse" role="navigation">
 		<div class="container-fluid">
@@ -35,13 +37,13 @@
 
 <div class="container-fluid">
 	<div class="row content">
-	  <div class="col-sm-3 sidenav">
+	  <div class="col-sm-2 sidenav">
 		<h4>{{hotel.userAccount}}  </h4>
 		<ul class="nav nav-pills nav-stacked">
 		  <li ><a (click)="main(hotel)">Home</a></li>
       <li ><a (click)="modifyP(hotel)">Change Password</a></li>
-      <li><a (click)="comp(hotel)">Complete info</a></li>
-      <li><a (click)="hotelman(hotel)">Manage Student</a></li>
+      <li><a (click)="comp(hotel)">进度更新</a></li>
+      <li><a (click)="hotelman(hotel)">学生管理</a></li>
       <li><a (click)="hmorder(hotel)">学生申请</a></li>
       <li class="active"><a (click)="hmregister(hotel)">登记账号</a></li>
       <li ><a (click)="hmblog(hotel)">Blog管理</a></li>
@@ -49,7 +51,7 @@
 		
 	  </div>
   
-	  <div class="col-sm-9">
+	  <div class="col-sm-10">
       <div id="register">
         
         <table>
@@ -95,7 +97,16 @@
         
         
       </div>
+
+
+      <hr>
+
+        
+        
+
 	  </div>
+
 	</div>
 </div>
+
 

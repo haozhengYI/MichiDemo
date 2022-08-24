@@ -29,6 +29,7 @@ const Honor = require('./model/honor');
 const Blog = require('./model/blog');
 const Notif = require('./model/notif');
 const Statement = require('./model/statement');
+const Task = require('./model/task');
 
 
 app.use(bodyParser.json());
@@ -1424,6 +1425,84 @@ app.put('/notif/:id', (req, res, next)=>{
   });
 });
 
+//进度部分----------------------------------------------------------------------------------------------------------
+//add new task 
+app.post('/taskadd', (req,res,next) =>{
+  const task = new Task({
+    userAccount:req.body.userAccount,//学生的id
+    studentname:req.body.studentname,//学生名字
+    assigned:req.body.assigned,// 被Assigned人信息
+    content: req.body.content,//进度内容
+    tdate:req.body.tdate,//进度日期
+    tstate:req.body.tstate,//进度状态（"完成/未完成"）
+    ttype:req.body.ttype,//进度类型（"紧急/一般/比较紧急"）
+  });
+  task.save();
+  res.status(201).json({
+    message: 'POST SEND SUCCESFFULY'
+  });
+});
+
+// display all tasks 
+app.get('/tasks',(req, res, next) => {
+    Task.find().then(documents =>{
+    res.json({
+      tasks: documents
+    });
+  });
+});
+
+// display all tasks list by student id
+app.get('/taskdetail/:studentId', (req,res,next) =>{
+  const studentId = req.params.studentId;
+  Task.find({userAccount: studentId}).then(documents =>{
+    res.json({
+      tasks: documents
+    });
+  });
+});
+
+// display all tasks list by assigned id
+app.get('/taskdetail/:aid', (req,res,next) =>{
+  const aId = req.params.aId;
+  Task.find({assigned: aId}).then(documents =>{
+    res.json({
+      tasks: documents
+    });
+  });
+});
+
+//update task information by id
+app.put('/task/:id', (req, res, next)=>{
+  const id= req.params.id;
+  Task.update({_id: id},{$set: 
+    //updateOps
+    {
+      userAccount:req.body.userAccount,//学生的id
+      studentname:req.body.studentname,//学生名字
+      assigned:req.body.assigned,// 被Assigned人信息
+      content: req.body.content,//进度内容
+      tdate:req.body.tdate,//进度日期
+      tstate:req.body.tstate,//进度状态（"完成/未完成"）
+      ttype:req.body.ttype,//进度类型（"紧急/一般/比较紧急"）
+    }
+  })
+  .exec()
+  .then((result)=>{
+      console.log(result);
+      res.status(200).json(result);
+  })
+  .catch(err =>{
+      console.log(err);
+      res.status(500).json({
+          error: err
+      })
+  });
+  res.status(201).json({
+    message: 'Handling PUT requests to /Connections',
+  });
+});
+
 
 //文书部分----------------------------------------------------------------------------------------------------------
 //add new statement 
@@ -1473,4 +1552,8 @@ app.delete('/statements/:id',(req, res, next) => {
     });
   });
 });
+
+
+
+
 module.exports = app;

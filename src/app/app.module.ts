@@ -42,6 +42,7 @@ import {HmoschoolComponent} from './hmoschool/hmoschool.component';
 import {HmordersearchComponent} from './hmordersearch/hmordersearch.component';
 import {HmblogComponent} from './hmblog/hmblog.component';
 import {HmstudentrecComponent} from './hmstudentrec/hmstudentrec.component';
+import {HmtaskComponent} from './hmtask/hmtask.component';
 
 import {StudentmainComponent} from './studentmain/studentmain.component';
 import {StudentaddrecommComponent} from './studentaddrecomm/studentaddrecomm.component';
@@ -104,6 +105,7 @@ import {ApplyhighschoolComponent} from './applyhighschool/applyhighschool.compon
     HmordersearchComponent,
     HmblogComponent,
     HmstudentrecComponent,
+    HmtaskComponent,
 
     StudentmainComponent,
     StudentaddrecommComponent,

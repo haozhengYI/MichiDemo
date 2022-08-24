@@ -1,0 +1,318 @@
+
+
+<header>
+	<nav class="navbar navbar-inverse" role="navigation">
+		<div class="container-fluid">
+		<div class="navbar-header">
+				<a class="navbar-brand" >一个很神秘的网页</a>
+		</div>
+		<div class="nav  navbar-right">
+		  <ul class="nav navbar-nav">
+			<li class="active"><a (click)="main(hotel)">HomePage</a></li>
+			<li class="dropdown">
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+				{{hotel.userAccount}} <b class="caret"></b>
+			  </a>
+			  <ul class="dropdown-menu">
+							<li><a (click)="modifyP(hotel)">Change Password</a></li>
+							<li><a (click)="comp(hotel)">Complete info</a></li>
+							<li class="divider"></li>
+						</ul>
+			</li>
+			<li class="nav navbar-nav navbar-right">
+			  <a href="/mainpage">Log Out</a>
+			</li>
+		  </ul>
+		</div>
+	  </div>
+	</nav>
+	
+  </header>
+  
+  <ol class="breadcrumb">
+  <li><a (click)="main(hotel)">Home</a></li>
+	<li ><a (click)="main(hotel)">{{hotel.userAccount}}</a></li>
+  <li class="active">进度更新</li>
+</ol>
+
+<div class="container-fluid">
+	<div class="row content">
+	  <div class="col-sm-2 sidenav">
+		<h4>{{hotel.userAccount}}  </h4>
+		<ul class="nav nav-pills nav-stacked">
+		  <li ><a (click)="main(hotel)">Home</a></li>
+      <li ><a (click)="modifyP(hotel)">Change Password</a></li>
+      <li class="active"><a (click)="comp(hotel)">进度更新</a></li>
+      <li><a (click)="hotelman(hotel)">学生管理</a></li>
+      <li><a (click)="hmorder(hotel)">学生申请</a></li>
+      <li ><a (click)="hmregister(hotel)">登记账号</a></li>
+      <li ><a (click)="hmblog(hotel)">Blog管理</a></li>
+		</ul><br>
+		
+	  </div>
+  
+	  <div class="col-sm-10">
+      <div id="register">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link " data-toggle="tab" href="#yuxin" >Yuxin</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " data-toggle="tab" href="#yi" >小伊</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " data-toggle="tab" href="#dasong" >大松</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " data-toggle="tab" href="#oth" >其他</a>
+          </li>
+        </ul>
+        <div id="myTabContent" class="tab-content">
+          <div class="tab-pane fade in active" id="yuxin">               
+            <div class="col-sm-12">
+              <div class="container">
+                <div class="row clearfix" >
+                  <div class="col-md-12 column" >
+                    <div class="row clearfix"  >
+                      <div class="col-md-6 column" >
+                        <br>
+                        <h3>未完成</h3>
+                        <br>
+                        <div *ngIf="tasks.length > 0">
+                          <div *ngFor="let ts of tasks">
+                            <div *ngIf="ts.assigned=='yuxin'">
+                              <div class="list-group" *ngIf="ts.tstate=='未完成'">
+                                <a  (click)="update(ts)" class="list-group-item list-group-item-action flex-column align-items-start" >
+                                  <div class="d-flex w-100 justify-content-between">
+                                    <h3 class="mb-1">{{ts.studentname}}</h3>
+                                    <small>{{ts.tdate}}</small>
+                                  </div>
+                                  <p class="mb-1"> {{ts.content}}</p>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+ 
+
+                      </div>
+                      <div class="col-md-6 column" *ngIf="tasks.length > 0">
+                        <br>
+                        <h3>已完成</h3>
+                        <br>
+                        <div *ngFor="let ts of tasks">
+                          <div *ngIf="ts.assigned=='yuxin'">
+                            <div class="list-group" *ngIf="ts.tstate=='完成'">
+                              <blockquote >
+                                <p>
+                                 {{ts.content}}
+                                </p> <b style="font-size: 12px;">{{ts.studentname}}</b><small>{{ts.tdate}}  {{ts.tstate}}</small>
+                              </blockquote>
+                            </div>
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+  
+  
+  
+  
+  
+          </div>
+          <div class="tab-pane fade " id="yi">               
+            <div class="col-sm-12">
+              <div class="container">
+                <div class="row clearfix" >
+                  <div class="col-md-12 column" >
+                    <div class="row clearfix"  >
+                      <div class="col-md-6 column" >
+                        <br>
+                        <h3>未完成</h3>
+                        <br>
+                        <div *ngIf="tasks.length > 0">
+                          <div *ngFor="let ts of tasks">
+                            <div *ngIf="ts.assigned=='小伊'">
+                              <div class="list-group" *ngIf="ts.tstate=='未完成'">
+                                <a  (click)="update(ts)" class="list-group-item list-group-item-action flex-column align-items-start" >
+                                  <div class="d-flex w-100 justify-content-between">
+                                    <h3 class="mb-1">{{ts.studentname}}</h3>
+                                    <small>{{ts.tdate}}</small>
+                                  </div>
+                                  <p class="mb-1"> {{ts.content}}</p>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+ 
+
+                      </div>
+                      <div class="col-md-6 column" *ngIf="tasks.length > 0">
+                        <br>
+                        <h3>已完成</h3>
+                        <br>
+                        <div *ngFor="let ts of tasks">
+                          <div *ngIf="ts.assigned=='小伊'">
+                            <div class="list-group" *ngIf="ts.tstate=='完成'">
+                              <blockquote >
+                                <p>
+                                 {{ts.content}}
+                                </p> <b style="font-size: 12px;">{{ts.studentname}}</b><small>{{ts.tdate}}  {{ts.tstate}}</small>
+                              </blockquote>
+                            </div>
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+  
+  
+  
+  
+  
+          </div>
+          <div class="tab-pane fade " id="dasong">               
+            <div class="col-sm-12">
+              <div class="container">
+                <div class="row clearfix" >
+                  <div class="col-md-12 column" >
+                    <div class="row clearfix"  >
+                      <div class="col-md-6 column" >
+                        <br>
+                        <h3>未完成</h3>
+                        <br>
+                        <div *ngIf="tasks.length > 0">
+                          <div *ngFor="let ts of tasks">
+                            <div *ngIf="ts.assigned=='大松'">
+                              <div class="list-group" *ngIf="ts.tstate=='未完成'">
+                                <a  (click)="update(ts)" class="list-group-item list-group-item-action flex-column align-items-start" >
+                                  <div class="d-flex w-100 justify-content-between">
+                                    <h3 class="mb-1">{{ts.studentname}}</h3>
+                                    <small>{{ts.tdate}}</small>
+                                  </div>
+                                  <p class="mb-1"> {{ts.content}}</p>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+ 
+
+                      </div>
+                      <div class="col-md-6 column" *ngIf="tasks.length > 0">
+                        <br>
+                        <h3>已完成</h3>
+                        <br>
+                        <div *ngFor="let ts of tasks">
+                          <div *ngIf="ts.assigned=='大松'">
+                            <div class="list-group" *ngIf="ts.tstate=='完成'">
+                              <blockquote >
+                                <p>
+                                 {{ts.content}}
+                                </p> <b style="font-size: 12px;">{{ts.studentname}}</b><small>{{ts.tdate}}  {{ts.tstate}}</small>
+                              </blockquote>
+                            </div>
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+  
+  
+  
+  
+  
+          </div>
+          <div class="tab-pane fade " id="oth">               
+            <div class="col-sm-12">
+              <div class="container">
+                <div class="row clearfix" >
+                  <div class="col-md-12 column" >
+                    <div class="row clearfix"  >
+                      <div class="col-md-6 column" >
+                        <br>
+                        <h3>未完成</h3>
+                        <br>
+                        <div *ngIf="tasks.length > 0">
+                          <div *ngFor="let ts of tasks">
+                            <div *ngIf="ts.assigned=='其他'">
+                              <div class="list-group" *ngIf="ts.tstate=='未完成'">
+                                <a  (click)="update(ts)" class="list-group-item list-group-item-action flex-column align-items-start" >
+                                  <div class="d-flex w-100 justify-content-between">
+                                    <h3 class="mb-1">{{ts.studentname}}</h3>
+                                    <small>{{ts.tdate}}</small>
+                                  </div>
+                                  <p class="mb-1"> {{ts.content}}</p>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+ 
+
+                      </div>
+                      <div class="col-md-6 column" *ngIf="tasks.length > 0">
+                        <br>
+                        <h3>已完成</h3>
+                        <br>
+                        <div *ngFor="let ts of tasks">
+                          <div *ngIf="ts.assigned=='其他'">
+                            <div class="list-group" *ngIf="ts.tstate=='完成'">
+                              <blockquote >
+                                <p>
+                                 {{ts.content}}
+                                </p> <b style="font-size: 12px;">{{ts.studentname}}</b><small>{{ts.tdate}}  {{ts.tstate}}</small>
+                              </blockquote>
+                            </div>
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+  
+  
+  
+  
+  
+          </div>
+  
+  
+        </div>
+
+        
+      <hr>
+
+        
+        
+
+	  </div>
+
+	</div>
+</div>
+
+

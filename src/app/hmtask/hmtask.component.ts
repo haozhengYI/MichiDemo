@@ -1,21 +1,27 @@
-import { Component, OnInit,Input } from '@angular/core';
-import { ActivatedRoute,  NavigationExtras, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { BlockingProxy } from 'blocking-proxy';
+import { UserService } from '../user.service';
+import { ConstantPool } from '@angular/compiler';
+import { user } from '../user.model';
 import { Subscription } from 'rxjs';
-import { HmService } from './../hm.service';
-import {HotelM} from './../hm.model';
 import { HttpClient } from '@angular/common/http';
-import {Student} from './../st.model';
+import { getDefaultService } from 'selenium-webdriver/opera';
+import { userInfo } from 'os';
+import { ActivatedRoute,  NavigationExtras, Router } from '@angular/router';
+import {HmService} from '../hm.service';
+import {StService } from '../st.service';
+import {Task} from  '../task.model';
+import { TaskService } from '../task.service';
+import {HotelM} from './../hm.model';
+import { Student} from './../st.model';
 
 @Component({
-  selector: 'app-hmmanage',
-  templateUrl: './hmmanage.component.html',
-  styleUrls: ['./hmmanage.component.scss']
+  selector: 'app-hmtask',
+  templateUrl: './hmtask.component.html',
+  styleUrls: ['./hmtask.component.scss']
 })
-export class HmmanageComponent implements OnInit {
-
-  students: Student[] = [];//all the orders from database
-  student :Student[] = [];//2022学生
-  student2 :Student[] = []; // 2021级学生人数
+export class HmtaskComponent implements OnInit {
+  user: user[] = [];
   hotels: HotelM[] = [];
   hotel : HotelM;
   managerID : any;
@@ -23,20 +29,40 @@ export class HmmanageComponent implements OnInit {
   location:String;
   phone:String;
   price:String;
+  //进度信息
+  tasks: Task[] = [];
+  task : Task;
+  
   private hotelMSub: Subscription;
 
+  // private usersSub: Subscription;
+  
   constructor(
-    private route: ActivatedRoute, 
-    private router: Router, 
+    private route: ActivatedRoute,
+    private router: Router,
+    public userService: UserService,
     private http: HttpClient,
+    public  stService :StService,
     public hmService: HmService) { 
       this.route.queryParams.subscribe(params => {
         this.managerID = params["managerID"];
        });
        console.log("constructor+"+this.managerID);
     }
-  
+    
+    
+    
+
+
   ngOnInit() {
+    this.http.get<{user: user[]}>('http://localhost:3000/users').subscribe((userData) => {
+
+    this.user = userData.user;
+    console.log(userData.user);
+    console.log(this.user.length);
+
+    });
+    //获取HotelM 信息列表
     this.http.get<{hotels: HotelM[]}>('http://localhost:3000/hotels').subscribe((Data) => {
         this.hotels = Data.hotels;
         for(let h of this.hotels){
@@ -46,46 +72,38 @@ export class HmmanageComponent implements OnInit {
               this.location = this.hotel.location;
               this.phone=this.hotel.phone;
               this.price = this.hotel.price;
-              //console.log("管理员信息");
-              //console.log(this.hotel);
+              console.log("ngOnInIT");
+              console.log(this.hotel);
             }
         }
     });
-        // select the particular order by hotel id
-        this.http.get<{students: Student[]}>('http://localhost:3000/students').subscribe((oData) => {
-          this.students = oData.students;
-          console.log("全部学生信息");
-          console.log(this.students);
-          for(var i=oData.students.length-1;i>=20;i--){
-            this.student.push(oData.students[i]);
-          }
-          for(var x=19;x>=0;x--){
-            this.student2.push(oData.students[x]);
-          }
 
-        });
-      
+        //展示 此学生进度信息
+        this.http.get<{tasks: Task[]}>('http://localhost:3000/tasks').subscribe((o) => {
+          //console.log("测试"+ o[1]);
+          //this.tasks = o.tasks;
+          for(var i=o.tasks.length-1;i>=0;i--){
+            this.tasks.push(o.tasks[i]);
+          }
+          //console.log("测试2"+this.tasks[1].tstate);
+        });  
+    
     this.hotelMSub = this.hmService.getHotelMUpdatedListener().subscribe((hotels: HotelM[]) => {
       this.hotels = hotels;
       });
   }
-  //update hotel information like price or other
-  updateProfile()
-  {
-    console.log("Inside Update")
-    const Hotel = {
-      userAccount:this.hotel.userAccount,
-      firstName: this.hotel.firstName,
-      lastName: this.hotel.lastName,
-      email: this.hotel.email,
-      phone: this.phone,
-      name: this.name,
-      location: this.location,
-      image: this.hotel.image,
-      price: this.price,
+
+  update(n){
+    const Task = {
+      userAccount:n.userAccount,//学生的id
+      studentname:n.studentname,//学生名字
+      assigned:n.assigned,// 被Assigned人信息
+      content: n.content,//存储通知内容
+      tdate:n.tdate,//通知日期
+      tstate:"完成",//通知状态（"未读/已读"）
+      ttype:n.ttype,//通知类型（"紧急/一般/比较紧急"）
     }
-    console.log(Hotel.price+"ddddd"+Hotel.userAccount);
-    this.http.put('http://localhost:3000/hotels/' + this.hotel.userAccount, Hotel)
+    this.http.put('http://localhost:3000/task/' + n._id, Task)
       .subscribe((data) => {
         const options = {
           overlay: true,
@@ -97,14 +115,10 @@ export class HmmanageComponent implements OnInit {
           console.log("Undefine");
         }
       })
-      const navigationExtras: NavigationExtras = {
-        queryParams: {
-         "managerID" : this.hotel.userAccount,
-        }
-      };
-      //console.log("hahah"+hotel.userAccount);
-      this.router.navigate(['/hmmodifypasssucc'], navigationExtras);
+      alert("已完成该进度");
+      window.location.reload();  
   }
+  
 
   //direct to the hotel manage page
   hotelman(hotel) {
@@ -135,6 +149,7 @@ export class HmmanageComponent implements OnInit {
     this.router.navigate(['/hmtask'], navigationExtras);
   }
 
+
   //direct to the hotel manager main page
   main(hotel) {
     const navigationExtras: NavigationExtras = {
@@ -150,11 +165,12 @@ export class HmmanageComponent implements OnInit {
     const navigationExtras: NavigationExtras = {
       queryParams: {
        "managerID" : hotel.userAccount,
+
       }
     };
     this.router.navigate(['/hmorder'], navigationExtras);
   }
-  
+
   //direct to the register page
   hmregister(hotel) {
     const navigationExtras: NavigationExtras = {
@@ -175,20 +191,10 @@ export class HmmanageComponent implements OnInit {
     this.router.navigate(['/hmblog'], navigationExtras);
   }
 
-  more(o){
-    console.log(o._id);
-    console.log(this.managerID);
-    const navigationExtras: NavigationExtras = {
-      queryParams: {
-       "managerID" : this.managerID,
-       "studentID" : o._id,
-      }
-    };
-    this.router.navigate(['/hmstudent'], navigationExtras);
-    
-  }
+  
 
   ngOnDestroy() {
     this.hotelMSub.unsubscribe();
   }
+
 }
