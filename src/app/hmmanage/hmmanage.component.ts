@@ -56,12 +56,12 @@ export class HmmanageComponent implements OnInit {
           this.students = oData.students;
           console.log("全部学生信息");
           console.log(this.students);
-          for(var i=oData.students.length-1;i>=20;i--){
+          for(var i=oData.students.length-1;i>=0;i--){
             this.student.push(oData.students[i]);
           }
-          for(var x=19;x>=0;x--){
-            this.student2.push(oData.students[x]);
-          }
+          // for(var x=19;x>=0;x--){
+          //   this.student2.push(oData.students[x]);
+          // }
 
         });
       

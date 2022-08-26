@@ -147,6 +147,27 @@
                 <input type="text" class="form-control"  name="applyAccount" placeholder="Enter Notes" >
               </div>
             </fieldset>
+            <fieldset class="form-group">
+              <legend>优先级别</legend>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="level" id="level1" value="正常"  ngModel required>
+                 正常 &nbsp; &nbsp; 
+                </label>
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="level" id="level2" value="保底"  ngModel required>
+                  保底 <span class="label label-info">☆</span>&nbsp; &nbsp; 
+                </label>
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="level" id="level3" value="冲刺" ngModel required>
+                  冲刺 <span class="label label-success">❤</span>&nbsp; &nbsp; 
+                </label>
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="level" id="level4" value="不可能" ngModel required>
+                  不可能 <span class="label label-warning">×</span>&nbsp; &nbsp; 
+                </label>
+              </div>
+            </fieldset>
 
             <button  class="btn btn-primary" >添加</button>
           </fieldset>

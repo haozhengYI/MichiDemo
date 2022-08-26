@@ -15,6 +15,7 @@ const schoolSchema = mongoose.Schema({
   applyPassword:String,//申请用密码
   recommNumber:String,//需要推荐信数量
   other:String,//存放 其他信息，如是否提交了GRE成绩，是否提交了学校成绩单
+  level:String,// 存放可能性（四种：正常，不可能，冲刺，保底）
 });
 
 module.exports = mongoose.model('School', schoolSchema);

@@ -250,6 +250,14 @@
             </table>
             </form>
           </div>
+          <div id="yer">
+            <h3>申请年份</h3>
+            <hr>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" id="styear" value="{{student.year}}">
+              <button class="btn btn-primary" type="button" (click)="updatePersonal()" id="button-addon2">修改</button>
+            </div>
+          </div>
         </div>
         <div class="tab-pane fade " id="otherinfo">               
           <div id="standardtest" >
@@ -699,7 +707,7 @@
         </div>
         <div class="tab-pane fade in active" id="dropdown2">
 
-          <table class="table table-hover">
+          <table class="table table-hover" *ngIf="schools.length > 0">
             <thead>
               <tr>
                 <th scope="col" colspan="6"><h3>
@@ -723,10 +731,17 @@
                 <th scope="col" style="width:20px"></th>
               </tr>
             </thead>
-            <tbody *ngIf="schools.length > 0">
-              <tr class="table-dark"  *ngFor="let s of schools">
-                <th scope="row">{{s.state}}</th>
-                <td>{{s.univName}}</td>
+            <tbody *ngFor="let s of schools" >
+
+              <tr class="table" >
+                <th scope="row" >{{s.state}}
+                </th>
+                <td>{{s.univName}} 
+                   
+                  <span class="label label-info" *ngIf="s.level=='保底'">☆</span>
+                  <span class="label label-success" *ngIf="s.level=='冲刺'">❤</span>
+                  <span class="label label-warning" *ngIf="s.level=='不可能'">×</span>
+                </td>
                 <td>{{s.schoolName}}</td>
                 <td>{{s.majorName}}</td>
                 <td>{{s.ddl1}}</td>

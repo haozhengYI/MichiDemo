@@ -15,4 +15,5 @@ export interface School {
     applyPassword:String;//申请用密码
     recommNumber:String;//需要推荐信数量
     other:String;
+    level:String;// 存放可能性（四种：正常，不可能，冲刺，保底）
   }

@@ -157,8 +157,8 @@ export class HmregisterComponent implements OnInit {
         console.log(temp0);
         this.stService.addStudent("",temp0,"", "", "","",  "", "", "","","",  "", "", "","","",  "", "", "","","",  "", "", "",
         "","",  "", "", "","","",  "", "", "","","",  "", "", "","","",  "", "","","",  "", "", "","","",  "", "", "","","",  "", 
-        "", "","","",  "", "", "","","","","");
-        //共64个属性
+        "", "","","",  "", "", "","","","","","2022");
+        //共65个属性
       }if(temp4.checked==true){
         temp16="manager";
         //create one resp in hotels database

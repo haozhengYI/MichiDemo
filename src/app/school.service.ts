@@ -54,6 +54,7 @@ export class SchoolService {
     applyPassword:String,//申请用密码
     recommNumber:String,//需要推荐信数量
     other:String,
+    level:String,// 存放可能性（四种：正常，不可能，冲刺，保底）
   ){
     const school: School = {
       _id: null,
@@ -72,6 +73,7 @@ export class SchoolService {
         applyPassword:applyPassword,//申请用密码
         recommNumber:recommNumber,//推荐信数量
         other:other,
+        level:level,// 存放可能性（四种：正常，不可能，冲刺，保底）
     };
     this.http.post('http://localhost:3000/schooladd', school).subscribe((responseData) =>{
         this.schoolS.push(school);

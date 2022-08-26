@@ -73,4 +73,6 @@ export interface Student {
     FatGraduation: String;//母亲毕业时间
     FatPhone: String;
     FatEmail: String;
+    //申请年级
+    year: String;
   }

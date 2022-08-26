@@ -188,6 +188,101 @@ export class HmstudentComponent implements OnInit {
         window.location.reload();
     });
   }
+  //更新学生年级信息
+  updatePersonal(){
+    const Student = {
+        userAccount:this.student.userAccount,//学生account
+        firstName: this.student.firstName,
+        lastName: this.student.lastName,
+        email: this.student.email,
+        phone: this.student.phone,
+        dob: this.student.dob, // 生日
+        currentAddress: this.student.currentAddress,
+        permanentAddress: this.student.permanentAddress,
+        gender: this.student.gender,
+        ssn: this.student.ssn,
+        passport: this.student.passport,//护照或绿卡号码
+        visa: this.student.visa,
+        appEmail:this.student.appEmail,//申请所用的邮箱账号
+        appPsw:this.student.appPsw,//申请所用的邮箱密码
+        citizen:this.student.citizen,//国籍
+        //标化成绩类
+        TOEFL:this.student.TOEFL,
+        TOEFLR:this.student.TOEFLR,//托福阅读
+        TOEFLL:this.student.TOEFLL,//托福听力
+        TOEFLS:this.student.TOEFLS,//托福口语
+        TOEFLW:this.student.TOEFLW,//托福写作
+        GRE: this.student.GRE,
+        GREV: this.student.GREV,//GRE Verbal部分成绩
+        GREVP: this.student.GMATVP,
+        GREQ: this.student.GREQ,
+        GREQP: this.student.GREQP,
+        GREW: this.student.GREW,
+        GREWP: this.student.GREWP,
+        GMAT: this.student.GMAT,//GMAT 部分
+        GMATV: this.student.GMATV,
+        GMATVP: this.student.GMATVP,
+        GMATQ: this.student.GMATQ,
+        GMATQP: this.student.GMATQP,
+        GMATW: this.student.GMATW,
+        GMATWP: this.student.GMATWP,
+        GMATR: this.student.GMATR,
+        GMATRP: this.student.GMATRP,
+        OtherStandardTest: this.student.OtherStandardTest,//其他类标化成绩
+        //Skills & Hobbies
+        Language: this.student.Language, 
+        ComputerSkills: this.student.ComputerSkills,//计算机技能
+        OtherSkills: this.student.OtherSkills,//其他技能或证书
+        Hobbies: this.student.Hobbies,//爱好
+        //Professional Interest专业兴趣
+        Professional1: this.student.Professional1,
+        Professional2: this.student.Professional2,
+        Professional3: this.student.Professional3,
+        //Career Plan职业规划
+        CareerPlan1: this.student.CareerPlan1,
+        CareerPlan2: this.student.CareerPlan2,
+        //Personal Strength个人优势
+        Strength1: this.student.Strength1,
+        Strength2: this.student.Strength2,
+        //母亲信息
+        MomName: this.student.MomName,
+        MomAddress: this.student.MomAddress,
+        MomOrganazation: this.student.MomOrganazation,
+        MomJob: this.student.MomJob,
+        MomEducation:this.student.MomEducation,//母亲最高学历
+        MomSchool:this.student.MomSchool,//母亲毕业院校
+        MomGraduation: this.student.MomGraduation,//母亲毕业时间
+        MomPhone: this.student.MomPhone,
+        MomEmail: this.student.MomEmail,
+        //父亲信息
+        FatName: this.student.FatName,
+        FatAddress: this.student.FatAddress,
+        FatOrganazation: this.student.FatOrganazation,
+        FatJob: this.student.FatJob,
+        FatEducation:this.student.FatEducation,
+        FatSchool:this.student.FatSchool,
+        FatGraduation: this.student.FatGraduation,
+        FatPhone: this.student.FatPhone,
+        FatEmail: this.student.FatEmail,
+        //年级
+        year:(document.getElementById("styear") as HTMLInputElement).value,
+    }
+    this.http.put('http://localhost:3000/students/' + this.student.userAccount, Student)
+      .subscribe((data) => {
+        const options = {
+          overlay: true,
+          overlayClickToClose: true,
+          showCloseButton: true,
+          duration: 5000
+        };
+        if (data[0] === undefined) {
+          console.log("Undefine");
+        }
+      })
+      alert("更新学生年级成功!!");
+    window.location.reload();  
+  }
+
   //将json数组生成excel
   exportAsExcelFile() {
     let json = this.schools;

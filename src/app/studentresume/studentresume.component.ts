@@ -237,6 +237,7 @@ export class StudentresComponent implements OnInit {
       FatGraduation: this.student.FatGraduation,
       FatPhone: this.student.FatPhone,
       FatEmail: this.student.FatEmail,
+
   }
     this.http.put('http://localhost:3000/students/' + this.studentUserAcc, Student)
       .subscribe((data) => {
@@ -247,7 +248,7 @@ export class StudentresComponent implements OnInit {
           duration: 5000
         }
       })
-      alert("更新项目信息成功!!" + this.student.firstName);
+      alert("更新个人信息成功!!" + this.student.firstName);
     window.location.reload();  
   }
 

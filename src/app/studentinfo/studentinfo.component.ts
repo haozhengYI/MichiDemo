@@ -46,6 +46,8 @@ export class StudentinfoComponent implements OnInit {
   //奖项
   honors : Honor[] = [];
   honor : Honor[] = [];
+  
+
   private stSub: Subscription;
 
   constructor(
@@ -301,6 +303,8 @@ export class StudentinfoComponent implements OnInit {
         FatGraduation: (document.getElementById("FatGraduation") as HTMLInputElement).value,
         FatPhone: (document.getElementById("FatPhone") as HTMLInputElement).value,
         FatEmail: (document.getElementById("FatEmail") as HTMLInputElement).value,
+        //年级
+        year:this.student.year,
     }
     this.http.put('http://localhost:3000/students/' + this.studentUserAcc, Student)
       .subscribe((data) => {
@@ -314,7 +318,7 @@ export class StudentinfoComponent implements OnInit {
           console.log("Undefine");
         }
       })
-      alert("更新项目信息成功!!" + (document.getElementById("firstName") as HTMLInputElement).value);
+      alert("更新个人信息成功!!" + (document.getElementById("firstName") as HTMLInputElement).value);
     window.location.reload();  
   }
   addEducation(form: NgForm){//form内的信息使用过html中的name来获取的

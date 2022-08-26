@@ -370,6 +370,8 @@ app.post('/studentadd', (req,res,next) =>{
     FatGraduation: req.body.FatGraduation,//母亲毕业时间
     FatPhone: req.body.FatPhone,
     FatEmail: req.body.FatEmail,
+    //申请年级
+    year: req.body.year,
   });
   student.save();
   res.status(201).json({
@@ -472,6 +474,8 @@ app.put('/students/:userAccount', (req, res, next)=>{
       FatGraduation: req.body.FatGraduation,//母亲毕业时间
       FatPhone: req.body.FatPhone,
       FatEmail: req.body.FatEmail,
+      //申请年级
+      year: req.body.year,
     }
   })
   .exec()
@@ -509,6 +513,7 @@ app.post('/schooladd', (req,res,next) =>{
     applyPassword:req.body.applyPassword,//申请用密码
     recommNumber:req.body.recommNumber,//所需要推荐信数量
     other:req.body.other,
+    level:req.body.level,// 存放可能性（四种：正常，不可能，冲刺，保底）
   });
   school.save();
   res.status(201).json({
@@ -567,6 +572,7 @@ app.put('/schools/:id', (req, res, next)=>{
         applyPassword:req.body.applyPassword,//申请用密码
         recommNumber:req.body.recommNumber,//所需要推荐信数量
         other:req.body.other,
+        level:req.body.level,// 存放可能性（四种：正常，不可能，冲刺，保底）
     }
   })
   .exec()

@@ -114,6 +114,8 @@ export class StService {
     FatGraduation: String,//母亲毕业时间
     FatPhone: String,
     FatEmail: String,
+    //申请年级
+    year: String,
   ){
     const student: Student = {
       _id: null,
@@ -190,6 +192,8 @@ export class StService {
       FatGraduation: FatGraduation,//母亲毕业时间
       FatPhone: FatPhone,
       FatEmail: FatEmail,
+      //申请年级
+      year: year,
     };
     this.http.post('http://localhost:3000/studentadd', student).subscribe((responseData) =>{
         this.studentS.push(student);
