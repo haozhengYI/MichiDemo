@@ -113,7 +113,6 @@ export class HmoschoolComponent implements OnInit {
           this.schools = Data.schools;
           for(let s of this.schools){
             if(s._id===this.schoolID){
-              //console.log("进入了吗");
               this.school  = s;
               this.studentID = s.userAccount;
               console.log("进入了吗" + this.studentID);
