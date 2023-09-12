@@ -738,9 +738,12 @@
                 </th>
                 <td>{{s.univName}} 
                    
-                  <span class="label label-info" *ngIf="s.level=='保底'">☆</span>
-                  <span class="label label-success" *ngIf="s.level=='冲刺'">❤</span>
-                  <span class="label label-warning" *ngIf="s.level=='不可能'">×</span>
+                  <span class="label label-info" *ngIf="s.level=='保底'">Safe</span>
+                  <span class="label label-success" *ngIf="s.level=='冲刺'">冲刺</span>
+                  <span class="label label-warning" *ngIf="s.level=='不可能'">风险</span>
+                  <span class="badge badge-secondary" *ngIf="s.videoEssay=='有，在提交申请前'">VE前</span>
+                  <span class="badge badge-secondary" *ngIf="s.videoEssay=='有，在提交申请后'">VE后</span>
+                  <span class="label label-danger" *ngIf="s.interview=='yes'">面试</span>
                 </td>
                 <td>{{s.schoolName}}</td>
                 <td>{{s.majorName}}</td>

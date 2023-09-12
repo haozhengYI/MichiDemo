@@ -237,7 +237,8 @@ export class StudentresComponent implements OnInit {
       FatGraduation: this.student.FatGraduation,
       FatPhone: this.student.FatPhone,
       FatEmail: this.student.FatEmail,
-
+      //年级
+      year:this.student.year,
   }
     this.http.put('http://localhost:3000/students/' + this.studentUserAcc, Student)
       .subscribe((data) => {
