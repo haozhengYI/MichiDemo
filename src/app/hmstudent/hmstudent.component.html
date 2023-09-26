@@ -744,6 +744,14 @@
                   <span class="badge badge-secondary" *ngIf="s.videoEssay=='有，在提交申请前'">VE前</span>
                   <span class="badge badge-secondary" *ngIf="s.videoEssay=='有，在提交申请后'">VE后</span>
                   <span class="label label-danger" *ngIf="s.interview=='yes'">面试</span>
+                  <div class="btn-group" *ngIf="s.other!=''">
+                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      备注
+                    </button>
+                    <div class="dropdown-menu">
+                      {{s.other}}
+                    </div>
+                  </div>
                 </td>
                 <td>{{s.schoolName}}</td>
                 <td>{{s.majorName}}</td>
@@ -751,7 +759,9 @@
                 <td>{{s.ddl2}}</td>
                 <td>{{s.ddl3}}</td>
                 <td>{{s.recommNumber}}</td>
-                <td><button href="/anew/todel/@a.id" (click)="hmschooldetail(s)">More</button></td>
+                <td>
+                  <button href="/anew/todel/@a.id" (click)="hmschooldetail(s)">More</button>
+                </td>
               </tr>
 
             </tbody>
