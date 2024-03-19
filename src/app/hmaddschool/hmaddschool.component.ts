@@ -64,7 +64,7 @@ export class HmaddschoolComponent implements OnInit {
       console.log("School名" + form.value.Uschool + "ddl1为" + form.value.ddl1 + "备注" + form.value.other);
       this.schoolService.addSchool("", this.studentID,"进行中",form.value.University, form.value.Uschool, form.value.major,
        form.value.ddl1, form.value.ddl2, form.value.ddl3, form.value.interview, form.value.videoessay, form.value.link,
-       "", "",form.value.recommNumber,form.value.other,form.value.level);
+       "", "",form.value.recommNumber,form.value.other,form.value.level,form.value.gre);
         //这里other其实是 备注信息
 
         alert("Add School Seccuss!!");

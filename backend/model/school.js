@@ -16,6 +16,7 @@ const schoolSchema = mongoose.Schema({
   recommNumber:String,//需要推荐信数量
   other:String,//存放 其他信息，如是否提交了GRE成绩，是否提交了学校成绩单
   level:String,// 存放可能性（四种：正常，不可能，冲刺，保底）
+  gre:String,// 是否强制GRE（两种：强制，optional）
 });
 
 module.exports = mongoose.model('School', schoolSchema);

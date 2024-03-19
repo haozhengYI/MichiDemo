@@ -56,6 +56,7 @@ export class HmschoolComponent implements OnInit {
   recommNumber:String;//推荐信数量
   other:String;  
   level:String;
+  gre:String;
 
   //推荐人信息
   recommenders : Recommender[] = [];
@@ -182,6 +183,7 @@ export class HmschoolComponent implements OnInit {
               this.recommNumber= this.school.recommNumber;//推荐信数量
               this.other= this.school.other;
               this.level= this.school.level;
+              this.gre= this.school.gre;
             }
         }
       });
@@ -238,6 +240,7 @@ export class HmschoolComponent implements OnInit {
     (document.getElementById("recommNumber") as HTMLInputElement).removeAttribute("disabled");
     (document.getElementById("other") as HTMLInputElement).removeAttribute("disabled");
     (document.getElementById("level") as HTMLInputElement).removeAttribute("disabled");
+    (document.getElementById("gre") as HTMLInputElement).removeAttribute("disabled");
     
     (document.getElementById("confirm") as HTMLInputElement).removeAttribute("disabled");
     (document.getElementById("modi") as HTMLInputElement).setAttribute("disabled","");   
@@ -262,6 +265,7 @@ export class HmschoolComponent implements OnInit {
         recommNumber:this.recommNumber,//推荐信数量
         other:this.other,
         level:this.level,
+        gre:this.gre,
     }
     this.http.put('http://localhost:3000/schools/' + this.schoolID, School)
       .subscribe((data) => {
@@ -297,6 +301,7 @@ export class HmschoolComponent implements OnInit {
         recommNumber:this.recommNumber,//推荐信数量
         other:this.other,
         level:this.level,
+        gre:this.gre,
     }
     this.http.put('http://localhost:3000/schools/' + this.schoolID, School)
       .subscribe((data) => {
@@ -332,6 +337,7 @@ export class HmschoolComponent implements OnInit {
         recommNumber:this.recommNumber,//推荐信数量
         other:this.other,
         level:this.level,
+        gre:this.gre,
     }
     this.http.put('http://localhost:3000/schools/' + this.schoolID, School)
       .subscribe((data) => {
@@ -366,6 +372,7 @@ export class HmschoolComponent implements OnInit {
         recommNumber:this.recommNumber,//推荐信数量
         other:this.other,
         level:this.level,
+        gre:this.gre,
     }
     this.http.put('http://localhost:3000/schools/' + this.schoolID, School)
       .subscribe((data) => {

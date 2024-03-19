@@ -514,6 +514,7 @@ app.post('/schooladd', (req,res,next) =>{
     recommNumber:req.body.recommNumber,//所需要推荐信数量
     other:req.body.other,
     level:req.body.level,// 存放可能性（四种：正常，不可能，冲刺，保底）
+    gre:req.body.gre,// 是否强制GRE（两种：强制，optional）
   });
   school.save();
   res.status(201).json({
@@ -573,6 +574,7 @@ app.put('/schools/:id', (req, res, next)=>{
         recommNumber:req.body.recommNumber,//所需要推荐信数量
         other:req.body.other,
         level:req.body.level,// 存放可能性（四种：正常，不可能，冲刺，保底）
+        gre:req.body.gre,// 是否强制GRE（两种：强制，optional）
     }
   })
   .exec()

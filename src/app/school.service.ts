@@ -55,6 +55,7 @@ export class SchoolService {
     recommNumber:String,//需要推荐信数量
     other:String,
     level:String,// 存放可能性（四种：正常，不可能，冲刺，保底）
+    gre:String,// 是否强制GRE（两种：强制，optional）
   ){
     const school: School = {
       _id: null,
@@ -74,6 +75,7 @@ export class SchoolService {
         recommNumber:recommNumber,//推荐信数量
         other:other,
         level:level,// 存放可能性（四种：正常，不可能，冲刺，保底）
+        gre:gre,// 是否强制GRE（两种：强制，optional）
     };
     this.http.post('http://localhost:3000/schooladd', school).subscribe((responseData) =>{
         this.schoolS.push(school);

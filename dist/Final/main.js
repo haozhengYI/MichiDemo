@@ -51,7 +51,7 @@ var ActivityService = /** @class */ (function () {
     }
     ActivityService.prototype.getActivity = function () {
         var _this = this;
-        this.http.get('/api/activitys').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/activitys').subscribe(function (Data) {
             _this.activitys = Data.activitys;
             _this.activity = _this.activitys[0];
             _this.activitysUpdated.next(_this.activitys.slice());
@@ -74,7 +74,7 @@ var ActivityService = /** @class */ (function () {
             activityPosition: activityPosition,
             activityDescription: activityDescription,
         };
-        this.http.post('/api/activityadd', activity).subscribe(function (responseData) {
+        this.http.post('http://localhost:3000/activityadd', activity).subscribe(function (responseData) {
             _this.activityS.push(activity);
             _this.activitysUpdated.next(_this.activityS.slice());
         });
@@ -139,14 +139,14 @@ var AdminHotelComponent = /** @class */ (function () {
     }
     AdminHotelComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/hotels').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/hotels').subscribe(function (Data) {
             _this.hotels = Data.hotels;
             console.log(_this.hotels);
         });
     };
     AdminHotelComponent.prototype.delete = function (h) {
         console.log(h._id);
-        this.http.delete('/api/users/' + h._id).subscribe(function (oooData) {
+        this.http.delete('http://localhost:3000/users/' + h._id).subscribe(function (oooData) {
             console.log("chenggong");
             window.location.reload();
         });
@@ -217,7 +217,7 @@ var AdminOrderComponent = /** @class */ (function () {
     }
     AdminOrderComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/orders').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/orders').subscribe(function (Data) {
             _this.orders = Data.orders;
             console.log(_this.orders);
         });
@@ -362,14 +362,14 @@ var AdminmainpageComponent = /** @class */ (function () {
     }
     AdminmainpageComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/users').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/users').subscribe(function (Data) {
             _this.user = Data.user;
             console.log(_this.user);
         });
     };
     AdminmainpageComponent.prototype.delete = function (u) {
         console.log(u._id);
-        this.http.delete('/api/users/' + u._id).subscribe(function (oooData) {
+        this.http.delete('http://localhost:3000/users/' + u._id).subscribe(function (oooData) {
             console.log("chenggong");
             window.location.reload();
         });
@@ -870,7 +870,7 @@ var ApplybachelorComponent = /** @class */ (function () {
                             alert("Welcome " + this.user[index].Role + "!");
                             //console.log(this.user[index].UserAccount);
                             // API_PATH + '/students'
-                            this.http.get('/api/students').subscribe(function (Data) {
+                            this.http.get('http://localhost:3000/students').subscribe(function (Data) {
                                 _this.students = Data.students;
                                 console.log(_this.students);
                                 for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
@@ -922,7 +922,7 @@ var ApplybachelorComponent = /** @class */ (function () {
     };
     ApplybachelorComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/users').subscribe(function (userData) {
+        this.http.get('http://localhost:3000/users').subscribe(function (userData) {
             _this.user = userData.user;
             console.log(userData.user);
             console.log(_this.user.length);
@@ -1068,7 +1068,7 @@ var ApplyhighschoolComponent = /** @class */ (function () {
                             alert("Welcome " + this.user[index].Role + "!");
                             //console.log(this.user[index].UserAccount);
                             // API_PATH + '/students'
-                            this.http.get('/api/students').subscribe(function (Data) {
+                            this.http.get('http://localhost:3000/students').subscribe(function (Data) {
                                 _this.students = Data.students;
                                 console.log(_this.students);
                                 for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
@@ -1120,7 +1120,7 @@ var ApplyhighschoolComponent = /** @class */ (function () {
     };
     ApplyhighschoolComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/users').subscribe(function (userData) {
+        this.http.get('http://localhost:3000/users').subscribe(function (userData) {
             _this.user = userData.user;
             console.log(userData.user);
             console.log(_this.user.length);
@@ -1266,7 +1266,7 @@ var ApplymasterComponent = /** @class */ (function () {
                             alert("Welcome " + this.user[index].Role + "!");
                             //console.log(this.user[index].UserAccount);
                             // API_PATH + '/students'
-                            this.http.get('/api/students').subscribe(function (Data) {
+                            this.http.get('http://localhost:3000/students').subscribe(function (Data) {
                                 _this.students = Data.students;
                                 console.log(_this.students);
                                 for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
@@ -1318,7 +1318,7 @@ var ApplymasterComponent = /** @class */ (function () {
     };
     ApplymasterComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/users').subscribe(function (userData) {
+        this.http.get('http://localhost:3000/users').subscribe(function (userData) {
             _this.user = userData.user;
             console.log(userData.user);
             console.log(_this.user.length);
@@ -1398,7 +1398,7 @@ var BlogService = /** @class */ (function () {
     }
     BlogService.prototype.getActivity = function () {
         var _this = this;
-        this.http.get('/api/blogs').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/blogs').subscribe(function (Data) {
             _this.blogs = Data.blogs;
             _this.blog = _this.blogs[0];
             _this.blogsUpdated.next(_this.blogs.slice());
@@ -1423,7 +1423,7 @@ var BlogService = /** @class */ (function () {
             blogLink: blogLink,
             countNumber: countNumber,
         };
-        this.http.post('/api/blogadd', blog).subscribe(function (responseData) {
+        this.http.post('http://localhost:3000/blogadd', blog).subscribe(function (responseData) {
             _this.blogS.push(blog);
             _this.blogsUpdated.next(_this.blogS.slice());
         });
@@ -1467,7 +1467,7 @@ var EducationService = /** @class */ (function () {
     }
     EducationService.prototype.getEducation = function () {
         var _this = this;
-        this.http.get('/api/educations').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/educations').subscribe(function (Data) {
             _this.educations = Data.educations;
             _this.education = _this.educations[0];
             _this.educationsUpdated.next(_this.educations.slice());
@@ -1501,7 +1501,7 @@ var EducationService = /** @class */ (function () {
             SecondGPA: SecondGPA,
             other: other,
         };
-        this.http.post('/api/educationadd', education).subscribe(function (responseData) {
+        this.http.post('http://localhost:3000/educationadd', education).subscribe(function (responseData) {
             _this.educationS.push(education);
             _this.educationsUpdated.next(_this.educationS.slice());
         });
@@ -1545,7 +1545,7 @@ var ExperienceService = /** @class */ (function () {
     }
     ExperienceService.prototype.getExperience = function () {
         var _this = this;
-        this.http.get('/api/experiences').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/experiences').subscribe(function (Data) {
             _this.experiences = Data.experiences;
             _this.experience = _this.experiences[0];
             _this.experiencesUpdated.next(_this.experiences.slice());
@@ -1573,7 +1573,7 @@ var ExperienceService = /** @class */ (function () {
             project: project,
             achievement: achievement,
         };
-        this.http.post('/api/experienceadd', experience).subscribe(function (responseData) {
+        this.http.post('http://localhost:3000/experienceadd', experience).subscribe(function (responseData) {
             _this.experienceS.push(experience);
             _this.experiencesUpdated.next(_this.experienceS.slice());
         });
@@ -1616,7 +1616,7 @@ var HmService = /** @class */ (function () {
     }
     HmService.prototype.getHotelM = function () {
         var _this = this;
-        this.http.get('/api/hotels').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/hotels').subscribe(function (Data) {
             //console.log(Data);
             _this.hotels = Data.hotels;
             //console.log(this.hotels[0].email);
@@ -1645,7 +1645,7 @@ var HmService = /** @class */ (function () {
             image: image,
             price: price
         };
-        this.http.post('/api/hoteladd', hotel).subscribe(function (responseData) {
+        this.http.post('http://localhost:3000/hoteladd', hotel).subscribe(function (responseData) {
             _this.hotelM.push(hotel);
             _this.hotelMUpdated.next(_this.hotelM.slice());
         });
@@ -1668,7 +1668,7 @@ var HmService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-inverse\" role=\"navigation\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n        <a class=\"navbar-brand\" >一个很神秘的网页</a>\n      </div>\n      <div class=\"nav  navbar-right\">\n        <ul class=\"nav navbar-nav\">\n          <li class=\"active\"><a (click)=\"main(hotel)\">HomePage</a></li>\n          <li class=\"dropdown\">\n            <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n              Shortcut <b class=\"caret\"></b>\n            </a>\n            <ul class=\"dropdown-menu\">\n              <li><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n              <li><a (click)=\"comp(hotel)\">Complete info</a></li>\n              <li class=\"divider\"></li>\n            </ul>\n          </li>\n          <li class=\"nav navbar-nav navbar-right\">\n            <a href=\"/mainpage\">Log Out</a>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </nav>\n  <ol class=\"breadcrumb\">\n      <li><a (click)=\"main(hotel)\">Home</a></li>\n      <li><a (click)=\"main(hotel)\">{{hotel.userAccount}}</a></li>\n      <li><a (click)=\"hotelman(hotel)\">Manage Student</a></li>\n      <li > <a (click)=\"hmstudent(hotel)\"> {{student.firstName}} {{student.lastName}}</a></li>\n      <li class=\"active\">添加项目</li>\n  </ol>\n\n  <div class=\"container-fluid\">\n    <div class=\"row content\">\n      <div class=\"col-sm-3 sidenav\">\n      <h4>{{hotel.userAccount}}  </h4>\n      <ul class=\"nav nav-pills nav-stacked\">\n        <li ><a (click)=\"main(hotel)\">Home-{{hotel.userAccount}}</a></li>\n        <li ><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n        <li><a (click)=\"comp(hotel)\">进度更新</a></li>\n        <li class=\"active\"><a (click)=\"hotelman(hotel)\">学生管理</a></li>\n        <li><a (click)=\"hmorder(hotel)\">学生申请</a></li>\n        <li><a (click)=\"hmregister(hotel)\">登记账号</a></li>\n        <li ><a (click)=\"hmblog(hotel)\">Blog管理</a></li>\n      </ul><br>\n      \n      </div>\n    \n      <div class=\"col-sm-9\">\n        <h2>{{student.firstName}} {{student.lastName}}</h2>\n      <p>{{student.userAccount}}</p>\n      <hr>\n        <form (submit)=\"addschool(postForm)\" #postForm=\"ngForm\" ngNativeValidate>\n          <fieldset>\n            <legend>添加学校项目</legend>\n            <div class=\"form-group row\">\n              <label for=\"staticEmail\" class=\"col-sm-2 col-form-label\">常用项目</label>\n              <div class=\"col-sm-10\">\n                <div class=\"form-group\" style=\"width:80%\">\n                  <select class=\"form-control\" id=\"exampleSelect1\">\n                    <option>待测试</option>\n                    <option>2</option>\n                    <option>3</option>\n                    <option>4</option>\n                    <option>5</option>\n                  </select>\n                </div>\n              </div>\n            </div>\n            <div class=\"form-group\">\n              <label for=\"exampleInputEmail1\">University</label>\n              <input type=\"text\" class=\"form-control\"  name=\"University\" placeholder=\"Enter University\" ngModel required>\n              <small class=\"form-text text-muted\">We'll never share your email with anyone else.</small>\n            </div>\n            <div class=\"form-group\">\n              <label for=\"exampleInputPassword1\">School</label>\n              <input type=text class=\"form-control\" name=\"Uschool\" placeholder=\"Enter School\" ngModel required>\n            </div>\n            <div class=\"form-group\">\n              <label for=\"exampleInputPassword1\">Major</label>\n              <input type=text class=\"form-control\" name=\"major\" placeholder=\"Enter Major\" ngModel required>\n            </div>\n            <div class=\"form-group\">\n              <label for=\"exampleInputPassword1\">Deadline 1</label>\n              <input class=\"form-control\" name=\"ddl1\" type=\"date\" placeholder=\"date\" style=\"width:50%\" ngModel required>\n              <small class=\"form-text text-muted\">若只有一个deadline，只需填写一个即可。</small>\n            </div>\n            <div class=\"form-group\">\n              <label for=\"exampleInputPassword1\">Deadline 2</label>\n              <input class=\"form-control\" name=\"ddl2\" type=\"date\" placeholder=\"date\" style=\"width:50%\" ngModel >\n            </div>\n            <div class=\"form-group\">\n              <label for=\"exampleInputPassword1\">Deadline 3</label>\n              <input class=\"form-control\" name=\"ddl3\" type=\"date\" placeholder=\"date\" style=\"width:50%\" ngModel >\n            </div>  \n            \n            <fieldset class=\"form-group\">\n              <legend>Interview</legend>\n              <div class=\"form-check\">\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"interview\" id=\"interview1\" value=\"yes\"  ngModel required>\n                  有面试\n                </label>\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"interview\" id=\"interview2\" value=\"no\"  ngModel required>\n                  无面试\n                </label>\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"interview\" id=\"interview3\" value=\"other\" ngModel required>\n                  未知\n                </label>\n              </div>\n            </fieldset>\n            <fieldset class=\"form-group\">\n              <legend>Video Essay</legend>\n              <div class=\"form-check\">\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"videoessay\" id=\"videoessay1\" value=\"无Video Essay\"  ngModel required>\n                  无Video Essay\n                </label>\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"videoessay\" id=\"videoessay2\" value=\"有，在提交申请前\" ngModel required>\n                  有，在提交申请前\n                </label>\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"videoessay\" id=\"videoessay3\" value=\"有，在提交申请后\" ngModel required>\n                  有，在提交申请后\n                </label>\n              </div>\n            </fieldset>\n            <fieldset class=\"form-group\">\n              <legend>学校link</legend>\n              <div class=\"form-check\">\n                <input type=\"text\" class=\"form-control\"  name=\"link\" placeholder=\"Enter Link\" ngModel required>\n              </div>\n            </fieldset>    \n            <fieldset class=\"form-group\">\n              <legend>所需推荐信数量</legend>\n              <div class=\"form-check\">\n                <input type=\"text\" class=\"form-control\"  name=\"recommNumber\" placeholder=\"Enter Recommendation Letter Number\" ngModel required>\n              </div>\n            </fieldset>\n            <fieldset class=\"form-group\">\n              <legend>备注</legend>\n              <div class=\"form-check\">\n                <input type=\"text\" class=\"form-control\"  name=\"other\" placeholder=\"Enter Notes\" ngModel>\n              </div>\n            </fieldset>\n            <fieldset class=\"form-group\">\n              <legend>优先级别</legend>\n              <div class=\"form-check\">\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"level\" id=\"level1\" value=\"正常\"  ngModel required>\n                 正常 &nbsp; &nbsp; \n                </label>\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"level\" id=\"level2\" value=\"保底\"  ngModel required>\n                  保底 <span class=\"label label-info\">☆</span>&nbsp; &nbsp; \n                </label>\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"level\" id=\"level3\" value=\"冲刺\" ngModel required>\n                  冲刺 <span class=\"label label-success\">❤</span>&nbsp; &nbsp; \n                </label>\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"level\" id=\"level4\" value=\"不可能\" ngModel required>\n                  不可能 <span class=\"label label-warning\">×</span>&nbsp; &nbsp; \n                </label>\n              </div>\n            </fieldset>\n\n            <button  class=\"btn btn-primary\" >添加</button>\n          </fieldset>\n        </form>\n      </div>\n    </div>\n  </div>\n\n\n  \n\n  "
+module.exports = "<nav class=\"navbar navbar-inverse\" role=\"navigation\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n        <a class=\"navbar-brand\" >一个很神秘的网页</a>\n      </div>\n      <div class=\"nav  navbar-right\">\n        <ul class=\"nav navbar-nav\">\n          <li class=\"active\"><a (click)=\"main(hotel)\">HomePage</a></li>\n          <li class=\"dropdown\">\n            <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n              Shortcut <b class=\"caret\"></b>\n            </a>\n            <ul class=\"dropdown-menu\">\n              <li><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n              <li><a (click)=\"comp(hotel)\">Complete info</a></li>\n              <li class=\"divider\"></li>\n            </ul>\n          </li>\n          <li class=\"nav navbar-nav navbar-right\">\n            <a href=\"/mainpage\">Log Out</a>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </nav>\n  <ol class=\"breadcrumb\">\n      <li><a (click)=\"main(hotel)\">Home</a></li>\n      <li><a (click)=\"main(hotel)\">{{hotel.userAccount}}</a></li>\n      <li><a (click)=\"hotelman(hotel)\">Manage Student</a></li>\n      <li > <a (click)=\"hmstudent(hotel)\"> {{student.firstName}} {{student.lastName}}</a></li>\n      <li class=\"active\">添加项目</li>\n  </ol>\n\n  <div class=\"container-fluid\">\n    <div class=\"row content\">\n      <div class=\"col-sm-3 sidenav\">\n      <h4>{{hotel.userAccount}}  </h4>\n      <ul class=\"nav nav-pills nav-stacked\">\n        <li ><a (click)=\"main(hotel)\">Home-{{hotel.userAccount}}</a></li>\n        <li ><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n        <li><a (click)=\"comp(hotel)\">进度更新</a></li>\n        <li class=\"active\"><a (click)=\"hotelman(hotel)\">学生管理</a></li>\n        <li><a (click)=\"hmorder(hotel)\">学生申请</a></li>\n        <li><a (click)=\"hmregister(hotel)\">登记账号</a></li>\n        <li ><a (click)=\"hmblog(hotel)\">Blog管理</a></li>\n      </ul><br>\n      \n      </div>\n    \n      <div class=\"col-sm-9\">\n        <h2>{{student.firstName}} {{student.lastName}}</h2>\n      <p>{{student.userAccount}}</p>\n      <hr>\n        <form (submit)=\"addschool(postForm)\" #postForm=\"ngForm\" ngNativeValidate>\n          <fieldset>\n            <legend>添加学校项目</legend>\n            <div class=\"form-group row\">\n              <label for=\"staticEmail\" class=\"col-sm-2 col-form-label\">常用项目</label>\n              <div class=\"col-sm-10\">\n                <div class=\"form-group\" style=\"width:80%\">\n                  <select class=\"form-control\" id=\"exampleSelect1\">\n                    <option>待测试</option>\n                    <option>2</option>\n                    <option>3</option>\n                    <option>4</option>\n                    <option>5</option>\n                  </select>\n                </div>\n              </div>\n            </div>\n            <div class=\"form-group\">\n              <label for=\"exampleInputEmail1\">University</label>\n              <input type=\"text\" class=\"form-control\"  name=\"University\" placeholder=\"Enter University\" ngModel required>\n              <small class=\"form-text text-muted\">We'll never share your email with anyone else.</small>\n            </div>\n            <div class=\"form-group\">\n              <label for=\"exampleInputPassword1\">School</label>\n              <input type=text class=\"form-control\" name=\"Uschool\" placeholder=\"Enter School\" ngModel required>\n            </div>\n            <div class=\"form-group\">\n              <label for=\"exampleInputPassword1\">Major</label>\n              <input type=text class=\"form-control\" name=\"major\" placeholder=\"Enter Major\" ngModel required>\n            </div>\n            <div class=\"form-group\">\n              <label for=\"exampleInputPassword1\">Deadline 1</label>\n              <input class=\"form-control\" name=\"ddl1\" type=\"date\" placeholder=\"date\" style=\"width:50%\" ngModel required>\n              <small class=\"form-text text-muted\">若只有一个deadline，只需填写一个即可。</small>\n            </div>\n            <div class=\"form-group\">\n              <label for=\"exampleInputPassword1\">Deadline 2</label>\n              <input class=\"form-control\" name=\"ddl2\" type=\"date\" placeholder=\"date\" style=\"width:50%\" ngModel >\n            </div>\n            <div class=\"form-group\">\n              <label for=\"exampleInputPassword1\">Deadline 3</label>\n              <input class=\"form-control\" name=\"ddl3\" type=\"date\" placeholder=\"date\" style=\"width:50%\" ngModel >\n            </div>  \n            \n            <fieldset class=\"form-group\">\n              <legend>Interview</legend>\n              <div class=\"form-check\">\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"interview\" id=\"interview1\" value=\"yes\"  ngModel required>\n                  有面试\n                </label>\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"interview\" id=\"interview2\" value=\"no\"  ngModel required>\n                  无面试\n                </label>\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"interview\" id=\"interview3\" value=\"other\" ngModel required>\n                  未知\n                </label>\n              </div>\n            </fieldset>\n            <fieldset class=\"form-group\">\n              <legend>Video Essay</legend>\n              <div class=\"form-check\">\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"videoessay\" id=\"videoessay1\" value=\"无Video Essay\"  ngModel required>\n                  无Video Essay\n                </label>\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"videoessay\" id=\"videoessay2\" value=\"有，在提交申请前\" ngModel required>\n                  有，在提交申请前\n                </label>\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"videoessay\" id=\"videoessay3\" value=\"有，在提交申请后\" ngModel required>\n                  有，在提交申请后\n                </label>\n              </div>\n            </fieldset>\n            <fieldset class=\"form-group\">\n              <legend>GRE要求</legend>\n              <div class=\"form-check\">\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"gre\" id=\"gre1\" value=\"Required\"  ngModel required>\n                  Required\n                </label>\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"gre\" id=\"gre2\" value=\"Optional\" ngModel required>\n                  Optional\n                </label>\n              </div>\n            </fieldset>\n            <fieldset class=\"form-group\">\n              <legend>学校link</legend>\n              <div class=\"form-check\">\n                <input type=\"text\" class=\"form-control\"  name=\"link\" placeholder=\"Enter Link\" ngModel required>\n              </div>\n            </fieldset>    \n            <fieldset class=\"form-group\">\n              <legend>所需推荐信数量</legend>\n              <div class=\"form-check\">\n                <input type=\"text\" class=\"form-control\"  name=\"recommNumber\" placeholder=\"Enter Recommendation Letter Number\" ngModel required>\n              </div>\n            </fieldset>\n            <fieldset class=\"form-group\">\n              <legend>备注</legend>\n              <div class=\"form-check\">\n                <input type=\"text\" class=\"form-control\"  name=\"other\" placeholder=\"Enter Notes\" ngModel>\n              </div>\n            </fieldset>\n            <fieldset class=\"form-group\">\n              <legend>优先级别</legend>\n              <div class=\"form-check\">\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"level\" id=\"level1\" value=\"正常\"  ngModel required>\n                 正常 &nbsp; &nbsp; \n                </label>\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"level\" id=\"level2\" value=\"保底\"  ngModel required>\n                  保底 <span class=\"label label-info\">☆</span>&nbsp; &nbsp; \n                </label>\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"level\" id=\"level3\" value=\"冲刺\" ngModel required>\n                  冲刺 <span class=\"label label-success\">❤</span>&nbsp; &nbsp; \n                </label>\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"level\" id=\"level4\" value=\"不可能\" ngModel required>\n                  不可能 <span class=\"label label-warning\">×</span>&nbsp; &nbsp; \n                </label>\n              </div>\n            </fieldset>\n\n            <button  class=\"btn btn-primary\" >添加</button>\n          </fieldset>\n        </form>\n      </div>\n    </div>\n  </div>\n\n\n  \n\n  "
 
 /***/ }),
 
@@ -1738,7 +1738,7 @@ var HmaddschoolComponent = /** @class */ (function () {
     HmaddschoolComponent.prototype.addschool = function (form) {
         this.ngOnInit();
         console.log("School名" + form.value.Uschool + "ddl1为" + form.value.ddl1 + "备注" + form.value.other);
-        this.schoolService.addSchool("", this.studentID, "进行中", form.value.University, form.value.Uschool, form.value.major, form.value.ddl1, form.value.ddl2, form.value.ddl3, form.value.interview, form.value.videoessay, form.value.link, "", "", form.value.recommNumber, form.value.other, form.value.level);
+        this.schoolService.addSchool("", this.studentID, "进行中", form.value.University, form.value.Uschool, form.value.major, form.value.ddl1, form.value.ddl2, form.value.ddl3, form.value.interview, form.value.videoessay, form.value.link, "", "", form.value.recommNumber, form.value.other, form.value.level, form.value.gre);
         //这里other其实是 备注信息
         alert("Add School Seccuss!!");
         console.log("推荐信" + form.value.recommNumber);
@@ -1752,7 +1752,7 @@ var HmaddschoolComponent = /** @class */ (function () {
     };
     HmaddschoolComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/hotels').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/hotels').subscribe(function (Data) {
             _this.hotels = Data.hotels;
             for (var _i = 0, _a = _this.hotels; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -1768,7 +1768,7 @@ var HmaddschoolComponent = /** @class */ (function () {
             }
         });
         //展示 学生个人信息
-        this.http.get('/api/students').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/students').subscribe(function (Data) {
             _this.students = Data.students;
             for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -1957,13 +1957,13 @@ var HmblogComponent = /** @class */ (function () {
     };
     HmblogComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/users').subscribe(function (userData) {
+        this.http.get('http://localhost:3000/users').subscribe(function (userData) {
             _this.user = userData.user;
             console.log(userData.user);
             //console.log(this.user.length);
         });
         //获取HotelM 信息列表
-        this.http.get('/api/hotels').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/hotels').subscribe(function (Data) {
             _this.hotels = Data.hotels;
             for (var _i = 0, _a = _this.hotels; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -1979,7 +1979,7 @@ var HmblogComponent = /** @class */ (function () {
             }
         });
         //获取Blog 信息列表
-        this.http.get('/api/blogs').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/blogs').subscribe(function (Data) {
             //this.blogs = Data.blogs;
             for (var i = Data.blogs.length - 1; i >= 0; i--) {
                 _this.blogs.push(Data.blogs[i]);
@@ -2141,7 +2141,7 @@ var HmcompComponent = /** @class */ (function () {
     }
     HmcompComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/hotels').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/hotels').subscribe(function (Data) {
             _this.hotels = Data.hotels;
             for (var _i = 0, _a = _this.hotels; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -2157,7 +2157,7 @@ var HmcompComponent = /** @class */ (function () {
             }
         });
         //展示 此学生进度信息
-        this.http.get('/api/tasks').subscribe(function (o) {
+        this.http.get('http://localhost:3000/tasks').subscribe(function (o) {
             //console.log("测试"+ o[1]);
             //this.tasks = o.tasks;
             for (var i = o.tasks.length - 1; i >= 0; i--) {
@@ -2261,7 +2261,7 @@ var HmcompComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<header>\n\t<nav class=\"navbar navbar-inverse\" role=\"navigation\">\n\t\t<div class=\"container-fluid\">\n\t\t<div class=\"navbar-header\">\n\t\t\t\t<a class=\"navbar-brand\" >一个很神秘的网页</a>\n\t\t</div>\n\t\t<div class=\"nav  navbar-right\">\n\t\t  <ul class=\"nav navbar-nav\">\n\t\t\t<li class=\"active\"><a (click)=\"main(hotel)\">HomePage</a></li>\n\t\t\t<li class=\"dropdown\">\n\t\t\t  <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n\t\t\t\t{{hotel.userAccount}} <b class=\"caret\"></b>\n\t\t\t  </a>\n\t\t\t  <ul class=\"dropdown-menu\">\n\t\t\t\t\t\t\t<li><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n\t\t\t\t\t\t\t<li><a (click)=\"comp(hotel)\">进度更新</a></li>\n\t\t\t\t\t\t\t<li class=\"divider\"></li>\n\t\t\t\t<li><a (click)=\"hotelman(hotel)\">学生管理</a></li>\n\t\t\t\t<li><a (click)=\"hmregister(hotel)\">登记账号</a></li>\n\t\t\t\t\t\t</ul>\n\t\t\t</li>\n\t\t\t<li class=\"nav navbar-nav navbar-right\">\n\t\t\t  <a href=\"/mainpage\">Log Out</a>\n\t\t\t</li>\n\t\t  </ul>\n\t\t</div>\n\t  </div>\n\t</nav>\n\t\n  </header>\n  \n  <ol class=\"breadcrumb\">\n\t<li class=\"active\">Home - {{hotel.userAccount}}</li>\n</ol>\n\n<div class=\"container-fluid\">\n\t<div class=\"row content\">\n\t  <div class=\"col-sm-3 sidenav\">\n\t\t<h4>{{hotel.userAccount}}  </h4>\n\t\t<ul class=\"nav nav-pills nav-stacked\">\n\t\t  <li class=\"active\"><a (click)=\"main(hotel)\">Home</a></li>\n\t\t  <li ><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n\t\t\t<li><a (click)=\"comp(hotel)\">进度更新</a></li>\n\t\t\t<li><a (click)=\"hotelman(hotel)\">学生管理</a></li>\n\t\t\t<li><a (click)=\"hmorder(hotel)\">学生申请</a></li>\n\t\t\t<li><a (click)=\"hmregister(hotel)\">登记账号</a></li>\n\t\t\t<li ><a (click)=\"hmblog(hotel)\">Blog管理</a></li>\n\t\t</ul><br>\n\t\t\n\t  </div>\n\n\t  <div class=\"col-sm-9\">\n\t\t<div>\n\t\t\t<div class=\"row text-center\">\n\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t  <div class=\"btn-group\">\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  mwlCalendarPreviousView\n\t\t\t\t\t  [view]=\"view\"\n\t\t\t\t\t  [(viewDate)]=\"viewDate\"\n\t\t\t\t\t  (viewDateChange)=\"closeOpenMonthViewDay()\"\n\t\t\t\t\t>\n\t\t\t\t\t  Previous\n\t\t\t\t\t</div>\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-outline-secondary\"\n\t\t\t\t\t  mwlCalendarToday\n\t\t\t\t\t  [(viewDate)]=\"viewDate\"\n\t\t\t\t\t>\n\t\t\t\t\t  Today\n\t\t\t\t\t</div>\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  mwlCalendarNextView\n\t\t\t\t\t  [view]=\"view\"\n\t\t\t\t\t  [(viewDate)]=\"viewDate\"\n\t\t\t\t\t  (viewDateChange)=\"closeOpenMonthViewDay()\"\n\t\t\t\t\t>\n\t\t\t\t\t  Next\n\t\t\t\t\t</div>\n\t\t\t\t  </div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t  <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t  <div class=\"btn-group\">\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  (click)=\"setView(CalendarView.Month)\"\n\t\t\t\t\t  [class.active]=\"view === CalendarView.Month\"\n\t\t\t\t\t>\n\t\t\t\t\t  Month\n\t\t\t\t\t</div>\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  (click)=\"setView(CalendarView.Week)\"\n\t\t\t\t\t  [class.active]=\"view === CalendarView.Week\"\n\t\t\t\t\t>\n\t\t\t\t\t  Week\n\t\t\t\t\t</div>\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  (click)=\"setView(CalendarView.Day)\"\n\t\t\t\t\t  [class.active]=\"view === CalendarView.Day\"\n\t\t\t\t\t>\n\t\t\t\t\t  Day\n\t\t\t\t\t</div>\n\t\t\t\t  </div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t  <br/>\n\t\t\t  <div [ngSwitch]=\"view\">\n\t\t\t\t<mwl-calendar-month-view\n\t\t\t\t  *ngSwitchCase=\"CalendarView.Month\"\n\t\t\t\t  [viewDate]=\"viewDate\"\n\t\t\t\t  [events]=\"events\"\n\t\t\t\t  [refresh]=\"refresh\"\n\t\t\t\t  [activeDayIsOpen]=\"activeDayIsOpen\"\n\t\t\t\t  (dayClicked)=\"dayClicked($event.day)\"\n\t\t\t\t  (eventClicked)=\"handleEvent('Clicked', $event.event)\"\n\t\t\t\t  (eventTimesChanged)=\"eventTimesChanged($event)\"\n\t\t\t\t>\n\t\t\t\t</mwl-calendar-month-view>\n\t\t\t\t<mwl-calendar-week-view\n\t\t\t\t\t*ngSwitchCase=\"CalendarView.Week\"\n\t\t\t\t\t[viewDate]=\"viewDate\"\n\t\t\t\t\t[events]=\"events\"\n\t\t\t\t\t[refresh]=\"refresh\"\n\t\t\t\t\t(eventClicked)=\"handleEvent('Clicked', $event.event)\"\n\t\t\t\t\t(eventTimesChanged)=\"eventTimesChanged($event)\"\n\t\t\t\t>\n\t\t\t\t</mwl-calendar-week-view>\n\t\t\t\t<mwl-calendar-day-view\n\t\t\t\t\t*ngSwitchCase=\"CalendarView.Day\"\n\t\t\t\t\t[viewDate]=\"viewDate\"\n\t\t\t\t\t[events]=\"events\"\n\t\t\t\t\t[refresh]=\"refresh\"\n\t\t\t\t\t(eventClicked)=\"handleEvent('Clicked', $event.event)\"\n\t\t\t\t\t(eventTimesChanged)=\"eventTimesChanged($event)\"\n\t\t\t\t>\n\t\t\t\t</mwl-calendar-day-view>\n\t\t\t  </div>\t\t  \n\t\t</div>\n\n\n\t\t<h4><small>更新日志</small></h4>\n\t\t<hr>\n\t\t<h2>Version 2.18</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Sep 25, 2023.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span></h5><br>\n\t\t<p>1. 选校列表中加入 显示备注功能</p>\n\n\n\t\t<hr>\n\t\t<h2>Version 2.17</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Sep 12, 2023.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> <span class=\"label label-danger\">学生系统</span></h5><br>\n\t\t<p>1. 修复在添加学校界面 无法添加备注的bug</p>\n\t\t<p>2. 增加学生项目 面试，videessay 图标显示</p>\n\t\t<p>3. 修复学生界面，修改简历信息后，学生账号消失的bug</p>\n\n\t\t<hr>\n\t\t<h2>Version 2.16</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Aug 20, 2023.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> </h5><br>\n\t\t<p>1. 学年更新至2023</p>\n\n\n\t\t<hr>\n\t\t<h2>Version 2.15</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Aug 25, 2022.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> </h5><br>\n\t\t<p>1. 增加学生项目标签</p>\n\t\t<p>2. 修复学生学年bug，增加学年选项</p>\n\n\n\t\t<hr>\n\t\t<h2>Version 2.14</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Aug 01, 2022.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> </h5><br>\n\t\t<p>1. 优化添加选校功能，增加备注一栏</p>\n\t\t<p>2. 添加任务功能，为每个学生增加留学进度更新</p>\n\t\t\n\n\t\t<hr>\n\t\t<h2>Version 2.13</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Apr 26, 2022.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span><span class=\"label label-danger\">学生系统</span> </h5><br>\n\t\t<p>1. 新增学生排序功能，添加2021年度和2022年度分类</p>\n\t\t<p>2. 学生系统中将个人信息和简历信息区分</p>\n\t\t<p>3. 学生系统中添加推荐人界面重构，新增FAQ板块</p>\n\n\t\t\n\t\t<hr>\n\t\t<h2>Version 2.12</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Nov 13, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> </h5><br>\n\t\t<p>1. 新增推荐人、推荐信、和文书删除功能</p>\n\t\t<p>2. 新增展示学校推荐信总数</p>\n\t\t\n\t\t\n\t\t<hr>\n\t\t<h2>Version 2.11</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Oct 24, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> <span class=\"label label-danger\">学生系统</span></h5><br>\n\t\t<p>1. 新增查看日历事项中具体信息</p>\n\t\t<p>2. 学生系统中增加日历视图功能</p>\n\t\t<p>3. Debug 部分页面无法获取学生个人信息</p>\n\n\t\t<hr>\n\t\t<h2>Version 2.10</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Oct 22, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> </h5><br>\n\t\t<p>1. 新增日历事项</p>\n\n\n\t\t<hr>\n\t\t<h2>Version 2.9</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Oct 16, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> <span class=\"label label-danger\">学生系统</span></h5><br>\n\t\t<p>1. Debug学生系统不能修改职业规划</p>\n\t\t<p>2. Debug管理员系统无法下载学生列表</p>\n\n\t\t<hr>\n\t\t<h2>Version 2.8</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Oct 08, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> </h5><br>\n\t\t<p>1. 新增管理员系统中，可以下载学生的选校列表</p>\n\n\t\t<hr>\n\t\t<h2>Version 2.7</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Oct 02, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> </h5><br>\n\t\t<p>1. 新增管理员系统中，可以查看推荐人被引用的全部列表</p>\n\t\t\n\n\t\t<hr>\n\t\t<h2>Version 2.6</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Sep 27, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> <span class=\"label label-primary\">主页</span></h5><br>\n\t\t<p>1. 新增管理员系统中，对于学生的工作经历和教育背景 信息删除功能</p>\n\t\t<p>2. 添加 主页-留学申请 页面中其他服务内容，包含文书、咨询、简历修改</p><br>\n\n\n\t\t<hr>\n\t\t<h2>Version 2.5</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Sep 23, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span><span class=\"label label-primary\">主页</span></h5><br>\n\t\t<p>1. 新增管理员系统中可以查询学生的个人信息，包含工作经历，教育背景等信息</p><br>\n\t\t<p>2. 更新 主页-留学申请-研究生申请 页面中Q&A部分信息</p><br>\n\t\t<hr>\n\t\n\t\t<h2>Version 2.4</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Aug 21, 2021.</h5>\n\t\t<h5><span class=\"label label-primary\">主页</span></h5><br>\n\t\t<p>1. 新增 主页-留学生请 页面，及其子项（高中、本科、研究生）</p><br>\n\t\t<hr>\n\n\t\t<h2>Version 2.3</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Aug 08, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span><span class=\"label label-danger\">学生系统</span></h5><br>\n\t\t<p>1. 新增 通知系统</p><br>\n\t\t<p>1. 新增 文书系统</p><br>\n\t\t<hr>\n\n\t\t<br><br>\n\t  </div>\n\t</div>\n</div>\n\n  \n  "
+module.exports = "\n<header>\n\t<nav class=\"navbar navbar-inverse\" role=\"navigation\">\n\t\t<div class=\"container-fluid\">\n\t\t<div class=\"navbar-header\">\n\t\t\t\t<a class=\"navbar-brand\" >一个很神秘的网页</a>\n\t\t</div>\n\t\t<div class=\"nav  navbar-right\">\n\t\t  <ul class=\"nav navbar-nav\">\n\t\t\t<li class=\"active\"><a (click)=\"main(hotel)\">HomePage</a></li>\n\t\t\t<li class=\"dropdown\">\n\t\t\t  <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n\t\t\t\t{{hotel.userAccount}} <b class=\"caret\"></b>\n\t\t\t  </a>\n\t\t\t  <ul class=\"dropdown-menu\">\n\t\t\t\t\t\t\t<li><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n\t\t\t\t\t\t\t<li><a (click)=\"comp(hotel)\">进度更新</a></li>\n\t\t\t\t\t\t\t<li class=\"divider\"></li>\n\t\t\t\t<li><a (click)=\"hotelman(hotel)\">学生管理</a></li>\n\t\t\t\t<li><a (click)=\"hmregister(hotel)\">登记账号</a></li>\n\t\t\t\t\t\t</ul>\n\t\t\t</li>\n\t\t\t<li class=\"nav navbar-nav navbar-right\">\n\t\t\t  <a href=\"/mainpage\">Log Out</a>\n\t\t\t</li>\n\t\t  </ul>\n\t\t</div>\n\t  </div>\n\t</nav>\n\t\n  </header>\n  \n  <ol class=\"breadcrumb\">\n\t<li class=\"active\">Home - {{hotel.userAccount}}</li>\n</ol>\n\n<div class=\"container-fluid\">\n\t<div class=\"row content\">\n\t  <div class=\"col-sm-3 sidenav\">\n\t\t<h4>{{hotel.userAccount}}  </h4>\n\t\t<ul class=\"nav nav-pills nav-stacked\">\n\t\t  <li class=\"active\"><a (click)=\"main(hotel)\">Home</a></li>\n\t\t  <li ><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n\t\t\t<li><a (click)=\"comp(hotel)\">进度更新</a></li>\n\t\t\t<li><a (click)=\"hotelman(hotel)\">学生管理</a></li>\n\t\t\t<li><a (click)=\"hmorder(hotel)\">学生申请</a></li>\n\t\t\t<li><a (click)=\"hmregister(hotel)\">登记账号</a></li>\n\t\t\t<li ><a (click)=\"hmblog(hotel)\">Blog管理</a></li>\n\t\t</ul><br>\n\t\t\n\t  </div>\n\n\t  <div class=\"col-sm-9\">\n\t\t<div>\n\t\t\t<div class=\"row text-center\">\n\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t  <div class=\"btn-group\">\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  mwlCalendarPreviousView\n\t\t\t\t\t  [view]=\"view\"\n\t\t\t\t\t  [(viewDate)]=\"viewDate\"\n\t\t\t\t\t  (viewDateChange)=\"closeOpenMonthViewDay()\"\n\t\t\t\t\t>\n\t\t\t\t\t  Previous\n\t\t\t\t\t</div>\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-outline-secondary\"\n\t\t\t\t\t  mwlCalendarToday\n\t\t\t\t\t  [(viewDate)]=\"viewDate\"\n\t\t\t\t\t>\n\t\t\t\t\t  Today\n\t\t\t\t\t</div>\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  mwlCalendarNextView\n\t\t\t\t\t  [view]=\"view\"\n\t\t\t\t\t  [(viewDate)]=\"viewDate\"\n\t\t\t\t\t  (viewDateChange)=\"closeOpenMonthViewDay()\"\n\t\t\t\t\t>\n\t\t\t\t\t  Next\n\t\t\t\t\t</div>\n\t\t\t\t  </div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t  <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t  <div class=\"btn-group\">\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  (click)=\"setView(CalendarView.Month)\"\n\t\t\t\t\t  [class.active]=\"view === CalendarView.Month\"\n\t\t\t\t\t>\n\t\t\t\t\t  Month\n\t\t\t\t\t</div>\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  (click)=\"setView(CalendarView.Week)\"\n\t\t\t\t\t  [class.active]=\"view === CalendarView.Week\"\n\t\t\t\t\t>\n\t\t\t\t\t  Week\n\t\t\t\t\t</div>\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  (click)=\"setView(CalendarView.Day)\"\n\t\t\t\t\t  [class.active]=\"view === CalendarView.Day\"\n\t\t\t\t\t>\n\t\t\t\t\t  Day\n\t\t\t\t\t</div>\n\t\t\t\t  </div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t  <br/>\n\t\t\t  <div [ngSwitch]=\"view\">\n\t\t\t\t<mwl-calendar-month-view\n\t\t\t\t  *ngSwitchCase=\"CalendarView.Month\"\n\t\t\t\t  [viewDate]=\"viewDate\"\n\t\t\t\t  [events]=\"events\"\n\t\t\t\t  [refresh]=\"refresh\"\n\t\t\t\t  [activeDayIsOpen]=\"activeDayIsOpen\"\n\t\t\t\t  (dayClicked)=\"dayClicked($event.day)\"\n\t\t\t\t  (eventClicked)=\"handleEvent('Clicked', $event.event)\"\n\t\t\t\t  (eventTimesChanged)=\"eventTimesChanged($event)\"\n\t\t\t\t>\n\t\t\t\t</mwl-calendar-month-view>\n\t\t\t\t<mwl-calendar-week-view\n\t\t\t\t\t*ngSwitchCase=\"CalendarView.Week\"\n\t\t\t\t\t[viewDate]=\"viewDate\"\n\t\t\t\t\t[events]=\"events\"\n\t\t\t\t\t[refresh]=\"refresh\"\n\t\t\t\t\t(eventClicked)=\"handleEvent('Clicked', $event.event)\"\n\t\t\t\t\t(eventTimesChanged)=\"eventTimesChanged($event)\"\n\t\t\t\t>\n\t\t\t\t</mwl-calendar-week-view>\n\t\t\t\t<mwl-calendar-day-view\n\t\t\t\t\t*ngSwitchCase=\"CalendarView.Day\"\n\t\t\t\t\t[viewDate]=\"viewDate\"\n\t\t\t\t\t[events]=\"events\"\n\t\t\t\t\t[refresh]=\"refresh\"\n\t\t\t\t\t(eventClicked)=\"handleEvent('Clicked', $event.event)\"\n\t\t\t\t\t(eventTimesChanged)=\"eventTimesChanged($event)\"\n\t\t\t\t>\n\t\t\t\t</mwl-calendar-day-view>\n\t\t\t  </div>\t\t  \n\t\t</div>\n\n\n\t\t<h4><small>更新日志</small></h4>\n\t\t<hr>\n\t\t<h2>Version 2.19</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Mar 18, 2024.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span></h5><br>\n\t\t<p>1. 添加项目GRE选项</p>\n\t\t<p>2. 学年更新至2024</p>\n\n\t\t<hr>\n\t\t<h2>Version 2.18</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Sep 25, 2023.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span></h5><br>\n\t\t<p>1. 选校列表中加入 显示备注功能</p>\n\n\n\t\t<hr>\n\t\t<h2>Version 2.17</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Sep 12, 2023.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> <span class=\"label label-danger\">学生系统</span></h5><br>\n\t\t<p>1. 修复在添加学校界面 无法添加备注的bug</p>\n\t\t<p>2. 增加学生项目 面试，videessay 图标显示</p>\n\t\t<p>3. 修复学生界面，修改简历信息后，学生账号消失的bug</p>\n\n\t\t<hr>\n\t\t<h2>Version 2.16</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Aug 20, 2023.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> </h5><br>\n\t\t<p>1. 学年更新至2023</p>\n\n\n\t\t<hr>\n\t\t<h2>Version 2.15</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Aug 25, 2022.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> </h5><br>\n\t\t<p>1. 增加学生项目标签</p>\n\t\t<p>2. 修复学生学年bug，增加学年选项</p>\n\n\n\t\t<hr>\n\t\t<h2>Version 2.14</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Aug 01, 2022.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> </h5><br>\n\t\t<p>1. 优化添加选校功能，增加备注一栏</p>\n\t\t<p>2. 添加任务功能，为每个学生增加留学进度更新</p>\n\t\t\n\n\t\t<hr>\n\t\t<h2>Version 2.13</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Apr 26, 2022.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span><span class=\"label label-danger\">学生系统</span> </h5><br>\n\t\t<p>1. 新增学生排序功能，添加2021年度和2022年度分类</p>\n\t\t<p>2. 学生系统中将个人信息和简历信息区分</p>\n\t\t<p>3. 学生系统中添加推荐人界面重构，新增FAQ板块</p>\n\n\t\t\n\t\t<hr>\n\t\t<h2>Version 2.12</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Nov 13, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> </h5><br>\n\t\t<p>1. 新增推荐人、推荐信、和文书删除功能</p>\n\t\t<p>2. 新增展示学校推荐信总数</p>\n\t\t\n\t\t\n\t\t<hr>\n\t\t<h2>Version 2.11</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Oct 24, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> <span class=\"label label-danger\">学生系统</span></h5><br>\n\t\t<p>1. 新增查看日历事项中具体信息</p>\n\t\t<p>2. 学生系统中增加日历视图功能</p>\n\t\t<p>3. Debug 部分页面无法获取学生个人信息</p>\n\n\t\t<hr>\n\t\t<h2>Version 2.10</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Oct 22, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> </h5><br>\n\t\t<p>1. 新增日历事项</p>\n\n\n\t\t<hr>\n\t\t<h2>Version 2.9</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Oct 16, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> <span class=\"label label-danger\">学生系统</span></h5><br>\n\t\t<p>1. Debug学生系统不能修改职业规划</p>\n\t\t<p>2. Debug管理员系统无法下载学生列表</p>\n\n\t\t<hr>\n\t\t<h2>Version 2.8</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Oct 08, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> </h5><br>\n\t\t<p>1. 新增管理员系统中，可以下载学生的选校列表</p>\n\n\t\t<hr>\n\t\t<h2>Version 2.7</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Oct 02, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> </h5><br>\n\t\t<p>1. 新增管理员系统中，可以查看推荐人被引用的全部列表</p>\n\t\t\n\n\t\t<hr>\n\t\t<h2>Version 2.6</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Sep 27, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> <span class=\"label label-primary\">主页</span></h5><br>\n\t\t<p>1. 新增管理员系统中，对于学生的工作经历和教育背景 信息删除功能</p>\n\t\t<p>2. 添加 主页-留学申请 页面中其他服务内容，包含文书、咨询、简历修改</p><br>\n\n\n\t\t<hr>\n\t\t<h2>Version 2.5</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Sep 23, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span><span class=\"label label-primary\">主页</span></h5><br>\n\t\t<p>1. 新增管理员系统中可以查询学生的个人信息，包含工作经历，教育背景等信息</p><br>\n\t\t<p>2. 更新 主页-留学申请-研究生申请 页面中Q&A部分信息</p><br>\n\t\t<hr>\n\t\n\t\t<h2>Version 2.4</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Aug 21, 2021.</h5>\n\t\t<h5><span class=\"label label-primary\">主页</span></h5><br>\n\t\t<p>1. 新增 主页-留学生请 页面，及其子项（高中、本科、研究生）</p><br>\n\t\t<hr>\n\n\t\t<h2>Version 2.3</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Aug 08, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span><span class=\"label label-danger\">学生系统</span></h5><br>\n\t\t<p>1. 新增 通知系统</p><br>\n\t\t<p>1. 新增 文书系统</p><br>\n\t\t<hr>\n\n\t\t<br><br>\n\t  </div>\n\t</div>\n</div>\n\n  \n  "
 
 /***/ }),
 
@@ -2344,7 +2344,7 @@ var HMmainComponent = /** @class */ (function () {
     }
     HMmainComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/hotels').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/hotels').subscribe(function (Data) {
             //console.log(Data);
             _this.hotels = Data.hotels;
             //console.log(this.hotels[0].email);
@@ -2361,7 +2361,7 @@ var HMmainComponent = /** @class */ (function () {
         this.hotelMSub = this.hmService.getHotelMUpdatedListener().subscribe(function (hotels) {
             _this.hotels = hotels;
         });
-        this.http.get('/api/students/').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/students/').subscribe(function (Data) {
             _this.students = Data.students;
             console.log(_this.students);
             for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
@@ -2369,7 +2369,7 @@ var HMmainComponent = /** @class */ (function () {
                 _this.student.push(st);
             }
         });
-        this.http.get('/api/schools').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/schools').subscribe(function (Data) {
             _this.schools = Data.schools;
             for (var _i = 0, _a = _this.schools; _i < _a.length; _i++) {
                 var sc = _a[_i];
@@ -2563,7 +2563,7 @@ var HMmainComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-inverse\" role=\"navigation\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n        <a class=\"navbar-brand\" >一个很神秘的网页</a>\n      </div>\n      <div class=\"nav  navbar-right\">\n        <ul class=\"nav navbar-nav\">\n          <li class=\"active\"><a (click)=\"main(hotel)\">HomePage</a></li>\n          <li class=\"dropdown\">\n            <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n              Shortcut <b class=\"caret\"></b>\n            </a>\n            <ul class=\"dropdown-menu\">\n              <li><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n              <li><a (click)=\"comp(hotel)\">Complete info</a></li>\n              <li class=\"divider\"></li>\n            </ul>\n          </li>\n          <li class=\"nav navbar-nav navbar-right\">\n            <a href=\"/mainpage\">Log Out</a>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </nav>\n  <ol class=\"breadcrumb\">\n      <li><a (click)=\"main(hotel)\">Home</a></li>\n      <li><a (click)=\"main(hotel)\">{{hotel.userAccount}}</a></li>\n      <li class=\"active\">Manage Student</li>\n  </ol>\n\n  <div class=\"container-fluid\">\n    <div class=\"row content\">\n      <div class=\"col-sm-2 sidenav\">\n      <h4>{{hotel.userAccount}}  </h4>\n      <ul class=\"nav nav-pills nav-stacked\">\n        <li ><a (click)=\"main(hotel)\">Home</a></li>\n        <li ><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n        <li><a (click)=\"comp(hotel)\">进度更新</a></li>\n        <li class=\"active\"><a (click)=\"hotelman(hotel)\">学生管理</a></li>\n        <li><a (click)=\"hmorder(hotel)\">学生申请</a></li>\n        <li><a (click)=\"hmregister(hotel)\">登记账号</a></li>\n        <li ><a (click)=\"hmblog(hotel)\">Blog管理</a></li>\n      </ul><br>\n      \n      </div>\n    \n      <div class=\"col-sm-10\">\n      <!-- 第一行-->\n        <div class=\"row\" *ngIf=\"student.length > 0\">\n          <div class=\"col-sm-12\" >\n          \n\n            \n            <!--表格2023年-->\n            <div class=\"panel panel-default\">\n              <div class=\"panel-heading\">\n                <div class=\"row\">\n                  <div class=\"col-sm-8\"><h2>Year 2023</h2></div>\n                </div>\n              </div>\n              <div class=\"panel-body\">\n                  <table class=\"table table-hover  table-bordered\">\n                      <thead><tr>\n                          <th>User Account</th>\n                          <th>Full Name</th>\n                          <th>Gender</th>\n                          <th></th>\n                      </tr></thead>\n                      <tbody *ngFor=\"let o of student\">\n                      <tr  *ngIf=\"o.year=='2023'\">\n                          <td>{{o.userAccount}}</td>\n                          <td>{{o.firstName}} {{o.lastName}}</td>\n                          <td>{{o.gender}}</td>\n                          <td><button href=\"/anew/todel/@a.id\" (click)=\"more(o)\" >More</button></td>\n                      </tr>\n                      \n                      </tbody>\n\n                  </table>\n              </div>\n            </div>\n            <hr>\n\n\n              <!--表格2022年-->\n              <div class=\"panel panel-default\">\n                <div class=\"panel-heading\">\n                  <div class=\"row\">\n                    <div class=\"col-sm-8\"><h2>Year 2022</h2></div>\n                  </div>\n                </div>\n                <div class=\"panel-body\">\n                    <table class=\"table table-hover  table-bordered\">\n                        <thead><tr>\n                            <th>User Account</th>\n                            <th>Full Name</th>\n                            <th>Gender</th>\n                            <th></th>\n                        </tr></thead>\n                        <tbody *ngFor=\"let o of student\">\n                        <tr  *ngIf=\"o.year=='2022'\">\n                            <td>{{o.userAccount}}</td>\n                            <td>{{o.firstName}} {{o.lastName}}</td>\n                            <td>{{o.gender}}</td>\n                            <td><button href=\"/anew/todel/@a.id\" (click)=\"more(o)\" >More</button></td>\n                        </tr>\n                        \n                        </tbody>\n\n                    </table>\n                </div>\n            </div>\n            <hr>\n\n               <!--表格2021年-->\n              <div class=\"panel panel-default\">\n                <div class=\"panel-heading\">\n                  <div class=\"row\">\n                    <div class=\"col-sm-8\"><h2>Year 2021</h2></div>\n                  </div>\n                  \n                </div>\n                <div class=\"panel-body\">\n                    <table class=\"table table-hover table-bordered\">\n                        <thead><tr>\n                            <th>User Account</th>\n                            <th>Full Name</th>\n                            <th>Gender</th>\n                            <th></th>\n                        </tr></thead>\n                        <tbody *ngFor=\"let s of student\" >\n                        <tr *ngIf=\"s.year=='2021'\">\n                            <td>{{s.userAccount}}</td>\n                            <td>{{s.firstName}} {{s.lastName}}</td>\n                            <td>{{s.gender}}</td>\n                            <td><button href=\"/anew/todel/@a.id\" (click)=\"more(s)\" >More</button></td>\n                        </tr>\n                        \n                        </tbody>\n\n                    </table>\n                </div>\n              </div>\n              <hr>\n              <!--测试账号-->\n              <div class=\"panel panel-default\">\n                <div class=\"panel-heading\">\n                  <div class=\"row\">\n                    <div class=\"col-sm-8\"><h2>测试账号</h2></div>\n                  </div>\n                </div>\n                <div class=\"panel-body\">\n                    <table class=\"table table-hover  table-bordered\">\n                        <thead><tr>\n                            <th>User Account</th>\n                            <th>Full Name</th>\n                            <th>Gender</th>\n                            <th></th>\n                        </tr></thead>\n                        <tbody *ngFor=\"let o of student\">\n                        <tr  *ngIf=\"o.year=='测试账号'\">\n                            <td>{{o.userAccount}}</td>\n                            <td>{{o.firstName}} {{o.lastName}}</td>\n                            <td>{{o.gender}}</td>\n                            <td><button href=\"/anew/todel/@a.id\" (click)=\"more(o)\" >More</button></td>\n                        </tr>\n                        \n                        </tbody>\n\n                    </table>\n                </div>\n              </div>\n              <hr>\n          </div>\n        </div><!-- 第一行-->\n      </div>\n    </div>\n  </div>\n\n  \n  "
+module.exports = "<nav class=\"navbar navbar-inverse\" role=\"navigation\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n        <a class=\"navbar-brand\" >一个很神秘的网页</a>\n      </div>\n      <div class=\"nav  navbar-right\">\n        <ul class=\"nav navbar-nav\">\n          <li class=\"active\"><a (click)=\"main(hotel)\">HomePage</a></li>\n          <li class=\"dropdown\">\n            <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n              Shortcut <b class=\"caret\"></b>\n            </a>\n            <ul class=\"dropdown-menu\">\n              <li><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n              <li><a (click)=\"comp(hotel)\">Complete info</a></li>\n              <li class=\"divider\"></li>\n            </ul>\n          </li>\n          <li class=\"nav navbar-nav navbar-right\">\n            <a href=\"/mainpage\">Log Out</a>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </nav>\n  <ol class=\"breadcrumb\">\n      <li><a (click)=\"main(hotel)\">Home</a></li>\n      <li><a (click)=\"main(hotel)\">{{hotel.userAccount}}</a></li>\n      <li class=\"active\">Manage Student</li>\n  </ol>\n\n  <div class=\"container-fluid\">\n    <div class=\"row content\">\n      <div class=\"col-sm-2 sidenav\">\n      <h4>{{hotel.userAccount}}  </h4>\n      <ul class=\"nav nav-pills nav-stacked\">\n        <li ><a (click)=\"main(hotel)\">Home</a></li>\n        <li ><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n        <li><a (click)=\"comp(hotel)\">进度更新</a></li>\n        <li class=\"active\"><a (click)=\"hotelman(hotel)\">学生管理</a></li>\n        <li><a (click)=\"hmorder(hotel)\">学生申请</a></li>\n        <li><a (click)=\"hmregister(hotel)\">登记账号</a></li>\n        <li ><a (click)=\"hmblog(hotel)\">Blog管理</a></li>\n      </ul><br>\n      \n      </div>\n    \n      <div class=\"col-sm-10\">\n      <!-- 第一行-->\n        <div class=\"row\" *ngIf=\"student.length > 0\">\n          <div class=\"col-sm-12\" >\n          \n            <!--表格2024年-->\n            <div class=\"panel panel-default\">\n              <div class=\"panel-heading\">\n                <div class=\"row\">\n                  <div class=\"col-sm-8\"><h2>Year 2024</h2></div>\n                </div>\n              </div>\n              <div class=\"panel-body\">\n                  <table class=\"table table-hover  table-bordered\">\n                      <thead><tr>\n                          <th>User Account</th>\n                          <th>Full Name</th>\n                          <th>Gender</th>\n                          <th></th>\n                      </tr></thead>\n                      <tbody *ngFor=\"let o of student\">\n                      <tr  *ngIf=\"o.year=='2024'\">\n                          <td>{{o.userAccount}}</td>\n                          <td>{{o.firstName}} {{o.lastName}}</td>\n                          <td>{{o.gender}}</td>\n                          <td><button href=\"/anew/todel/@a.id\" (click)=\"more(o)\" >More</button></td>\n                      </tr>\n                      \n                      </tbody>\n\n                  </table>\n              </div>\n            </div>\n            <hr>\n            \n            <!--表格2023年-->\n            <div class=\"panel panel-default\">\n              <div class=\"panel-heading\">\n                <div class=\"row\">\n                  <div class=\"col-sm-8\"><h2>Year 2023</h2></div>\n                </div>\n              </div>\n              <div class=\"panel-body\">\n                  <table class=\"table table-hover  table-bordered\">\n                      <thead><tr>\n                          <th>User Account</th>\n                          <th>Full Name</th>\n                          <th>Gender</th>\n                          <th></th>\n                      </tr></thead>\n                      <tbody *ngFor=\"let o of student\">\n                      <tr  *ngIf=\"o.year=='2023'\">\n                          <td>{{o.userAccount}}</td>\n                          <td>{{o.firstName}} {{o.lastName}}</td>\n                          <td>{{o.gender}}</td>\n                          <td><button href=\"/anew/todel/@a.id\" (click)=\"more(o)\" >More</button></td>\n                      </tr>\n                      \n                      </tbody>\n\n                  </table>\n              </div>\n            </div>\n            <hr>\n\n\n              <!--表格2022年-->\n              <div class=\"panel panel-default\">\n                <div class=\"panel-heading\">\n                  <div class=\"row\">\n                    <div class=\"col-sm-8\"><h2>Year 2022</h2></div>\n                  </div>\n                </div>\n                <div class=\"panel-body\">\n                    <table class=\"table table-hover  table-bordered\">\n                        <thead><tr>\n                            <th>User Account</th>\n                            <th>Full Name</th>\n                            <th>Gender</th>\n                            <th></th>\n                        </tr></thead>\n                        <tbody *ngFor=\"let o of student\">\n                        <tr  *ngIf=\"o.year=='2022'\">\n                            <td>{{o.userAccount}}</td>\n                            <td>{{o.firstName}} {{o.lastName}}</td>\n                            <td>{{o.gender}}</td>\n                            <td><button href=\"/anew/todel/@a.id\" (click)=\"more(o)\" >More</button></td>\n                        </tr>\n                        \n                        </tbody>\n\n                    </table>\n                </div>\n            </div>\n            <hr>\n\n               <!--表格2021年-->\n              <div class=\"panel panel-default\">\n                <div class=\"panel-heading\">\n                  <div class=\"row\">\n                    <div class=\"col-sm-8\"><h2>Year 2021</h2></div>\n                  </div>\n                  \n                </div>\n                <div class=\"panel-body\">\n                    <table class=\"table table-hover table-bordered\">\n                        <thead><tr>\n                            <th>User Account</th>\n                            <th>Full Name</th>\n                            <th>Gender</th>\n                            <th></th>\n                        </tr></thead>\n                        <tbody *ngFor=\"let s of student\" >\n                        <tr *ngIf=\"s.year=='2021'\">\n                            <td>{{s.userAccount}}</td>\n                            <td>{{s.firstName}} {{s.lastName}}</td>\n                            <td>{{s.gender}}</td>\n                            <td><button href=\"/anew/todel/@a.id\" (click)=\"more(s)\" >More</button></td>\n                        </tr>\n                        \n                        </tbody>\n\n                    </table>\n                </div>\n              </div>\n              <hr>\n              <!--测试账号-->\n              <div class=\"panel panel-default\">\n                <div class=\"panel-heading\">\n                  <div class=\"row\">\n                    <div class=\"col-sm-8\"><h2>测试账号</h2></div>\n                  </div>\n                </div>\n                <div class=\"panel-body\">\n                    <table class=\"table table-hover  table-bordered\">\n                        <thead><tr>\n                            <th>User Account</th>\n                            <th>Full Name</th>\n                            <th>Gender</th>\n                            <th></th>\n                        </tr></thead>\n                        <tbody *ngFor=\"let o of student\">\n                        <tr  *ngIf=\"o.year=='测试账号'\">\n                            <td>{{o.userAccount}}</td>\n                            <td>{{o.firstName}} {{o.lastName}}</td>\n                            <td>{{o.gender}}</td>\n                            <td><button href=\"/anew/todel/@a.id\" (click)=\"more(o)\" >More</button></td>\n                        </tr>\n                        \n                        </tbody>\n\n                    </table>\n                </div>\n              </div>\n              <hr>\n          </div>\n        </div><!-- 第一行-->\n      </div>\n    </div>\n  </div>\n\n  \n  "
 
 /***/ }),
 
@@ -2616,7 +2616,7 @@ var HmmanageComponent = /** @class */ (function () {
     }
     HmmanageComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/hotels').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/hotels').subscribe(function (Data) {
             _this.hotels = Data.hotels;
             for (var _i = 0, _a = _this.hotels; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -2632,7 +2632,7 @@ var HmmanageComponent = /** @class */ (function () {
             }
         });
         // select the particular order by hotel id
-        this.http.get('/api/students').subscribe(function (oData) {
+        this.http.get('http://localhost:3000/students').subscribe(function (oData) {
             _this.students = oData.students;
             console.log("全部学生信息");
             console.log(_this.students);
@@ -2662,7 +2662,7 @@ var HmmanageComponent = /** @class */ (function () {
             price: this.price,
         };
         console.log(Hotel.price + "ddddd" + Hotel.userAccount);
-        this.http.put('/api/hotels/' + this.hotel.userAccount, Hotel)
+        this.http.put('http://localhost:3000/hotels/' + this.hotel.userAccount, Hotel)
             .subscribe(function (data) {
             var options = {
                 overlay: true,
@@ -2835,7 +2835,7 @@ var HmmodifypassComponent = /** @class */ (function () {
     }
     HmmodifypassComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/hotels').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/hotels').subscribe(function (Data) {
             _this.hotels = Data.hotels;
             for (var _i = 0, _a = _this.hotels; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -2846,7 +2846,7 @@ var HmmodifypassComponent = /** @class */ (function () {
                 }
             }
         });
-        this.http.get('/api/users').subscribe(function (uData) {
+        this.http.get('http://localhost:3000/users').subscribe(function (uData) {
             _this.user = uData.user;
             for (var _i = 0, _a = _this.user; _i < _a.length; _i++) {
                 var u = _a[_i];
@@ -2890,7 +2890,7 @@ var HmmodifypassComponent = /** @class */ (function () {
             Role: this.us.Role,
         };
         console.log("User object" + User.UserPassword + "  " + User.Role);
-        this.http.put('/api/users/' + this.hotel.userAccount, User)
+        this.http.put('http://localhost:3000/users/' + this.hotel.userAccount, User)
             .subscribe(function (data) {
             var options = {
                 overlay: true,
@@ -3033,7 +3033,7 @@ var HmmodifypasssuccComponent = /** @class */ (function () {
     }
     HmmodifypasssuccComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/hotels').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/hotels').subscribe(function (Data) {
             _this.hotels = Data.hotels;
             for (var _i = 0, _a = _this.hotels; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -3178,7 +3178,7 @@ var HmorderComponent = /** @class */ (function () {
     }
     HmorderComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/hotels').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/hotels').subscribe(function (Data) {
             _this.hotels = Data.hotels;
             for (var _i = 0, _a = _this.hotels; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -3187,7 +3187,7 @@ var HmorderComponent = /** @class */ (function () {
                 }
             }
         });
-        this.http.get('/api/students/').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/students/').subscribe(function (Data) {
             _this.students = Data.students;
             console.log(_this.students);
             for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
@@ -3195,7 +3195,7 @@ var HmorderComponent = /** @class */ (function () {
                 _this.student.push(st);
             }
         });
-        this.http.get('/api/schools').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/schools').subscribe(function (Data) {
             _this.schools = Data.schools;
             for (var _i = 0, _a = _this.schools; _i < _a.length; _i++) {
                 var sc = _a[_i];
@@ -3225,7 +3225,7 @@ var HmorderComponent = /** @class */ (function () {
             }
         };
         this.router.navigate(['/hmordersearch'], navigationExtras);
-        // this.http.get<{schools: School[]}>('/api/studentschooldetail/'+temp0).subscribe((Data) => {
+        // this.http.get<{schools: School[]}>('http://localhost:3000/studentschooldetail/'+temp0).subscribe((Data) => {
         //       this.schools = Data.schools;
         //       for(let school of this.schools){
         //         for(let test of this.student){
@@ -3296,7 +3296,7 @@ var HmorderComponent = /** @class */ (function () {
     };
     HmorderComponent.prototype.delete = function (s) {
         console.log(s._id);
-        this.http.delete('/api/schools/' + s._id).subscribe(function (oooData) {
+        this.http.delete('http://localhost:3000/schools/' + s._id).subscribe(function (oooData) {
             console.log("删除这个申请项目成功");
             window.location.reload();
         });
@@ -3407,7 +3407,7 @@ var HmordersearchComponent = /** @class */ (function () {
     }
     HmordersearchComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/hotels').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/hotels').subscribe(function (Data) {
             _this.hotels = Data.hotels;
             for (var _i = 0, _a = _this.hotels; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -3416,7 +3416,7 @@ var HmordersearchComponent = /** @class */ (function () {
                 }
             }
         });
-        this.http.get('/api/students/').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/students/').subscribe(function (Data) {
             _this.students = Data.students;
             console.log(_this.students);
             for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
@@ -3428,7 +3428,7 @@ var HmordersearchComponent = /** @class */ (function () {
             }
         });
         //展示 此学生 选校信息
-        this.http.get('/api/studentschooldetail/' + this.studentID).subscribe(function (orderData) {
+        this.http.get('http://localhost:3000/studentschooldetail/' + this.studentID).subscribe(function (orderData) {
             console.log("此学生选校列表");
             console.log(orderData);
             _this.school = orderData.schools;
@@ -3504,7 +3504,7 @@ var HmordersearchComponent = /** @class */ (function () {
     };
     HmordersearchComponent.prototype.delete = function (s) {
         console.log(s._id);
-        this.http.delete('/api/schools/' + s._id).subscribe(function (oooData) {
+        this.http.delete('http://localhost:3000/schools/' + s._id).subscribe(function (oooData) {
             console.log("删除这个申请项目成功");
             window.location.reload();
         });
@@ -3623,7 +3623,7 @@ var HmoschoolComponent = /** @class */ (function () {
     }
     HmoschoolComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/hotels').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/hotels').subscribe(function (Data) {
             _this.hotels = Data.hotels;
             for (var _i = 0, _a = _this.hotels; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -3639,7 +3639,7 @@ var HmoschoolComponent = /** @class */ (function () {
             }
         });
         //展示 申请项目的详细信息
-        this.http.get('/api/schools').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/schools').subscribe(function (Data) {
             //console.log(orderData);
             _this.schools = Data.schools;
             for (var _i = 0, _a = _this.schools; _i < _a.length; _i++) {
@@ -3666,7 +3666,7 @@ var HmoschoolComponent = /** @class */ (function () {
             }
         });
         //展示 学生个人信息
-        this.http.get('/api/students').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/students').subscribe(function (Data) {
             _this.students = Data.students;
             for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -3678,17 +3678,17 @@ var HmoschoolComponent = /** @class */ (function () {
             }
         });
         //展示 此学生 推荐人信息
-        this.http.get('/api/studentrecommenderdetail/' + this.studentID).subscribe(function (orderData) {
+        this.http.get('http://localhost:3000/studentrecommenderdetail/' + this.studentID).subscribe(function (orderData) {
             //console.log(orderData);
             _this.recommenders = orderData.recommenders;
         });
         //展示 这个选校的 推荐信 信息
-        this.http.get('/api/schoolrecomletterlist/' + this.schoolID).subscribe(function (Data) {
+        this.http.get('http://localhost:3000/schoolrecomletterlist/' + this.schoolID).subscribe(function (Data) {
             //console.log(Data);
             _this.recomletters = Data.recomletters;
         });
         //展示 这个选校的 文书 信息
-        this.http.get('/api/statementdetail/' + this.schoolID).subscribe(function (Data) {
+        this.http.get('http://localhost:3000/statementdetail/' + this.schoolID).subscribe(function (Data) {
             //console.log(Data);
             _this.statements = Data.statements;
         });
@@ -3705,7 +3705,7 @@ var HmoschoolComponent = /** @class */ (function () {
             type: l.type,
             state: "未提交",
         };
-        this.http.put('/api/recomletters/' + l._id, Recomletter)
+        this.http.put('http://localhost:3000/recomletters/' + l._id, Recomletter)
             .subscribe(function (data) {
             var options = {
                 overlay: true,
@@ -3729,7 +3729,7 @@ var HmoschoolComponent = /** @class */ (function () {
             type: l.type,
             state: "已提交",
         };
-        this.http.put('/api/recomletters/' + l._id, Recomletter)
+        this.http.put('http://localhost:3000/recomletters/' + l._id, Recomletter)
             .subscribe(function (data) {
             var options = {
                 overlay: true,
@@ -3753,7 +3753,7 @@ var HmoschoolComponent = /** @class */ (function () {
             type: l.type,
             state: "弃用",
         };
-        this.http.put('/api/recomletters/' + l._id, Recomletter)
+        this.http.put('http://localhost:3000/recomletters/' + l._id, Recomletter)
             .subscribe(function (data) {
             var options = {
                 overlay: true,
@@ -4043,7 +4043,7 @@ var HmregisterComponent = /** @class */ (function () {
                     temp16 = "student";
                     //create one resp in students database
                     console.log(temp0);
-                    this.stService.addStudent("", temp0, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "2023");
+                    this.stService.addStudent("", temp0, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "2024");
                     //共65个属性
                 }
                 if (temp4.checked == true) {
@@ -4070,13 +4070,13 @@ var HmregisterComponent = /** @class */ (function () {
     };
     HmregisterComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/users').subscribe(function (userData) {
+        this.http.get('http://localhost:3000/users').subscribe(function (userData) {
             _this.user = userData.user;
             console.log(userData.user);
             console.log(_this.user.length);
         });
         //获取HotelM 信息列表
-        this.http.get('/api/hotels').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/hotels').subscribe(function (Data) {
             _this.hotels = Data.hotels;
             for (var _i = 0, _a = _this.hotels; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -4092,7 +4092,7 @@ var HmregisterComponent = /** @class */ (function () {
             }
         });
         //展示 此学生进度信息
-        this.http.get('/api/tasks').subscribe(function (o) {
+        this.http.get('http://localhost:3000/tasks').subscribe(function (o) {
             //console.log("测试"+ o[1]);
             //this.tasks = o.tasks;
             for (var i = o.tasks.length - 1; i >= 0; i--) {
@@ -4197,7 +4197,7 @@ var HmregisterComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-inverse\" role=\"navigation\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n        <a class=\"navbar-brand\" >一个很神秘的网页</a>\n      </div>\n      <div class=\"nav  navbar-right\">\n        <ul class=\"nav navbar-nav\">\n          <li class=\"active\"><a (click)=\"main(hotel)\">HomePage</a></li>\n          <li class=\"dropdown\">\n            <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n              Shortcut <b class=\"caret\"></b>\n            </a>\n            <ul class=\"dropdown-menu\">\n              <li><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n              <li><a (click)=\"comp(hotel)\">Complete info</a></li>\n              <li class=\"divider\"></li>\n              <li><a (click)=\"hotelman(hotel)\">Manage Hotel</a></li>\n              <li><a (click)=\"hmorder(hotel)\">Order</a></li>\n            </ul>\n          </li>\n          <li class=\"nav navbar-nav navbar-right\">\n            <a href=\"/mainpage\">Log Out</a>\n          </li>\n        </ul>\n      </div>\n    </div>\n</nav>\n  <ol class=\"breadcrumb\">\n      <li><a (click)=\"main(hotel)\">Home</a></li>\n      <li><a (click)=\"main(hotel)\">{{hotel.userAccount}}</a></li>\n      <li><a (click)=\"hotelman(hotel)\">Manage Student</a></li>\n      <li >   <a (click)=\"hmstudent(hotel)\">{{student.firstName}} {{student.lastName}}</a> </li>\n      <li class=\"active\"> 申请项目详细</li>\n  </ol>\n\n  <div class=\"container-fluid\">\n    <div class=\"row content\">\n      <div class=\"col-sm-2 sidenav\">\n      <h4>{{hotel.userAccount}}  </h4>\n      <ul class=\"nav nav-pills nav-stacked\">\n        <li ><a (click)=\"main(hotel)\">Home-{{hotel.userAccount}}</a></li>\n        <li ><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n        <li><a (click)=\"comp(hotel)\">进度更新</a></li>\n        <li class=\"active\"><a (click)=\"hotelman(hotel)\">学生管理</a></li>\n        <li><a (click)=\"hmorder(hotel)\">学生申请</a></li>\n        <li><a (click)=\"hmregister(hotel)\">登记账号</a></li>\n        <li ><a (click)=\"hmblog(hotel)\">Blog管理</a></li>\n      </ul><br>\n      \n      </div>\n    \n      <div class=\"col-sm-10\">\n        <h2>{{student.firstName}} {{student.lastName}}</h2>\n      <p>{{student.userAccount}}</p>  \n      <hr>\n      <h3>申请状态</h3>\n        <div class=\"row\">\n          <div class=\"col-sm-7\"><b>{{school.state}} </b></div>\n          <div class=\"col-sm-3\">\n            <div class=\"dropdown\">\n              <button class=\"btn btn-primary dropdown-toggle\" type=\"button\" data-toggle=\"dropdown\">更改状态\n              <span class=\"caret\"></span></button>\n              <ul class=\"dropdown-menu\">\n                <li><a onclick=\"return confirm('你确定要更改这个申请状态吗?')\" (click)=\"updateStateDone()\">已完成</a></li>\n                <li><a onclick=\"return confirm('你确定要更改这个申请状态吗?')\" (click)=\"updateStateOffer()\">Offer</a></li>\n                <li><a onclick=\"return confirm('你确定要更改这个申请状态吗?')\" (click)=\"updateStateRef()\">拒信</a></li>\n              </ul>\n            </div>\n          </div>\n        </div>\n      <br>\n      <hr>\n      <h3>申请项目详细       \n        <a href=\"{{school.link}}\">\n         <span class=\"glyphicon glyphicon-link\"></span>\n        </a>\n      </h3>\n\n      <br>\n      <form id=\"form1\" action=\"\" method=\"post\">\n        <table>\n              <tr>\n                <td>University\n                </td>\n                <td><div class=\"input-group\">\t\t\n                  <input class=\"form-control\" id=\"univName\" value=\"{{school.univName}}\" [(ngModel)]=\"univName\"  name=\"univName\" style=\"width: 785px;\" disabled=\"\"></div>\n                </td>\n              </tr>\n              <tr>\n                  <td>School</td>\n                  <td><div class=\"input-group\">\n                    <input  class=\"form-control\" id=\"schoolName\" [(ngModel)]=\"schoolName\" value=\"{{school.schoolName}}\"  name=\"schoolName\" style=\"width: 785px;\" disabled=\"\"></div>\n                  </td>\n              </tr>\n              <tr>\n                  <td>Major\n                  </td>\n                  <td><div class=\"input-group\">\n                    <input  class=\"form-control\" value=\"{{school.majorName}}\" [(ngModel)]=\"majorName\"  id=\"majorName\"  name=\"majorName\" disabled=\"\" style=\"width: 785px;\"></div>\n                  </td>\n              </tr>\n              <tr>\n                <td>Deadline 1\n                </td>\n                <td><div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.ddl1}}\" [(ngModel)]=\"ddl1\"  id=\"ddl1\"  name=\"ddl1\" disabled=\"\" style=\"width: 785px; \"></div>\n                </td>\n              </tr>\n              <tr>\n                <td>Deadline 2\n                </td>\n                <td><div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.ddl2}}\" [(ngModel)]=\"ddl2\"  id=\"ddl2\" name=\"ddl2\"  disabled=\"\" style=\"width: 785px; \"></div>\n                </td>\n              </tr>\n              <tr>\n                <td>Deadline 3\n                </td>\n                <td><div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.ddl3}}\" [(ngModel)]=\"ddl3\"  id=\"ddl3\"  name=\"ddl3\" disabled=\"\" style=\"width: 785px; \"></div>\n                </td>\n              </tr>\n              \n              <tr>\n                <td>Interview\n                </td>\n                <td><div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.interview}}\" [(ngModel)]=\"interview\"  id=\"interview\" disabled=\"\" name=\"interview\" style=\"width: 785px; \"></div>\n                </td>\n              </tr>\n              <tr>\n                <td>Video Essay\n                </td>\n                <td><div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.videoEssay}}\" [(ngModel)]=\"videoEssay\"  id=\"videoEssay\" disabled=\"\" name=\"videoEssay\" style=\"width: 785px; \"></div>\n                </td>\n              </tr>\n              <tr>\n                <td>Link\n                </td>\n                <td>\n                  <div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.link}}\" [(ngModel)]=\"link\"  id=\"link\"  name=\"link\" disabled=\"\" style=\"width: 785px; \">\n                  </div>\n                </td>\n              </tr>\n              <tr>\n                <td>申请账号\n                </td>\n                <td><div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.applyAccount}}\" [(ngModel)]=\"applyAccount\"  id=\"applyAccount\" disabled=\"\" name=\"applyAccount\" style=\"width: 785px; \"></div>\n                </td>\n              </tr>\n              <tr>\n                <td>申请密码\n                </td>\n                <td><div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.applyPassword}}\" [(ngModel)]=\"applyPassword\"  id=\"applyPassword\" disabled=\"\" name=\"applyPassword\" style=\"width: 785px; \"></div>\n                </td>\n              </tr>\n              <tr>\n                <td>推荐信数量\n                </td>\n                <td><div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.recommNumber}}\" [(ngModel)]=\"recommNumber\"  id=\"recommNumber\" disabled=\"\" name=\"recommNumber\" style=\"width: 785px; \"></div>\n                </td>\n              </tr>\n              <tr>\n                <td>备注\n                </td>\n                <td><div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.other}}\" [(ngModel)]=\"other\"  id=\"other\"  name=\"other\" disabled=\"\" style=\"width: 785px; \"></div>\n                </td>\n              </tr>\n              <tr>\n                <td>优先级别\n                </td>\n                <td><div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.level}}\" [(ngModel)]=\"level\"  id=\"level\"  name=\"level\" disabled=\"\" style=\"width: 785px; \"></div>\n                  <small class=\"form-text text-muted\">请填写特定格式：正常&nbsp; &nbsp;保底 <span class=\"label label-info\">☆</span>&nbsp; &nbsp; 冲刺 <span class=\"label label-success\">❤</span>&nbsp; &nbsp; 不可能 <span class=\"label label-warning\">×</span>&nbsp; &nbsp;  </small>\n                </td>\n              </tr>\n              <tr>\n                  <td>\n                  </td>\n                  <td>\n                  <input type=\"button\" id=\"modi\" (click)=\"modify()\" value=\"修改信息\" class=\"btn btn-primary btn-lg \" >\n                  <input type=\"button\" id=\"confirm\" disabled=\"\" (click)=\"update()\" value=\"确定修改\" class=\"btn btn-primary btn-lg \"  >\n                  </td> \n              </tr>\n        </table>\n      </form>\n      <hr>\n      \n      <h3>推荐信</h3>\n        <div class=\"row\">\n          <div class=\"col-sm-4 tuijian\">\n            <h4>\n              此选校所添加的推荐信总数：\n              <small class=\"text-muted\">{{recomletters.length}}</small>\n            </h4>\n            <div *ngIf=\"recomletters.length > 0\">\n              <div class=\"panel-group\" id=\"accordion\" *ngFor=\"let l of recomletters\">\n                <div class=\"panel panel-success\" *ngIf=\"l.state=='已提交'\">\n                  <div class=\"panel-heading\">\n                      <div class=\"row\">\n                        <div class=\"col-sm-10\"><b>{{l.recommenderName}} </b></div>\n                        <div class=\"col-sm-2\"><small>{{l.state}}</small></div>\n                      </div>\n                  </div>\n                  <div class=\"panel-body\">\n                    <div class=\"row\">\n                      <div class=\"col-sm-6\"><b>{{l.type}} </b></div>\n                      <div class=\"col-sm-5\">\n\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"panel-footer\">\n                    <div class=\"row\">\n                      <div class=\"col-sm-6\">\n                        <button  class=\"btn btn-danger btn-sm\" href=\"/anew/todel/@a.id\"  (click)=\"deleteRL(l)\">Delete</button>\n                      </div>\n                      <div class=\"col-sm-5\">\n                        <div class=\"btn-group\">\n                          <button type=\"button\" class=\"btn btn-primary\" href=\"/anew/todel/@a.id\" onclick=\"return confirm('你确定要更改这个推荐信状态吗?')\" (click)=\"updateLetterNoSubmit(l)\">未提交</button>\n                          <button type=\"button\" class=\"btn btn-primary\" href=\"/anew/todel/@a.id\" onclick=\"return confirm('你确定要更改这个推荐信状态吗?')\" (click)=\"updateLetterSubmit(l)\">已提交</button>\n                          <button type=\"button\" class=\"btn btn-primary\" href=\"/anew/todel/@a.id\" onclick=\"return confirm('你确定要更改这个推荐信状态吗?')\" (click)=\"updateLetterDiscard(l)\">弃用</button>\n                        </div>\n                        \n                      </div>\n                    </div>\n                    \n                  </div>\n                </div>\n                <div class=\"panel panel-default\" *ngIf=\"l.state=='未提交'\">\n                  <div class=\"panel-heading\">\n                      <div class=\"row\">\n                        <div class=\"col-sm-10\"><b>{{l.recommenderName}} </b></div>\n                        <div class=\"col-sm-2\"><small>{{l.state}}</small></div>\n                      </div>\n                  </div>\n                  <div class=\"panel-body\">\n                    <div class=\"row\">\n                      <div class=\"col-sm-6\"><b>{{l.type}} </b></div>\n                      <div class=\"col-sm-5\">\n\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"panel-footer\">\n                    <div class=\"row\">\n                      <div class=\"col-sm-6\">\n                        <button  class=\"btn btn-danger btn-sm\" href=\"/anew/todel/@a.id\"  (click)=\"deleteRL(l)\">Delete</button>\n                      </div>\n                      <div class=\"col-sm-5\">\n                        <div class=\"btn-group\">\n                          <button type=\"button\" class=\"btn btn-primary\" href=\"/anew/todel/@a.id\" onclick=\"return confirm('你确定要更改这个推荐信状态吗?')\" (click)=\"updateLetterNoSubmit(l)\">未提交</button>\n                          <button type=\"button\" class=\"btn btn-primary\" href=\"/anew/todel/@a.id\" onclick=\"return confirm('你确定要更改这个推荐信状态吗?')\" (click)=\"updateLetterSubmit(l)\">已提交</button>\n                          <button type=\"button\" class=\"btn btn-primary\" href=\"/anew/todel/@a.id\" onclick=\"return confirm('你确定要更改这个推荐信状态吗?')\" (click)=\"updateLetterDiscard(l)\">弃用</button>\n                        </div>\n                        \n                      </div>\n                    </div>\n                    \n                  </div>\n                </div>\n                <div class=\"panel panel-danger\" *ngIf=\"l.state=='弃用'\">\n                  <div class=\"panel-heading\">\n                      <div class=\"row\">\n                        <div class=\"col-sm-10\"><b>{{l.recommenderName}} </b></div>\n                        <div class=\"col-sm-2\"><small>{{l.state}}</small></div>\n                      </div>\n                  </div>\n                  <div class=\"panel-body\">\n                    <div class=\"row\">\n                      <div class=\"col-sm-6\"><b>{{l.type}} </b></div>\n                      <div class=\"col-sm-5\">\n\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"panel-footer\">\n                    <div class=\"row\">\n                      <div class=\"col-sm-6\">\n                        <button  class=\"btn btn-danger btn-sm\" href=\"/anew/todel/@a.id\"  (click)=\"deleteRL(l)\">Delete</button>\n                      </div>\n                      <div class=\"col-sm-5\">\n                        <div class=\"btn-group\">\n                          <button type=\"button\" class=\"btn btn-primary\" href=\"/anew/todel/@a.id\" onclick=\"return confirm('你确定要更改这个推荐信状态吗?')\" (click)=\"updateLetterNoSubmit(l)\">未提交</button>\n                          <button type=\"button\" class=\"btn btn-primary\" href=\"/anew/todel/@a.id\" onclick=\"return confirm('你确定要更改这个推荐信状态吗?')\" (click)=\"updateLetterSubmit(l)\">已提交</button>\n                          <button type=\"button\" class=\"btn btn-primary\" href=\"/anew/todel/@a.id\" onclick=\"return confirm('你确定要更改这个推荐信状态吗?')\" (click)=\"updateLetterDiscard(l)\">弃用</button>\n                        </div>\n                        \n                      </div>\n                    </div>\n                    \n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n          <div class=\"col-sm-4 caozuo\">\n            <form (submit)=\"addrecomLetter(postForm)\" #postForm=\"ngForm\" ngNativeValidate>\n              <fieldset>\n                <legend>添加推荐人信息</legend>\n                <div>\n                  <label>推荐人列表</label>\n                  <div>\n                    <div class=\"form-group\">\n                      <select class=\"form-control\" id=\"select\" *ngIf=\"recommenders.length > 0\"  ng-model=\"fLevelBefore\" ng-change=\"changervar('fLevelBefore')\">\n                        <option *ngFor=\"let r of recommenders\" id=\"recommenderID\" name=\"recommenderID\"  value=\"{{r._id}}\"> {{r.firstName}} {{r.lastName}}</option>\n                      </select>\n                    </div>\n                  </div>\n                </div>\n                \n                <fieldset class=\"form-group\" >\n                  <legend>类别</legend>\n                  <div class=\"form-check\">\n                    <label class=\"form-check-label\">\n                      <input type=\"radio\" class=\"form-check-input\" id=\"Academic\" value=\"Academic\"  ngModel required>\n                      Academic 学术 &nbsp; &nbsp; &nbsp; &nbsp; \n                    </label>\n                    <label class=\"form-check-label\">\n                      <input type=\"radio\" class=\"form-check-input\" id=\"Professional\" value=\"Professional\"  ngModel required>\n                      Professional 工作 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; \n                    </label>\n                    <label class=\"form-check-label\">\n                      <input type=\"radio\" class=\"form-check-input\"  id=\"Rother\" value=\"other\" ngModel required>\n                      other\n                    </label>\n                  </div>\n                </fieldset>\n    \n                <button  class=\"btn btn-primary\">添加</button>\n              </fieldset>\n            </form>\n            \n          </div>\n        </div>\n      \n\n      <hr>\n      <h3>文书</h3>\n        <div class=\"row\">\n          <div class=\"col-sm-4 tuijian\">\n            <h4>\n              此选校所添加的文书总数：\n              <small class=\"text-muted\">{{statements.length}}</small>\n            </h4>\n\n            <div class=\"container\" *ngIf=\"statements.length > 0\">\n              <div class=\"row clearfix\" *ngFor=\"let st of statements\">\n                <div class=\"col-md-6 column\">\n                  <div class=\"panel panel-info\" >\n                    <div class=\"panel-heading\" >\n                    <h4 class=\"panel-title\">\n                      <a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#{{st._id}}\">\n                      <b> {{st.stype}} </b> （ {{st.words}} 字） <br>\n                      </a>\n                    </h4>\n                    </div>\n                    <div id=\"{{st._id}}\" class=\"panel-collapse collapse\">\n                      <div class=\"panel-body\">\n                        {{st.question}}\n                      </div>\n                      <div class=\"panel-footer\">\n                        <div class=\"row\">\n                          <div class=\"col-sm-10\">\n                            \n                          </div>\n                          <div class=\"col-sm-2\">\n                            <button  class=\"btn btn-danger\" href=\"/anew/todel/@a.id\"  (click)=\"deleteST(st)\">Delete</button>\n                            \n                          </div>\n                        </div>\n                        \n                      </div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n          <div class=\"col-sm-4 caozuo\">\n            <form (submit)=\"addstatement(postForm)\" #postForm=\"ngForm\" ngNativeValidate>\n              <fieldset>\n                <legend>添加文书</legend>\n                <fieldset class=\"form-group\">\n                  <legend>类别</legend>\n                  <div class=\"form-check\">\n                    <label class=\"form-check-label\">\n                      <input type=\"radio\" class=\"form-check-input\" name=\"stype\" id=\"PS\" value=\"Personal Statement\"  ngModel required>\n                      Personal Statement\n                    </label>\n                    <label class=\"form-check-label\">\n                      <input type=\"radio\" class=\"form-check-input\" name=\"stype\" id=\"SOP\" value=\"Statement of Purpose\"  ngModel required>\n                      Statement of Purpose\n                    </label>\n                    <br>\n                    <label class=\"form-check-label\">\n                      <input type=\"radio\" class=\"form-check-input\" name=\"stype\" id=\"Essay\" value=\"Essay\" ngModel required>\n                      Essay\n                    </label>\n                    <br>\n                    <label class=\"form-check-label\">\n                      <input type=\"radio\" class=\"form-check-input\" name=\"stype\" id=\"Rother\" value=\"other\" ngModel required>\n                      Other\n                    </label>\n                  </div>\n                </fieldset>\n                <div class=\"form-group\">\n                  <label class=\"col-form-label mt-4\" for=\"inputDefault\">文书题目</label>\n                  <input type=\"text\" class=\"form-control\" placeholder=\"请填写文书题目\" id=\"question\" ngModel required>\n                </div>\n                <div class=\"form-group\">\n                  <label class=\"col-form-label mt-4\" for=\"inputDefault\">字数要求</label>\n                  <input type=\"text\" class=\"form-control\" placeholder=\"请填写字数限制\" id=\"words\" ngModel required>\n                </div>\n                <button  class=\"btn btn-primary\">添加</button>\n              </fieldset>\n            </form>\n            \n          </div>\n        </div>\n\n      </div>\n    </div>\n  </div>\n\n  \n\n  \n\n  "
+module.exports = "<nav class=\"navbar navbar-inverse\" role=\"navigation\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n        <a class=\"navbar-brand\" >一个很神秘的网页</a>\n      </div>\n      <div class=\"nav  navbar-right\">\n        <ul class=\"nav navbar-nav\">\n          <li class=\"active\"><a (click)=\"main(hotel)\">HomePage</a></li>\n          <li class=\"dropdown\">\n            <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n              Shortcut <b class=\"caret\"></b>\n            </a>\n            <ul class=\"dropdown-menu\">\n              <li><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n              <li><a (click)=\"comp(hotel)\">Complete info</a></li>\n              <li class=\"divider\"></li>\n              <li><a (click)=\"hotelman(hotel)\">Manage Hotel</a></li>\n              <li><a (click)=\"hmorder(hotel)\">Order</a></li>\n            </ul>\n          </li>\n          <li class=\"nav navbar-nav navbar-right\">\n            <a href=\"/mainpage\">Log Out</a>\n          </li>\n        </ul>\n      </div>\n    </div>\n</nav>\n  <ol class=\"breadcrumb\">\n      <li><a (click)=\"main(hotel)\">Home</a></li>\n      <li><a (click)=\"main(hotel)\">{{hotel.userAccount}}</a></li>\n      <li><a (click)=\"hotelman(hotel)\">Manage Student</a></li>\n      <li >   <a (click)=\"hmstudent(hotel)\">{{student.firstName}} {{student.lastName}}</a> </li>\n      <li class=\"active\"> 申请项目详细</li>\n  </ol>\n\n  <div class=\"container-fluid\">\n    <div class=\"row content\">\n      <div class=\"col-sm-2 sidenav\">\n      <h4>{{hotel.userAccount}}  </h4>\n      <ul class=\"nav nav-pills nav-stacked\">\n        <li ><a (click)=\"main(hotel)\">Home-{{hotel.userAccount}}</a></li>\n        <li ><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n        <li><a (click)=\"comp(hotel)\">进度更新</a></li>\n        <li class=\"active\"><a (click)=\"hotelman(hotel)\">学生管理</a></li>\n        <li><a (click)=\"hmorder(hotel)\">学生申请</a></li>\n        <li><a (click)=\"hmregister(hotel)\">登记账号</a></li>\n        <li ><a (click)=\"hmblog(hotel)\">Blog管理</a></li>\n      </ul><br>\n      \n      </div>\n    \n      <div class=\"col-sm-10\">\n        <h2>{{student.firstName}} {{student.lastName}}</h2>\n      <p>{{student.userAccount}}</p>  \n      <hr>\n      <h3>申请状态</h3>\n        <div class=\"row\">\n          <div class=\"col-sm-7\"><b>{{school.state}} </b></div>\n          <div class=\"col-sm-3\">\n            <div class=\"dropdown\">\n              <button class=\"btn btn-primary dropdown-toggle\" type=\"button\" data-toggle=\"dropdown\">更改状态\n              <span class=\"caret\"></span></button>\n              <ul class=\"dropdown-menu\">\n                <li><a onclick=\"return confirm('你确定要更改这个申请状态吗?')\" (click)=\"updateStateDone()\">已完成</a></li>\n                <li><a onclick=\"return confirm('你确定要更改这个申请状态吗?')\" (click)=\"updateStateOffer()\">Offer</a></li>\n                <li><a onclick=\"return confirm('你确定要更改这个申请状态吗?')\" (click)=\"updateStateRef()\">拒信</a></li>\n              </ul>\n            </div>\n          </div>\n        </div>\n      <br>\n      <hr>\n      <h3>申请项目详细       \n        <a href=\"{{school.link}}\">\n         <span class=\"glyphicon glyphicon-link\"></span>\n        </a>\n      </h3>\n\n      <br>\n      <form id=\"form1\" action=\"\" method=\"post\">\n        <table>\n              <tr>\n                <td>University\n                </td>\n                <td><div class=\"input-group\">\t\t\n                  <input class=\"form-control\" id=\"univName\" value=\"{{school.univName}}\" [(ngModel)]=\"univName\"  name=\"univName\" style=\"width: 785px;\" disabled=\"\"></div>\n                </td>\n              </tr>\n              <tr>\n                  <td>School</td>\n                  <td><div class=\"input-group\">\n                    <input  class=\"form-control\" id=\"schoolName\" [(ngModel)]=\"schoolName\" value=\"{{school.schoolName}}\"  name=\"schoolName\" style=\"width: 785px;\" disabled=\"\"></div>\n                  </td>\n              </tr>\n              <tr>\n                  <td>Major\n                  </td>\n                  <td><div class=\"input-group\">\n                    <input  class=\"form-control\" value=\"{{school.majorName}}\" [(ngModel)]=\"majorName\"  id=\"majorName\"  name=\"majorName\" disabled=\"\" style=\"width: 785px;\"></div>\n                  </td>\n              </tr>\n              <tr>\n                <td>Deadline 1\n                </td>\n                <td><div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.ddl1}}\" [(ngModel)]=\"ddl1\"  id=\"ddl1\"  name=\"ddl1\" disabled=\"\" style=\"width: 785px; \"></div>\n                </td>\n              </tr>\n              <tr>\n                <td>Deadline 2\n                </td>\n                <td><div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.ddl2}}\" [(ngModel)]=\"ddl2\"  id=\"ddl2\" name=\"ddl2\"  disabled=\"\" style=\"width: 785px; \"></div>\n                </td>\n              </tr>\n              <tr>\n                <td>Deadline 3\n                </td>\n                <td><div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.ddl3}}\" [(ngModel)]=\"ddl3\"  id=\"ddl3\"  name=\"ddl3\" disabled=\"\" style=\"width: 785px; \"></div>\n                </td>\n              </tr>\n              \n              <tr>\n                <td>Interview\n                </td>\n                <td><div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.interview}}\" [(ngModel)]=\"interview\"  id=\"interview\" disabled=\"\" name=\"interview\" style=\"width: 785px; \"></div>\n                </td>\n              </tr>\n              <tr>\n                <td>Video Essay\n                </td>\n                <td><div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.videoEssay}}\" [(ngModel)]=\"videoEssay\"  id=\"videoEssay\" disabled=\"\" name=\"videoEssay\" style=\"width: 785px; \"></div>\n                </td>\n              </tr>\n              <tr>\n                <td>GRE要求\n                </td>\n                <td><div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.gre}}\" [(ngModel)]=\"gre\"  id=\"gre\" disabled=\"\" name=\"gre\" style=\"width: 785px; \"></div>\n                </td>\n              </tr>\n              <tr>\n                <td>Link\n                </td>\n                <td>\n                  <div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.link}}\" [(ngModel)]=\"link\"  id=\"link\"  name=\"link\" disabled=\"\" style=\"width: 785px; \">\n                  </div>\n                </td>\n              </tr>\n              <tr>\n                <td>申请账号\n                </td>\n                <td><div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.applyAccount}}\" [(ngModel)]=\"applyAccount\"  id=\"applyAccount\" disabled=\"\" name=\"applyAccount\" style=\"width: 785px; \"></div>\n                </td>\n              </tr>\n              <tr>\n                <td>申请密码\n                </td>\n                <td><div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.applyPassword}}\" [(ngModel)]=\"applyPassword\"  id=\"applyPassword\" disabled=\"\" name=\"applyPassword\" style=\"width: 785px; \"></div>\n                </td>\n              </tr>\n              <tr>\n                <td>推荐信数量\n                </td>\n                <td><div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.recommNumber}}\" [(ngModel)]=\"recommNumber\"  id=\"recommNumber\" disabled=\"\" name=\"recommNumber\" style=\"width: 785px; \"></div>\n                </td>\n              </tr>\n              <tr>\n                <td>备注\n                </td>\n                <td><div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.other}}\" [(ngModel)]=\"other\"  id=\"other\"  name=\"other\" disabled=\"\" style=\"width: 785px; \"></div>\n                </td>\n              </tr>\n              <tr>\n                <td>优先级别\n                </td>\n                <td><div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.level}}\" [(ngModel)]=\"level\"  id=\"level\"  name=\"level\" disabled=\"\" style=\"width: 785px; \"></div>\n                  <small class=\"form-text text-muted\">请填写特定格式：正常&nbsp; &nbsp;保底 <span class=\"label label-info\">☆</span>&nbsp; &nbsp; 冲刺 <span class=\"label label-success\">❤</span>&nbsp; &nbsp; 不可能 <span class=\"label label-warning\">×</span>&nbsp; &nbsp;  </small>\n                </td>\n              </tr>\n              <tr>\n                  <td>\n                  </td>\n                  <td>\n                  <input type=\"button\" id=\"modi\" (click)=\"modify()\" value=\"修改信息\" class=\"btn btn-primary btn-lg \" >\n                  <input type=\"button\" id=\"confirm\" disabled=\"\" (click)=\"update()\" value=\"确定修改\" class=\"btn btn-primary btn-lg \"  >\n                  </td> \n              </tr>\n        </table>\n      </form>\n      <hr>\n      \n      <h3>推荐信</h3>\n        <div class=\"row\">\n          <div class=\"col-sm-4 tuijian\">\n            <h4>\n              此选校所添加的推荐信总数：\n              <small class=\"text-muted\">{{recomletters.length}}</small>\n            </h4>\n            <div *ngIf=\"recomletters.length > 0\">\n              <div class=\"panel-group\" id=\"accordion\" *ngFor=\"let l of recomletters\">\n                <div class=\"panel panel-success\" *ngIf=\"l.state=='已提交'\">\n                  <div class=\"panel-heading\">\n                      <div class=\"row\">\n                        <div class=\"col-sm-10\"><b>{{l.recommenderName}} </b></div>\n                        <div class=\"col-sm-2\"><small>{{l.state}}</small></div>\n                      </div>\n                  </div>\n                  <div class=\"panel-body\">\n                    <div class=\"row\">\n                      <div class=\"col-sm-6\"><b>{{l.type}} </b></div>\n                      <div class=\"col-sm-5\">\n\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"panel-footer\">\n                    <div class=\"row\">\n                      <div class=\"col-sm-6\">\n                        <button  class=\"btn btn-danger btn-sm\" href=\"/anew/todel/@a.id\"  (click)=\"deleteRL(l)\">Delete</button>\n                      </div>\n                      <div class=\"col-sm-5\">\n                        <div class=\"btn-group\">\n                          <button type=\"button\" class=\"btn btn-primary\" href=\"/anew/todel/@a.id\" onclick=\"return confirm('你确定要更改这个推荐信状态吗?')\" (click)=\"updateLetterNoSubmit(l)\">未提交</button>\n                          <button type=\"button\" class=\"btn btn-primary\" href=\"/anew/todel/@a.id\" onclick=\"return confirm('你确定要更改这个推荐信状态吗?')\" (click)=\"updateLetterSubmit(l)\">已提交</button>\n                          <button type=\"button\" class=\"btn btn-primary\" href=\"/anew/todel/@a.id\" onclick=\"return confirm('你确定要更改这个推荐信状态吗?')\" (click)=\"updateLetterDiscard(l)\">弃用</button>\n                        </div>\n                        \n                      </div>\n                    </div>\n                    \n                  </div>\n                </div>\n                <div class=\"panel panel-default\" *ngIf=\"l.state=='未提交'\">\n                  <div class=\"panel-heading\">\n                      <div class=\"row\">\n                        <div class=\"col-sm-10\"><b>{{l.recommenderName}} </b></div>\n                        <div class=\"col-sm-2\"><small>{{l.state}}</small></div>\n                      </div>\n                  </div>\n                  <div class=\"panel-body\">\n                    <div class=\"row\">\n                      <div class=\"col-sm-6\"><b>{{l.type}} </b></div>\n                      <div class=\"col-sm-5\">\n\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"panel-footer\">\n                    <div class=\"row\">\n                      <div class=\"col-sm-6\">\n                        <button  class=\"btn btn-danger btn-sm\" href=\"/anew/todel/@a.id\"  (click)=\"deleteRL(l)\">Delete</button>\n                      </div>\n                      <div class=\"col-sm-5\">\n                        <div class=\"btn-group\">\n                          <button type=\"button\" class=\"btn btn-primary\" href=\"/anew/todel/@a.id\" onclick=\"return confirm('你确定要更改这个推荐信状态吗?')\" (click)=\"updateLetterNoSubmit(l)\">未提交</button>\n                          <button type=\"button\" class=\"btn btn-primary\" href=\"/anew/todel/@a.id\" onclick=\"return confirm('你确定要更改这个推荐信状态吗?')\" (click)=\"updateLetterSubmit(l)\">已提交</button>\n                          <button type=\"button\" class=\"btn btn-primary\" href=\"/anew/todel/@a.id\" onclick=\"return confirm('你确定要更改这个推荐信状态吗?')\" (click)=\"updateLetterDiscard(l)\">弃用</button>\n                        </div>\n                        \n                      </div>\n                    </div>\n                    \n                  </div>\n                </div>\n                <div class=\"panel panel-danger\" *ngIf=\"l.state=='弃用'\">\n                  <div class=\"panel-heading\">\n                      <div class=\"row\">\n                        <div class=\"col-sm-10\"><b>{{l.recommenderName}} </b></div>\n                        <div class=\"col-sm-2\"><small>{{l.state}}</small></div>\n                      </div>\n                  </div>\n                  <div class=\"panel-body\">\n                    <div class=\"row\">\n                      <div class=\"col-sm-6\"><b>{{l.type}} </b></div>\n                      <div class=\"col-sm-5\">\n\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"panel-footer\">\n                    <div class=\"row\">\n                      <div class=\"col-sm-6\">\n                        <button  class=\"btn btn-danger btn-sm\" href=\"/anew/todel/@a.id\"  (click)=\"deleteRL(l)\">Delete</button>\n                      </div>\n                      <div class=\"col-sm-5\">\n                        <div class=\"btn-group\">\n                          <button type=\"button\" class=\"btn btn-primary\" href=\"/anew/todel/@a.id\" onclick=\"return confirm('你确定要更改这个推荐信状态吗?')\" (click)=\"updateLetterNoSubmit(l)\">未提交</button>\n                          <button type=\"button\" class=\"btn btn-primary\" href=\"/anew/todel/@a.id\" onclick=\"return confirm('你确定要更改这个推荐信状态吗?')\" (click)=\"updateLetterSubmit(l)\">已提交</button>\n                          <button type=\"button\" class=\"btn btn-primary\" href=\"/anew/todel/@a.id\" onclick=\"return confirm('你确定要更改这个推荐信状态吗?')\" (click)=\"updateLetterDiscard(l)\">弃用</button>\n                        </div>\n                        \n                      </div>\n                    </div>\n                    \n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n          <div class=\"col-sm-4 caozuo\">\n            <form (submit)=\"addrecomLetter(postForm)\" #postForm=\"ngForm\" ngNativeValidate>\n              <fieldset>\n                <legend>添加推荐人信息</legend>\n                <div>\n                  <label>推荐人列表</label>\n                  <div>\n                    <div class=\"form-group\">\n                      <select class=\"form-control\" id=\"select\" *ngIf=\"recommenders.length > 0\"  ng-model=\"fLevelBefore\" ng-change=\"changervar('fLevelBefore')\">\n                        <option *ngFor=\"let r of recommenders\" id=\"recommenderID\" name=\"recommenderID\"  value=\"{{r._id}}\"> {{r.firstName}} {{r.lastName}}</option>\n                      </select>\n                    </div>\n                  </div>\n                </div>\n                \n                <fieldset class=\"form-group\" >\n                  <legend>类别</legend>\n                  <div class=\"form-check\">\n                    <label class=\"form-check-label\">\n                      <input type=\"radio\" class=\"form-check-input\" id=\"Academic\" value=\"Academic\"  ngModel required>\n                      Academic 学术 &nbsp; &nbsp; &nbsp; &nbsp; \n                    </label>\n                    <label class=\"form-check-label\">\n                      <input type=\"radio\" class=\"form-check-input\" id=\"Professional\" value=\"Professional\"  ngModel required>\n                      Professional 工作 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; \n                    </label>\n                    <label class=\"form-check-label\">\n                      <input type=\"radio\" class=\"form-check-input\"  id=\"Rother\" value=\"other\" ngModel required>\n                      other\n                    </label>\n                  </div>\n                </fieldset>\n    \n                <button  class=\"btn btn-primary\">添加</button>\n              </fieldset>\n            </form>\n            \n          </div>\n        </div>\n      \n\n      <hr>\n      <h3>文书</h3>\n        <div class=\"row\">\n          <div class=\"col-sm-4 tuijian\">\n            <h4>\n              此选校所添加的文书总数：\n              <small class=\"text-muted\">{{statements.length}}</small>\n            </h4>\n\n            <div class=\"container\" *ngIf=\"statements.length > 0\">\n              <div class=\"row clearfix\" *ngFor=\"let st of statements\">\n                <div class=\"col-md-6 column\">\n                  <div class=\"panel panel-info\" >\n                    <div class=\"panel-heading\" >\n                    <h4 class=\"panel-title\">\n                      <a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#{{st._id}}\">\n                      <b> {{st.stype}} </b> （ {{st.words}} 字） <br>\n                      </a>\n                    </h4>\n                    </div>\n                    <div id=\"{{st._id}}\" class=\"panel-collapse collapse\">\n                      <div class=\"panel-body\">\n                        {{st.question}}\n                      </div>\n                      <div class=\"panel-footer\">\n                        <div class=\"row\">\n                          <div class=\"col-sm-10\">\n                            \n                          </div>\n                          <div class=\"col-sm-2\">\n                            <button  class=\"btn btn-danger\" href=\"/anew/todel/@a.id\"  (click)=\"deleteST(st)\">Delete</button>\n                            \n                          </div>\n                        </div>\n                        \n                      </div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n          <div class=\"col-sm-4 caozuo\">\n            <form (submit)=\"addstatement(postForm)\" #postForm=\"ngForm\" ngNativeValidate>\n              <fieldset>\n                <legend>添加文书</legend>\n                <fieldset class=\"form-group\">\n                  <legend>类别</legend>\n                  <div class=\"form-check\">\n                    <label class=\"form-check-label\">\n                      <input type=\"radio\" class=\"form-check-input\" name=\"stype\" id=\"PS\" value=\"Personal Statement\"  ngModel required>\n                      Personal Statement\n                    </label>\n                    <label class=\"form-check-label\">\n                      <input type=\"radio\" class=\"form-check-input\" name=\"stype\" id=\"SOP\" value=\"Statement of Purpose\"  ngModel required>\n                      Statement of Purpose\n                    </label>\n                    <br>\n                    <label class=\"form-check-label\">\n                      <input type=\"radio\" class=\"form-check-input\" name=\"stype\" id=\"Essay\" value=\"Essay\" ngModel required>\n                      Essay\n                    </label>\n                    <br>\n                    <label class=\"form-check-label\">\n                      <input type=\"radio\" class=\"form-check-input\" name=\"stype\" id=\"Rother\" value=\"other\" ngModel required>\n                      Other\n                    </label>\n                  </div>\n                </fieldset>\n                <div class=\"form-group\">\n                  <label class=\"col-form-label mt-4\" for=\"inputDefault\">文书题目</label>\n                  <input type=\"text\" class=\"form-control\" placeholder=\"请填写文书题目\" id=\"question\" ngModel required>\n                </div>\n                <div class=\"form-group\">\n                  <label class=\"col-form-label mt-4\" for=\"inputDefault\">字数要求</label>\n                  <input type=\"text\" class=\"form-control\" placeholder=\"请填写字数限制\" id=\"words\" ngModel required>\n                </div>\n                <button  class=\"btn btn-primary\">添加</button>\n              </fieldset>\n            </form>\n            \n          </div>\n        </div>\n\n      </div>\n    </div>\n  </div>\n\n  \n\n  \n\n  "
 
 /***/ }),
 
@@ -4301,7 +4301,7 @@ var HmschoolComponent = /** @class */ (function () {
     };
     HmschoolComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/hotels').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/hotels').subscribe(function (Data) {
             _this.hotels = Data.hotels;
             for (var _i = 0, _a = _this.hotels; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -4317,7 +4317,7 @@ var HmschoolComponent = /** @class */ (function () {
             }
         });
         //展示 学生个人信息
-        this.http.get('/api/students').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/students').subscribe(function (Data) {
             _this.students = Data.students;
             for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -4329,7 +4329,7 @@ var HmschoolComponent = /** @class */ (function () {
             }
         });
         //展示 申请项目的详细信息
-        this.http.get('/api/schools').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/schools').subscribe(function (Data) {
             //console.log(orderData);
             _this.schools = Data.schools;
             for (var _i = 0, _a = _this.schools; _i < _a.length; _i++) {
@@ -4352,21 +4352,22 @@ var HmschoolComponent = /** @class */ (function () {
                     _this.recommNumber = _this.school.recommNumber; //推荐信数量
                     _this.other = _this.school.other;
                     _this.level = _this.school.level;
+                    _this.gre = _this.school.gre;
                 }
             }
         });
         //展示 此学生 推荐人信息
-        this.http.get('/api/studentrecommenderdetail/' + this.studentID).subscribe(function (orderData) {
+        this.http.get('http://localhost:3000/studentrecommenderdetail/' + this.studentID).subscribe(function (orderData) {
             //console.log(orderData);
             _this.recommenders = orderData.recommenders;
         });
         //展示 这个选校的 推荐信 信息
-        this.http.get('/api/schoolrecomletterlist/' + this.schoolID).subscribe(function (Data) {
+        this.http.get('http://localhost:3000/schoolrecomletterlist/' + this.schoolID).subscribe(function (Data) {
             //console.log(Data);
             _this.recomletters = Data.recomletters;
         });
         //展示 这个选校的 文书 信息
-        this.http.get('/api/statementdetail/' + this.schoolID).subscribe(function (Data) {
+        this.http.get('http://localhost:3000/statementdetail/' + this.schoolID).subscribe(function (Data) {
             //console.log(Data);
             _this.statements = Data.statements;
         });
@@ -4377,14 +4378,14 @@ var HmschoolComponent = /** @class */ (function () {
     //文书修改
     HmschoolComponent.prototype.deleteST = function (st) {
         console.log("文书ID为" + st._id);
-        this.http.delete('/api/statements/' + st._id).subscribe(function (oooData) {
+        this.http.delete('http://localhost:3000/statements/' + st._id).subscribe(function (oooData) {
             window.location.reload();
         });
     };
     //推荐信修改
     HmschoolComponent.prototype.deleteRL = function (l) {
         console.log("推荐信ID为" + l._id);
-        this.http.delete('/api/recomletters/' + l._id).subscribe(function (oooData) {
+        this.http.delete('http://localhost:3000/recomletters/' + l._id).subscribe(function (oooData) {
             window.location.reload();
         });
     };
@@ -4404,6 +4405,7 @@ var HmschoolComponent = /** @class */ (function () {
         document.getElementById("recommNumber").removeAttribute("disabled");
         document.getElementById("other").removeAttribute("disabled");
         document.getElementById("level").removeAttribute("disabled");
+        document.getElementById("gre").removeAttribute("disabled");
         document.getElementById("confirm").removeAttribute("disabled");
         document.getElementById("modi").setAttribute("disabled", "");
     };
@@ -4426,8 +4428,9 @@ var HmschoolComponent = /** @class */ (function () {
             recommNumber: this.recommNumber,
             other: this.other,
             level: this.level,
+            gre: this.gre,
         };
-        this.http.put('/api/schools/' + this.schoolID, School)
+        this.http.put('http://localhost:3000/schools/' + this.schoolID, School)
             .subscribe(function (data) {
             var options = {
                 overlay: true,
@@ -4460,8 +4463,9 @@ var HmschoolComponent = /** @class */ (function () {
             recommNumber: this.recommNumber,
             other: this.other,
             level: this.level,
+            gre: this.gre,
         };
-        this.http.put('/api/schools/' + this.schoolID, School)
+        this.http.put('http://localhost:3000/schools/' + this.schoolID, School)
             .subscribe(function (data) {
             var options = {
                 overlay: true,
@@ -4494,8 +4498,9 @@ var HmschoolComponent = /** @class */ (function () {
             recommNumber: this.recommNumber,
             other: this.other,
             level: this.level,
+            gre: this.gre,
         };
-        this.http.put('/api/schools/' + this.schoolID, School)
+        this.http.put('http://localhost:3000/schools/' + this.schoolID, School)
             .subscribe(function (data) {
             var options = {
                 overlay: true,
@@ -4528,8 +4533,9 @@ var HmschoolComponent = /** @class */ (function () {
             recommNumber: this.recommNumber,
             other: this.other,
             level: this.level,
+            gre: this.gre,
         };
-        this.http.put('/api/schools/' + this.schoolID, School)
+        this.http.put('http://localhost:3000/schools/' + this.schoolID, School)
             .subscribe(function (data) {
             var options = {
                 overlay: true,
@@ -4553,7 +4559,7 @@ var HmschoolComponent = /** @class */ (function () {
             type: l.type,
             state: "未提交",
         };
-        this.http.put('/api/recomletters/' + l._id, Recomletter)
+        this.http.put('http://localhost:3000/recomletters/' + l._id, Recomletter)
             .subscribe(function (data) {
             var options = {
                 overlay: true,
@@ -4577,7 +4583,7 @@ var HmschoolComponent = /** @class */ (function () {
             type: l.type,
             state: "已提交",
         };
-        this.http.put('/api/recomletters/' + l._id, Recomletter)
+        this.http.put('http://localhost:3000/recomletters/' + l._id, Recomletter)
             .subscribe(function (data) {
             var options = {
                 overlay: true,
@@ -4601,7 +4607,7 @@ var HmschoolComponent = /** @class */ (function () {
             type: l.type,
             state: "弃用",
         };
-        this.http.put('/api/recomletters/' + l._id, Recomletter)
+        this.http.put('http://localhost:3000/recomletters/' + l._id, Recomletter)
             .subscribe(function (data) {
             var options = {
                 overlay: true,
@@ -4729,7 +4735,7 @@ var HmschoolComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-inverse\" role=\"navigation\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n        <a class=\"navbar-brand\" >一个很神秘的网页</a>\n      </div>\n      <div class=\"nav  navbar-right\">\n        <ul class=\"nav navbar-nav\">\n          <li class=\"active\"><a (click)=\"main(hotel)\">HomePage</a></li>\n          <li class=\"dropdown\">\n            <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n              Shortcut <b class=\"caret\"></b>\n            </a>\n            <ul class=\"dropdown-menu\">\n              <li><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n              <li><a (click)=\"comp(hotel)\">Complete info</a></li>\n              <li class=\"divider\"></li>\n              <li><a (click)=\"hotelman(hotel)\">Manage Hotel</a></li>\n              <li><a (click)=\"hmorder(hotel)\">Order</a></li>\n            </ul>\n          </li>\n          <li class=\"nav navbar-nav navbar-right\">\n            <a href=\"/mainpage\">Log Out</a>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </nav>\n  <ol class=\"breadcrumb\">\n      <li><a (click)=\"main(hotel)\">Home</a></li>\n      <li><a (click)=\"main(hotel)\">{{hotel.userAccount}}</a></li>\n      <li><a (click)=\"hotelman(hotel)\">Manage Student</a></li>\n      <li class=\"active\">{{student.firstName}} {{student.lastName}}</li>\n  </ol>\n\n  <div class=\"container-fluid\">\n    <div class=\"row content\">\n      <div class=\"col-sm-2 sidenav\">\n      <h4>{{hotel.userAccount}}  </h4>\n      <ul class=\"nav nav-pills nav-stacked\">\n        <li ><a (click)=\"main(hotel)\">Home-{{hotel.userAccount}}</a></li>\n        <li ><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n        <li><a (click)=\"comp(hotel)\">进度更新</a></li>\n        <li class=\"active\"><a (click)=\"hotelman(hotel)\">学生管理</a></li>\n        <li><a (click)=\"hmorder(hotel)\">学生申请</a></li>\n        <li><a (click)=\"hmregister(hotel)\">登记账号</a></li>\n        <li ><a (click)=\"hmblog(hotel)\">Blog管理</a></li>\n      </ul><br>\n      \n      </div>\n    \n      <div class=\"col-sm-10\">\n        <h2>{{student.firstName}} {{student.lastName}}</h2>\n      <p>{{student.userAccount}}</p>\n      <ul class=\"nav nav-tabs\">\n        <li class=\"nav-item\">\n          <a class=\"nav-link \" data-toggle=\"tab\" href=\"#profile\" >个人信息</a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link \" data-toggle=\"tab\" href=\"#otherinfo\" >补充信息</a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link \" data-toggle=\"tab\" href=\"#edu\" >教育信息</a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link \" data-toggle=\"tab\" href=\"#exp\" >工作经历</a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" data-toggle=\"tab\" href=\"#dropdown1\">推荐人信息</a>\n        </li>\n        <li class=\"nav-item \">\n          <a class=\"nav-link active\" data-toggle=\"tab\" href=\"#dropdown2\">申请项目</a>\n        </li>\n        <li class=\"nav-item \">\n          <a class=\"nav-link active\" data-toggle=\"tab\" href=\"#dropdown3\">发送通知</a>\n        </li>\n        <li class=\"nav-item \">\n          <a class=\"nav-link active\" data-toggle=\"tab\" href=\"#dropdown4\">进度更新</a>\n        </li>\n      </ul>\n      <div id=\"myTabContent\" class=\"tab-content\">\n        <div class=\"tab-pane fade \" id=\"profile\">\n          <div id=\"personal\" >\n            <h3>基本信息</h3> \n            <hr>\n            <table class=\"table table-bordered\" >\n              <tbody>\n                <tr>\n                <td >名字 Firstname</td>\n                <td >\t\n                  <input class=\"form-control\" id=\"firstName\" value=\"{{student.firstName}}\" [(ngModel)]=\"firstName\"  name=\"firstName\" style=\"width: 200px;\" disabled=\"\">\n                </td>\n                <td >姓氏 Lastname</td>\n                <td ><input class=\"form-control\" id=\"lastName\" value=\"{{student.lastName}}\" [(ngModel)]=\"lastName\"  name=\"lastName\" style=\"width: 200px;\" disabled=\"\"></td>\n                <td >性别 Gender</td>\n                <td><input class=\"form-control\" id=\"gender\" value=\"{{student.gender}}\" [(ngModel)]=\"gender\"  name=\"gender\" style=\"width: 200px;\" disabled=\"\"></td>\n                </tr>\n                <tr>\n                <td >出生年月日 dob</td>\n                <td >\t\n                  <input class=\"form-control\" id=\"dob\" value=\"{{student.dob}}\" [(ngModel)]=\"dob\"  name=\"dob\" style=\"width: 200px;\" disabled=\"\">\n                  <small class=\"form-text text-muted\">格式为MM/DD/YYYY</small>\n                </td>\n                <td >现住址 currentAddress\t</td>\n                <td colspan=\"3\"><input class=\"form-control\" id=\"currentAddress\" value=\"{{student.currentAddress}}\" [(ngModel)]=\"currentAddress\"  name=\"currentAddress\" style=\"width: 500px;\" disabled=\"\">\n                  <small class=\"form-text text-muted\">请填写英文地址，并包含邮编。</small></td>\n                </tr>\n                <tr>\n                <td >国籍</td>\n                <td >\t\n                  <input class=\"form-control\" id=\"citizen\" value=\"{{student.citizen}}\" [(ngModel)]=\"citizen\"  name=\"citizen\" style=\"width: 200px;\" disabled=\"\">\n                </td>\n                <td >永久居住地址 Permanent Address</td>\n                <td colspan=\"3\"><input class=\"form-control\" id=\"permanentAddress\" value=\"{{student.permanentAddress}}\" [(ngModel)]=\"permanentAddress\"  name=\"permanentAddress\" style=\"width:500px;\" disabled=\"\">\n                  <small class=\"form-text text-muted\">请填写英文地址，并包含邮编。</small></td>\n                </tr>\n                <tr>\n                <td >电话 Cellphone</td>\n                <td >\t\n                  <input class=\"form-control\" id=\"phone\" value=\"{{student.phone}}\" [(ngModel)]=\"phone\"  name=\"phone\" style=\"width: 200px;\" disabled=\"\">\n                </td>\n                <td >邮箱 Email</td>\n                <td ><input class=\"form-control\" id=\"email\" value=\"{{student.email}}\" [(ngModel)]=\"email\"  name=\"email\" style=\"width: 200px;\" disabled=\"\"></td>\n                <td >SSN </td>\n                <td><input class=\"form-control\" id=\"ssn\" value=\"{{student.ssn}}\" [(ngModel)]=\"ssn\"  name=\"ssn\" style=\"width: 200px;\" disabled=\"\"></td>\n                </tr>\n                <tr>\n                <td >护照号 Passport</td>\n                <td colspan=\"2\">\t\n                  <input class=\"form-control\" id=\"passport\" value=\"{{student.passport}}\" [(ngModel)]=\"passport\"  name=\"passport\" style=\"width: 200px;\" disabled=\"\">\n                </td>\n                <td >美签号码 Visa Number</td>\n                <td colspan=\"2\"><input class=\"form-control\" id=\"visa\" value=\"{{student.visa}}\" [(ngModel)]=\"visa\"  name=\"visa\" style=\"width: 200px;\" disabled=\"\"></td>\n                </tr>\n                <tr>\n                <td >用于申请的邮箱 Email</td>\n                <td colspan=\"2\">\t\n                  <input class=\"form-control\" id=\"appEmail\" value=\"{{student.appEmail}}\" [(ngModel)]=\"appEmail\"  name=\"appEmail\" style=\"width: 200px;\" disabled=\"\">\n                </td>\n                <td >用于申请的邮箱密码 Password</td>\n                <td colspan=\"2\"><input class=\"form-control\" id=\"appPsw\" value=\"{{student.appPsw}}\" [(ngModel)]=\"appPsw\"  name=\"appPsw\" style=\"width: 200px;\" disabled=\"\"></td>\n                </tr> \n              </tbody>\n            </table>\n\n          </div>\n          <div id=\"family\" >\n            <h3>家庭信息</h3>\n            <hr>\n            <form id=\"form2\" action=\"\" method=\"post\">\n            <table class=\"table table-bordered\" >\n              <tbody>\n                <tr>\n                <td ></td>\n                <td >\t\n                  Father 父亲\n                </td>\n                <td >Mother 母亲</td>\n                </tr>\n                <tr>\n                <td >姓名 <br> <small class=\"form-text text-muted\">如是英文姓名，名字在前，姓氏在后</small></td>\n                <td >\t\n                  <input class=\"form-control\" id=\"MomName\" value=\"{{student.MomName}}\" [(ngModel)]=\"MomName\"  name=\"MomName\" style=\"width: 200px;\" disabled=\"\">\n                  \n                </td>\n                <td>\n                  <input class=\"form-control\" id=\"FatName\" value=\"{{student.FatName}}\" [(ngModel)]=\"FatName\"  name=\"FatName\" style=\"width: 200px;\" disabled=\"\">\n                </td>\n                </tr>\n                <tr>\n                <td >Address 家庭住址 <br> <small class=\"form-text text-muted\">请填写英文地址，并包含邮编。</small></td>\n                <td >\t\n                  <input class=\"form-control\" id=\"MomAddress\" value=\"{{student.MomAddress}}\" [(ngModel)]=\"MomAddress\"  name=\"MomAddress\" style=\"width: 400px;\" disabled=\"\">\n                  \n                </td>\n                <td>\n                  <input class=\"form-control\" id=\"FatAddress\" value=\"{{student.FatAddress}}\" [(ngModel)]=\"FatAddress\"  name=\"FatAddress\" style=\"width: 400px;\" disabled=\"\">\n                </td>\n                </tr>\n                <tr>\n                <td >Organization Name & Address 所在公司名称与地址<br> <small class=\"form-text text-muted\">公司地址请提供英文地址，并包含邮箱</small></td>\n                <td >\t\n                  <input class=\"form-control\" id=\"MomOrganazation\" value=\"{{student.MomOrganazation}}\" [(ngModel)]=\"MomOrganazation\"  name=\"MomOrganazation\" style=\"width: 400px;\" disabled=\"\">\n                  \n                </td>\n                <td>\n                  <input class=\"form-control\" id=\"FatOrganazation\" value=\"{{student.FatOrganazation}}\" [(ngModel)]=\"FatOrganazation\"  name=\"FatOrganazation\" style=\"width: 400px;\" disabled=\"\">\n                </td>\n                </tr>\n                <tr>\n                <td >Position 职务 </td>\n                <td >\t\n                  <input class=\"form-control\" id=\"MomJob\" value=\"{{student.MomJob}}\" [(ngModel)]=\"MomJob\"  name=\"MomJob\" style=\"width: 200px;\" disabled=\"\">\n                  \n                </td>\n                <td>\n                  <input class=\"form-control\" id=\"FatJob\" value=\"{{student.FatJob}}\" [(ngModel)]=\"FatJob\"  name=\"FatJob\" style=\"width: 200px;\" disabled=\"\">\n                </td>\n                </tr>\n                <tr>\n                <td >Level of Education 最高学历 </td>\n                <td >\t\n                  <input class=\"form-control\" id=\"MomEducation\" value=\"{{student.MomEducation}}\" [(ngModel)]=\"MomEducation\"  name=\"MomEducation\" style=\"width: 200px;\" disabled=\"\">\n                  \n                </td>\n                <td>\n                  <input class=\"form-control\" id=\"FatEducation\" value=\"{{student.FatEducation}}\" [(ngModel)]=\"FatEducation\"  name=\"FatEducation\" style=\"width: 200px;\" disabled=\"\">\n                </td>\n                </tr>\n                <tr>\n                <td >School Name 毕业学校</td>\n                <td >\t\n                  <input class=\"form-control\" id=\"MomSchool\" value=\"{{student.MomSchool}}\" [(ngModel)]=\"MomSchool\"  name=\"MomSchool\" style=\"width: 200px;\" disabled=\"\">\n                  \n                </td>\n                <td>\n                  <input class=\"form-control\" id=\"FatSchool\" value=\"{{student.FatSchool}}\" [(ngModel)]=\"FatSchool\"  name=\"FatSchool\" style=\"width: 200px;\" disabled=\"\">\n                </td>\n                </tr>\n                <tr>\n                <td >Year of Graduation 毕业时间</td>\n                <td >\t\n                  <input class=\"form-control\" id=\"MomGraduation\" value=\"{{student.MomGraduation}}\" [(ngModel)]=\"MomGraduation\"  name=\"MomGraduation\" style=\"width: 200px;\" disabled=\"\">\n                  \n                </td>\n                <td>\n                  <input class=\"form-control\" id=\"FatGraduation\" value=\"{{student.FatGraduation}}\" [(ngModel)]=\"FatGraduation\"  name=\"FatGraduation\" style=\"width: 200px;\" disabled=\"\">\n                </td>\n                </tr>\n                <tr>\n                <td >Phone 电话 </td>\n                <td >\t\n                  <input class=\"form-control\" id=\"MomPhone\" value=\"{{student.MomPhone}}\" [(ngModel)]=\"MomPhone\"  name=\"MomPhone\" style=\"width: 200px;\" disabled=\"\">\n                  \n                </td>\n                <td>\n                  <input class=\"form-control\" id=\"FatPhone\" value=\"{{student.FatPhone}}\" [(ngModel)]=\"FatPhone\"  name=\"FatPhone\" style=\"width: 200px;\" disabled=\"\">\n                </td>\n                </tr>\n                <tr>\n                <td >Email  邮箱  </td>\n                <td >\t\n                  <input class=\"form-control\" id=\"MomEmail\" value=\"{{student.MomEmail}}\" [(ngModel)]=\"MomEmail\"  name=\"MomEmail\" style=\"width: 200px;\" disabled=\"\">\n                  \n                </td>\n                <td>\n                  <input class=\"form-control\" id=\"FatEmail\" value=\"{{student.FatEmail}}\" [(ngModel)]=\"FatEmail\"  name=\"FatEmail\" style=\"width: 200px;\" disabled=\"\">\n                </td>\n                </tr>\n              </tbody>\n            </table>\n            </form>\n          </div>\n          <div id=\"yer\">\n            <h3>申请年份</h3>\n            <hr>\n            <div class=\"input-group mb-3\">\n              <input type=\"text\" class=\"form-control\" id=\"styear\" value=\"{{student.year}}\">\n              <button class=\"btn btn-primary\" type=\"button\" (click)=\"updatePersonal()\" id=\"button-addon2\">修改</button>\n            </div>\n          </div>\n        </div>\n        <div class=\"tab-pane fade \" id=\"otherinfo\">               \n          <div id=\"standardtest\" >\n            <h3>标化成绩</h3>\n            <hr>\n            <table class=\"table table-bordered\" >\n              <tbody>\n                <tr>\n                  <td colspan=\"10\">\n                    <h4>TOEFL/IELTS</h4> <small class=\"form-text text-muted\">如果是IELTS成绩，请在总分中标记</small>\n                  </td>\n                </tr>\n                <tr>\n                <td >总分 Total Score</td>\n                <td >\t\n                  <input class=\"form-control\" id=\"TOEFL\" value=\"{{student.TOEFL}}\" [(ngModel)]=\"TOEFL\"  name=\"TOEFL\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td >阅读 Reading</td>\n                <td ><input class=\"form-control\" id=\"TOEFLR\" value=\"{{student.TOEFLR}}\" [(ngModel)]=\"TOEFLR\"  name=\"TOEFLR\" style=\"width: 50px;\" disabled=\"\"></td>\n                <td >听力 Listening</td>\n                <td><input class=\"form-control\" id=\"TOEFLL\" value=\"{{student.TOEFLL}}\" [(ngModel)]=\"TOEFLL\"  name=\"TOEFLL\" style=\"width: 50px;\" disabled=\"\"></td>\n                <td >口语 Speaking</td>\n                <td ><input class=\"form-control\" id=\"TOEFLS\" value=\"{{student.TOEFLS}}\" [(ngModel)]=\"TOEFLS\"  name=\"TOEFLS\" style=\"width: 50px;\" disabled=\"\"></td>\n                <td >写作 Writing</td>\n                <td><input class=\"form-control\" id=\"TOEFLW\" value=\"{{student.TOEFLW}}\" [(ngModel)]=\"TOEFLW\"  name=\"TOEFLW\" style=\"width: 50px;\" disabled=\"\"></td>\n                </tr>\n                <tr>\n                <td colspan=\"10\">\n                  <h4>GRE</h4> <small class=\"form-text text-muted\">如果没有考过GRE可以不填写</small>\n                </td>\n                </tr>\n                <tr>\n                <td >总分 Total Score</td>\n                <td >\t\n                  <input class=\"form-control\" id=\"GRE\" value=\"{{student.GRE}}\" [(ngModel)]=\"GRE\"  name=\"GRE\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td >Verbal</td>\n                <td ><input class=\"form-control\" id=\"GREV\" value=\"{{student.GREV}}\" [(ngModel)]=\"GREV\"  name=\"GREV\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td >Percentile</td>\n                <td ><input class=\"form-control\" id=\"GREVP\" value=\"{{student.GREVP}}\" [(ngModel)]=\"GREVP\"  name=\"GREVP\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td >Quantitative</td>\n                <td ><input class=\"form-control\" id=\"GREQ\" value=\"{{student.GREQ}}\" [(ngModel)]=\"GREQ\"  name=\"GREQ\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td >Percentile</td>\n                <td ><input class=\"form-control\" id=\"GREQP\" value=\"{{student.GREQP}}\" [(ngModel)]=\"GREQP\"  name=\"GREQP\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                </tr>\n                <tr>\n                <td colspan=\"2\" ></td>\n                <td >Analytical Writing</td>\n                <td ><input class=\"form-control\" id=\"GREW\" value=\"{{student.GREW}}\" [(ngModel)]=\"GREW\"  name=\"GREW\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td >Percentile</td>\n                <td ><input class=\"form-control\" id=\"GREWP\" value=\"{{student.GREWP}}\" [(ngModel)]=\"GREWP\"  name=\"GREWP\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td colspan=\"4\"></td>\n                </tr>\n                <tr>\n                <td colspan=\"10\">\n                  <h4>GMAT</h4> <small class=\"form-text text-muted\">如果没有考过GMAT可以不填写</small>\n                </td>\n                </tr>\n                <tr>\n                <td >总分 Total Score</td>\n                <td >\t\n                  <input class=\"form-control\" id=\"GMAT\" value=\"{{student.GMAT}}\" [(ngModel)]=\"GMAT\"  name=\"GMAT\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td >Verbal</td>\n                <td ><input class=\"form-control\" id=\"GMATV\" value=\"{{student.GMATV}}\" [(ngModel)]=\"GMATV\"  name=\"GMATV\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td >Percentile</td>\n                <td ><input class=\"form-control\" id=\"GMATVP\" value=\"{{student.GMATVP}}\" [(ngModel)]=\"GMATVP\"  name=\"GMATVP\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td >Quantitative</td>\n                <td ><input class=\"form-control\" id=\"GMATQ\" value=\"{{student.GMATQ}}\" [(ngModel)]=\"GMATQ\"  name=\"GMATQ\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td >Percentile</td>\n                <td ><input class=\"form-control\" id=\"GMATQP\" value=\"{{student.GMATQP}}\" [(ngModel)]=\"GMATQP\"  name=\"GMATQP\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                </tr>\n                <tr>\n                <td colspan=\"2\" ></td>\n                <td >Analytical Writing</td>\n                <td ><input class=\"form-control\" id=\"GMATW\" value=\"{{student.GMATW}}\" [(ngModel)]=\"GMATW\"  name=\"GMATW\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td >Percentile</td>\n                <td ><input class=\"form-control\" id=\"GMATWP\" value=\"{{student.GMATWP}}\" [(ngModel)]=\"GMATWP\"  name=\"GMATWP\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td >Reasoning</td>\n                <td ><input class=\"form-control\" id=\"GMATR\" value=\"{{student.GMATR}}\" [(ngModel)]=\"GMATR\"  name=\"GMATR\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td >Percentile</td>\n                <td ><input class=\"form-control\" id=\"GMATRP\" value=\"{{student.GMATRP}}\" [(ngModel)]=\"GMATRP\"  name=\"GMATRP\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                </tr>\n                <tr>\n                <td colspan=\"2\">\n                  <h4>Others</h4> \n                </td>\n                <td colspan=\"8\">\n                  <input class=\"form-control\" id=\"OtherStandardTest\" value=\"{{student.OtherStandardTest}}\" [(ngModel)]=\"OtherStandardTest\"  name=\"OtherStandardTest\" style=\"width: 900px;\" disabled=\"\">\n                </td>\n                </tr>\n                \n              </tbody>\n            </table>\n            \n          </div>\n          <div id=\"skills\" >\n            <h3>技能</h3>\n            <hr>\n            <table class=\"table table-bordered\" >\n              <tbody>\n                <tr>\n                  <td colspan=\"2\">\n                    <p>比如：计算机语言: C (2 yrs ) C++ JAVA (5 yrs )Python; 统计软件SPSS, SAS, Stata; 经济学软件Eview;会计软件UFIDA, ERP; 金融终端 Bloomberg Reuters </p> <br> <b>写明使用的时间长短，是否精通</b> \n                  </td>\n                </tr>\n                <tr>\n                <td >Language Ability 语言能力</td>\n                <td style=\"width: 900px;\">\t\n                  <input class=\"form-control\" id=\"Language\" value=\"{{student.Language}}\" [(ngModel)]=\"Language\"  name=\"Language\" style=\"width: 800px;\" disabled=\"\">\n    \n                </td>\t\n                </tr>\n                <tr>\n                <td >Computer Skills 计算机技能</td>\n                <td style=\"width: 900px;\">\t\n                  <input class=\"form-control\" id=\"ComputerSkills\" value=\"{{student.ComputerSkills}}\" [(ngModel)]=\"ComputerSkills\"  name=\"ComputerSkills\" style=\"width: 800px;\" disabled=\"\">\n    \n                </td>\n                </tr>\n                <tr>\n                <td >Other Skills & Certificates <br> 其他技能和证书 <br><small class=\"form-text text-muted\">证书: CFA CPA 证券资格证等</small></td>\n                <td style=\"width: 900px;\">\t\n                  <input class=\"form-control\" id=\"OtherSkills\" value=\"{{student.OtherSkills}}\" [(ngModel)]=\"OtherSkills\"  name=\"OtherSkills\" style=\"width: 800px;\" disabled=\"\">\n    \n                </td>\t\n                </tr>\n                <tr>\n                <td >Hobbies 爱好 <br><small class=\"form-text text-muted\">如： 10年的钢琴舞台演出经历， 6年书法训练获全国级奖项10次</small></td>\n                <td style=\"width: 900px;\">\t\n                  <input class=\"form-control\" id=\"Hobbies\" value=\"{{student.Hobbies}}\" [(ngModel)]=\"Hobbies\"  name=\"Hobbies\" style=\"width: 800px;\" disabled=\"\">\n    \n                </td>\n                </tr>\n              </tbody>\n            </table>\n          </div>\n        </div>\n        <div class=\"tab-pane fade \" id=\"edu\">\n          <div id=\"Education\">\n            <div class=\"row\">\n              <div class=\"col-sm-10\">\n                <h3>\n                  所添加的教育经历总数：\n                  <small class=\"text-muted\">{{education.length}}</small>\n              </h3>\n              </div>\n              <div class=\"col-sm-2\">          \n              </div>\n            </div>\n          \n\n\t\t\t\t\t<br>\n\t\t\t\t\t<div class=\"panel-group\" id=\"accordion\" *ngIf=\"education.length > 0\">\n\t\t\t\t\t\t<div class=\"panel panel-primary\" *ngFor=\"let e of education\">\n\t\t\t\t\t\t  <div class=\"panel-heading\">\n\t\t\t\t\t\t\t<h4 class=\"panel-title\">\n\t\t\t\t\t\t\t  <a data-toggle=\"collapse\" data-parent=\"#accordion\" \n\t\t\t\t\t\t\t\thref=\"#{{e._id}}\">\n\t\t\t\t\t\t\t\t<b>{{e.educationName}} </b> ({{e.type}})\n\t\t\t\t\t\t\t  </a>\n\t\t\t\t\t\t\t</h4>\n\t\t\t\t\t\t  </div>\n\t\t\t\t\t\t  <div id=\"{{e._id}}\" class=\"panel-collapse collapse in\">\n\t\t\t\t\t\t\t<div class=\"panel-body\">\n\t\t\t\t\t\t\t\t<table class=\"table table-bordered\" >\n\t\t\t\t\t\t\t\t\t<tbody>\n\t\t\t\t\t\t\t\t\t  <tr >\n\t\t\t\t\t\t\t\t\t\t<td style=\"width: 30%; background-color: lightgray;\">University 学校</td>\n\t\t\t\t\t\t\t\t\t\t<td colspan=\"4\" style=\"width: 70%;\">\t\n\t\t\t\t\t\t\t\t\t\t\t{{e.educationName}}\n\t\t\t\t\t\t\t\t\t\t</td>\t\n\t\t\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t\t\t<td style=\"background-color: lightgray;\">Address 学校地址</td>\n\t\t\t\t\t\t\t\t\t\t<td colspan=\"4\">\t\n\t\t\t\t\t\t\t\t\t\t\t{{e.educationLocation}}\n\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t\t\t<td style=\"background-color: lightgray;\">在校日期 </td>\n\t\t\t\t\t\t\t\t\t\t<td style=\"background-color: lightgray;\">From</td>\n\t\t\t\t\t\t\t\t\t\t<td >\t\n\t\t\t\t\t\t\t\t\t\t\t{{e.educationStart}}\n\t\t\t\t\t\t\t\t\t\t</td>\t\n\t\t\t\t\t\t\t\t\t\t<td style=\"background-color: lightgray;\">To</td>\n\t\t\t\t\t\t\t\t\t\t<td >\t\n\t\t\t\t\t\t\t\t\t\t\t{{e.educationEnd}}\n\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t\t\t<td style=\"background-color: lightgray;\">Major 专业 </td>\n\t\t\t\t\t\t\t\t\t\t<td colspan=\"4\">\t\n\t\t\t\t\t\t\t\t\t\t\t{{e.major}}\n\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t\t\t<td style=\"background-color: lightgray;\">Degree 学位 </td>\n\t\t\t\t\t\t\t\t\t\t<td colspan=\"4\">\t\n\t\t\t\t\t\t\t\t\t\t\t{{e.Degree}}\n\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t\t\t  <tr >\n\t\t\t\t\t\t\t\t\t\t<td style=\"background-color: lightgray;\">Overall GPA\n\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t\t<td colspan=\"4\">\t\n\t\t\t\t\t\t\t\t\t\t\t{{e.GPA}}\n\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t\t\t<td style=\"background-color: lightgray;\">Major GPA 专业GPA </td>\n\t\t\t\t\t\t\t\t\t\t<td colspan=\"4\">\t\n\t\t\t\t\t\t\t\t\t\t\t{{e.MajorGPA}}\n\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t\t\t<td style=\"background-color: lightgray;\">Second Degree or Minor 二学位或辅修</td>\n\t\t\t\t\t\t\t\t\t\t<td colspan=\"4\">\t\n\t\t\t\t\t\t\t\t\t\t\t{{e.SecondDegree}}\n\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t\t\t  <tr >\n\t\t\t\t\t\t\t\t\t\t<td style=\"background-color: lightgray;\">Overall GPA\n\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t\t<td colspan=\"4\">\t\n\t\t\t\t\t\t\t\t\t\t\t{{e.SecondGPA}}\n\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t\t\t<td style=\"background-color: lightgray;\">其他信息</td>\n\t\t\t\t\t\t\t\t\t\t<td colspan=\"4\">\t\n\t\t\t\t\t\t\t\t\t\t\t{{e.other}}\n\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t  </tr> \n\t\t\t\t\t\t\t\t\t</tbody>\n\t\t\t\t\t\t\t\t</table>\n\t\t\t\t\t\t\t</div>\n              <div class=\"panel-footer\">\n                <div class=\"row\">\n                  <div class=\"col-sm-10\">\n                    \n                  </div>\n                  <div class=\"col-sm-2\">\n                    <input type=\"button\" href=\"/anew/todel/@a.id\"  id=\"shanchu\"  value=\"删除\" class=\"btn btn-primary \" onclick=\"return confirm('你确定要删除这个教育经历吗?')\" (click)=\"deleteE(e)\">\n                    \n                  </div>\n                </div>\n                \n              </div>\n\t\t\t\t\t\t  </div> \n\n\t\t\t\t\t\t</div>\n            \n\t\t\t\t\t</div>\n\t\t\t\t  </div>\n\n        </div>\n        <div class=\"tab-pane fade \" id=\"exp\">\n          <h3>\n            所添加的工作经历总数：\n            <small class=\"text-muted\">{{experience.length}}</small>\n          </h3>\n          <br>\n          <div id=\"Experience\">\n            <br>\n            <div class=\"panel-group\" id=\"accordion\" *ngIf=\"experience.length > 0\">\n              <div class=\"panel panel-primary\" *ngFor=\"let ex of experience\">\n                <div class=\"panel-heading\">\n                <h4 class=\"panel-title\">\n                  <a data-toggle=\"collapse\" data-parent=\"#accordion\" \n                  href=\"#{{ex._id}}\">\n                  <b>{{ex.institution}} </b> ({{ex.type}})\n                  </a>\n                </h4>\n                </div>\n                <div id=\"{{ex._id}}\" class=\"panel-collapse collapse in\">\n                <div class=\"panel-body\">\n                  <table class=\"table table-bordered\" >\n                    <tbody>\n                      <tr >\n                      <td style=\"width: 30%; background-color: lightgray;\">Company/Institution <br> 公司/研究单位 </td>\n                      <td colspan=\"4\" style=\"width: 70%;\">\t\n                        {{ex.institution}}\n                      </td>\t\n                      </tr>\n                      <tr>\n                      <td style=\"background-color: lightgray;\">Address 地址</td>\n                      <td colspan=\"4\">\t\n                        {{ex.institutionLocation}}\n                      </td>\n                      </tr>\n                      <tr>\n                      <td style=\"background-color: lightgray;\">在职日期 </td>\n                      <td style=\"background-color: lightgray;\">From</td>\n                      <td >\t\n                        {{ex.experienceStart}}\n                      </td>\t\n                      <td style=\"background-color: lightgray;\">To</td>\n                      <td >\t\n                        {{ex.experienceEnd}}\n                      </td>\n                      </tr>\n                      <tr>\n                      <td style=\"background-color: lightgray;\">Position or Title 职位 </td>\n                      <td colspan=\"4\">\t\n                        {{ex.experienceposition}}\n                      </td>\n                      </tr>\n                      <tr>\n                      <td style=\"background-color: lightgray;\">Responsibilities 职责 </td>\n                      <td colspan=\"4\">\t\n                        {{ex.responsibilities}}\n                      </td>\n                      </tr>\n                      <tr >\n                      <td style=\"background-color: lightgray;\">Project  项目简介 \n                      </td>\n                      <td colspan=\"4\">\t\n                        {{ex.project}}\n                      </td>\n                      </tr>\n                      <tr>\n                      <td style=\"background-color: lightgray;\">Achievement 成就 </td>\n                      <td colspan=\"4\">\t\n                        {{ex.achievement}}\n                      </td>\n                      </tr> \n                    </tbody>\n                  </table>\n                </div>\n                <div class=\"panel-footer\">\n                  <div class=\"row\">\n                    <div class=\"col-sm-10\">\n                      \n                    </div>\n                    <div class=\"col-sm-2\">\n                      <input type=\"button\" href=\"/anew/todel/@a.id\"  id=\"shanchu\"  value=\"删除\" class=\"btn btn-primary \" onclick=\"return confirm('你确定要删除这个工作经历吗?')\" (click)=\"deleteEx(ex)\">\n                      \n                    </div>\n                  </div>\n                  \n                </div>\n                </div>\n              </div>\n            </div>\n          </div>\n\n        </div>\n\n        <div class=\"tab-pane fade \" id=\"dropdown1\">\n          <h3>\n            学生所添加的推荐人总数：\n            <small class=\"text-muted\">{{recommenders.length}}</small>\n          </h3>\n          <hr>\n          <div class=\"panel-group\" id=\"accordion\" *ngIf=\"recommenders.length > 0\">\n            <div class=\"panel panel-primary\" *ngFor=\"let k of recommenders\">\n              <div class=\"panel-heading\">\n                <h4 class=\"panel-title\">\n                  <a data-toggle=\"collapse\" data-parent=\"#accordion\" \n                    href=\"#{{k._id}}\">\n                  <b> {{k.firstName}} {{k.lastName}}</b>\n                  </a>\n                </h4>\n              </div>\n              <div id=\"{{k._id}}\" class=\"panel-collapse collapse in\">\n                <div class=\"panel-body\">\n                  <table class=\"table table-hover\">\n                    <thead style=\"background-color: lightgray;\">\n                      <tr>\n                        <th scope=\"col\" >性别</th>\n                        <th scope=\"col\" >职称title</th>\n                        <th scope=\"col\" >学历</th>\n                        <th scope=\"col\">Relationship</th>\n                        <th scope=\"col\">所在单位</th>\n                      </tr>\n                    </thead>\n                    <tbody >\n                      <tr class=\"table-dark\" >\n                        <td>{{k.gender}} </td>\n                        <td>{{k.title}}</td>\n                        <td>{{k.education}}</td>\n                        <td>{{k.relation}}</td>\n                        <td>{{k.organization}}</td>  \n                      </tr>\n                    </tbody>\n                    <thead style=\"background-color: lightgray;\">\n                      <tr>\n                        <th scope=\"col\" >职务</th>\n                        <th scope=\"col\" >Email</th>\n                        <th scope=\"col\">电话</th>\n                        <th scope=\"col\" >地址</th>\n                        <th scope=\"col\">在此单位工作时间年限</th>\n                      </tr>\n                    </thead>\n                    <tbody >\n                      <tr class=\"table-dark\" >\n                        <td>{{k.position}} </td>\n                        <td>{{k.email}}</td>\n                        <td>{{k.phone}}</td>\n                        <td>{{k.location}}</td>\n                        <td>{{k.duration}}</td>  \n                      </tr>\n                    </tbody>\n                    <thead style=\"background-color: lightgray;\">\n                      <tr>\n                        <th colspan=\"5\">其他信息（推荐人与被推荐人关系发展，以及熟悉程度）</th>\n                      </tr>\n                    </thead>\n                    <tbody>\n                      <tr>\n                        <td colspan=\"5\">{{k.other}}</td>\n                      </tr>\n                    </tbody>\n                  </table>\n                </div>\n                <div class=\"panel-footer\">\n                  <div class=\"row\">\n                    <div class=\"col-sm-10\">\n                      <input type=\"button\" href=\"/anew/todel/@a.id\" value=\"删除\" class=\"btn btn-primary \" (click)=\"deleteRD(k)\">\n                    </div>\n                    <div class=\"col-sm-2\">\n                      <button href=\"/anew/todel/@a.id\" (click)=\"studentrec(k)\">More</button>\n                      \n                    </div>\n                  </div>\n                  \n                </div>\n              </div>\n            </div>\n          </div>\n          \n        </div>\n        <div class=\"tab-pane fade in active\" id=\"dropdown2\">\n\n          <table class=\"table table-hover\" *ngIf=\"schools.length >=  0\">\n            <thead>\n              <tr>\n                <th scope=\"col\" colspan=\"6\"><h3>\n                  已添加项目总数：\n                  <small class=\"text-muted\">{{schools.length}}</small>\n                </h3></th>\n                <th scope=\"col\" colspan=\"4\"> <button type=\"button\" class=\"btn btn-danger\" (click)=\"hmaddschool(hotel,student)\">添加项目</button>\n                  <button type=\"button\" class=\"btn btn-warning\" (click)=\"exportAsExcelFile()\">生成excel</button></th>\n              </tr>\n            </thead>\n            <thead>\n              <tr>\n                <th scope=\"col\" style=\"width:50px\">States</th>\n                <th scope=\"col\" style=\"width:200px\">University</th>\n                <th scope=\"col\" style=\"width:200px\">School</th>\n                <th scope=\"col\" style=\"width:200px\">Major</th>\n                <th scope=\"col\" style=\"width:90px\">Deadline 1</th>\n                <th scope=\"col\" style=\"width:90px\">Deadline 2</th>\n                <th scope=\"col\" style=\"width:90px\">Deadline 3</th>\n                <th scope=\"col\" style=\"width:20px\">RecNum</th>\n                <th scope=\"col\" style=\"width:20px\"></th>\n              </tr>\n            </thead>\n            <tbody *ngFor=\"let s of schools\" >\n\n              <tr class=\"table\" >\n                <th scope=\"row\" >{{s.state}}\n                </th>\n                <td>{{s.univName}} \n                   \n                  <span class=\"label label-info\" *ngIf=\"s.level=='保底'\">Safe</span>\n                  <span class=\"label label-success\" *ngIf=\"s.level=='冲刺'\">冲刺</span>\n                  <span class=\"label label-warning\" *ngIf=\"s.level=='不可能'\">风险</span>\n                  <span class=\"badge badge-secondary\" *ngIf=\"s.videoEssay=='有，在提交申请前'\">VE前</span>\n                  <span class=\"badge badge-secondary\" *ngIf=\"s.videoEssay=='有，在提交申请后'\">VE后</span>\n                  <span class=\"label label-danger\" *ngIf=\"s.interview=='yes'\">面试</span>\n                  <div class=\"btn-group\" *ngIf=\"s.other!=''&&s.other!=null\">\n                    <button class=\"btn btn-secondary btn-sm dropdown-toggle\" type=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                      备注\n                    </button>\n                    <div class=\"dropdown-menu\">\n                      {{s.other}}\n                    </div>\n                  </div>\n                </td>\n                <td>{{s.schoolName}}</td>\n                <td>{{s.majorName}}</td>\n                <td>{{s.ddl1}}</td>\n                <td>{{s.ddl2}}</td>\n                <td>{{s.ddl3}}</td>\n                <td>{{s.recommNumber}}</td>\n                <td>\n                  <button href=\"/anew/todel/@a.id\" (click)=\"hmschooldetail(s)\">More</button>\n                </td>\n              </tr>\n\n            </tbody>\n          </table>\n        </div>\n        <div class=\"tab-pane fade \" id=\"dropdown3\">\n          <div class=\"col-sm-9\">\n            <div class=\"container\">\n              <div class=\"row clearfix\">\n                <div class=\"col-md-12 column\">\n                  <div class=\"row clearfix\">\n                    <div class=\"col-md-7 column\">\n                      <br>\n                      <form (submit)=\"addNotif(postForm)\" #postForm=\"ngForm\" ngNativeValidate>\n                        <fieldset>\n                          <fieldset class=\"form-group\">\n                            <div class=\"form-check\">\n                              <label class=\"form-check-label\">\n                                <input type=\"radio\" class=\"form-check-input\" name=\"type\" id=\"immedi\" value=\"紧急\"  ngModel required>\n                                紧急\n                              </label>\n                              <label class=\"form-check-label\">\n                                <input type=\"radio\" class=\"form-check-input\" name=\"type\" id=\"normal\" value=\"一般\"  ngModel required>\n                                一般\n                              </label>\n                              <label class=\"form-check-label\">\n                                <input type=\"radio\" class=\"form-check-input\" name=\"type\" id=\"medium\" value=\"比较紧急\" ngModel required>\n                                比较紧急\n                              </label>\n                            </div>\n                          </fieldset>\n                          <div class=\"form-group\">\n                            <label for=\"exampleTextarea\" class=\"form-label mt-4\">通知内容</label>\n                            <input class=\"form-control\" id=\"exampleTextarea\" rows=\"3\" style=\"margin-top: 0px; margin-bottom: 0px; height: 108px;\" ngModel required>\n                          </div>\n                          <div class=\"form-group\">\n                            <label for=\"exampleInputPassword1\">通知日期</label>\n                            <input class=\"form-control\" name=\"ddl1\" type=\"date\" placeholder=\"date\" style=\"width:50%\" ngModel required>\n                          </div>\n              \n                          <button  class=\"btn btn-primary\">发送通知</button>\n                        </fieldset>\n                      </form>\n                    </div>\n                    <div class=\"col-md-3 column\" *ngIf=\"notifs.length > 0\">\n                      <blockquote *ngFor=\"let n of notifs\">\n                        <p>\n                         {{n.content}}\n                        </p> <small>{{n.ndate}}  {{n.nstate}}</small>\n                      </blockquote>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n          \n          \n        </div>\n        <div class=\"tab-pane fade \" id=\"dropdown4\">\n          <div class=\"col-sm-9\">\n            <div class=\"container\">\n              <div class=\"row clearfix\">\n                <div class=\"col-md-12 column\">\n                  <div class=\"row clearfix\">\n                    <div class=\"col-md-7 column\">\n                      <br>\n                      <form (submit)=\"addTask(postForm)\" #postForm=\"ngForm\" ngNativeValidate>\n                        <fieldset>\n                          <fieldset class=\"form-group\">\n                            <div class=\"form-check\">\n                              <label class=\"form-check-label\">\n                                <input type=\"radio\" class=\"form-check-input\" name=\"ttype\" id=\"yuxin\" value=\"yuxin\"  ngModel required>\n                                yuxin &nbsp;\n                              </label>\n                              <label class=\"form-check-label\">\n                                <input type=\"radio\" class=\"form-check-input\" name=\"ttype\" id=\"yi\" value=\"小伊\"  ngModel required>\n                                小伊 &nbsp;\n                              </label>\n                              <label class=\"form-check-label\">\n                                <input type=\"radio\" class=\"form-check-input\" name=\"ttype\" id=\"dasong\" value=\"大松\" ngModel required>\n                                大松 &nbsp;\n                              </label>\n                              <label class=\"form-check-label\">\n                                <input type=\"radio\" class=\"form-check-input\" name=\"ttype\" id=\"oth\" value=\"其他\" ngModel required>\n                                其他 &nbsp;\n                              </label>\n                            </div>\n                          </fieldset>\n                          <div class=\"form-group\">\n                            <label for=\"exampleTextarea\" class=\"form-label mt-4\">进度内容</label>\n                            <input class=\"form-control\" id=\"exampleText\" rows=\"3\" style=\"margin-top: 0px; margin-bottom: 0px; height: 108px;\" ngModel required>\n                          </div>\n                          <div class=\"form-group\">\n                            <label for=\"exampleInputPassword1\">进度发布日期</label>\n                            <input class=\"form-control\" name=\"tddl\" type=\"date\" placeholder=\"date\" style=\"width:50%\" ngModel required>\n                          </div>\n              \n                          <button  class=\"btn btn-primary\">更新进度</button>\n                        </fieldset>\n                      </form>\n                    </div>\n                    <div class=\"col-md-3 column\" *ngIf=\"tasks.length > 0\">\n                      <blockquote *ngFor=\"let ts of tasks\">\n                        <p>\n                         {{ts.content}}\n                        </p> <b style=\"font-size: 12px;\">{{ts.assigned}} </b><small>{{ts.tdate}}  {{ts.tstate}}</small>\n                      </blockquote>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n          \n          \n        </div>\n      </div>\n\n\n\n      </div>\n    </div>\n  </div>\n  \n  \n\n  "
+module.exports = "<nav class=\"navbar navbar-inverse\" role=\"navigation\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n        <a class=\"navbar-brand\" >一个很神秘的网页</a>\n      </div>\n      <div class=\"nav  navbar-right\">\n        <ul class=\"nav navbar-nav\">\n          <li class=\"active\"><a (click)=\"main(hotel)\">HomePage</a></li>\n          <li class=\"dropdown\">\n            <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n              Shortcut <b class=\"caret\"></b>\n            </a>\n            <ul class=\"dropdown-menu\">\n              <li><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n              <li><a (click)=\"comp(hotel)\">Complete info</a></li>\n              <li class=\"divider\"></li>\n              <li><a (click)=\"hotelman(hotel)\">Manage Hotel</a></li>\n              <li><a (click)=\"hmorder(hotel)\">Order</a></li>\n            </ul>\n          </li>\n          <li class=\"nav navbar-nav navbar-right\">\n            <a href=\"/mainpage\">Log Out</a>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </nav>\n  <ol class=\"breadcrumb\">\n      <li><a (click)=\"main(hotel)\">Home</a></li>\n      <li><a (click)=\"main(hotel)\">{{hotel.userAccount}}</a></li>\n      <li><a (click)=\"hotelman(hotel)\">Manage Student</a></li>\n      <li class=\"active\">{{student.firstName}} {{student.lastName}}</li>\n  </ol>\n\n  <div class=\"container-fluid\">\n    <div class=\"row content\">\n      <div class=\"col-sm-2 sidenav\">\n      <h4>{{hotel.userAccount}}  </h4>\n      <ul class=\"nav nav-pills nav-stacked\">\n        <li ><a (click)=\"main(hotel)\">Home-{{hotel.userAccount}}</a></li>\n        <li ><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n        <li><a (click)=\"comp(hotel)\">进度更新</a></li>\n        <li class=\"active\"><a (click)=\"hotelman(hotel)\">学生管理</a></li>\n        <li><a (click)=\"hmorder(hotel)\">学生申请</a></li>\n        <li><a (click)=\"hmregister(hotel)\">登记账号</a></li>\n        <li ><a (click)=\"hmblog(hotel)\">Blog管理</a></li>\n      </ul><br>\n      \n      </div>\n    \n      <div class=\"col-sm-10\">\n        <h2>{{student.firstName}} {{student.lastName}}</h2>\n      <p>{{student.userAccount}}</p>\n      <ul class=\"nav nav-tabs\">\n        <li class=\"nav-item\">\n          <a class=\"nav-link \" data-toggle=\"tab\" href=\"#profile\" >个人信息</a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link \" data-toggle=\"tab\" href=\"#otherinfo\" >补充信息</a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link \" data-toggle=\"tab\" href=\"#edu\" >教育信息</a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link \" data-toggle=\"tab\" href=\"#exp\" >工作经历</a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" data-toggle=\"tab\" href=\"#dropdown1\">推荐人信息</a>\n        </li>\n        <li class=\"nav-item \">\n          <a class=\"nav-link active\" data-toggle=\"tab\" href=\"#dropdown2\">申请项目</a>\n        </li>\n        <li class=\"nav-item \">\n          <a class=\"nav-link active\" data-toggle=\"tab\" href=\"#dropdown3\">发送通知</a>\n        </li>\n        <li class=\"nav-item \">\n          <a class=\"nav-link active\" data-toggle=\"tab\" href=\"#dropdown4\">进度更新</a>\n        </li>\n      </ul>\n      <div id=\"myTabContent\" class=\"tab-content\">\n        <div class=\"tab-pane fade \" id=\"profile\">\n          <div id=\"personal\" >\n            <h3>基本信息</h3> \n            <hr>\n            <table class=\"table table-bordered\" >\n              <tbody>\n                <tr>\n                <td >名字 Firstname</td>\n                <td >\t\n                  <input class=\"form-control\" id=\"firstName\" value=\"{{student.firstName}}\" [(ngModel)]=\"firstName\"  name=\"firstName\" style=\"width: 200px;\" disabled=\"\">\n                </td>\n                <td >姓氏 Lastname</td>\n                <td ><input class=\"form-control\" id=\"lastName\" value=\"{{student.lastName}}\" [(ngModel)]=\"lastName\"  name=\"lastName\" style=\"width: 200px;\" disabled=\"\"></td>\n                <td >性别 Gender</td>\n                <td><input class=\"form-control\" id=\"gender\" value=\"{{student.gender}}\" [(ngModel)]=\"gender\"  name=\"gender\" style=\"width: 200px;\" disabled=\"\"></td>\n                </tr>\n                <tr>\n                <td >出生年月日 dob</td>\n                <td >\t\n                  <input class=\"form-control\" id=\"dob\" value=\"{{student.dob}}\" [(ngModel)]=\"dob\"  name=\"dob\" style=\"width: 200px;\" disabled=\"\">\n                  <small class=\"form-text text-muted\">格式为MM/DD/YYYY</small>\n                </td>\n                <td >现住址 currentAddress\t</td>\n                <td colspan=\"3\"><input class=\"form-control\" id=\"currentAddress\" value=\"{{student.currentAddress}}\" [(ngModel)]=\"currentAddress\"  name=\"currentAddress\" style=\"width: 500px;\" disabled=\"\">\n                  <small class=\"form-text text-muted\">请填写英文地址，并包含邮编。</small></td>\n                </tr>\n                <tr>\n                <td >国籍</td>\n                <td >\t\n                  <input class=\"form-control\" id=\"citizen\" value=\"{{student.citizen}}\" [(ngModel)]=\"citizen\"  name=\"citizen\" style=\"width: 200px;\" disabled=\"\">\n                </td>\n                <td >永久居住地址 Permanent Address</td>\n                <td colspan=\"3\"><input class=\"form-control\" id=\"permanentAddress\" value=\"{{student.permanentAddress}}\" [(ngModel)]=\"permanentAddress\"  name=\"permanentAddress\" style=\"width:500px;\" disabled=\"\">\n                  <small class=\"form-text text-muted\">请填写英文地址，并包含邮编。</small></td>\n                </tr>\n                <tr>\n                <td >电话 Cellphone</td>\n                <td >\t\n                  <input class=\"form-control\" id=\"phone\" value=\"{{student.phone}}\" [(ngModel)]=\"phone\"  name=\"phone\" style=\"width: 200px;\" disabled=\"\">\n                </td>\n                <td >邮箱 Email</td>\n                <td ><input class=\"form-control\" id=\"email\" value=\"{{student.email}}\" [(ngModel)]=\"email\"  name=\"email\" style=\"width: 200px;\" disabled=\"\"></td>\n                <td >SSN </td>\n                <td><input class=\"form-control\" id=\"ssn\" value=\"{{student.ssn}}\" [(ngModel)]=\"ssn\"  name=\"ssn\" style=\"width: 200px;\" disabled=\"\"></td>\n                </tr>\n                <tr>\n                <td >护照号 Passport</td>\n                <td colspan=\"2\">\t\n                  <input class=\"form-control\" id=\"passport\" value=\"{{student.passport}}\" [(ngModel)]=\"passport\"  name=\"passport\" style=\"width: 200px;\" disabled=\"\">\n                </td>\n                <td >美签号码 Visa Number</td>\n                <td colspan=\"2\"><input class=\"form-control\" id=\"visa\" value=\"{{student.visa}}\" [(ngModel)]=\"visa\"  name=\"visa\" style=\"width: 200px;\" disabled=\"\"></td>\n                </tr>\n                <tr>\n                <td >用于申请的邮箱 Email</td>\n                <td colspan=\"2\">\t\n                  <input class=\"form-control\" id=\"appEmail\" value=\"{{student.appEmail}}\" [(ngModel)]=\"appEmail\"  name=\"appEmail\" style=\"width: 200px;\" disabled=\"\">\n                </td>\n                <td >用于申请的邮箱密码 Password</td>\n                <td colspan=\"2\"><input class=\"form-control\" id=\"appPsw\" value=\"{{student.appPsw}}\" [(ngModel)]=\"appPsw\"  name=\"appPsw\" style=\"width: 200px;\" disabled=\"\"></td>\n                </tr> \n              </tbody>\n            </table>\n\n          </div>\n          <div id=\"family\" >\n            <h3>家庭信息</h3>\n            <hr>\n            <form id=\"form2\" action=\"\" method=\"post\">\n            <table class=\"table table-bordered\" >\n              <tbody>\n                <tr>\n                <td ></td>\n                <td >\t\n                  Father 父亲\n                </td>\n                <td >Mother 母亲</td>\n                </tr>\n                <tr>\n                <td >姓名 <br> <small class=\"form-text text-muted\">如是英文姓名，名字在前，姓氏在后</small></td>\n                <td >\t\n                  <input class=\"form-control\" id=\"MomName\" value=\"{{student.MomName}}\" [(ngModel)]=\"MomName\"  name=\"MomName\" style=\"width: 200px;\" disabled=\"\">\n                  \n                </td>\n                <td>\n                  <input class=\"form-control\" id=\"FatName\" value=\"{{student.FatName}}\" [(ngModel)]=\"FatName\"  name=\"FatName\" style=\"width: 200px;\" disabled=\"\">\n                </td>\n                </tr>\n                <tr>\n                <td >Address 家庭住址 <br> <small class=\"form-text text-muted\">请填写英文地址，并包含邮编。</small></td>\n                <td >\t\n                  <input class=\"form-control\" id=\"MomAddress\" value=\"{{student.MomAddress}}\" [(ngModel)]=\"MomAddress\"  name=\"MomAddress\" style=\"width: 400px;\" disabled=\"\">\n                  \n                </td>\n                <td>\n                  <input class=\"form-control\" id=\"FatAddress\" value=\"{{student.FatAddress}}\" [(ngModel)]=\"FatAddress\"  name=\"FatAddress\" style=\"width: 400px;\" disabled=\"\">\n                </td>\n                </tr>\n                <tr>\n                <td >Organization Name & Address 所在公司名称与地址<br> <small class=\"form-text text-muted\">公司地址请提供英文地址，并包含邮箱</small></td>\n                <td >\t\n                  <input class=\"form-control\" id=\"MomOrganazation\" value=\"{{student.MomOrganazation}}\" [(ngModel)]=\"MomOrganazation\"  name=\"MomOrganazation\" style=\"width: 400px;\" disabled=\"\">\n                  \n                </td>\n                <td>\n                  <input class=\"form-control\" id=\"FatOrganazation\" value=\"{{student.FatOrganazation}}\" [(ngModel)]=\"FatOrganazation\"  name=\"FatOrganazation\" style=\"width: 400px;\" disabled=\"\">\n                </td>\n                </tr>\n                <tr>\n                <td >Position 职务 </td>\n                <td >\t\n                  <input class=\"form-control\" id=\"MomJob\" value=\"{{student.MomJob}}\" [(ngModel)]=\"MomJob\"  name=\"MomJob\" style=\"width: 200px;\" disabled=\"\">\n                  \n                </td>\n                <td>\n                  <input class=\"form-control\" id=\"FatJob\" value=\"{{student.FatJob}}\" [(ngModel)]=\"FatJob\"  name=\"FatJob\" style=\"width: 200px;\" disabled=\"\">\n                </td>\n                </tr>\n                <tr>\n                <td >Level of Education 最高学历 </td>\n                <td >\t\n                  <input class=\"form-control\" id=\"MomEducation\" value=\"{{student.MomEducation}}\" [(ngModel)]=\"MomEducation\"  name=\"MomEducation\" style=\"width: 200px;\" disabled=\"\">\n                  \n                </td>\n                <td>\n                  <input class=\"form-control\" id=\"FatEducation\" value=\"{{student.FatEducation}}\" [(ngModel)]=\"FatEducation\"  name=\"FatEducation\" style=\"width: 200px;\" disabled=\"\">\n                </td>\n                </tr>\n                <tr>\n                <td >School Name 毕业学校</td>\n                <td >\t\n                  <input class=\"form-control\" id=\"MomSchool\" value=\"{{student.MomSchool}}\" [(ngModel)]=\"MomSchool\"  name=\"MomSchool\" style=\"width: 200px;\" disabled=\"\">\n                  \n                </td>\n                <td>\n                  <input class=\"form-control\" id=\"FatSchool\" value=\"{{student.FatSchool}}\" [(ngModel)]=\"FatSchool\"  name=\"FatSchool\" style=\"width: 200px;\" disabled=\"\">\n                </td>\n                </tr>\n                <tr>\n                <td >Year of Graduation 毕业时间</td>\n                <td >\t\n                  <input class=\"form-control\" id=\"MomGraduation\" value=\"{{student.MomGraduation}}\" [(ngModel)]=\"MomGraduation\"  name=\"MomGraduation\" style=\"width: 200px;\" disabled=\"\">\n                  \n                </td>\n                <td>\n                  <input class=\"form-control\" id=\"FatGraduation\" value=\"{{student.FatGraduation}}\" [(ngModel)]=\"FatGraduation\"  name=\"FatGraduation\" style=\"width: 200px;\" disabled=\"\">\n                </td>\n                </tr>\n                <tr>\n                <td >Phone 电话 </td>\n                <td >\t\n                  <input class=\"form-control\" id=\"MomPhone\" value=\"{{student.MomPhone}}\" [(ngModel)]=\"MomPhone\"  name=\"MomPhone\" style=\"width: 200px;\" disabled=\"\">\n                  \n                </td>\n                <td>\n                  <input class=\"form-control\" id=\"FatPhone\" value=\"{{student.FatPhone}}\" [(ngModel)]=\"FatPhone\"  name=\"FatPhone\" style=\"width: 200px;\" disabled=\"\">\n                </td>\n                </tr>\n                <tr>\n                <td >Email  邮箱  </td>\n                <td >\t\n                  <input class=\"form-control\" id=\"MomEmail\" value=\"{{student.MomEmail}}\" [(ngModel)]=\"MomEmail\"  name=\"MomEmail\" style=\"width: 200px;\" disabled=\"\">\n                  \n                </td>\n                <td>\n                  <input class=\"form-control\" id=\"FatEmail\" value=\"{{student.FatEmail}}\" [(ngModel)]=\"FatEmail\"  name=\"FatEmail\" style=\"width: 200px;\" disabled=\"\">\n                </td>\n                </tr>\n              </tbody>\n            </table>\n            </form>\n          </div>\n          <div id=\"yer\">\n            <h3>申请年份</h3>\n            <hr>\n            <div class=\"input-group mb-3\">\n              <input type=\"text\" class=\"form-control\" id=\"styear\" value=\"{{student.year}}\">\n              <button class=\"btn btn-primary\" type=\"button\" (click)=\"updatePersonal()\" id=\"button-addon2\">修改</button>\n            </div>\n          </div>\n        </div>\n        <div class=\"tab-pane fade \" id=\"otherinfo\">               \n          <div id=\"standardtest\" >\n            <h3>标化成绩</h3>\n            <hr>\n            <table class=\"table table-bordered\" >\n              <tbody>\n                <tr>\n                  <td colspan=\"10\">\n                    <h4>TOEFL/IELTS</h4> <small class=\"form-text text-muted\">如果是IELTS成绩，请在总分中标记</small>\n                  </td>\n                </tr>\n                <tr>\n                <td >总分 Total Score</td>\n                <td >\t\n                  <input class=\"form-control\" id=\"TOEFL\" value=\"{{student.TOEFL}}\" [(ngModel)]=\"TOEFL\"  name=\"TOEFL\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td >阅读 Reading</td>\n                <td ><input class=\"form-control\" id=\"TOEFLR\" value=\"{{student.TOEFLR}}\" [(ngModel)]=\"TOEFLR\"  name=\"TOEFLR\" style=\"width: 50px;\" disabled=\"\"></td>\n                <td >听力 Listening</td>\n                <td><input class=\"form-control\" id=\"TOEFLL\" value=\"{{student.TOEFLL}}\" [(ngModel)]=\"TOEFLL\"  name=\"TOEFLL\" style=\"width: 50px;\" disabled=\"\"></td>\n                <td >口语 Speaking</td>\n                <td ><input class=\"form-control\" id=\"TOEFLS\" value=\"{{student.TOEFLS}}\" [(ngModel)]=\"TOEFLS\"  name=\"TOEFLS\" style=\"width: 50px;\" disabled=\"\"></td>\n                <td >写作 Writing</td>\n                <td><input class=\"form-control\" id=\"TOEFLW\" value=\"{{student.TOEFLW}}\" [(ngModel)]=\"TOEFLW\"  name=\"TOEFLW\" style=\"width: 50px;\" disabled=\"\"></td>\n                </tr>\n                <tr>\n                <td colspan=\"10\">\n                  <h4>GRE</h4> <small class=\"form-text text-muted\">如果没有考过GRE可以不填写</small>\n                </td>\n                </tr>\n                <tr>\n                <td >总分 Total Score</td>\n                <td >\t\n                  <input class=\"form-control\" id=\"GRE\" value=\"{{student.GRE}}\" [(ngModel)]=\"GRE\"  name=\"GRE\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td >Verbal</td>\n                <td ><input class=\"form-control\" id=\"GREV\" value=\"{{student.GREV}}\" [(ngModel)]=\"GREV\"  name=\"GREV\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td >Percentile</td>\n                <td ><input class=\"form-control\" id=\"GREVP\" value=\"{{student.GREVP}}\" [(ngModel)]=\"GREVP\"  name=\"GREVP\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td >Quantitative</td>\n                <td ><input class=\"form-control\" id=\"GREQ\" value=\"{{student.GREQ}}\" [(ngModel)]=\"GREQ\"  name=\"GREQ\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td >Percentile</td>\n                <td ><input class=\"form-control\" id=\"GREQP\" value=\"{{student.GREQP}}\" [(ngModel)]=\"GREQP\"  name=\"GREQP\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                </tr>\n                <tr>\n                <td colspan=\"2\" ></td>\n                <td >Analytical Writing</td>\n                <td ><input class=\"form-control\" id=\"GREW\" value=\"{{student.GREW}}\" [(ngModel)]=\"GREW\"  name=\"GREW\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td >Percentile</td>\n                <td ><input class=\"form-control\" id=\"GREWP\" value=\"{{student.GREWP}}\" [(ngModel)]=\"GREWP\"  name=\"GREWP\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td colspan=\"4\"></td>\n                </tr>\n                <tr>\n                <td colspan=\"10\">\n                  <h4>GMAT</h4> <small class=\"form-text text-muted\">如果没有考过GMAT可以不填写</small>\n                </td>\n                </tr>\n                <tr>\n                <td >总分 Total Score</td>\n                <td >\t\n                  <input class=\"form-control\" id=\"GMAT\" value=\"{{student.GMAT}}\" [(ngModel)]=\"GMAT\"  name=\"GMAT\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td >Verbal</td>\n                <td ><input class=\"form-control\" id=\"GMATV\" value=\"{{student.GMATV}}\" [(ngModel)]=\"GMATV\"  name=\"GMATV\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td >Percentile</td>\n                <td ><input class=\"form-control\" id=\"GMATVP\" value=\"{{student.GMATVP}}\" [(ngModel)]=\"GMATVP\"  name=\"GMATVP\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td >Quantitative</td>\n                <td ><input class=\"form-control\" id=\"GMATQ\" value=\"{{student.GMATQ}}\" [(ngModel)]=\"GMATQ\"  name=\"GMATQ\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td >Percentile</td>\n                <td ><input class=\"form-control\" id=\"GMATQP\" value=\"{{student.GMATQP}}\" [(ngModel)]=\"GMATQP\"  name=\"GMATQP\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                </tr>\n                <tr>\n                <td colspan=\"2\" ></td>\n                <td >Analytical Writing</td>\n                <td ><input class=\"form-control\" id=\"GMATW\" value=\"{{student.GMATW}}\" [(ngModel)]=\"GMATW\"  name=\"GMATW\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td >Percentile</td>\n                <td ><input class=\"form-control\" id=\"GMATWP\" value=\"{{student.GMATWP}}\" [(ngModel)]=\"GMATWP\"  name=\"GMATWP\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td >Reasoning</td>\n                <td ><input class=\"form-control\" id=\"GMATR\" value=\"{{student.GMATR}}\" [(ngModel)]=\"GMATR\"  name=\"GMATR\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td >Percentile</td>\n                <td ><input class=\"form-control\" id=\"GMATRP\" value=\"{{student.GMATRP}}\" [(ngModel)]=\"GMATRP\"  name=\"GMATRP\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                </tr>\n                <tr>\n                <td colspan=\"2\">\n                  <h4>Others</h4> \n                </td>\n                <td colspan=\"8\">\n                  <input class=\"form-control\" id=\"OtherStandardTest\" value=\"{{student.OtherStandardTest}}\" [(ngModel)]=\"OtherStandardTest\"  name=\"OtherStandardTest\" style=\"width: 900px;\" disabled=\"\">\n                </td>\n                </tr>\n                \n              </tbody>\n            </table>\n            \n          </div>\n          <div id=\"skills\" >\n            <h3>技能</h3>\n            <hr>\n            <table class=\"table table-bordered\" >\n              <tbody>\n                <tr>\n                  <td colspan=\"2\">\n                    <p>比如：计算机语言: C (2 yrs ) C++ JAVA (5 yrs )Python; 统计软件SPSS, SAS, Stata; 经济学软件Eview;会计软件UFIDA, ERP; 金融终端 Bloomberg Reuters </p> <br> <b>写明使用的时间长短，是否精通</b> \n                  </td>\n                </tr>\n                <tr>\n                <td >Language Ability 语言能力</td>\n                <td style=\"width: 900px;\">\t\n                  <input class=\"form-control\" id=\"Language\" value=\"{{student.Language}}\" [(ngModel)]=\"Language\"  name=\"Language\" style=\"width: 800px;\" disabled=\"\">\n    \n                </td>\t\n                </tr>\n                <tr>\n                <td >Computer Skills 计算机技能</td>\n                <td style=\"width: 900px;\">\t\n                  <input class=\"form-control\" id=\"ComputerSkills\" value=\"{{student.ComputerSkills}}\" [(ngModel)]=\"ComputerSkills\"  name=\"ComputerSkills\" style=\"width: 800px;\" disabled=\"\">\n    \n                </td>\n                </tr>\n                <tr>\n                <td >Other Skills & Certificates <br> 其他技能和证书 <br><small class=\"form-text text-muted\">证书: CFA CPA 证券资格证等</small></td>\n                <td style=\"width: 900px;\">\t\n                  <input class=\"form-control\" id=\"OtherSkills\" value=\"{{student.OtherSkills}}\" [(ngModel)]=\"OtherSkills\"  name=\"OtherSkills\" style=\"width: 800px;\" disabled=\"\">\n    \n                </td>\t\n                </tr>\n                <tr>\n                <td >Hobbies 爱好 <br><small class=\"form-text text-muted\">如： 10年的钢琴舞台演出经历， 6年书法训练获全国级奖项10次</small></td>\n                <td style=\"width: 900px;\">\t\n                  <input class=\"form-control\" id=\"Hobbies\" value=\"{{student.Hobbies}}\" [(ngModel)]=\"Hobbies\"  name=\"Hobbies\" style=\"width: 800px;\" disabled=\"\">\n    \n                </td>\n                </tr>\n              </tbody>\n            </table>\n          </div>\n        </div>\n        <div class=\"tab-pane fade \" id=\"edu\">\n          <div id=\"Education\">\n            <div class=\"row\">\n              <div class=\"col-sm-10\">\n                <h3>\n                  所添加的教育经历总数：\n                  <small class=\"text-muted\">{{education.length}}</small>\n              </h3>\n              </div>\n              <div class=\"col-sm-2\">          \n              </div>\n            </div>\n          \n\n\t\t\t\t\t<br>\n\t\t\t\t\t<div class=\"panel-group\" id=\"accordion\" *ngIf=\"education.length > 0\">\n\t\t\t\t\t\t<div class=\"panel panel-primary\" *ngFor=\"let e of education\">\n\t\t\t\t\t\t  <div class=\"panel-heading\">\n\t\t\t\t\t\t\t<h4 class=\"panel-title\">\n\t\t\t\t\t\t\t  <a data-toggle=\"collapse\" data-parent=\"#accordion\" \n\t\t\t\t\t\t\t\thref=\"#{{e._id}}\">\n\t\t\t\t\t\t\t\t<b>{{e.educationName}} </b> ({{e.type}})\n\t\t\t\t\t\t\t  </a>\n\t\t\t\t\t\t\t</h4>\n\t\t\t\t\t\t  </div>\n\t\t\t\t\t\t  <div id=\"{{e._id}}\" class=\"panel-collapse collapse in\">\n\t\t\t\t\t\t\t<div class=\"panel-body\">\n\t\t\t\t\t\t\t\t<table class=\"table table-bordered\" >\n\t\t\t\t\t\t\t\t\t<tbody>\n\t\t\t\t\t\t\t\t\t  <tr >\n\t\t\t\t\t\t\t\t\t\t<td style=\"width: 30%; background-color: lightgray;\">University 学校</td>\n\t\t\t\t\t\t\t\t\t\t<td colspan=\"4\" style=\"width: 70%;\">\t\n\t\t\t\t\t\t\t\t\t\t\t{{e.educationName}}\n\t\t\t\t\t\t\t\t\t\t</td>\t\n\t\t\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t\t\t<td style=\"background-color: lightgray;\">Address 学校地址</td>\n\t\t\t\t\t\t\t\t\t\t<td colspan=\"4\">\t\n\t\t\t\t\t\t\t\t\t\t\t{{e.educationLocation}}\n\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t\t\t<td style=\"background-color: lightgray;\">在校日期 </td>\n\t\t\t\t\t\t\t\t\t\t<td style=\"background-color: lightgray;\">From</td>\n\t\t\t\t\t\t\t\t\t\t<td >\t\n\t\t\t\t\t\t\t\t\t\t\t{{e.educationStart}}\n\t\t\t\t\t\t\t\t\t\t</td>\t\n\t\t\t\t\t\t\t\t\t\t<td style=\"background-color: lightgray;\">To</td>\n\t\t\t\t\t\t\t\t\t\t<td >\t\n\t\t\t\t\t\t\t\t\t\t\t{{e.educationEnd}}\n\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t\t\t<td style=\"background-color: lightgray;\">Major 专业 </td>\n\t\t\t\t\t\t\t\t\t\t<td colspan=\"4\">\t\n\t\t\t\t\t\t\t\t\t\t\t{{e.major}}\n\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t\t\t<td style=\"background-color: lightgray;\">Degree 学位 </td>\n\t\t\t\t\t\t\t\t\t\t<td colspan=\"4\">\t\n\t\t\t\t\t\t\t\t\t\t\t{{e.Degree}}\n\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t\t\t  <tr >\n\t\t\t\t\t\t\t\t\t\t<td style=\"background-color: lightgray;\">Overall GPA\n\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t\t<td colspan=\"4\">\t\n\t\t\t\t\t\t\t\t\t\t\t{{e.GPA}}\n\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t\t\t<td style=\"background-color: lightgray;\">Major GPA 专业GPA </td>\n\t\t\t\t\t\t\t\t\t\t<td colspan=\"4\">\t\n\t\t\t\t\t\t\t\t\t\t\t{{e.MajorGPA}}\n\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t\t\t<td style=\"background-color: lightgray;\">Second Degree or Minor 二学位或辅修</td>\n\t\t\t\t\t\t\t\t\t\t<td colspan=\"4\">\t\n\t\t\t\t\t\t\t\t\t\t\t{{e.SecondDegree}}\n\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t\t\t  <tr >\n\t\t\t\t\t\t\t\t\t\t<td style=\"background-color: lightgray;\">Overall GPA\n\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t\t<td colspan=\"4\">\t\n\t\t\t\t\t\t\t\t\t\t\t{{e.SecondGPA}}\n\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t\t\t<td style=\"background-color: lightgray;\">其他信息</td>\n\t\t\t\t\t\t\t\t\t\t<td colspan=\"4\">\t\n\t\t\t\t\t\t\t\t\t\t\t{{e.other}}\n\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t  </tr> \n\t\t\t\t\t\t\t\t\t</tbody>\n\t\t\t\t\t\t\t\t</table>\n\t\t\t\t\t\t\t</div>\n              <div class=\"panel-footer\">\n                <div class=\"row\">\n                  <div class=\"col-sm-10\">\n                    \n                  </div>\n                  <div class=\"col-sm-2\">\n                    <input type=\"button\" href=\"/anew/todel/@a.id\"  id=\"shanchu\"  value=\"删除\" class=\"btn btn-primary \" onclick=\"return confirm('你确定要删除这个教育经历吗?')\" (click)=\"deleteE(e)\">\n                    \n                  </div>\n                </div>\n                \n              </div>\n\t\t\t\t\t\t  </div> \n\n\t\t\t\t\t\t</div>\n            \n\t\t\t\t\t</div>\n\t\t\t\t  </div>\n\n        </div>\n        <div class=\"tab-pane fade \" id=\"exp\">\n          <h3>\n            所添加的工作经历总数：\n            <small class=\"text-muted\">{{experience.length}}</small>\n          </h3>\n          <br>\n          <div id=\"Experience\">\n            <br>\n            <div class=\"panel-group\" id=\"accordion\" *ngIf=\"experience.length > 0\">\n              <div class=\"panel panel-primary\" *ngFor=\"let ex of experience\">\n                <div class=\"panel-heading\">\n                <h4 class=\"panel-title\">\n                  <a data-toggle=\"collapse\" data-parent=\"#accordion\" \n                  href=\"#{{ex._id}}\">\n                  <b>{{ex.institution}} </b> ({{ex.type}})\n                  </a>\n                </h4>\n                </div>\n                <div id=\"{{ex._id}}\" class=\"panel-collapse collapse in\">\n                <div class=\"panel-body\">\n                  <table class=\"table table-bordered\" >\n                    <tbody>\n                      <tr >\n                      <td style=\"width: 30%; background-color: lightgray;\">Company/Institution <br> 公司/研究单位 </td>\n                      <td colspan=\"4\" style=\"width: 70%;\">\t\n                        {{ex.institution}}\n                      </td>\t\n                      </tr>\n                      <tr>\n                      <td style=\"background-color: lightgray;\">Address 地址</td>\n                      <td colspan=\"4\">\t\n                        {{ex.institutionLocation}}\n                      </td>\n                      </tr>\n                      <tr>\n                      <td style=\"background-color: lightgray;\">在职日期 </td>\n                      <td style=\"background-color: lightgray;\">From</td>\n                      <td >\t\n                        {{ex.experienceStart}}\n                      </td>\t\n                      <td style=\"background-color: lightgray;\">To</td>\n                      <td >\t\n                        {{ex.experienceEnd}}\n                      </td>\n                      </tr>\n                      <tr>\n                      <td style=\"background-color: lightgray;\">Position or Title 职位 </td>\n                      <td colspan=\"4\">\t\n                        {{ex.experienceposition}}\n                      </td>\n                      </tr>\n                      <tr>\n                      <td style=\"background-color: lightgray;\">Responsibilities 职责 </td>\n                      <td colspan=\"4\">\t\n                        {{ex.responsibilities}}\n                      </td>\n                      </tr>\n                      <tr >\n                      <td style=\"background-color: lightgray;\">Project  项目简介 \n                      </td>\n                      <td colspan=\"4\">\t\n                        {{ex.project}}\n                      </td>\n                      </tr>\n                      <tr>\n                      <td style=\"background-color: lightgray;\">Achievement 成就 </td>\n                      <td colspan=\"4\">\t\n                        {{ex.achievement}}\n                      </td>\n                      </tr> \n                    </tbody>\n                  </table>\n                </div>\n                <div class=\"panel-footer\">\n                  <div class=\"row\">\n                    <div class=\"col-sm-10\">\n                      \n                    </div>\n                    <div class=\"col-sm-2\">\n                      <input type=\"button\" href=\"/anew/todel/@a.id\"  id=\"shanchu\"  value=\"删除\" class=\"btn btn-primary \" onclick=\"return confirm('你确定要删除这个工作经历吗?')\" (click)=\"deleteEx(ex)\">\n                      \n                    </div>\n                  </div>\n                  \n                </div>\n                </div>\n              </div>\n            </div>\n          </div>\n\n        </div>\n\n        <div class=\"tab-pane fade \" id=\"dropdown1\">\n          <h3>\n            学生所添加的推荐人总数：\n            <small class=\"text-muted\">{{recommenders.length}}</small>\n          </h3>\n          <hr>\n          <div class=\"panel-group\" id=\"accordion\" *ngIf=\"recommenders.length > 0\">\n            <div class=\"panel panel-primary\" *ngFor=\"let k of recommenders\">\n              <div class=\"panel-heading\">\n                <h4 class=\"panel-title\">\n                  <a data-toggle=\"collapse\" data-parent=\"#accordion\" \n                    href=\"#{{k._id}}\">\n                  <b> {{k.firstName}} {{k.lastName}}</b>\n                  </a>\n                </h4>\n              </div>\n              <div id=\"{{k._id}}\" class=\"panel-collapse collapse in\">\n                <div class=\"panel-body\">\n                  <table class=\"table table-hover\">\n                    <thead style=\"background-color: lightgray;\">\n                      <tr>\n                        <th scope=\"col\" >性别</th>\n                        <th scope=\"col\" >职称title</th>\n                        <th scope=\"col\" >学历</th>\n                        <th scope=\"col\">Relationship</th>\n                        <th scope=\"col\">所在单位</th>\n                      </tr>\n                    </thead>\n                    <tbody >\n                      <tr class=\"table-dark\" >\n                        <td>{{k.gender}} </td>\n                        <td>{{k.title}}</td>\n                        <td>{{k.education}}</td>\n                        <td>{{k.relation}}</td>\n                        <td>{{k.organization}}</td>  \n                      </tr>\n                    </tbody>\n                    <thead style=\"background-color: lightgray;\">\n                      <tr>\n                        <th scope=\"col\" >职务</th>\n                        <th scope=\"col\" >Email</th>\n                        <th scope=\"col\">电话</th>\n                        <th scope=\"col\" >地址</th>\n                        <th scope=\"col\">在此单位工作时间年限</th>\n                      </tr>\n                    </thead>\n                    <tbody >\n                      <tr class=\"table-dark\" >\n                        <td>{{k.position}} </td>\n                        <td>{{k.email}}</td>\n                        <td>{{k.phone}}</td>\n                        <td>{{k.location}}</td>\n                        <td>{{k.duration}}</td>  \n                      </tr>\n                    </tbody>\n                    <thead style=\"background-color: lightgray;\">\n                      <tr>\n                        <th colspan=\"5\">其他信息（推荐人与被推荐人关系发展，以及熟悉程度）</th>\n                      </tr>\n                    </thead>\n                    <tbody>\n                      <tr>\n                        <td colspan=\"5\">{{k.other}}</td>\n                      </tr>\n                    </tbody>\n                  </table>\n                </div>\n                <div class=\"panel-footer\">\n                  <div class=\"row\">\n                    <div class=\"col-sm-10\">\n                      <input type=\"button\" href=\"/anew/todel/@a.id\" value=\"删除\" class=\"btn btn-primary \" (click)=\"deleteRD(k)\">\n                    </div>\n                    <div class=\"col-sm-2\">\n                      <button href=\"/anew/todel/@a.id\" (click)=\"studentrec(k)\">More</button>\n                      \n                    </div>\n                  </div>\n                  \n                </div>\n              </div>\n            </div>\n          </div>\n          \n        </div>\n        <div class=\"tab-pane fade in active\" id=\"dropdown2\">\n\n          <table class=\"table table-hover\" *ngIf=\"schools.length >=  0\">\n            <thead>\n              <tr>\n                <th scope=\"col\" colspan=\"6\"><h3>\n                  已添加项目总数：\n                  <small class=\"text-muted\">{{schools.length}}</small>\n                </h3></th>\n                <th scope=\"col\" colspan=\"4\"> <button type=\"button\" class=\"btn btn-danger\" (click)=\"hmaddschool(hotel,student)\">添加项目</button>\n                  <button type=\"button\" class=\"btn btn-warning\" (click)=\"exportAsExcelFile()\">生成excel</button></th>\n              </tr>\n            </thead>\n            <thead>\n              <tr>\n                <th scope=\"col\" style=\"width:50px\">States</th>\n                <th scope=\"col\" style=\"width:200px\">University</th>\n                <th scope=\"col\" style=\"width:200px\">School</th>\n                <th scope=\"col\" style=\"width:200px\">Major</th>\n                <th scope=\"col\" style=\"width:90px\">Deadline 1</th>\n                <th scope=\"col\" style=\"width:90px\">Deadline 2</th>\n                <th scope=\"col\" style=\"width:90px\">Deadline 3</th>\n                <th scope=\"col\" style=\"width:20px\">RecNum</th>\n                <th scope=\"col\" style=\"width:20px\"></th>\n              </tr>\n            </thead>\n            <tbody *ngFor=\"let s of schools\" >\n\n              <tr class=\"table\" >\n                <th scope=\"row\" >{{s.state}}\n                </th>\n                <td>{{s.univName}} \n                   \n                  <span class=\"label label-info\" *ngIf=\"s.level=='保底'\">Safe</span>\n                  <span class=\"label label-success\" *ngIf=\"s.level=='冲刺'\">冲刺</span>\n                  <span class=\"label label-warning\" *ngIf=\"s.level=='不可能'\">风险</span>\n                  <span class=\"badge badge-secondary\" *ngIf=\"s.videoEssay=='有，在提交申请前'\">VE前</span>\n                  <span class=\"badge badge-secondary\" *ngIf=\"s.videoEssay=='有，在提交申请后'\">VE后</span>\n                  <span class=\"label label-danger\" *ngIf=\"s.interview=='yes'\">面试</span>\n                  <span class=\"label label-primary\" *ngIf=\"s.gre=='Required'\">GRE</span>\n                  <div class=\"btn-group\" *ngIf=\"s.other!=''&&s.other!=null\">\n                    <button class=\"btn btn-secondary btn-sm dropdown-toggle\" type=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                      备注\n                    </button>\n                    <div class=\"dropdown-menu\">\n                      {{s.other}}\n                    </div>\n                  </div>\n                </td>\n                <td>{{s.schoolName}}</td>\n                <td>{{s.majorName}}</td>\n                <td>{{s.ddl1}}</td>\n                <td>{{s.ddl2}}</td>\n                <td>{{s.ddl3}}</td>\n                <td>{{s.recommNumber}}</td>\n                <td>\n                  <button href=\"/anew/todel/@a.id\" (click)=\"hmschooldetail(s)\">More</button>\n                </td>\n              </tr>\n\n            </tbody>\n          </table>\n        </div>\n        <div class=\"tab-pane fade \" id=\"dropdown3\">\n          <div class=\"col-sm-9\">\n            <div class=\"container\">\n              <div class=\"row clearfix\">\n                <div class=\"col-md-12 column\">\n                  <div class=\"row clearfix\">\n                    <div class=\"col-md-7 column\">\n                      <br>\n                      <form (submit)=\"addNotif(postForm)\" #postForm=\"ngForm\" ngNativeValidate>\n                        <fieldset>\n                          <fieldset class=\"form-group\">\n                            <div class=\"form-check\">\n                              <label class=\"form-check-label\">\n                                <input type=\"radio\" class=\"form-check-input\" name=\"type\" id=\"immedi\" value=\"紧急\"  ngModel required>\n                                紧急\n                              </label>\n                              <label class=\"form-check-label\">\n                                <input type=\"radio\" class=\"form-check-input\" name=\"type\" id=\"normal\" value=\"一般\"  ngModel required>\n                                一般\n                              </label>\n                              <label class=\"form-check-label\">\n                                <input type=\"radio\" class=\"form-check-input\" name=\"type\" id=\"medium\" value=\"比较紧急\" ngModel required>\n                                比较紧急\n                              </label>\n                            </div>\n                          </fieldset>\n                          <div class=\"form-group\">\n                            <label for=\"exampleTextarea\" class=\"form-label mt-4\">通知内容</label>\n                            <input class=\"form-control\" id=\"exampleTextarea\" rows=\"3\" style=\"margin-top: 0px; margin-bottom: 0px; height: 108px;\" ngModel required>\n                          </div>\n                          <div class=\"form-group\">\n                            <label for=\"exampleInputPassword1\">通知日期</label>\n                            <input class=\"form-control\" name=\"ddl1\" type=\"date\" placeholder=\"date\" style=\"width:50%\" ngModel required>\n                          </div>\n              \n                          <button  class=\"btn btn-primary\">发送通知</button>\n                        </fieldset>\n                      </form>\n                    </div>\n                    <div class=\"col-md-3 column\" *ngIf=\"notifs.length > 0\">\n                      <blockquote *ngFor=\"let n of notifs\">\n                        <p>\n                         {{n.content}}\n                        </p> <small>{{n.ndate}}  {{n.nstate}}</small>\n                      </blockquote>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n          \n          \n        </div>\n        <div class=\"tab-pane fade \" id=\"dropdown4\">\n          <div class=\"col-sm-9\">\n            <div class=\"container\">\n              <div class=\"row clearfix\">\n                <div class=\"col-md-12 column\">\n                  <div class=\"row clearfix\">\n                    <div class=\"col-md-7 column\">\n                      <br>\n                      <form (submit)=\"addTask(postForm)\" #postForm=\"ngForm\" ngNativeValidate>\n                        <fieldset>\n                          <fieldset class=\"form-group\">\n                            <div class=\"form-check\">\n                              <label class=\"form-check-label\">\n                                <input type=\"radio\" class=\"form-check-input\" name=\"ttype\" id=\"yuxin\" value=\"yuxin\"  ngModel required>\n                                yuxin &nbsp;\n                              </label>\n                              <label class=\"form-check-label\">\n                                <input type=\"radio\" class=\"form-check-input\" name=\"ttype\" id=\"yi\" value=\"小伊\"  ngModel required>\n                                小伊 &nbsp;\n                              </label>\n                              <label class=\"form-check-label\">\n                                <input type=\"radio\" class=\"form-check-input\" name=\"ttype\" id=\"dasong\" value=\"大松\" ngModel required>\n                                大松 &nbsp;\n                              </label>\n                              <label class=\"form-check-label\">\n                                <input type=\"radio\" class=\"form-check-input\" name=\"ttype\" id=\"oth\" value=\"其他\" ngModel required>\n                                其他 &nbsp;\n                              </label>\n                            </div>\n                          </fieldset>\n                          <div class=\"form-group\">\n                            <label for=\"exampleTextarea\" class=\"form-label mt-4\">进度内容</label>\n                            <input class=\"form-control\" id=\"exampleText\" rows=\"3\" style=\"margin-top: 0px; margin-bottom: 0px; height: 108px;\" ngModel required>\n                          </div>\n                          <div class=\"form-group\">\n                            <label for=\"exampleInputPassword1\">进度发布日期</label>\n                            <input class=\"form-control\" name=\"tddl\" type=\"date\" placeholder=\"date\" style=\"width:50%\" ngModel required>\n                          </div>\n              \n                          <button  class=\"btn btn-primary\">更新进度</button>\n                        </fieldset>\n                      </form>\n                    </div>\n                    <div class=\"col-md-3 column\" *ngIf=\"tasks.length > 0\">\n                      <blockquote *ngFor=\"let ts of tasks\">\n                        <p>\n                         {{ts.content}}\n                        </p> <b style=\"font-size: 12px;\">{{ts.assigned}} </b><small>{{ts.tdate}}  {{ts.tstate}}</small>\n                      </blockquote>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n          \n          \n        </div>\n      </div>\n\n\n\n      </div>\n    </div>\n  </div>\n  \n  \n\n  "
 
 /***/ }),
 
@@ -4822,7 +4828,7 @@ var HmstudentComponent = /** @class */ (function () {
     };
     HmstudentComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/hotels').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/hotels').subscribe(function (Data) {
             _this.hotels = Data.hotels;
             for (var _i = 0, _a = _this.hotels; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -4838,7 +4844,7 @@ var HmstudentComponent = /** @class */ (function () {
             }
         });
         //展示 学生个人信息
-        this.http.get('/api/students').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/students').subscribe(function (Data) {
             _this.students = Data.students;
             for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -4853,7 +4859,7 @@ var HmstudentComponent = /** @class */ (function () {
             }
         });
         //展示 此学生 教育背景信息
-        this.http.get('/api/educations/').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/educations/').subscribe(function (Data) {
             _this.educations = Data.educations;
             for (var _i = 0, _a = _this.educations; _i < _a.length; _i++) {
                 var y = _a[_i];
@@ -4864,7 +4870,7 @@ var HmstudentComponent = /** @class */ (function () {
             console.log("学生的教育背景" + _this.education);
         });
         //展示 此学生 工作背景信息
-        this.http.get('/api/experiences/').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/experiences/').subscribe(function (Data) {
             _this.experiences = Data.experiences;
             for (var _i = 0, _a = _this.experiences; _i < _a.length; _i++) {
                 var i = _a[_i];
@@ -4875,22 +4881,22 @@ var HmstudentComponent = /** @class */ (function () {
             console.log("学生的工作背景" + _this.experience);
         });
         //展示 此学生 选校信息
-        this.http.get('/api/studentschooldetail/' + this.studentID).subscribe(function (orderData) {
+        this.http.get('http://localhost:3000/studentschooldetail/' + this.studentID).subscribe(function (orderData) {
             console.log(orderData);
             _this.schools = orderData.schools;
         });
         //展示 此学生 推荐人信息
-        this.http.get('/api/studentrecommenderdetail/' + this.studentID).subscribe(function (orderData) {
+        this.http.get('http://localhost:3000/studentrecommenderdetail/' + this.studentID).subscribe(function (orderData) {
             console.log(orderData);
             _this.recommenders = orderData.recommenders;
         });
         //展示 此学生通知信息
-        this.http.get('/api/notifdetail/' + this.studentID).subscribe(function (o) {
+        this.http.get('http://localhost:3000/notifdetail/' + this.studentID).subscribe(function (o) {
             console.log(o);
             _this.notifs = o.notifs;
         });
         //展示 此学生进度信息
-        this.http.get('/api/taskdetail/' + this.studentID).subscribe(function (o) {
+        this.http.get('http://localhost:3000/taskdetail/' + this.studentID).subscribe(function (o) {
             console.log(o);
             //this.tasks = o.tasks;
             for (var i = o.tasks.length - 1; i >= 0; i--) {
@@ -4904,21 +4910,21 @@ var HmstudentComponent = /** @class */ (function () {
     //教育经历修改
     HmstudentComponent.prototype.deleteE = function (e) {
         console.log(e._id);
-        this.http.delete('/api/education/' + e._id).subscribe(function (oooData) {
+        this.http.delete('http://localhost:3000/education/' + e._id).subscribe(function (oooData) {
             window.location.reload();
         });
     };
     //工作经历修改
     HmstudentComponent.prototype.deleteEx = function (ex) {
         console.log(ex._id);
-        this.http.delete('/api/experience/' + ex._id).subscribe(function (oooData) {
+        this.http.delete('http://localhost:3000/experience/' + ex._id).subscribe(function (oooData) {
             window.location.reload();
         });
     };
     //推荐人删除
     HmstudentComponent.prototype.deleteRD = function (k) {
         console.log(k._id);
-        this.http.delete('/api/recommenders/' + k._id).subscribe(function (oooData) {
+        this.http.delete('http://localhost:3000/recommenders/' + k._id).subscribe(function (oooData) {
             window.location.reload();
         });
     };
@@ -5001,7 +5007,7 @@ var HmstudentComponent = /** @class */ (function () {
             //年级
             year: document.getElementById("styear").value,
         };
-        this.http.put('/api/students/' + this.student.userAccount, Student)
+        this.http.put('http://localhost:3000/students/' + this.student.userAccount, Student)
             .subscribe(function (data) {
             var options = {
                 overlay: true,
@@ -5218,7 +5224,7 @@ var HmstudentrecComponent = /** @class */ (function () {
     }
     HmstudentrecComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/hotels').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/hotels').subscribe(function (Data) {
             _this.hotels = Data.hotels;
             for (var _i = 0, _a = _this.hotels; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -5234,7 +5240,7 @@ var HmstudentrecComponent = /** @class */ (function () {
             }
         });
         //展示 学生个人信息
-        this.http.get('/api/students').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/students').subscribe(function (Data) {
             _this.students = Data.students;
             for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -5248,7 +5254,7 @@ var HmstudentrecComponent = /** @class */ (function () {
             }
         });
         //展示 此学生 推荐人特定信息
-        this.http.get('/api/recommenders').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/recommenders').subscribe(function (Data) {
             _this.recommenders = Data.recommenders;
             for (var _i = 0, _a = _this.recommenders; _i < _a.length; _i++) {
                 var r = _a[_i];
@@ -5262,7 +5268,7 @@ var HmstudentrecComponent = /** @class */ (function () {
             }
         });
         //获取 包含此推荐人的所有推荐信
-        this.http.get('/api/recomletters').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/recomletters').subscribe(function (Data) {
             for (var _i = 0, _a = Data.recomletters; _i < _a.length; _i++) {
                 var rl = _a[_i];
                 if (rl.recommender === _this.recommenderID) {
@@ -5273,7 +5279,7 @@ var HmstudentrecComponent = /** @class */ (function () {
             console.log(_this.recomletters);
         });
         //展示 此学生 选校信息
-        this.http.get('/api/studentschooldetail/' + this.studentID).subscribe(function (orderData) {
+        this.http.get('http://localhost:3000/studentschooldetail/' + this.studentID).subscribe(function (orderData) {
             console.log("学生全部列表");
             console.log(orderData.schools);
             for (var _i = 0, _a = orderData.schools; _i < _a.length; _i++) {
@@ -5296,14 +5302,14 @@ var HmstudentrecComponent = /** @class */ (function () {
     //教育经历修改
     HmstudentrecComponent.prototype.deleteE = function (e) {
         console.log(e._id);
-        this.http.delete('/api/education/' + e._id).subscribe(function (oooData) {
+        this.http.delete('http://localhost:3000/education/' + e._id).subscribe(function (oooData) {
             window.location.reload();
         });
     };
     //工作经历修改
     HmstudentrecComponent.prototype.deleteEx = function (ex) {
         console.log(ex._id);
-        this.http.delete('/api/experience/' + ex._id).subscribe(function (oooData) {
+        this.http.delete('http://localhost:3000/experience/' + ex._id).subscribe(function (oooData) {
             window.location.reload();
         });
     };
@@ -5480,13 +5486,13 @@ var HmtaskComponent = /** @class */ (function () {
     }
     HmtaskComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/users').subscribe(function (userData) {
+        this.http.get('http://localhost:3000/users').subscribe(function (userData) {
             _this.user = userData.user;
             console.log(userData.user);
             console.log(_this.user.length);
         });
         //获取HotelM 信息列表
-        this.http.get('/api/hotels').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/hotels').subscribe(function (Data) {
             _this.hotels = Data.hotels;
             for (var _i = 0, _a = _this.hotels; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -5502,7 +5508,7 @@ var HmtaskComponent = /** @class */ (function () {
             }
         });
         //展示 此学生进度信息
-        this.http.get('/api/tasks').subscribe(function (o) {
+        this.http.get('http://localhost:3000/tasks').subscribe(function (o) {
             //console.log("测试"+ o[1]);
             //this.tasks = o.tasks;
             for (var i = o.tasks.length - 1; i >= 0; i--) {
@@ -5524,7 +5530,7 @@ var HmtaskComponent = /** @class */ (function () {
             tstate: "完成",
             ttype: n.ttype,
         };
-        this.http.put('/api/task/' + n._id, Task)
+        this.http.put('http://localhost:3000/task/' + n._id, Task)
             .subscribe(function (data) {
             var options = {
                 overlay: true,
@@ -5653,7 +5659,7 @@ var HonorService = /** @class */ (function () {
     }
     HonorService.prototype.getHonor = function () {
         var _this = this;
-        this.http.get('/api/honors').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/honors').subscribe(function (Data) {
             _this.honors = Data.honors;
             _this.honor = _this.honors[0];
             _this.honorsUpdated.next(_this.honors.slice());
@@ -5673,7 +5679,7 @@ var HonorService = /** @class */ (function () {
             percentage: percentage,
             grantor: grantor,
         };
-        this.http.post('/api/honoradd', honor).subscribe(function (responseData) {
+        this.http.post('http://localhost:3000/honoradd', honor).subscribe(function (responseData) {
             _this.honorS.push(honor);
             _this.honorsUpdated.next(_this.honorS.slice());
         });
@@ -5897,7 +5903,7 @@ var HotelDetailComponent = /** @class */ (function () {
     }
     HotelDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/hoteldetail/' + this.hotelId).subscribe(function (hotelData) {
+        this.http.get('http://localhost:3000/hoteldetail/' + this.hotelId).subscribe(function (hotelData) {
             console.log(hotelData.hotels);
             _this.hotel = hotelData.hotels;
             // console.log(this.hotel.name);
@@ -5995,7 +6001,7 @@ var HotelViewComponent = /** @class */ (function () {
         var _this = this;
         var searchName = form.value.searchName;
         console.log(searchName);
-        this.http.get('/api/hotelsearch/' + searchName).subscribe(function (hotelData) {
+        this.http.get('http://localhost:3000/hotelsearch/' + searchName).subscribe(function (hotelData) {
             console.log(hotelData);
             _this.hotels = hotelData.hotels;
         });
@@ -6065,7 +6071,7 @@ var HotelService = /** @class */ (function () {
     }
     HotelService.prototype.getHotels = function () {
         var _this = this;
-        this.http.get('/api/hotels').subscribe(function (hotelData) {
+        this.http.get('http://localhost:3000/hotels').subscribe(function (hotelData) {
             console.log(hotelData);
             _this.hotels = hotelData.hotels;
             _this.hotelsUpdated.next(_this.hotels.slice());
@@ -6085,7 +6091,7 @@ var HotelService = /** @class */ (function () {
     //     image: image,
     //     price: price
     //   };
-    //   this.http.post('/api/hoteladd', hotel).subscribe((responseData) =>{
+    //   this.http.post('http://localhost:3000/hoteladd', hotel).subscribe((responseData) =>{
     //       this.hotels.push(hotel);
     //       this.hotelsUpdated.next([...this.hotels]);
     //   });
@@ -6120,7 +6126,7 @@ var HotelService = /** @class */ (function () {
             image: image,
             price: price
         };
-        this.http.post('/api/hoteladd', hotel).subscribe(function (responseData) {
+        this.http.post('http://localhost:3000/hoteladd', hotel).subscribe(function (responseData) {
             _this.hotelM.push(hotel);
             _this.hotelMUpdated.next(_this.hotelM.slice());
         });
@@ -6138,7 +6144,7 @@ var HotelService = /** @class */ (function () {
             hotelName: hotelName,
             userId: userId
         };
-        this.http.post('/api/hotelbook', order).subscribe(function (responseData) {
+        this.http.post('http://localhost:3000/hotelbook', order).subscribe(function (responseData) {
             _this.orders.push(order);
             _this.orderUpdated.next(_this.orders.slice());
         });
@@ -6210,7 +6216,7 @@ var OrderViewComponent = /** @class */ (function () {
     }
     OrderViewComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/vieworder/' + this.userId).subscribe(function (orderData) {
+        this.http.get('http://localhost:3000/vieworder/' + this.userId).subscribe(function (orderData) {
             console.log(orderData);
             _this.orders = orderData.orders;
         });
@@ -6478,7 +6484,7 @@ var LoginComponent = /** @class */ (function () {
     };
     LoginComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/users').subscribe(function (userData) {
+        this.http.get('http://localhost:3000/users').subscribe(function (userData) {
             _this.user = userData.user;
             console.log(userData.user);
             console.log(_this.user.length);
@@ -6598,7 +6604,7 @@ var MainblogComponent = /** @class */ (function () {
                             alert("Welcome " + this.user[index].Role + "!");
                             //console.log(this.user[index].UserAccount);
                             // API_PATH + '/students'
-                            this.http.get('/api/students').subscribe(function (Data) {
+                            this.http.get('http://localhost:3000/students').subscribe(function (Data) {
                                 _this.students = Data.students;
                                 console.log(_this.students);
                                 for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
@@ -6650,13 +6656,13 @@ var MainblogComponent = /** @class */ (function () {
     };
     MainblogComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/users').subscribe(function (userData) {
+        this.http.get('http://localhost:3000/users').subscribe(function (userData) {
             _this.user = userData.user;
             console.log(userData.user);
             console.log(_this.user.length);
         });
         //获取Blog 信息列表
-        this.http.get('/api/blogs').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/blogs').subscribe(function (Data) {
             //this.blogs = Data.blogs;
             for (var i = Data.blogs.length - 1; i >= 0; i--) {
                 _this.blogs.push(Data.blogs[i]);
@@ -6803,7 +6809,7 @@ var MainclassComponent = /** @class */ (function () {
                             alert("Welcome " + this.user[index].Role + "!");
                             //console.log(this.user[index].UserAccount);
                             // API_PATH + '/students'
-                            this.http.get('/api/students').subscribe(function (Data) {
+                            this.http.get('http://localhost:3000/students').subscribe(function (Data) {
                                 _this.students = Data.students;
                                 console.log(_this.students);
                                 for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
@@ -6855,7 +6861,7 @@ var MainclassComponent = /** @class */ (function () {
     };
     MainclassComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/users').subscribe(function (userData) {
+        this.http.get('http://localhost:3000/users').subscribe(function (userData) {
             _this.user = userData.user;
             console.log(userData.user);
             console.log(_this.user.length);
@@ -7000,7 +7006,7 @@ var MainpageComponent = /** @class */ (function () {
                             alert("Welcome " + this.user[index].Role + "!");
                             //console.log(this.user[index].UserAccount);
                             // API_PATH + '/students'
-                            this.http.get('/api/students').subscribe(function (Data) {
+                            this.http.get('http://localhost:3000/students').subscribe(function (Data) {
                                 _this.students = Data.students;
                                 //console.log(this.students);
                                 for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
@@ -7052,7 +7058,7 @@ var MainpageComponent = /** @class */ (function () {
     };
     MainpageComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/users').subscribe(function (userData) {
+        this.http.get('http://localhost:3000/users').subscribe(function (userData) {
             _this.user = userData.user;
             //console.log(userData.user);
             //console.log(this.user.length);
@@ -7126,7 +7132,7 @@ var NotifService = /** @class */ (function () {
     }
     NotifService.prototype.getNotif = function () {
         var _this = this;
-        this.http.get('/api/notifs').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/notifs').subscribe(function (Data) {
             _this.notifs = Data.notifs;
             _this.notif = _this.notifs[0];
             _this.notifsUpdated.next(_this.notifs.slice());
@@ -7149,7 +7155,7 @@ var NotifService = /** @class */ (function () {
             nstate: nstate,
             ntype: ntype,
         };
-        this.http.post('/api/notifadd', notif).subscribe(function (responseData) {
+        this.http.post('http://localhost:3000/notifadd', notif).subscribe(function (responseData) {
             _this.notifS.push(notif);
             _this.notifsUpdated.next(_this.notifS.slice());
         });
@@ -7193,7 +7199,7 @@ var PublicationService = /** @class */ (function () {
     }
     PublicationService.prototype.getPublication = function () {
         var _this = this;
-        this.http.get('/api/publications').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/publications').subscribe(function (Data) {
             _this.publications = Data.publications;
             _this.publication = _this.publications[0];
             _this.publicationsUpdated.next(_this.publications.slice());
@@ -7219,7 +7225,7 @@ var PublicationService = /** @class */ (function () {
             PublicationAbstract: PublicationAbstract,
             PublicationLevel: PublicationLevel,
         };
-        this.http.post('/api/publicationadd', publication).subscribe(function (responseData) {
+        this.http.post('http://localhost:3000/publicationadd', publication).subscribe(function (responseData) {
             _this.publicationS.push(publication);
             _this.publicationsUpdated.next(_this.publicationS.slice());
         });
@@ -7263,7 +7269,7 @@ var RecomletterService = /** @class */ (function () {
     }
     RecomletterService.prototype.getRecomletter = function () {
         var _this = this;
-        this.http.get('/api/recomletters').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/recomletters').subscribe(function (Data) {
             _this.recomletters = Data.recomletters;
             _this.recomletter = _this.recomletters[0];
             _this.recomlettersUpdated.next(_this.recomletters.slice());
@@ -7288,7 +7294,7 @@ var RecomletterService = /** @class */ (function () {
             type: type,
             state: state,
         };
-        this.http.post('/api/recomletteradd', recomletter).subscribe(function (responseData) {
+        this.http.post('http://localhost:3000/recomletteradd', recomletter).subscribe(function (responseData) {
             _this.recomletterS.push(recomletter);
             _this.recomlettersUpdated.next(_this.recomletterS.slice());
         });
@@ -7332,7 +7338,7 @@ var RecommenderService = /** @class */ (function () {
     }
     RecommenderService.prototype.getRecommender = function () {
         var _this = this;
-        this.http.get('/api/recommenders').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/recommenders').subscribe(function (Data) {
             //console.log(Data);
             _this.recommenders = Data.recommenders;
             //console.log(this.recommenders[0].userAccount);
@@ -7378,7 +7384,7 @@ var RecommenderService = /** @class */ (function () {
             relation: relation,
             other: other,
         };
-        this.http.post('/api/recommenderadd', recommender).subscribe(function (responseData) {
+        this.http.post('http://localhost:3000/recommenderadd', recommender).subscribe(function (responseData) {
             _this.recommenderS.push(recommender);
             _this.recommendersUpdated.next(_this.recommenderS.slice());
         });
@@ -7423,7 +7429,7 @@ var SchoolService = /** @class */ (function () {
     }
     SchoolService.prototype.getSchool = function () {
         var _this = this;
-        this.http.get('/api/schools').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/schools').subscribe(function (Data) {
             //console.log(Data);
             _this.schools = Data.schools;
             console.log(_this.schools[0].userAccount);
@@ -7451,7 +7457,8 @@ var SchoolService = /** @class */ (function () {
     applyAccount, //申请账号
     applyPassword, //申请用密码
     recommNumber, //需要推荐信数量
-    other, level) {
+    other, level, // 存放可能性（四种：正常，不可能，冲刺，保底）
+    gre) {
         var _this = this;
         var school = {
             _id: null,
@@ -7471,8 +7478,9 @@ var SchoolService = /** @class */ (function () {
             recommNumber: recommNumber,
             other: other,
             level: level,
+            gre: gre,
         };
-        this.http.post('/api/schooladd', school).subscribe(function (responseData) {
+        this.http.post('http://localhost:3000/schooladd', school).subscribe(function (responseData) {
             _this.schoolS.push(school);
             _this.schoolsUpdated.next(_this.schoolS.slice());
         });
@@ -7519,7 +7527,7 @@ var StService = /** @class */ (function () {
     }
     StService.prototype.getStudent = function () {
         var _this = this;
-        this.http.get('/api/students').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/students').subscribe(function (Data) {
             //console.log(Data);
             _this.students = Data.students;
             console.log(_this.students[0].userAccount);
@@ -7648,7 +7656,7 @@ var StService = /** @class */ (function () {
             //申请年级
             year: year,
         };
-        this.http.post('/api/studentadd', student).subscribe(function (responseData) {
+        this.http.post('http://localhost:3000/studentadd', student).subscribe(function (responseData) {
             _this.studentS.push(student);
             _this.studentsUpdated.next(_this.studentS.slice());
         });
@@ -7692,7 +7700,7 @@ var StatementService = /** @class */ (function () {
     }
     StatementService.prototype.getStatement = function () {
         var _this = this;
-        this.http.get('/api/statements').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/statements').subscribe(function (Data) {
             _this.statements = Data.statements;
             _this.statement = _this.statements[0];
             _this.statementsUpdated.next(_this.statements.slice());
@@ -7713,7 +7721,7 @@ var StatementService = /** @class */ (function () {
             stype: stype,
             words: words,
         };
-        this.http.post('/api/statementadd', statement).subscribe(function (responseData) {
+        this.http.post('http://localhost:3000/statementadd', statement).subscribe(function (responseData) {
             _this.statementS.push(statement);
             _this.statementsUpdated.next(_this.statementS.slice());
         });
@@ -7803,7 +7811,7 @@ var StudentaddrecommComponent = /** @class */ (function () {
     };
     StudentaddrecommComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/students').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/students').subscribe(function (Data) {
             _this.students = Data.students;
             for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -7979,7 +7987,7 @@ var StudentinfoComponent = /** @class */ (function () {
     }
     StudentinfoComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/students').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/students').subscribe(function (Data) {
             _this.students = Data.students;
             for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -7992,7 +8000,7 @@ var StudentinfoComponent = /** @class */ (function () {
             console.log("学生id为" + _this.studentID);
         });
         //展示 此学生 选校信息
-        this.http.get('/api/schools/').subscribe(function (orderData) {
+        this.http.get('http://localhost:3000/schools/').subscribe(function (orderData) {
             _this.schools = orderData.schools;
             console.log(_this.studentID);
             for (var _i = 0, _a = _this.schools; _i < _a.length; _i++) {
@@ -8005,7 +8013,7 @@ var StudentinfoComponent = /** @class */ (function () {
             console.log(_this.school);
         });
         //展示 此学生 教育背景信息
-        this.http.get('/api/educations/').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/educations/').subscribe(function (Data) {
             _this.educations = Data.educations;
             for (var _i = 0, _a = _this.educations; _i < _a.length; _i++) {
                 var y = _a[_i];
@@ -8016,7 +8024,7 @@ var StudentinfoComponent = /** @class */ (function () {
             console.log("学生的教育背景" + _this.education);
         });
         //展示 此学生 工作背景信息
-        this.http.get('/api/experiences/').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/experiences/').subscribe(function (Data) {
             _this.experiences = Data.experiences;
             for (var _i = 0, _a = _this.experiences; _i < _a.length; _i++) {
                 var i = _a[_i];
@@ -8027,7 +8035,7 @@ var StudentinfoComponent = /** @class */ (function () {
             console.log("学生的工作背景" + _this.experience);
         });
         //展示 此学生 论文信息
-        this.http.get('/api/publications/').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/publications/').subscribe(function (Data) {
             _this.publications = Data.publications;
             for (var _i = 0, _a = _this.publications; _i < _a.length; _i++) {
                 var p = _a[_i];
@@ -8038,7 +8046,7 @@ var StudentinfoComponent = /** @class */ (function () {
             console.log("学生的论文" + _this.publication);
         });
         //展示 此学生 课外活动信息
-        this.http.get('/api/activitys/').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/activitys/').subscribe(function (Data) {
             _this.activitys = Data.activitys;
             for (var _i = 0, _a = _this.activitys; _i < _a.length; _i++) {
                 var a = _a[_i];
@@ -8049,7 +8057,7 @@ var StudentinfoComponent = /** @class */ (function () {
             console.log("学生的课外活动" + _this.activity);
         });
         //展示 此学生 奖项信息
-        this.http.get('/api/honors/').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/honors/').subscribe(function (Data) {
             _this.honors = Data.honors;
             for (var _i = 0, _a = _this.honors; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -8214,7 +8222,7 @@ var StudentinfoComponent = /** @class */ (function () {
             //年级
             year: this.student.year,
         };
-        this.http.put('/api/students/' + this.studentUserAcc, Student)
+        this.http.put('http://localhost:3000/students/' + this.studentUserAcc, Student)
             .subscribe(function (data) {
             var options = {
                 overlay: true,
@@ -8474,7 +8482,7 @@ var StudentmainComponent = /** @class */ (function () {
     }
     StudentmainComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/students').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/students').subscribe(function (Data) {
             _this.students = Data.students;
             for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -8487,7 +8495,7 @@ var StudentmainComponent = /** @class */ (function () {
             console.log("学生id为" + _this.studentID);
         });
         //展示 此学生 选校信息
-        this.http.get('/api/schools/').subscribe(function (orderData) {
+        this.http.get('http://localhost:3000/schools/').subscribe(function (orderData) {
             _this.schools = orderData.schools;
             console.log(_this.studentID);
             for (var _i = 0, _a = _this.schools; _i < _a.length; _i++) {
@@ -8522,7 +8530,7 @@ var StudentmainComponent = /** @class */ (function () {
             }
         });
         //展示 此学生通知信息
-        this.http.get('/api/notifdetail/' + this.studentID).subscribe(function (o) {
+        this.http.get('http://localhost:3000/notifdetail/' + this.studentID).subscribe(function (o) {
             _this.notif = o.notifs;
             for (var _i = 0, _a = _this.notif; _i < _a.length; _i++) {
                 var n = _a[_i];
@@ -8544,7 +8552,7 @@ var StudentmainComponent = /** @class */ (function () {
             nstate: "已读",
             ntype: n.ntype,
         };
-        this.http.put('/api/notif/' + n._id, Notif)
+        this.http.put('http://localhost:3000/notif/' + n._id, Notif)
             .subscribe(function (data) {
             var options = {
                 overlay: true,
@@ -8746,7 +8754,7 @@ var StudentrecComponent = /** @class */ (function () {
     }
     StudentrecComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/students').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/students').subscribe(function (Data) {
             _this.students = Data.students;
             for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -8759,7 +8767,7 @@ var StudentrecComponent = /** @class */ (function () {
             console.log("学生id为" + _this.studentID);
         });
         //展示 此学生 选校信息
-        this.http.get('/api/schools/').subscribe(function (orderData) {
+        this.http.get('http://localhost:3000/schools/').subscribe(function (orderData) {
             _this.schools = orderData.schools;
             console.log(_this.studentID);
             for (var _i = 0, _a = _this.schools; _i < _a.length; _i++) {
@@ -8772,7 +8780,7 @@ var StudentrecComponent = /** @class */ (function () {
             console.log(_this.school);
         });
         //展示 此学生 推荐人信息
-        this.http.get('/api/studentrecommenderdetail/' + this.studentID).subscribe(function (orderData) {
+        this.http.get('http://localhost:3000/studentrecommenderdetail/' + this.studentID).subscribe(function (orderData) {
             console.log(orderData);
             _this.recommenders = orderData.recommenders;
         });
@@ -8941,7 +8949,7 @@ var StudentresComponent = /** @class */ (function () {
     }
     StudentresComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/students').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/students').subscribe(function (Data) {
             _this.students = Data.students;
             for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -8954,7 +8962,7 @@ var StudentresComponent = /** @class */ (function () {
             console.log("学生id为" + _this.studentID);
         });
         //展示 此学生 选校信息
-        this.http.get('/api/schools/').subscribe(function (orderData) {
+        this.http.get('http://localhost:3000/schools/').subscribe(function (orderData) {
             _this.schools = orderData.schools;
             console.log(_this.studentID);
             for (var _i = 0, _a = _this.schools; _i < _a.length; _i++) {
@@ -8967,7 +8975,7 @@ var StudentresComponent = /** @class */ (function () {
             console.log(_this.school);
         });
         //展示 此学生 教育背景信息
-        this.http.get('/api/educations/').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/educations/').subscribe(function (Data) {
             _this.educations = Data.educations;
             for (var _i = 0, _a = _this.educations; _i < _a.length; _i++) {
                 var y = _a[_i];
@@ -8978,7 +8986,7 @@ var StudentresComponent = /** @class */ (function () {
             console.log("学生的教育背景" + _this.education);
         });
         //展示 此学生 工作背景信息
-        this.http.get('/api/experiences/').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/experiences/').subscribe(function (Data) {
             _this.experiences = Data.experiences;
             for (var _i = 0, _a = _this.experiences; _i < _a.length; _i++) {
                 var i = _a[_i];
@@ -8989,7 +8997,7 @@ var StudentresComponent = /** @class */ (function () {
             console.log("学生的工作背景" + _this.experience);
         });
         //展示 此学生 论文信息
-        this.http.get('/api/publications/').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/publications/').subscribe(function (Data) {
             _this.publications = Data.publications;
             for (var _i = 0, _a = _this.publications; _i < _a.length; _i++) {
                 var p = _a[_i];
@@ -9000,7 +9008,7 @@ var StudentresComponent = /** @class */ (function () {
             console.log("学生的论文" + _this.publication);
         });
         //展示 此学生 课外活动信息
-        this.http.get('/api/activitys/').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/activitys/').subscribe(function (Data) {
             _this.activitys = Data.activitys;
             for (var _i = 0, _a = _this.activitys; _i < _a.length; _i++) {
                 var a = _a[_i];
@@ -9011,7 +9019,7 @@ var StudentresComponent = /** @class */ (function () {
             console.log("学生的课外活动" + _this.activity);
         });
         //展示 此学生 奖项信息
-        this.http.get('/api/honors/').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/honors/').subscribe(function (Data) {
             _this.honors = Data.honors;
             for (var _i = 0, _a = _this.honors; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -9112,7 +9120,7 @@ var StudentresComponent = /** @class */ (function () {
             //年级
             year: this.student.year,
         };
-        this.http.put('/api/students/' + this.studentUserAcc, Student)
+        this.http.put('http://localhost:3000/students/' + this.studentUserAcc, Student)
             .subscribe(function (data) {
             var options = {
                 overlay: true,
@@ -9294,7 +9302,7 @@ var StudentresComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-inverse\" role=\"navigation\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n        <a class=\"navbar-brand\" >{{student.firstName}} {{student.lastName}}</a>\n      </div>\n      <div class=\"nav  navbar-right\">\n        <ul class=\"nav navbar-nav\">\n          <li class=\"active\"><a (click)=\"studentmain(student)\">Home</a></li>\n          <li class=\"dropdown\">\n            <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n              推荐人 <b class=\"caret\"></b>\n            </a>\n            <ul class=\"dropdown-menu\">\n              <li><a (click)=\"rec(student)\">全部推荐人信息</a></li>\n              <li><a (click)=\"addRecom(student)\">添加新的推荐人</a></li>\n            </ul>\n          </li>\n          <li class=\"nav navbar-nav navbar-right\">\n            <a href=\"/mainpage\">Log Out</a>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </nav>\n\t  <div class=\"container-fluid\">\n\t\t<div class=\"row content\">\n\t\t  <div class=\"col-sm-3 sidenav\">\n\t\t\t  <h3></h3>\n\t\t\t<ul class=\"nav nav-pills nav-stacked\">\n\t\t\t  <li ><a (click)=\"studentmain(student)\">申请状态</a></li>\n\t\t\t\t<li ><a >更改密码</a></li>\n\t\t\t\t<li ><a (click)=\"info(student)\">个人信息</a></li>\n\t\t\t\t<li ><a (click)=\"resume(student)\">简历信息</a></li>\n\t\t\t\t<li ><a (click)=\"rec(student)\">推荐人信息</a></li>\n\t\t\t\t<li><a (click)=\"addRecom(student)\">添加推荐人</a></li>\n\t\t\t</ul><br>\t\n\t\t  </div>\n\t  \n\t\t  <div class=\"col-sm-9\">\n\t\t  <hr>\n\t\t  <h3>申请状态</h3>\n\t\t\t<div class=\"row\">\n\t\t\t  <div class=\"col-sm-7\"><b>{{school.state}} </b></div>\n\t\t\t</div>\n\t\t  <br>\n\t\t  <hr>\n\t\t  <h3>申请项目详细\n\t\t\t<a href=\"{{school.link}}\">\n\t\t\t\t<span class=\"glyphicon glyphicon-link\"></span>\n\t\t\t   </a>\n\t\t  </h3>\n\t\t  \n\t\t  <br>\n\t\t  <form id=\"form1\" action=\"\" method=\"post\">\n\t\t\t<table>\n\t\t\t\t  <tr>\n\t\t\t\t\t<td>University\n\t\t\t\t\t</td>\n\t\t\t\t\t<td><div class=\"input-group\">\t\t\n\t\t\t\t\t  <input class=\"form-control\" id=\"univName\" value=\"{{school.univName}}\" [(ngModel)]=\"univName\"  name=\"univName\" style=\"width: 785px;\" disabled=\"\"></div>\n\t\t\t\t\t</td>\n\t\t\t\t  </tr>\n\t\t\t\t  <tr>\n\t\t\t\t\t  <td>School</td>\n\t\t\t\t\t  <td><div class=\"input-group\">\n\t\t\t\t\t\t<input  class=\"form-control\" id=\"schoolName\" [(ngModel)]=\"schoolName\" value=\"{{school.schoolName}}\"  name=\"schoolName\" style=\"width: 785px;\" disabled=\"\"></div>\n\t\t\t\t\t  </td>\n\t\t\t\t  </tr>\n\t\t\t\t  <tr>\n\t\t\t\t\t  <td>Major\n\t\t\t\t\t  </td>\n\t\t\t\t\t  <td><div class=\"input-group\">\n\t\t\t\t\t\t<input  class=\"form-control\" value=\"{{school.majorName}}\" [(ngModel)]=\"majorName\"  id=\"majorName\"  name=\"majorName\" disabled=\"\" style=\"width: 785px;\"></div>\n\t\t\t\t\t  </td>\n\t\t\t\t  </tr>\n\t\t\t\t  <tr>\n\t\t\t\t\t<td>Deadline 1\n\t\t\t\t\t</td>\n\t\t\t\t\t<td><div class=\"input-group\">\n\t\t\t\t\t  <input class=\"form-control\" value=\"{{school.ddl1}}\" [(ngModel)]=\"ddl1\"  id=\"ddl1\"  name=\"ddl1\" disabled=\"\" style=\"width: 785px; \"></div>\n\t\t\t\t\t</td>\n\t\t\t\t  </tr>\n\t\t\t\t  <tr>\n\t\t\t\t\t<td>Deadline 2\n\t\t\t\t\t</td>\n\t\t\t\t\t<td><div class=\"input-group\">\n\t\t\t\t\t  <input class=\"form-control\" value=\"{{school.ddl2}}\" [(ngModel)]=\"ddl2\"  id=\"ddl2\" name=\"ddl2\"  disabled=\"\" style=\"width: 785px; \"></div>\n\t\t\t\t\t</td>\n\t\t\t\t  </tr>\n\t\t\t\t  <tr>\n\t\t\t\t\t<td>Deadline 3\n\t\t\t\t\t</td>\n\t\t\t\t\t<td><div class=\"input-group\">\n\t\t\t\t\t  <input class=\"form-control\" value=\"{{school.ddl3}}\" [(ngModel)]=\"ddl3\"  id=\"ddl3\"  name=\"ddl3\" disabled=\"\" style=\"width: 785px; \"></div>\n\t\t\t\t\t</td>\n\t\t\t\t  </tr>\n\t\t\t\t  \n\t\t\t\t  <tr>\n\t\t\t\t\t<td>Interview\n\t\t\t\t\t</td>\n\t\t\t\t\t<td><div class=\"input-group\">\n\t\t\t\t\t  <input class=\"form-control\" value=\"{{school.interview}}\" [(ngModel)]=\"interview\"  id=\"interview\" disabled=\"\" name=\"interview\" style=\"width: 785px; \"></div>\n\t\t\t\t\t</td>\n\t\t\t\t  </tr>\n\t\t\t\t  <tr>\n\t\t\t\t\t<td>Video Essay\n\t\t\t\t\t</td>\n\t\t\t\t\t<td><div class=\"input-group\">\n\t\t\t\t\t  <input class=\"form-control\" value=\"{{school.videoEssay}}\" [(ngModel)]=\"videoessay\"  id=\"videoessay\" disabled=\"\" name=\"videoessay\" style=\"width: 785px; \"></div>\n\t\t\t\t\t</td>\n\t\t\t\t  </tr>\n\t\t\t\t  <tr>\n\t\t\t\t\t<td>Link\n\t\t\t\t\t</td>\n\t\t\t\t\t<td><div class=\"input-group\">\n\t\t\t\t\t  <input class=\"form-control\" value=\"{{school.link}}\" [(ngModel)]=\"link\"  id=\"link\"  name=\"link\" disabled=\"\" style=\"width: 785px; \"></div>\n\t\t\t\t\t</td>\n\t\t\t\t  </tr>\n\t\t\t\t  <tr>\n\t\t\t\t\t<td>申请账号\n\t\t\t\t\t</td>\n\t\t\t\t\t<td><div class=\"input-group\">\n\t\t\t\t\t  <input class=\"form-control\" value=\"{{school.applyAccount}}\" [(ngModel)]=\"applyAccount\"  id=\"applyAccount\" disabled=\"\" name=\"applyAccount\" style=\"width: 785px; \"></div>\n\t\t\t\t\t</td>\n\t\t\t\t  </tr>\n\t\t\t\t  <tr>\n\t\t\t\t\t<td>申请密码\n\t\t\t\t\t</td>\n\t\t\t\t\t<td><div class=\"input-group\">\n\t\t\t\t\t  <input class=\"form-control\" value=\"{{school.applyPassword}}\" [(ngModel)]=\"applyPassword\"  id=\"applyPassword\" disabled=\"\" name=\"applyPassword\" style=\"width: 785px; \"></div>\n\t\t\t\t\t</td>\n\t\t\t\t  </tr>\n\t\t\t\t  <tr>\n\t\t\t\t\t<td>推荐信数量\n\t\t\t\t\t</td>\n\t\t\t\t\t<td><div class=\"input-group\">\n\t\t\t\t\t  <input class=\"form-control\" value=\"{{school.recommNumber}}\" [(ngModel)]=\"recommNumber\"  id=\"recommNumber\" disabled=\"\" name=\"recommNumber\" style=\"width: 785px; \"></div>\n\t\t\t\t\t</td>\n\t\t\t\t  </tr>\n\t\t\t\t  \n\t\t\t</table>\n\t\t  </form>\n\t\t  <hr>\n\t\t  <h3>推荐信</h3>\n\t\t\t<div class=\"row\">\n\t\t\t  <div class=\"col-sm-4 tuijian\">\n\t\t\t\t<h4>\n\t\t\t\t  此选校所添加的推荐信总数：\n\t\t\t\t  <small class=\"text-muted\">{{recomletters.length}}</small>\n\t\t\t\t</h4>\n\t\t\t\t<div *ngIf=\"recomletters.length > 0\">\n\t\t\t\t  <div class=\"panel-group\" id=\"accordion\" *ngFor=\"let l of recomletters\">\n\t\t\t\t\t<div class=\"panel panel-success\" *ngIf=\"l.state=='已提交'\">\n\t\t\t\t\t  <div class=\"panel-heading\">\n\t\t\t\t\t\t  <div class=\"row\">\n\t\t\t\t\t\t\t<div class=\"col-sm-9\"><b>{{l.recommenderName}} </b></div>\n\t\t\t\t\t\t\t<div class=\"col-sm-3\"><small>{{l.state}}</small></div>\n\t\t\t\t\t\t  </div>\n\t\t\t\t\t  </div>\n\t\t\t\t\t  <div class=\"panel-body\">\n\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t  <div class=\"col-sm-12\">种类：<b>{{l.type}} </b></div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t  </div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"panel panel-default\" *ngIf=\"l.state=='未提交'\">\n\t\t\t\t\t  <div class=\"panel-heading\">\n\t\t\t\t\t\t  <div class=\"row\">\n\t\t\t\t\t\t\t<div class=\"col-sm-9\"><b>{{l.recommenderName}} </b></div>\n\t\t\t\t\t\t\t<div class=\"col-sm-3\"><small>{{l.state}}</small></div>\n\t\t\t\t\t\t  </div>\n\t\t\t\t\t  </div>\n\t\t\t\t\t  <div class=\"panel-body\">\n\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t  <div class=\"col-sm-12\">种类：<b>{{l.type}} </b></div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t  </div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"panel panel-danger\" *ngIf=\"l.state=='弃用'\">\n\t\t\t\t\t  <div class=\"panel-heading\">\n\t\t\t\t\t\t  <div class=\"row\">\n\t\t\t\t\t\t\t<div class=\"col-sm-9\"><b>{{l.recommenderName}} </b></div>\n\t\t\t\t\t\t\t<div class=\"col-sm-3\"><small>{{l.state}}</small></div>\n\t\t\t\t\t\t  </div>\n\t\t\t\t\t  </div>\n\t\t\t\t\t  <div class=\"panel-body\">\n\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t  <div class=\"col-sm-12\">种类：<b>{{l.type}} </b></div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t  </div>\n\t\t\t\t\t</div>\n\t\t\t\t  </div>\n\t\t\t\t</div>\n\t\t\t  </div>\n\t\t\t</div>\n\t\t<hr>\n\t\t<h3>文书</h3>\n\t\t<div class=\"col-sm-8 tuijian\">\n            <h4>\n              此选校所添加的文书总数：\n              <small class=\"text-muted\">{{statements.length}}</small>\n            </h4>\n\n            <div class=\"container\" *ngIf=\"statements.length > 0\">\n              <div class=\"row clearfix\" *ngFor=\"let st of statements\">\n                <div class=\"col-md-8 column\">\n                  <div class=\"panel panel-info\" >\n                    <div class=\"panel-heading\" >\n                    <h4 class=\"panel-title\">\n                      <a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#{{st._id}}\">\n                      <b> {{st.stype}} </b> （ {{st.words}} 字） <br>\n                      </a>\n                    </h4>\n                    </div>\n                    <div id=\"{{st._id}}\" class=\"panel-collapse collapse\">\n                    <div class=\"panel-body\">\n                      {{st.question}}\n                    </div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n\t\n\t\t  </div>\n\t\t</div>\n\t</div>\n\n"
+module.exports = "<nav class=\"navbar navbar-inverse\" role=\"navigation\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n        <a class=\"navbar-brand\" >{{student.firstName}} {{student.lastName}}</a>\n      </div>\n      <div class=\"nav  navbar-right\">\n        <ul class=\"nav navbar-nav\">\n          <li class=\"active\"><a (click)=\"studentmain(student)\">Home</a></li>\n          <li class=\"dropdown\">\n            <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n              推荐人 <b class=\"caret\"></b>\n            </a>\n            <ul class=\"dropdown-menu\">\n              <li><a (click)=\"rec(student)\">全部推荐人信息</a></li>\n              <li><a (click)=\"addRecom(student)\">添加新的推荐人</a></li>\n            </ul>\n          </li>\n          <li class=\"nav navbar-nav navbar-right\">\n            <a href=\"/mainpage\">Log Out</a>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </nav>\n\t  <div class=\"container-fluid\">\n\t\t<div class=\"row content\">\n\t\t  <div class=\"col-sm-3 sidenav\">\n\t\t\t  <h3></h3>\n\t\t\t<ul class=\"nav nav-pills nav-stacked\">\n\t\t\t  <li ><a (click)=\"studentmain(student)\">申请状态</a></li>\n\t\t\t\t<li ><a >更改密码</a></li>\n\t\t\t\t<li ><a (click)=\"info(student)\">个人信息</a></li>\n\t\t\t\t<li ><a (click)=\"resume(student)\">简历信息</a></li>\n\t\t\t\t<li ><a (click)=\"rec(student)\">推荐人信息</a></li>\n\t\t\t\t<li><a (click)=\"addRecom(student)\">添加推荐人</a></li>\n\t\t\t</ul><br>\t\n\t\t  </div>\n\t  \n\t\t  <div class=\"col-sm-9\">\n\t\t  <hr>\n\t\t  <h3>申请状态</h3>\n\t\t\t<div class=\"row\">\n\t\t\t  <div class=\"col-sm-7\"><b>{{school.state}} </b></div>\n\t\t\t</div>\n\t\t  <br>\n\t\t  <hr>\n\t\t  <h3>申请项目详细\n\t\t\t<a href=\"{{school.link}}\">\n\t\t\t\t<span class=\"glyphicon glyphicon-link\"></span>\n\t\t\t   </a>\n\t\t  </h3>\n\t\t  \n\t\t  <br>\n\t\t  <form id=\"form1\" action=\"\" method=\"post\">\n\t\t\t<table>\n\t\t\t\t  <tr>\n\t\t\t\t\t<td>University\n\t\t\t\t\t</td>\n\t\t\t\t\t<td><div class=\"input-group\">\t\t\n\t\t\t\t\t  <input class=\"form-control\" id=\"univName\" value=\"{{school.univName}}\" [(ngModel)]=\"univName\"  name=\"univName\" style=\"width: 785px;\" disabled=\"\"></div>\n\t\t\t\t\t</td>\n\t\t\t\t  </tr>\n\t\t\t\t  <tr>\n\t\t\t\t\t  <td>School</td>\n\t\t\t\t\t  <td><div class=\"input-group\">\n\t\t\t\t\t\t<input  class=\"form-control\" id=\"schoolName\" [(ngModel)]=\"schoolName\" value=\"{{school.schoolName}}\"  name=\"schoolName\" style=\"width: 785px;\" disabled=\"\"></div>\n\t\t\t\t\t  </td>\n\t\t\t\t  </tr>\n\t\t\t\t  <tr>\n\t\t\t\t\t  <td>Major\n\t\t\t\t\t  </td>\n\t\t\t\t\t  <td><div class=\"input-group\">\n\t\t\t\t\t\t<input  class=\"form-control\" value=\"{{school.majorName}}\" [(ngModel)]=\"majorName\"  id=\"majorName\"  name=\"majorName\" disabled=\"\" style=\"width: 785px;\"></div>\n\t\t\t\t\t  </td>\n\t\t\t\t  </tr>\n\t\t\t\t  <tr>\n\t\t\t\t\t<td>Deadline 1\n\t\t\t\t\t</td>\n\t\t\t\t\t<td><div class=\"input-group\">\n\t\t\t\t\t  <input class=\"form-control\" value=\"{{school.ddl1}}\" [(ngModel)]=\"ddl1\"  id=\"ddl1\"  name=\"ddl1\" disabled=\"\" style=\"width: 785px; \"></div>\n\t\t\t\t\t</td>\n\t\t\t\t  </tr>\n\t\t\t\t  <tr>\n\t\t\t\t\t<td>Deadline 2\n\t\t\t\t\t</td>\n\t\t\t\t\t<td><div class=\"input-group\">\n\t\t\t\t\t  <input class=\"form-control\" value=\"{{school.ddl2}}\" [(ngModel)]=\"ddl2\"  id=\"ddl2\" name=\"ddl2\"  disabled=\"\" style=\"width: 785px; \"></div>\n\t\t\t\t\t</td>\n\t\t\t\t  </tr>\n\t\t\t\t  <tr>\n\t\t\t\t\t<td>Deadline 3\n\t\t\t\t\t</td>\n\t\t\t\t\t<td><div class=\"input-group\">\n\t\t\t\t\t  <input class=\"form-control\" value=\"{{school.ddl3}}\" [(ngModel)]=\"ddl3\"  id=\"ddl3\"  name=\"ddl3\" disabled=\"\" style=\"width: 785px; \"></div>\n\t\t\t\t\t</td>\n\t\t\t\t  </tr>\n\t\t\t\t  \n\t\t\t\t  <tr>\n\t\t\t\t\t<td>Interview\n\t\t\t\t\t</td>\n\t\t\t\t\t<td><div class=\"input-group\">\n\t\t\t\t\t  <input class=\"form-control\" value=\"{{school.interview}}\" [(ngModel)]=\"interview\"  id=\"interview\" disabled=\"\" name=\"interview\" style=\"width: 785px; \"></div>\n\t\t\t\t\t</td>\n\t\t\t\t  </tr>\n\t\t\t\t  <tr>\n\t\t\t\t\t<td>Video Essay\n\t\t\t\t\t</td>\n\t\t\t\t\t<td><div class=\"input-group\">\n\t\t\t\t\t  <input class=\"form-control\" value=\"{{school.videoEssay}}\" [(ngModel)]=\"videoessay\"  id=\"videoessay\" disabled=\"\" name=\"videoessay\" style=\"width: 785px; \"></div>\n\t\t\t\t\t</td>\n\t\t\t\t  </tr>\n\t\t\t\t  <tr>\n\t\t\t\t\t<td>GRE要求\n\t\t\t\t\t</td>\n\t\t\t\t\t<td><div class=\"input-group\">\n\t\t\t\t\t  <input class=\"form-control\" value=\"{{school.gre}}\" [(ngModel)]=\"gre\"  id=\"gre\" disabled=\"\" name=\"gre\" style=\"width: 785px; \"></div>\n\t\t\t\t\t</td>\n\t\t\t\t  </tr>\n\t\t\t\t  <tr>\n\t\t\t\t\t<td>Link\n\t\t\t\t\t</td>\n\t\t\t\t\t<td><div class=\"input-group\">\n\t\t\t\t\t  <input class=\"form-control\" value=\"{{school.link}}\" [(ngModel)]=\"link\"  id=\"link\"  name=\"link\" disabled=\"\" style=\"width: 785px; \"></div>\n\t\t\t\t\t</td>\n\t\t\t\t  </tr>\n\t\t\t\t  <tr>\n\t\t\t\t\t<td>申请账号\n\t\t\t\t\t</td>\n\t\t\t\t\t<td><div class=\"input-group\">\n\t\t\t\t\t  <input class=\"form-control\" value=\"{{school.applyAccount}}\" [(ngModel)]=\"applyAccount\"  id=\"applyAccount\" disabled=\"\" name=\"applyAccount\" style=\"width: 785px; \"></div>\n\t\t\t\t\t</td>\n\t\t\t\t  </tr>\n\t\t\t\t  <tr>\n\t\t\t\t\t<td>申请密码\n\t\t\t\t\t</td>\n\t\t\t\t\t<td><div class=\"input-group\">\n\t\t\t\t\t  <input class=\"form-control\" value=\"{{school.applyPassword}}\" [(ngModel)]=\"applyPassword\"  id=\"applyPassword\" disabled=\"\" name=\"applyPassword\" style=\"width: 785px; \"></div>\n\t\t\t\t\t</td>\n\t\t\t\t  </tr>\n\t\t\t\t  <tr>\n\t\t\t\t\t<td>推荐信数量\n\t\t\t\t\t</td>\n\t\t\t\t\t<td><div class=\"input-group\">\n\t\t\t\t\t  <input class=\"form-control\" value=\"{{school.recommNumber}}\" [(ngModel)]=\"recommNumber\"  id=\"recommNumber\" disabled=\"\" name=\"recommNumber\" style=\"width: 785px; \"></div>\n\t\t\t\t\t</td>\n\t\t\t\t  </tr>\n\t\t\t\t  \n\t\t\t</table>\n\t\t  </form>\n\t\t  <hr>\n\t\t  <h3>推荐信</h3>\n\t\t\t<div class=\"row\">\n\t\t\t  <div class=\"col-sm-4 tuijian\">\n\t\t\t\t<h4>\n\t\t\t\t  此选校所添加的推荐信总数：\n\t\t\t\t  <small class=\"text-muted\">{{recomletters.length}}</small>\n\t\t\t\t</h4>\n\t\t\t\t<div *ngIf=\"recomletters.length > 0\">\n\t\t\t\t  <div class=\"panel-group\" id=\"accordion\" *ngFor=\"let l of recomletters\">\n\t\t\t\t\t<div class=\"panel panel-success\" *ngIf=\"l.state=='已提交'\">\n\t\t\t\t\t  <div class=\"panel-heading\">\n\t\t\t\t\t\t  <div class=\"row\">\n\t\t\t\t\t\t\t<div class=\"col-sm-9\"><b>{{l.recommenderName}} </b></div>\n\t\t\t\t\t\t\t<div class=\"col-sm-3\"><small>{{l.state}}</small></div>\n\t\t\t\t\t\t  </div>\n\t\t\t\t\t  </div>\n\t\t\t\t\t  <div class=\"panel-body\">\n\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t  <div class=\"col-sm-12\">种类：<b>{{l.type}} </b></div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t  </div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"panel panel-default\" *ngIf=\"l.state=='未提交'\">\n\t\t\t\t\t  <div class=\"panel-heading\">\n\t\t\t\t\t\t  <div class=\"row\">\n\t\t\t\t\t\t\t<div class=\"col-sm-9\"><b>{{l.recommenderName}} </b></div>\n\t\t\t\t\t\t\t<div class=\"col-sm-3\"><small>{{l.state}}</small></div>\n\t\t\t\t\t\t  </div>\n\t\t\t\t\t  </div>\n\t\t\t\t\t  <div class=\"panel-body\">\n\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t  <div class=\"col-sm-12\">种类：<b>{{l.type}} </b></div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t  </div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"panel panel-danger\" *ngIf=\"l.state=='弃用'\">\n\t\t\t\t\t  <div class=\"panel-heading\">\n\t\t\t\t\t\t  <div class=\"row\">\n\t\t\t\t\t\t\t<div class=\"col-sm-9\"><b>{{l.recommenderName}} </b></div>\n\t\t\t\t\t\t\t<div class=\"col-sm-3\"><small>{{l.state}}</small></div>\n\t\t\t\t\t\t  </div>\n\t\t\t\t\t  </div>\n\t\t\t\t\t  <div class=\"panel-body\">\n\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t  <div class=\"col-sm-12\">种类：<b>{{l.type}} </b></div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t  </div>\n\t\t\t\t\t</div>\n\t\t\t\t  </div>\n\t\t\t\t</div>\n\t\t\t  </div>\n\t\t\t</div>\n\t\t<hr>\n\t\t<h3>文书</h3>\n\t\t<div class=\"col-sm-8 tuijian\">\n            <h4>\n              此选校所添加的文书总数：\n              <small class=\"text-muted\">{{statements.length}}</small>\n            </h4>\n\n            <div class=\"container\" *ngIf=\"statements.length > 0\">\n              <div class=\"row clearfix\" *ngFor=\"let st of statements\">\n                <div class=\"col-md-8 column\">\n                  <div class=\"panel panel-info\" >\n                    <div class=\"panel-heading\" >\n                    <h4 class=\"panel-title\">\n                      <a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#{{st._id}}\">\n                      <b> {{st.stype}} </b> （ {{st.words}} 字） <br>\n                      </a>\n                    </h4>\n                    </div>\n                    <div id=\"{{st._id}}\" class=\"panel-collapse collapse\">\n                    <div class=\"panel-body\">\n                      {{st.question}}\n                    </div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n\t\n\t\t  </div>\n\t\t</div>\n\t</div>\n\n"
 
 /***/ }),
 
@@ -9351,7 +9359,7 @@ var StudentschoolComponent = /** @class */ (function () {
     }
     StudentschoolComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/students').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/students').subscribe(function (Data) {
             _this.students = Data.students;
             for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -9364,7 +9372,7 @@ var StudentschoolComponent = /** @class */ (function () {
             console.log("学生id为" + _this.studentID);
         });
         //展示 申请项目的详细信息
-        this.http.get('/api/schools').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/schools').subscribe(function (Data) {
             //console.log(orderData);
             _this.schools = Data.schools;
             for (var _i = 0, _a = _this.schools; _i < _a.length; _i++) {
@@ -9386,16 +9394,17 @@ var StudentschoolComponent = /** @class */ (function () {
                     _this.applyPassword = _this.school.applyPassword; //申请用密码
                     _this.recommNumber = _this.school.recommNumber; //推荐信数量
                     _this.other = _this.school.other;
+                    _this.gre = _this.school.gre;
                 }
             }
         });
         //展示 这个选校的 推荐信 信息
-        this.http.get('/api/schoolrecomletterlist/' + this.schoolID).subscribe(function (Data) {
+        this.http.get('http://localhost:3000/schoolrecomletterlist/' + this.schoolID).subscribe(function (Data) {
             //console.log(Data);
             _this.recomletters = Data.recomletters;
         });
         //展示 这个选校的 文书 信息
-        this.http.get('/api/statementdetail/' + this.schoolID).subscribe(function (Data) {
+        this.http.get('http://localhost:3000/statementdetail/' + this.schoolID).subscribe(function (Data) {
             //console.log(Data);
             _this.statements = Data.statements;
         });
@@ -9568,7 +9577,7 @@ var StudyabroadComponent = /** @class */ (function () {
                             alert("Welcome " + this.user[index].Role + "!");
                             //console.log(this.user[index].UserAccount);
                             // API_PATH + '/students'
-                            this.http.get('/api/students').subscribe(function (Data) {
+                            this.http.get('http://localhost:3000/students').subscribe(function (Data) {
                                 _this.students = Data.students;
                                 console.log(_this.students);
                                 for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
@@ -9620,7 +9629,7 @@ var StudyabroadComponent = /** @class */ (function () {
     };
     StudyabroadComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/users').subscribe(function (userData) {
+        this.http.get('http://localhost:3000/users').subscribe(function (userData) {
             _this.user = userData.user;
             console.log(userData.user);
             console.log(_this.user.length);
@@ -9721,7 +9730,7 @@ var TaskService = /** @class */ (function () {
     }
     TaskService.prototype.getTask = function () {
         var _this = this;
-        this.http.get('/api/tasks').subscribe(function (Data) {
+        this.http.get('http://localhost:3000/tasks').subscribe(function (Data) {
             _this.tasks = Data.tasks;
             _this.task = _this.tasks[0];
             _this.tasksUpdated.next(_this.tasks.slice());
@@ -9748,7 +9757,7 @@ var TaskService = /** @class */ (function () {
             tstate: tstate,
             ttype: ttype,
         };
-        this.http.post('/api/taskadd', task).subscribe(function (responseData) {
+        this.http.post('http://localhost:3000/taskadd', task).subscribe(function (responseData) {
             _this.taskS.push(task);
             _this.tasksUpdated.next(_this.taskS.slice());
         });
@@ -9790,7 +9799,7 @@ var UserService = /** @class */ (function () {
     }
     UserService.prototype.getUsers = function () {
         var _this = this;
-        this.http.get('/api/users').subscribe(function (userData) {
+        this.http.get('http://localhost:3000/users').subscribe(function (userData) {
             _this.user = userData.user;
             //console.log(userData.user[0]); 
             _this.usersUpdated.next(_this.user.slice());
@@ -9807,7 +9816,7 @@ var UserService = /** @class */ (function () {
             Role: Role
         };
         console.log(user.UserAccount);
-        this.http.post('/api/users', user).subscribe(function (responseData) {
+        this.http.post('http://localhost:3000/users', user).subscribe(function (responseData) {
             _this.user.push(user);
             _this.usersUpdated.next(_this.user.slice());
         });

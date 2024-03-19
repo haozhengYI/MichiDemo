@@ -40,6 +40,7 @@ export class StudentschoolComponent implements OnInit {
     applyPassword:String;//申请用密码
     recommNumber:String;//推荐信数量
     other:String;  
+    gre:String;
   //推荐信信息
   recomletters : Recomletter[] = [];
   recomletter : Recomletter;
@@ -101,6 +102,7 @@ export class StudentschoolComponent implements OnInit {
               this.applyPassword= this.school.applyPassword;//申请用密码
               this.recommNumber= this.school.recommNumber;//推荐信数量
               this.other= this.school.other;
+              this.gre=this.school.gre;
             }
         }
       });
