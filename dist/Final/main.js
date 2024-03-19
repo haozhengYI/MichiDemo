@@ -51,7 +51,7 @@ var ActivityService = /** @class */ (function () {
     }
     ActivityService.prototype.getActivity = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/activitys').subscribe(function (Data) {
+        this.http.get('/api/activitys').subscribe(function (Data) {
             _this.activitys = Data.activitys;
             _this.activity = _this.activitys[0];
             _this.activitysUpdated.next(_this.activitys.slice());
@@ -74,7 +74,7 @@ var ActivityService = /** @class */ (function () {
             activityPosition: activityPosition,
             activityDescription: activityDescription,
         };
-        this.http.post('http://localhost:3000/activityadd', activity).subscribe(function (responseData) {
+        this.http.post('/api/activityadd', activity).subscribe(function (responseData) {
             _this.activityS.push(activity);
             _this.activitysUpdated.next(_this.activityS.slice());
         });
@@ -139,14 +139,14 @@ var AdminHotelComponent = /** @class */ (function () {
     }
     AdminHotelComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/hotels').subscribe(function (Data) {
+        this.http.get('/api/hotels').subscribe(function (Data) {
             _this.hotels = Data.hotels;
             console.log(_this.hotels);
         });
     };
     AdminHotelComponent.prototype.delete = function (h) {
         console.log(h._id);
-        this.http.delete('http://localhost:3000/users/' + h._id).subscribe(function (oooData) {
+        this.http.delete('/api/users/' + h._id).subscribe(function (oooData) {
             console.log("chenggong");
             window.location.reload();
         });
@@ -217,7 +217,7 @@ var AdminOrderComponent = /** @class */ (function () {
     }
     AdminOrderComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/orders').subscribe(function (Data) {
+        this.http.get('/api/orders').subscribe(function (Data) {
             _this.orders = Data.orders;
             console.log(_this.orders);
         });
@@ -362,14 +362,14 @@ var AdminmainpageComponent = /** @class */ (function () {
     }
     AdminmainpageComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/users').subscribe(function (Data) {
+        this.http.get('/api/users').subscribe(function (Data) {
             _this.user = Data.user;
             console.log(_this.user);
         });
     };
     AdminmainpageComponent.prototype.delete = function (u) {
         console.log(u._id);
-        this.http.delete('http://localhost:3000/users/' + u._id).subscribe(function (oooData) {
+        this.http.delete('/api/users/' + u._id).subscribe(function (oooData) {
             console.log("chenggong");
             window.location.reload();
         });
@@ -870,7 +870,7 @@ var ApplybachelorComponent = /** @class */ (function () {
                             alert("Welcome " + this.user[index].Role + "!");
                             //console.log(this.user[index].UserAccount);
                             // API_PATH + '/students'
-                            this.http.get('http://localhost:3000/students').subscribe(function (Data) {
+                            this.http.get('/api/students').subscribe(function (Data) {
                                 _this.students = Data.students;
                                 console.log(_this.students);
                                 for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
@@ -922,7 +922,7 @@ var ApplybachelorComponent = /** @class */ (function () {
     };
     ApplybachelorComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/users').subscribe(function (userData) {
+        this.http.get('/api/users').subscribe(function (userData) {
             _this.user = userData.user;
             console.log(userData.user);
             console.log(_this.user.length);
@@ -1068,7 +1068,7 @@ var ApplyhighschoolComponent = /** @class */ (function () {
                             alert("Welcome " + this.user[index].Role + "!");
                             //console.log(this.user[index].UserAccount);
                             // API_PATH + '/students'
-                            this.http.get('http://localhost:3000/students').subscribe(function (Data) {
+                            this.http.get('/api/students').subscribe(function (Data) {
                                 _this.students = Data.students;
                                 console.log(_this.students);
                                 for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
@@ -1120,7 +1120,7 @@ var ApplyhighschoolComponent = /** @class */ (function () {
     };
     ApplyhighschoolComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/users').subscribe(function (userData) {
+        this.http.get('/api/users').subscribe(function (userData) {
             _this.user = userData.user;
             console.log(userData.user);
             console.log(_this.user.length);
@@ -1266,7 +1266,7 @@ var ApplymasterComponent = /** @class */ (function () {
                             alert("Welcome " + this.user[index].Role + "!");
                             //console.log(this.user[index].UserAccount);
                             // API_PATH + '/students'
-                            this.http.get('http://localhost:3000/students').subscribe(function (Data) {
+                            this.http.get('/api/students').subscribe(function (Data) {
                                 _this.students = Data.students;
                                 console.log(_this.students);
                                 for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
@@ -1318,7 +1318,7 @@ var ApplymasterComponent = /** @class */ (function () {
     };
     ApplymasterComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/users').subscribe(function (userData) {
+        this.http.get('/api/users').subscribe(function (userData) {
             _this.user = userData.user;
             console.log(userData.user);
             console.log(_this.user.length);
@@ -1398,7 +1398,7 @@ var BlogService = /** @class */ (function () {
     }
     BlogService.prototype.getActivity = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/blogs').subscribe(function (Data) {
+        this.http.get('/api/blogs').subscribe(function (Data) {
             _this.blogs = Data.blogs;
             _this.blog = _this.blogs[0];
             _this.blogsUpdated.next(_this.blogs.slice());
@@ -1423,7 +1423,7 @@ var BlogService = /** @class */ (function () {
             blogLink: blogLink,
             countNumber: countNumber,
         };
-        this.http.post('http://localhost:3000/blogadd', blog).subscribe(function (responseData) {
+        this.http.post('/api/blogadd', blog).subscribe(function (responseData) {
             _this.blogS.push(blog);
             _this.blogsUpdated.next(_this.blogS.slice());
         });
@@ -1467,7 +1467,7 @@ var EducationService = /** @class */ (function () {
     }
     EducationService.prototype.getEducation = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/educations').subscribe(function (Data) {
+        this.http.get('/api/educations').subscribe(function (Data) {
             _this.educations = Data.educations;
             _this.education = _this.educations[0];
             _this.educationsUpdated.next(_this.educations.slice());
@@ -1501,7 +1501,7 @@ var EducationService = /** @class */ (function () {
             SecondGPA: SecondGPA,
             other: other,
         };
-        this.http.post('http://localhost:3000/educationadd', education).subscribe(function (responseData) {
+        this.http.post('/api/educationadd', education).subscribe(function (responseData) {
             _this.educationS.push(education);
             _this.educationsUpdated.next(_this.educationS.slice());
         });
@@ -1545,7 +1545,7 @@ var ExperienceService = /** @class */ (function () {
     }
     ExperienceService.prototype.getExperience = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/experiences').subscribe(function (Data) {
+        this.http.get('/api/experiences').subscribe(function (Data) {
             _this.experiences = Data.experiences;
             _this.experience = _this.experiences[0];
             _this.experiencesUpdated.next(_this.experiences.slice());
@@ -1573,7 +1573,7 @@ var ExperienceService = /** @class */ (function () {
             project: project,
             achievement: achievement,
         };
-        this.http.post('http://localhost:3000/experienceadd', experience).subscribe(function (responseData) {
+        this.http.post('/api/experienceadd', experience).subscribe(function (responseData) {
             _this.experienceS.push(experience);
             _this.experiencesUpdated.next(_this.experienceS.slice());
         });
@@ -1616,7 +1616,7 @@ var HmService = /** @class */ (function () {
     }
     HmService.prototype.getHotelM = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/hotels').subscribe(function (Data) {
+        this.http.get('/api/hotels').subscribe(function (Data) {
             //console.log(Data);
             _this.hotels = Data.hotels;
             //console.log(this.hotels[0].email);
@@ -1645,7 +1645,7 @@ var HmService = /** @class */ (function () {
             image: image,
             price: price
         };
-        this.http.post('http://localhost:3000/hoteladd', hotel).subscribe(function (responseData) {
+        this.http.post('/api/hoteladd', hotel).subscribe(function (responseData) {
             _this.hotelM.push(hotel);
             _this.hotelMUpdated.next(_this.hotelM.slice());
         });
@@ -1752,7 +1752,7 @@ var HmaddschoolComponent = /** @class */ (function () {
     };
     HmaddschoolComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/hotels').subscribe(function (Data) {
+        this.http.get('/api/hotels').subscribe(function (Data) {
             _this.hotels = Data.hotels;
             for (var _i = 0, _a = _this.hotels; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -1768,7 +1768,7 @@ var HmaddschoolComponent = /** @class */ (function () {
             }
         });
         //展示 学生个人信息
-        this.http.get('http://localhost:3000/students').subscribe(function (Data) {
+        this.http.get('/api/students').subscribe(function (Data) {
             _this.students = Data.students;
             for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -1957,13 +1957,13 @@ var HmblogComponent = /** @class */ (function () {
     };
     HmblogComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/users').subscribe(function (userData) {
+        this.http.get('/api/users').subscribe(function (userData) {
             _this.user = userData.user;
             console.log(userData.user);
             //console.log(this.user.length);
         });
         //获取HotelM 信息列表
-        this.http.get('http://localhost:3000/hotels').subscribe(function (Data) {
+        this.http.get('/api/hotels').subscribe(function (Data) {
             _this.hotels = Data.hotels;
             for (var _i = 0, _a = _this.hotels; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -1979,7 +1979,7 @@ var HmblogComponent = /** @class */ (function () {
             }
         });
         //获取Blog 信息列表
-        this.http.get('http://localhost:3000/blogs').subscribe(function (Data) {
+        this.http.get('/api/blogs').subscribe(function (Data) {
             //this.blogs = Data.blogs;
             for (var i = Data.blogs.length - 1; i >= 0; i--) {
                 _this.blogs.push(Data.blogs[i]);
@@ -2141,7 +2141,7 @@ var HmcompComponent = /** @class */ (function () {
     }
     HmcompComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/hotels').subscribe(function (Data) {
+        this.http.get('/api/hotels').subscribe(function (Data) {
             _this.hotels = Data.hotels;
             for (var _i = 0, _a = _this.hotels; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -2157,7 +2157,7 @@ var HmcompComponent = /** @class */ (function () {
             }
         });
         //展示 此学生进度信息
-        this.http.get('http://localhost:3000/tasks').subscribe(function (o) {
+        this.http.get('/api/tasks').subscribe(function (o) {
             //console.log("测试"+ o[1]);
             //this.tasks = o.tasks;
             for (var i = o.tasks.length - 1; i >= 0; i--) {
@@ -2344,7 +2344,7 @@ var HMmainComponent = /** @class */ (function () {
     }
     HMmainComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/hotels').subscribe(function (Data) {
+        this.http.get('/api/hotels').subscribe(function (Data) {
             //console.log(Data);
             _this.hotels = Data.hotels;
             //console.log(this.hotels[0].email);
@@ -2361,7 +2361,7 @@ var HMmainComponent = /** @class */ (function () {
         this.hotelMSub = this.hmService.getHotelMUpdatedListener().subscribe(function (hotels) {
             _this.hotels = hotels;
         });
-        this.http.get('http://localhost:3000/students/').subscribe(function (Data) {
+        this.http.get('/api/students/').subscribe(function (Data) {
             _this.students = Data.students;
             console.log(_this.students);
             for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
@@ -2369,7 +2369,7 @@ var HMmainComponent = /** @class */ (function () {
                 _this.student.push(st);
             }
         });
-        this.http.get('http://localhost:3000/schools').subscribe(function (Data) {
+        this.http.get('/api/schools').subscribe(function (Data) {
             _this.schools = Data.schools;
             for (var _i = 0, _a = _this.schools; _i < _a.length; _i++) {
                 var sc = _a[_i];
@@ -2616,7 +2616,7 @@ var HmmanageComponent = /** @class */ (function () {
     }
     HmmanageComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/hotels').subscribe(function (Data) {
+        this.http.get('/api/hotels').subscribe(function (Data) {
             _this.hotels = Data.hotels;
             for (var _i = 0, _a = _this.hotels; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -2632,7 +2632,7 @@ var HmmanageComponent = /** @class */ (function () {
             }
         });
         // select the particular order by hotel id
-        this.http.get('http://localhost:3000/students').subscribe(function (oData) {
+        this.http.get('/api/students').subscribe(function (oData) {
             _this.students = oData.students;
             console.log("全部学生信息");
             console.log(_this.students);
@@ -2662,7 +2662,7 @@ var HmmanageComponent = /** @class */ (function () {
             price: this.price,
         };
         console.log(Hotel.price + "ddddd" + Hotel.userAccount);
-        this.http.put('http://localhost:3000/hotels/' + this.hotel.userAccount, Hotel)
+        this.http.put('/api/hotels/' + this.hotel.userAccount, Hotel)
             .subscribe(function (data) {
             var options = {
                 overlay: true,
@@ -2835,7 +2835,7 @@ var HmmodifypassComponent = /** @class */ (function () {
     }
     HmmodifypassComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/hotels').subscribe(function (Data) {
+        this.http.get('/api/hotels').subscribe(function (Data) {
             _this.hotels = Data.hotels;
             for (var _i = 0, _a = _this.hotels; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -2846,7 +2846,7 @@ var HmmodifypassComponent = /** @class */ (function () {
                 }
             }
         });
-        this.http.get('http://localhost:3000/users').subscribe(function (uData) {
+        this.http.get('/api/users').subscribe(function (uData) {
             _this.user = uData.user;
             for (var _i = 0, _a = _this.user; _i < _a.length; _i++) {
                 var u = _a[_i];
@@ -2890,7 +2890,7 @@ var HmmodifypassComponent = /** @class */ (function () {
             Role: this.us.Role,
         };
         console.log("User object" + User.UserPassword + "  " + User.Role);
-        this.http.put('http://localhost:3000/users/' + this.hotel.userAccount, User)
+        this.http.put('/api/users/' + this.hotel.userAccount, User)
             .subscribe(function (data) {
             var options = {
                 overlay: true,
@@ -3033,7 +3033,7 @@ var HmmodifypasssuccComponent = /** @class */ (function () {
     }
     HmmodifypasssuccComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/hotels').subscribe(function (Data) {
+        this.http.get('/api/hotels').subscribe(function (Data) {
             _this.hotels = Data.hotels;
             for (var _i = 0, _a = _this.hotels; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -3178,7 +3178,7 @@ var HmorderComponent = /** @class */ (function () {
     }
     HmorderComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/hotels').subscribe(function (Data) {
+        this.http.get('/api/hotels').subscribe(function (Data) {
             _this.hotels = Data.hotels;
             for (var _i = 0, _a = _this.hotels; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -3187,7 +3187,7 @@ var HmorderComponent = /** @class */ (function () {
                 }
             }
         });
-        this.http.get('http://localhost:3000/students/').subscribe(function (Data) {
+        this.http.get('/api/students/').subscribe(function (Data) {
             _this.students = Data.students;
             console.log(_this.students);
             for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
@@ -3195,7 +3195,7 @@ var HmorderComponent = /** @class */ (function () {
                 _this.student.push(st);
             }
         });
-        this.http.get('http://localhost:3000/schools').subscribe(function (Data) {
+        this.http.get('/api/schools').subscribe(function (Data) {
             _this.schools = Data.schools;
             for (var _i = 0, _a = _this.schools; _i < _a.length; _i++) {
                 var sc = _a[_i];
@@ -3225,7 +3225,7 @@ var HmorderComponent = /** @class */ (function () {
             }
         };
         this.router.navigate(['/hmordersearch'], navigationExtras);
-        // this.http.get<{schools: School[]}>('http://localhost:3000/studentschooldetail/'+temp0).subscribe((Data) => {
+        // this.http.get<{schools: School[]}>('/api/studentschooldetail/'+temp0).subscribe((Data) => {
         //       this.schools = Data.schools;
         //       for(let school of this.schools){
         //         for(let test of this.student){
@@ -3296,7 +3296,7 @@ var HmorderComponent = /** @class */ (function () {
     };
     HmorderComponent.prototype.delete = function (s) {
         console.log(s._id);
-        this.http.delete('http://localhost:3000/schools/' + s._id).subscribe(function (oooData) {
+        this.http.delete('/api/schools/' + s._id).subscribe(function (oooData) {
             console.log("删除这个申请项目成功");
             window.location.reload();
         });
@@ -3407,7 +3407,7 @@ var HmordersearchComponent = /** @class */ (function () {
     }
     HmordersearchComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/hotels').subscribe(function (Data) {
+        this.http.get('/api/hotels').subscribe(function (Data) {
             _this.hotels = Data.hotels;
             for (var _i = 0, _a = _this.hotels; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -3416,7 +3416,7 @@ var HmordersearchComponent = /** @class */ (function () {
                 }
             }
         });
-        this.http.get('http://localhost:3000/students/').subscribe(function (Data) {
+        this.http.get('/api/students/').subscribe(function (Data) {
             _this.students = Data.students;
             console.log(_this.students);
             for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
@@ -3428,7 +3428,7 @@ var HmordersearchComponent = /** @class */ (function () {
             }
         });
         //展示 此学生 选校信息
-        this.http.get('http://localhost:3000/studentschooldetail/' + this.studentID).subscribe(function (orderData) {
+        this.http.get('/api/studentschooldetail/' + this.studentID).subscribe(function (orderData) {
             console.log("此学生选校列表");
             console.log(orderData);
             _this.school = orderData.schools;
@@ -3504,7 +3504,7 @@ var HmordersearchComponent = /** @class */ (function () {
     };
     HmordersearchComponent.prototype.delete = function (s) {
         console.log(s._id);
-        this.http.delete('http://localhost:3000/schools/' + s._id).subscribe(function (oooData) {
+        this.http.delete('/api/schools/' + s._id).subscribe(function (oooData) {
             console.log("删除这个申请项目成功");
             window.location.reload();
         });
@@ -3623,7 +3623,7 @@ var HmoschoolComponent = /** @class */ (function () {
     }
     HmoschoolComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/hotels').subscribe(function (Data) {
+        this.http.get('/api/hotels').subscribe(function (Data) {
             _this.hotels = Data.hotels;
             for (var _i = 0, _a = _this.hotels; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -3639,7 +3639,7 @@ var HmoschoolComponent = /** @class */ (function () {
             }
         });
         //展示 申请项目的详细信息
-        this.http.get('http://localhost:3000/schools').subscribe(function (Data) {
+        this.http.get('/api/schools').subscribe(function (Data) {
             //console.log(orderData);
             _this.schools = Data.schools;
             for (var _i = 0, _a = _this.schools; _i < _a.length; _i++) {
@@ -3666,7 +3666,7 @@ var HmoschoolComponent = /** @class */ (function () {
             }
         });
         //展示 学生个人信息
-        this.http.get('http://localhost:3000/students').subscribe(function (Data) {
+        this.http.get('/api/students').subscribe(function (Data) {
             _this.students = Data.students;
             for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -3678,17 +3678,17 @@ var HmoschoolComponent = /** @class */ (function () {
             }
         });
         //展示 此学生 推荐人信息
-        this.http.get('http://localhost:3000/studentrecommenderdetail/' + this.studentID).subscribe(function (orderData) {
+        this.http.get('/api/studentrecommenderdetail/' + this.studentID).subscribe(function (orderData) {
             //console.log(orderData);
             _this.recommenders = orderData.recommenders;
         });
         //展示 这个选校的 推荐信 信息
-        this.http.get('http://localhost:3000/schoolrecomletterlist/' + this.schoolID).subscribe(function (Data) {
+        this.http.get('/api/schoolrecomletterlist/' + this.schoolID).subscribe(function (Data) {
             //console.log(Data);
             _this.recomletters = Data.recomletters;
         });
         //展示 这个选校的 文书 信息
-        this.http.get('http://localhost:3000/statementdetail/' + this.schoolID).subscribe(function (Data) {
+        this.http.get('/api/statementdetail/' + this.schoolID).subscribe(function (Data) {
             //console.log(Data);
             _this.statements = Data.statements;
         });
@@ -3705,7 +3705,7 @@ var HmoschoolComponent = /** @class */ (function () {
             type: l.type,
             state: "未提交",
         };
-        this.http.put('http://localhost:3000/recomletters/' + l._id, Recomletter)
+        this.http.put('/api/recomletters/' + l._id, Recomletter)
             .subscribe(function (data) {
             var options = {
                 overlay: true,
@@ -3729,7 +3729,7 @@ var HmoschoolComponent = /** @class */ (function () {
             type: l.type,
             state: "已提交",
         };
-        this.http.put('http://localhost:3000/recomletters/' + l._id, Recomletter)
+        this.http.put('/api/recomletters/' + l._id, Recomletter)
             .subscribe(function (data) {
             var options = {
                 overlay: true,
@@ -3753,7 +3753,7 @@ var HmoschoolComponent = /** @class */ (function () {
             type: l.type,
             state: "弃用",
         };
-        this.http.put('http://localhost:3000/recomletters/' + l._id, Recomletter)
+        this.http.put('/api/recomletters/' + l._id, Recomletter)
             .subscribe(function (data) {
             var options = {
                 overlay: true,
@@ -4070,13 +4070,13 @@ var HmregisterComponent = /** @class */ (function () {
     };
     HmregisterComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/users').subscribe(function (userData) {
+        this.http.get('/api/users').subscribe(function (userData) {
             _this.user = userData.user;
             console.log(userData.user);
             console.log(_this.user.length);
         });
         //获取HotelM 信息列表
-        this.http.get('http://localhost:3000/hotels').subscribe(function (Data) {
+        this.http.get('/api/hotels').subscribe(function (Data) {
             _this.hotels = Data.hotels;
             for (var _i = 0, _a = _this.hotels; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -4092,7 +4092,7 @@ var HmregisterComponent = /** @class */ (function () {
             }
         });
         //展示 此学生进度信息
-        this.http.get('http://localhost:3000/tasks').subscribe(function (o) {
+        this.http.get('/api/tasks').subscribe(function (o) {
             //console.log("测试"+ o[1]);
             //this.tasks = o.tasks;
             for (var i = o.tasks.length - 1; i >= 0; i--) {
@@ -4301,7 +4301,7 @@ var HmschoolComponent = /** @class */ (function () {
     };
     HmschoolComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/hotels').subscribe(function (Data) {
+        this.http.get('/api/hotels').subscribe(function (Data) {
             _this.hotels = Data.hotels;
             for (var _i = 0, _a = _this.hotels; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -4317,7 +4317,7 @@ var HmschoolComponent = /** @class */ (function () {
             }
         });
         //展示 学生个人信息
-        this.http.get('http://localhost:3000/students').subscribe(function (Data) {
+        this.http.get('/api/students').subscribe(function (Data) {
             _this.students = Data.students;
             for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -4329,7 +4329,7 @@ var HmschoolComponent = /** @class */ (function () {
             }
         });
         //展示 申请项目的详细信息
-        this.http.get('http://localhost:3000/schools').subscribe(function (Data) {
+        this.http.get('/api/schools').subscribe(function (Data) {
             //console.log(orderData);
             _this.schools = Data.schools;
             for (var _i = 0, _a = _this.schools; _i < _a.length; _i++) {
@@ -4357,17 +4357,17 @@ var HmschoolComponent = /** @class */ (function () {
             }
         });
         //展示 此学生 推荐人信息
-        this.http.get('http://localhost:3000/studentrecommenderdetail/' + this.studentID).subscribe(function (orderData) {
+        this.http.get('/api/studentrecommenderdetail/' + this.studentID).subscribe(function (orderData) {
             //console.log(orderData);
             _this.recommenders = orderData.recommenders;
         });
         //展示 这个选校的 推荐信 信息
-        this.http.get('http://localhost:3000/schoolrecomletterlist/' + this.schoolID).subscribe(function (Data) {
+        this.http.get('/api/schoolrecomletterlist/' + this.schoolID).subscribe(function (Data) {
             //console.log(Data);
             _this.recomletters = Data.recomletters;
         });
         //展示 这个选校的 文书 信息
-        this.http.get('http://localhost:3000/statementdetail/' + this.schoolID).subscribe(function (Data) {
+        this.http.get('/api/statementdetail/' + this.schoolID).subscribe(function (Data) {
             //console.log(Data);
             _this.statements = Data.statements;
         });
@@ -4378,14 +4378,14 @@ var HmschoolComponent = /** @class */ (function () {
     //文书修改
     HmschoolComponent.prototype.deleteST = function (st) {
         console.log("文书ID为" + st._id);
-        this.http.delete('http://localhost:3000/statements/' + st._id).subscribe(function (oooData) {
+        this.http.delete('/api/statements/' + st._id).subscribe(function (oooData) {
             window.location.reload();
         });
     };
     //推荐信修改
     HmschoolComponent.prototype.deleteRL = function (l) {
         console.log("推荐信ID为" + l._id);
-        this.http.delete('http://localhost:3000/recomletters/' + l._id).subscribe(function (oooData) {
+        this.http.delete('/api/recomletters/' + l._id).subscribe(function (oooData) {
             window.location.reload();
         });
     };
@@ -4430,7 +4430,7 @@ var HmschoolComponent = /** @class */ (function () {
             level: this.level,
             gre: this.gre,
         };
-        this.http.put('http://localhost:3000/schools/' + this.schoolID, School)
+        this.http.put('/api/schools/' + this.schoolID, School)
             .subscribe(function (data) {
             var options = {
                 overlay: true,
@@ -4465,7 +4465,7 @@ var HmschoolComponent = /** @class */ (function () {
             level: this.level,
             gre: this.gre,
         };
-        this.http.put('http://localhost:3000/schools/' + this.schoolID, School)
+        this.http.put('/api/schools/' + this.schoolID, School)
             .subscribe(function (data) {
             var options = {
                 overlay: true,
@@ -4500,7 +4500,7 @@ var HmschoolComponent = /** @class */ (function () {
             level: this.level,
             gre: this.gre,
         };
-        this.http.put('http://localhost:3000/schools/' + this.schoolID, School)
+        this.http.put('/api/schools/' + this.schoolID, School)
             .subscribe(function (data) {
             var options = {
                 overlay: true,
@@ -4535,7 +4535,7 @@ var HmschoolComponent = /** @class */ (function () {
             level: this.level,
             gre: this.gre,
         };
-        this.http.put('http://localhost:3000/schools/' + this.schoolID, School)
+        this.http.put('/api/schools/' + this.schoolID, School)
             .subscribe(function (data) {
             var options = {
                 overlay: true,
@@ -4559,7 +4559,7 @@ var HmschoolComponent = /** @class */ (function () {
             type: l.type,
             state: "未提交",
         };
-        this.http.put('http://localhost:3000/recomletters/' + l._id, Recomletter)
+        this.http.put('/api/recomletters/' + l._id, Recomletter)
             .subscribe(function (data) {
             var options = {
                 overlay: true,
@@ -4583,7 +4583,7 @@ var HmschoolComponent = /** @class */ (function () {
             type: l.type,
             state: "已提交",
         };
-        this.http.put('http://localhost:3000/recomletters/' + l._id, Recomletter)
+        this.http.put('/api/recomletters/' + l._id, Recomletter)
             .subscribe(function (data) {
             var options = {
                 overlay: true,
@@ -4607,7 +4607,7 @@ var HmschoolComponent = /** @class */ (function () {
             type: l.type,
             state: "弃用",
         };
-        this.http.put('http://localhost:3000/recomletters/' + l._id, Recomletter)
+        this.http.put('/api/recomletters/' + l._id, Recomletter)
             .subscribe(function (data) {
             var options = {
                 overlay: true,
@@ -4828,7 +4828,7 @@ var HmstudentComponent = /** @class */ (function () {
     };
     HmstudentComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/hotels').subscribe(function (Data) {
+        this.http.get('/api/hotels').subscribe(function (Data) {
             _this.hotels = Data.hotels;
             for (var _i = 0, _a = _this.hotels; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -4844,7 +4844,7 @@ var HmstudentComponent = /** @class */ (function () {
             }
         });
         //展示 学生个人信息
-        this.http.get('http://localhost:3000/students').subscribe(function (Data) {
+        this.http.get('/api/students').subscribe(function (Data) {
             _this.students = Data.students;
             for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -4859,7 +4859,7 @@ var HmstudentComponent = /** @class */ (function () {
             }
         });
         //展示 此学生 教育背景信息
-        this.http.get('http://localhost:3000/educations/').subscribe(function (Data) {
+        this.http.get('/api/educations/').subscribe(function (Data) {
             _this.educations = Data.educations;
             for (var _i = 0, _a = _this.educations; _i < _a.length; _i++) {
                 var y = _a[_i];
@@ -4870,7 +4870,7 @@ var HmstudentComponent = /** @class */ (function () {
             console.log("学生的教育背景" + _this.education);
         });
         //展示 此学生 工作背景信息
-        this.http.get('http://localhost:3000/experiences/').subscribe(function (Data) {
+        this.http.get('/api/experiences/').subscribe(function (Data) {
             _this.experiences = Data.experiences;
             for (var _i = 0, _a = _this.experiences; _i < _a.length; _i++) {
                 var i = _a[_i];
@@ -4881,22 +4881,22 @@ var HmstudentComponent = /** @class */ (function () {
             console.log("学生的工作背景" + _this.experience);
         });
         //展示 此学生 选校信息
-        this.http.get('http://localhost:3000/studentschooldetail/' + this.studentID).subscribe(function (orderData) {
+        this.http.get('/api/studentschooldetail/' + this.studentID).subscribe(function (orderData) {
             console.log(orderData);
             _this.schools = orderData.schools;
         });
         //展示 此学生 推荐人信息
-        this.http.get('http://localhost:3000/studentrecommenderdetail/' + this.studentID).subscribe(function (orderData) {
+        this.http.get('/api/studentrecommenderdetail/' + this.studentID).subscribe(function (orderData) {
             console.log(orderData);
             _this.recommenders = orderData.recommenders;
         });
         //展示 此学生通知信息
-        this.http.get('http://localhost:3000/notifdetail/' + this.studentID).subscribe(function (o) {
+        this.http.get('/api/notifdetail/' + this.studentID).subscribe(function (o) {
             console.log(o);
             _this.notifs = o.notifs;
         });
         //展示 此学生进度信息
-        this.http.get('http://localhost:3000/taskdetail/' + this.studentID).subscribe(function (o) {
+        this.http.get('/api/taskdetail/' + this.studentID).subscribe(function (o) {
             console.log(o);
             //this.tasks = o.tasks;
             for (var i = o.tasks.length - 1; i >= 0; i--) {
@@ -4910,21 +4910,21 @@ var HmstudentComponent = /** @class */ (function () {
     //教育经历修改
     HmstudentComponent.prototype.deleteE = function (e) {
         console.log(e._id);
-        this.http.delete('http://localhost:3000/education/' + e._id).subscribe(function (oooData) {
+        this.http.delete('/api/education/' + e._id).subscribe(function (oooData) {
             window.location.reload();
         });
     };
     //工作经历修改
     HmstudentComponent.prototype.deleteEx = function (ex) {
         console.log(ex._id);
-        this.http.delete('http://localhost:3000/experience/' + ex._id).subscribe(function (oooData) {
+        this.http.delete('/api/experience/' + ex._id).subscribe(function (oooData) {
             window.location.reload();
         });
     };
     //推荐人删除
     HmstudentComponent.prototype.deleteRD = function (k) {
         console.log(k._id);
-        this.http.delete('http://localhost:3000/recommenders/' + k._id).subscribe(function (oooData) {
+        this.http.delete('/api/recommenders/' + k._id).subscribe(function (oooData) {
             window.location.reload();
         });
     };
@@ -5007,7 +5007,7 @@ var HmstudentComponent = /** @class */ (function () {
             //年级
             year: document.getElementById("styear").value,
         };
-        this.http.put('http://localhost:3000/students/' + this.student.userAccount, Student)
+        this.http.put('/api/students/' + this.student.userAccount, Student)
             .subscribe(function (data) {
             var options = {
                 overlay: true,
@@ -5224,7 +5224,7 @@ var HmstudentrecComponent = /** @class */ (function () {
     }
     HmstudentrecComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/hotels').subscribe(function (Data) {
+        this.http.get('/api/hotels').subscribe(function (Data) {
             _this.hotels = Data.hotels;
             for (var _i = 0, _a = _this.hotels; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -5240,7 +5240,7 @@ var HmstudentrecComponent = /** @class */ (function () {
             }
         });
         //展示 学生个人信息
-        this.http.get('http://localhost:3000/students').subscribe(function (Data) {
+        this.http.get('/api/students').subscribe(function (Data) {
             _this.students = Data.students;
             for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -5254,7 +5254,7 @@ var HmstudentrecComponent = /** @class */ (function () {
             }
         });
         //展示 此学生 推荐人特定信息
-        this.http.get('http://localhost:3000/recommenders').subscribe(function (Data) {
+        this.http.get('/api/recommenders').subscribe(function (Data) {
             _this.recommenders = Data.recommenders;
             for (var _i = 0, _a = _this.recommenders; _i < _a.length; _i++) {
                 var r = _a[_i];
@@ -5268,7 +5268,7 @@ var HmstudentrecComponent = /** @class */ (function () {
             }
         });
         //获取 包含此推荐人的所有推荐信
-        this.http.get('http://localhost:3000/recomletters').subscribe(function (Data) {
+        this.http.get('/api/recomletters').subscribe(function (Data) {
             for (var _i = 0, _a = Data.recomletters; _i < _a.length; _i++) {
                 var rl = _a[_i];
                 if (rl.recommender === _this.recommenderID) {
@@ -5279,7 +5279,7 @@ var HmstudentrecComponent = /** @class */ (function () {
             console.log(_this.recomletters);
         });
         //展示 此学生 选校信息
-        this.http.get('http://localhost:3000/studentschooldetail/' + this.studentID).subscribe(function (orderData) {
+        this.http.get('/api/studentschooldetail/' + this.studentID).subscribe(function (orderData) {
             console.log("学生全部列表");
             console.log(orderData.schools);
             for (var _i = 0, _a = orderData.schools; _i < _a.length; _i++) {
@@ -5302,14 +5302,14 @@ var HmstudentrecComponent = /** @class */ (function () {
     //教育经历修改
     HmstudentrecComponent.prototype.deleteE = function (e) {
         console.log(e._id);
-        this.http.delete('http://localhost:3000/education/' + e._id).subscribe(function (oooData) {
+        this.http.delete('/api/education/' + e._id).subscribe(function (oooData) {
             window.location.reload();
         });
     };
     //工作经历修改
     HmstudentrecComponent.prototype.deleteEx = function (ex) {
         console.log(ex._id);
-        this.http.delete('http://localhost:3000/experience/' + ex._id).subscribe(function (oooData) {
+        this.http.delete('/api/experience/' + ex._id).subscribe(function (oooData) {
             window.location.reload();
         });
     };
@@ -5486,13 +5486,13 @@ var HmtaskComponent = /** @class */ (function () {
     }
     HmtaskComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/users').subscribe(function (userData) {
+        this.http.get('/api/users').subscribe(function (userData) {
             _this.user = userData.user;
             console.log(userData.user);
             console.log(_this.user.length);
         });
         //获取HotelM 信息列表
-        this.http.get('http://localhost:3000/hotels').subscribe(function (Data) {
+        this.http.get('/api/hotels').subscribe(function (Data) {
             _this.hotels = Data.hotels;
             for (var _i = 0, _a = _this.hotels; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -5508,7 +5508,7 @@ var HmtaskComponent = /** @class */ (function () {
             }
         });
         //展示 此学生进度信息
-        this.http.get('http://localhost:3000/tasks').subscribe(function (o) {
+        this.http.get('/api/tasks').subscribe(function (o) {
             //console.log("测试"+ o[1]);
             //this.tasks = o.tasks;
             for (var i = o.tasks.length - 1; i >= 0; i--) {
@@ -5530,7 +5530,7 @@ var HmtaskComponent = /** @class */ (function () {
             tstate: "完成",
             ttype: n.ttype,
         };
-        this.http.put('http://localhost:3000/task/' + n._id, Task)
+        this.http.put('/api/task/' + n._id, Task)
             .subscribe(function (data) {
             var options = {
                 overlay: true,
@@ -5659,7 +5659,7 @@ var HonorService = /** @class */ (function () {
     }
     HonorService.prototype.getHonor = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/honors').subscribe(function (Data) {
+        this.http.get('/api/honors').subscribe(function (Data) {
             _this.honors = Data.honors;
             _this.honor = _this.honors[0];
             _this.honorsUpdated.next(_this.honors.slice());
@@ -5679,7 +5679,7 @@ var HonorService = /** @class */ (function () {
             percentage: percentage,
             grantor: grantor,
         };
-        this.http.post('http://localhost:3000/honoradd', honor).subscribe(function (responseData) {
+        this.http.post('/api/honoradd', honor).subscribe(function (responseData) {
             _this.honorS.push(honor);
             _this.honorsUpdated.next(_this.honorS.slice());
         });
@@ -5903,7 +5903,7 @@ var HotelDetailComponent = /** @class */ (function () {
     }
     HotelDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/hoteldetail/' + this.hotelId).subscribe(function (hotelData) {
+        this.http.get('/api/hoteldetail/' + this.hotelId).subscribe(function (hotelData) {
             console.log(hotelData.hotels);
             _this.hotel = hotelData.hotels;
             // console.log(this.hotel.name);
@@ -6001,7 +6001,7 @@ var HotelViewComponent = /** @class */ (function () {
         var _this = this;
         var searchName = form.value.searchName;
         console.log(searchName);
-        this.http.get('http://localhost:3000/hotelsearch/' + searchName).subscribe(function (hotelData) {
+        this.http.get('/api/hotelsearch/' + searchName).subscribe(function (hotelData) {
             console.log(hotelData);
             _this.hotels = hotelData.hotels;
         });
@@ -6071,7 +6071,7 @@ var HotelService = /** @class */ (function () {
     }
     HotelService.prototype.getHotels = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/hotels').subscribe(function (hotelData) {
+        this.http.get('/api/hotels').subscribe(function (hotelData) {
             console.log(hotelData);
             _this.hotels = hotelData.hotels;
             _this.hotelsUpdated.next(_this.hotels.slice());
@@ -6091,7 +6091,7 @@ var HotelService = /** @class */ (function () {
     //     image: image,
     //     price: price
     //   };
-    //   this.http.post('http://localhost:3000/hoteladd', hotel).subscribe((responseData) =>{
+    //   this.http.post('/api/hoteladd', hotel).subscribe((responseData) =>{
     //       this.hotels.push(hotel);
     //       this.hotelsUpdated.next([...this.hotels]);
     //   });
@@ -6126,7 +6126,7 @@ var HotelService = /** @class */ (function () {
             image: image,
             price: price
         };
-        this.http.post('http://localhost:3000/hoteladd', hotel).subscribe(function (responseData) {
+        this.http.post('/api/hoteladd', hotel).subscribe(function (responseData) {
             _this.hotelM.push(hotel);
             _this.hotelMUpdated.next(_this.hotelM.slice());
         });
@@ -6144,7 +6144,7 @@ var HotelService = /** @class */ (function () {
             hotelName: hotelName,
             userId: userId
         };
-        this.http.post('http://localhost:3000/hotelbook', order).subscribe(function (responseData) {
+        this.http.post('/api/hotelbook', order).subscribe(function (responseData) {
             _this.orders.push(order);
             _this.orderUpdated.next(_this.orders.slice());
         });
@@ -6216,7 +6216,7 @@ var OrderViewComponent = /** @class */ (function () {
     }
     OrderViewComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/vieworder/' + this.userId).subscribe(function (orderData) {
+        this.http.get('/api/vieworder/' + this.userId).subscribe(function (orderData) {
             console.log(orderData);
             _this.orders = orderData.orders;
         });
@@ -6484,7 +6484,7 @@ var LoginComponent = /** @class */ (function () {
     };
     LoginComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/users').subscribe(function (userData) {
+        this.http.get('/api/users').subscribe(function (userData) {
             _this.user = userData.user;
             console.log(userData.user);
             console.log(_this.user.length);
@@ -6604,7 +6604,7 @@ var MainblogComponent = /** @class */ (function () {
                             alert("Welcome " + this.user[index].Role + "!");
                             //console.log(this.user[index].UserAccount);
                             // API_PATH + '/students'
-                            this.http.get('http://localhost:3000/students').subscribe(function (Data) {
+                            this.http.get('/api/students').subscribe(function (Data) {
                                 _this.students = Data.students;
                                 console.log(_this.students);
                                 for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
@@ -6656,13 +6656,13 @@ var MainblogComponent = /** @class */ (function () {
     };
     MainblogComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/users').subscribe(function (userData) {
+        this.http.get('/api/users').subscribe(function (userData) {
             _this.user = userData.user;
             console.log(userData.user);
             console.log(_this.user.length);
         });
         //获取Blog 信息列表
-        this.http.get('http://localhost:3000/blogs').subscribe(function (Data) {
+        this.http.get('/api/blogs').subscribe(function (Data) {
             //this.blogs = Data.blogs;
             for (var i = Data.blogs.length - 1; i >= 0; i--) {
                 _this.blogs.push(Data.blogs[i]);
@@ -6809,7 +6809,7 @@ var MainclassComponent = /** @class */ (function () {
                             alert("Welcome " + this.user[index].Role + "!");
                             //console.log(this.user[index].UserAccount);
                             // API_PATH + '/students'
-                            this.http.get('http://localhost:3000/students').subscribe(function (Data) {
+                            this.http.get('/api/students').subscribe(function (Data) {
                                 _this.students = Data.students;
                                 console.log(_this.students);
                                 for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
@@ -6861,7 +6861,7 @@ var MainclassComponent = /** @class */ (function () {
     };
     MainclassComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/users').subscribe(function (userData) {
+        this.http.get('/api/users').subscribe(function (userData) {
             _this.user = userData.user;
             console.log(userData.user);
             console.log(_this.user.length);
@@ -7006,7 +7006,7 @@ var MainpageComponent = /** @class */ (function () {
                             alert("Welcome " + this.user[index].Role + "!");
                             //console.log(this.user[index].UserAccount);
                             // API_PATH + '/students'
-                            this.http.get('http://localhost:3000/students').subscribe(function (Data) {
+                            this.http.get('/api/students').subscribe(function (Data) {
                                 _this.students = Data.students;
                                 //console.log(this.students);
                                 for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
@@ -7058,7 +7058,7 @@ var MainpageComponent = /** @class */ (function () {
     };
     MainpageComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/users').subscribe(function (userData) {
+        this.http.get('/api/users').subscribe(function (userData) {
             _this.user = userData.user;
             //console.log(userData.user);
             //console.log(this.user.length);
@@ -7132,7 +7132,7 @@ var NotifService = /** @class */ (function () {
     }
     NotifService.prototype.getNotif = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/notifs').subscribe(function (Data) {
+        this.http.get('/api/notifs').subscribe(function (Data) {
             _this.notifs = Data.notifs;
             _this.notif = _this.notifs[0];
             _this.notifsUpdated.next(_this.notifs.slice());
@@ -7155,7 +7155,7 @@ var NotifService = /** @class */ (function () {
             nstate: nstate,
             ntype: ntype,
         };
-        this.http.post('http://localhost:3000/notifadd', notif).subscribe(function (responseData) {
+        this.http.post('/api/notifadd', notif).subscribe(function (responseData) {
             _this.notifS.push(notif);
             _this.notifsUpdated.next(_this.notifS.slice());
         });
@@ -7199,7 +7199,7 @@ var PublicationService = /** @class */ (function () {
     }
     PublicationService.prototype.getPublication = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/publications').subscribe(function (Data) {
+        this.http.get('/api/publications').subscribe(function (Data) {
             _this.publications = Data.publications;
             _this.publication = _this.publications[0];
             _this.publicationsUpdated.next(_this.publications.slice());
@@ -7225,7 +7225,7 @@ var PublicationService = /** @class */ (function () {
             PublicationAbstract: PublicationAbstract,
             PublicationLevel: PublicationLevel,
         };
-        this.http.post('http://localhost:3000/publicationadd', publication).subscribe(function (responseData) {
+        this.http.post('/api/publicationadd', publication).subscribe(function (responseData) {
             _this.publicationS.push(publication);
             _this.publicationsUpdated.next(_this.publicationS.slice());
         });
@@ -7269,7 +7269,7 @@ var RecomletterService = /** @class */ (function () {
     }
     RecomletterService.prototype.getRecomletter = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/recomletters').subscribe(function (Data) {
+        this.http.get('/api/recomletters').subscribe(function (Data) {
             _this.recomletters = Data.recomletters;
             _this.recomletter = _this.recomletters[0];
             _this.recomlettersUpdated.next(_this.recomletters.slice());
@@ -7294,7 +7294,7 @@ var RecomletterService = /** @class */ (function () {
             type: type,
             state: state,
         };
-        this.http.post('http://localhost:3000/recomletteradd', recomletter).subscribe(function (responseData) {
+        this.http.post('/api/recomletteradd', recomletter).subscribe(function (responseData) {
             _this.recomletterS.push(recomletter);
             _this.recomlettersUpdated.next(_this.recomletterS.slice());
         });
@@ -7338,7 +7338,7 @@ var RecommenderService = /** @class */ (function () {
     }
     RecommenderService.prototype.getRecommender = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/recommenders').subscribe(function (Data) {
+        this.http.get('/api/recommenders').subscribe(function (Data) {
             //console.log(Data);
             _this.recommenders = Data.recommenders;
             //console.log(this.recommenders[0].userAccount);
@@ -7384,7 +7384,7 @@ var RecommenderService = /** @class */ (function () {
             relation: relation,
             other: other,
         };
-        this.http.post('http://localhost:3000/recommenderadd', recommender).subscribe(function (responseData) {
+        this.http.post('/api/recommenderadd', recommender).subscribe(function (responseData) {
             _this.recommenderS.push(recommender);
             _this.recommendersUpdated.next(_this.recommenderS.slice());
         });
@@ -7429,7 +7429,7 @@ var SchoolService = /** @class */ (function () {
     }
     SchoolService.prototype.getSchool = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/schools').subscribe(function (Data) {
+        this.http.get('/api/schools').subscribe(function (Data) {
             //console.log(Data);
             _this.schools = Data.schools;
             console.log(_this.schools[0].userAccount);
@@ -7480,7 +7480,7 @@ var SchoolService = /** @class */ (function () {
             level: level,
             gre: gre,
         };
-        this.http.post('http://localhost:3000/schooladd', school).subscribe(function (responseData) {
+        this.http.post('/api/schooladd', school).subscribe(function (responseData) {
             _this.schoolS.push(school);
             _this.schoolsUpdated.next(_this.schoolS.slice());
         });
@@ -7527,7 +7527,7 @@ var StService = /** @class */ (function () {
     }
     StService.prototype.getStudent = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/students').subscribe(function (Data) {
+        this.http.get('/api/students').subscribe(function (Data) {
             //console.log(Data);
             _this.students = Data.students;
             console.log(_this.students[0].userAccount);
@@ -7656,7 +7656,7 @@ var StService = /** @class */ (function () {
             //申请年级
             year: year,
         };
-        this.http.post('http://localhost:3000/studentadd', student).subscribe(function (responseData) {
+        this.http.post('/api/studentadd', student).subscribe(function (responseData) {
             _this.studentS.push(student);
             _this.studentsUpdated.next(_this.studentS.slice());
         });
@@ -7700,7 +7700,7 @@ var StatementService = /** @class */ (function () {
     }
     StatementService.prototype.getStatement = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/statements').subscribe(function (Data) {
+        this.http.get('/api/statements').subscribe(function (Data) {
             _this.statements = Data.statements;
             _this.statement = _this.statements[0];
             _this.statementsUpdated.next(_this.statements.slice());
@@ -7721,7 +7721,7 @@ var StatementService = /** @class */ (function () {
             stype: stype,
             words: words,
         };
-        this.http.post('http://localhost:3000/statementadd', statement).subscribe(function (responseData) {
+        this.http.post('/api/statementadd', statement).subscribe(function (responseData) {
             _this.statementS.push(statement);
             _this.statementsUpdated.next(_this.statementS.slice());
         });
@@ -7811,7 +7811,7 @@ var StudentaddrecommComponent = /** @class */ (function () {
     };
     StudentaddrecommComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/students').subscribe(function (Data) {
+        this.http.get('/api/students').subscribe(function (Data) {
             _this.students = Data.students;
             for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -7987,7 +7987,7 @@ var StudentinfoComponent = /** @class */ (function () {
     }
     StudentinfoComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/students').subscribe(function (Data) {
+        this.http.get('/api/students').subscribe(function (Data) {
             _this.students = Data.students;
             for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -8000,7 +8000,7 @@ var StudentinfoComponent = /** @class */ (function () {
             console.log("学生id为" + _this.studentID);
         });
         //展示 此学生 选校信息
-        this.http.get('http://localhost:3000/schools/').subscribe(function (orderData) {
+        this.http.get('/api/schools/').subscribe(function (orderData) {
             _this.schools = orderData.schools;
             console.log(_this.studentID);
             for (var _i = 0, _a = _this.schools; _i < _a.length; _i++) {
@@ -8013,7 +8013,7 @@ var StudentinfoComponent = /** @class */ (function () {
             console.log(_this.school);
         });
         //展示 此学生 教育背景信息
-        this.http.get('http://localhost:3000/educations/').subscribe(function (Data) {
+        this.http.get('/api/educations/').subscribe(function (Data) {
             _this.educations = Data.educations;
             for (var _i = 0, _a = _this.educations; _i < _a.length; _i++) {
                 var y = _a[_i];
@@ -8024,7 +8024,7 @@ var StudentinfoComponent = /** @class */ (function () {
             console.log("学生的教育背景" + _this.education);
         });
         //展示 此学生 工作背景信息
-        this.http.get('http://localhost:3000/experiences/').subscribe(function (Data) {
+        this.http.get('/api/experiences/').subscribe(function (Data) {
             _this.experiences = Data.experiences;
             for (var _i = 0, _a = _this.experiences; _i < _a.length; _i++) {
                 var i = _a[_i];
@@ -8035,7 +8035,7 @@ var StudentinfoComponent = /** @class */ (function () {
             console.log("学生的工作背景" + _this.experience);
         });
         //展示 此学生 论文信息
-        this.http.get('http://localhost:3000/publications/').subscribe(function (Data) {
+        this.http.get('/api/publications/').subscribe(function (Data) {
             _this.publications = Data.publications;
             for (var _i = 0, _a = _this.publications; _i < _a.length; _i++) {
                 var p = _a[_i];
@@ -8046,7 +8046,7 @@ var StudentinfoComponent = /** @class */ (function () {
             console.log("学生的论文" + _this.publication);
         });
         //展示 此学生 课外活动信息
-        this.http.get('http://localhost:3000/activitys/').subscribe(function (Data) {
+        this.http.get('/api/activitys/').subscribe(function (Data) {
             _this.activitys = Data.activitys;
             for (var _i = 0, _a = _this.activitys; _i < _a.length; _i++) {
                 var a = _a[_i];
@@ -8057,7 +8057,7 @@ var StudentinfoComponent = /** @class */ (function () {
             console.log("学生的课外活动" + _this.activity);
         });
         //展示 此学生 奖项信息
-        this.http.get('http://localhost:3000/honors/').subscribe(function (Data) {
+        this.http.get('/api/honors/').subscribe(function (Data) {
             _this.honors = Data.honors;
             for (var _i = 0, _a = _this.honors; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -8222,7 +8222,7 @@ var StudentinfoComponent = /** @class */ (function () {
             //年级
             year: this.student.year,
         };
-        this.http.put('http://localhost:3000/students/' + this.studentUserAcc, Student)
+        this.http.put('/api/students/' + this.studentUserAcc, Student)
             .subscribe(function (data) {
             var options = {
                 overlay: true,
@@ -8482,7 +8482,7 @@ var StudentmainComponent = /** @class */ (function () {
     }
     StudentmainComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/students').subscribe(function (Data) {
+        this.http.get('/api/students').subscribe(function (Data) {
             _this.students = Data.students;
             for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -8495,7 +8495,7 @@ var StudentmainComponent = /** @class */ (function () {
             console.log("学生id为" + _this.studentID);
         });
         //展示 此学生 选校信息
-        this.http.get('http://localhost:3000/schools/').subscribe(function (orderData) {
+        this.http.get('/api/schools/').subscribe(function (orderData) {
             _this.schools = orderData.schools;
             console.log(_this.studentID);
             for (var _i = 0, _a = _this.schools; _i < _a.length; _i++) {
@@ -8530,7 +8530,7 @@ var StudentmainComponent = /** @class */ (function () {
             }
         });
         //展示 此学生通知信息
-        this.http.get('http://localhost:3000/notifdetail/' + this.studentID).subscribe(function (o) {
+        this.http.get('/api/notifdetail/' + this.studentID).subscribe(function (o) {
             _this.notif = o.notifs;
             for (var _i = 0, _a = _this.notif; _i < _a.length; _i++) {
                 var n = _a[_i];
@@ -8552,7 +8552,7 @@ var StudentmainComponent = /** @class */ (function () {
             nstate: "已读",
             ntype: n.ntype,
         };
-        this.http.put('http://localhost:3000/notif/' + n._id, Notif)
+        this.http.put('/api/notif/' + n._id, Notif)
             .subscribe(function (data) {
             var options = {
                 overlay: true,
@@ -8754,7 +8754,7 @@ var StudentrecComponent = /** @class */ (function () {
     }
     StudentrecComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/students').subscribe(function (Data) {
+        this.http.get('/api/students').subscribe(function (Data) {
             _this.students = Data.students;
             for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -8767,7 +8767,7 @@ var StudentrecComponent = /** @class */ (function () {
             console.log("学生id为" + _this.studentID);
         });
         //展示 此学生 选校信息
-        this.http.get('http://localhost:3000/schools/').subscribe(function (orderData) {
+        this.http.get('/api/schools/').subscribe(function (orderData) {
             _this.schools = orderData.schools;
             console.log(_this.studentID);
             for (var _i = 0, _a = _this.schools; _i < _a.length; _i++) {
@@ -8780,7 +8780,7 @@ var StudentrecComponent = /** @class */ (function () {
             console.log(_this.school);
         });
         //展示 此学生 推荐人信息
-        this.http.get('http://localhost:3000/studentrecommenderdetail/' + this.studentID).subscribe(function (orderData) {
+        this.http.get('/api/studentrecommenderdetail/' + this.studentID).subscribe(function (orderData) {
             console.log(orderData);
             _this.recommenders = orderData.recommenders;
         });
@@ -8949,7 +8949,7 @@ var StudentresComponent = /** @class */ (function () {
     }
     StudentresComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/students').subscribe(function (Data) {
+        this.http.get('/api/students').subscribe(function (Data) {
             _this.students = Data.students;
             for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -8962,7 +8962,7 @@ var StudentresComponent = /** @class */ (function () {
             console.log("学生id为" + _this.studentID);
         });
         //展示 此学生 选校信息
-        this.http.get('http://localhost:3000/schools/').subscribe(function (orderData) {
+        this.http.get('/api/schools/').subscribe(function (orderData) {
             _this.schools = orderData.schools;
             console.log(_this.studentID);
             for (var _i = 0, _a = _this.schools; _i < _a.length; _i++) {
@@ -8975,7 +8975,7 @@ var StudentresComponent = /** @class */ (function () {
             console.log(_this.school);
         });
         //展示 此学生 教育背景信息
-        this.http.get('http://localhost:3000/educations/').subscribe(function (Data) {
+        this.http.get('/api/educations/').subscribe(function (Data) {
             _this.educations = Data.educations;
             for (var _i = 0, _a = _this.educations; _i < _a.length; _i++) {
                 var y = _a[_i];
@@ -8986,7 +8986,7 @@ var StudentresComponent = /** @class */ (function () {
             console.log("学生的教育背景" + _this.education);
         });
         //展示 此学生 工作背景信息
-        this.http.get('http://localhost:3000/experiences/').subscribe(function (Data) {
+        this.http.get('/api/experiences/').subscribe(function (Data) {
             _this.experiences = Data.experiences;
             for (var _i = 0, _a = _this.experiences; _i < _a.length; _i++) {
                 var i = _a[_i];
@@ -8997,7 +8997,7 @@ var StudentresComponent = /** @class */ (function () {
             console.log("学生的工作背景" + _this.experience);
         });
         //展示 此学生 论文信息
-        this.http.get('http://localhost:3000/publications/').subscribe(function (Data) {
+        this.http.get('/api/publications/').subscribe(function (Data) {
             _this.publications = Data.publications;
             for (var _i = 0, _a = _this.publications; _i < _a.length; _i++) {
                 var p = _a[_i];
@@ -9008,7 +9008,7 @@ var StudentresComponent = /** @class */ (function () {
             console.log("学生的论文" + _this.publication);
         });
         //展示 此学生 课外活动信息
-        this.http.get('http://localhost:3000/activitys/').subscribe(function (Data) {
+        this.http.get('/api/activitys/').subscribe(function (Data) {
             _this.activitys = Data.activitys;
             for (var _i = 0, _a = _this.activitys; _i < _a.length; _i++) {
                 var a = _a[_i];
@@ -9019,7 +9019,7 @@ var StudentresComponent = /** @class */ (function () {
             console.log("学生的课外活动" + _this.activity);
         });
         //展示 此学生 奖项信息
-        this.http.get('http://localhost:3000/honors/').subscribe(function (Data) {
+        this.http.get('/api/honors/').subscribe(function (Data) {
             _this.honors = Data.honors;
             for (var _i = 0, _a = _this.honors; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -9120,7 +9120,7 @@ var StudentresComponent = /** @class */ (function () {
             //年级
             year: this.student.year,
         };
-        this.http.put('http://localhost:3000/students/' + this.studentUserAcc, Student)
+        this.http.put('/api/students/' + this.studentUserAcc, Student)
             .subscribe(function (data) {
             var options = {
                 overlay: true,
@@ -9359,7 +9359,7 @@ var StudentschoolComponent = /** @class */ (function () {
     }
     StudentschoolComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/students').subscribe(function (Data) {
+        this.http.get('/api/students').subscribe(function (Data) {
             _this.students = Data.students;
             for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
                 var h = _a[_i];
@@ -9372,7 +9372,7 @@ var StudentschoolComponent = /** @class */ (function () {
             console.log("学生id为" + _this.studentID);
         });
         //展示 申请项目的详细信息
-        this.http.get('http://localhost:3000/schools').subscribe(function (Data) {
+        this.http.get('/api/schools').subscribe(function (Data) {
             //console.log(orderData);
             _this.schools = Data.schools;
             for (var _i = 0, _a = _this.schools; _i < _a.length; _i++) {
@@ -9399,12 +9399,12 @@ var StudentschoolComponent = /** @class */ (function () {
             }
         });
         //展示 这个选校的 推荐信 信息
-        this.http.get('http://localhost:3000/schoolrecomletterlist/' + this.schoolID).subscribe(function (Data) {
+        this.http.get('/api/schoolrecomletterlist/' + this.schoolID).subscribe(function (Data) {
             //console.log(Data);
             _this.recomletters = Data.recomletters;
         });
         //展示 这个选校的 文书 信息
-        this.http.get('http://localhost:3000/statementdetail/' + this.schoolID).subscribe(function (Data) {
+        this.http.get('/api/statementdetail/' + this.schoolID).subscribe(function (Data) {
             //console.log(Data);
             _this.statements = Data.statements;
         });
@@ -9577,7 +9577,7 @@ var StudyabroadComponent = /** @class */ (function () {
                             alert("Welcome " + this.user[index].Role + "!");
                             //console.log(this.user[index].UserAccount);
                             // API_PATH + '/students'
-                            this.http.get('http://localhost:3000/students').subscribe(function (Data) {
+                            this.http.get('/api/students').subscribe(function (Data) {
                                 _this.students = Data.students;
                                 console.log(_this.students);
                                 for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
@@ -9629,7 +9629,7 @@ var StudyabroadComponent = /** @class */ (function () {
     };
     StudyabroadComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/users').subscribe(function (userData) {
+        this.http.get('/api/users').subscribe(function (userData) {
             _this.user = userData.user;
             console.log(userData.user);
             console.log(_this.user.length);
@@ -9730,7 +9730,7 @@ var TaskService = /** @class */ (function () {
     }
     TaskService.prototype.getTask = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/tasks').subscribe(function (Data) {
+        this.http.get('/api/tasks').subscribe(function (Data) {
             _this.tasks = Data.tasks;
             _this.task = _this.tasks[0];
             _this.tasksUpdated.next(_this.tasks.slice());
@@ -9757,7 +9757,7 @@ var TaskService = /** @class */ (function () {
             tstate: tstate,
             ttype: ttype,
         };
-        this.http.post('http://localhost:3000/taskadd', task).subscribe(function (responseData) {
+        this.http.post('/api/taskadd', task).subscribe(function (responseData) {
             _this.taskS.push(task);
             _this.tasksUpdated.next(_this.taskS.slice());
         });
@@ -9799,7 +9799,7 @@ var UserService = /** @class */ (function () {
     }
     UserService.prototype.getUsers = function () {
         var _this = this;
-        this.http.get('http://localhost:3000/users').subscribe(function (userData) {
+        this.http.get('/api/users').subscribe(function (userData) {
             _this.user = userData.user;
             //console.log(userData.user[0]); 
             _this.usersUpdated.next(_this.user.slice());
@@ -9816,7 +9816,7 @@ var UserService = /** @class */ (function () {
             Role: Role
         };
         console.log(user.UserAccount);
-        this.http.post('http://localhost:3000/users', user).subscribe(function (responseData) {
+        this.http.post('/api/users', user).subscribe(function (responseData) {
             _this.user.push(user);
             _this.usersUpdated.next(_this.user.slice());
         });
