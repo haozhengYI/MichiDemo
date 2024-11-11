@@ -13,6 +13,7 @@ import { HMmainComponent } from './hmmain/hmmain.component';
 import { HmmodifypassComponent } from './hmmodifypass/hmmodifypass.component';
 import { HmmodifypasssuccComponent } from './hmmodifypasssucc/hmmodifypasssucc.component';
 import { HmmanageComponent } from './hmmanage/hmmanage.component';
+import { HmmanagedComponent } from './hmmanaged/hmmanaged.component';
 
 import { AdminComponent } from './admin/admin.component';
 // import { FullCalendarModule } from '@fullcalendar/angular'; 
@@ -77,6 +78,7 @@ import {ApplyhighschoolComponent} from './applyhighschool/applyhighschool.compon
     HmmodifypassComponent,
     HmmodifypasssuccComponent,
     HmmanageComponent,
+    HmmanagedComponent,
     AdminComponent,
     HotelViewComponent,
     HotelDetailComponent,

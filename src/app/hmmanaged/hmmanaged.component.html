@@ -1,0 +1,238 @@
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" >一个很神秘的网页</a>
+      </div>
+      <div class="nav  navbar-right">
+        <ul class="nav navbar-nav">
+          <li class="active"><a (click)="main(hotel)">HomePage</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Shortcut <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a (click)="modifyP(hotel)">Change Password</a></li>
+              <li><a (click)="comp(hotel)">Complete info</a></li>
+              <li class="divider"></li>
+            </ul>
+          </li>
+          <li class="nav navbar-nav navbar-right">
+            <a href="/mainpage">Log Out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <ol class="breadcrumb">
+      <li><a (click)="main(hotel)">Home</a></li>
+      <li><a (click)="main(hotel)">{{hotel.userAccount}}</a></li>
+      <li class="active">Manage Student</li>
+  </ol>
+
+  <div class="container-fluid">
+    <div class="row content">
+      <div class="col-sm-2 sidenav">
+      <h4>{{hotel.userAccount}}  </h4>
+      <ul class="nav nav-pills nav-stacked">
+        <li ><a (click)="main(hotel)">Home</a></li>
+        <li ><a (click)="modifyP(hotel)">Change Password</a></li>
+        <li><a (click)="comp(hotel)">进度更新</a></li>
+        <li class="active"><a (click)="hotelman(hotel)">学生管理</a></li>
+        <li><a (click)="hmorder(hotel)">学生申请</a></li>
+        <li><a (click)="hmregister(hotel)">登记账号</a></li>
+        <li ><a (click)="hmblog(hotel)">Blog管理</a></li>
+      </ul><br>
+      
+      </div>
+    
+      <div class="col-sm-10">
+      <!-- 第一行-->
+        <div class="row" *ngIf="student.length > 0">
+          <div class="col-sm-12" >
+          <!--表格2024年 DIY-->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <div class="row">
+                <div class="col-sm-8"><h2>Year 2024 私有学生</h2></div>
+              </div>
+            </div>
+            <div class="panel-body">
+                <table class="table table-hover  table-bordered">
+                    <thead><tr>
+                        <th>User Account</th>
+                        <th>Full Name</th>
+                        <th>Gender</th>
+                        <th></th>
+                    </tr></thead>
+                    <tbody *ngFor="let o of student">
+                    <tr  *ngIf="o.year=='20242'">
+                        <td>{{o.userAccount}}</td>
+                        <td>{{o.firstName}} {{o.lastName}}</td>
+                        <td>{{o.gender}}</td>
+                        <td><button href="/anew/todel/@a.id" (click)="more(o)" >More</button></td>
+                    </tr>
+                    
+                    </tbody>
+
+                </table>
+            </div>
+          </div>
+          <hr>
+            <!--表格2024年-->
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-sm-8"><h2>Year 2024</h2></div>
+                </div>
+              </div>
+              <div class="panel-body">
+                  <table class="table table-hover  table-bordered">
+                      <thead><tr>
+                          <th>User Account</th>
+                          <th>Full Name</th>
+                          <th>Gender</th>
+                          <th></th>
+                      </tr></thead>
+                      <tbody *ngFor="let o of student">
+                      <tr  *ngIf="o.year=='2024'">
+                          <td>{{o.userAccount}}</td>
+                          <td>{{o.firstName}} {{o.lastName}}</td>
+                          <td>{{o.gender}}</td>
+                          <td><button href="/anew/todel/@a.id" (click)="more(o)" >More</button></td>
+                      </tr>
+                      
+                      </tbody>
+
+                  </table>
+              </div>
+            </div>
+            <hr>
+            
+            <!--表格2023年-->
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-sm-8"><h2>Year 2023</h2></div>
+                </div>
+              </div>
+              <div class="panel-body">
+                  <table class="table table-hover  table-bordered">
+                      <thead><tr>
+                          <th>User Account</th>
+                          <th>Full Name</th>
+                          <th>Gender</th>
+                          <th></th>
+                      </tr></thead>
+                      <tbody *ngFor="let o of student">
+                      <tr  *ngIf="o.year=='2023'">
+                          <td>{{o.userAccount}}</td>
+                          <td>{{o.firstName}} {{o.lastName}}</td>
+                          <td>{{o.gender}}</td>
+                          <td><button href="/anew/todel/@a.id" (click)="more(o)" >More</button></td>
+                      </tr>
+                      
+                      </tbody>
+
+                  </table>
+              </div>
+            </div>
+            <hr>
+
+
+              <!--表格2022年-->
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <div class="row">
+                    <div class="col-sm-8"><h2>Year 2022</h2></div>
+                  </div>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-hover  table-bordered">
+                        <thead><tr>
+                            <th>User Account</th>
+                            <th>Full Name</th>
+                            <th>Gender</th>
+                            <th></th>
+                        </tr></thead>
+                        <tbody *ngFor="let o of student">
+                        <tr  *ngIf="o.year=='2022'">
+                            <td>{{o.userAccount}}</td>
+                            <td>{{o.firstName}} {{o.lastName}}</td>
+                            <td>{{o.gender}}</td>
+                            <td><button href="/anew/todel/@a.id" (click)="more(o)" >More</button></td>
+                        </tr>
+                        
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+            <hr>
+
+               <!--表格2021年-->
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <div class="row">
+                    <div class="col-sm-8"><h2>Year 2021</h2></div>
+                  </div>
+                  
+                </div>
+                <div class="panel-body">
+                    <table class="table table-hover table-bordered">
+                        <thead><tr>
+                            <th>User Account</th>
+                            <th>Full Name</th>
+                            <th>Gender</th>
+                            <th></th>
+                        </tr></thead>
+                        <tbody *ngFor="let s of student" >
+                        <tr *ngIf="s.year=='2021'">
+                            <td>{{s.userAccount}}</td>
+                            <td>{{s.firstName}} {{s.lastName}}</td>
+                            <td>{{s.gender}}</td>
+                            <td><button href="/anew/todel/@a.id" (click)="more(s)" >More</button></td>
+                        </tr>
+                        
+                        </tbody>
+
+                    </table>
+                </div>
+              </div>
+              <hr>
+              <!--测试账号-->
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <div class="row">
+                    <div class="col-sm-8"><h2>测试账号</h2></div>
+                  </div>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-hover  table-bordered">
+                        <thead><tr>
+                            <th>User Account</th>
+                            <th>Full Name</th>
+                            <th>Gender</th>
+                            <th></th>
+                        </tr></thead>
+                        <tbody *ngFor="let o of student">
+                        <tr  *ngIf="o.year=='测试账号'">
+                            <td>{{o.userAccount}}</td>
+                            <td>{{o.firstName}} {{o.lastName}}</td>
+                            <td>{{o.gender}}</td>
+                            <td><button href="/anew/todel/@a.id" (click)="more(o)" >More</button></td>
+                        </tr>
+                        
+                        </tbody>
+
+                    </table>
+                </div>
+              </div>
+              <hr>
+          </div>
+        </div><!-- 第一行-->
+      </div>
+    </div>
+  </div>
+
+  
+  

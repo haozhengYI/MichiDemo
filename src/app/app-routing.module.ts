@@ -11,6 +11,7 @@ import {HMmainComponent} from './hmmain/hmmain.component';
 import {HmmodifypassComponent} from './hmmodifypass/hmmodifypass.component';
 import {HmmodifypasssuccComponent} from './hmmodifypasssucc/hmmodifypasssucc.component';
 import {HmmanageComponent} from './hmmanage/hmmanage.component';
+import {HmmanagedComponent} from './hmmanaged/hmmanaged.component';
 import { AdminComponent } from './admin/admin.component';
 import {HmcompComponent} from './hmcomp/hmcomp.component';
 import {HmorderComponent} from './hmorder/hmorder.component';
@@ -56,6 +57,7 @@ const routes: Routes = [
   {path: 'hmmodifypass', component:HmmodifypassComponent},
   {path: 'hmmodifypasssucc', component:HmmodifypasssuccComponent},
   {path: 'hmmanage', component:HmmanageComponent},
+  {path: 'hmmanaged', component:HmmanagedComponent},
   {path: 'admin', component:AdminComponent},
   {path: 'adminhotel',component:AdminHotelComponent},
   { path: 'hoteldetail', component: HotelDetailComponent },
