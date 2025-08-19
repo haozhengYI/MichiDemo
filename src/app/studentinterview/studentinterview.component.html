@@ -28,7 +28,6 @@
 			  <h3></h3>
 			<ul class="nav nav-pills nav-stacked">
 			  <li ><a (click)="studentmain(student)">申请状态</a></li>
-				<li ><a >更改密码</a></li>
 				<li ><a (click)="info(student)">个人信息</a></li>
 				<li ><a (click)="resume(student)">简历信息</a></li>
 				<li ><a (click)="rec(student)">推荐人信息</a></li>
@@ -116,6 +115,7 @@
 								<div class="category-badge" [ngClass]="getCategoryClass(interview.interviewCato)">
 									{{interview.interviewCato}}
 								</div>
+								<h6><i class="fa fa-university"></i> {{interview.interviewUniv}}</h6>
 								<div class="duration-badge">
 									<i class="fa fa-clock-o"></i> {{interview.interviewDuration}}
 								</div>
@@ -123,16 +123,19 @@
 							<div class="card-body">
 								<h5 class="question-title">{{interview.interviewTitle}}</h5>
 								<div class="university-info">
-									<h6><i class="fa fa-university"></i> {{interview.interviewUniv}}</h6>
-									<p class="school-program">{{interview.interviewSchool}} - {{interview.interviewProgram}}</p>
+									<h6><i class="fa fa-school"></i>{{interview.interviewSchool}}</h6>
+									<p class="school-program"> &nbsp;&nbsp; {{interview.interviewProgram}}</p>
 								</div>
 								<div class="card-footer">
 									<div class="meta-info">
 										<span class="post-time">
 											<i class="fa fa-calendar"></i> {{interview.interviewTime}}
 										</span>
-										<span class="publisher">
+										<span class="publisher" *ngIf="interview.interviewPeople =='admin'">
 											<i class="fa fa-user"></i> {{interview.interviewPeople}}
+										</span>
+										<span class="publisher" *ngIf="interview.interviewPeople !='admin'">
+											<i class="fa fa-user"></i> {{getDisplayName(interview.interviewPeople)}}
 										</span>
 									</div>
 									<button class="btn btn-primary btn-sm" (click)="viewInterview(interview)">

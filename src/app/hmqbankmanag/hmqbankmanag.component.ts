@@ -188,17 +188,7 @@ export class HmqbankmanagComponent implements OnInit {
     this.router.navigate(['/hmregister'], navigationExtras);
   }
 
-  delete(s){
-    console.log(s._id);
-    this.http.delete('http://localhost:3000/interviews/'+ s._id).subscribe((oooData) => {
-        console.log("删除这个面试题目成功");
-        // 从原始数组中移除
-        this.interviews = this.interviews.filter(item => item._id !== s._id);
-        // 重新应用筛选
-        this.initializeFilters();
-        this.applyFilters();
-    });
-  }
+
   //direct to the school detail page
   hmschooldetail(s) {
     const navigationExtras: NavigationExtras = {
@@ -209,6 +199,14 @@ export class HmqbankmanagComponent implements OnInit {
       }
     };
     this.router.navigate(['/hmoschool'], navigationExtras);
+  }
+  
+  delete(i){
+    console.log(i._id);
+    this.http.delete('http://localhost:3000/interview/'+ i._id).subscribe((oooData) => {
+        console.log("删除这个面试问题成功");
+        window.location.reload();
+    });
   }
 
   //direct to the blog page
@@ -230,6 +228,8 @@ export class HmqbankmanagComponent implements OnInit {
     };
     this.router.navigate(['/hminterview'], navigationExtras);
   }
+
+
 
   // 初始化筛选选项
   initializeFilters() {

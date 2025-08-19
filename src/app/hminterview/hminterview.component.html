@@ -77,18 +77,28 @@
                  </div>
 
                  <div class="form-group">
-                  <label for="exampleInputPassword1">题目类型</label><input  class="form-control" name="interviewCato" ngModel>
-                  <small class="form-text text-muted">请以统一标准录入，如Kira，Behavior Question等</small>
-                 </div>
+                  <label for="exampleInputPassword1">题目类型</label>
+                    <div class="form-check">
+                      <label class="form-check-label">
+                      <input type="radio" class="form-check-input" name="interviewCato" id="videoessay1" value="Video Essay"  ngModel required>
+                      Video Essay
+                      </label>
+                      <label class="form-check-label">
+                      <input type="radio" class="form-check-input" name="interviewCato" id="videoessay2" value="Kira" ngModel required>
+                      Kira Interview
+                      </label>
+                      <label class="form-check-label">
+                      <input type="radio" class="form-check-input" name="interviewCato" id="videoessay3" value="真人面试" ngModel required>
+                      真人面试
+                      </label>
+                    </div>
+        
+                </div>
 
                  <div class="form-group">
                   <label for="exampleInputPassword1">题目时长</label><input  class="form-control" name="interviewDuration" ngModel>
                   <small class="form-text text-muted">请以统一标准录入，如1 min，2 mins等</small>
                  </div>
-
-                 <div class="form-group">
-                  <label for="exampleInputPassword1">发布日期</label><input class="form-control" name="interviewTime" type="date" placeholder="date" ngModel >
-                  </div>
 
                   <div class="form-group">
                     <label for="exampleInputPassword1">备注</label><input  class="form-control" name="interviewOther" ngModel>

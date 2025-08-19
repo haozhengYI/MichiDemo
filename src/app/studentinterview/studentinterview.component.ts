@@ -206,6 +206,24 @@ export class StudentinterviewComponent implements OnInit {
     this.uniqueSchools = Array.from(new Set(this.interviews.map(item => item.interviewSchool.toString())));
   }
 
+  // 在组件中添加这个方法
+  getDisplayName(publisher: string): string {
+    if (publisher === 'admin') {
+      return publisher;
+    } else {
+      // 找到第一个空格的位置
+      const spaceIndex = publisher.indexOf(' ');
+      if (spaceIndex !== -1) {
+        // 如果包含空格，将空格前的内容用****替代
+        const firstName = '****';
+        const lastName = publisher.substring(spaceIndex + 1);
+        return `${firstName} ${lastName}`;
+      } else {
+        // 如果没有空格，直接返回原值
+        return publisher;
+      }
+    }
+  }
   // 应用筛选和排序
   applyFilters() {
     let filtered = this.interviews.slice();

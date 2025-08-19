@@ -58,11 +58,14 @@ export class HminterviewComponent implements OnInit {
     }
     
     addinterview(form: NgForm){//form内的信息使用过html中的name来获取的
-      //this.blogNum = this.blogs.length+1;
-      
-      //console.log("blog" + form.value.blogTitle + "数组长度" + this.blogNum);
-      //console.log("School名" + form.value.Uschool + "ddl1为" + form.value.ddl1 + "面试" + form.value.interview);
-      this.interviewService.addInterview("", form.value.interviewUniv,form.value.interviewSchool,form.value.interviewProgram,form.value.interviewTitle, form.value.interviewCato, form.value.interviewTime,"admin", form.value.interviewDuration, form.value.interviewOther,
+             // 获取当前系统时间
+             const today = new Date();
+             const year = today.getFullYear();
+             const month = String(today.getMonth() + 1).padStart(2, '0');
+             const day = String(today.getDate()).padStart(2, '0');
+             const currentDate = `${year}-${month}-${day}`;
+         
+      this.interviewService.addInterview("", form.value.interviewUniv,form.value.interviewSchool,form.value.interviewProgram,form.value.interviewTitle, form.value.interviewCato, currentDate,"admin", form.value.interviewDuration, form.value.interviewOther,
      );
       alert("Add Interview Seccuss!!");
         
