@@ -1,0 +1,168 @@
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" >{{student.firstName}} {{student.lastName}}</a>
+      </div>
+      <div class="nav  navbar-right">
+        <ul class="nav navbar-nav">
+          <li class="active"><a (click)="studentmain(student)">Home</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              推荐人 <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a (click)="rec(student)">全部推荐人信息</a></li>
+              <li><a (click)="addRecom(student)">添加新的推荐人</a></li>
+            </ul>
+          </li>
+          <li class="nav navbar-nav navbar-right">
+            <a href="/mainpage">Log Out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+	  <div class="container-fluid">
+		<div class="row content">
+		  <div class="col-sm-3 sidenav">
+			  <h3></h3>
+			<ul class="nav nav-pills nav-stacked">
+			  <li ><a (click)="studentmain(student)">申请状态</a></li>
+				<li ><a >更改密码</a></li>
+				<li ><a (click)="info(student)">个人信息</a></li>
+				<li ><a (click)="resume(student)">简历信息</a></li>
+				<li ><a (click)="rec(student)">推荐人信息</a></li>
+				<li><a (click)="addRecom(student)">添加推荐人</a></li>
+				<li class="active"><a (click)="studentinterview(student)">面试题库</a></li>
+				<li><a (click)="studentaddinte(student)">贡献面试题目</a></li>
+			</ul><br>	
+		  </div>
+	  
+		  <div class="col-sm-9">
+			<div class="interview-header">
+				<h1>面试题库</h1>
+				<p class="text-muted"></p>
+			</div>
+			
+			<!-- 筛选和搜索区域 -->
+			<div class="filter-section">
+				<div class="row">
+					<div class="col-md-3">
+						<label for="categoryFilter">题目类型</label>
+						<select class="form-control" id="categoryFilter" [(ngModel)]="selectedCategory" (change)="applyFilters()">
+							<option value="">所有类型</option>
+							<option *ngFor="let cat of uniqueCategories" [value]="cat">{{cat}}</option>
+						</select>
+					</div>
+					<div class="col-md-3">
+						<label for="universityFilter">大学</label>
+						<select class="form-control" id="universityFilter" [(ngModel)]="selectedUniversity" (change)="applyFilters()">
+							<option value="">所有大学</option>
+							<option *ngFor="let univ of uniqueUniversities" [value]="univ">{{univ}}</option>
+						</select>
+					</div>
+					<div class="col-md-3">
+						<label for="schoolFilter">学院</label>
+						<select class="form-control" id="schoolFilter" [(ngModel)]="selectedSchool" (change)="applyFilters()">
+							<option value="">所有学院</option>
+							<option *ngFor="let school of uniqueSchools" [value]="school">{{school}}</option>
+						</select>
+					</div>
+					<div class="col-md-3">
+						<label for="sortOrder">排序方式</label>
+						<select class="form-control" id="sortOrder" [(ngModel)]="sortOrder" (change)="applyFilters()">
+							<option value="desc">最新发布</option>
+							<option value="asc">最早发布</option>
+						</select>
+					</div>
+				</div>
+				<div class="row mt-3">
+					<div class="col-md-6">
+						<label for="searchInput">搜索题目</label>
+						<input type="text" class="form-control" id="searchInput" placeholder="输入关键词搜索题目..." [(ngModel)]="searchTerm" (input)="applyFilters()">
+					</div>
+					<div class="col-md-3">
+						<button type="button" class="btn btn-outline-secondary btn-clear" (click)="clearFilters()">
+							<i class="fa fa-refresh"></i> 清除筛选
+						</button>
+					</div>
+					<div class="col-md-3">
+						<div class="results-info">
+							<span class="badge badge-info">{{filteredInterviews.length}} / {{interviews.length}}</span>
+							<span class="text-muted">条题目</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- 筛选状态提示 -->
+			<div class="filter-status" *ngIf="selectedCategory || selectedUniversity || selectedSchool || searchTerm">
+				<div class="alert alert-info">
+					<strong>当前筛选:</strong>
+					<span *ngIf="selectedCategory" class="filter-tag">类型: {{selectedCategory}}</span>
+					<span *ngIf="selectedUniversity" class="filter-tag">大学: {{selectedUniversity}}</span>
+					<span *ngIf="selectedSchool" class="filter-tag">学院: {{selectedSchool}}</span>
+					<span *ngIf="searchTerm" class="filter-tag">搜索: "{{searchTerm}}"</span>
+					<span class="filter-tag">排序: {{sortOrder === 'desc' ? '最新发布' : '最早发布'}}</span>
+				</div>
+			</div>
+
+			<!-- 题目展示区域 -->
+			<div class="interviews-container" *ngIf="filteredInterviews.length > 0">
+				<div class="row">
+					<div class="col-md-6 mb-4" *ngFor="let interview of filteredInterviews">
+						<div class="interview-card">
+							<div class="card-header">
+								<div class="category-badge" [ngClass]="getCategoryClass(interview.interviewCato)">
+									{{interview.interviewCato}}
+								</div>
+								<div class="duration-badge">
+									<i class="fa fa-clock-o"></i> {{interview.interviewDuration}}
+								</div>
+							</div>
+							<div class="card-body">
+								<h5 class="question-title">{{interview.interviewTitle}}</h5>
+								<div class="university-info">
+									<h6><i class="fa fa-university"></i> {{interview.interviewUniv}}</h6>
+									<p class="school-program">{{interview.interviewSchool}} - {{interview.interviewProgram}}</p>
+								</div>
+								<div class="card-footer">
+									<div class="meta-info">
+										<span class="post-time">
+											<i class="fa fa-calendar"></i> {{interview.interviewTime}}
+										</span>
+										<span class="publisher">
+											<i class="fa fa-user"></i> {{interview.interviewPeople}}
+										</span>
+									</div>
+									<button class="btn btn-primary btn-sm" (click)="viewInterview(interview)">
+										查看详情
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- 无结果提示 -->
+			<div class="no-results" *ngIf="filteredInterviews.length === 0 && interviews.length > 0">
+				<div class="text-center py-5">
+					<i class="fa fa-search fa-3x text-muted mb-3"></i>
+					<h4 class="text-muted">没有找到匹配的题目</h4>
+					<p class="text-muted">请尝试调整筛选条件或搜索关键词</p>
+					<button class="btn btn-outline-primary" (click)="clearFilters()">清除所有筛选</button>
+				</div>
+			</div>
+
+			<!-- 加载中提示 -->
+			<div class="loading" *ngIf="interviews.length === 0">
+				<div class="text-center py-5">
+					<i class="fa fa-spinner fa-spin fa-3x text-muted"></i>
+					<p class="text-muted mt-3">正在加载面试题目...</p>
+				</div>
+			</div>
+		  </div>
+		</div>
+	</div>
+

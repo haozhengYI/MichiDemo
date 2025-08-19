@@ -1,0 +1,93 @@
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" >{{student.firstName}} {{student.lastName}}</a>
+      </div>
+      <div class="nav  navbar-right">
+        <ul class="nav navbar-nav">
+          <li class="active"><a (click)="studentmain(student) ">Home</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              推荐人 <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a (click)="rec(student)">全部推荐人信息</a></li>
+              <li><a (click)="addRecom(student)">添加新的推荐人</a></li>
+            </ul>
+          </li>
+          <li class="nav navbar-nav navbar-right">
+            <a href="/mainpage">Log Out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+	<div class="row content">
+	  <div class="col-sm-3 sidenav">
+		  <h3></h3>
+		<ul class="nav nav-pills nav-stacked">
+		  <li ><a (click)="studentmain(student)">申请状态</a></li>
+			<li ><a >更改密码</a></li>
+			<li ><a (click)="info(student)">个人信息</a></li>
+			<li ><a (click)="resume(student)">简历信息</a></li>
+			<li ><a (click)="rec(student)">推荐人信息</a></li>
+			<li ><a (click)="addRecom(student)">添加推荐人</a></li>
+			<li><a (click)="studentinterview(student)">面试题库</a></li>
+			<li  class="active"><a (click)="studentaddinte(student)">贡献面试题目</a></li>
+		</ul><br>	
+	  </div>
+  
+	  <div class="col-sm-9">
+		<div >
+
+			<h3 align="center">贡献面试题目</h3>
+			<br> 
+			<div class="container">
+			
+				<form (submit)="addinterview(postForm)" #postForm="ngForm" ngNativeValidate>
+					<div class="form-group">
+					   <label for="exampleInputEmail1">University</label><input  class="form-control" name="interviewUniv" ngModel >
+					</div>
+					<div class="form-group">
+					   <label for="exampleInputPassword1">School Name</label><input class="form-control" name="interviewSchool" ngModel>
+					</div>
+					<div class="form-group">
+					  <label for="exampleInputEmail1">Program Name</label><input  class="form-control" name="interviewProgram" ngModel>
+				   </div>
+				   <div class="form-group">
+					  <label for="exampleInputPassword1">面试题目</label><input  class="form-control" name="interviewTitle" ngModel>
+				   </div>
+  
+				   <div class="form-group">
+					<label for="exampleInputPassword1">题目类型</label><input  class="form-control" name="interviewCato" ngModel>
+					<small class="form-text text-muted">请以统一标准录入，如Kira，Behavior Question等</small>
+				   </div>
+  
+				   <div class="form-group">
+					<label for="exampleInputPassword1">题目时长</label><input  class="form-control" name="interviewDuration" ngModel>
+					<small class="form-text text-muted">请以统一标准录入，如1 min，2 mins等</small>
+				   </div>
+  
+				   <div class="form-group">
+					<label for="exampleInputPassword1">发布日期</label><input class="form-control" name="interviewTime" type="date" placeholder="date" ngModel >
+					</div>
+  
+					<div class="form-group">
+					  <label for="exampleInputPassword1">备注</label><input  class="form-control" name="interviewOther" ngModel>
+					 </div>
+				   <button type="submit" class="btn btn-default">发布</button>
+				  </form>
+
+
+			</div> 
+		</div>
+
+
+
+	  </div>
+	</div>
+</div>
+
+

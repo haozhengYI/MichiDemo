@@ -175,6 +175,17 @@ export class HmmanageComponent implements OnInit {
     this.router.navigate(['/hmblog'], navigationExtras);
   }
 
+  //direct to the interview page
+  hminterview(hotel) {
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+       "managerID" : hotel.userAccount,
+      }
+    };
+    this.router.navigate(['/hminterview'], navigationExtras);
+  }
+
+
   more(o){
     console.log(o._id);
     console.log(this.managerID);

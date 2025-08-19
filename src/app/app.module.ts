@@ -44,6 +44,8 @@ import {HmordersearchComponent} from './hmordersearch/hmordersearch.component';
 import {HmblogComponent} from './hmblog/hmblog.component';
 import {HmstudentrecComponent} from './hmstudentrec/hmstudentrec.component';
 import {HmtaskComponent} from './hmtask/hmtask.component';
+import {HminterviewComponent} from './hminterview/hminterview.component';
+import { HmqbankmanagComponent } from './hmqbankmanag/hmqbankmanag.component';
 
 import {StudentmainComponent} from './studentmain/studentmain.component';
 import {StudentaddrecommComponent} from './studentaddrecomm/studentaddrecomm.component';
@@ -51,6 +53,9 @@ import {StudentinfoComponent} from './studentinfo/studentinfo.component';
 import {StudentrecComponent} from './studentrec/studentrec.component';
 import {StudentresComponent} from './studentresume/studentresume.component';
 import {StudentschoolComponent} from './studentschool/studentschool.component';
+import { StudentinterviewComponent } from './studentinterview/studentinterview.component';
+import { StudentaddinteComponent } from './studentaddinte/studentaddinte.component';
+
 import {MainclassComponent} from './mainclass/mainclass.component';
 import {MainblogComponent} from './mainblog/mainblog.component';
 import {StudyabroadComponent} from './studyabroad/studyabroad.component';
@@ -108,13 +113,17 @@ import {ApplyhighschoolComponent} from './applyhighschool/applyhighschool.compon
     HmblogComponent,
     HmstudentrecComponent,
     HmtaskComponent,
+    HminterviewComponent,
+    HmqbankmanagComponent,
 
     StudentmainComponent,
     StudentaddrecommComponent,
     StudentinfoComponent,
     StudentresComponent,
     StudentrecComponent,
-    StudentschoolComponent
+    StudentschoolComponent,
+    StudentinterviewComponent,
+    StudentaddinteComponent
 
   ],
   imports: [

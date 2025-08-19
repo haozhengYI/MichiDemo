@@ -135,6 +135,28 @@ export class StudentrecComponent implements OnInit {
     this.router.navigate(['/studentresume'], navigationExtras);
   }
 
+    //direct to the 面试题库 page   
+    studentinterview(student) {
+      const navigationExtras: NavigationExtras = {
+        queryParams: {
+         "studentUserAcc" : student.userAccount,
+         "studentID" : this.studentID,
+        }
+      };
+      this.router.navigate(['/studentinterview'], navigationExtras);
+    }
+  
+      //direct to the 贡献题库 page   
+      studentaddinte(student) {
+        const navigationExtras: NavigationExtras = {
+          queryParams: {
+           "studentUserAcc" : student.userAccount,
+           "studentID" : this.studentID,
+          }
+        };
+        this.router.navigate(['/studentaddinte'], navigationExtras);
+      }
+
   ngOnDestroy() {
     this.stSub.unsubscribe();
   }

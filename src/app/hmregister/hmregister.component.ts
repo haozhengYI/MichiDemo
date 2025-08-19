@@ -291,6 +291,18 @@ export class HmregisterComponent implements OnInit {
     this.router.navigate(['/hmblog'], navigationExtras);
   }
 
+
+  //direct to the interview page
+  hminterview(hotel) {
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+       "managerID" : hotel.userAccount,
+      }
+    };
+    this.router.navigate(['/hminterview'], navigationExtras);
+  }
+
+
   ngOnDestroy() {
     this.hotelMSub.unsubscribe();
   }

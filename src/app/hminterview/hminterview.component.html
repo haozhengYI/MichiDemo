@@ -1,0 +1,116 @@
+<header>
+	<nav class="navbar navbar-inverse" role="navigation">
+		<div class="container-fluid">
+		<div class="navbar-header">
+				<a class="navbar-brand" >一个很神秘的网页</a>
+		</div>
+		<div class="nav  navbar-right">
+		  <ul class="nav navbar-nav">
+			<li class="active"><a (click)="main(hotel)">HomePage</a></li>
+			<li class="dropdown">
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+				{{hotel.userAccount}} <b class="caret"></b>
+			  </a>
+			  <ul class="dropdown-menu">
+							<li><a (click)="modifyP(hotel)">Change Password</a></li>
+							<li><a (click)="comp(hotel)">Complete info</a></li>
+							<li class="divider"></li>
+						</ul>
+			</li>
+			<li class="nav navbar-nav navbar-right">
+			  <a href="/mainpage">Log Out</a>
+			</li>
+		  </ul>
+		</div>
+	  </div>
+	</nav>
+	
+  </header>
+  
+  <ol class="breadcrumb">
+  <li><a (click)="main(hotel)">Home</a></li>
+	<li ><a (click)="main(hotel)">{{hotel.userAccount}}</a></li>
+  <li class="active">面试题库管理</li>
+</ol>
+
+<div class="container-fluid">
+	<div class="row content">
+	  <div class="col-sm-2 sidenav">
+		<h4>{{hotel.userAccount}}  </h4>
+		<ul class="nav nav-pills nav-stacked">
+		  <li ><a (click)="main(hotel)">Home</a></li>
+      <li ><a (click)="modifyP(hotel)">Change Password</a></li>
+      <li><a (click)="comp(hotel)">进度更新</a></li>
+      <li><a (click)="hotelman(hotel)">学生管理</a></li>
+      <li><a (click)="hmorder(hotel)">学生申请</a></li>
+      <li><a (click)="hmregister(hotel)">登记账号</a></li>
+      <li><a (click)="hmblog(hotel)">Blog管理</a></li>
+      <li class="active"><a (click)="hminterview(hotel)">面试题库</a></li>
+		</ul><br>
+		
+	  </div>
+  
+	  <div class="col-sm-9">
+      <div class="container">
+        <div class="row clearfix">
+          <div class="col-md-12 column">
+            <div class="row clearfix">
+              <div class="col-md-7 column">
+                <div class="page-header">
+                  <th scope="col" colspan="3"><h1>
+                    添加新的面试题目 
+                  </h1></th>
+                  <th scope="col" colspan="3"><button type="button" class="btn btn-danger" (click)="hmqbankmanag(hotel)">题库管理</button></th>
+                </div>
+                <form (submit)="addinterview(postForm)" #postForm="ngForm" ngNativeValidate>
+                  <div class="form-group">
+                     <label for="exampleInputEmail1">University</label><input  class="form-control" name="interviewUniv" ngModel >
+                  </div>
+                  <div class="form-group">
+                     <label for="exampleInputPassword1">School Name</label><input class="form-control" name="interviewSchool" ngModel>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Program Name</label><input  class="form-control" name="interviewProgram" ngModel>
+                 </div>
+                 <div class="form-group">
+                    <label for="exampleInputPassword1">面试题目</label><input  class="form-control" name="interviewTitle" ngModel>
+                 </div>
+
+                 <div class="form-group">
+                  <label for="exampleInputPassword1">题目类型</label><input  class="form-control" name="interviewCato" ngModel>
+                  <small class="form-text text-muted">请以统一标准录入，如Kira，Behavior Question等</small>
+                 </div>
+
+                 <div class="form-group">
+                  <label for="exampleInputPassword1">题目时长</label><input  class="form-control" name="interviewDuration" ngModel>
+                  <small class="form-text text-muted">请以统一标准录入，如1 min，2 mins等</small>
+                 </div>
+
+                 <div class="form-group">
+                  <label for="exampleInputPassword1">发布日期</label><input class="form-control" name="interviewTime" type="date" placeholder="date" ngModel >
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">备注</label><input  class="form-control" name="interviewOther" ngModel>
+                   </div>
+                 <button type="submit" class="btn btn-default">添加</button>
+                </form>
+              </div>
+              <div class="col-md-5 column" *ngIf="interviews.length > 0">
+                <blockquote *ngFor="let i of interviews">
+                  <p>
+                   {{i.interviewTitle}}
+                  </p> 
+                  <span class="label label-info" *ngIf="i.interviewCato=='Kira'">Kira</span>
+                  <small>{{i.interviewUniv}}</small>
+                  <small>{{i.interviewTime}}</small>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+	  </div>
+	</div>
+</div>
+

@@ -1,0 +1,160 @@
+<nav class="navbar navbar-inverse" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" >一个很神秘的网页</a>
+    </div>
+    <div class="nav  navbar-right">
+      <ul class="nav navbar-nav">
+        <li class="active"><a (click)="main(hotel)">HomePage</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            Shortcut <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a (click)="modifyP(hotel)">Change Password</a></li>
+            <li><a (click)="comp(hotel)">Complete info</a></li>
+            <li class="divider"></li>
+            <li><a (click)="hotelman(hotel)">Manage Student</a></li>
+            <li><a (click)="hmorder(hotel)">学生申请</a></li>
+          </ul>
+        </li>
+        <li class="nav navbar-nav navbar-right">
+          <a href="/mainpage">Log Out</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<ol class="breadcrumb">
+    <li><a (click)="main(hotel)">Home</a></li>
+    <li><a (click)="main(hotel)">{{hotel.userAccount}}</a></li>
+    <li>面试题库</li>
+    <li class="active">面试题库管理</li>
+</ol>
+<div class="container-fluid">
+	<div class="row content">
+	  <div class="col-sm-2 sidenav">
+		<h4>{{hotel.userAccount}}  </h4>
+		<ul class="nav nav-pills nav-stacked">
+		  <li ><a (click)="main(hotel)">Home</a></li>
+		  <li ><a (click)="modifyP(hotel)">Change Password</a></li>
+			<li><a (click)="comp(hotel)">进度更新</a></li>
+			<li><a (click)="hotelman(hotel)">学生管理</a></li>
+			<li><a (click)="hmorder(hotel)">学生申请</a></li>
+			<li><a (click)="hmregister(hotel)">登记账号</a></li>
+      <li ><a (click)="hmblog(hotel)">Blog管理</a></li>
+      <li class="active"><a (click)="hminterview(hotel)">面试题库</a></li>
+		</ul><br>
+		
+	  </div>
+  
+	  <div class="col-sm-10">
+    <table class="table table-hover" id="tableData">
+      <thead>
+        <tr>
+          <th scope="col" colspan="3"><h3>
+            面试题目总数：
+            <small class="text-muted">{{filteredInterviews.length}}</small>
+          </h3></th>
+          <th scope="col" colspan="8">
+            <form (submit)="sele(postForm)" #postForm="ngForm" ngNativeValidate>
+              <div class="form-group filter-section" >
+                <div class="row">
+                  <div class="col-sm-2">
+                    <label for="categoryFilter">Category:</label>
+                    <select class="form-control" id="categoryFilter" [(ngModel)]="selectedCategory" name="categoryFilter" (change)="applyFilters()">
+                      <option value="">All Categories</option>
+                      <option *ngFor="let cat of uniqueCategories" [value]="cat">{{cat}}</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-2">
+                    <label for="universityFilter">University:</label>
+                    <select class="form-control" id="universityFilter" [(ngModel)]="selectedUniversity" name="universityFilter" (change)="applyFilters()">
+                      <option value="">All Universities</option>
+                      <option *ngFor="let univ of uniqueUniversities" [value]="univ">{{univ}}</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-2">
+                    <label for="schoolFilter">School:</label>
+                    <select class="form-control" id="schoolFilter" [(ngModel)]="selectedSchool" name="schoolFilter" (change)="applyFilters()">
+                      <option value="">All Schools</option>
+                      <option *ngFor="let school of uniqueSchools" [value]="school">{{school}}</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-2">
+                    <label for="sortOrder">Sort by Time:</label>
+                    <select class="form-control" id="sortOrder" [(ngModel)]="sortOrder" name="sortOrder" (change)="applyFilters()">
+                      <option value="desc">Newest First</option>
+                      <option value="asc">Oldest First</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-1">
+                    <button type="button" class="btn btn-secondary" (click)="clearFilters()">Clear Filters</button>
+                  </div>
+                 
+                </div>
+              </div>
+            </form>
+          </th>
+          <th>
+           
+          </th>
+          
+        </tr>
+      </thead>
+      <thead>
+        <tr>
+          <th scope="col" colspan="9">
+            <div class="alert alert-info" *ngIf="selectedCategory || selectedUniversity || selectedSchool">
+              <strong>当前筛选:</strong>
+              <span *ngIf="selectedCategory">Category: {{selectedCategory}} </span>
+              <span *ngIf="selectedUniversity">| University: {{selectedUniversity}} </span>
+              <span *ngIf="selectedSchool">| School: {{selectedSchool}} </span>
+              <span>| 排序: {{sortOrder === 'desc' ? '时间倒序' : '时间正序'}}</span>
+              <span class="badge badge-secondary ml-2">显示 {{filteredInterviews.length}} / {{interviews.length}} 条记录</span>
+            </div>
+          </th>
+        </tr>
+        <tr>
+          <th scope="col" style="width:70px">Category</th>
+          <th scope="col" style="width:120px">University</th>
+          <th scope="col" style="width:100px">School</th>
+          <th scope="col" style="width:100px">Program</th>
+          <th scope="col" style="width:400px">Question</th>
+          <th scope="col" style="width:70px">Duration</th>
+          <th scope="col" style="width:90px">PostTime</th>
+          <th scope="col" style="width:90px">发布人</th>
+          <th scope="col">操作</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="filteredInterviews.length > 0">
+        <tr class="table-dark"  *ngFor="let i of filteredInterviews">
+          <th scope="row">{{i.interviewCato}} 
+            <div class="btn-group" *ngIf="i.interviewOther!=''&&i.interviewOther!=null">
+              <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                备注
+              </button>
+              <div class="dropdown-menu">
+                {{i.interviewOther}}
+              </div>
+            </div>
+          </th>
+          <td>{{i.interviewUniv}}</td>
+          <td>{{i.interviewSchool}}</td>
+          <td>{{i.interviewProgram}}</td>
+          <td>{{i.interviewTitle}}</td>
+          <td>{{i.interviewDuration}}</td>
+          <td>{{i.interviewTime}}</td>
+          <td>{{i.interviewPeople}}</td>
+          <td>
+
+            <button href="/anew/todel/@a.id" onclick="return confirm('你确定要删除这个问题吗?')" (click)="delete(i)">Delete</button>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+	  </div>
+	</div>
+</div>
+
