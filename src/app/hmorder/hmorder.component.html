@@ -48,68 +48,222 @@
 	  </div>
   
 	  <div class="col-sm-10">
-    <table class="table table-hover" id="tableData">
-      <thead>
-        <tr>
-          <th scope="col" colspan="5"><h3>
-            申请项目总数：
-            <small class="text-muted">{{schools.length}}</small>
-          </h3></th>
-          <th scope="col" colspan="5">
-            <form (submit)="sele(postForm)" #postForm="ngForm" ngNativeValidate>
-              <div class="form-group" >
-                <div class="row">
-                  <div class="col-sm-8">
 
-                        <select class="form-control" id="studName"  *ngIf="student.length > 0" ng-model="fLevelBefore" ng-change="changervar('fLevelBefore')">
-                        <option  *ngFor="let st of student"  value="{{st._id}}"> {{st.firstName}}  {{st.lastName}}  </option>
-                        </select>
- 
 
-                  </div>
-                  <div class="col-sm-2"><button class="btn btn-primary">查询</button></div>
-                </div>
+		<!-- 学年分类标签页 -->
+		<div class="year-tabs">
+			<ul class="nav nav-tabs" role="tablist">
+				<li class="nav-item" *ngFor="let year of uniqueYears; let i = index" [class.active]="year === selectedYear">
+					<a class="nav-link" [class.active]="year === selectedYear" (click)="selectYear(year)" [attr.aria-selected]="year === selectedYear">
+						{{year}}学年
+						<span class="badge badge-secondary ml-2">{{getYearApplicationCount(year)}}</span>
+					</a>
+				</li>
+			</ul>
+		</div>
 
-              </div>
-            </form>
-          </th>
-          <th>
-           
-          </th>
-          
-        </tr>
-      </thead>
-      <thead>
-        <tr>
-          <th scope="col" style="width:70px">States</th>
-          <th scope="col" style="width:120px">Name</th>
-          <th scope="col" style="width:100px">University</th>
-          <th scope="col" style="width:100px">School</th>
-          <th scope="col" style="width:150px">Major</th>
-          <th scope="col" style="width:90px">Deadline 1</th>
-          <th scope="col" style="width:90px">Deadline 2</th>
-          <th scope="col" style="width:90px">Deadline 3</th>
-          <th scope="col">操作</th>
-        </tr>
-      </thead>
-      <tbody *ngIf="school.length > 0">
-        <tr class="table-dark"  *ngFor="let s of school">
-          <th scope="row">{{s.state}}</th>
-          <td>{{s.userAccount}}</td>
-          <td>{{s.univName}}</td>
-          <td>{{s.schoolName}}</td>
-          <td>{{s.majorName}}</td>
-          <td>{{s.ddl1}}</td>
-          <td>{{s.ddl2}}</td>
-          <td>{{s.ddl3}}</td>
-          <td><button href="/anew/todel/@a.id" (click)="hmschooldetail(s)">More</button>
-            <button href="/anew/todel/@a.id" onclick="return confirm('你确定要删除这个申请吗?')" (click)="delete(s)">Delete</button>
-          </td>
-        </tr>
+		<!-- 筛选控件 -->
+		<div class="filter-section">
+			<div class="row">
+				<div class="col-md-2">
+					<label for="requirementFilter">申请要求筛选</label>
+					<select class="form-control" id="requirementFilter" [(ngModel)]="selectedRequirement" (change)="applyFilters()">
+						<option value="">所有申请</option>
+						<option value="interview">需要面试</option>
+						<option value="videoEssay">需要Video Essay</option>
+						<option value="videoEssayBefore">Video Essay(申请前)</option>
+						<option value="videoEssayAfter">Video Essay(申请后)</option>
+						<option value="both">面试 + Video Essay</option>
+					</select>
+				</div>
+				<div class="col-md-2">
+					<label for="statusFilter">申请状态</label>
+					<select class="form-control" id="statusFilter" [(ngModel)]="selectedStatus" (change)="applyFilters()">
+						<option value="">所有状态</option>
+						<option value="进行中">进行中</option>
+						<option value="已完成">已完成</option>
+						<option value="收到offer">收到offer</option>
+						<option value="收到拒信">收到拒信</option>
+					</select>
+				</div>
+				<div class="col-md-2">
+					<label for="studentFilter">学生筛选</label>
+					<select class="form-control" id="studentFilter" [(ngModel)]="selectedStudent" (change)="applyFilters()">
+						<option value="">所有学生</option>
+						<option *ngFor="let st of getCurrentYearStudents()" [value]="st._id">
+							{{st.firstName}} {{st.lastName}}
+						</option>
+					</select>
+				</div>
+				<div class="col-md-2">
+					<button type="button" class="btn btn-outline-secondary btn-clear" (click)="clearFilters()">
+						<i class="fa fa-refresh"></i> 清除筛选
+					</button>
+				</div>
+				<div class="col-md-2">
+					<button type="button" class="btn btn-info btn-stats" (click)="showStatistics()">
+						<i class="fa fa-bar-chart"></i> 统计
+					</button>
+				</div>
+			</div>
+		</div>
 
-      </tbody>
-    </table>
+		<!-- 当前学年和筛选状态显示 -->
+		<div class="current-info">
+			<div class="alert alert-info">
+				<strong>当前学年:</strong> {{selectedYear}} | 
+				<strong>筛选条件:</strong> 
+				<span *ngIf="selectedRequirement" class="filter-tag">{{getRequirementText(selectedRequirement)}}</span>
+				<span *ngIf="selectedStatus" class="filter-tag">状态: {{selectedStatus}}</span>
+				<span *ngIf="selectedStudent" class="filter-tag">学生: {{getStudentName(selectedStudent)}}</span>
+				<span class="badge badge-primary ml-2">显示 {{filteredApplications.length}} / {{getCurrentYearApplications().length}} 条申请</span>
+			</div>
+		</div>
+
+		<!-- 统计结果模态框 -->
+		<div class="modal" [class.show]="showModal" [style.display]="showModal ? 'block' : 'none'" id="statisticsModal" tabindex="-1" role="dialog" aria-labelledby="statisticsModalLabel">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title" id="statisticsModalLabel">
+							<i class="fa fa-bar-chart"></i> 大学申请统计
+						</h4>
+						<button type="button" class="close" (click)="closeStatisticsModal()" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="alert alert-info">
+							<strong>统计条件:</strong> {{selectedYear}}学年 | 
+							<span *ngIf="selectedRequirement">{{getRequirementText(selectedRequirement)}} | </span>
+							<span *ngIf="selectedStatus">状态: {{selectedStatus}} | </span>
+							<span *ngIf="selectedStudent">学生: {{getStudentName(selectedStudent)}} | </span>
+							<strong>总计:</strong> {{filteredApplications.length}} 条申请
+						</div>
+						
+						<!-- 可滚动的统计表格区域 -->
+						<div class="statistics-scroll-container" *ngIf="universityStats.length > 0">
+							<div class="table-responsive">
+								<table class="table table-striped table-hover">
+									<thead class="sticky-header">
+										<tr>
+											<th style="width: 80px;">排名</th>
+											<th style="width: 200px;">大学名称</th>
+											<th style="width: 120px;">申请数量</th>
+											<th style="width: 200px;">占比</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr *ngFor="let stat of universityStats; let i = index">
+											<td>
+												<span class="badge badge-primary rank-badge">{{i + 1}}</span>
+											</td>
+											<td class="university-name">{{stat.university}}</td>
+											<td>
+												<span class="badge badge-info count-badge">{{stat.count}}</span>
+											</td>
+											<td>
+												<div class="progress-container">
+													<div class="progress" style="height: 25px;">
+														<div class="progress-bar" [style.width.%]="stat.percentage" role="progressbar">
+															<span class="progress-text">{{stat.percentage.toFixed(1)}}%</span>
+														</div>
+													</div>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						
+						<div *ngIf="universityStats.length === 0" class="text-center py-4">
+							<i class="fa fa-info-circle fa-2x text-muted mb-3"></i>
+							<p class="text-muted">没有找到统计数据</p>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" (click)="closeStatisticsModal()">关闭</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 模态框背景遮罩 -->
+		<div class="modal-backdrop" *ngIf="showModal" (click)="closeStatisticsModal()"></div>
+
+		<!-- 申请项目表格 -->
+		<div class="table-container">
+			<table class="table table-hover" id="tableData">
+				<thead>
+					<tr>
+						<th scope="col" style="width:80px">状态</th>
+						<th scope="col" style="width:120px">学生姓名</th>
+						<th scope="col" style="width:150px">大学</th>
+						<th scope="col" style="width:150px">学院</th>
+						<th scope="col" style="width:180px">专业</th>
+						<th scope="col" style="width:100px">面试要求</th>
+						<th scope="col" style="width:120px">Video Essay</th>
+						<th scope="col" style="width:100px">DDL 1</th>
+						<th scope="col" style="width:100px">DDL 2</th>
+						<th scope="col" style="width:100px">DDL 3</th>
+						<th scope="col">操作</th>
+					</tr>
+				</thead>
+				<tbody *ngIf="filteredApplications.length > 0">
+					<tr class="table-row" *ngFor="let app of filteredApplications">
+						<td>
+							<span class="status-badge" [ngClass]="getStatusClass(app.state)">
+								{{app.state}}
+							</span>
+						</td>
+						<td>{{getStudentName(app.userAccount)}}</td>
+						<td>{{app.univName}}</td>
+						<td>{{app.schoolName}}</td>
+						<td>{{app.majorName}}</td>
+						<td>
+							<span class="requirement-badge" [ngClass]="getInterviewClass(app.interview)">
+								<i class="fa fa-microphone"></i> {{app.interview || '无'}}
+							</span>
+						</td>
+						<td>
+							<span class="requirement-badge" [ngClass]="getVideoEssayClass(app.videoEssay)">
+								<i class="fa fa-video-camera"></i> {{app.videoEssay || '无'}}
+							</span>
+						</td>
+						<td>{{app.ddl1 || '-'}}</td>
+						<td>{{app.ddl2 || '-'}}</td>
+						<td>{{app.ddl3 || '-'}}</td>
+						<td>
+							<button class="btn btn-info btn-sm" (click)="hmschooldetail(app)">
+								<i class="fa fa-eye"></i> 详情
+							</button>
+							<button class="btn btn-danger btn-sm ml-1" onclick="return confirm('确定要删除这个申请吗?')" (click)="delete(app)">
+								<i class="fa fa-trash"></i> 删除
+							</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<!-- 无结果提示 -->
+		<div class="no-results" *ngIf="filteredApplications.length === 0 && getCurrentYearApplications().length > 0">
+			<div class="text-center py-5">
+				<i class="fa fa-search fa-3x text-muted mb-3"></i>
+				<h4 class="text-muted">没有找到匹配的申请项目</h4>
+				<p class="text-muted">请尝试调整筛选条件</p>
+				<button class="btn btn-outline-primary" (click)="clearFilters()">清除所有筛选</button>
+			</div>
+		</div>
+
+		<!-- 加载中提示 -->
+		<div class="loading" *ngIf="schools.length === 0">
+			<div class="text-center py-5">
+				<i class="fa fa-spinner fa-spin fa-3x text-muted"></i>
+				<p class="text-muted mt-3">正在加载申请数据...</p>
+			</div>
+		</div>
 	  </div>
 	</div>
 </div>
-
