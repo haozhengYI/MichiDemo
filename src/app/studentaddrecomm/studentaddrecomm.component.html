@@ -67,10 +67,14 @@
 						<input class="form-control" id="title"  name="title"  placeholder="请输入推荐人职称" style="width: 400px;" ngModel required></div></td>
 					</tr>
 					<tr>
-					  <td   ><b>学历 Educational Qualification</b></td>
+					  <td   ><b>学历 Educational Qualification</b><br>
+						<p style="color:red">如不知道此信息，可留白；教授建议查询下是否有PhD学位</p> 
+						</td>
 					  <td ><div class="input-group">		
 						<input class="form-control" id="education"  name="education"  placeholder="请输入推荐人学历" style="width: 400px;" ngModel></div></td>
-						<td  ><b>电话 Telephone</b></td>
+						<td  ><b>电话 Telephone</b><br>
+							<p style="color:red">教授电话可查询学校官网；如果没有可以填写其所在学院电话</p> 
+						</td>
 						<td><div class="input-group">		
 						  <input class="form-control" id="phone"  name="phone"   style="width: 400px;" ngModel></div></td>
 					</tr>
@@ -78,12 +82,17 @@
 						<td  ><b>所在单位 Organization</b></td>
 						<td><div class="input-group">		
 						  <input class="form-control" id="organization"  name="organization"  placeholder="如果是教授请填写学校名称" style="width: 400px;" ngModel required></div></td>
-						<td  ><b>在此单位工作时间年限 Duration</b></td>
+						<td  ><b>在此单位工作时间年限 Duration</b><br>
+							<p style="color:red">如不知道此信息，可留白</p> 
+						</td>
 						<td><div class="input-group">		
 						  <input class="form-control" id="duration"  name="duration"  placeholder="请输入数字即可" style="width: 400px;" ngModel></div></td>
 					</tr>
 					<tr>
-						<td  ><b>职务 Position</b></td>
+						<td  ><b>职务 Position</b><br>
+							<p style="color:red">如不知道此信息，可留白</p> 
+						</td>
+
 						<td><div class="input-group">		
 						  <input class="form-control" id="position"  name="position"   style="width: 400px;" ngModel></div></td>
 						<td  ><b>工作邮箱 Work Email</b></td>
@@ -91,14 +100,17 @@
 						  <input class="form-control" id="email"  name="email"  placeholder="请不要输入推荐人个人邮箱" style="width: 400px;" ngModel required></div></td>
 					</tr>
 					<tr>
-						<td   colspan="1" ><b>通信地址 Postal Address</b></td>
+						<td   colspan="1" ><b>通信地址 Postal Address</b><br>
+							<p style="color:red">必填，教授请填写其所在学院或学校地址；请包含邮编</p> 
+						</td>
 						<td colspan="3"><div class="input-group">		
 						  <input class="form-control" id="location"  name="location"  placeholder="请包含推荐人地址的 邮编" style="width: 800px;" ngModel required></div></td>
 					</tr>
 
 					<tr>
 						<td   colspan="1" ><b>推荐人与申请者关系
-							Relationship to the applicant</b>  </td>
+							Relationship to the applicant</b> <br>
+							<p style="color:red">Instructor 或 Supervisor</p>  </td>
 						<td colspan="3"><div class="input-group">		
 						<input class="form-control" id="relation"  name="relation"  placeholder="教授请填写 instructor，上司请填写supervisor，或填写其他" style="width: 800px;"   ngModel required></div></td>
 					</tr>
