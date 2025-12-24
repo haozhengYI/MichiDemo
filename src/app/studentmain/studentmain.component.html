@@ -314,6 +314,67 @@
 					</div>
 					<br>
 				</div>
+				<div class="panel panel-default" *ngIf="k.state=='不申请'">
+					<div class="panel-heading">
+					  <h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" 
+						  href="#{{k._id}}">
+						<b> {{k.univName}} </b>【 {{k.majorName}} 】 <br><small style="color: black;">{{k.state}}</small>
+						</a>
+					  </h4>
+					</div>
+					<div id="{{k._id}}" class="panel-collapse collapse">
+					  <div class="panel-body">
+						<table class="table table-bordered" >
+							<tbody>
+							  <tr>
+								<td style="background-color: gainsboro;">Deadline 1 </td>
+								<td style="background-color: gainsboro;">Deadline 2</td>
+								<td style="background-color: gainsboro;">Deadline 3</td>
+								<td style="background-color: gainsboro;">需要推荐人数量</td>	
+							  </tr>
+							  <tr>
+								<td >{{k.ddl1}} </td>
+								<td >{{k.ddl2}}</td>
+								<td >{{k.ddl3}}</td>	
+								<td >{{k.recommNumber}}</td>
+							  </tr>
+							  <tr>
+								<td style="background-color: gainsboro;">申请账号</td>
+								<td colspan="3">	
+									{{k.applyAccount}}
+								</td>
+							  </tr>
+							  <tr>
+								<td style="background-color: gainsboro;">申请密码</td>
+								<td colspan="3">	
+									{{k.applyPassword}}
+								</td>
+							  </tr>
+							  <tr>
+								<td style="background-color: gainsboro;">项目链接</td>
+								<td colspan="3">	
+									{{k.link}}
+									<a href="{{k.link}}">
+										<span class="glyphicon glyphicon-link"></span>
+									</a>
+								</td>
+							  </tr>
+							  <tr>
+								<td colspan="3">	
+									
+								</td>
+								<td >
+									<button href="/anew/todel/@a.id" (click)="schooldetail(k)">More</button>
+								</td>
+							  </tr>
+							  
+							</tbody>
+						</table>
+					  </div>
+					</div>
+					<br>
+				</div>
 				<div class="panel panel-warning" *ngIf="k.state=='已完成'">
 					<div class="panel-heading">
 					  <h4 class="panel-title">

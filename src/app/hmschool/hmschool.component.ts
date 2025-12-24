@@ -390,6 +390,77 @@ export class HmschoolComponent implements OnInit {
       window.location.reload();  
   }
 
+  updateStatebsq(){
+    const School = {
+      userAccount:this.studentID,//学生id
+        state: "不申请", //申请状态（四种：进行，完成，收到offer，收到拒信）
+        univName: this.univName,//大学名称
+        schoolName: this.schoolName,//学院名称
+        majorName: this.majorName,//专业名称
+        ddl1: this.ddl1,//DDL 1
+        ddl2: this.ddl2,//DDL 2
+        ddl3: this.ddl3,//DDL 3
+        interview: this.interview,//面试 （两种：有-参加时间，无，）
+        videoEssay: this.videoEssay, // videoEssay(三种：无，申请前完成，申请后完成)
+        link: this.link, //链接
+        applyAccount:this.applyAccount,//申请账号
+        applyPassword:this.applyPassword,//申请用密码
+        recommNumber:this.recommNumber,//推荐信数量
+        other:this.other,
+        level:this.level,
+        gre:this.gre,
+    }
+    this.http.put('http://localhost:3000/schools/' + this.schoolID, School)
+      .subscribe((data) => {
+        const options = {
+          overlay: true,
+          overlayClickToClose: true,
+          showCloseButton: true,
+          duration: 5000
+        };
+        if (data[0] === undefined) {
+          console.log("Undefine");
+        }
+      })
+      alert("更新项目状态成功!!");
+      window.location.reload();  
+  }
+
+  updateStateGoing(){
+    const School = {
+      userAccount:this.studentID,//学生id
+        state: "进行中", //申请状态（四种：进行，完成，收到offer，收到拒信）
+        univName: this.univName,//大学名称
+        schoolName: this.schoolName,//学院名称
+        majorName: this.majorName,//专业名称
+        ddl1: this.ddl1,//DDL 1
+        ddl2: this.ddl2,//DDL 2
+        ddl3: this.ddl3,//DDL 3
+        interview: this.interview,//面试 （两种：有-参加时间，无，）
+        videoEssay: this.videoEssay, // videoEssay(三种：无，申请前完成，申请后完成)
+        link: this.link, //链接
+        applyAccount:this.applyAccount,//申请账号
+        applyPassword:this.applyPassword,//申请用密码
+        recommNumber:this.recommNumber,//推荐信数量
+        other:this.other,
+        level:this.level,
+        gre:this.gre,
+    }
+    this.http.put('http://localhost:3000/schools/' + this.schoolID, School)
+      .subscribe((data) => {
+        const options = {
+          overlay: true,
+          overlayClickToClose: true,
+          showCloseButton: true,
+          duration: 5000
+        };
+        if (data[0] === undefined) {
+          console.log("Undefine");
+        }
+      })
+      alert("更新项目状态成功!!");
+      window.location.reload();  
+  }
 
   updateLetterNoSubmit(l){
     const Recomletter = {
