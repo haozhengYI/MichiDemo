@@ -46,6 +46,8 @@ import {ApplymasterComponent} from './applymaster/applymaster.component';
 import {ApplybachelorComponent} from './applybachelor/applybachelor.component';
 import {ApplyhighschoolComponent} from './applyhighschool/applyhighschool.component';
 
+import { CareerComponent } from './career/career.component';
+
 const routes: Routes = [
   { path: '', redirectTo: '/mainpage', pathMatch: 'full' },
   {path: 'mainpage', component:MainpageComponent},
@@ -94,6 +96,8 @@ const routes: Routes = [
   { path: 'studentschool', component:StudentschoolComponent},
   {path: 'studentinterview', component: StudentinterviewComponent},
   {path: 'studentaddinte', component: StudentaddinteComponent},
+
+  {path: 'career', component: CareerComponent},
 ];
 
 @NgModule({

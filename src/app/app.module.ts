@@ -63,6 +63,8 @@ import {ApplymasterComponent} from './applymaster/applymaster.component';
 import {ApplybachelorComponent} from './applybachelor/applybachelor.component';
 import {ApplyhighschoolComponent} from './applyhighschool/applyhighschool.component';
 
+import { CareerComponent } from './career/career.component';
+
 // FullCalendarModule.registerPlugins([ // register FullCalendar plugins
 //   dayGridPlugin,
 
@@ -123,8 +125,9 @@ import {ApplyhighschoolComponent} from './applyhighschool/applyhighschool.compon
     StudentrecComponent,
     StudentschoolComponent,
     StudentinterviewComponent,
-    StudentaddinteComponent
+    StudentaddinteComponent,
 
+    CareerComponent
   ],
   imports: [
     BrowserModule,
