@@ -8,7 +8,7 @@
     <li><a href="javascript:void(0)" (click)="scrollToSection('pricing')">服务套餐</a></li>
     <li><a href="javascript:void(0)" (click)="scrollToSection('guarantee')">成果保障</a></li>
     <li><a href="javascript:void(0)" (click)="scrollToSection('faq')">常见问题</a></li>
-    <li><a href="javascript:void(0)" class="nav-cta" (click)="scrollToSection('cta-final')">免费诊断咨询</a></li>
+    <li><a href="mailto:careercoach@michiacademy.com" class="nav-cta" >免费诊断咨询</a></li>
   </ul>
 </nav>
 
@@ -21,11 +21,11 @@
     <h1 class="hero-h1 display">Job Search<br><em>Accelerated.</em></h1>
     <div class="hero-h1-zh display">从校园到职场，全程加速陪跑</div>
     <p class="hero-desc">
-      专为北美科技岗求职者设计的<strong>深度一对一辅导项目</strong>。<br>
+      专为北美求职者设计的<strong>深度一对一辅导项目</strong>。<br>
       从简历重塑到 Offer 谈判，全程中文，精准击穿每一个求职卡点。
     </p>
     <div class="hero-actions">
-      <a href="javascript:void(0)" class="btn-primary" (click)="scrollToSection('program')">预约免费30分钟诊断 →</a>
+      <a href="mailto:careercoach@michiacademy.com" class="btn-primary" >预约免费30分钟诊断 →</a>
       <a href="javascript:void(0)" class="btn-secondary" (click)="scrollToSection('program')">查看课程体系</a>
     </div>
   </div>
@@ -224,7 +224,7 @@
         <div class="pricing-name display">求职核心<br>全准备包</div>
         <div class="pricing-desc">覆盖阶段一至三，完成从定位到面试备战的核心底层建设。最受欢迎的方案。</div>
         <div class="pricing-price display"><sub>$</sub>4,500<span style="font-size:20px; color:var(--muted);">起</span></div>
-        <div class="pricing-unit">阶段一至三 · 14–20 小时</div>
+        <div class="pricing-unit">阶段一至三 · 10–15 小时</div>
         <div class="pricing-divider"></div>
         <ul class="pricing-features">
           <li>职业定位诊断包全部内容</li>
@@ -257,7 +257,7 @@
 
     </div>
     <p style="font-family:var(--font-mono); font-size:10px; color:var(--muted); letter-spacing:1px; margin-top:20px; text-align:center;">
-      阶段四、五亦可单独按 $300/小时 计费 · 内推服务可选附加 $500–800/次
+      阶段四、五亦可单独按 $300/小时 计费 
     </p>
   </div>
 </section>
@@ -270,7 +270,7 @@
     <div class="guarantee-content reveal">
       <div class="guarantee-icon">🛡️</div>
       <h3 class="display">180天无面试<br>部分退款</h3>
-      <p>若在完成全部课程作业、保持<strong>按时投递</strong>的前提下，180天内未收到任何面试邀约，我们退还<strong>30%</strong>服务费。我们对结果有信心，所以设了这个保障。</p>
+      <p>若在完成全部课程作业、保持<strong>按时投递</strong>的前提下，180天内未收到任何面试邀约，我们退还<strong>60%</strong>服务费。我们对结果有信心，所以设了这个保障。</p>
     </div>
   </div>
 </section>
@@ -336,7 +336,7 @@
         可以保证拿到 Offer 吗？
         <span class="faq-icon">+</span>
       </button>
-      <div class="faq-a">我们不承诺保 Offer——因为最终的面试表现、HC 情况、市场行情都有变数，任何人做这个承诺都是不诚实的。<strong>我们承诺的是帮你进入面试阶段</strong>，并为此设立了面试才收尾款的保障机制。如果你完成了所有环节仍无面试，退款30%服务费。</div>
+      <div class="faq-a">我们不承诺保 Offer——因为最终的面试表现、HC 情况、市场行情都有变数，任何人做这个承诺都是不诚实的。<strong>我们承诺的是帮你进入面试阶段</strong>，并为此设立了面试才收尾款的保障机制。如果你完成了所有环节仍无面试，退款60%服务费。</div>
     </div>
     <div class="faq-item">
       <button class="faq-q" (click)="toggleFaq($event)">
@@ -345,13 +345,7 @@
       </button>
       <div class="faq-a">核心全准备包（阶段一至三）通常在<strong>3–6 周</strong>内完成，节奏由你和导师协商决定。如果有紧迫的时间线（比如 Recruiting Season），可以压缩节奏。VIP 全程陪跑包含面试阶段，周期会随你的求职进度延伸，通常 2–4 个月。</div>
     </div>
-    <div class="faq-item">
-      <button class="faq-q" (click)="toggleFaq($event)">
-        有内推资源吗？
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-a">有。内推作为<strong>可选附加服务</strong>，可单独购买（$500–800/次，或打包3次）。我们会根据你的目标公司和背景匹配合适的内推人，但需要说明：<strong>内推仅代表帮你递进简历</strong>，不等同于保证面试或 Offer，最终决定权在招聘团队。我们相信在做好简历和故事的前提下，内推价值才能最大化。</div>
-    </div>
+
     <div class="faq-item">
       <button class="faq-q" (click)="toggleFaq($event)">
         如何开始？
@@ -369,7 +363,7 @@
     <h2 class="section-title display reveal">下一个拿到<br><em>Offer</em> 的，是你。</h2>
     <p class="section-sub reveal">每月限额接收 5 位学员，确保每一位都得到足够深度的陪跑。<br>现在预约免费诊断咨询，锁定你的名额。</p>
     <div class="cta-actions reveal">
-      <a href="mailto:info@michiacademy.com" class="btn-primary">预约免费30分钟诊断 →</a>
+      <a href="mailto:careercoach@michiacademy.com" class="btn-primary">预约免费30分钟诊断 →</a>
     </div>
     <p class="cta-note reveal">完全免费 · 不承诺购买 · 24小时内回复</p>
   </div>
