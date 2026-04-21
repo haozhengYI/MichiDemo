@@ -1,5 +1,15 @@
-/* 求职加速页专用字体 */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:ital@0;1&family=Sora:wght@300;400;500;600&display=swap');
+/* 求职加速页专用字体（Fontsource 打包进应用，避免依赖 fonts.googleapis.com） */
+@import '~@fontsource/cormorant-garamond/latin-300.css';
+@import '~@fontsource/cormorant-garamond/latin-300-italic.css';
+@import '~@fontsource/cormorant-garamond/latin-400.css';
+@import '~@fontsource/cormorant-garamond/latin-400-italic.css';
+@import '~@fontsource/cormorant-garamond/latin-600.css';
+@import '~@fontsource/dm-mono/latin-400.css';
+@import '~@fontsource/dm-mono/latin-400-italic.css';
+@import '~@fontsource/sora/latin-300.css';
+@import '~@fontsource/sora/latin-400.css';
+@import '~@fontsource/sora/latin-500.css';
+@import '~@fontsource/sora/latin-600.css';
 
 /* 样式限定在 app-career 内，不影响其他页面 */
 :host {

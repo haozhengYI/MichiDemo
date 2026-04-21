@@ -51,7 +51,8 @@
                   <li><a (click)="abroad()" >留学申请</a></li>
                   <li><a (click)="blog()">Blog</a></li>
                   <li>
-                    <a data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                    <a href="#" role="button" (click)="toggleStudentLogin($event)"
+                        aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
                         学生登录
                     </a>
                   </li>
@@ -332,15 +333,5 @@
     </div>
   </div>
   
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="../../vendor/jquery/jquery.min.js"></script>
-    <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="../../js/sb-admin-2.min.js"></script>
 
 </body>

@@ -12,6 +12,7 @@ import { userInfo } from 'os';
 import { ActivatedRoute,  NavigationExtras, Router } from '@angular/router';
 import {HmService} from './../hm.service';
 import {Student} from '../../app/st.model';
+import { toggleStudentLoginPanel } from '../student-login-toggle';
 
 @Component({
   selector: 'app-applybachelor',
@@ -19,6 +20,8 @@ import {Student} from '../../app/st.model';
   styleUrls: ['./applybachelor.component.scss']
 })
 export class ApplybachelorComponent implements OnInit {
+  toggleStudentLogin = toggleStudentLoginPanel;
+
   /** Page copy language (floating toggle). Nav stays Chinese. Default English. */
   pageLang: PageLang = 'en';
 

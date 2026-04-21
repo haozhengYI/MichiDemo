@@ -10,6 +10,7 @@ import { userInfo } from 'os';
 import { ActivatedRoute,  NavigationExtras, Router } from '@angular/router';
 import {HmService} from '../hm.service';
 import {Student} from '../st.model';
+import { toggleStudentLoginPanel } from '../student-login-toggle';
 
 @Component({
   selector: 'app-mainclass',
@@ -17,7 +18,9 @@ import {Student} from '../st.model';
   styleUrls: ['./mainclass.component.scss']
 })
 export class MainclassComponent implements OnInit, AfterViewInit {
-  
+  /** Student login strip — explicit Bootstrap collapse (see student-login-toggle.ts). */
+  toggleStudentLogin = toggleStudentLoginPanel;
+
   user: user[] = [];
   students: Student[] = [];
   studentID : any;

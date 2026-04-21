@@ -24,7 +24,17 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "jquery.min.js",
+                "input": "node_modules/jquery/dist",
+                "output": "/assets/jquery"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/vendor/fontawesome-free",
+                "output": "/assets/fontawesome-free"
+              }
             ],
             "styles": [
               "src/styles.scss"
@@ -89,7 +99,17 @@
             "scripts": [],
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "jquery.min.js",
+                "input": "node_modules/jquery/dist",
+                "output": "/assets/jquery"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/vendor/fontawesome-free",
+                "output": "/assets/fontawesome-free"
+              }
             ]
           }
         },

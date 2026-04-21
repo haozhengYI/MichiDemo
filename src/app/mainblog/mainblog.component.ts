@@ -11,6 +11,7 @@ import { ActivatedRoute,  NavigationExtras, Router } from '@angular/router';
 import {HmService} from '../hm.service';
 import {Student} from '../st.model';
 import { Blog} from '../blog.model';
+import { toggleStudentLoginPanel } from '../student-login-toggle';
 
 @Component({
   selector: 'app-mainblog',
@@ -18,7 +19,8 @@ import { Blog} from '../blog.model';
   styleUrls: ['./mainblog.component.scss']
 })
 export class MainblogComponent implements OnInit {
-  
+  toggleStudentLogin = toggleStudentLoginPanel;
+
   user: user[] = [];
   students: Student[] = [];
   blogs: Blog[] = [];

@@ -11,4 +11,33 @@ app-root {
   display: block;
 }
 
+/*
+ * Student login strip (#navbarHeader): smooth height animation.
+ * Vanilla toggle only adds/removes .in; BS3’s default .collapse{display:none} would jump.
+ * We keep display:block and animate max-height instead (same pattern as .collapsing).
+ */
+#navbarHeader.collapse {
+  display: block !important;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+/* Upper bound for animation; a bit above typical login block height keeps motion snappy */
+#navbarHeader.collapse.in {
+  max-height: 24rem;
+}
+
+@media (max-width: 576px) {
+  #navbarHeader.collapse.in {
+    max-height: 90vh;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #navbarHeader.collapse {
+    transition: max-height 0.15s ease;
+  }
+}
+
 @import "../node_modules/angular-calendar/css/angular-calendar.css";

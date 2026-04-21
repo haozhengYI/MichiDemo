@@ -10,6 +10,7 @@ import { userInfo } from 'os';
 import { ActivatedRoute,  NavigationExtras, Router } from '@angular/router';
 import {HmService} from './../hm.service';
 import {Student} from '../../app/st.model';
+import { toggleStudentLoginPanel } from '../student-login-toggle';
 
 @Component({
   selector: 'app-studyabroad',
@@ -17,7 +18,8 @@ import {Student} from '../../app/st.model';
   styleUrls: ['./studyabroad.component.scss']
 })
 export class StudyabroadComponent implements OnInit {
-  
+  toggleStudentLogin = toggleStudentLoginPanel;
+
   user: user[] = [];
   students: Student[] = [];
   studentID : any;
