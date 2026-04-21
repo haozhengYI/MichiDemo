@@ -46,10 +46,10 @@
               </div>
               <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                  <li><a (click)="main()">关于我们</a></li>
-                  <li><a (click)="class()" >王牌课程</a></li>
-                  <li><a (click)="abroad()" >留学申请</a></li>
-                  <li><a (click)="blog()">Blog</a></li>
+                  <li><a (click)="main()">首页</a></li>
+                  <li><a (click)="class()" >本科申请</a></li>
+                  <li><a (click)="abroad()" >硕士申请</a></li>
+                  <li><a (click)="blog()">求职辅导</a></li>
                   <li>
                     <a data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
                         学生登录
@@ -62,296 +62,207 @@
     
         </nav>
 
-
-    <!-- Container (滚动 Section) -->
-      <div class="container" style="width: 100%;">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-          <!-- Indicators -->
-          <ol class="carousel-indicators" >
-            <li data-target="#myCarousel" data-slide-to="0" class="active" ></li>
-            <li data-target="#myCarousel" data-slide-to="1" ></li>
-            <li data-target="#myCarousel" data-slide-to="2" ></li>
-          </ol>
-      
-          <!-- Wrapper for slides -->
-          <div class="carousel-inner">
-      
-            <div class="item active">
-              <img src="https://i.ibb.co/nR2KzLc/B1.png" alt="Los Angeles" style="width:100%;">
-              <div class="carousel-caption">
-                
-              </div>
-            </div>
-      
-            <div class="item">
-              <img src="https://i.ibb.co/54hNVJ3/B2.png" alt="Chicago" style="width:100%;">
-              <div class="carousel-caption">
-               
-              </div>
-            </div>
-          
-            <div class="item">
-              <img src="https://i.ibb.co/1TJQbXs/B3.png" alt="New York" style="width:100%;">
-              <div class="carousel-caption">
-                
-              </div>
-            </div>
-        
-          </div>
-      
-          <!-- Left and right controls -->
-          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" style="color: white;"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" style="color: white;"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-      </div>
-
-    <!-- Container (Blog Section) -->
-    <div class="container-fluid" >
-        <div class="section-title">
-            <br>
-            <h2>为什么选择我们？</h2>         
-            <br>
-            <h4>
-            </h4>
-          </div>
-        <div class="row ">
-            <div class="col-md-12">
-                <div class="caption">  
-                    <h4>
-                        Michi Academy近5年的教育积累，学生好评率99%以上，因拥有自己的教学特色。
-                    </h4>
-                    <p>
-                    </p>
-                </div>
-            </div>
-        </div>
+  <!-- Div 1: Hero (US campus background, Michi Academy copy) -->
+  <section class="mc-hero" aria-label="Michi Academy highlight">
+    <div class="mc-hero__overlay"></div>
+    <div class="mc-hero__text">
+      <div class="mc-hero__line" aria-hidden="true"></div>
+      <blockquote class="mc-hero__quote">
+        <h1 class="mc-hero__title">
+          <span class="mc-hero__qm">“</span>They don’t call Michi Academy ‘The Harvard Whisperer’ for nothin’.<span class="mc-hero__qe">”</span>
+        </h1>
+        <cite class="mc-hero__cite"><span class="mc-hero__dash">—</span>100% of Michi's 2025-2026 applicants earned admission.</cite>
+      </blockquote>
     </div>
+  </section>
 
-    <!-- Container (近期课程 Section) -->
-  <div id="courses" class="container-fluid">
-    <div class="section-title">
-        <br>
-        <h2>教学特色</h2>         
-        <br>
-        <h4>
-        </h4>
-      </div>
-      <div class="container">
-        <div class="row clearfix">
-            <div class="col-md-12 column">
-                <div class="row clearfix">
-                    <div class="col-md-3 column">
-                        <img  src="https://i.ibb.co/vxmNnfH/Wechat-IMG3.jpg"  class="img-thumbnail" style="width: 100%;" />
-                    </div>
-                    <div class="col-md-3 column">
-                        <img src="https://i.ibb.co/fDc2HCH/Wechat-IMG7.jpg"  class="img-thumbnail" style="width: 100%;"/>
-                    </div>
-                    <div class="col-md-3 column">
-                        <img  src="https://i.ibb.co/GQTdV6T/Wechat-IMG5.png"   class="img-thumbnail" style="width: 100%;" />
-                    </div>
-                    <div class="col-md-3 column">
-                        <img src="https://i.ibb.co/kgYRF9d/Wechat-IMG4.jpg"  class="img-thumbnail" style="width: 100%;" />
-                    </div>
-                </div>
-            </div>
+  <!-- Div 2: Track record intro (Michi Academy) -->
+  <section class="mc-track-intro">
+    <div class="container mc-track-inner">
+      <div class="mc-block-header">
+        <h2 class="mc-block-title">MICHI ACADEMY’S COLLEGE ADMISSIONS TRACK RECORD</h2>
+        <div class="mc-block-intro">
+          <p>The percentage of Michi Academy’s package clients over the last 10 years who earned admission to the following schools.</p>
+          <p class="mc-start-animation">At most of these schools, we typically have <span class="mc-underline-small">1-4 applicants annually</span>.</p>
         </div>
+      </div>
     </div>
-  </div>
-  
-    <!-- Container (近期课程 Section) -->
-    <div id="courses" class="container-fluid">
-        <div class="section-title">
-            <br>
-            <h2>近期课程</h2>         
-            <br>
-            <h4>
-            </h4>
-          </div>
-          <div class="container">
-            <div class="row clearfix">
-                <div class="col-md-12 column">
-                    <div class="row clearfix">
-                        <div class="col-md-3 column">
-                            <img  src="https://i.ibb.co/5Ffgs71/3.png" class="img-thumbnail"  style="width: 100%;" />
-                        </div>
-                        <div class="col-md-3 column">
-                            <img  src="https://i.ibb.co/6BT42yG/1.png" class="img-thumbnail"  style="width: 100%;"/>
-                        </div>
-                        <div class="col-md-3 column">
-                            <img  src="https://i.ibb.co/9NZ9ZSn/4.jpg" class="img-thumbnail"  style="width: 100%;"/>
-                        </div>
-                        <div class="col-md-3 column">
-                            <img src="https://i.ibb.co/5Ffgs71/3.png" class="img-thumbnail"  style="width: 100%;"/>
-                        </div>
-                    </div>
-                </div>
+  </section>
+
+  <!-- Div 3: Admission stats (structure from Copy.html) + count-up animation -->
+  <section class="mc-stats-block" #statsSection aria-label="Admission statistics">
+    <div class="container-fluid mc-stats-fluid">
+      <div class="large-stats stats">
+        <div class="large-stat">
+          <div class="stat" role="img" aria-label="91% Harvard University">
+            <div class="stat_label" aria-hidden="true">Harvard University</div>
+            <div class="stat_number" aria-hidden="true">
+              <span class="stat_number-numeral" data-numeral="91">0</span><span class="stat_pct">%</span>
             </div>
+          </div>
+        </div>
+        <div class="large-stat">
+          <div class="stat" role="img" aria-label="78% Yale University">
+            <div class="stat_label" aria-hidden="true">Yale University</div>
+            <div class="stat_number" aria-hidden="true">
+              <span class="stat_number-numeral" data-numeral="93">0</span><span class="stat_pct">%</span>
+            </div>
+          </div>
+        </div>
+        <div class="large-stat">
+          <div class="stat" role="img" aria-label="69% Princeton University">
+            <div class="stat_label" aria-hidden="true">Princeton University</div>
+            <div class="stat_number" aria-hidden="true">
+              <span class="stat_number-numeral" data-numeral="69">0</span><span class="stat_pct">%</span>
+            </div>
+          </div>
+        </div>
+        <div class="large-stat">
+          <div class="stat" role="img" aria-label="80% Columbia University">
+            <div class="stat_label" aria-hidden="true">Columbia University</div>
+            <div class="stat_number" aria-hidden="true">
+              <span class="stat_number-numeral" data-numeral="98">0</span><span class="stat_pct">%</span>
+            </div>
+          </div>
+        </div>
+        <div class="large-stat">
+          <div class="stat" role="img" aria-label="90% Dartmouth College">
+            <div class="stat_label" aria-hidden="true">Dartmouth College</div>
+            <div class="stat_number" aria-hidden="true">
+              <span class="stat_number-numeral" data-numeral="90">0</span><span class="stat_pct">%</span>
+            </div>
+          </div>
+        </div>
+        <div class="large-stat">
+          <div class="stat" role="img" aria-label="78% Brown University">
+            <div class="stat_label" aria-hidden="true">Brown University</div>
+            <div class="stat_number" aria-hidden="true">
+              <span class="stat_number-numeral" data-numeral="88">0</span><span class="stat_pct">%</span>
+            </div>
+          </div>
+        </div>
+        <div class="large-stat">
+          <div class="stat" role="img" aria-label="89% University of Pennsylvania">
+            <div class="stat_label" aria-hidden="true">University of Pennsylvania</div>
+            <div class="stat_number" aria-hidden="true">
+              <span class="stat_number-numeral" data-numeral="89">0</span><span class="stat_pct">%</span>
+            </div>
+          </div>
+        </div>
+        <div class="large-stat">
+          <div class="stat" role="img" aria-label="66% Cornell University">
+            <div class="stat_label" aria-hidden="true">Cornell University</div>
+            <div class="stat_number" aria-hidden="true">
+              <span class="stat_number-numeral" data-numeral="98">0</span><span class="stat_pct">%</span>
+            </div>
+          </div>
         </div>
       </div>
 
-
-
-  <!-- Container (学生案例) Section) -->
-  <div id="case" class="container">
-    <div class="section-title">
-        <br>
-        <h2>学生案例</h2>         
-        <br>
-        <h4>
-        </h4>
+      <div class="small-stats stats two-columns">
+        <div class="small-stat">
+          <div class="stat" role="img" aria-label="87% Stanford University">
+            <div class="stat_label" aria-hidden="true">Stanford University</div>
+            <div class="stat_number" aria-hidden="true">
+              <span class="stat_number-numeral" data-numeral="87">0</span><span class="stat_pct">%</span>
+            </div>
+          </div>
+        </div>
+        <div class="small-stat">
+          <div class="stat" role="img" aria-label="80% Duke University">
+            <div class="stat_label" aria-hidden="true">Duke University</div>
+            <div class="stat_number" aria-hidden="true">
+              <span class="stat_number-numeral" data-numeral="93">0</span><span class="stat_pct">%</span>
+            </div>
+          </div>
+        </div>
+        <div class="small-stat">
+          <div class="stat" role="img" aria-label="89% University of Chicago">
+            <div class="stat_label" aria-hidden="true">University of Chicago</div>
+            <div class="stat_number" aria-hidden="true">
+              <span class="stat_number-numeral" data-numeral="89">0</span><span class="stat_pct">%</span>
+            </div>
+          </div>
+        </div>
+        <div class="small-stat">
+          <div class="stat" role="img" aria-label="76% Massachusetts Institute of Technology">
+            <div class="stat_label" aria-hidden="true">Massachusetts Institute of Technology</div>
+            <div class="stat_number" aria-hidden="true">
+              <span class="stat_number-numeral" data-numeral="76">0</span><span class="stat_pct">%</span>
+            </div>
+          </div>
+        </div>
+        <div class="small-stat">
+          <div class="stat" role="img" aria-label="64% California Institute of Technology">
+            <div class="stat_label" aria-hidden="true">California Institute of Technology</div>
+            <div class="stat_number" aria-hidden="true">
+              <span class="stat_number-numeral" data-numeral="64">0</span><span class="stat_pct">%</span>
+            </div>
+          </div>
+        </div>
+        <div class="small-stat">
+          <div class="stat" role="img" aria-label="80% Northwestern University">
+            <div class="stat_label" aria-hidden="true">Northwestern University</div>
+            <div class="stat_number" aria-hidden="true">
+              <span class="stat_number-numeral" data-numeral="80">0</span><span class="stat_pct">%</span>
+            </div>
+          </div>
+        </div>
+        <div class="small-stat">
+          <div class="stat" role="img" aria-label="82% Johns Hopkins University">
+            <div class="stat_label" aria-hidden="true">Johns Hopkins University</div>
+            <div class="stat_number" aria-hidden="true">
+              <span class="stat_number-numeral" data-numeral="100">0</span><span class="stat_pct">%</span>
+            </div>
+          </div>
+        </div>
+        <div class="small-stat">
+          <div class="stat" role="img" aria-label="77% Vanderbilt University">
+            <div class="stat_label" aria-hidden="true">Vanderbilt University</div>
+            <div class="stat_number" aria-hidden="true">
+              <span class="stat_number-numeral" data-numeral="77">0</span><span class="stat_pct">%</span>
+            </div>
+          </div>
+        </div>
+        <div class="small-stat">
+          <div class="stat" role="img" aria-label="79% Washington University in St. Louis">
+            <div class="stat_label" aria-hidden="true">Washington University in St. Louis</div>
+            <div class="stat_number" aria-hidden="true">
+              <span class="stat_number-numeral" data-numeral="79">0</span><span class="stat_pct">%</span>
+            </div>
+          </div>
+        </div>
+        <div class="small-stat">
+          <div class="stat" role="img" aria-label="92% Georgetown University">
+            <div class="stat_label" aria-hidden="true">Georgetown University</div>
+            <div class="stat_number" aria-hidden="true">
+              <span class="stat_number-numeral" data-numeral="92">0</span><span class="stat_pct">%</span>
+            </div>
+          </div>
+        </div>
+        <div class="small-stat">
+          <div class="stat" role="img" aria-label="90% Carnegie Mellon University">
+            <div class="stat_label" aria-hidden="true">Carnegie Mellon University</div>
+            <div class="stat_number" aria-hidden="true">
+              <span class="stat_number-numeral" data-numeral="90">0</span><span class="stat_pct">%</span>
+            </div>
+          </div>
+        </div>
+        <div class="small-stat">
+          <div class="stat" role="img" aria-label="89% Emory University">
+            <div class="stat_label" aria-hidden="true">Emory University</div>
+            <div class="stat_number" aria-hidden="true">
+              <span class="stat_number-numeral" data-numeral="89">0</span><span class="stat_pct">%</span>
+            </div>
+          </div>
+        </div>
       </div>
-	<div class="row clearfix">
-		<div class="col-md-12 column">
-			<div class="row">
-				<div class="col-md-4">
-					<div class="thumbnail">
-						<img alt="300x200" src="http://www.yxprep.com/assets/img/boy.png" style="width: 25%;"/>
-						<div >
-							<h3 class="caption">
-								吴*宇
-							</h3>
-							<p>
-								【就读院校】：伊利诺伊香槟大学
-							</p>
-							<p>
-								【入学成绩】：GRE：170+145
-							</p>
-                            <p>
-								【报名课程】：20小时GRE155冲刺营
-							</p>
-							<p>
-								【毕业成绩】：170+155
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="thumbnail">
-						<img alt="300x200" src="http://www.yxprep.com/assets/img/girl.png" style="width: 25%;"/>
-						<div >
-							<h3 class="caption">
-								陈*彰
-							</h3>
-							<p>
-								【就读院校】：伊利诺伊香槟大学
-							</p>
-							<p>
-								【入学成绩】：GRE：169+146
-							</p>
-                            <p>
-								【报名课程】：20小时GRE线上定制  
-							</p>
-							<p>
-								【毕业成绩】：170+158
-							</p>
-						</div>
-					</div>
-				</div>
-                <div class="col-md-4">
-					<div class="thumbnail">
-						<img alt="300x200" src="http://www.yxprep.com/assets/img/boy.png" style="width: 25%;"/>
-						<div >
-							<h3 class="caption">
-								李*麟
-							</h3>
-							<p>
-								【就读院校】：亚利桑那州立大学
-							</p>
-							<p>
-								【入学成绩】：GMAT：550
-							</p>
-                            <p>
-								【报名课程】：20小时GMAT线上定制
-							</p>
-							<p>
-								【毕业成绩】：640
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-    <div class="row clearfix">
-		<div class="col-md-12 column">
-			<div class="row">
-				<div class="col-md-4">
-					<div class="thumbnail">
-						<img alt="300x200" src="http://www.yxprep.com/assets/img/boy.png" style="width: 25%;"/>
-						<div >
-							<h3 class="caption">
-								赵*然
-							</h3>
-							<p>
-								【就读院校】：纽约大学SPS学院
-							</p>
-							<p>
-								【入学成绩】：GRE：169+148
-							</p>
-                            <p>
-								【报名课程】：16小时GRE线上定制  
-							</p>
-							<p>
-								【毕业成绩】：169+155
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="thumbnail">
-						<img alt="300x200" src="http://www.yxprep.com/assets/img/boy.png" style="width: 25%;"/>
-						<div >
-							<h3 class="caption">
-								王*旭
-							</h3>
-							<p>
-								【就读院校】：吉林大学
-							</p>
-							<p>
-								【入学成绩】：GRE：165+130
-							</p>
-                            <p>
-								【报名课程】：20小时GRE线上定制  
-							</p>
-							<p>
-								【毕业成绩】：168+152
-							</p>
-						</div>
-					</div>
-				</div>
-                <div class="col-md-4">
-					<div class="thumbnail">
-						<img alt="300x200" src="http://www.yxprep.com/assets/img/boy.png" style="width: 25%;"/>
-						<div >
-							<h3 class="caption">
-								赵*喆
-							</h3>
-							<p>
-								【就读院校】：东北大学
-							</p>
-							<p>
-								【入学成绩】：SAT：1170
-							</p>
-                            <p>
-								【报名课程】：40小时SAT线上定制  
-							</p>
-							<p>
-								【【毕业成绩】：1440
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-  </div>
 
+      <div class="disclaimer">
+        <p>During this span, 4 students were excluded from this tally for not heeding our advice on their Early choice and/or making unapproved application changes.</p>
+      </div>
+    </div>
+  </section>
 
   <!-- Container (Footer Section) -->
 <div id="footer" class="panel-footer">
@@ -370,21 +281,21 @@
                                 </div>
                             </div>
                         </div>
-                        <p><span class="glyphicon glyphicon-phone"></span>客服微信号: YuxinPREP</p>
-                        <p><span class="glyphicon glyphicon-envelope"></span>邮件: YuxinPREP@gmail.com</p>
+                        
+                        <p><span class="glyphicon glyphicon-envelope"></span>邮件: info@michiacademy.com</p>
                     </div>
                     <div class="col-md-4 column">
-                        <p>客服微信二维码</p>
-                        <div class="container">
-                            <img src="http://www.yxprep.com/assets/img/qr1.jpg" alt="Wechat-IMG5" border="0" style="width: 12%;">
-                        </div>
-                    </div>
-                    <div class="col-md-4 column">
-                        <p>公众号二维码</p>
-                        <div class="container">
-                            <img src="http://www.yxprep.com/assets/img/qr2.jpg" alt="Wechat-IMG5" border="0" style="width: 12%;">
-                        </div>
-                    </div>
+                      <p>客服微信二维码</p>
+                      <div class="container">
+                          <img src="../../assets/QR.jpeg" alt="Wechat-IMG5" border="0" style="width: 12%;">
+                      </div>
+                  </div>
+                  <div class="col-md-4 column">
+                      <p>公众号二维码</p>
+                      <div class="container">
+                          <img src="../../assets/QR.jpeg" alt="Wechat-IMG5" border="0" style="width: 12%;">
+                      </div>
+                  </div>
                 </div>
             </div>
         </div>

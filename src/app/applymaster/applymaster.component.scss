@@ -1,3 +1,445 @@
+/* Graduate masters page: hero between nav and FAQ */
+.am-graduate-hero {
+  background: #f7f8f3;
+  color: #012b23;
+  text-align: center;
+  padding: 6.25rem 1.5rem 4.5rem;
+}
+
+.am-graduate-hero__eyebrow {
+  margin: 0 0 2.75rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #012b23;
+}
+
+@media (min-width: 768px) {
+  .am-graduate-hero__eyebrow {
+    font-size: 1.2rem;
+  }
+}
+
+.am-graduate-hero__title {
+  margin: 0 auto 2.75rem;
+  max-width: 22em;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.35rem, 7.2vw, 4.75rem);
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #012b23;
+}
+
+.am-graduate-hero__title-line {
+  display: block;
+}
+
+.am-graduate-hero__lead {
+  margin: 0 auto 2.85rem;
+  max-width: 46rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(1.35rem, 2.65vw, 1.75rem);
+  font-weight: 400;
+  line-height: 1.65;
+  color: #012b23;
+}
+
+.am-graduate-hero__underline {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.am-graduate-hero__rule {
+  width: 1px;
+  height: 80px;
+  margin: 0 auto;
+  background: #012b23;
+}
+
+/* Graduate service steps accordion (before FAQ) */
+.am-grad-services {
+  background: #f4f5f0;
+  color: #002b1f;
+  padding: 4.5rem 0 5rem;
+}
+
+.am-grad-services__inner {
+  max-width: 1120px;
+}
+
+.am-grad-services__heading {
+  margin: 0 auto 1.5rem;
+  max-width: 56rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: clamp(1.65rem, 3.8vw, 2.55rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+  text-align: center;
+  text-transform: uppercase;
+  color: #002b1f;
+}
+
+.am-grad-services__intro {
+  margin: 0 auto 2.25rem;
+  max-width: 46rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(1.2rem, 2.35vw, 1.45rem);
+  line-height: 1.6;
+  text-align: center;
+  color: #002b1f;
+}
+
+.am-grad-services__toolbar {
+  text-align: right;
+  margin-bottom: 0.5rem;
+}
+
+.am-grad-services__expand-all {
+  display: inline;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-decoration: underline;
+  text-transform: uppercase;
+  color: #002b1f;
+  cursor: pointer;
+}
+
+.am-grad-services__expand-all:hover,
+.am-grad-services__expand-all:focus {
+  color: #ff5a26;
+  outline: none;
+}
+
+.am-grad-services__list {
+  border-top: 1px solid rgba(0, 43, 31, 0.25);
+}
+
+.am-grad-service-row {
+  border-bottom: 1px solid rgba(0, 43, 31, 0.25);
+}
+
+.am-grad-service-row--open {
+  border-bottom: none;
+}
+
+.am-grad-service-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1.5rem 0 1.35rem;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  color: #002b1f;
+}
+
+.am-grad-service-trigger:focus {
+  outline: 2px solid #ff5a26;
+  outline-offset: 2px;
+}
+
+.am-grad-service-trigger__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding-right: 1rem;
+}
+
+.am-grad-service-trigger__label {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #002b1f;
+}
+
+.am-grad-service-trigger__title {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: clamp(1.35rem, 2.85vw, 1.85rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #002b1f;
+}
+
+.am-grad-service-trigger__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #ff5a26;
+  color: #fff;
+}
+
+/* Expanded panel: two columns + top bar + collapse control */
+.am-grad-service-panel {
+  margin: 0;
+}
+
+.am-grad-service-panel__shell {
+  position: relative;
+  background: #f4f5f0;
+  border-top: 3px solid #002b1f;
+  border-bottom: 1px solid rgba(0, 43, 31, 0.25);
+  padding: 3.25rem 4rem 3rem 2.75rem;
+  color: #002b1f;
+}
+
+.am-grad-service-panel__close {
+  position: absolute;
+  top: 1.35rem;
+  right: 1.35rem;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #ff5a26;
+  color: #fff;
+  cursor: pointer;
+}
+
+.am-grad-service-panel__close:focus {
+  outline: 2px solid #002b1f;
+  outline-offset: 2px;
+}
+
+.am-grad-service-panel__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.4fr) minmax(0, 0.6fr);
+  gap: 2rem 3.5rem;
+  align-items: start;
+  padding-right: 3.5rem;
+}
+
+.am-grad-service-panel__label {
+  display: block;
+  margin-bottom: 0.65rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #002b1f;
+}
+
+.am-grad-service-panel__heading {
+  margin: 0 0 1.25rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(1.85rem, 3.5vw, 2.85rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #002b1f;
+}
+
+.am-grad-service-panel__lead {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.2rem;
+  line-height: 1.65;
+  color: #002b1f;
+}
+
+.am-grad-service-detail {
+  padding: 1.35rem 0;
+  border-bottom: 1px solid rgba(0, 43, 31, 0.18);
+}
+
+.am-grad-service-detail:first-child {
+  padding-top: 0;
+}
+
+.am-grad-service-detail--last {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.am-grad-service-detail__title {
+  margin: 0 0 0.55rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #002b1f;
+}
+
+.am-grad-service-detail__text {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.12rem;
+  line-height: 1.65;
+  color: #002b1f;
+}
+
+@media (max-width: 767px) {
+  .am-grad-service-panel__shell {
+    padding: 3rem 1.25rem 2rem;
+  }
+
+  .am-grad-service-panel__grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    padding-right: 0;
+  }
+
+  .am-grad-service-panel__close {
+    top: 1rem;
+    right: 1rem;
+  }
+}
+
+/* Service package comparison table (before FAQ) — light card, Michi greens */
+.am-package-compare {
+  background: #f4f5f0;
+  color: #002b1f;
+  padding: 4rem 0 4.5rem;
+}
+
+.am-package-compare__inner {
+  max-width: 1120px;
+}
+
+.am-package-compare__title {
+  margin: 0 0 1rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: clamp(1.55rem, 3.2vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-align: center;
+  text-transform: uppercase;
+  color: #002b1f;
+}
+
+.am-package-compare__subtitle {
+  margin: 0 auto 2.25rem;
+  max-width: 44rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(1.15rem, 2.15vw, 1.4rem);
+  line-height: 1.62;
+  text-align: center;
+  color: rgba(0, 43, 31, 0.9);
+}
+
+.am-package-compare__scroll-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 -0.5rem;
+  padding: 0 0.5rem 0.25rem;
+}
+
+.am-package-compare__table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  font-size: clamp(1.02rem, 1.85vw, 1.2rem);
+  line-height: 1.55;
+  color: #0f2419;
+  background: #f7faf5;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(2, 53, 31, 0.08), 0 0 0 1px rgba(2, 53, 31, 0.06);
+}
+
+.am-package-compare__table thead th {
+  background: linear-gradient(180deg, #e3ebe0 0%, #d8e3d4 100%);
+  color: #02351f;
+  font-weight: 800;
+  text-align: center;
+  vertical-align: middle;
+  padding: 1.25rem 1rem;
+  border: 1px solid rgba(2, 53, 31, 0.14);
+}
+
+.am-package-compare__th-note {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.88em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: rgba(2, 53, 31, 0.82);
+}
+
+.am-package-compare__table tbody th[scope="row"] {
+  background: #eef4ea;
+  font-weight: 800;
+  text-align: center;
+  vertical-align: middle;
+  padding: 1.1rem 0.95rem;
+  border: 1px solid rgba(2, 53, 31, 0.12);
+  color: #02351f;
+}
+
+.am-package-compare__table tbody td {
+  text-align: center;
+  vertical-align: middle;
+  padding: 1.1rem 0.95rem;
+  border: 1px solid rgba(2, 53, 31, 0.12);
+  background: #fbfcfa;
+  color: #1a3328;
+}
+
+.am-package-compare__table tbody tr:nth-child(even) th[scope="row"] {
+  background: #e5efe0;
+}
+
+.am-package-compare__table tbody tr:nth-child(even) td {
+  background: #f3f7f0;
+}
+
+/* Floating language toggle (ZH ⟷ EN) — large tap target */
+.am-lang-fab {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 10000;
+  min-width: 5.25rem;
+  min-height: 3.25rem;
+  padding: 0.85rem 1.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  background: #02351f;
+  color: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+  cursor: pointer;
+  box-shadow: 0 4px 22px rgba(0, 43, 31, 0.38);
+}
+
+.am-lang-fab:hover,
+.am-lang-fab:focus {
+  background: #ff5a26;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.5);
+  outline: none;
+}
+
 body {
     font: 400 15px Lato, sans-serif;
     line-height: 1.8;
@@ -257,9 +699,10 @@ body {
 }
 
 
-body{
-    margin-top:20px;
-color: #6c7293;
+/* Nested <body> in template: margin-top would show as white strip above nav */
+body {
+  margin-top: 0;
+  color: #6c7293;
 }
 .card {
     position: relative;

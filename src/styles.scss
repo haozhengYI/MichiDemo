@@ -1,2 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Remove default browser margin so nav can sit flush with the top of the viewport */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+app-root {
+  display: block;
+}
+
 @import "../node_modules/angular-calendar/css/angular-calendar.css";

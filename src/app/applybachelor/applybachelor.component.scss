@@ -1,3 +1,503 @@
+/* College hero — same scale/colors as applymaster .am-graduate-hero; flex for reliable centering */
+:host {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Chinese locale: do not force all-caps on hero / phase headings (readable 中文) */
+.ab-college-hero.ab-locale-zh .ab-college-hero__eyebrow,
+.ab-college-hero.ab-locale-zh h1.ab-college-hero__title {
+  text-transform: none;
+  letter-spacing: 0.04em;
+}
+
+.ab-phase-picker.ab-locale-zh .ab-phase-picker__heading {
+  text-transform: none;
+  letter-spacing: 0.04em;
+}
+
+.ab-phase-picker.ab-locale-zh .ab-phase-service-trigger__label,
+.ab-phase-picker.ab-locale-zh .ab-phase-service-trigger__title,
+.ab-phase-picker.ab-locale-zh .ab-phase-service-panel__label,
+.ab-phase-picker.ab-locale-zh .ab-phase-service-panel__heading {
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+/* Floating language toggle (ZH ⟷ EN) — matches applymaster .am-lang-fab */
+.ab-lang-fab {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 10000;
+  min-width: 5.25rem;
+  min-height: 3.25rem;
+  padding: 0.85rem 1.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  background: #02351f;
+  color: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+  cursor: pointer;
+  box-shadow: 0 4px 22px rgba(0, 43, 31, 0.38);
+}
+
+.ab-lang-fab:hover,
+.ab-lang-fab:focus {
+  background: #ff5a26;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.5);
+  outline: none;
+}
+
+.ab-college-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 6.25rem 1.5rem 4.5rem;
+  background: #f7f8f3;
+  color: #012b23;
+  text-align: center;
+  line-height: normal;
+}
+
+.ab-college-hero p {
+  margin: 0;
+}
+
+/* Bootstrap 3 `h1` / paragraph defaults — explicit text-align + width for centered column */
+.ab-college-hero h1.ab-college-hero__title {
+  margin: 0 0 2.75rem;
+  width: 100%;
+  max-width: 22em;
+  padding: 0 0.75rem;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.35rem, 7.2vw, 4.75rem);
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #012b23;
+}
+
+.ab-college-hero__eyebrow {
+  margin: 0 0 2.75rem;
+  width: 100%;
+  max-width: 42rem;
+  padding: 0 0.75rem;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #012b23;
+}
+
+@media (min-width: 768px) {
+  .ab-college-hero__eyebrow {
+    font-size: 1.2rem;
+  }
+}
+
+.ab-college-hero__title-line {
+  display: block;
+}
+
+.ab-college-hero__lead {
+  margin: 0 0 2.85rem;
+  width: 100%;
+  max-width: 46rem;
+  padding: 0 0.75rem;
+  box-sizing: border-box;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(1.35rem, 2.65vw, 1.75rem);
+  font-weight: 400;
+  line-height: 1.65;
+  text-align: center;
+  color: #012b23;
+}
+
+.ab-college-hero__lead strong {
+  font-weight: 700;
+}
+
+.ab-college-hero__underline {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.ab-college-hero__rule {
+  width: 1px;
+  height: 80px;
+  margin: 0;
+  flex-shrink: 0;
+  background: #012b23;
+}
+
+@media (max-width: 600px) {
+  .ab-college-hero {
+    padding: 4.25rem 1.15rem 3.25rem;
+  }
+}
+
+/* Ivy-style phase cards + detail (two tabs: 12th early / transfers) */
+.ab-phase-picker {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 4rem 1.25rem 4.5rem;
+  background: #f4f5f0;
+  color: #012b23;
+}
+
+.ab-phase-picker__heading {
+  margin: 0 auto 0.75rem;
+  max-width: 52rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: clamp(1.25rem, 2.8vw, 1.65rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 0.06em;
+  text-align: center;
+  text-transform: uppercase;
+  color: #012b23;
+}
+
+.ab-phase-picker__sub {
+  margin: 0 auto 2.5rem;
+  max-width: 40rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(1.2rem, 2.2vw, 1.45rem);
+  font-style: italic;
+  text-align: center;
+  color: #012b23;
+}
+
+.ab-phase-picker__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  max-width: 920px;
+  margin: 0 auto 2.5rem;
+}
+
+@media (min-width: 640px) {
+  .ab-phase-picker__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.ab-phase-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 7.5rem;
+  margin: 0;
+  padding: 1.75rem 1.25rem;
+  border: 1px solid rgba(1, 43, 35, 0.18);
+  border-radius: 10px;
+  background: #fff;
+  color: #012b23;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.ab-phase-card:hover,
+.ab-phase-card:focus {
+  outline: none;
+  border-color: rgba(1, 43, 35, 0.45);
+  box-shadow: 0 4px 14px rgba(1, 43, 35, 0.08);
+}
+
+.ab-phase-card:focus-visible {
+  outline: 2px solid #012b23;
+  outline-offset: 3px;
+}
+
+.ab-phase-card--active {
+  background: #012b23;
+  border-color: #012b23;
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(1, 43, 35, 0.18);
+}
+
+.ab-phase-card__l1 {
+  display: block;
+  font-size: clamp(1.25rem, 2.4vw, 1.55rem);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+}
+
+.ab-phase-card__l2 {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: clamp(1.2rem, 2.2vw, 1.45rem);
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.ab-phase-card__l1--single {
+  margin-top: 0;
+  font-size: clamp(1.35rem, 2.6vw, 1.7rem);
+}
+
+/* Service steps: layout mirrors applymaster .am-grad-services (two-column expanded panel) */
+.ab-phase-detail {
+  margin-top: 0.5rem;
+}
+
+.ab-phase-services__path-intro {
+  margin: 0 auto 1.75rem;
+  max-width: 56rem;
+  padding: 0 0.5rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  line-height: 1.65;
+  text-align: center;
+  color: #002b1f;
+}
+
+.ab-phase-services__inner {
+  max-width: 1120px;
+}
+
+.ab-phase-services__toolbar {
+  text-align: right;
+  margin-bottom: 0.5rem;
+}
+
+.ab-phase-services__expand-all {
+  display: inline;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-decoration: underline;
+  text-transform: uppercase;
+  color: #002b1f;
+  cursor: pointer;
+}
+
+.ab-phase-services__expand-all:hover,
+.ab-phase-services__expand-all:focus {
+  color: #ff5a26;
+  outline: none;
+}
+
+.ab-phase-services__list {
+  border-top: 1px solid rgba(0, 43, 31, 0.25);
+}
+
+.ab-phase-service-row {
+  border-bottom: 1px solid rgba(0, 43, 31, 0.25);
+}
+
+.ab-phase-service-row--open {
+  border-bottom: none;
+}
+
+.ab-phase-service-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1.5rem 0 1.35rem;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  color: #002b1f;
+}
+
+.ab-phase-service-trigger:focus {
+  outline: 2px solid #ff5a26;
+  outline-offset: 2px;
+}
+
+.ab-phase-service-trigger__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding-right: 1rem;
+}
+
+.ab-phase-service-trigger__label {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #002b1f;
+}
+
+.ab-phase-service-trigger__title {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: clamp(1.35rem, 2.85vw, 1.85rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #002b1f;
+}
+
+.ab-phase-service-trigger__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #ff5a26;
+  color: #fff;
+}
+
+.ab-phase-service-panel {
+  margin: 0;
+}
+
+.ab-phase-service-panel__shell {
+  position: relative;
+  background: #fcfbf7;
+  border-top: 3px solid #00332a;
+  border-bottom: 1px solid rgba(0, 43, 31, 0.25);
+  padding: 3.25rem 4rem 3rem 2.75rem;
+  color: #002b1f;
+}
+
+.ab-phase-service-panel__close {
+  position: absolute;
+  top: 1.35rem;
+  right: 1.35rem;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #ff5a26;
+  color: #fff;
+  cursor: pointer;
+}
+
+.ab-phase-service-panel__close:focus {
+  outline: 2px solid #002b1f;
+  outline-offset: 2px;
+}
+
+.ab-phase-service-panel__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.4fr) minmax(0, 0.6fr);
+  gap: 2rem 3.5rem;
+  align-items: start;
+  padding-right: 3.5rem;
+}
+
+.ab-phase-service-panel__label {
+  display: block;
+  margin-bottom: 0.65rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #002b1f;
+}
+
+.ab-phase-service-panel__heading {
+  margin: 0 0 1.25rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(1.85rem, 3.5vw, 2.85rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #00332a;
+}
+
+.ab-phase-service-panel__lead {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.2rem;
+  line-height: 1.65;
+  color: #333;
+}
+
+.ab-phase-service-detail {
+  padding: 1.35rem 0;
+  border-bottom: 1px solid rgba(0, 43, 31, 0.18);
+}
+
+.ab-phase-service-detail:first-child {
+  padding-top: 0;
+}
+
+.ab-phase-service-detail--last {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.ab-phase-service-detail__title {
+  margin: 0 0 0.55rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #00332a;
+}
+
+.ab-phase-service-detail__text {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.12rem;
+  line-height: 1.65;
+  color: #333;
+}
+
+.ab-phase-service-chevron {
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .ab-phase-service-panel__shell {
+    padding: 3rem 1.25rem 2rem;
+  }
+
+  .ab-phase-service-panel__grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    padding-right: 0;
+  }
+
+  .ab-phase-service-panel__close {
+    top: 1rem;
+    right: 1rem;
+  }
+}
+
 body {
     font: 400 15px Lato, sans-serif;
     line-height: 1.8;
@@ -258,9 +758,9 @@ body {
 }
 
 
-body{
-    margin-top:20px;
-color: #6c7293;
+body {
+  margin-top: 0;
+  color: #6c7293;
 }
 .card {
     position: relative;

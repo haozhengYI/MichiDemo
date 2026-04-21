@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { BlockingProxy } from 'blocking-proxy';
 import { UserService } from '../user.service';
 import { ConstantPool } from '@angular/compiler';
@@ -16,11 +16,13 @@ import {Student} from '../st.model';
   templateUrl: './mainclass.component.html',
   styleUrls: ['./mainclass.component.scss']
 })
-export class MainclassComponent implements OnInit {
+export class MainclassComponent implements OnInit, AfterViewInit {
   
   user: user[] = [];
   students: Student[] = [];
   studentID : any;
+
+  @ViewChild('statsSection') statsSection: ElementRef;
 
   constructor(
     private route: ActivatedRoute,
@@ -130,13 +132,53 @@ export class MainclassComponent implements OnInit {
     });
   }
 
+  ngAfterViewInit(): void {
+    setTimeout(() => this.runStatCountAnimations(), 0);
+  }
+
+  private runStatCountAnimations(): void {
+    if (!this.statsSection || !this.statsSection.nativeElement) {
+      return;
+    }
+    const root = this.statsSection.nativeElement;
+    const numerals = root.querySelectorAll('.stat_number-numeral[data-numeral]');
+    numerals.forEach((node, index) => {
+      const el = node as HTMLElement;
+      const raw = el.getAttribute('data-numeral') || '0';
+      const target = parseFloat(raw);
+      if (Number.isNaN(target)) {
+        return;
+      }
+      const delay = index * 45;
+      window.setTimeout(() => this.animateNumeral(el, target), delay);
+    });
+  }
+
+  /** Ease-out count from 0 to target (percent values), ~1.6s. */
+  private animateNumeral(el: HTMLElement, target: number): void {
+    const durationMs = 1600;
+    const start = performance.now();
+    const tick = (now: number) => {
+      const t = Math.min(1, (now - start) / durationMs);
+      const eased = 1 - Math.pow(1 - t, 3);
+      const value = Math.round(target * eased);
+      el.textContent = String(value);
+      if (t < 1) {
+        requestAnimationFrame(tick);
+      } else {
+        el.textContent = String(Math.round(target));
+      }
+    };
+    requestAnimationFrame(tick);
+  }
+
   main() {
     const navigationExtras: NavigationExtras = {
       queryParams: {
        
       }
     };
-    this.router.navigate(['/mainpage'], navigationExtras);
+    this.router.navigate(['/mainclass'], navigationExtras);
   }
   class() {
     const navigationExtras: NavigationExtras = {
@@ -144,7 +186,7 @@ export class MainclassComponent implements OnInit {
        
       }
     };
-    this.router.navigate(['/mainclass'], navigationExtras);
+    this.router.navigate(['/applybachelor'], navigationExtras);
   }
   
    //direct to the Blog page
@@ -154,7 +196,7 @@ export class MainclassComponent implements OnInit {
        
       }
     };
-    this.router.navigate(['/mainblog'], navigationExtras);
+    this.router.navigate(['/career'], navigationExtras);
   }
   //direct to the 留学 page
   abroad() {
@@ -163,7 +205,7 @@ export class MainclassComponent implements OnInit {
        
       }
     };
-    this.router.navigate(['/studyabroad'], navigationExtras);
+    this.router.navigate(['/applymaster'], navigationExtras);
   }
 
 }

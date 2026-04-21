@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { PAGE_I18N, PageLang } from './applybachelor.page-i18n';
 import { BlockingProxy } from 'blocking-proxy';
 import { UserService } from '../user.service';
 import { ConstantPool } from '@angular/compiler';
@@ -17,7 +19,15 @@ import {Student} from '../../app/st.model';
   styleUrls: ['./applybachelor.component.scss']
 })
 export class ApplybachelorComponent implements OnInit {
-  
+  /** Page copy language (floating toggle). Nav stays Chinese. Default English. */
+  pageLang: PageLang = 'en';
+
+  /** Which admissions-phase card is selected (Ivy-style picker). */
+  phaseTab: '12-early' | 'transfers' = '12-early';
+
+  /** Steps 1–3 accordion for the active phase (same pattern as applymaster grad services). */
+  phaseServiceStepsOpen: boolean[] = [false, false, false];
+
   user: user[] = [];
   students: Student[] = [];
   studentID : any;
@@ -27,11 +37,22 @@ export class ApplybachelorComponent implements OnInit {
     private router: Router,
     public userService: UserService,
     public hmService: HmService,
-    private http: HttpClient) { }
+    private http: HttpClient,
+    private sanitizer: DomSanitizer) { }
 
-   
-  
-  
+  txt(key: string): string {
+    const row = PAGE_I18N[key];
+    return row ? row[this.pageLang] : key;
+  }
+
+  html(key: string): SafeHtml {
+    return this.sanitizer.bypassSecurityTrustHtml(this.txt(key));
+  }
+
+  togglePageLang(): void {
+    this.pageLang = this.pageLang === 'zh' ? 'en' : 'zh';
+  }
+
   checklogin(){
     this.ngOnInit();
     this.user = this.user;
@@ -135,28 +156,26 @@ export class ApplybachelorComponent implements OnInit {
        
       }
     };
-    this.router.navigate(['/mainpage'], navigationExtras);
+    this.router.navigate(['/mainclass'], navigationExtras);
   }
-  //direct to the 王牌课程 page
   class() {
     const navigationExtras: NavigationExtras = {
       queryParams: {
        
       }
     };
-    this.router.navigate(['/mainclass'], navigationExtras);
+    this.router.navigate(['/applybachelor'], navigationExtras);
   }
-
-  //direct to the Blog page
-  blog() {
+  
+   //direct to the Blog page
+   blog() {
     const navigationExtras: NavigationExtras = {
       queryParams: {
        
       }
     };
-    this.router.navigate(['/mainblog'], navigationExtras);
+    this.router.navigate(['/career'], navigationExtras);
   }
-
   //direct to the 留学 page
   abroad() {
     const navigationExtras: NavigationExtras = {
@@ -164,6 +183,31 @@ export class ApplybachelorComponent implements OnInit {
        
       }
     };
-    this.router.navigate(['/studyabroad'], navigationExtras);
+    this.router.navigate(['/applymaster'], navigationExtras);
+  }
+
+  selectPhase(tab: '12-early' | 'transfers'): void {
+    if (this.phaseTab !== tab) {
+      this.phaseServiceStepsOpen = [false, false, false];
+    }
+    this.phaseTab = tab;
+  }
+
+  get phaseServicesAllExpanded(): boolean {
+    return this.phaseServiceStepsOpen[0] && this.phaseServiceStepsOpen[1] && this.phaseServiceStepsOpen[2];
+  }
+
+  togglePhaseServiceStep(index: number): void {
+    const next = this.phaseServiceStepsOpen.slice();
+    next[index] = !next[index];
+    this.phaseServiceStepsOpen = next;
+  }
+
+  togglePhaseServicesExpandAll(): void {
+    if (this.phaseServicesAllExpanded) {
+      this.phaseServiceStepsOpen = [false, false, false];
+    } else {
+      this.phaseServiceStepsOpen = [true, true, true];
+    }
   }
 }

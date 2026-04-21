@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { PAGE_I18N, PageLang } from './applymaster.page-i18n';
 import { BlockingProxy } from 'blocking-proxy';
 import { UserService } from '../user.service';
 import { ConstantPool } from '@angular/compiler';
@@ -22,12 +24,32 @@ export class ApplymasterComponent implements OnInit {
   students: Student[] = [];
   studentID : any;
 
+  /** Graduate service accordion (Steps 1–3); synced with EXPAND ALL */
+  gradServiceStepsOpen = [false, false, false];
+
+  /** Page copy language (floating toggle). Default English. */
+  pageLang: PageLang = 'en';
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     public userService: UserService,
     public hmService: HmService,
-    private http: HttpClient) { }
+    private http: HttpClient,
+    private sanitizer: DomSanitizer) { }
+
+  txt(key: string): string {
+    const row = PAGE_I18N[key];
+    return row ? row[this.pageLang] : key;
+  }
+
+  html(key: string): SafeHtml {
+    return this.sanitizer.bypassSecurityTrustHtml(this.txt(key));
+  }
+
+  togglePageLang(): void {
+    this.pageLang = this.pageLang === 'zh' ? 'en' : 'zh';
+  }
 
    
   
@@ -129,16 +151,25 @@ export class ApplymasterComponent implements OnInit {
 
     });
   }
-  main() {
-    const navigationExtras: NavigationExtras = {
-      queryParams: {
-       
-      }
-    };
-    this.router.navigate(['/mainpage'], navigationExtras);
+
+  get gradServicesAllExpanded(): boolean {
+    return this.gradServiceStepsOpen[0] && this.gradServiceStepsOpen[1] &&
+      this.gradServiceStepsOpen[2];
   }
-  //direct to the 王牌课程 page
-  class() {
+
+  toggleGradServiceStep(index: number): void {
+    this.gradServiceStepsOpen[index] = !this.gradServiceStepsOpen[index];
+  }
+
+  toggleGradServicesExpandAll(): void {
+    if (this.gradServicesAllExpanded) {
+      this.gradServiceStepsOpen = [false, false, false];
+    } else {
+      this.gradServiceStepsOpen = [true, true, true];
+    }
+  }
+
+  main() {
     const navigationExtras: NavigationExtras = {
       queryParams: {
        
@@ -146,17 +177,24 @@ export class ApplymasterComponent implements OnInit {
     };
     this.router.navigate(['/mainclass'], navigationExtras);
   }
-
-  //direct to the Blog page
-  blog() {
+  class() {
     const navigationExtras: NavigationExtras = {
       queryParams: {
        
       }
     };
-    this.router.navigate(['/mainblog'], navigationExtras);
+    this.router.navigate(['/applybachelor'], navigationExtras);
   }
-
+  
+   //direct to the Blog page
+   blog() {
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+       
+      }
+    };
+    this.router.navigate(['/career'], navigationExtras);
+  }
   //direct to the 留学 page
   abroad() {
     const navigationExtras: NavigationExtras = {
@@ -164,6 +202,6 @@ export class ApplymasterComponent implements OnInit {
        
       }
     };
-    this.router.navigate(['/studyabroad'], navigationExtras);
+    this.router.navigate(['/applymaster'], navigationExtras);
   }
 }
