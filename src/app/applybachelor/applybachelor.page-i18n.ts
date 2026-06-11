@@ -47,10 +47,10 @@ export const PAGE_I18N: Record<string, Bilingual> = {
   stepLabel2: { zh: '第二步', en: 'Step 2' },
   stepLabel3: { zh: '第三步', en: 'Step 3' },
 
-  earlyStep1Title: { zh: '15 分钟初步咨询', en: '15-minute consultation' },
+  earlyStep1Title: { zh: '30 分钟初步咨询', en: '30-minute consultation' },
   earlyStep1Lead: {
-    zh: 'Michi 为家长与学生提供一次免费的 15 分钟电话咨询（国际家庭可选用 Zoom 音频），用于了解我们的本科升学辅导服务。',
-    en: 'Michi offers a complimentary 15-minute consultation to parents and students via phone (or Zoom audio for international families) to learn about our college counseling services.',
+    zh: 'Michi 为家长与学生提供一次免费的 30 分钟电话咨询（国际家庭可选用 Zoom 音频），用于了解我们的本科升学辅导服务。',
+    en: 'Michi offers a complimentary 30-minute consultation to parents and students via phone (or Zoom audio for international families) to learn about our college counseling services.',
   },
   earlyStep1RightTitle: { zh: '关于这通初步电话', en: 'The preliminary call' },
   earlyStep1RightText: {

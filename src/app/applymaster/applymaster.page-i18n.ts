@@ -21,8 +21,8 @@ export const PAGE_I18N: Record<string, Bilingual> = {
   heroLeadBefore: { zh: 'Michi 为希望进入', en: 'Michi provides ' },
   heroLeadU: { zh: '高度选拔性研究生项目', en: 'graduate school admissions consulting' },
   heroLeadAfter: {
-    zh: '的学生提供辅导，方向包括：MBA、法学院、医学院、博士、文学硕士等。',
-    en: ' to students seeking admission to highly selective graduate programs, including: MBA, Law School, Medical School, Ph.D, MA.',
+    zh: '的学生提供辅导，方向包括：MBA、法学院、医学院、博士、文学硕士, 等。',
+    en: ' to students seeking admission to highly selective graduate programs, including: MBA, Law School, Medical School, Ph.D, MA, Vet School.',
   },
 
   svcHeading: {

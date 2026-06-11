@@ -49,7 +49,7 @@ import {ApplyhighschoolComponent} from './applyhighschool/applyhighschool.compon
 import { CareerComponent } from './career/career.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/mainpage', pathMatch: 'full' },
+  { path: '', redirectTo: '/mainclass', pathMatch: 'full' },
   {path: 'mainpage', component:MainpageComponent},
   {path: 'mainclass', component:MainclassComponent},
   {path: 'mainblog', component:MainblogComponent},

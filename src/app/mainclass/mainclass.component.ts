@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { BlockingProxy } from 'blocking-proxy';
 import { UserService } from '../user.service';
 import { ConstantPool } from '@angular/compiler';
@@ -17,7 +17,7 @@ import { toggleStudentLoginPanel } from '../student-login-toggle';
   templateUrl: './mainclass.component.html',
   styleUrls: ['./mainclass.component.scss']
 })
-export class MainclassComponent implements OnInit, AfterViewInit {
+export class MainclassComponent implements OnInit, AfterViewInit, OnDestroy {
   /** Student login strip — explicit Bootstrap collapse (see student-login-toggle.ts). */
   toggleStudentLogin = toggleStudentLoginPanel;
 
@@ -26,6 +26,9 @@ export class MainclassComponent implements OnInit, AfterViewInit {
   studentID : any;
 
   @ViewChild('statsSection') statsSection: ElementRef;
+
+  private statsObserver: IntersectionObserver | null = null;
+  private statsAnimated = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -136,7 +139,31 @@ export class MainclassComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    setTimeout(() => this.runStatCountAnimations(), 0);
+    if (!this.statsSection || !this.statsSection.nativeElement) {
+      return;
+    }
+    this.statsObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !this.statsAnimated) {
+            this.statsAnimated = true;
+            this.runStatCountAnimations();
+            if (this.statsObserver) {
+              this.statsObserver.disconnect();
+              this.statsObserver = null;
+            }
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+    );
+    this.statsObserver.observe(this.statsSection.nativeElement);
+  }
+
+  ngOnDestroy(): void {
+    if (this.statsObserver) {
+      this.statsObserver.disconnect();
+    }
   }
 
   private runStatCountAnimations(): void {
