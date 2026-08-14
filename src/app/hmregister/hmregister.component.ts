@@ -76,6 +76,7 @@ export class HmregisterComponent implements OnInit {
     let temp2 = (document.getElementById("confirm-password") as HTMLInputElement).value;
     let temp3 = document.getElementById("option-student") as HTMLInputElement;
     let temp4 = document.getElementById("option-manager") as HTMLInputElement;
+    let temp5 = document.getElementById("option-coordinator") as HTMLInputElement;
     let temp8 = document.getElementById("hint4") as HTMLInputElement;
     var re1 = new RegExp("^[a-zA-Z0-9_.-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$");//Regex for user account
     var re2 = new RegExp("^[a-zA-Z0-9-]+$");
@@ -87,11 +88,12 @@ export class HmregisterComponent implements OnInit {
       temp8.style.display="inline-block";
       temp3.checked=false;
       temp4.checked=false;
+      temp5.checked=false;
       alert("Please enter all fields.");
       return;
     }
     //Check have user chosen any role
-    if(temp3.checked==false&&temp4.checked==false){
+    if(temp3.checked==false&&temp4.checked==false&&temp5.checked==false){
       (document.getElementById("user-account") as HTMLInputElement).style.borderColor="black";
       (document.getElementById("user-password") as HTMLInputElement).style.borderColor="black";
       (document.getElementById("confirm-password") as HTMLInputElement).style.borderColor="black";
@@ -143,6 +145,7 @@ export class HmregisterComponent implements OnInit {
         temp8.style.display="none";
         temp3.checked=false;
         temp4.checked=false;
+        temp5.checked=false;
         return;
       }else{
         continue;
@@ -157,10 +160,16 @@ export class HmregisterComponent implements OnInit {
         console.log(temp0);
         this.stService.addStudent("",temp0,"", "", "","",  "", "", "","","",  "", "", "","","",  "", "", "","","",  "", "", "",
         "","",  "", "", "","","",  "", "", "","","",  "", "", "","","",  "", "","","",  "", "", "","","",  "", "", "","","",  "", 
-        "", "","","",  "", "", "","","","","","2026");
-        //共65个属性
+        "", "","","",  "", "", "","","","","","2026","");
+        //共66个属性
       }if(temp4.checked==true){
         temp16="manager";
+        //create one resp in hotels database
+        console.log(temp0);
+        this.hmService.addHotel("",temp0,"", "", "","",  "", "", "", "");
+      }
+      if(temp5.checked==true){
+        temp16="coordinator";
         //create one resp in hotels database
         console.log(temp0);
         this.hmService.addHotel("",temp0,"", "", "","",  "", "", "", "");
@@ -176,6 +185,7 @@ export class HmregisterComponent implements OnInit {
       (document.getElementById("confirm-password") as HTMLInputElement).value=null;
       temp3.checked=false;
       temp4.checked=false;
+      temp5.checked=false;
       this.userService.addUser(temp0,temp1,temp16);
       //this.ngOnInit();
       window.location.reload();

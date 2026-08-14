@@ -373,6 +373,7 @@ app.post('/studentadd', (req,res,next) =>{
     FatEmail: req.body.FatEmail,
     //申请年级
     year: req.body.year,
+    coordinator:req.body.coordinator,//学生对应的协调员
   });
   student.save();
   res.status(201).json({
@@ -477,6 +478,7 @@ app.put('/students/:userAccount', (req, res, next)=>{
       FatEmail: req.body.FatEmail,
       //申请年级
       year: req.body.year,
+      coordinator:req.body.coordinator,//学生对应的协调员
     }
   })
   .exec()

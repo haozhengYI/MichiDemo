@@ -75,6 +75,7 @@ const studentSchema = mongoose.Schema({
   FatEmail: String,
   //申请年级
   year: String,
+  coordinator:String,//协调员
 });
 
 module.exports = mongoose.model('Student', studentSchema);

@@ -239,6 +239,7 @@ export class StudentresComponent implements OnInit {
       FatEmail: this.student.FatEmail,
       //年级
       year:this.student.year,
+      coordinator:this.student.coordinator,
   }
     this.http.put('http://localhost:3000/students/' + this.studentUserAcc, Student)
       .subscribe((data) => {

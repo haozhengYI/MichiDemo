@@ -116,6 +116,7 @@ export class StService {
     FatEmail: String,
     //申请年级
     year: String,
+    coordinator:String,//学生对应的协调员
   ){
     const student: Student = {
       _id: null,
@@ -194,6 +195,7 @@ export class StService {
       FatEmail: FatEmail,
       //申请年级
       year: year,
+      coordinator:coordinator,//学生对应的协调员
     };
     this.http.post('http://localhost:3000/studentadd', student).subscribe((responseData) =>{
         this.studentS.push(student);

@@ -305,6 +305,7 @@ export class StudentinfoComponent implements OnInit {
         FatEmail: (document.getElementById("FatEmail") as HTMLInputElement).value,
         //年级
         year:this.student.year,
+        coordinator:this.student.coordinator,
     }
     this.http.put('http://localhost:3000/students/' + this.studentUserAcc, Student)
       .subscribe((data) => {

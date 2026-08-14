@@ -266,6 +266,7 @@ export class HmstudentComponent implements OnInit {
         FatEmail: this.student.FatEmail,
         //年级
         year:(document.getElementById("styear") as HTMLInputElement).value,
+        coordinator:(document.getElementById("stcoord") as HTMLInputElement).value,
     }
     this.http.put('http://localhost:3000/students/' + this.student.userAccount, Student)
       .subscribe((data) => {

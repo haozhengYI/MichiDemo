@@ -256,6 +256,9 @@
             <hr>
             <div class="input-group mb-3">
               <input type="text" class="form-control" id="styear" value="{{student.year}}">
+              <hr>申请协调人
+              <input type="text" class="form-control" id="stcoord" value="{{student.coordinator}}">
+              <hr>
               <button class="btn btn-primary" type="button" (click)="updatePersonal()" id="button-addon2">修改</button>
             </div>
           </div>
@@ -845,7 +848,7 @@
                               </label>
                               <label class="form-check-label">
                                 <input type="radio" class="form-check-input" name="ttype" id="dasong" value="大松" ngModel required>
-                                大松 &nbsp;
+                                Yimei &nbsp;
                               </label>
                               <label class="form-check-label">
                                 <input type="radio" class="form-check-input" name="ttype" id="oth" value="其他" ngModel required>

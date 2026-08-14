@@ -75,4 +75,5 @@ export interface Student {
     FatEmail: String;
     //申请年级
     year: String;
+    coordinator:String;//学生对应的协调员
   }

@@ -142,7 +142,7 @@ export class StudentmainComponent implements OnInit {
       for(let n of this.notif){
         if(n.userAccount=== this.studentID){
           this.notifs.push(n);
-          //console.log(this.school);
+          console.log(this.school);
         }
       }
 
