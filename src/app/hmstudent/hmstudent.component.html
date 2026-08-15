@@ -68,6 +68,9 @@
         <li class="nav-item">
           <a class="nav-link" data-toggle="tab" href="#dropdown1">推荐人信息</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#recmatrix">推荐信分配</a>
+        </li>
         <li class="nav-item ">
           <a class="nav-link active" data-toggle="tab" href="#dropdown2">申请项目</a>
         </li>
@@ -708,6 +711,90 @@
             </div>
           </div>
           
+        </div>
+        <div class="tab-pane fade" id="recmatrix">
+          <h3>
+            推荐信分配功能
+            <small class="text-muted">已绑定 {{recomletters.length}} 封</small>
+            <button type="button" class="btn btn-warning" style="margin-left: 12px;"
+              *ngIf="recommenders.length > 0 && schools.length > 0"
+              (click)="exportRecMatrixAsExcelFile()">生成excel</button>
+          </h3>
+          <p class="text-muted">行是申请项目，列是推荐人。空格子选择类型即可绑定；已绑定格子可改类型、状态，或取消绑定。</p>
+          <div class="rec-legend">
+            <span class="rec-legend-item rec-pending">未提交</span>
+            <span class="rec-legend-item rec-submitted">已提交</span>
+            <span class="rec-legend-item rec-discarded">弃用</span>
+            <span class="rec-legend-item rec-empty">未绑定</span>
+          </div>
+
+          <div class="alert alert-info" *ngIf="recommenders.length === 0 || schools.length === 0">
+            <span *ngIf="recommenders.length === 0">当前学生还没有推荐人，请先在「推荐人信息」中确认。</span>
+            <span *ngIf="schools.length === 0">当前学生还没有申请项目，请先在「申请项目」中添加。</span>
+          </div>
+
+          <div class="rec-matrix-wrap" *ngIf="recommenders.length > 0 && schools.length > 0">
+            <table class="table table-bordered rec-matrix">
+              <thead>
+                <tr>
+                  <th class="col-school">申请项目</th>
+                  <th *ngFor="let k of recommenders">
+                    <div class="rec-col-name">{{k.firstName}} {{k.lastName}}</div>
+                    <div class="rec-col-meta">{{k.organization}}</div>
+                    <div class="rec-col-meta">已分配 {{countLettersForRec(k)}}</div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let s of schools">
+                  <td class="col-school">
+                    <a (click)="hmschooldetail(s)">{{s.univName}}</a>
+                    <div class="rec-school-sub">{{s.schoolName}}</div>
+                    <div class="rec-school-sub">{{s.majorName}}</div>
+                    <div class="rec-needed">所需推荐信 <span>{{s.recommNumber}}</span></div>
+                    <div class="rec-col-meta">已分配 {{countLettersForSchool(s)}}</div>
+                  </td>
+                  <td *ngFor="let k of recommenders" [ngClass]="cellStateClass(getLetter(s, k))">
+                    <ng-container *ngIf="getLetter(s, k) as letter; else emptyCell">
+                      <div class="rec-cell">
+                        <select class="form-control rec-cell-select"
+                          [ngModel]="letter.type"
+                          [ngModelOptions]="{standalone: true}"
+                          [disabled]="isCellBusy(s, k)"
+                          (ngModelChange)="updateLetterType(letter, $event)">
+                          <option value="Academic">Academic</option>
+                          <option value="Professional">Professional</option>
+                          <option value="Rother">other</option>
+                        </select>
+                        <select class="form-control rec-cell-select"
+                          [ngModel]="letter.state"
+                          [ngModelOptions]="{standalone: true}"
+                          [disabled]="isCellBusy(s, k)"
+                          (ngModelChange)="updateLetterState(letter, $event)">
+                          <option value="未提交">未提交</option>
+                          <option value="已提交">已提交</option>
+                          <option value="弃用">弃用</option>
+                        </select>
+                        <button type="button" class="btn btn-danger btn-sm rec-unbind"
+                          [disabled]="isCellBusy(s, k)"
+                          (click)="unbindLetter(letter)">取消绑定</button>
+                      </div>
+                    </ng-container>
+                    <ng-template #emptyCell>
+                      <select class="form-control rec-cell-select"
+                        [disabled]="isCellBusy(s, k)"
+                        (change)="assignLetter(s, k, $event)">
+                        <option value="">选择类型添加</option>
+                        <option value="Academic">Academic</option>
+                        <option value="Professional">Professional</option>
+                        <option value="Rother">other</option>
+                      </select>
+                    </ng-template>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
         <div class="tab-pane fade in active" id="dropdown2">
 

@@ -730,9 +730,15 @@ app.post('/recomletteradd', (req,res,next) =>{
     type:req.body.type,//推荐信为 acedemic / professional
     state: req.body.state,//推荐信状态（提交/未提交/弃用）
   });
-  recomletter.save();
-  res.status(201).json({
-    message: 'POST SEND SUCCESFFULY'
+  recomletter.save().then(result => {
+    res.status(201).json({
+      message: 'POST SEND SUCCESFFULY',
+      recomletter: result
+    });
+  }).catch(err => {
+    res.status(500).json({
+      error: err
+    });
   });
 });
 
@@ -759,6 +765,16 @@ app.get('/recomletterdetail/:id', (req,res,next) =>{
 app.get('/schoolrecomletterlist/:schoolId', (req,res,next) =>{
     const schoolId = req.params.schoolId;
     Recomletter.find({schoolID: schoolId}).then(documents =>{
+      res.json({
+        recomletters: documents
+      });
+    });
+  });
+
+// display all recommender letter list by student id
+app.get('/studentrecomletterlist/:studentId', (req,res,next) =>{
+    const studentId = req.params.studentId;
+    Recomletter.find({studentID: studentId}).then(documents =>{
       res.json({
         recomletters: documents
       });

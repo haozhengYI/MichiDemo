@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 import {Student} from '../st.model';
 import {School} from '../school.model';
 import {Recommender} from '../recom.model';
+import {Recomletter} from '../recletter.model';
 import {Notif} from '../notif.model';
 import{NotifService} from '../notif.service';
 import {Task} from  '../task.model';
@@ -54,6 +55,10 @@ export class HmstudentComponent implements OnInit {
   schools: School[] = [];
   //推荐人信息
   recommenders : Recommender[] = [];
+  //推荐信矩阵
+  recomletters: Recomletter[] = [];
+  letterMap: { [key: string]: Recomletter } = {};
+  busyKeys: { [key: string]: boolean } = {};
   private hotelMSub: Subscription;
   excelData = [];
 
@@ -147,7 +152,9 @@ export class HmstudentComponent implements OnInit {
     this.http.get<{recommenders: Recommender[]}>('http://localhost:3000/studentrecommenderdetail/' + this.studentID).subscribe((orderData) => {
       console.log(orderData);
       this.recommenders = orderData.recommenders;
-    });    
+    });
+    //展示 此学生 推荐信分配
+    this.loadRecomletters();    
     
     //展示 此学生通知信息
     this.http.get<{notifs: Notif[]}>('http://localhost:3000/notifdetail/' + this.studentID).subscribe((o) => {
@@ -188,6 +195,200 @@ export class HmstudentComponent implements OnInit {
         window.location.reload();
     });
   }
+
+  loadRecomletters() {
+    this.http.get<{recomletters: Recomletter[]}>('http://localhost:3000/studentrecomletterlist/' + this.studentID)
+      .subscribe((data) => {
+        this.recomletters = data.recomletters || [];
+        this.rebuildLetterMap();
+      });
+  }
+
+  letterKey(schoolId: any, recId: any): string {
+    return String(schoolId) + '_' + String(recId);
+  }
+
+  rebuildLetterMap() {
+    const map: { [key: string]: Recomletter } = {};
+    for (let i = 0; i < this.recomletters.length; i++) {
+      const letter = this.recomletters[i];
+      const key = this.letterKey(letter.schoolID, letter.recommender);
+      if (!map[key]) {
+        map[key] = letter;
+      }
+    }
+    this.letterMap = map;
+  }
+
+  getLetter(school: School, rec: Recommender): Recomletter {
+    if (!school || !rec) {
+      return null;
+    }
+    return this.letterMap[this.letterKey(school._id, rec._id)] || null;
+  }
+
+  isCellBusy(school: School, rec: Recommender): boolean {
+    if (!school || !rec) {
+      return false;
+    }
+    return !!this.busyKeys[this.letterKey(school._id, rec._id)];
+  }
+
+  setCellBusy(schoolId: any, recId: any, busy: boolean) {
+    const key = this.letterKey(schoolId, recId);
+    if (busy) {
+      this.busyKeys[key] = true;
+    } else {
+      delete this.busyKeys[key];
+    }
+  }
+
+  recDisplayName(rec: Recommender): string {
+    return (rec.firstName || '') + ' ' + (rec.lastName || '');
+  }
+
+  countLettersForSchool(school: School): number {
+    if (!school) {
+      return 0;
+    }
+    let n = 0;
+    for (let i = 0; i < this.recomletters.length; i++) {
+      if (String(this.recomletters[i].schoolID) === String(school._id)) {
+        n++;
+      }
+    }
+    return n;
+  }
+
+  countLettersForRec(rec: Recommender): number {
+    if (!rec) {
+      return 0;
+    }
+    let n = 0;
+    for (let i = 0; i < this.recomletters.length; i++) {
+      if (String(this.recomletters[i].recommender) === String(rec._id)) {
+        n++;
+      }
+    }
+    return n;
+  }
+
+  cellStateClass(letter: Recomletter): string {
+    if (!letter) {
+      return 'rec-empty';
+    }
+    if (letter.state === '已提交') {
+      return 'rec-submitted';
+    }
+    if (letter.state === '弃用') {
+      return 'rec-discarded';
+    }
+    return 'rec-pending';
+  }
+
+  assignLetter(school: School, rec: Recommender, event: Event) {
+    const select = event.target as HTMLSelectElement;
+    const type = select.value;
+    if (!type || this.getLetter(school, rec) || this.isCellBusy(school, rec)) {
+      select.value = '';
+      return;
+    }
+    this.setCellBusy(school._id, rec._id, true);
+    const recomletter: Recomletter = {
+      _id: null,
+      schoolID: school._id,
+      studentID: this.studentID,
+      recommender: rec._id,
+      recommenderName: this.recDisplayName(rec),
+      type: type,
+      state: '未提交'
+    };
+    this.http.post<{recomletter?: Recomletter}>('http://localhost:3000/recomletteradd', recomletter)
+      .subscribe(
+        (res) => {
+          if (res && res.recomletter) {
+            this.recomletters.push(res.recomletter);
+            this.rebuildLetterMap();
+            this.setCellBusy(school._id, rec._id, false);
+          } else {
+            this.setCellBusy(school._id, rec._id, false);
+            this.loadRecomletters();
+          }
+        },
+        () => {
+          select.value = '';
+          this.setCellBusy(school._id, rec._id, false);
+          alert('添加推荐信失败');
+        }
+      );
+  }
+
+  updateLetterType(letter: Recomletter, type: string) {
+    if (!letter || !type || letter.type === type) {
+      return;
+    }
+    const previous = letter.type;
+    letter.type = type;
+    this.setCellBusy(letter.schoolID, letter.recommender, true);
+    this.http.put('http://localhost:3000/recomletters/' + letter._id, letter)
+      .subscribe(
+        () => {
+          this.setCellBusy(letter.schoolID, letter.recommender, false);
+        },
+        () => {
+          letter.type = previous;
+          this.setCellBusy(letter.schoolID, letter.recommender, false);
+          alert('更新推荐信类型失败');
+        }
+      );
+  }
+
+  updateLetterState(letter: Recomletter, state: string) {
+    if (!letter || !state || letter.state === state) {
+      return;
+    }
+    const previous = letter.state;
+    letter.state = state;
+    this.setCellBusy(letter.schoolID, letter.recommender, true);
+    this.http.put('http://localhost:3000/recomletters/' + letter._id, letter)
+      .subscribe(
+        () => {
+          this.setCellBusy(letter.schoolID, letter.recommender, false);
+        },
+        () => {
+          letter.state = previous;
+          this.setCellBusy(letter.schoolID, letter.recommender, false);
+          alert('更新推荐信状态失败');
+        }
+      );
+  }
+
+  unbindLetter(letter: Recomletter) {
+    if (!letter || !confirm('确定取消该推荐信绑定？')) {
+      return;
+    }
+    this.setCellBusy(letter.schoolID, letter.recommender, true);
+    this.http.delete('http://localhost:3000/recomletters/' + letter._id)
+      .subscribe(
+        () => {
+          const id = String(letter._id);
+          const next: Recomletter[] = [];
+          for (let i = 0; i < this.recomletters.length; i++) {
+            if (String(this.recomletters[i]._id) !== id) {
+              next.push(this.recomletters[i]);
+            }
+          }
+          this.recomletters = next;
+          this.rebuildLetterMap();
+          this.setCellBusy(letter.schoolID, letter.recommender, false);
+        },
+        () => {
+          this.setCellBusy(letter.schoolID, letter.recommender, false);
+          alert('取消绑定失败');
+        }
+      );
+  }
+
   //更新学生年级信息
   updatePersonal(){
     const Student = {
@@ -292,6 +493,45 @@ export class HmstudentComponent implements OnInit {
     const excelBuffer: any = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
         //这里类型如果不正确，下载出来的可能是类似xml文件的东西或者是类似二进制的东西等
     this.saveAsExcelFile(excelBuffer, this.studentName+"的选校列表");
+  }
+
+  letterTypeLabel(type: any): string {
+    if (type === 'Rother') {
+      return 'other';
+    }
+    return type || '';
+  }
+
+  exportRecMatrixAsExcelFile() {
+    const rows = [];
+    for (let i = 0; i < this.schools.length; i++) {
+      const s = this.schools[i];
+      const row: any = {
+        'University': s.univName,
+        'School': s.schoolName,
+        'Major': s.majorName,
+        '所需推荐信': s.recommNumber,
+        '已分配': this.countLettersForSchool(s)
+      };
+      for (let j = 0; j < this.recommenders.length; j++) {
+        const rec = this.recommenders[j];
+        let colName = this.recDisplayName(rec);
+        if (rec.organization) {
+          colName = colName + ' (' + rec.organization + ')';
+        }
+        const letter = this.getLetter(s, rec);
+        if (letter) {
+          row[colName] = this.letterTypeLabel(letter.type) + ' / ' + letter.state;
+        } else {
+          row[colName] = '';
+        }
+      }
+      rows.push(row);
+    }
+    const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(rows);
+    const workbook: XLSX.WorkBook = { Sheets: { 'data': worksheet }, SheetNames: ['data'] };
+    const excelBuffer: any = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
+    this.saveAsExcelFile(excelBuffer, this.studentName + '的推荐信分配');
   }
  
   private saveAsExcelFile(buffer: any, fileName: string) {

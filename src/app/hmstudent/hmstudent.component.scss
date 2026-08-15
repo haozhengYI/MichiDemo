@@ -18,3 +18,95 @@
   }
   .row.content {height: auto;} 
 }
+
+.rec-legend {
+  margin: 8px 0 16px;
+}
+.rec-legend-item {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 6px;
+  padding: 2px 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 12px;
+}
+.rec-matrix-wrap {
+  overflow-x: auto;
+  max-width: 100%;
+  background: #fff;
+}
+.rec-matrix {
+  margin-bottom: 0;
+  min-width: 100%;
+}
+.rec-matrix th,
+.rec-matrix td {
+  vertical-align: middle;
+  min-width: 150px;
+}
+.rec-matrix .col-school {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  min-width: 180px;
+  max-width: 220px;
+  background: #fff;
+  white-space: normal;
+}
+.rec-matrix thead .col-school {
+  z-index: 3;
+  background: #f5f5f5;
+}
+.rec-col-name {
+  font-weight: 600;
+}
+.rec-col-meta,
+.rec-school-sub {
+  font-size: 12px;
+  color: #777;
+  font-weight: normal;
+  white-space: normal;
+}
+.rec-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.rec-matrix .col-school a {
+  cursor: pointer;
+  color: #337ab7;
+}
+.rec-cell-select {
+  font-size: 12px;
+  padding: 2px 6px;
+  height: 28px;
+  margin-bottom: 4px;
+}
+.rec-unbind {
+  padding: 2px 8px;
+  font-size: 12px;
+}
+.rec-pending {
+  background-color: #fff8e1;
+}
+.rec-submitted {
+  background-color: #e8f5e9;
+}
+.rec-discarded {
+  background-color: #ffebee;
+}
+.rec-empty {
+  background-color: #fafafa;
+}
+.rec-needed {
+  font-weight: 700;
+  color: #333;
+  font-size: 13px;
+  margin-top: 4px;
+}
+.rec-needed span {
+  font-size: 18px;
+  color: #c9302c;
+  margin-left: 4px;
+}
