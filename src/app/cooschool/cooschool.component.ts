@@ -260,27 +260,11 @@ export class CooschoolComponent implements OnInit {
        "managerID" : hotel.userAccount,
       }
     };
-    this.router.navigate(['/hmmanage'], navigationExtras);
-  }
-  //direct to the modify password page
-  modifyP(hotel) {
-    const navigationExtras: NavigationExtras = {
-      queryParams: {
-       "managerID" : hotel.userAccount,
-      }
-    };
-    this.router.navigate(['/hmmodifypass'], navigationExtras);
+    this.router.navigate(['/comanage'], navigationExtras);
   }
 
-  //direct to the complete information page
-  comp(hotel) {
-    const navigationExtras: NavigationExtras = {
-      queryParams: {
-       "managerID" : hotel.userAccount,
-      }
-    };
-    this.router.navigate(['/hmtask'], navigationExtras);
-  }
+
+
 
   //direct to the hotel manager main page
   main(hotel) {
@@ -289,7 +273,7 @@ export class CooschoolComponent implements OnInit {
        "managerID" : hotel.userAccount,
       }
     };
-    this.router.navigate(['/hmmain'], navigationExtras);
+    this.router.navigate(['/coordmain'], navigationExtras);
   }
 
   //direct to the hotel order 
@@ -300,60 +284,14 @@ export class CooschoolComponent implements OnInit {
 
       }
     };
-    this.router.navigate(['/hmorder'], navigationExtras);
+    this.router.navigate(['/coorder'], navigationExtras);
   }
   
-  //direct to the register page
-  hmregister(hotel) {
-    const navigationExtras: NavigationExtras = {
-      queryParams: {
-       "managerID" : hotel.userAccount,
-      }
-    };
-    this.router.navigate(['/hmregister'], navigationExtras);
-  }
 
-  //direct to the addschool page
-  hmaddschool(hotel,student) {
-    const navigationExtras: NavigationExtras = {
-      queryParams: {
-       "managerID" : hotel.userAccount,
-       "studentID" : this.student._id,
-      }
-    };
-    this.router.navigate(['/hmaddschool'], navigationExtras);
-  }
-  //direct to the register page
-  hmstudent(hotel) {
-    const navigationExtras: NavigationExtras = {
-      queryParams: {
-       "managerID" : hotel.userAccount,
-       "studentID" : this.studentID,
-      }
-    };
-    this.router.navigate(['/hmstudent'], navigationExtras);
-  }
 
-  //direct to the blog page
-  hmblog(hotel) {
-    const navigationExtras: NavigationExtras = {
-      queryParams: {
-       "managerID" : hotel.userAccount,
-      }
-    };
-    this.router.navigate(['/hmblog'], navigationExtras);
-  }
 
-    //direct to the interview page
-    hminterview(hotel) {
-      const navigationExtras: NavigationExtras = {
-        queryParams: {
-         "managerID" : hotel.userAccount,
-        }
-      };
-      this.router.navigate(['/hminterview'], navigationExtras);
-    }
-  
+
+
   
 
   ngOnDestroy() {

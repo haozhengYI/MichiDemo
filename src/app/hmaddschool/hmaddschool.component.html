@@ -59,28 +59,28 @@
               <label for="staticEmail" class="col-sm-2 col-form-label">常用项目</label>
               <div class="col-sm-10">
                 <div class="form-group" style="width:80%">
-                  <select class="form-control" id="exampleSelect1">
-                    <option>待测试</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                  <select class="form-control" id="exampleSelect1" (change)="onSelectCommonProgram($event)">
+                    <option value="">请选择常用项目</option>
+                    <option *ngFor="let p of commonPrograms; let i = index" [value]="i">
+                      {{p.label}}
+                    </option>
                   </select>
+                  <small class="form-text text-muted">仅显示出现频率前 30 的项目。选择后将自动填充 University、School、Major、学校 link 和推荐信数量，可再手动修改。</small>
                 </div>
               </div>
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">University</label>
-              <input type="text" class="form-control"  name="University" placeholder="Enter University" ngModel required>
+              <input type="text" class="form-control"  name="University" placeholder="Enter University" [(ngModel)]="University" required>
               <small class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">School</label>
-              <input type=text class="form-control" name="Uschool" placeholder="Enter School" ngModel required>
+              <input type=text class="form-control" name="Uschool" placeholder="Enter School" [(ngModel)]="Uschool" required>
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Major</label>
-              <input type=text class="form-control" name="major" placeholder="Enter Major" ngModel required>
+              <input type=text class="form-control" name="major" placeholder="Enter Major" [(ngModel)]="major" required>
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Deadline 1</label>
@@ -146,13 +146,13 @@
             <fieldset class="form-group">
               <legend>学校link</legend>
               <div class="form-check">
-                <input type="text" class="form-control"  name="link" placeholder="Enter Link" ngModel required>
+                <input type="text" class="form-control"  name="link" placeholder="Enter Link" [(ngModel)]="link" required>
               </div>
             </fieldset>    
             <fieldset class="form-group">
               <legend>所需推荐信数量</legend>
               <div class="form-check">
-                <input type="text" class="form-control"  name="recommNumber" placeholder="Enter Recommendation Letter Number" ngModel required>
+                <input type="text" class="form-control"  name="recommNumber" placeholder="Enter Recommendation Letter Number" [(ngModel)]="recommNumber" required>
               </div>
             </fieldset>
             <fieldset class="form-group">

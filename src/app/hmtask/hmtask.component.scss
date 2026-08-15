@@ -16,3 +16,15 @@
   }
   .row.content {height: auto;} 
 }
+
+.interview-reminder.due-soon {
+  border-left: 4px solid #f0ad4e;
+}
+
+.interview-reminder.overdue {
+  border-left: 4px solid #d9534f;
+}
+
+.interview-reminder .label {
+  margin-left: 8px;
+}

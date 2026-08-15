@@ -14,6 +14,7 @@ import {Task} from  '../task.model';
 import { TaskService } from '../task.service';
 import {HotelM} from './../hm.model';
 import { Student} from './../st.model';
+import {School} from './../school.model';
 
 @Component({
   selector: 'app-hmtask',
@@ -32,6 +33,37 @@ export class HmtaskComponent implements OnInit {
   //进度信息
   tasks: Task[] = [];
   task : Task;
+  students: Student[] = [];
+  interviewReminders: {
+    studentID: any;
+    schoolID: any;
+    studentName: string;
+    programInfo: string;
+    typeLabel: string;
+    deadline: string;
+    reminderDate: string;
+    status: string;
+  }[] = [];
+  dueSoonReminders: {
+    studentID: any;
+    schoolID: any;
+    studentName: string;
+    programInfo: string;
+    typeLabel: string;
+    deadline: string;
+    reminderDate: string;
+    status: string;
+  }[] = [];
+  overdueReminders: {
+    studentID: any;
+    schoolID: any;
+    studentName: string;
+    programInfo: string;
+    typeLabel: string;
+    deadline: string;
+    reminderDate: string;
+    status: string;
+  }[] = [];
   
   private hotelMSub: Subscription;
 
@@ -86,7 +118,9 @@ export class HmtaskComponent implements OnInit {
             this.tasks.push(o.tasks[i]);
           }
           //console.log("测试2"+this.tasks[1].tstate);
-        });  
+        });
+
+        this.loadInterviewReminders();
     
     this.hotelMSub = this.hmService.getHotelMUpdatedListener().subscribe((hotels: HotelM[]) => {
       this.hotels = hotels;
@@ -118,7 +152,162 @@ export class HmtaskComponent implements OnInit {
       alert("已完成该进度");
       window.location.reload();  
   }
-  
+
+  loadInterviewReminders() {
+    this.http.get<{students: Student[]}>('http://localhost:3000/students').subscribe((studentData) => {
+      this.students = studentData.students;
+      this.http.get<{schools: School[]}>('http://localhost:3000/schools').subscribe((schoolData) => {
+        const reminders = [];
+        const today = this.startOfDay(new Date());
+
+        for (let s of schoolData.schools) {
+          if (!s.state || s.state.toString() !== '进行中') {
+            continue;
+          }
+          if (!this.hasInterviewOrVideoEssay(s)) {
+            continue;
+          }
+
+          const student = this.findStudentById(s.userAccount);
+          const studentName = student ? (student.firstName + ' ' + student.lastName) : '';
+          const programParts = [];
+          if (s.univName) { programParts.push(s.univName.toString()); }
+          if (s.schoolName) { programParts.push(s.schoolName.toString()); }
+          if (s.majorName) { programParts.push(s.majorName.toString()); }
+          const programInfo = programParts.join(' · ');
+          const typeLabel = this.buildTypeLabel(s);
+          const deadlines = [s.ddl1, s.ddl2, s.ddl3];
+
+          for (let i = 0; i < deadlines.length; i++) {
+            const deadlineDate = this.parseDate(deadlines[i]);
+            if (!deadlineDate) {
+              continue;
+            }
+            const reminderDate = this.addDays(deadlineDate, -21);
+            // 提前3周开始显示提醒；项目仍为进行中时，过期 deadline 也继续显示
+            if (today.getTime() < this.startOfDay(reminderDate).getTime()) {
+              continue;
+            }
+            let status = 'due-soon';
+            if (today.getTime() > this.startOfDay(deadlineDate).getTime()) {
+              status = 'overdue';
+            }
+            reminders.push({
+              studentID: s.userAccount,
+              schoolID: s._id,
+              studentName: studentName,
+              programInfo: programInfo,
+              typeLabel: typeLabel + ' · DDL' + (i + 1),
+              deadline: this.formatDate(deadlineDate),
+              reminderDate: this.formatDate(reminderDate),
+              status: status
+            });
+          }
+        }
+
+        reminders.sort(function(a, b) {
+          if (a.status === 'overdue' && b.status !== 'overdue') { return -1; }
+          if (a.status !== 'overdue' && b.status === 'overdue') { return 1; }
+          return a.deadline < b.deadline ? -1 : (a.deadline > b.deadline ? 1 : 0);
+        });
+        this.interviewReminders = reminders;
+        this.dueSoonReminders = reminders.filter(function(r) {
+          return r.status === 'due-soon';
+        });
+        this.overdueReminders = reminders.filter(function(r) {
+          return r.status === 'overdue';
+        });
+      });
+    });
+  }
+
+  hasInterviewOrVideoEssay(school: School) {
+    const interview = school.interview ? school.interview.toString() : '';
+    const videoEssay = school.videoEssay ? school.videoEssay.toString() : '';
+    const hasInterview = interview === 'yes' || interview.indexOf('有') !== -1;
+    const hasVideo = videoEssay.indexOf('有') !== -1;
+    return hasInterview || hasVideo;
+  }
+
+  buildTypeLabel(school: School) {
+    const interview = school.interview ? school.interview.toString() : '';
+    const videoEssay = school.videoEssay ? school.videoEssay.toString() : '';
+    const hasInterview = interview === 'yes' || interview.indexOf('有') !== -1;
+    const hasVideo = videoEssay.indexOf('有') !== -1;
+    if (hasInterview && hasVideo) {
+      return '有面试 + Video Essay';
+    }
+    if (hasInterview) {
+      return '有面试';
+    }
+    return videoEssay || '有 Video Essay';
+  }
+
+  findStudentById(studentId) {
+    if (!studentId) {
+      return null;
+    }
+    for (let st of this.students) {
+      if (st._id === studentId) {
+        return st;
+      }
+    }
+    return null;
+  }
+
+  parseDate(value) {
+    if (!value) {
+      return null;
+    }
+    const text = value.toString().trim();
+    if (!text || text === ' ') {
+      return null;
+    }
+    const dashParts = text.split('T')[0].split('-');
+    if (dashParts.length === 3) {
+      const year = Number(dashParts[0]);
+      const month = Number(dashParts[1]);
+      const day = Number(dashParts[2]);
+      if (!year || !month || !day) {
+        return null;
+      }
+      return new Date(year, month - 1, day);
+    }
+    const parsed = new Date(text);
+    if (isNaN(parsed.getTime())) {
+      return null;
+    }
+    return parsed;
+  }
+
+  addDays(date: Date, days: number) {
+    const result = new Date(date.getTime());
+    result.setDate(result.getDate() + days);
+    return result;
+  }
+
+  startOfDay(date: Date) {
+    return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+  }
+
+  formatDate(date: Date) {
+    const month = (date.getMonth() + 1 < 10 ? '0' : '') + (date.getMonth() + 1);
+    const day = (date.getDate() < 10 ? '0' : '') + date.getDate();
+    return date.getFullYear() + '-' + month + '-' + day;
+  }
+
+  openInterviewReminder(reminder) {
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+       "managerID" : this.managerID,
+       "studentID" : reminder.studentID,
+       "schoolID"  : reminder.schoolID,
+      }
+    };
+    this.router.navigate(['/hmschool'], navigationExtras);
+  }
+
+
 
   //direct to the hotel manage page
   hotelman(hotel) {

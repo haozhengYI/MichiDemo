@@ -253,6 +253,20 @@
                         <br>
                         <h3>未完成</h3>
                         <br>
+                        <h4 *ngIf="dueSoonReminders.length > 0">面试 / Video Essay 提醒</h4>
+                        <div *ngFor="let r of dueSoonReminders">
+                          <div class="list-group">
+                            <a (click)="openInterviewReminder(r)" class="list-group-item list-group-item-action flex-column align-items-start interview-reminder due-soon">
+                              <div class="d-flex w-100 justify-content-between">
+                                <h3 class="mb-1">{{r.studentName}}</h3>
+                                <small>提醒日 {{r.reminderDate}}</small>
+                              </div>
+                              <p class="mb-1">{{r.programInfo}}</p>
+                              <small>{{r.typeLabel}} · 项目 DDL {{r.deadline}}</small>
+                              <span class="label label-warning">提前3周提醒</span>
+                            </a>
+                          </div>
+                        </div>
                         <div *ngIf="tasks.length > 0">
                           <div *ngFor="let ts of tasks">
                             <div *ngIf="ts.assigned=='其他'">
@@ -272,10 +286,23 @@
  
 
                       </div>
-                      <div class="col-md-6 column" *ngIf="tasks.length > 0">
+                      <div class="col-md-6 column">
                         <br>
                         <h3>已完成</h3>
                         <br>
+                        <h4 *ngIf="overdueReminders.length > 0">已过 Deadline</h4>
+                        <div *ngFor="let r of overdueReminders">
+                          <div class="list-group">
+                            <blockquote class="interview-reminder overdue">
+                              <p>
+                                {{r.programInfo}}
+                              </p>
+                              <b style="font-size: 12px;">{{r.studentName}}</b>
+                              <small>{{r.typeLabel}} · 项目 DDL {{r.deadline}} · 提醒日 {{r.reminderDate}}</small>
+                              <span class="label label-danger">已过 DDL</span>
+                            </blockquote>
+                          </div>
+                        </div>
                         <div *ngFor="let ts of tasks">
                           <div *ngIf="ts.assigned=='其他'">
                             <div class="list-group" *ngIf="ts.tstate=='完成'">

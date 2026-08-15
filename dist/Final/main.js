@@ -3352,25 +3352,7 @@ var CooschoolComponent = /** @class */ (function () {
                 "managerID": hotel.userAccount,
             }
         };
-        this.router.navigate(['/hmmanage'], navigationExtras);
-    };
-    //direct to the modify password page
-    CooschoolComponent.prototype.modifyP = function (hotel) {
-        var navigationExtras = {
-            queryParams: {
-                "managerID": hotel.userAccount,
-            }
-        };
-        this.router.navigate(['/hmmodifypass'], navigationExtras);
-    };
-    //direct to the complete information page
-    CooschoolComponent.prototype.comp = function (hotel) {
-        var navigationExtras = {
-            queryParams: {
-                "managerID": hotel.userAccount,
-            }
-        };
-        this.router.navigate(['/hmtask'], navigationExtras);
+        this.router.navigate(['/comanage'], navigationExtras);
     };
     //direct to the hotel manager main page
     CooschoolComponent.prototype.main = function (hotel) {
@@ -3379,7 +3361,7 @@ var CooschoolComponent = /** @class */ (function () {
                 "managerID": hotel.userAccount,
             }
         };
-        this.router.navigate(['/hmmain'], navigationExtras);
+        this.router.navigate(['/coordmain'], navigationExtras);
     };
     //direct to the hotel order 
     CooschoolComponent.prototype.hmorder = function (hotel) {
@@ -3388,54 +3370,7 @@ var CooschoolComponent = /** @class */ (function () {
                 "managerID": hotel.userAccount,
             }
         };
-        this.router.navigate(['/hmorder'], navigationExtras);
-    };
-    //direct to the register page
-    CooschoolComponent.prototype.hmregister = function (hotel) {
-        var navigationExtras = {
-            queryParams: {
-                "managerID": hotel.userAccount,
-            }
-        };
-        this.router.navigate(['/hmregister'], navigationExtras);
-    };
-    //direct to the addschool page
-    CooschoolComponent.prototype.hmaddschool = function (hotel, student) {
-        var navigationExtras = {
-            queryParams: {
-                "managerID": hotel.userAccount,
-                "studentID": this.student._id,
-            }
-        };
-        this.router.navigate(['/hmaddschool'], navigationExtras);
-    };
-    //direct to the register page
-    CooschoolComponent.prototype.hmstudent = function (hotel) {
-        var navigationExtras = {
-            queryParams: {
-                "managerID": hotel.userAccount,
-                "studentID": this.studentID,
-            }
-        };
-        this.router.navigate(['/hmstudent'], navigationExtras);
-    };
-    //direct to the blog page
-    CooschoolComponent.prototype.hmblog = function (hotel) {
-        var navigationExtras = {
-            queryParams: {
-                "managerID": hotel.userAccount,
-            }
-        };
-        this.router.navigate(['/hmblog'], navigationExtras);
-    };
-    //direct to the interview page
-    CooschoolComponent.prototype.hminterview = function (hotel) {
-        var navigationExtras = {
-            queryParams: {
-                "managerID": hotel.userAccount,
-            }
-        };
-        this.router.navigate(['/hminterview'], navigationExtras);
+        this.router.navigate(['/coorder'], navigationExtras);
     };
     CooschoolComponent.prototype.ngOnDestroy = function () {
         this.hotelMSub.unsubscribe();
@@ -4085,7 +4020,7 @@ var HmService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-inverse\" role=\"navigation\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n        <a class=\"navbar-brand\" >一个很神秘的网页</a>\n      </div>\n      <div class=\"nav  navbar-right\">\n        <ul class=\"nav navbar-nav\">\n          <li class=\"active\"><a (click)=\"main(hotel)\">HomePage</a></li>\n          <li class=\"dropdown\">\n            <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n              Shortcut <b class=\"caret\"></b>\n            </a>\n            <ul class=\"dropdown-menu\">\n              <li><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n              <li><a (click)=\"comp(hotel)\">Complete info</a></li>\n              <li class=\"divider\"></li>\n            </ul>\n          </li>\n          <li class=\"nav navbar-nav navbar-right\">\n            <a href=\"/mainpage\">Log Out</a>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </nav>\n  <ol class=\"breadcrumb\">\n      <li><a (click)=\"main(hotel)\">Home</a></li>\n      <li><a (click)=\"main(hotel)\">{{hotel.userAccount}}</a></li>\n      <li><a (click)=\"hotelman(hotel)\">Manage Student</a></li>\n      <li > <a (click)=\"hmstudent(hotel)\"> {{student.firstName}} {{student.lastName}}</a></li>\n      <li class=\"active\">添加项目</li>\n  </ol>\n\n  <div class=\"container-fluid\">\n    <div class=\"row content\">\n      <div class=\"col-sm-3 sidenav\">\n      <h4>{{hotel.userAccount}}  </h4>\n      <ul class=\"nav nav-pills nav-stacked\">\n        <li ><a (click)=\"main(hotel)\">Home-{{hotel.userAccount}}</a></li>\n        <li ><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n        <li><a (click)=\"comp(hotel)\">进度更新</a></li>\n        <li class=\"active\"><a (click)=\"hotelman(hotel)\">学生管理</a></li>\n        <li><a (click)=\"hmorder(hotel)\">学生申请</a></li>\n        <li><a (click)=\"hmregister(hotel)\">登记账号</a></li>\n        <li ><a (click)=\"hmblog(hotel)\">Blog管理</a></li>\n        <li ><a (click)=\"hminterview(hotel)\">面试题库</a></li>\n      </ul><br>\n      \n      </div>\n    \n      <div class=\"col-sm-9\">\n        <h2>{{student.firstName}} {{student.lastName}}</h2>\n      <p>{{student.userAccount}}</p>\n      <hr>\n        <form (submit)=\"addschool(postForm)\" #postForm=\"ngForm\" ngNativeValidate>\n          <fieldset>\n            <legend>添加学校项目</legend>\n            <div class=\"form-group row\">\n              <label for=\"staticEmail\" class=\"col-sm-2 col-form-label\">常用项目</label>\n              <div class=\"col-sm-10\">\n                <div class=\"form-group\" style=\"width:80%\">\n                  <select class=\"form-control\" id=\"exampleSelect1\">\n                    <option>待测试</option>\n                    <option>2</option>\n                    <option>3</option>\n                    <option>4</option>\n                    <option>5</option>\n                  </select>\n                </div>\n              </div>\n            </div>\n            <div class=\"form-group\">\n              <label for=\"exampleInputEmail1\">University</label>\n              <input type=\"text\" class=\"form-control\"  name=\"University\" placeholder=\"Enter University\" ngModel required>\n              <small class=\"form-text text-muted\">We'll never share your email with anyone else.</small>\n            </div>\n            <div class=\"form-group\">\n              <label for=\"exampleInputPassword1\">School</label>\n              <input type=text class=\"form-control\" name=\"Uschool\" placeholder=\"Enter School\" ngModel required>\n            </div>\n            <div class=\"form-group\">\n              <label for=\"exampleInputPassword1\">Major</label>\n              <input type=text class=\"form-control\" name=\"major\" placeholder=\"Enter Major\" ngModel required>\n            </div>\n            <div class=\"form-group\">\n              <label for=\"exampleInputPassword1\">Deadline 1</label>\n              <input class=\"form-control\" name=\"ddl1\" type=\"date\" placeholder=\"date\" style=\"width:50%\" ngModel required>\n              <small class=\"form-text text-muted\">若只有一个deadline，只需填写一个即可。</small>\n            </div>\n            <div class=\"form-group\">\n              <label for=\"exampleInputPassword1\">Deadline 2</label>\n              <input class=\"form-control\" name=\"ddl2\" type=\"date\" placeholder=\"date\" style=\"width:50%\" ngModel >\n            </div>\n            <div class=\"form-group\">\n              <label for=\"exampleInputPassword1\">Deadline 3</label>\n              <input class=\"form-control\" name=\"ddl3\" type=\"date\" placeholder=\"date\" style=\"width:50%\" ngModel >\n            </div>  \n            \n            <fieldset class=\"form-group\">\n              <legend>Interview</legend>\n              <div class=\"form-check\">\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"interview\" id=\"interview1\" value=\"yes\"  ngModel required>\n                  有面试\n                </label>\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"interview\" id=\"interview2\" value=\"no\"  ngModel required>\n                  无面试\n                </label>\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"interview\" id=\"interview3\" value=\"other\" ngModel required>\n                  未知\n                </label>\n              </div>\n            </fieldset>\n            <fieldset class=\"form-group\">\n              <legend>Video Essay</legend>\n              <div class=\"form-check\">\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"videoessay\" id=\"videoessay1\" value=\"无Video Essay\"  ngModel required>\n                  无Video Essay\n                </label>\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"videoessay\" id=\"videoessay2\" value=\"有，在提交申请前\" ngModel required>\n                  有，在提交申请前\n                </label>\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"videoessay\" id=\"videoessay3\" value=\"有，在提交申请后\" ngModel required>\n                  有，在提交申请后\n                </label>\n              </div>\n            </fieldset>\n            <fieldset class=\"form-group\">\n              <legend>GRE要求</legend>\n              <div class=\"form-check\">\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"gre\" id=\"gre1\" value=\"Required\"  ngModel required>\n                  Required\n                </label>\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"gre\" id=\"gre2\" value=\"Optional\" ngModel required>\n                  Optional\n                </label>\n              </div>\n            </fieldset>\n            <fieldset class=\"form-group\">\n              <legend>学校link</legend>\n              <div class=\"form-check\">\n                <input type=\"text\" class=\"form-control\"  name=\"link\" placeholder=\"Enter Link\" ngModel required>\n              </div>\n            </fieldset>    \n            <fieldset class=\"form-group\">\n              <legend>所需推荐信数量</legend>\n              <div class=\"form-check\">\n                <input type=\"text\" class=\"form-control\"  name=\"recommNumber\" placeholder=\"Enter Recommendation Letter Number\" ngModel required>\n              </div>\n            </fieldset>\n            <fieldset class=\"form-group\">\n              <legend>备注</legend>\n              <div class=\"form-check\">\n                <input type=\"text\" class=\"form-control\"  name=\"other\" placeholder=\"Enter Notes\" ngModel>\n              </div>\n            </fieldset>\n            <fieldset class=\"form-group\">\n              <legend>优先级别</legend>\n              <div class=\"form-check\">\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"level\" id=\"level1\" value=\"正常\"  ngModel required>\n                 正常 &nbsp; &nbsp; \n                </label>\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"level\" id=\"level2\" value=\"保底\"  ngModel required>\n                  保底 <span class=\"label label-info\">☆</span>&nbsp; &nbsp; \n                </label>\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"level\" id=\"level3\" value=\"冲刺\" ngModel required>\n                  冲刺 <span class=\"label label-success\">❤</span>&nbsp; &nbsp; \n                </label>\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"level\" id=\"level4\" value=\"不可能\" ngModel required>\n                  不可能 <span class=\"label label-warning\">×</span>&nbsp; &nbsp; \n                </label>\n              </div>\n            </fieldset>\n\n            <button  class=\"btn btn-primary\" >添加</button>\n          </fieldset>\n        </form>\n      </div>\n    </div>\n  </div>\n\n\n  \n\n  "
+module.exports = "<nav class=\"navbar navbar-inverse\" role=\"navigation\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n        <a class=\"navbar-brand\" >一个很神秘的网页</a>\n      </div>\n      <div class=\"nav  navbar-right\">\n        <ul class=\"nav navbar-nav\">\n          <li class=\"active\"><a (click)=\"main(hotel)\">HomePage</a></li>\n          <li class=\"dropdown\">\n            <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n              Shortcut <b class=\"caret\"></b>\n            </a>\n            <ul class=\"dropdown-menu\">\n              <li><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n              <li><a (click)=\"comp(hotel)\">Complete info</a></li>\n              <li class=\"divider\"></li>\n            </ul>\n          </li>\n          <li class=\"nav navbar-nav navbar-right\">\n            <a href=\"/mainpage\">Log Out</a>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </nav>\n  <ol class=\"breadcrumb\">\n      <li><a (click)=\"main(hotel)\">Home</a></li>\n      <li><a (click)=\"main(hotel)\">{{hotel.userAccount}}</a></li>\n      <li><a (click)=\"hotelman(hotel)\">Manage Student</a></li>\n      <li > <a (click)=\"hmstudent(hotel)\"> {{student.firstName}} {{student.lastName}}</a></li>\n      <li class=\"active\">添加项目</li>\n  </ol>\n\n  <div class=\"container-fluid\">\n    <div class=\"row content\">\n      <div class=\"col-sm-3 sidenav\">\n      <h4>{{hotel.userAccount}}  </h4>\n      <ul class=\"nav nav-pills nav-stacked\">\n        <li ><a (click)=\"main(hotel)\">Home-{{hotel.userAccount}}</a></li>\n        <li ><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n        <li><a (click)=\"comp(hotel)\">进度更新</a></li>\n        <li class=\"active\"><a (click)=\"hotelman(hotel)\">学生管理</a></li>\n        <li><a (click)=\"hmorder(hotel)\">学生申请</a></li>\n        <li><a (click)=\"hmregister(hotel)\">登记账号</a></li>\n        <li ><a (click)=\"hmblog(hotel)\">Blog管理</a></li>\n        <li ><a (click)=\"hminterview(hotel)\">面试题库</a></li>\n      </ul><br>\n      \n      </div>\n    \n      <div class=\"col-sm-9\">\n        <h2>{{student.firstName}} {{student.lastName}}</h2>\n      <p>{{student.userAccount}}</p>\n      <hr>\n        <form (submit)=\"addschool(postForm)\" #postForm=\"ngForm\" ngNativeValidate>\n          <fieldset>\n            <legend>添加学校项目</legend>\n            <div class=\"form-group row\">\n              <label for=\"staticEmail\" class=\"col-sm-2 col-form-label\">常用项目</label>\n              <div class=\"col-sm-10\">\n                <div class=\"form-group\" style=\"width:80%\">\n                  <select class=\"form-control\" id=\"exampleSelect1\" (change)=\"onSelectCommonProgram($event)\">\n                    <option value=\"\">请选择常用项目</option>\n                    <option *ngFor=\"let p of commonPrograms; let i = index\" [value]=\"i\">\n                      {{p.label}}\n                    </option>\n                  </select>\n                  <small class=\"form-text text-muted\">仅显示出现频率前 30 的项目。选择后将自动填充 University、School、Major、学校 link 和推荐信数量，可再手动修改。</small>\n                </div>\n              </div>\n            </div>\n            <div class=\"form-group\">\n              <label for=\"exampleInputEmail1\">University</label>\n              <input type=\"text\" class=\"form-control\"  name=\"University\" placeholder=\"Enter University\" [(ngModel)]=\"University\" required>\n              <small class=\"form-text text-muted\">We'll never share your email with anyone else.</small>\n            </div>\n            <div class=\"form-group\">\n              <label for=\"exampleInputPassword1\">School</label>\n              <input type=text class=\"form-control\" name=\"Uschool\" placeholder=\"Enter School\" [(ngModel)]=\"Uschool\" required>\n            </div>\n            <div class=\"form-group\">\n              <label for=\"exampleInputPassword1\">Major</label>\n              <input type=text class=\"form-control\" name=\"major\" placeholder=\"Enter Major\" [(ngModel)]=\"major\" required>\n            </div>\n            <div class=\"form-group\">\n              <label for=\"exampleInputPassword1\">Deadline 1</label>\n              <input class=\"form-control\" name=\"ddl1\" type=\"date\" placeholder=\"date\" style=\"width:50%\" ngModel required>\n              <small class=\"form-text text-muted\">若只有一个deadline，只需填写一个即可。</small>\n            </div>\n            <div class=\"form-group\">\n              <label for=\"exampleInputPassword1\">Deadline 2</label>\n              <input class=\"form-control\" name=\"ddl2\" type=\"date\" placeholder=\"date\" style=\"width:50%\" ngModel >\n            </div>\n            <div class=\"form-group\">\n              <label for=\"exampleInputPassword1\">Deadline 3</label>\n              <input class=\"form-control\" name=\"ddl3\" type=\"date\" placeholder=\"date\" style=\"width:50%\" ngModel >\n            </div>  \n            \n            <fieldset class=\"form-group\">\n              <legend>Interview</legend>\n              <div class=\"form-check\">\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"interview\" id=\"interview1\" value=\"yes\"  ngModel required>\n                  有面试\n                </label>\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"interview\" id=\"interview2\" value=\"no\"  ngModel required>\n                  无面试\n                </label>\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"interview\" id=\"interview3\" value=\"other\" ngModel required>\n                  未知\n                </label>\n              </div>\n            </fieldset>\n            <fieldset class=\"form-group\">\n              <legend>Video Essay</legend>\n              <div class=\"form-check\">\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"videoessay\" id=\"videoessay1\" value=\"无Video Essay\"  ngModel required>\n                  无Video Essay\n                </label>\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"videoessay\" id=\"videoessay2\" value=\"有，在提交申请前\" ngModel required>\n                  有，在提交申请前\n                </label>\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"videoessay\" id=\"videoessay3\" value=\"有，在提交申请后\" ngModel required>\n                  有，在提交申请后\n                </label>\n              </div>\n            </fieldset>\n            <fieldset class=\"form-group\">\n              <legend>GRE要求</legend>\n              <div class=\"form-check\">\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"gre\" id=\"gre1\" value=\"Required\"  ngModel required>\n                  Required\n                </label>\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"gre\" id=\"gre2\" value=\"Optional\" ngModel required>\n                  Optional\n                </label>\n              </div>\n            </fieldset>\n            <fieldset class=\"form-group\">\n              <legend>学校link</legend>\n              <div class=\"form-check\">\n                <input type=\"text\" class=\"form-control\"  name=\"link\" placeholder=\"Enter Link\" [(ngModel)]=\"link\" required>\n              </div>\n            </fieldset>    \n            <fieldset class=\"form-group\">\n              <legend>所需推荐信数量</legend>\n              <div class=\"form-check\">\n                <input type=\"text\" class=\"form-control\"  name=\"recommNumber\" placeholder=\"Enter Recommendation Letter Number\" [(ngModel)]=\"recommNumber\" required>\n              </div>\n            </fieldset>\n            <fieldset class=\"form-group\">\n              <legend>备注</legend>\n              <div class=\"form-check\">\n                <input type=\"text\" class=\"form-control\"  name=\"other\" placeholder=\"Enter Notes\" ngModel>\n              </div>\n            </fieldset>\n            <fieldset class=\"form-group\">\n              <legend>优先级别</legend>\n              <div class=\"form-check\">\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"level\" id=\"level1\" value=\"正常\"  ngModel required>\n                 正常 &nbsp; &nbsp; \n                </label>\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"level\" id=\"level2\" value=\"保底\"  ngModel required>\n                  保底 <span class=\"label label-info\">☆</span>&nbsp; &nbsp; \n                </label>\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"level\" id=\"level3\" value=\"冲刺\" ngModel required>\n                  冲刺 <span class=\"label label-success\">❤</span>&nbsp; &nbsp; \n                </label>\n                <label class=\"form-check-label\">\n                  <input type=\"radio\" class=\"form-check-input\" name=\"level\" id=\"level4\" value=\"不可能\" ngModel required>\n                  不可能 <span class=\"label label-warning\">×</span>&nbsp; &nbsp; \n                </label>\n              </div>\n            </fieldset>\n\n            <button  class=\"btn btn-primary\" >添加</button>\n          </fieldset>\n        </form>\n      </div>\n    </div>\n  </div>\n\n\n  \n\n  "
 
 /***/ }),
 
@@ -4121,7 +4056,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-//import {School} from '../school.model';
 
 var HmaddschoolComponent = /** @class */ (function () {
     function HmaddschoolComponent(route, router, http, schoolService, hmService) {
@@ -4146,6 +4080,8 @@ var HmaddschoolComponent = /** @class */ (function () {
         this.interview = "";
         this.videoessay = "";
         this.link = "";
+        this.recommNumber = "";
+        this.commonPrograms = [];
         this.route.queryParams.subscribe(function (params) {
             _this.managerID = params["managerID"];
             _this.studentID = params["studentID"];
@@ -4198,9 +4134,78 @@ var HmaddschoolComponent = /** @class */ (function () {
                 }
             }
         });
+        this.loadCommonPrograms();
         this.hotelMSub = this.hmService.getHotelMUpdatedListener().subscribe(function (hotels) {
             _this.hotels = hotels;
         });
+    };
+    HmaddschoolComponent.prototype.loadCommonPrograms = function () {
+        var _this = this;
+        this.http.get('/api/schools').subscribe(function (Data) {
+            var programMap = {};
+            for (var _i = 0, _a = Data.schools; _i < _a.length; _i++) {
+                var s = _a[_i];
+                var univName = s.univName ? s.univName.toString().trim() : '';
+                var schoolName = s.schoolName ? s.schoolName.toString().trim() : '';
+                var majorName = s.majorName ? s.majorName.toString().trim() : '';
+                var link = s.link ? s.link.toString().trim() : '';
+                var recommNumber = s.recommNumber ? s.recommNumber.toString().trim() : '';
+                if (!univName && !schoolName && !majorName) {
+                    continue;
+                }
+                var key = univName + '|' + schoolName + '|' + majorName;
+                if (programMap[key]) {
+                    programMap[key].count += 1;
+                    if (!programMap[key].link && link) {
+                        programMap[key].link = link;
+                    }
+                    if (!programMap[key].recommNumber && recommNumber) {
+                        programMap[key].recommNumber = recommNumber;
+                    }
+                }
+                else {
+                    var labelParts = [];
+                    if (univName) {
+                        labelParts.push(univName);
+                    }
+                    if (schoolName) {
+                        labelParts.push(schoolName);
+                    }
+                    if (majorName) {
+                        labelParts.push(majorName);
+                    }
+                    programMap[key] = {
+                        univName: univName,
+                        schoolName: schoolName,
+                        majorName: majorName,
+                        link: link,
+                        recommNumber: recommNumber,
+                        label: labelParts.join(' · '),
+                        count: 1
+                    };
+                }
+            }
+            _this.commonPrograms = Object.keys(programMap).map(function (key) {
+                return programMap[key];
+            }).sort(function (a, b) {
+                return b.count - a.count;
+            }).slice(0, 30);
+        });
+    };
+    HmaddschoolComponent.prototype.onSelectCommonProgram = function (event) {
+        var index = event.target.value;
+        if (index === '' || index === null || index === undefined) {
+            return;
+        }
+        var program = this.commonPrograms[Number(index)];
+        if (!program) {
+            return;
+        }
+        this.University = program.univName;
+        this.Uschool = program.schoolName;
+        this.major = program.majorName;
+        this.link = program.link || '';
+        this.recommNumber = program.recommNumber || '';
     };
     //direct to the hotel manage page
     HmaddschoolComponent.prototype.hotelman = function (hotel) {
@@ -9236,7 +9241,7 @@ var HmstudentrecComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n\n<header>\n\t<nav class=\"navbar navbar-inverse\" role=\"navigation\">\n\t\t<div class=\"container-fluid\">\n\t\t<div class=\"navbar-header\">\n\t\t\t\t<a class=\"navbar-brand\" >一个很神秘的网页</a>\n\t\t</div>\n\t\t<div class=\"nav  navbar-right\">\n\t\t  <ul class=\"nav navbar-nav\">\n\t\t\t<li class=\"active\"><a (click)=\"main(hotel)\">HomePage</a></li>\n\t\t\t<li class=\"dropdown\">\n\t\t\t  <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n\t\t\t\t{{hotel.userAccount}} <b class=\"caret\"></b>\n\t\t\t  </a>\n\t\t\t  <ul class=\"dropdown-menu\">\n\t\t\t\t\t\t\t<li><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n\t\t\t\t\t\t\t<li><a (click)=\"comp(hotel)\">Complete info</a></li>\n\t\t\t\t\t\t\t<li class=\"divider\"></li>\n\t\t\t\t\t\t</ul>\n\t\t\t</li>\n\t\t\t<li class=\"nav navbar-nav navbar-right\">\n\t\t\t  <a href=\"/mainpage\">Log Out</a>\n\t\t\t</li>\n\t\t  </ul>\n\t\t</div>\n\t  </div>\n\t</nav>\n\t\n  </header>\n  \n  <ol class=\"breadcrumb\">\n  <li><a (click)=\"main(hotel)\">Home</a></li>\n\t<li ><a (click)=\"main(hotel)\">{{hotel.userAccount}}</a></li>\n  <li class=\"active\">进度更新</li>\n</ol>\n\n<div class=\"container-fluid\">\n\t<div class=\"row content\">\n\t  <div class=\"col-sm-2 sidenav\">\n\t\t<h4>{{hotel.userAccount}}  </h4>\n\t\t<ul class=\"nav nav-pills nav-stacked\">\n\t\t  <li ><a (click)=\"main(hotel)\">Home</a></li>\n      <li ><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n      <li class=\"active\"><a (click)=\"comp(hotel)\">进度更新</a></li>\n      <li><a (click)=\"hotelman(hotel)\">学生管理</a></li>\n      <li><a (click)=\"hmorder(hotel)\">学生申请</a></li>\n      <li ><a (click)=\"hmregister(hotel)\">登记账号</a></li>\n      <li ><a (click)=\"hmblog(hotel)\">Blog管理</a></li>\n      <li ><a (click)=\"hminterview(hotel)\">面试题库</a></li>\n\t\t</ul><br>\n\t\t\n\t  </div>\n  \n\t  <div class=\"col-sm-10\">\n      <div id=\"register\">\n        <ul class=\"nav nav-tabs\">\n          <li class=\"nav-item\">\n            <a class=\"nav-link \" data-toggle=\"tab\" href=\"#yuxin\" >Yuxin</a>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link \" data-toggle=\"tab\" href=\"#yi\" >小伊</a>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link \" data-toggle=\"tab\" href=\"#dasong\" >Yimei</a>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link \" data-toggle=\"tab\" href=\"#oth\" >其他</a>\n          </li>\n        </ul>\n        <div id=\"myTabContent\" class=\"tab-content\">\n          <div class=\"tab-pane fade in active\" id=\"yuxin\">               \n            <div class=\"col-sm-12\">\n              <div class=\"container\">\n                <div class=\"row clearfix\" >\n                  <div class=\"col-md-12 column\" >\n                    <div class=\"row clearfix\"  >\n                      <div class=\"col-md-6 column\" >\n                        <br>\n                        <h3>未完成</h3>\n                        <br>\n                        <div *ngIf=\"tasks.length > 0\">\n                          <div *ngFor=\"let ts of tasks\">\n                            <div *ngIf=\"ts.assigned=='yuxin'\">\n                              <div class=\"list-group\" *ngIf=\"ts.tstate=='未完成'\">\n                                <a  (click)=\"update(ts)\" class=\"list-group-item list-group-item-action flex-column align-items-start\" >\n                                  <div class=\"d-flex w-100 justify-content-between\">\n                                    <h3 class=\"mb-1\">{{ts.studentname}}</h3>\n                                    <small>{{ts.tdate}}</small>\n                                  </div>\n                                  <p class=\"mb-1\"> {{ts.content}}</p>\n                                </a>\n                              </div>\n                            </div>\n                          </div>\n                        </div>\n\n \n\n                      </div>\n                      <div class=\"col-md-6 column\" *ngIf=\"tasks.length > 0\">\n                        <br>\n                        <h3>已完成</h3>\n                        <br>\n                        <div *ngFor=\"let ts of tasks\">\n                          <div *ngIf=\"ts.assigned=='yuxin'\">\n                            <div class=\"list-group\" *ngIf=\"ts.tstate=='完成'\">\n                              <blockquote >\n                                <p>\n                                 {{ts.content}}\n                                </p> <b style=\"font-size: 12px;\">{{ts.studentname}}</b><small>{{ts.tdate}}  {{ts.tstate}}</small>\n                              </blockquote>\n                            </div>\n                          </div>\n                        </div>\n                        \n                      </div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n  \n  \n  \n  \n  \n  \n          </div>\n          <div class=\"tab-pane fade \" id=\"yi\">               \n            <div class=\"col-sm-12\">\n              <div class=\"container\">\n                <div class=\"row clearfix\" >\n                  <div class=\"col-md-12 column\" >\n                    <div class=\"row clearfix\"  >\n                      <div class=\"col-md-6 column\" >\n                        <br>\n                        <h3>未完成</h3>\n                        <br>\n                        <div *ngIf=\"tasks.length > 0\">\n                          <div *ngFor=\"let ts of tasks\">\n                            <div *ngIf=\"ts.assigned=='小伊'\">\n                              <div class=\"list-group\" *ngIf=\"ts.tstate=='未完成'\">\n                                <a  (click)=\"update(ts)\" class=\"list-group-item list-group-item-action flex-column align-items-start\" >\n                                  <div class=\"d-flex w-100 justify-content-between\">\n                                    <h3 class=\"mb-1\">{{ts.studentname}}</h3>\n                                    <small>{{ts.tdate}}</small>\n                                  </div>\n                                  <p class=\"mb-1\"> {{ts.content}}</p>\n                                </a>\n                              </div>\n                            </div>\n                          </div>\n                        </div>\n\n \n\n                      </div>\n                      <div class=\"col-md-6 column\" *ngIf=\"tasks.length > 0\">\n                        <br>\n                        <h3>已完成</h3>\n                        <br>\n                        <div *ngFor=\"let ts of tasks\">\n                          <div *ngIf=\"ts.assigned=='小伊'\">\n                            <div class=\"list-group\" *ngIf=\"ts.tstate=='完成'\">\n                              <blockquote >\n                                <p>\n                                 {{ts.content}}\n                                </p> <b style=\"font-size: 12px;\">{{ts.studentname}}</b><small>{{ts.tdate}}  {{ts.tstate}}</small>\n                              </blockquote>\n                            </div>\n                          </div>\n                        </div>\n                        \n                      </div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n  \n  \n  \n  \n  \n  \n          </div>\n          <div class=\"tab-pane fade \" id=\"dasong\">               \n            <div class=\"col-sm-12\">\n              <div class=\"container\">\n                <div class=\"row clearfix\" >\n                  <div class=\"col-md-12 column\" >\n                    <div class=\"row clearfix\"  >\n                      <div class=\"col-md-6 column\" >\n                        <br>\n                        <h3>未完成</h3>\n                        <br>\n                        <div *ngIf=\"tasks.length > 0\">\n                          <div *ngFor=\"let ts of tasks\">\n                            <div *ngIf=\"ts.assigned=='大松'\">\n                              <div class=\"list-group\" *ngIf=\"ts.tstate=='未完成'\">\n                                <a  (click)=\"update(ts)\" class=\"list-group-item list-group-item-action flex-column align-items-start\" >\n                                  <div class=\"d-flex w-100 justify-content-between\">\n                                    <h3 class=\"mb-1\">{{ts.studentname}}</h3>\n                                    <small>{{ts.tdate}}</small>\n                                  </div>\n                                  <p class=\"mb-1\"> {{ts.content}}</p>\n                                </a>\n                              </div>\n                            </div>\n                          </div>\n                        </div>\n\n \n\n                      </div>\n                      <div class=\"col-md-6 column\" *ngIf=\"tasks.length > 0\">\n                        <br>\n                        <h3>已完成</h3>\n                        <br>\n                        <div *ngFor=\"let ts of tasks\">\n                          <div *ngIf=\"ts.assigned=='大松'\">\n                            <div class=\"list-group\" *ngIf=\"ts.tstate=='完成'\">\n                              <blockquote >\n                                <p>\n                                 {{ts.content}}\n                                </p> <b style=\"font-size: 12px;\">{{ts.studentname}}</b><small>{{ts.tdate}}  {{ts.tstate}}</small>\n                              </blockquote>\n                            </div>\n                          </div>\n                        </div>\n                        \n                      </div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n  \n  \n  \n  \n  \n  \n          </div>\n          <div class=\"tab-pane fade \" id=\"oth\">               \n            <div class=\"col-sm-12\">\n              <div class=\"container\">\n                <div class=\"row clearfix\" >\n                  <div class=\"col-md-12 column\" >\n                    <div class=\"row clearfix\"  >\n                      <div class=\"col-md-6 column\" >\n                        <br>\n                        <h3>未完成</h3>\n                        <br>\n                        <div *ngIf=\"tasks.length > 0\">\n                          <div *ngFor=\"let ts of tasks\">\n                            <div *ngIf=\"ts.assigned=='其他'\">\n                              <div class=\"list-group\" *ngIf=\"ts.tstate=='未完成'\">\n                                <a  (click)=\"update(ts)\" class=\"list-group-item list-group-item-action flex-column align-items-start\" >\n                                  <div class=\"d-flex w-100 justify-content-between\">\n                                    <h3 class=\"mb-1\">{{ts.studentname}}</h3>\n                                    <small>{{ts.tdate}}</small>\n                                  </div>\n                                  <p class=\"mb-1\"> {{ts.content}}</p>\n                                </a>\n                              </div>\n                            </div>\n                          </div>\n                        </div>\n\n \n\n                      </div>\n                      <div class=\"col-md-6 column\" *ngIf=\"tasks.length > 0\">\n                        <br>\n                        <h3>已完成</h3>\n                        <br>\n                        <div *ngFor=\"let ts of tasks\">\n                          <div *ngIf=\"ts.assigned=='其他'\">\n                            <div class=\"list-group\" *ngIf=\"ts.tstate=='完成'\">\n                              <blockquote >\n                                <p>\n                                 {{ts.content}}\n                                </p> <b style=\"font-size: 12px;\">{{ts.studentname}}</b><small>{{ts.tdate}}  {{ts.tstate}}</small>\n                              </blockquote>\n                            </div>\n                          </div>\n                        </div>\n                        \n                      </div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n  \n  \n  \n  \n  \n  \n          </div>\n  \n  \n        </div>\n\n        \n      <hr>\n\n        \n        \n\n\t  </div>\n\n\t</div>\n</div>\n\n\n"
+module.exports = "\n\n<header>\n\t<nav class=\"navbar navbar-inverse\" role=\"navigation\">\n\t\t<div class=\"container-fluid\">\n\t\t<div class=\"navbar-header\">\n\t\t\t\t<a class=\"navbar-brand\" >一个很神秘的网页</a>\n\t\t</div>\n\t\t<div class=\"nav  navbar-right\">\n\t\t  <ul class=\"nav navbar-nav\">\n\t\t\t<li class=\"active\"><a (click)=\"main(hotel)\">HomePage</a></li>\n\t\t\t<li class=\"dropdown\">\n\t\t\t  <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n\t\t\t\t{{hotel.userAccount}} <b class=\"caret\"></b>\n\t\t\t  </a>\n\t\t\t  <ul class=\"dropdown-menu\">\n\t\t\t\t\t\t\t<li><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n\t\t\t\t\t\t\t<li><a (click)=\"comp(hotel)\">Complete info</a></li>\n\t\t\t\t\t\t\t<li class=\"divider\"></li>\n\t\t\t\t\t\t</ul>\n\t\t\t</li>\n\t\t\t<li class=\"nav navbar-nav navbar-right\">\n\t\t\t  <a href=\"/mainpage\">Log Out</a>\n\t\t\t</li>\n\t\t  </ul>\n\t\t</div>\n\t  </div>\n\t</nav>\n\t\n  </header>\n  \n  <ol class=\"breadcrumb\">\n  <li><a (click)=\"main(hotel)\">Home</a></li>\n\t<li ><a (click)=\"main(hotel)\">{{hotel.userAccount}}</a></li>\n  <li class=\"active\">进度更新</li>\n</ol>\n\n<div class=\"container-fluid\">\n\t<div class=\"row content\">\n\t  <div class=\"col-sm-2 sidenav\">\n\t\t<h4>{{hotel.userAccount}}  </h4>\n\t\t<ul class=\"nav nav-pills nav-stacked\">\n\t\t  <li ><a (click)=\"main(hotel)\">Home</a></li>\n      <li ><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n      <li class=\"active\"><a (click)=\"comp(hotel)\">进度更新</a></li>\n      <li><a (click)=\"hotelman(hotel)\">学生管理</a></li>\n      <li><a (click)=\"hmorder(hotel)\">学生申请</a></li>\n      <li ><a (click)=\"hmregister(hotel)\">登记账号</a></li>\n      <li ><a (click)=\"hmblog(hotel)\">Blog管理</a></li>\n      <li ><a (click)=\"hminterview(hotel)\">面试题库</a></li>\n\t\t</ul><br>\n\t\t\n\t  </div>\n  \n\t  <div class=\"col-sm-10\">\n      <div id=\"register\">\n        <ul class=\"nav nav-tabs\">\n          <li class=\"nav-item\">\n            <a class=\"nav-link \" data-toggle=\"tab\" href=\"#yuxin\" >Yuxin</a>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link \" data-toggle=\"tab\" href=\"#yi\" >小伊</a>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link \" data-toggle=\"tab\" href=\"#dasong\" >Yimei</a>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link \" data-toggle=\"tab\" href=\"#oth\" >其他</a>\n          </li>\n        </ul>\n        <div id=\"myTabContent\" class=\"tab-content\">\n          <div class=\"tab-pane fade in active\" id=\"yuxin\">               \n            <div class=\"col-sm-12\">\n              <div class=\"container\">\n                <div class=\"row clearfix\" >\n                  <div class=\"col-md-12 column\" >\n                    <div class=\"row clearfix\"  >\n                      <div class=\"col-md-6 column\" >\n                        <br>\n                        <h3>未完成</h3>\n                        <br>\n                        <div *ngIf=\"tasks.length > 0\">\n                          <div *ngFor=\"let ts of tasks\">\n                            <div *ngIf=\"ts.assigned=='yuxin'\">\n                              <div class=\"list-group\" *ngIf=\"ts.tstate=='未完成'\">\n                                <a  (click)=\"update(ts)\" class=\"list-group-item list-group-item-action flex-column align-items-start\" >\n                                  <div class=\"d-flex w-100 justify-content-between\">\n                                    <h3 class=\"mb-1\">{{ts.studentname}}</h3>\n                                    <small>{{ts.tdate}}</small>\n                                  </div>\n                                  <p class=\"mb-1\"> {{ts.content}}</p>\n                                </a>\n                              </div>\n                            </div>\n                          </div>\n                        </div>\n\n \n\n                      </div>\n                      <div class=\"col-md-6 column\" *ngIf=\"tasks.length > 0\">\n                        <br>\n                        <h3>已完成</h3>\n                        <br>\n                        <div *ngFor=\"let ts of tasks\">\n                          <div *ngIf=\"ts.assigned=='yuxin'\">\n                            <div class=\"list-group\" *ngIf=\"ts.tstate=='完成'\">\n                              <blockquote >\n                                <p>\n                                 {{ts.content}}\n                                </p> <b style=\"font-size: 12px;\">{{ts.studentname}}</b><small>{{ts.tdate}}  {{ts.tstate}}</small>\n                              </blockquote>\n                            </div>\n                          </div>\n                        </div>\n                        \n                      </div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n  \n  \n  \n  \n  \n  \n          </div>\n          <div class=\"tab-pane fade \" id=\"yi\">               \n            <div class=\"col-sm-12\">\n              <div class=\"container\">\n                <div class=\"row clearfix\" >\n                  <div class=\"col-md-12 column\" >\n                    <div class=\"row clearfix\"  >\n                      <div class=\"col-md-6 column\" >\n                        <br>\n                        <h3>未完成</h3>\n                        <br>\n                        <div *ngIf=\"tasks.length > 0\">\n                          <div *ngFor=\"let ts of tasks\">\n                            <div *ngIf=\"ts.assigned=='小伊'\">\n                              <div class=\"list-group\" *ngIf=\"ts.tstate=='未完成'\">\n                                <a  (click)=\"update(ts)\" class=\"list-group-item list-group-item-action flex-column align-items-start\" >\n                                  <div class=\"d-flex w-100 justify-content-between\">\n                                    <h3 class=\"mb-1\">{{ts.studentname}}</h3>\n                                    <small>{{ts.tdate}}</small>\n                                  </div>\n                                  <p class=\"mb-1\"> {{ts.content}}</p>\n                                </a>\n                              </div>\n                            </div>\n                          </div>\n                        </div>\n\n \n\n                      </div>\n                      <div class=\"col-md-6 column\" *ngIf=\"tasks.length > 0\">\n                        <br>\n                        <h3>已完成</h3>\n                        <br>\n                        <div *ngFor=\"let ts of tasks\">\n                          <div *ngIf=\"ts.assigned=='小伊'\">\n                            <div class=\"list-group\" *ngIf=\"ts.tstate=='完成'\">\n                              <blockquote >\n                                <p>\n                                 {{ts.content}}\n                                </p> <b style=\"font-size: 12px;\">{{ts.studentname}}</b><small>{{ts.tdate}}  {{ts.tstate}}</small>\n                              </blockquote>\n                            </div>\n                          </div>\n                        </div>\n                        \n                      </div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n  \n  \n  \n  \n  \n  \n          </div>\n          <div class=\"tab-pane fade \" id=\"dasong\">               \n            <div class=\"col-sm-12\">\n              <div class=\"container\">\n                <div class=\"row clearfix\" >\n                  <div class=\"col-md-12 column\" >\n                    <div class=\"row clearfix\"  >\n                      <div class=\"col-md-6 column\" >\n                        <br>\n                        <h3>未完成</h3>\n                        <br>\n                        <div *ngIf=\"tasks.length > 0\">\n                          <div *ngFor=\"let ts of tasks\">\n                            <div *ngIf=\"ts.assigned=='大松'\">\n                              <div class=\"list-group\" *ngIf=\"ts.tstate=='未完成'\">\n                                <a  (click)=\"update(ts)\" class=\"list-group-item list-group-item-action flex-column align-items-start\" >\n                                  <div class=\"d-flex w-100 justify-content-between\">\n                                    <h3 class=\"mb-1\">{{ts.studentname}}</h3>\n                                    <small>{{ts.tdate}}</small>\n                                  </div>\n                                  <p class=\"mb-1\"> {{ts.content}}</p>\n                                </a>\n                              </div>\n                            </div>\n                          </div>\n                        </div>\n\n \n\n                      </div>\n                      <div class=\"col-md-6 column\" *ngIf=\"tasks.length > 0\">\n                        <br>\n                        <h3>已完成</h3>\n                        <br>\n                        <div *ngFor=\"let ts of tasks\">\n                          <div *ngIf=\"ts.assigned=='大松'\">\n                            <div class=\"list-group\" *ngIf=\"ts.tstate=='完成'\">\n                              <blockquote >\n                                <p>\n                                 {{ts.content}}\n                                </p> <b style=\"font-size: 12px;\">{{ts.studentname}}</b><small>{{ts.tdate}}  {{ts.tstate}}</small>\n                              </blockquote>\n                            </div>\n                          </div>\n                        </div>\n                        \n                      </div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n  \n  \n  \n  \n  \n  \n          </div>\n          <div class=\"tab-pane fade \" id=\"oth\">               \n            <div class=\"col-sm-12\">\n              <div class=\"container\">\n                <div class=\"row clearfix\" >\n                  <div class=\"col-md-12 column\" >\n                    <div class=\"row clearfix\"  >\n                      <div class=\"col-md-6 column\" >\n                        <br>\n                        <h3>未完成</h3>\n                        <br>\n                        <h4 *ngIf=\"dueSoonReminders.length > 0\">面试 / Video Essay 提醒</h4>\n                        <div *ngFor=\"let r of dueSoonReminders\">\n                          <div class=\"list-group\">\n                            <a (click)=\"openInterviewReminder(r)\" class=\"list-group-item list-group-item-action flex-column align-items-start interview-reminder due-soon\">\n                              <div class=\"d-flex w-100 justify-content-between\">\n                                <h3 class=\"mb-1\">{{r.studentName}}</h3>\n                                <small>提醒日 {{r.reminderDate}}</small>\n                              </div>\n                              <p class=\"mb-1\">{{r.programInfo}}</p>\n                              <small>{{r.typeLabel}} · 项目 DDL {{r.deadline}}</small>\n                              <span class=\"label label-warning\">提前3周提醒</span>\n                            </a>\n                          </div>\n                        </div>\n                        <div *ngIf=\"tasks.length > 0\">\n                          <div *ngFor=\"let ts of tasks\">\n                            <div *ngIf=\"ts.assigned=='其他'\">\n                              <div class=\"list-group\" *ngIf=\"ts.tstate=='未完成'\">\n                                <a  (click)=\"update(ts)\" class=\"list-group-item list-group-item-action flex-column align-items-start\" >\n                                  <div class=\"d-flex w-100 justify-content-between\">\n                                    <h3 class=\"mb-1\">{{ts.studentname}}</h3>\n                                    <small>{{ts.tdate}}</small>\n                                  </div>\n                                  <p class=\"mb-1\"> {{ts.content}}</p>\n                                </a>\n                              </div>\n                            </div>\n                          </div>\n                        </div>\n\n \n\n                      </div>\n                      <div class=\"col-md-6 column\">\n                        <br>\n                        <h3>已完成</h3>\n                        <br>\n                        <h4 *ngIf=\"overdueReminders.length > 0\">已过 Deadline</h4>\n                        <div *ngFor=\"let r of overdueReminders\">\n                          <div class=\"list-group\">\n                            <blockquote class=\"interview-reminder overdue\">\n                              <p>\n                                {{r.programInfo}}\n                              </p>\n                              <b style=\"font-size: 12px;\">{{r.studentName}}</b>\n                              <small>{{r.typeLabel}} · 项目 DDL {{r.deadline}} · 提醒日 {{r.reminderDate}}</small>\n                              <span class=\"label label-danger\">已过 DDL</span>\n                            </blockquote>\n                          </div>\n                        </div>\n                        <div *ngFor=\"let ts of tasks\">\n                          <div *ngIf=\"ts.assigned=='其他'\">\n                            <div class=\"list-group\" *ngIf=\"ts.tstate=='完成'\">\n                              <blockquote >\n                                <p>\n                                 {{ts.content}}\n                                </p> <b style=\"font-size: 12px;\">{{ts.studentname}}</b><small>{{ts.tdate}}  {{ts.tstate}}</small>\n                              </blockquote>\n                            </div>\n                          </div>\n                        </div>\n                        \n                      </div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n  \n  \n  \n  \n  \n  \n          </div>\n  \n  \n        </div>\n\n        \n      <hr>\n\n        \n        \n\n\t  </div>\n\n\t</div>\n</div>\n\n\n"
 
 /***/ }),
 
@@ -9247,7 +9252,7 @@ module.exports = "\n\n<header>\n\t<nav class=\"navbar navbar-inverse\" role=\"na
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* Set height of the grid so .sidenav can be 100% (adjust if needed) */\n.row.content {\n  height: 1500px; }\n/* Set gray background color and 100% height */\n.sidenav {\n  background-color: #f1f1f1;\n  height: 100%; }\n/* On small screens, set height to 'auto' for sidenav and grid */\n@media screen and (max-width: 767px) {\n  .sidenav {\n    height: auto;\n    padding: 15px; }\n  .row.content {\n    height: auto; } }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9lY28vRG9jdW1lbnRzL01pY2hpL01pY2hpL3NyYy9hcHAvaG10YXNrL2htdGFzay5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxzRUFBQTtBQUNBO0VBQWMsY0FBYyxFQUFBO0FBRTVCLDhDQUFBO0FBQ0E7RUFDRSx5QkFBeUI7RUFDekIsWUFBWSxFQUFBO0FBSWQsZ0VBQUE7QUFDQTtFQUNFO0lBQ0UsWUFBWTtJQUNaLGFBQWEsRUFBQTtFQUVmO0lBQWMsWUFBWSxFQUFBLEVBQUciLCJmaWxlIjoic3JjL2FwcC9obXRhc2svaG10YXNrLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLyogU2V0IGhlaWdodCBvZiB0aGUgZ3JpZCBzbyAuc2lkZW5hdiBjYW4gYmUgMTAwJSAoYWRqdXN0IGlmIG5lZWRlZCkgKi9cbi5yb3cuY29udGVudCB7aGVpZ2h0OiAxNTAwcHh9XG4gICAgXG4vKiBTZXQgZ3JheSBiYWNrZ3JvdW5kIGNvbG9yIGFuZCAxMDAlIGhlaWdodCAqL1xuLnNpZGVuYXYge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjFmMWYxO1xuICBoZWlnaHQ6IDEwMCU7XG59XG5cblxuLyogT24gc21hbGwgc2NyZWVucywgc2V0IGhlaWdodCB0byAnYXV0bycgZm9yIHNpZGVuYXYgYW5kIGdyaWQgKi9cbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDc2N3B4KSB7XG4gIC5zaWRlbmF2IHtcbiAgICBoZWlnaHQ6IGF1dG87XG4gICAgcGFkZGluZzogMTVweDtcbiAgfVxuICAucm93LmNvbnRlbnQge2hlaWdodDogYXV0bzt9IFxufSJdfQ== */"
+module.exports = "/* Set height of the grid so .sidenav can be 100% (adjust if needed) */\n.row.content {\n  height: 1500px; }\n/* Set gray background color and 100% height */\n.sidenav {\n  background-color: #f1f1f1;\n  height: 100%; }\n/* On small screens, set height to 'auto' for sidenav and grid */\n@media screen and (max-width: 767px) {\n  .sidenav {\n    height: auto;\n    padding: 15px; }\n  .row.content {\n    height: auto; } }\n.interview-reminder.due-soon {\n  border-left: 4px solid #f0ad4e; }\n.interview-reminder.overdue {\n  border-left: 4px solid #d9534f; }\n.interview-reminder .label {\n  margin-left: 8px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9lY28vRG9jdW1lbnRzL01pY2hpL01pY2hpL3NyYy9hcHAvaG10YXNrL2htdGFzay5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxzRUFBQTtBQUNBO0VBQWMsY0FBYyxFQUFBO0FBRTVCLDhDQUFBO0FBQ0E7RUFDRSx5QkFBeUI7RUFDekIsWUFBWSxFQUFBO0FBSWQsZ0VBQUE7QUFDQTtFQUNFO0lBQ0UsWUFBWTtJQUNaLGFBQWEsRUFBQTtFQUVmO0lBQWMsWUFBWSxFQUFBLEVBQUc7QUFHL0I7RUFDRSw4QkFBOEIsRUFBQTtBQUdoQztFQUNFLDhCQUE4QixFQUFBO0FBR2hDO0VBQ0UsZ0JBQWdCLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9obXRhc2svaG10YXNrLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLyogU2V0IGhlaWdodCBvZiB0aGUgZ3JpZCBzbyAuc2lkZW5hdiBjYW4gYmUgMTAwJSAoYWRqdXN0IGlmIG5lZWRlZCkgKi9cbi5yb3cuY29udGVudCB7aGVpZ2h0OiAxNTAwcHh9XG4gICAgXG4vKiBTZXQgZ3JheSBiYWNrZ3JvdW5kIGNvbG9yIGFuZCAxMDAlIGhlaWdodCAqL1xuLnNpZGVuYXYge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjFmMWYxO1xuICBoZWlnaHQ6IDEwMCU7XG59XG5cblxuLyogT24gc21hbGwgc2NyZWVucywgc2V0IGhlaWdodCB0byAnYXV0bycgZm9yIHNpZGVuYXYgYW5kIGdyaWQgKi9cbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDc2N3B4KSB7XG4gIC5zaWRlbmF2IHtcbiAgICBoZWlnaHQ6IGF1dG87XG4gICAgcGFkZGluZzogMTVweDtcbiAgfVxuICAucm93LmNvbnRlbnQge2hlaWdodDogYXV0bzt9IFxufVxuXG4uaW50ZXJ2aWV3LXJlbWluZGVyLmR1ZS1zb29uIHtcbiAgYm9yZGVyLWxlZnQ6IDRweCBzb2xpZCAjZjBhZDRlO1xufVxuXG4uaW50ZXJ2aWV3LXJlbWluZGVyLm92ZXJkdWUge1xuICBib3JkZXItbGVmdDogNHB4IHNvbGlkICNkOTUzNGY7XG59XG5cbi5pbnRlcnZpZXctcmVtaW5kZXIgLmxhYmVsIHtcbiAgbWFyZ2luLWxlZnQ6IDhweDtcbn0iXX0= */"
 
 /***/ }),
 
@@ -9289,6 +9294,10 @@ var HmtaskComponent = /** @class */ (function () {
         this.hotels = [];
         //进度信息
         this.tasks = [];
+        this.students = [];
+        this.interviewReminders = [];
+        this.dueSoonReminders = [];
+        this.overdueReminders = [];
         this.route.queryParams.subscribe(function (params) {
             _this.managerID = params["managerID"];
         });
@@ -9326,6 +9335,7 @@ var HmtaskComponent = /** @class */ (function () {
             }
             //console.log("测试2"+this.tasks[1].tstate);
         });
+        this.loadInterviewReminders();
         this.hotelMSub = this.hmService.getHotelMUpdatedListener().subscribe(function (hotels) {
             _this.hotels = hotels;
         });
@@ -9354,6 +9364,160 @@ var HmtaskComponent = /** @class */ (function () {
         });
         alert("已完成该进度");
         window.location.reload();
+    };
+    HmtaskComponent.prototype.loadInterviewReminders = function () {
+        var _this = this;
+        this.http.get('/api/students').subscribe(function (studentData) {
+            _this.students = studentData.students;
+            _this.http.get('/api/schools').subscribe(function (schoolData) {
+                var reminders = [];
+                var today = _this.startOfDay(new Date());
+                for (var _i = 0, _a = schoolData.schools; _i < _a.length; _i++) {
+                    var s = _a[_i];
+                    if (!s.state || s.state.toString() !== '进行中') {
+                        continue;
+                    }
+                    if (!_this.hasInterviewOrVideoEssay(s)) {
+                        continue;
+                    }
+                    var student = _this.findStudentById(s.userAccount);
+                    var studentName = student ? (student.firstName + ' ' + student.lastName) : '';
+                    var programParts = [];
+                    if (s.univName) {
+                        programParts.push(s.univName.toString());
+                    }
+                    if (s.schoolName) {
+                        programParts.push(s.schoolName.toString());
+                    }
+                    if (s.majorName) {
+                        programParts.push(s.majorName.toString());
+                    }
+                    var programInfo = programParts.join(' · ');
+                    var typeLabel = _this.buildTypeLabel(s);
+                    var deadlines = [s.ddl1, s.ddl2, s.ddl3];
+                    for (var i = 0; i < deadlines.length; i++) {
+                        var deadlineDate = _this.parseDate(deadlines[i]);
+                        if (!deadlineDate) {
+                            continue;
+                        }
+                        var reminderDate = _this.addDays(deadlineDate, -21);
+                        // 提前3周开始显示提醒；项目仍为进行中时，过期 deadline 也继续显示
+                        if (today.getTime() < _this.startOfDay(reminderDate).getTime()) {
+                            continue;
+                        }
+                        var status_1 = 'due-soon';
+                        if (today.getTime() > _this.startOfDay(deadlineDate).getTime()) {
+                            status_1 = 'overdue';
+                        }
+                        reminders.push({
+                            studentID: s.userAccount,
+                            schoolID: s._id,
+                            studentName: studentName,
+                            programInfo: programInfo,
+                            typeLabel: typeLabel + ' · DDL' + (i + 1),
+                            deadline: _this.formatDate(deadlineDate),
+                            reminderDate: _this.formatDate(reminderDate),
+                            status: status_1
+                        });
+                    }
+                }
+                reminders.sort(function (a, b) {
+                    if (a.status === 'overdue' && b.status !== 'overdue') {
+                        return -1;
+                    }
+                    if (a.status !== 'overdue' && b.status === 'overdue') {
+                        return 1;
+                    }
+                    return a.deadline < b.deadline ? -1 : (a.deadline > b.deadline ? 1 : 0);
+                });
+                _this.interviewReminders = reminders;
+                _this.dueSoonReminders = reminders.filter(function (r) {
+                    return r.status === 'due-soon';
+                });
+                _this.overdueReminders = reminders.filter(function (r) {
+                    return r.status === 'overdue';
+                });
+            });
+        });
+    };
+    HmtaskComponent.prototype.hasInterviewOrVideoEssay = function (school) {
+        var interview = school.interview ? school.interview.toString() : '';
+        var videoEssay = school.videoEssay ? school.videoEssay.toString() : '';
+        var hasInterview = interview === 'yes' || interview.indexOf('有') !== -1;
+        var hasVideo = videoEssay.indexOf('有') !== -1;
+        return hasInterview || hasVideo;
+    };
+    HmtaskComponent.prototype.buildTypeLabel = function (school) {
+        var interview = school.interview ? school.interview.toString() : '';
+        var videoEssay = school.videoEssay ? school.videoEssay.toString() : '';
+        var hasInterview = interview === 'yes' || interview.indexOf('有') !== -1;
+        var hasVideo = videoEssay.indexOf('有') !== -1;
+        if (hasInterview && hasVideo) {
+            return '有面试 + Video Essay';
+        }
+        if (hasInterview) {
+            return '有面试';
+        }
+        return videoEssay || '有 Video Essay';
+    };
+    HmtaskComponent.prototype.findStudentById = function (studentId) {
+        if (!studentId) {
+            return null;
+        }
+        for (var _i = 0, _a = this.students; _i < _a.length; _i++) {
+            var st = _a[_i];
+            if (st._id === studentId) {
+                return st;
+            }
+        }
+        return null;
+    };
+    HmtaskComponent.prototype.parseDate = function (value) {
+        if (!value) {
+            return null;
+        }
+        var text = value.toString().trim();
+        if (!text || text === ' ') {
+            return null;
+        }
+        var dashParts = text.split('T')[0].split('-');
+        if (dashParts.length === 3) {
+            var year = Number(dashParts[0]);
+            var month = Number(dashParts[1]);
+            var day = Number(dashParts[2]);
+            if (!year || !month || !day) {
+                return null;
+            }
+            return new Date(year, month - 1, day);
+        }
+        var parsed = new Date(text);
+        if (isNaN(parsed.getTime())) {
+            return null;
+        }
+        return parsed;
+    };
+    HmtaskComponent.prototype.addDays = function (date, days) {
+        var result = new Date(date.getTime());
+        result.setDate(result.getDate() + days);
+        return result;
+    };
+    HmtaskComponent.prototype.startOfDay = function (date) {
+        return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+    };
+    HmtaskComponent.prototype.formatDate = function (date) {
+        var month = (date.getMonth() + 1 < 10 ? '0' : '') + (date.getMonth() + 1);
+        var day = (date.getDate() < 10 ? '0' : '') + date.getDate();
+        return date.getFullYear() + '-' + month + '-' + day;
+    };
+    HmtaskComponent.prototype.openInterviewReminder = function (reminder) {
+        var navigationExtras = {
+            queryParams: {
+                "managerID": this.managerID,
+                "studentID": reminder.studentID,
+                "schoolID": reminder.schoolID,
+            }
+        };
+        this.router.navigate(['/hmschool'], navigationExtras);
     };
     //direct to the hotel manage page
     HmtaskComponent.prototype.hotelman = function (hotel) {

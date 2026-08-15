@@ -5,7 +5,7 @@ import { HmService } from '../hm.service';
 import {HotelM} from '../hm.model';
 import { HttpClient } from '@angular/common/http';
 import {Student} from '../st.model';
-//import {School} from '../school.model';
+import {School} from '../school.model';
 import {SchoolService} from '../school.service';
 import { NgForm } from '@angular/forms';
 
@@ -43,6 +43,16 @@ export class HmaddschoolComponent implements OnInit {
   interview = "";
   videoessay = "";
   link ="";
+  recommNumber ="";
+  commonPrograms: {
+    univName: string;
+    schoolName: string;
+    majorName: string;
+    link: string;
+    recommNumber: string;
+    label: string;
+    count: number;
+  }[] = [];
 
   private hotelMSub: Subscription;
 
@@ -107,11 +117,85 @@ export class HmaddschoolComponent implements OnInit {
             }
         }
     });
+    this.loadCommonPrograms();
         
       
     this.hotelMSub = this.hmService.getHotelMUpdatedListener().subscribe((hotels: HotelM[]) => {
       this.hotels = hotels;
       });
+  }
+
+  loadCommonPrograms() {
+    this.http.get<{schools: School[]}>('http://localhost:3000/schools').subscribe((Data) => {
+      const programMap: {
+        [key: string]: {
+          univName: string;
+          schoolName: string;
+          majorName: string;
+          link: string;
+          recommNumber: string;
+          label: string;
+          count: number;
+        }
+      } = {};
+
+      for (let s of Data.schools) {
+        const univName = s.univName ? s.univName.toString().trim() : '';
+        const schoolName = s.schoolName ? s.schoolName.toString().trim() : '';
+        const majorName = s.majorName ? s.majorName.toString().trim() : '';
+        const link = s.link ? s.link.toString().trim() : '';
+        const recommNumber = s.recommNumber ? s.recommNumber.toString().trim() : '';
+        if (!univName && !schoolName && !majorName) {
+          continue;
+        }
+        const key = univName + '|' + schoolName + '|' + majorName;
+        if (programMap[key]) {
+          programMap[key].count += 1;
+          if (!programMap[key].link && link) {
+            programMap[key].link = link;
+          }
+          if (!programMap[key].recommNumber && recommNumber) {
+            programMap[key].recommNumber = recommNumber;
+          }
+        } else {
+          const labelParts = [];
+          if (univName) { labelParts.push(univName); }
+          if (schoolName) { labelParts.push(schoolName); }
+          if (majorName) { labelParts.push(majorName); }
+          programMap[key] = {
+            univName: univName,
+            schoolName: schoolName,
+            majorName: majorName,
+            link: link,
+            recommNumber: recommNumber,
+            label: labelParts.join(' · '),
+            count: 1
+          };
+        }
+      }
+
+      this.commonPrograms = Object.keys(programMap).map(function(key) {
+        return programMap[key];
+      }).sort(function(a, b) {
+        return b.count - a.count;
+      }).slice(0, 30);
+    });
+  }
+
+  onSelectCommonProgram(event) {
+    const index = event.target.value;
+    if (index === '' || index === null || index === undefined) {
+      return;
+    }
+    const program = this.commonPrograms[Number(index)];
+    if (!program) {
+      return;
+    }
+    this.University = program.univName;
+    this.Uschool = program.schoolName;
+    this.major = program.majorName;
+    this.link = program.link || '';
+    this.recommNumber = program.recommNumber || '';
   }
 
 
