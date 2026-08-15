@@ -67,7 +67,19 @@ export class MainpageComponent implements OnInit {
           };
           this.router.navigate(['/hmmain'], navigationExtras);
           return;
-        }if(this.user[index].Role=="student"){
+        }
+        if (this.user[index].Role == "coordinator") {
+          alert("Welcome " + this.user[index].Role + "!");
+          console.log(this.user[index].UserAccount);
+          const navigationExtras: NavigationExtras = {
+            queryParams: {
+              "managerID": this.user[index].UserAccount,
+            }
+          };
+          this.router.navigate(['/coordmain'], navigationExtras);
+          return;
+        }
+        if(this.user[index].Role=="student"){
           alert("Welcome "+this.user[index].Role+"!");
           //console.log(this.user[index].UserAccount);
           // API_PATH + '/students'

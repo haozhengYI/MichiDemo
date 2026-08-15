@@ -65,6 +65,13 @@ import {ApplyhighschoolComponent} from './applyhighschool/applyhighschool.compon
 
 import { CareerComponent } from './career/career.component';
 
+//协调员部分
+import { CoordmainComponent } from './coordmain/coordmain.component';
+import {ComanageComponent} from './comanage/comanage.component';
+import { CoorderComponent } from './coorder/coorder.component';
+import {CostudentComponent} from './costudent/costudent.component';
+import { CooschoolComponent } from './cooschool/cooschool.component';
+
 // FullCalendarModule.registerPlugins([ // register FullCalendar plugins
 //   dayGridPlugin,
 
@@ -127,7 +134,14 @@ import { CareerComponent } from './career/career.component';
     StudentinterviewComponent,
     StudentaddinteComponent,
 
-    CareerComponent
+    CareerComponent,
+
+    //协调员部分
+    CoordmainComponent,
+    ComanageComponent,
+    CoorderComponent,
+    CostudentComponent,
+    CooschoolComponent
   ],
   imports: [
     BrowserModule,

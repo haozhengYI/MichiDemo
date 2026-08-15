@@ -47,6 +47,12 @@ import {ApplybachelorComponent} from './applybachelor/applybachelor.component';
 import {ApplyhighschoolComponent} from './applyhighschool/applyhighschool.component';
 
 import { CareerComponent } from './career/career.component';
+//协调员部分
+import { CoordmainComponent } from './coordmain/coordmain.component';
+import {ComanageComponent} from './comanage/comanage.component';
+import  { CoorderComponent } from './coorder/coorder.component';
+import {CostudentComponent} from './costudent/costudent.component';
+import { CooschoolComponent } from './cooschool/cooschool.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/main', pathMatch: 'full' },
@@ -98,6 +104,12 @@ const routes: Routes = [
   {path: 'studentaddinte', component: StudentaddinteComponent},
 
   {path: 'career', component: CareerComponent},
+
+  {path: 'coordmain', component: CoordmainComponent},
+  {path: 'comanage', component: ComanageComponent},
+  {path: 'coorder', component: CoorderComponent},
+  {path: 'costudent', component: CostudentComponent},
+  {path: 'cooschool', component: CooschoolComponent},
 ];
 
 @NgModule({

@@ -447,6 +447,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _applybachelor_applybachelor_component__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./applybachelor/applybachelor.component */ "./src/app/applybachelor/applybachelor.component.ts");
 /* harmony import */ var _applyhighschool_applyhighschool_component__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./applyhighschool/applyhighschool.component */ "./src/app/applyhighschool/applyhighschool.component.ts");
 /* harmony import */ var _career_career_component__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./career/career.component */ "./src/app/career/career.component.ts");
+/* harmony import */ var _coordmain_coordmain_component__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./coordmain/coordmain.component */ "./src/app/coordmain/coordmain.component.ts");
+/* harmony import */ var _comanage_comanage_component__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ./comanage/comanage.component */ "./src/app/comanage/comanage.component.ts");
+/* harmony import */ var _coorder_coorder_component__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! ./coorder/coorder.component */ "./src/app/coorder/coorder.component.ts");
+/* harmony import */ var _costudent_costudent_component__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! ./costudent/costudent.component */ "./src/app/costudent/costudent.component.ts");
+/* harmony import */ var _cooschool_cooschool_component__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(/*! ./cooschool/cooschool.component */ "./src/app/cooschool/cooschool.component.ts");
 
 
 
@@ -488,6 +493,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
+//协调员部分
 
 
 
@@ -539,6 +550,11 @@ var routes = [
     { path: 'studentinterview', component: _studentinterview_studentinterview_component__WEBPACK_IMPORTED_MODULE_37__["StudentinterviewComponent"] },
     { path: 'studentaddinte', component: _studentaddinte_studentaddinte_component__WEBPACK_IMPORTED_MODULE_38__["StudentaddinteComponent"] },
     { path: 'career', component: _career_career_component__WEBPACK_IMPORTED_MODULE_45__["CareerComponent"] },
+    { path: 'coordmain', component: _coordmain_coordmain_component__WEBPACK_IMPORTED_MODULE_46__["CoordmainComponent"] },
+    { path: 'comanage', component: _comanage_comanage_component__WEBPACK_IMPORTED_MODULE_47__["ComanageComponent"] },
+    { path: 'coorder', component: _coorder_coorder_component__WEBPACK_IMPORTED_MODULE_48__["CoorderComponent"] },
+    { path: 'costudent', component: _costudent_costudent_component__WEBPACK_IMPORTED_MODULE_49__["CostudentComponent"] },
+    { path: 'cooschool', component: _cooschool_cooschool_component__WEBPACK_IMPORTED_MODULE_50__["CooschoolComponent"] },
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -675,6 +691,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _applybachelor_applybachelor_component__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(/*! ./applybachelor/applybachelor.component */ "./src/app/applybachelor/applybachelor.component.ts");
 /* harmony import */ var _applyhighschool_applyhighschool_component__WEBPACK_IMPORTED_MODULE_51__ = __webpack_require__(/*! ./applyhighschool/applyhighschool.component */ "./src/app/applyhighschool/applyhighschool.component.ts");
 /* harmony import */ var _career_career_component__WEBPACK_IMPORTED_MODULE_52__ = __webpack_require__(/*! ./career/career.component */ "./src/app/career/career.component.ts");
+/* harmony import */ var _coordmain_coordmain_component__WEBPACK_IMPORTED_MODULE_53__ = __webpack_require__(/*! ./coordmain/coordmain.component */ "./src/app/coordmain/coordmain.component.ts");
+/* harmony import */ var _comanage_comanage_component__WEBPACK_IMPORTED_MODULE_54__ = __webpack_require__(/*! ./comanage/comanage.component */ "./src/app/comanage/comanage.component.ts");
+/* harmony import */ var _coorder_coorder_component__WEBPACK_IMPORTED_MODULE_55__ = __webpack_require__(/*! ./coorder/coorder.component */ "./src/app/coorder/coorder.component.ts");
+/* harmony import */ var _costudent_costudent_component__WEBPACK_IMPORTED_MODULE_56__ = __webpack_require__(/*! ./costudent/costudent.component */ "./src/app/costudent/costudent.component.ts");
+/* harmony import */ var _cooschool_cooschool_component__WEBPACK_IMPORTED_MODULE_57__ = __webpack_require__(/*! ./cooschool/cooschool.component */ "./src/app/cooschool/cooschool.component.ts");
 
 
 
@@ -734,6 +755,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+//协调员部分
+
+
+
+
+
 // FullCalendarModule.registerPlugins([ // register FullCalendar plugins
 //   dayGridPlugin,
 // ]);
@@ -788,7 +815,13 @@ var AppModule = /** @class */ (function () {
                 _studentschool_studentschool_component__WEBPACK_IMPORTED_MODULE_43__["StudentschoolComponent"],
                 _studentinterview_studentinterview_component__WEBPACK_IMPORTED_MODULE_44__["StudentinterviewComponent"],
                 _studentaddinte_studentaddinte_component__WEBPACK_IMPORTED_MODULE_45__["StudentaddinteComponent"],
-                _career_career_component__WEBPACK_IMPORTED_MODULE_52__["CareerComponent"]
+                _career_career_component__WEBPACK_IMPORTED_MODULE_52__["CareerComponent"],
+                //协调员部分
+                _coordmain_coordmain_component__WEBPACK_IMPORTED_MODULE_53__["CoordmainComponent"],
+                _comanage_comanage_component__WEBPACK_IMPORTED_MODULE_54__["ComanageComponent"],
+                _coorder_coorder_component__WEBPACK_IMPORTED_MODULE_55__["CoorderComponent"],
+                _costudent_costudent_component__WEBPACK_IMPORTED_MODULE_56__["CostudentComponent"],
+                _cooschool_cooschool_component__WEBPACK_IMPORTED_MODULE_57__["CooschoolComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -2175,6 +2208,1654 @@ var CareerComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/comanage/comanage.component.html":
+/*!**************************************************!*\
+  !*** ./src/app/comanage/comanage.component.html ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<nav class=\"navbar navbar-inverse\" role=\"navigation\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n        <a class=\"navbar-brand\" >一个很神秘的网页</a>\n      </div>\n      <div class=\"nav  navbar-right\">\n        <ul class=\"nav navbar-nav\">\n          <li class=\"active\"><a (click)=\"main(hotel)\">HomePage</a></li>\n          <li class=\"dropdown\">\n            <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n              Shortcut <b class=\"caret\"></b>\n            </a>\n\n          </li>\n          <li class=\"nav navbar-nav navbar-right\">\n            <a href=\"/main\">Log Out</a>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </nav>\n  <ol class=\"breadcrumb\">\n      <li><a (click)=\"main(hotel)\">Home</a></li>\n      <li><a (click)=\"main(hotel)\">{{hotel.userAccount}}</a></li>\n      <li class=\"active\">Manage Student</li>\n  </ol>\n\n  <div class=\"container-fluid\">\n    <div class=\"row content\">\n      <div class=\"col-sm-2 sidenav\">\n      <h4>{{hotel.userAccount}}  </h4>\n      <ul class=\"nav nav-pills nav-stacked\">\n        <li ><a (click)=\"main(hotel)\">Home</a></li>\n        <li class=\"active\"><a (click)=\"hotelman(hotel)\">学生管理</a></li>\n        <li><a (click)=\"hmorder(hotel)\">学生申请</a></li>\n      </ul><br>\n      \n      </div>\n    \n      <div class=\"col-sm-10\">\n      <!-- 第一行-->\n        <div class=\"row\" *ngIf=\"student.length > 0\">\n          <div class=\"col-sm-12\" >\n\n            <!--表格2026年-->\n            <div class=\"panel panel-default\">\n              <div class=\"panel-heading\">\n                <div class=\"row\">\n                  <div class=\"col-sm-8\"><h2>Year 2026</h2></div>\n                </div>\n              </div>\n              <div class=\"panel-body\">\n                  <table class=\"table table-hover  table-bordered\">\n                      <thead><tr>\n                          <th>User Account</th>\n                          <th>Full Name</th>\n                          <th>Gender</th>\n                          <th></th>\n                      </tr></thead>\n                      <tbody *ngFor=\"let o of student\">\n                      <tr  *ngIf=\"o.year=='2026'\">\n                          <td>{{o.userAccount}}</td>\n                          <td>{{o.firstName}} {{o.lastName}}</td>\n                          <td>{{o.gender}}</td>\n                          <td><button href=\"/anew/todel/@a.id\" (click)=\"more(o)\" >More</button></td>\n                      </tr>\n                      \n                      </tbody>\n\n                  </table>\n              </div>\n            </div>\n            <hr>\n\n              <!--测试账号-->\n              <div class=\"panel panel-default\">\n                <div class=\"panel-heading\">\n                  <div class=\"row\">\n                    <div class=\"col-sm-8\"><h2>测试账号</h2></div>\n                  </div>\n                </div>\n                <div class=\"panel-body\">\n                    <table class=\"table table-hover  table-bordered\">\n                        <thead><tr>\n                            <th>User Account</th>\n                            <th>Full Name</th>\n                            <th>Gender</th>\n                            <th></th>\n                        </tr></thead>\n                        <tbody *ngFor=\"let o of student\">\n                        <tr  *ngIf=\"o.year=='测试账号'\">\n                            <td>{{o.userAccount}}</td>\n                            <td>{{o.firstName}} {{o.lastName}}</td>\n                            <td>{{o.gender}}</td>\n                            <td><button href=\"/anew/todel/@a.id\" (click)=\"more(o)\" >More</button></td>\n                        </tr>\n                        \n                        </tbody>\n\n                    </table>\n                </div>\n              </div>\n              <hr>\n          </div>\n        </div><!-- 第一行-->\n      </div>\n    </div>\n  </div>\n\n  \n  "
+
+/***/ }),
+
+/***/ "./src/app/comanage/comanage.component.scss":
+/*!**************************************************!*\
+  !*** ./src/app/comanage/comanage.component.scss ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/* Set height of the grid so .sidenav can be 100% (adjust if needed) */\n.row.content {\n  height: 1500px; }\n/* Set gray background color and 100% height */\n.sidenav {\n  background-color: #f1f1f1;\n  height: 100%; }\n/* On small screens, set height to 'auto' for sidenav and grid */\n@media screen and (max-width: 767px) {\n  .sidenav {\n    height: auto;\n    padding: 15px; }\n  .row.content {\n    height: auto; } }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9lY28vRG9jdW1lbnRzL01pY2hpL01pY2hpL3NyYy9hcHAvY29tYW5hZ2UvY29tYW5hZ2UuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsc0VBQUE7QUFDQTtFQUFjLGNBQWMsRUFBQTtBQUU1Qiw4Q0FBQTtBQUNBO0VBQ0UseUJBQXlCO0VBQ3pCLFlBQVksRUFBQTtBQUlkLGdFQUFBO0FBQ0E7RUFDRTtJQUNFLFlBQVk7SUFDWixhQUFhLEVBQUE7RUFFZjtJQUFjLFlBQVksRUFBQSxFQUFHIiwiZmlsZSI6InNyYy9hcHAvY29tYW5hZ2UvY29tYW5hZ2UuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKiBTZXQgaGVpZ2h0IG9mIHRoZSBncmlkIHNvIC5zaWRlbmF2IGNhbiBiZSAxMDAlIChhZGp1c3QgaWYgbmVlZGVkKSAqL1xuLnJvdy5jb250ZW50IHtoZWlnaHQ6IDE1MDBweH1cbiAgICBcbi8qIFNldCBncmF5IGJhY2tncm91bmQgY29sb3IgYW5kIDEwMCUgaGVpZ2h0ICovXG4uc2lkZW5hdiB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmMWYxZjE7XG4gIGhlaWdodDogMTAwJTtcbn1cblxuXG4vKiBPbiBzbWFsbCBzY3JlZW5zLCBzZXQgaGVpZ2h0IHRvICdhdXRvJyBmb3Igc2lkZW5hdiBhbmQgZ3JpZCAqL1xuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogNzY3cHgpIHtcbiAgLnNpZGVuYXYge1xuICAgIGhlaWdodDogYXV0bztcbiAgICBwYWRkaW5nOiAxNXB4O1xuICB9XG4gIC5yb3cuY29udGVudCB7aGVpZ2h0OiBhdXRvO30gXG59Il19 */"
+
+/***/ }),
+
+/***/ "./src/app/comanage/comanage.component.ts":
+/*!************************************************!*\
+  !*** ./src/app/comanage/comanage.component.ts ***!
+  \************************************************/
+/*! exports provided: ComanageComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ComanageComponent", function() { return ComanageComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _hm_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../hm.service */ "./src/app/hm.service.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+
+
+
+
+
+var ComanageComponent = /** @class */ (function () {
+    function ComanageComponent(route, router, http, hmService) {
+        var _this = this;
+        this.route = route;
+        this.router = router;
+        this.http = http;
+        this.hmService = hmService;
+        this.students = []; //all the orders from database
+        this.student = []; //2022学生
+        this.student2 = []; // 2021级学生人数
+        this.hotels = [];
+        this.route.queryParams.subscribe(function (params) {
+            _this.managerID = params["managerID"];
+        });
+        console.log("constructor+" + this.managerID);
+    }
+    ComanageComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.http.get('/api/hotels').subscribe(function (Data) {
+            _this.hotels = Data.hotels;
+            for (var _i = 0, _a = _this.hotels; _i < _a.length; _i++) {
+                var h = _a[_i];
+                if (h.userAccount === _this.managerID) {
+                    _this.hotel = h;
+                    _this.name = _this.hotel.name;
+                    _this.location = _this.hotel.location;
+                    _this.phone = _this.hotel.phone;
+                    _this.price = _this.hotel.price;
+                    //console.log("管理员信息");
+                    //console.log(this.hotel);
+                }
+            }
+        });
+        // select the particular order by hotel id
+        this.http.get('/api/students').subscribe(function (oData) {
+            _this.students = (oData.students || []).filter(function (st) { return _this.belongsToThisCoordinator(st); });
+            console.log("当前协调员学生信息");
+            console.log(_this.students);
+            for (var i = _this.students.length - 1; i >= 0; i--) {
+                _this.student.push(_this.students[i]);
+            }
+        });
+        this.hotelMSub = this.hmService.getHotelMUpdatedListener().subscribe(function (hotels) {
+            _this.hotels = hotels;
+        });
+    };
+    ComanageComponent.prototype.belongsToThisCoordinator = function (student) {
+        if (!student || !student.coordinator || !this.managerID) {
+            return false;
+        }
+        return student.coordinator.toString().trim() === this.managerID.toString().trim();
+    };
+    //update hotel information like price or other
+    ComanageComponent.prototype.updateProfile = function () {
+        console.log("Inside Update");
+        var Hotel = {
+            userAccount: this.hotel.userAccount,
+            firstName: this.hotel.firstName,
+            lastName: this.hotel.lastName,
+            email: this.hotel.email,
+            phone: this.phone,
+            name: this.name,
+            location: this.location,
+            image: this.hotel.image,
+            price: this.price,
+        };
+        console.log(Hotel.price + "ddddd" + Hotel.userAccount);
+        this.http.put('/api/hotels/' + this.hotel.userAccount, Hotel)
+            .subscribe(function (data) {
+            var options = {
+                overlay: true,
+                overlayClickToClose: true,
+                showCloseButton: true,
+                duration: 5000
+            };
+            if (data[0] === undefined) {
+                console.log("Undefine");
+            }
+        });
+        var navigationExtras = {
+            queryParams: {
+                "managerID": this.hotel.userAccount,
+            }
+        };
+        //console.log("hahah"+hotel.userAccount);
+        this.router.navigate(['/hmmodifypasssucc'], navigationExtras);
+    };
+    //direct to the hotel manage page
+    ComanageComponent.prototype.hotelman = function (hotel) {
+        var navigationExtras = {
+            queryParams: {
+                "managerID": hotel.userAccount,
+            }
+        };
+        this.router.navigate(['/comanage'], navigationExtras);
+    };
+    //direct to the hotel manager main page
+    ComanageComponent.prototype.main = function (hotel) {
+        var navigationExtras = {
+            queryParams: {
+                "managerID": hotel.userAccount,
+            }
+        };
+        this.router.navigate(['/coordmain'], navigationExtras);
+    };
+    //direct to the hotel order 
+    ComanageComponent.prototype.hmorder = function (hotel) {
+        var navigationExtras = {
+            queryParams: {
+                "managerID": hotel.userAccount,
+            }
+        };
+        this.router.navigate(['/coorder'], navigationExtras);
+    };
+    ComanageComponent.prototype.more = function (o) {
+        console.log(o._id);
+        console.log(this.managerID);
+        var navigationExtras = {
+            queryParams: {
+                "managerID": this.managerID,
+                "studentID": o._id,
+            }
+        };
+        this.router.navigate(['/costudent'], navigationExtras);
+    };
+    ComanageComponent.prototype.ngOnDestroy = function () {
+        this.hotelMSub.unsubscribe();
+    };
+    ComanageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-comanage',
+            template: __webpack_require__(/*! ./comanage.component.html */ "./src/app/comanage/comanage.component.html"),
+            styles: [__webpack_require__(/*! ./comanage.component.scss */ "./src/app/comanage/comanage.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"],
+            _hm_service__WEBPACK_IMPORTED_MODULE_3__["HmService"]])
+    ], ComanageComponent);
+    return ComanageComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/coorder/coorder.component.html":
+/*!************************************************!*\
+  !*** ./src/app/coorder/coorder.component.html ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<nav class=\"navbar navbar-inverse\" role=\"navigation\">\n  <div class=\"container-fluid\">\n    <div class=\"navbar-header\">\n      <a class=\"navbar-brand\" >一个很神秘的网页</a>\n    </div>\n    <div class=\"nav  navbar-right\">\n      <ul class=\"nav navbar-nav\">\n        <li class=\"active\"><a (click)=\"main(hotel)\">HomePage</a></li>\n\n        <li class=\"nav navbar-nav navbar-right\">\n          <a href=\"/mainpage\">Log Out</a>\n        </li>\n      </ul>\n    </div>\n  </div>\n</nav>\n<ol class=\"breadcrumb\">\n    <li><a (click)=\"main(hotel)\">Home</a></li>\n    <li><a (click)=\"main(hotel)\">{{hotel.userAccount}}</a></li>\n    <li class=\"active\">学生申请</li>\n</ol>\n<div class=\"container-fluid\">\n\t<div class=\"row content\">\n\t  <div class=\"col-sm-2 sidenav\">\n\t\t<h4>{{hotel.userAccount}}  </h4>\n\t\t<ul class=\"nav nav-pills nav-stacked\">\n\t\t  <li ><a (click)=\"main(hotel)\">Home</a></li>\n\t\t\t<li><a (click)=\"hotelman(hotel)\">学生管理</a></li>\n\t\t\t<li class=\"active\"><a (click)=\"hmorder(hotel)\">学生申请</a></li>\n\n\t\t</ul><br>\n\t\t\n\t  </div>\n  \n\t  <div class=\"col-sm-10\">\n\n\n\t\t<!-- 学年分类标签页 -->\n\t\t<div class=\"year-tabs\">\n\t\t\t<ul class=\"nav nav-tabs\" role=\"tablist\">\n\t\t\t\t<li class=\"nav-item\" *ngFor=\"let year of uniqueYears; let i = index\" [class.active]=\"year === selectedYear\">\n\t\t\t\t\t<a class=\"nav-link\" [class.active]=\"year === selectedYear\" (click)=\"selectYear(year)\" [attr.aria-selected]=\"year === selectedYear\">\n\t\t\t\t\t\t{{year}}学年\n\t\t\t\t\t\t<span class=\"badge badge-secondary ml-2\">{{getYearApplicationCount(year)}}</span>\n\t\t\t\t\t</a>\n\t\t\t\t</li>\n\t\t\t</ul>\n\t\t</div>\n\n\t\t<!-- 筛选控件 -->\n\t\t<div class=\"filter-section\">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-md-2\">\n\t\t\t\t\t<label for=\"requirementFilter\">申请要求筛选</label>\n\t\t\t\t\t<select class=\"form-control\" id=\"requirementFilter\" [(ngModel)]=\"selectedRequirement\" (change)=\"applyFilters()\">\n\t\t\t\t\t\t<option value=\"\">所有申请</option>\n\t\t\t\t\t\t<option value=\"interview\">需要面试</option>\n\t\t\t\t\t\t<option value=\"videoEssay\">需要Video Essay</option>\n\t\t\t\t\t\t<option value=\"videoEssayBefore\">Video Essay(申请前)</option>\n\t\t\t\t\t\t<option value=\"videoEssayAfter\">Video Essay(申请后)</option>\n\t\t\t\t\t\t<option value=\"both\">面试 + Video Essay</option>\n\t\t\t\t\t</select>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-2\">\n\t\t\t\t\t<label for=\"statusFilter\">申请状态</label>\n\t\t\t\t\t<select class=\"form-control\" id=\"statusFilter\" [(ngModel)]=\"selectedStatus\" (change)=\"applyFilters()\">\n\t\t\t\t\t\t<option value=\"\">所有状态</option>\n\t\t\t\t\t\t<option value=\"进行中\">进行中</option>\n\t\t\t\t\t\t<option value=\"已完成\">已完成</option>\n\t\t\t\t\t\t<option value=\"Offer\">收到offer</option>\n\t\t\t\t\t\t<option value=\"拒信\">收到拒信</option>\n            <option value=\"不申请\">不申请</option>\n\t\t\t\t\t</select>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-2\">\n\t\t\t\t\t<label for=\"studentFilter\">学生筛选</label>\n\t\t\t\t\t<select class=\"form-control\" id=\"studentFilter\" [(ngModel)]=\"selectedStudent\" (change)=\"applyFilters()\">\n\t\t\t\t\t\t<option value=\"\">所有学生</option>\n\t\t\t\t\t\t<option *ngFor=\"let st of getCurrentYearStudents()\" [value]=\"st._id\">\n\t\t\t\t\t\t\t{{st.firstName}} {{st.lastName}}\n\t\t\t\t\t\t</option>\n\t\t\t\t\t</select>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-2\">\n\t\t\t\t\t<button type=\"button\" class=\"btn btn-outline-secondary btn-clear\" (click)=\"clearFilters()\">\n\t\t\t\t\t\t<i class=\"fa fa-refresh\"></i> 清除筛选\n\t\t\t\t\t</button>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-2\">\n\t\t\t\t\t<button type=\"button\" class=\"btn btn-info btn-stats\" (click)=\"showStatistics()\">\n\t\t\t\t\t\t<i class=\"fa fa-bar-chart\"></i> 统计\n\t\t\t\t\t</button>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<!-- 当前学年和筛选状态显示 -->\n\t\t<div class=\"current-info\">\n\t\t\t<div class=\"alert alert-info\">\n\t\t\t\t<strong>当前学年:</strong> {{selectedYear}} | \n\t\t\t\t<strong>筛选条件:</strong> \n\t\t\t\t<span *ngIf=\"selectedRequirement\" class=\"filter-tag\">{{getRequirementText(selectedRequirement)}}</span>\n\t\t\t\t<span *ngIf=\"selectedStatus\" class=\"filter-tag\">状态: {{selectedStatus}}</span>\n\t\t\t\t<span *ngIf=\"selectedStudent\" class=\"filter-tag\">学生: {{getStudentName(selectedStudent)}}</span>\n\t\t\t\t<span class=\"badge badge-primary ml-2\">显示 {{filteredApplications.length}} / {{getCurrentYearApplications().length}} 条申请</span>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<!-- 统计结果模态框 -->\n\t\t<div class=\"modal\" [class.show]=\"showModal\" [style.display]=\"showModal ? 'block' : 'none'\" id=\"statisticsModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"statisticsModalLabel\">\n\t\t\t<div class=\"modal-dialog modal-lg\" role=\"document\">\n\t\t\t\t<div class=\"modal-content\">\n\t\t\t\t\t<div class=\"modal-header\">\n\t\t\t\t\t\t<h4 class=\"modal-title\" id=\"statisticsModalLabel\">\n\t\t\t\t\t\t\t<i class=\"fa fa-bar-chart\"></i> 大学申请统计\n\t\t\t\t\t\t</h4>\n\t\t\t\t\t\t<button type=\"button\" class=\"close\" (click)=\"closeStatisticsModal()\" aria-label=\"Close\">\n\t\t\t\t\t\t\t<span aria-hidden=\"true\">&times;</span>\n\t\t\t\t\t\t</button>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"modal-body\">\n\t\t\t\t\t\t<div class=\"alert alert-info\">\n\t\t\t\t\t\t\t<strong>统计条件:</strong> {{selectedYear}}学年 | \n\t\t\t\t\t\t\t<span *ngIf=\"selectedRequirement\">{{getRequirementText(selectedRequirement)}} | </span>\n\t\t\t\t\t\t\t<span *ngIf=\"selectedStatus\">状态: {{selectedStatus}} | </span>\n\t\t\t\t\t\t\t<span *ngIf=\"selectedStudent\">学生: {{getStudentName(selectedStudent)}} | </span>\n\t\t\t\t\t\t\t<strong>总计:</strong> {{filteredApplications.length}} 条申请\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\n\t\t\t\t\t\t<!-- 可滚动的统计表格区域 -->\n\t\t\t\t\t\t<div class=\"statistics-scroll-container\" *ngIf=\"universityStats.length > 0\">\n\t\t\t\t\t\t\t<div class=\"table-responsive\">\n\t\t\t\t\t\t\t\t<table class=\"table table-striped table-hover\">\n\t\t\t\t\t\t\t\t\t<thead class=\"sticky-header\">\n\t\t\t\t\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t\t\t\t\t<th style=\"width: 80px;\">排名</th>\n\t\t\t\t\t\t\t\t\t\t\t<th style=\"width: 200px;\">大学名称</th>\n\t\t\t\t\t\t\t\t\t\t\t<th style=\"width: 120px;\">申请数量</th>\n\t\t\t\t\t\t\t\t\t\t\t<th style=\"width: 200px;\">占比</th>\n\t\t\t\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\t\t\t</thead>\n\t\t\t\t\t\t\t\t\t<tbody>\n\t\t\t\t\t\t\t\t\t\t<tr *ngFor=\"let stat of universityStats; let i = index\">\n\t\t\t\t\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"badge badge-primary rank-badge\">{{i + 1}}</span>\n\t\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t\t\t<td class=\"university-name\">{{stat.university}}</td>\n\t\t\t\t\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"badge badge-info count-badge\">{{stat.count}}</span>\n\t\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"progress-container\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"progress\" style=\"height: 25px;\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"progress-bar\" [style.width.%]=\"stat.percentage\" role=\"progressbar\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"progress-text\">{{stat.percentage.toFixed(1)}}%</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\t\t\t</tbody>\n\t\t\t\t\t\t\t\t</table>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\n\t\t\t\t\t\t<div *ngIf=\"universityStats.length === 0\" class=\"text-center py-4\">\n\t\t\t\t\t\t\t<i class=\"fa fa-info-circle fa-2x text-muted mb-3\"></i>\n\t\t\t\t\t\t\t<p class=\"text-muted\">没有找到统计数据</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"modal-footer\">\n\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-secondary\" (click)=\"closeStatisticsModal()\">关闭</button>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<!-- 模态框背景遮罩 -->\n\t\t<div class=\"modal-backdrop\" *ngIf=\"showModal\" (click)=\"closeStatisticsModal()\"></div>\n\n\t\t<!-- 申请项目表格 -->\n\t\t<div class=\"table-container\">\n\t\t\t<table class=\"table table-hover\" id=\"tableData\">\n\t\t\t\t<thead>\n\t\t\t\t\t<tr>\n\t\t\t\t\t\t<th scope=\"col\" style=\"width:80px\">状态</th>\n\t\t\t\t\t\t<th scope=\"col\" style=\"width:120px\">学生姓名</th>\n\t\t\t\t\t\t<th scope=\"col\" style=\"width:150px\">大学</th>\n\t\t\t\t\t\t<th scope=\"col\" style=\"width:150px\">学院</th>\n\t\t\t\t\t\t<th scope=\"col\" style=\"width:180px\">专业</th>\n\t\t\t\t\t\t<th scope=\"col\" style=\"width:100px\">面试要求</th>\n\t\t\t\t\t\t<th scope=\"col\" style=\"width:120px\">Video Essay</th>\n\t\t\t\t\t\t<th scope=\"col\" style=\"width:100px\">DDL 1</th>\n\t\t\t\t\t\t<th scope=\"col\" style=\"width:100px\">DDL 2</th>\n\t\t\t\t\t\t<th scope=\"col\" style=\"width:100px\">DDL 3</th>\n\t\t\t\t\t\t<th scope=\"col\">操作</th>\n\t\t\t\t\t</tr>\n\t\t\t\t</thead>\n\t\t\t\t<tbody *ngIf=\"filteredApplications.length > 0\">\n\t\t\t\t\t<tr class=\"table-row\" *ngFor=\"let app of filteredApplications\">\n\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t<span class=\"status-badge\" [ngClass]=\"getStatusClass(app.state)\">\n\t\t\t\t\t\t\t\t{{app.state}}\n\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t</td>\n\t\t\t\t\t\t<td>{{getStudentName(app.userAccount)}}</td>\n\t\t\t\t\t\t<td>{{app.univName}}</td>\n\t\t\t\t\t\t<td>{{app.schoolName}}</td>\n\t\t\t\t\t\t<td>{{app.majorName}}</td>\n\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t<span class=\"requirement-badge\" [ngClass]=\"getInterviewClass(app.interview)\">\n\t\t\t\t\t\t\t\t<i class=\"fa fa-microphone\"></i> {{app.interview || '无'}}\n\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t</td>\n\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t<span class=\"requirement-badge\" [ngClass]=\"getVideoEssayClass(app.videoEssay)\">\n\t\t\t\t\t\t\t\t<i class=\"fa fa-video-camera\"></i> {{app.videoEssay || '无'}}\n\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t</td>\n\t\t\t\t\t\t<td>{{app.ddl1 || '-'}}</td>\n\t\t\t\t\t\t<td>{{app.ddl2 || '-'}}</td>\n\t\t\t\t\t\t<td>{{app.ddl3 || '-'}}</td>\n\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t<button class=\"btn btn-info btn-sm\" (click)=\"hmschooldetail(app)\">\n\t\t\t\t\t\t\t\t<i class=\"fa fa-eye\"></i> 详情\n\t\t\t\t\t\t\t</button>\n\n\t\t\t\t\t\t</td>\n\t\t\t\t\t</tr>\n\t\t\t\t</tbody>\n\t\t\t</table>\n\t\t</div>\n\n\t\t<!-- 无结果提示 -->\n\t\t<div class=\"no-results\" *ngIf=\"dataLoaded && filteredApplications.length === 0\">\n\t\t\t<div class=\"text-center py-5\">\n\t\t\t\t<i class=\"fa fa-search fa-3x text-muted mb-3\"></i>\n\t\t\t\t<h4 class=\"text-muted\">没有找到匹配的申请项目</h4>\n\t\t\t\t<p class=\"text-muted\">请尝试切换学年，或调整筛选条件</p>\n\t\t\t\t<button class=\"btn btn-outline-primary\" (click)=\"clearFilters()\">清除所有筛选</button>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<!-- 加载中提示 -->\n\t\t<div class=\"loading\" *ngIf=\"!dataLoaded\">\n\t\t\t<div class=\"text-center py-5\">\n\t\t\t\t<i class=\"fa fa-spinner fa-spin fa-3x text-muted\"></i>\n\t\t\t\t<p class=\"text-muted mt-3\">正在加载申请数据...</p>\n\t\t\t</div>\n\t\t</div>\n\t  </div>\n\t</div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/coorder/coorder.component.scss":
+/*!************************************************!*\
+  !*** ./src/app/coorder/coorder.component.scss ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".page-header {\n  background: linear-gradient(135deg, #667eea 0%, #00361f 100%);\n  color: white;\n  padding: 2rem;\n  border-radius: 10px;\n  margin-bottom: 2rem;\n  text-align: center; }\n  .page-header h2 {\n    margin: 0;\n    font-size: 2.5rem;\n    font-weight: 300; }\n  .page-header p {\n    margin: 0.5rem 0 0 0;\n    font-size: 1.1rem;\n    opacity: 0.9; }\n  .year-tabs {\n  margin-bottom: 2rem; }\n  .year-tabs .nav-tabs {\n    border-bottom: 2px solid #e9ecef; }\n  .year-tabs .nav-tabs .nav-item {\n      margin-right: 0.5rem; }\n  .year-tabs .nav-tabs .nav-item .nav-link {\n        border: 2px solid transparent;\n        border-radius: 8px 8px 0 0;\n        color: #495057;\n        font-weight: 600;\n        padding: 0.8rem 1.5rem;\n        transition: all 0.3s ease; }\n  .year-tabs .nav-tabs .nav-item .nav-link:hover {\n          border-color: #e9ecef;\n          background-color: #f8f9fa; }\n  .year-tabs .nav-tabs .nav-item .nav-link.active {\n          background-color: #667eea;\n          border-color: #667eea;\n          color: white; }\n  .year-tabs .nav-tabs .nav-item .nav-link.active .badge {\n            background-color: rgba(255, 255, 255, 0.3);\n            color: white; }\n  .year-tabs .nav-tabs .nav-item .nav-link .badge {\n          background-color: #6c757d;\n          color: white;\n          font-size: 0.8rem; }\n  .filter-section {\n  background: #f8f9fa;\n  padding: 1.5rem;\n  border-radius: 10px;\n  margin-bottom: 2rem;\n  border: 1px solid #e9ecef; }\n  .filter-section label {\n    font-weight: 600;\n    color: #495057;\n    margin-bottom: 0.5rem;\n    display: block; }\n  .filter-section .form-control {\n    border: 2px solid #e9ecef;\n    border-radius: 8px;\n    transition: all 0.3s ease; }\n  .filter-section .form-control:focus {\n      border-color: #667eea;\n      box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25); }\n  .filter-section .btn-clear {\n    margin-top: 2rem;\n    border-radius: 8px;\n    padding: 0.5rem 1rem; }\n  .filter-section .btn-clear:hover {\n      background-color: #6c757d;\n      color: white; }\n  .current-info {\n  margin-bottom: 2rem; }\n  .current-info .alert {\n    border-radius: 10px;\n    border: none;\n    background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%); }\n  .current-info .alert .filter-tag {\n      display: inline-block;\n      background: rgba(255, 255, 255, 0.7);\n      padding: 0.3rem 0.8rem;\n      margin: 0.2rem;\n      border-radius: 15px;\n      font-size: 0.9rem;\n      color: #0c5460; }\n  .table-container {\n  background: white;\n  border-radius: 10px;\n  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);\n  overflow: hidden; }\n  .table-container .table {\n    margin-bottom: 0; }\n  .table-container .table thead {\n      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); }\n  .table-container .table thead th {\n        border: none;\n        font-weight: 600;\n        color: #495057;\n        padding: 1rem 0.75rem;\n        text-align: center; }\n  .table-container .table tbody .table-row {\n      transition: all 0.3s ease; }\n  .table-container .table tbody .table-row:hover {\n        background-color: #f8f9fa;\n        -webkit-transform: scale(1.01);\n                transform: scale(1.01); }\n  .table-container .table tbody .table-row td {\n        padding: 1rem 0.75rem;\n        vertical-align: middle;\n        text-align: center; }\n  .status-badge {\n  padding: 0.4rem 0.8rem;\n  border-radius: 20px;\n  font-size: 0.8rem;\n  font-weight: 600;\n  color: white; }\n  .status-badge.status-completed {\n    background: linear-gradient(135deg, #28a745 0%, #20c997 100%); }\n  .status-badge.status-progress {\n    background: linear-gradient(135deg, #ffc107 0%, #fd7e14 100%); }\n  .status-badge.status-offer {\n    background: linear-gradient(135deg, #007bff 0%, #6610f2 100%); }\n  .status-badge.status-rejected {\n    background: linear-gradient(135deg, #dc3545 0%, #e83e8c 100%); }\n  .status-badge.status-default {\n    background: linear-gradient(135deg, #6c757d 0%, #adb5bd 100%); }\n  .requirement-badge {\n  padding: 0.3rem 0.6rem;\n  border-radius: 15px;\n  font-size: 0.8rem;\n  font-weight: 500;\n  display: inline-block; }\n  .requirement-badge.requirement-required {\n    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);\n    color: white; }\n  .requirement-badge.requirement-none {\n    background: #e9ecef;\n    color: #6c757d; }\n  .requirement-badge i {\n    margin-right: 0.3rem; }\n  .btn {\n  border-radius: 6px;\n  font-weight: 500;\n  transition: all 0.3s ease; }\n  .btn.btn-info {\n    background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);\n    border: none; }\n  .btn.btn-info:hover {\n      -webkit-transform: translateY(-2px);\n              transform: translateY(-2px);\n      box-shadow: 0 4px 12px rgba(23, 162, 184, 0.3); }\n  .btn.btn-danger {\n    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);\n    border: none; }\n  .btn.btn-danger:hover {\n      -webkit-transform: translateY(-2px);\n              transform: translateY(-2px);\n      box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3); }\n  .btn.btn-outline-primary {\n    border: 2px solid #007bff;\n    color: #007bff; }\n  .btn.btn-outline-primary:hover {\n      background: #007bff;\n      color: white;\n      -webkit-transform: translateY(-2px);\n              transform: translateY(-2px); }\n  .no-results .fa, .loading .fa {\n  color: #adb5bd; }\n  .no-results h4, .loading h4 {\n  margin-bottom: 1rem; }\n  .no-results .btn, .loading .btn {\n  border-radius: 25px;\n  padding: 0.6rem 1.5rem; }\n  @media (max-width: 768px) {\n  .page-header {\n    padding: 1.5rem; }\n    .page-header h2 {\n      font-size: 2rem; }\n  .year-tabs .nav-tabs .nav-item .nav-link {\n    padding: 0.6rem 1rem;\n    font-size: 0.9rem; }\n  .filter-section {\n    padding: 1rem; }\n    .filter-section .row > div {\n      margin-bottom: 1rem; }\n  .table-container .table {\n    font-size: 0.9rem; }\n    .table-container .table th, .table-container .table td {\n      padding: 0.5rem 0.3rem; } }\n  .table-row {\n  -webkit-animation: fadeInUp 0.6s ease-out;\n          animation: fadeInUp 0.6s ease-out; }\n  @-webkit-keyframes fadeInUp {\n  from {\n    opacity: 0;\n    -webkit-transform: translateY(30px);\n            transform: translateY(30px); }\n  to {\n    opacity: 1;\n    -webkit-transform: translateY(0);\n            transform: translateY(0); } }\n  @keyframes fadeInUp {\n  from {\n    opacity: 0;\n    -webkit-transform: translateY(30px);\n            transform: translateY(30px); }\n  to {\n    opacity: 1;\n    -webkit-transform: translateY(0);\n            transform: translateY(0); } }\n  .table-container::-webkit-scrollbar {\n  width: 8px; }\n  .table-container::-webkit-scrollbar-track {\n  background: #f1f1f1;\n  border-radius: 4px; }\n  .table-container::-webkit-scrollbar-thumb {\n  background: #c1c1c1;\n  border-radius: 4px; }\n  .table-container::-webkit-scrollbar-thumb:hover {\n    background: #a8a8a8; }\n  .btn-stats {\n  margin-top: 2rem;\n  border-radius: 8px;\n  padding: 0.5rem 1rem;\n  background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);\n  border: none;\n  color: white;\n  font-weight: 600;\n  transition: all 0.3s ease; }\n  .btn-stats:hover {\n    background: linear-gradient(135deg, #138496 0%, #0f6674 100%);\n    -webkit-transform: translateY(-2px);\n            transform: translateY(-2px);\n    box-shadow: 0 4px 12px rgba(23, 162, 184, 0.3); }\n  .btn-stats i {\n    margin-right: 0.5rem; }\n  .modal-content {\n  border-radius: 10px;\n  border: none;\n  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); }\n  .modal-content .modal-header {\n    background: linear-gradient(135deg, #667eea 0%, #00361f 100%);\n    color: white;\n    border-radius: 10px 10px 0 0;\n    border-bottom: none; }\n  .modal-content .modal-header .modal-title {\n      font-weight: 600; }\n  .modal-content .modal-header .modal-title i {\n        margin-right: 0.5rem; }\n  .modal-content .modal-header .close {\n      color: white;\n      opacity: 0.8; }\n  .modal-content .modal-header .close:hover {\n        opacity: 1; }\n  .modal-content .modal-body {\n    padding: 2rem; }\n  .modal-content .modal-body .alert-info {\n      background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%);\n      border: none;\n      border-radius: 8px;\n      margin-bottom: 1.5rem; }\n  .modal-content .modal-body .table {\n      margin-bottom: 0; }\n  .modal-content .modal-body .table th {\n        background: #f8f9fa;\n        font-weight: 600;\n        color: #495057;\n        border: none; }\n  .modal-content .modal-body .table td {\n        vertical-align: middle;\n        border: none;\n        border-bottom: 1px solid #e9ecef; }\n  .modal-content .modal-body .table .badge {\n        font-size: 0.9rem;\n        padding: 0.4rem 0.8rem; }\n  .modal-content .modal-body .table .progress {\n        background-color: #e9ecef;\n        border-radius: 10px; }\n  .modal-content .modal-body .table .progress .progress-bar {\n          background: linear-gradient(135deg, #667eea 0%, #00361f 100%);\n          border-radius: 10px;\n          font-size: 0.8rem;\n          font-weight: 600;\n          color: white;\n          display: flex;\n          align-items: center;\n          justify-content: center; }\n  .modal-content .modal-footer {\n    border-top: 1px solid #e9ecef;\n    padding: 1rem 2rem; }\n  .modal-content .modal-footer .btn {\n      border-radius: 6px;\n      padding: 0.5rem 1.5rem; }\n  @media (max-width: 768px) {\n  .filter-section .row > div {\n    margin-bottom: 1rem; }\n  .filter-section .btn-stats {\n    margin-top: 0; }\n  .modal-dialog {\n    margin: 1rem; }\n    .modal-dialog .modal-body {\n      padding: 1rem; } }\n  .modal {\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 1050;\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n  outline: 0; }\n  .modal.show {\n    display: block !important; }\n  .modal-dialog {\n  position: relative;\n  width: auto;\n  margin: 1.75rem;\n  pointer-events: none; }\n  .modal-dialog.modal-lg {\n    max-width: 800px; }\n  .modal-content {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  pointer-events: auto;\n  background-color: #fff;\n  background-clip: padding-box;\n  border: 1px solid rgba(0, 0, 0, 0.2);\n  border-radius: .3rem;\n  outline: 0; }\n  .modal-backdrop {\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 1040;\n  width: 100vw;\n  height: 100vh;\n  background-color: #000;\n  opacity: 0.5; }\n  .modal.show {\n  z-index: 1055; }\n  .modal-backdrop.show {\n  z-index: 1050; }\n  .statistics-scroll-container {\n  max-height: 400px;\n  overflow-y: auto;\n  overflow-x: hidden;\n  border: 1px solid #e9ecef;\n  border-radius: 8px;\n  margin-top: 1rem; }\n  .statistics-scroll-container::-webkit-scrollbar {\n    width: 8px; }\n  .statistics-scroll-container::-webkit-scrollbar-track {\n    background: #f1f1f1;\n    border-radius: 4px; }\n  .statistics-scroll-container::-webkit-scrollbar-thumb {\n    background: #c1c1c1;\n    border-radius: 4px; }\n  .statistics-scroll-container::-webkit-scrollbar-thumb:hover {\n      background: #a8a8a8; }\n  .statistics-scroll-container .table {\n    margin-bottom: 0; }\n  .statistics-scroll-container .table thead {\n      position: -webkit-sticky;\n      position: sticky;\n      top: 0;\n      z-index: 10;\n      background: #f8f9fa; }\n  .statistics-scroll-container .table thead th {\n        background: #f8f9fa !important;\n        border-bottom: 2px solid #dee2e6;\n        font-weight: 600;\n        color: #495057;\n        padding: 12px 8px;\n        white-space: nowrap; }\n  .statistics-scroll-container .table tbody tr {\n      transition: background-color 0.2s ease; }\n  .statistics-scroll-container .table tbody tr:hover {\n        background-color: #f5f5f5; }\n  .statistics-scroll-container .table tbody tr td {\n        padding: 10px 8px;\n        vertical-align: middle;\n        border-bottom: 1px solid #e9ecef; }\n  .rank-badge {\n  font-size: 0.9rem;\n  padding: 0.4rem 0.8rem;\n  border-radius: 20px;\n  font-weight: 600; }\n  .university-name {\n  font-weight: 500;\n  color: #2c3e50;\n  max-width: 200px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap; }\n  .count-badge {\n  font-size: 0.9rem;\n  padding: 0.4rem 0.8rem;\n  border-radius: 20px;\n  font-weight: 600; }\n  .progress-container {\n  position: relative; }\n  .progress-container .progress {\n    background-color: #e9ecef;\n    border-radius: 10px;\n    overflow: hidden; }\n  .progress-container .progress .progress-bar {\n      background: linear-gradient(135deg, #667eea 0%, #00361f 100%);\n      border-radius: 10px;\n      position: relative;\n      transition: width 0.3s ease; }\n  .progress-container .progress .progress-bar .progress-text {\n        position: absolute;\n        top: 50%;\n        left: 50%;\n        -webkit-transform: translate(-50%, -50%);\n                transform: translate(-50%, -50%);\n        color: white;\n        font-size: 0.8rem;\n        font-weight: 600;\n        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);\n        white-space: nowrap; }\n  .sticky-header {\n  position: -webkit-sticky;\n  position: sticky;\n  top: 0;\n  z-index: 10;\n  background: #f8f9fa;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }\n  .modal-body {\n  padding: 1.5rem;\n  max-height: 70vh;\n  overflow-y: auto; }\n  .modal-body .alert-info {\n    margin-bottom: 1rem;\n    border-radius: 8px;\n    border: none;\n    background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%); }\n  @media (max-width: 768px) {\n  .statistics-scroll-container {\n    max-height: 300px; }\n    .statistics-scroll-container .table {\n      font-size: 0.9rem; }\n      .statistics-scroll-container .table th, .statistics-scroll-container .table td {\n        padding: 8px 6px; }\n  .university-name {\n    max-width: 150px; }\n  .progress-text {\n    font-size: 0.7rem !important; } }\n  .statistics-scroll-container::after {\n  content: '';\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  height: 20px;\n  background: linear-gradient(transparent, rgba(255, 255, 255, 0.8));\n  pointer-events: none;\n  opacity: 0;\n  transition: opacity 0.3s ease; }\n  .statistics-scroll-container:hover::after {\n  opacity: 1; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9lY28vRG9jdW1lbnRzL01pY2hpL01pY2hpL3NyYy9hcHAvY29vcmRlci9jb29yZGVyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNBO0VBQ0UsNkRBQTZEO0VBQzdELFlBQVk7RUFDWixhQUFhO0VBQ2IsbUJBQW1CO0VBQ25CLG1CQUFtQjtFQUNuQixrQkFBa0IsRUFBQTtFQU5wQjtJQVNJLFNBQVM7SUFDVCxpQkFBaUI7SUFDakIsZ0JBQWdCLEVBQUE7RUFYcEI7SUFlSSxvQkFBb0I7SUFDcEIsaUJBQWlCO0lBQ2pCLFlBQVksRUFBQTtFQUtoQjtFQUNFLG1CQUFtQixFQUFBO0VBRHJCO0lBSUksZ0NBQWdDLEVBQUE7RUFKcEM7TUFPTSxvQkFBb0IsRUFBQTtFQVAxQjtRQVVRLDZCQUE2QjtRQUM3QiwwQkFBMEI7UUFDMUIsY0FBYztRQUNkLGdCQUFnQjtRQUNoQixzQkFBc0I7UUFDdEIseUJBQXlCLEVBQUE7RUFmakM7VUFrQlUscUJBQXFCO1VBQ3JCLHlCQUF5QixFQUFBO0VBbkJuQztVQXVCVSx5QkFBeUI7VUFDekIscUJBQXFCO1VBQ3JCLFlBQVksRUFBQTtFQXpCdEI7WUE0QlksMENBQTBDO1lBQzFDLFlBQVksRUFBQTtFQTdCeEI7VUFrQ1UseUJBQXlCO1VBQ3pCLFlBQVk7VUFDWixpQkFBaUIsRUFBQTtFQVEzQjtFQUNFLG1CQUFtQjtFQUNuQixlQUFlO0VBQ2YsbUJBQW1CO0VBQ25CLG1CQUFtQjtFQUNuQix5QkFBeUIsRUFBQTtFQUwzQjtJQVFJLGdCQUFnQjtJQUNoQixjQUFjO0lBQ2QscUJBQXFCO0lBQ3JCLGNBQWMsRUFBQTtFQVhsQjtJQWVJLHlCQUF5QjtJQUN6QixrQkFBa0I7SUFDbEIseUJBQXlCLEVBQUE7RUFqQjdCO01Bb0JNLHFCQUFxQjtNQUNyQixrREFBa0QsRUFBQTtFQXJCeEQ7SUEwQkksZ0JBQWdCO0lBQ2hCLGtCQUFrQjtJQUNsQixvQkFBb0IsRUFBQTtFQTVCeEI7TUErQk0seUJBQXlCO01BQ3pCLFlBQVksRUFBQTtFQU1sQjtFQUNFLG1CQUFtQixFQUFBO0VBRHJCO0lBSUksbUJBQW1CO0lBQ25CLFlBQVk7SUFDWiw2REFBNkQsRUFBQTtFQU5qRTtNQVNNLHFCQUFxQjtNQUNyQixvQ0FBb0M7TUFDcEMsc0JBQXNCO01BQ3RCLGNBQWM7TUFDZCxtQkFBbUI7TUFDbkIsaUJBQWlCO01BQ2pCLGNBQWMsRUFBQTtFQU1wQjtFQUNFLGlCQUFpQjtFQUNqQixtQkFBbUI7RUFDbkIseUNBQXlDO0VBQ3pDLGdCQUFnQixFQUFBO0VBSmxCO0lBT0ksZ0JBQWdCLEVBQUE7RUFQcEI7TUFVTSw2REFBNkQsRUFBQTtFQVZuRTtRQWFRLFlBQVk7UUFDWixnQkFBZ0I7UUFDaEIsY0FBYztRQUNkLHFCQUFxQjtRQUNyQixrQkFBa0IsRUFBQTtFQWpCMUI7TUF1QlEseUJBQXlCLEVBQUE7RUF2QmpDO1FBMEJVLHlCQUF5QjtRQUN6Qiw4QkFBc0I7Z0JBQXRCLHNCQUFzQixFQUFBO0VBM0JoQztRQStCVSxxQkFBcUI7UUFDckIsc0JBQXNCO1FBQ3RCLGtCQUFrQixFQUFBO0VBUTVCO0VBQ0Usc0JBQXNCO0VBQ3RCLG1CQUFtQjtFQUNuQixpQkFBaUI7RUFDakIsZ0JBQWdCO0VBQ2hCLFlBQVksRUFBQTtFQUxkO0lBUUksNkRBQTZELEVBQUE7RUFSakU7SUFZSSw2REFBNkQsRUFBQTtFQVpqRTtJQWdCSSw2REFBNkQsRUFBQTtFQWhCakU7SUFvQkksNkRBQTZELEVBQUE7RUFwQmpFO0lBd0JJLDZEQUE2RCxFQUFBO0VBS2pFO0VBQ0Usc0JBQXNCO0VBQ3RCLG1CQUFtQjtFQUNuQixpQkFBaUI7RUFDakIsZ0JBQWdCO0VBQ2hCLHFCQUFxQixFQUFBO0VBTHZCO0lBUUksNkRBQTZEO0lBQzdELFlBQVksRUFBQTtFQVRoQjtJQWFJLG1CQUFtQjtJQUNuQixjQUFjLEVBQUE7RUFkbEI7SUFrQkksb0JBQW9CLEVBQUE7RUFLeEI7RUFDRSxrQkFBa0I7RUFDbEIsZ0JBQWdCO0VBQ2hCLHlCQUF5QixFQUFBO0VBSDNCO0lBTUksNkRBQTZEO0lBQzdELFlBQVksRUFBQTtFQVBoQjtNQVVNLG1DQUEyQjtjQUEzQiwyQkFBMkI7TUFDM0IsOENBQThDLEVBQUE7RUFYcEQ7SUFnQkksNkRBQTZEO0lBQzdELFlBQVksRUFBQTtFQWpCaEI7TUFvQk0sbUNBQTJCO2NBQTNCLDJCQUEyQjtNQUMzQiw2Q0FBNkMsRUFBQTtFQXJCbkQ7SUEwQkkseUJBQXlCO0lBQ3pCLGNBQWMsRUFBQTtFQTNCbEI7TUE4Qk0sbUJBQW1CO01BQ25CLFlBQVk7TUFDWixtQ0FBMkI7Y0FBM0IsMkJBQTJCLEVBQUE7RUFNakM7RUFFSSxjQUFjLEVBQUE7RUFGbEI7RUFNSSxtQkFBbUIsRUFBQTtFQU52QjtFQVVJLG1CQUFtQjtFQUNuQixzQkFBc0IsRUFBQTtFQUsxQjtFQUNFO0lBQ0UsZUFBZSxFQUFBO0lBRGpCO01BSUksZUFBZSxFQUFBO0VBSW5CO0lBSVEsb0JBQW9CO0lBQ3BCLGlCQUFpQixFQUFBO0VBTXpCO0lBQ0UsYUFBYSxFQUFBO0lBRGY7TUFJSSxtQkFBbUIsRUFBQTtFQUl2QjtJQUVJLGlCQUFpQixFQUFBO0lBRnJCO01BS00sc0JBQXNCLEVBQUEsRUFDdkI7RUFNUDtFQUNFLHlDQUFpQztVQUFqQyxpQ0FBaUMsRUFBQTtFQUduQztFQUNFO0lBQ0UsVUFBVTtJQUNWLG1DQUEyQjtZQUEzQiwyQkFBMkIsRUFBQTtFQUU3QjtJQUNFLFVBQVU7SUFDVixnQ0FBd0I7WUFBeEIsd0JBQXdCLEVBQUEsRUFBQTtFQVA1QjtFQUNFO0lBQ0UsVUFBVTtJQUNWLG1DQUEyQjtZQUEzQiwyQkFBMkIsRUFBQTtFQUU3QjtJQUNFLFVBQVU7SUFDVixnQ0FBd0I7WUFBeEIsd0JBQXdCLEVBQUEsRUFBQTtFQUs1QjtFQUVJLFVBQVUsRUFBQTtFQUZkO0VBTUksbUJBQW1CO0VBQ25CLGtCQUFrQixFQUFBO0VBUHRCO0VBV0ksbUJBQW1CO0VBQ25CLGtCQUFrQixFQUFBO0VBWnRCO0lBZU0sbUJBQW1CLEVBQUE7RUFNekI7RUFDRSxnQkFBZ0I7RUFDaEIsa0JBQWtCO0VBQ2xCLG9CQUFvQjtFQUNwQiw2REFBNkQ7RUFDN0QsWUFBWTtFQUNaLFlBQVk7RUFDWixnQkFBZ0I7RUFDaEIseUJBQXlCLEVBQUE7RUFSM0I7SUFXSSw2REFBNkQ7SUFDN0QsbUNBQTJCO1lBQTNCLDJCQUEyQjtJQUMzQiw4Q0FBOEMsRUFBQTtFQWJsRDtJQWlCSSxvQkFBb0IsRUFBQTtFQUt4QjtFQUNFLG1CQUFtQjtFQUNuQixZQUFZO0VBQ1osMENBQTBDLEVBQUE7RUFINUM7SUFNSSw2REFBNkQ7SUFDN0QsWUFBWTtJQUNaLDRCQUE0QjtJQUM1QixtQkFBbUIsRUFBQTtFQVR2QjtNQVlNLGdCQUFnQixFQUFBO0VBWnRCO1FBZVEsb0JBQW9CLEVBQUE7RUFmNUI7TUFvQk0sWUFBWTtNQUNaLFlBQVksRUFBQTtFQXJCbEI7UUF3QlEsVUFBVSxFQUFBO0VBeEJsQjtJQThCSSxhQUFhLEVBQUE7RUE5QmpCO01BaUNNLDZEQUE2RDtNQUM3RCxZQUFZO01BQ1osa0JBQWtCO01BQ2xCLHFCQUFxQixFQUFBO0VBcEMzQjtNQXdDTSxnQkFBZ0IsRUFBQTtFQXhDdEI7UUEyQ1EsbUJBQW1CO1FBQ25CLGdCQUFnQjtRQUNoQixjQUFjO1FBQ2QsWUFBWSxFQUFBO0VBOUNwQjtRQWtEUSxzQkFBc0I7UUFDdEIsWUFBWTtRQUNaLGdDQUFnQyxFQUFBO0VBcER4QztRQXdEUSxpQkFBaUI7UUFDakIsc0JBQXNCLEVBQUE7RUF6RDlCO1FBNkRRLHlCQUF5QjtRQUN6QixtQkFBbUIsRUFBQTtFQTlEM0I7VUFpRVUsNkRBQTZEO1VBQzdELG1CQUFtQjtVQUNuQixpQkFBaUI7VUFDakIsZ0JBQWdCO1VBQ2hCLFlBQVk7VUFDWixhQUFhO1VBQ2IsbUJBQW1CO1VBQ25CLHVCQUF1QixFQUFBO0VBeEVqQztJQStFSSw2QkFBNkI7SUFDN0Isa0JBQWtCLEVBQUE7RUFoRnRCO01BbUZNLGtCQUFrQjtNQUNsQixzQkFBc0IsRUFBQTtFQU01QjtFQUNFO0lBRUksbUJBQW1CLEVBQUE7RUFGdkI7SUFNSSxhQUFhLEVBQUE7RUFJakI7SUFDRSxZQUFZLEVBQUE7SUFEZDtNQUlJLGFBQWEsRUFBQSxFQUNkO0VBS0w7RUFDRSxlQUFlO0VBQ2YsTUFBTTtFQUNOLE9BQU87RUFDUCxhQUFhO0VBQ2IsV0FBVztFQUNYLFlBQVk7RUFDWixnQkFBZ0I7RUFDaEIsVUFBVSxFQUFBO0VBUlo7SUFXSSx5QkFBeUIsRUFBQTtFQUk3QjtFQUNFLGtCQUFrQjtFQUNsQixXQUFXO0VBQ1gsZUFBZTtFQUNmLG9CQUFvQixFQUFBO0VBSnRCO0lBT0ksZ0JBQWdCLEVBQUE7RUFJcEI7RUFDRSxrQkFBa0I7RUFDbEIsYUFBYTtFQUNiLHNCQUFzQjtFQUN0QixXQUFXO0VBQ1gsb0JBQW9CO0VBQ3BCLHNCQUFzQjtFQUN0Qiw0QkFBNEI7RUFDNUIsb0NBQWdDO0VBQ2hDLG9CQUFvQjtFQUNwQixVQUFVLEVBQUE7RUFHWjtFQUNFLGVBQWU7RUFDZixNQUFNO0VBQ04sT0FBTztFQUNQLGFBQWE7RUFDYixZQUFZO0VBQ1osYUFBYTtFQUNiLHNCQUFzQjtFQUN0QixZQUFZLEVBQUE7RUFJZDtFQUNFLGFBQWEsRUFBQTtFQUdmO0VBQ0UsYUFBYSxFQUFBO0VBSWY7RUFDRSxpQkFBaUI7RUFDakIsZ0JBQWdCO0VBQ2hCLGtCQUFrQjtFQUNsQix5QkFBeUI7RUFDekIsa0JBQWtCO0VBQ2xCLGdCQUFnQixFQUFBO0VBTmxCO0lBVUksVUFBVSxFQUFBO0VBVmQ7SUFjSSxtQkFBbUI7SUFDbkIsa0JBQWtCLEVBQUE7RUFmdEI7SUFtQkksbUJBQW1CO0lBQ25CLGtCQUFrQixFQUFBO0VBcEJ0QjtNQXVCTSxtQkFBbUIsRUFBQTtFQXZCekI7SUE2QkksZ0JBQWdCLEVBQUE7RUE3QnBCO01BZ0NNLHdCQUFnQjtNQUFoQixnQkFBZ0I7TUFDaEIsTUFBTTtNQUNOLFdBQVc7TUFDWCxtQkFBbUIsRUFBQTtFQW5DekI7UUFzQ1EsOEJBQThCO1FBQzlCLGdDQUFnQztRQUNoQyxnQkFBZ0I7UUFDaEIsY0FBYztRQUNkLGlCQUFpQjtRQUNqQixtQkFBbUIsRUFBQTtFQTNDM0I7TUFpRFEsc0NBQXNDLEVBQUE7RUFqRDlDO1FBb0RVLHlCQUF5QixFQUFBO0VBcERuQztRQXdEVSxpQkFBaUI7UUFDakIsc0JBQXNCO1FBQ3RCLGdDQUFnQyxFQUFBO0VBUTFDO0VBQ0UsaUJBQWlCO0VBQ2pCLHNCQUFzQjtFQUN0QixtQkFBbUI7RUFDbkIsZ0JBQWdCLEVBQUE7RUFJbEI7RUFDRSxnQkFBZ0I7RUFDaEIsY0FBYztFQUNkLGdCQUFnQjtFQUNoQixnQkFBZ0I7RUFDaEIsdUJBQXVCO0VBQ3ZCLG1CQUFtQixFQUFBO0VBSXJCO0VBQ0UsaUJBQWlCO0VBQ2pCLHNCQUFzQjtFQUN0QixtQkFBbUI7RUFDbkIsZ0JBQWdCLEVBQUE7RUFJbEI7RUFDRSxrQkFBa0IsRUFBQTtFQURwQjtJQUlJLHlCQUF5QjtJQUN6QixtQkFBbUI7SUFDbkIsZ0JBQWdCLEVBQUE7RUFOcEI7TUFTTSw2REFBNkQ7TUFDN0QsbUJBQW1CO01BQ25CLGtCQUFrQjtNQUNsQiwyQkFBMkIsRUFBQTtFQVpqQztRQWVRLGtCQUFrQjtRQUNsQixRQUFRO1FBQ1IsU0FBUztRQUNULHdDQUFnQztnQkFBaEMsZ0NBQWdDO1FBQ2hDLFlBQVk7UUFDWixpQkFBaUI7UUFDakIsZ0JBQWdCO1FBQ2hCLHlDQUF5QztRQUN6QyxtQkFBbUIsRUFBQTtFQU8zQjtFQUNFLHdCQUFnQjtFQUFoQixnQkFBZ0I7RUFDaEIsTUFBTTtFQUNOLFdBQVc7RUFDWCxtQkFBbUI7RUFDbkIsd0NBQXdDLEVBQUE7RUFJMUM7RUFDRSxlQUFlO0VBQ2YsZ0JBQWdCO0VBQ2hCLGdCQUFnQixFQUFBO0VBSGxCO0lBTUksbUJBQW1CO0lBQ25CLGtCQUFrQjtJQUNsQixZQUFZO0lBQ1osNkRBQTZELEVBQUE7RUFLakU7RUFDRTtJQUNFLGlCQUFpQixFQUFBO0lBRG5CO01BSUksaUJBQWlCLEVBQUE7TUFKckI7UUFPTSxnQkFBZ0IsRUFBQTtFQUt0QjtJQUNFLGdCQUFnQixFQUFBO0VBR2xCO0lBQ0UsNEJBQTRCLEVBQUEsRUFDN0I7RUFJSDtFQUNFLFdBQVc7RUFDWCxrQkFBa0I7RUFDbEIsU0FBUztFQUNULE9BQU87RUFDUCxRQUFRO0VBQ1IsWUFBWTtFQUNaLGtFQUFrRTtFQUNsRSxvQkFBb0I7RUFDcEIsVUFBVTtFQUNWLDZCQUE2QixFQUFBO0VBRy9CO0VBQ0UsVUFBVSxFQUFBIiwiZmlsZSI6InNyYy9hcHAvY29vcmRlci9jb29yZGVyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLy8g6aG16Z2i5aS06YOo5qC35byPXG4ucGFnZS1oZWFkZXIge1xuICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTM1ZGVnLCAjNjY3ZWVhIDAlLCAjMDAzNjFmIDEwMCUpO1xuICBjb2xvcjogd2hpdGU7XG4gIHBhZGRpbmc6IDJyZW07XG4gIGJvcmRlci1yYWRpdXM6IDEwcHg7XG4gIG1hcmdpbi1ib3R0b206IDJyZW07XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgXG4gIGgyIHtcbiAgICBtYXJnaW46IDA7XG4gICAgZm9udC1zaXplOiAyLjVyZW07XG4gICAgZm9udC13ZWlnaHQ6IDMwMDtcbiAgfVxuICBcbiAgcCB7XG4gICAgbWFyZ2luOiAwLjVyZW0gMCAwIDA7XG4gICAgZm9udC1zaXplOiAxLjFyZW07XG4gICAgb3BhY2l0eTogMC45O1xuICB9XG59XG5cbi8vIOWtpuW5tOagh+etvumhteagt+W8j1xuLnllYXItdGFicyB7XG4gIG1hcmdpbi1ib3R0b206IDJyZW07XG4gIFxuICAubmF2LXRhYnMge1xuICAgIGJvcmRlci1ib3R0b206IDJweCBzb2xpZCAjZTllY2VmO1xuICAgIFxuICAgIC5uYXYtaXRlbSB7XG4gICAgICBtYXJnaW4tcmlnaHQ6IDAuNXJlbTtcbiAgICAgIFxuICAgICAgLm5hdi1saW5rIHtcbiAgICAgICAgYm9yZGVyOiAycHggc29saWQgdHJhbnNwYXJlbnQ7XG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDhweCA4cHggMCAwO1xuICAgICAgICBjb2xvcjogIzQ5NTA1NztcbiAgICAgICAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgICAgICAgcGFkZGluZzogMC44cmVtIDEuNXJlbTtcbiAgICAgICAgdHJhbnNpdGlvbjogYWxsIDAuM3MgZWFzZTtcbiAgICAgICAgXG4gICAgICAgICY6aG92ZXIge1xuICAgICAgICAgIGJvcmRlci1jb2xvcjogI2U5ZWNlZjtcbiAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjhmOWZhO1xuICAgICAgICB9XG4gICAgICAgIFxuICAgICAgICAmLmFjdGl2ZSB7XG4gICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogIzY2N2VlYTtcbiAgICAgICAgICBib3JkZXItY29sb3I6ICM2NjdlZWE7XG4gICAgICAgICAgY29sb3I6IHdoaXRlO1xuICAgICAgICAgIFxuICAgICAgICAgIC5iYWRnZSB7XG4gICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMyk7XG4gICAgICAgICAgICBjb2xvcjogd2hpdGU7XG4gICAgICAgICAgfVxuICAgICAgICB9XG4gICAgICAgIFxuICAgICAgICAuYmFkZ2Uge1xuICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICM2Yzc1N2Q7XG4gICAgICAgICAgY29sb3I6IHdoaXRlO1xuICAgICAgICAgIGZvbnQtc2l6ZTogMC44cmVtO1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG59XG5cbi8vIOetm+mAieWMuuWfn+agt+W8j1xuLmZpbHRlci1zZWN0aW9uIHtcbiAgYmFja2dyb3VuZDogI2Y4ZjlmYTtcbiAgcGFkZGluZzogMS41cmVtO1xuICBib3JkZXItcmFkaXVzOiAxMHB4O1xuICBtYXJnaW4tYm90dG9tOiAycmVtO1xuICBib3JkZXI6IDFweCBzb2xpZCAjZTllY2VmO1xuICBcbiAgbGFiZWwge1xuICAgIGZvbnQtd2VpZ2h0OiA2MDA7XG4gICAgY29sb3I6ICM0OTUwNTc7XG4gICAgbWFyZ2luLWJvdHRvbTogMC41cmVtO1xuICAgIGRpc3BsYXk6IGJsb2NrO1xuICB9XG4gIFxuICAuZm9ybS1jb250cm9sIHtcbiAgICBib3JkZXI6IDJweCBzb2xpZCAjZTllY2VmO1xuICAgIGJvcmRlci1yYWRpdXM6IDhweDtcbiAgICB0cmFuc2l0aW9uOiBhbGwgMC4zcyBlYXNlO1xuICAgIFxuICAgICY6Zm9jdXMge1xuICAgICAgYm9yZGVyLWNvbG9yOiAjNjY3ZWVhO1xuICAgICAgYm94LXNoYWRvdzogMCAwIDAgMC4ycmVtIHJnYmEoMTAyLCAxMjYsIDIzNCwgMC4yNSk7XG4gICAgfVxuICB9XG4gIFxuICAuYnRuLWNsZWFyIHtcbiAgICBtYXJnaW4tdG9wOiAycmVtO1xuICAgIGJvcmRlci1yYWRpdXM6IDhweDtcbiAgICBwYWRkaW5nOiAwLjVyZW0gMXJlbTtcbiAgICBcbiAgICAmOmhvdmVyIHtcbiAgICAgIGJhY2tncm91bmQtY29sb3I6ICM2Yzc1N2Q7XG4gICAgICBjb2xvcjogd2hpdGU7XG4gICAgfVxuICB9XG59XG5cbi8vIOW9k+WJjeS/oeaBr+aYvuekuuagt+W8j1xuLmN1cnJlbnQtaW5mbyB7XG4gIG1hcmdpbi1ib3R0b206IDJyZW07XG4gIFxuICAuYWxlcnQge1xuICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7XG4gICAgYm9yZGVyOiBub25lO1xuICAgIGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgxMzVkZWcsICNkMWVjZjEgMCUsICNiZWU1ZWIgMTAwJSk7XG4gICAgXG4gICAgLmZpbHRlci10YWcge1xuICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICAgICAgYmFja2dyb3VuZDogcmdiYSgyNTUsIDI1NSwgMjU1LCAwLjcpO1xuICAgICAgcGFkZGluZzogMC4zcmVtIDAuOHJlbTtcbiAgICAgIG1hcmdpbjogMC4ycmVtO1xuICAgICAgYm9yZGVyLXJhZGl1czogMTVweDtcbiAgICAgIGZvbnQtc2l6ZTogMC45cmVtO1xuICAgICAgY29sb3I6ICMwYzU0NjA7XG4gICAgfVxuICB9XG59XG5cbi8vIOihqOagvOWuueWZqOagt+W8j1xuLnRhYmxlLWNvbnRhaW5lciB7XG4gIGJhY2tncm91bmQ6IHdoaXRlO1xuICBib3JkZXItcmFkaXVzOiAxMHB4O1xuICBib3gtc2hhZG93OiAwIDRweCAyMHB4IHJnYmEoMCwgMCwgMCwgMC4xKTtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgXG4gIC50YWJsZSB7XG4gICAgbWFyZ2luLWJvdHRvbTogMDtcbiAgICBcbiAgICB0aGVhZCB7XG4gICAgICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTM1ZGVnLCAjZjhmOWZhIDAlLCAjZTllY2VmIDEwMCUpO1xuICAgICAgXG4gICAgICB0aCB7XG4gICAgICAgIGJvcmRlcjogbm9uZTtcbiAgICAgICAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgICAgICAgY29sb3I6ICM0OTUwNTc7XG4gICAgICAgIHBhZGRpbmc6IDFyZW0gMC43NXJlbTtcbiAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgICAgfVxuICAgIH1cbiAgICBcbiAgICB0Ym9keSB7XG4gICAgICAudGFibGUtcm93IHtcbiAgICAgICAgdHJhbnNpdGlvbjogYWxsIDAuM3MgZWFzZTtcbiAgICAgICAgXG4gICAgICAgICY6aG92ZXIge1xuICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICNmOGY5ZmE7XG4gICAgICAgICAgdHJhbnNmb3JtOiBzY2FsZSgxLjAxKTtcbiAgICAgICAgfVxuICAgICAgICBcbiAgICAgICAgdGQge1xuICAgICAgICAgIHBhZGRpbmc6IDFyZW0gMC43NXJlbTtcbiAgICAgICAgICB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlO1xuICAgICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICAgICAgfVxuICAgICAgfVxuICAgIH1cbiAgfVxufVxuXG4vLyDnirbmgIHmoIfnrb7moLflvI9cbi5zdGF0dXMtYmFkZ2Uge1xuICBwYWRkaW5nOiAwLjRyZW0gMC44cmVtO1xuICBib3JkZXItcmFkaXVzOiAyMHB4O1xuICBmb250LXNpemU6IDAuOHJlbTtcbiAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgY29sb3I6IHdoaXRlO1xuICBcbiAgJi5zdGF0dXMtY29tcGxldGVkIHtcbiAgICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTM1ZGVnLCAjMjhhNzQ1IDAlLCAjMjBjOTk3IDEwMCUpO1xuICB9XG4gIFxuICAmLnN0YXR1cy1wcm9ncmVzcyB7XG4gICAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDEzNWRlZywgI2ZmYzEwNyAwJSwgI2ZkN2UxNCAxMDAlKTtcbiAgfVxuICBcbiAgJi5zdGF0dXMtb2ZmZXIge1xuICAgIGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgxMzVkZWcsICMwMDdiZmYgMCUsICM2NjEwZjIgMTAwJSk7XG4gIH1cbiAgXG4gICYuc3RhdHVzLXJlamVjdGVkIHtcbiAgICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTM1ZGVnLCAjZGMzNTQ1IDAlLCAjZTgzZThjIDEwMCUpO1xuICB9XG4gIFxuICAmLnN0YXR1cy1kZWZhdWx0IHtcbiAgICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTM1ZGVnLCAjNmM3NTdkIDAlLCAjYWRiNWJkIDEwMCUpO1xuICB9XG59XG5cbi8vIOeUs+ivt+imgeaxguagh+etvuagt+W8j1xuLnJlcXVpcmVtZW50LWJhZGdlIHtcbiAgcGFkZGluZzogMC4zcmVtIDAuNnJlbTtcbiAgYm9yZGVyLXJhZGl1czogMTVweDtcbiAgZm9udC1zaXplOiAwLjhyZW07XG4gIGZvbnQtd2VpZ2h0OiA1MDA7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgXG4gICYucmVxdWlyZW1lbnQtcmVxdWlyZWQge1xuICAgIGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgxMzVkZWcsICNmZjZiNmIgMCUsICNlZTVhMjQgMTAwJSk7XG4gICAgY29sb3I6IHdoaXRlO1xuICB9XG4gIFxuICAmLnJlcXVpcmVtZW50LW5vbmUge1xuICAgIGJhY2tncm91bmQ6ICNlOWVjZWY7XG4gICAgY29sb3I6ICM2Yzc1N2Q7XG4gIH1cbiAgXG4gIGkge1xuICAgIG1hcmdpbi1yaWdodDogMC4zcmVtO1xuICB9XG59XG5cbi8vIOaMiemSruagt+W8j1xuLmJ0biB7XG4gIGJvcmRlci1yYWRpdXM6IDZweDtcbiAgZm9udC13ZWlnaHQ6IDUwMDtcbiAgdHJhbnNpdGlvbjogYWxsIDAuM3MgZWFzZTtcbiAgXG4gICYuYnRuLWluZm8ge1xuICAgIGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgxMzVkZWcsICMxN2EyYjggMCUsICMxMzg0OTYgMTAwJSk7XG4gICAgYm9yZGVyOiBub25lO1xuICAgIFxuICAgICY6aG92ZXIge1xuICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKC0ycHgpO1xuICAgICAgYm94LXNoYWRvdzogMCA0cHggMTJweCByZ2JhKDIzLCAxNjIsIDE4NCwgMC4zKTtcbiAgICB9XG4gIH1cbiAgXG4gICYuYnRuLWRhbmdlciB7XG4gICAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDEzNWRlZywgI2RjMzU0NSAwJSwgI2M4MjMzMyAxMDAlKTtcbiAgICBib3JkZXI6IG5vbmU7XG4gICAgXG4gICAgJjpob3ZlciB7XG4gICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoLTJweCk7XG4gICAgICBib3gtc2hhZG93OiAwIDRweCAxMnB4IHJnYmEoMjIwLCA1MywgNjksIDAuMyk7XG4gICAgfVxuICB9XG4gIFxuICAmLmJ0bi1vdXRsaW5lLXByaW1hcnkge1xuICAgIGJvcmRlcjogMnB4IHNvbGlkICMwMDdiZmY7XG4gICAgY29sb3I6ICMwMDdiZmY7XG4gICAgXG4gICAgJjpob3ZlciB7XG4gICAgICBiYWNrZ3JvdW5kOiAjMDA3YmZmO1xuICAgICAgY29sb3I6IHdoaXRlO1xuICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKC0ycHgpO1xuICAgIH1cbiAgfVxufVxuXG4vLyDml6Dnu5PmnpzlkozliqDovb3nirbmgIHmoLflvI9cbi5uby1yZXN1bHRzLCAubG9hZGluZyB7XG4gIC5mYSB7XG4gICAgY29sb3I6ICNhZGI1YmQ7XG4gIH1cbiAgXG4gIGg0IHtcbiAgICBtYXJnaW4tYm90dG9tOiAxcmVtO1xuICB9XG4gIFxuICAuYnRuIHtcbiAgICBib3JkZXItcmFkaXVzOiAyNXB4O1xuICAgIHBhZGRpbmc6IDAuNnJlbSAxLjVyZW07XG4gIH1cbn1cblxuLy8g5ZON5bqU5byP6K6+6K6hXG5AbWVkaWEgKG1heC13aWR0aDogNzY4cHgpIHtcbiAgLnBhZ2UtaGVhZGVyIHtcbiAgICBwYWRkaW5nOiAxLjVyZW07XG4gICAgXG4gICAgaDIge1xuICAgICAgZm9udC1zaXplOiAycmVtO1xuICAgIH1cbiAgfVxuICBcbiAgLnllYXItdGFicyB7XG4gICAgLm5hdi10YWJzIHtcbiAgICAgIC5uYXYtaXRlbSB7XG4gICAgICAgIC5uYXYtbGluayB7XG4gICAgICAgICAgcGFkZGluZzogMC42cmVtIDFyZW07XG4gICAgICAgICAgZm9udC1zaXplOiAwLjlyZW07XG4gICAgICAgIH1cbiAgICAgIH1cbiAgICB9XG4gIH1cbiAgXG4gIC5maWx0ZXItc2VjdGlvbiB7XG4gICAgcGFkZGluZzogMXJlbTtcbiAgICBcbiAgICAucm93ID4gZGl2IHtcbiAgICAgIG1hcmdpbi1ib3R0b206IDFyZW07XG4gICAgfVxuICB9XG4gIFxuICAudGFibGUtY29udGFpbmVyIHtcbiAgICAudGFibGUge1xuICAgICAgZm9udC1zaXplOiAwLjlyZW07XG4gICAgICBcbiAgICAgIHRoLCB0ZCB7XG4gICAgICAgIHBhZGRpbmc6IDAuNXJlbSAwLjNyZW07XG4gICAgICB9XG4gICAgfVxuICB9XG59XG5cbi8vIOWKqOeUu+aViOaenFxuLnRhYmxlLXJvdyB7XG4gIGFuaW1hdGlvbjogZmFkZUluVXAgMC42cyBlYXNlLW91dDtcbn1cblxuQGtleWZyYW1lcyBmYWRlSW5VcCB7XG4gIGZyb20ge1xuICAgIG9wYWNpdHk6IDA7XG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDMwcHgpO1xuICB9XG4gIHRvIHtcbiAgICBvcGFjaXR5OiAxO1xuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgwKTtcbiAgfVxufVxuXG4vLyDmu5rliqjmnaHmoLflvI9cbi50YWJsZS1jb250YWluZXIge1xuICAmOjotd2Via2l0LXNjcm9sbGJhciB7XG4gICAgd2lkdGg6IDhweDtcbiAgfVxuICBcbiAgJjo6LXdlYmtpdC1zY3JvbGxiYXItdHJhY2sge1xuICAgIGJhY2tncm91bmQ6ICNmMWYxZjE7XG4gICAgYm9yZGVyLXJhZGl1czogNHB4O1xuICB9XG4gIFxuICAmOjotd2Via2l0LXNjcm9sbGJhci10aHVtYiB7XG4gICAgYmFja2dyb3VuZDogI2MxYzFjMTtcbiAgICBib3JkZXItcmFkaXVzOiA0cHg7XG4gICAgXG4gICAgJjpob3ZlciB7XG4gICAgICBiYWNrZ3JvdW5kOiAjYThhOGE4O1xuICAgIH1cbiAgfVxufVxuXG4vLyDnu5/orqHmjInpkq7moLflvI9cbi5idG4tc3RhdHMge1xuICBtYXJnaW4tdG9wOiAycmVtO1xuICBib3JkZXItcmFkaXVzOiA4cHg7XG4gIHBhZGRpbmc6IDAuNXJlbSAxcmVtO1xuICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTM1ZGVnLCAjMTdhMmI4IDAlLCAjMTM4NDk2IDEwMCUpO1xuICBib3JkZXI6IG5vbmU7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgdHJhbnNpdGlvbjogYWxsIDAuM3MgZWFzZTtcbiAgXG4gICY6aG92ZXIge1xuICAgIGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgxMzVkZWcsICMxMzg0OTYgMCUsICMwZjY2NzQgMTAwJSk7XG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKC0ycHgpO1xuICAgIGJveC1zaGFkb3c6IDAgNHB4IDEycHggcmdiYSgyMywgMTYyLCAxODQsIDAuMyk7XG4gIH1cbiAgXG4gIGkge1xuICAgIG1hcmdpbi1yaWdodDogMC41cmVtO1xuICB9XG59XG5cbi8vIOaooeaAgeahhuagt+W8j1xuLm1vZGFsLWNvbnRlbnQge1xuICBib3JkZXItcmFkaXVzOiAxMHB4O1xuICBib3JkZXI6IG5vbmU7XG4gIGJveC1zaGFkb3c6IDAgMTBweCAzMHB4IHJnYmEoMCwgMCwgMCwgMC4yKTtcbiAgXG4gIC5tb2RhbC1oZWFkZXIge1xuICAgIGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgxMzVkZWcsICM2NjdlZWEgMCUsICMwMDM2MWYgMTAwJSk7XG4gICAgY29sb3I6IHdoaXRlO1xuICAgIGJvcmRlci1yYWRpdXM6IDEwcHggMTBweCAwIDA7XG4gICAgYm9yZGVyLWJvdHRvbTogbm9uZTtcbiAgICBcbiAgICAubW9kYWwtdGl0bGUge1xuICAgICAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgICAgIFxuICAgICAgaSB7XG4gICAgICAgIG1hcmdpbi1yaWdodDogMC41cmVtO1xuICAgICAgfVxuICAgIH1cbiAgICBcbiAgICAuY2xvc2Uge1xuICAgICAgY29sb3I6IHdoaXRlO1xuICAgICAgb3BhY2l0eTogMC44O1xuICAgICAgXG4gICAgICAmOmhvdmVyIHtcbiAgICAgICAgb3BhY2l0eTogMTtcbiAgICAgIH1cbiAgICB9XG4gIH1cbiAgXG4gIC5tb2RhbC1ib2R5IHtcbiAgICBwYWRkaW5nOiAycmVtO1xuICAgIFxuICAgIC5hbGVydC1pbmZvIHtcbiAgICAgIGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgxMzVkZWcsICNkMWVjZjEgMCUsICNiZWU1ZWIgMTAwJSk7XG4gICAgICBib3JkZXI6IG5vbmU7XG4gICAgICBib3JkZXItcmFkaXVzOiA4cHg7XG4gICAgICBtYXJnaW4tYm90dG9tOiAxLjVyZW07XG4gICAgfVxuICAgIFxuICAgIC50YWJsZSB7XG4gICAgICBtYXJnaW4tYm90dG9tOiAwO1xuICAgICAgXG4gICAgICB0aCB7XG4gICAgICAgIGJhY2tncm91bmQ6ICNmOGY5ZmE7XG4gICAgICAgIGZvbnQtd2VpZ2h0OiA2MDA7XG4gICAgICAgIGNvbG9yOiAjNDk1MDU3O1xuICAgICAgICBib3JkZXI6IG5vbmU7XG4gICAgICB9XG4gICAgICBcbiAgICAgIHRkIHtcbiAgICAgICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcbiAgICAgICAgYm9yZGVyOiBub25lO1xuICAgICAgICBib3JkZXItYm90dG9tOiAxcHggc29saWQgI2U5ZWNlZjtcbiAgICAgIH1cbiAgICAgIFxuICAgICAgLmJhZGdlIHtcbiAgICAgICAgZm9udC1zaXplOiAwLjlyZW07XG4gICAgICAgIHBhZGRpbmc6IDAuNHJlbSAwLjhyZW07XG4gICAgICB9XG4gICAgICBcbiAgICAgIC5wcm9ncmVzcyB7XG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICNlOWVjZWY7XG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7XG4gICAgICAgIFxuICAgICAgICAucHJvZ3Jlc3MtYmFyIHtcbiAgICAgICAgICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTM1ZGVnLCAjNjY3ZWVhIDAlLCAjMDAzNjFmIDEwMCUpO1xuICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7XG4gICAgICAgICAgZm9udC1zaXplOiAwLjhyZW07XG4gICAgICAgICAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgICAgICAgICBjb2xvcjogd2hpdGU7XG4gICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG4gIFxuICAubW9kYWwtZm9vdGVyIHtcbiAgICBib3JkZXItdG9wOiAxcHggc29saWQgI2U5ZWNlZjtcbiAgICBwYWRkaW5nOiAxcmVtIDJyZW07XG4gICAgXG4gICAgLmJ0biB7XG4gICAgICBib3JkZXItcmFkaXVzOiA2cHg7XG4gICAgICBwYWRkaW5nOiAwLjVyZW0gMS41cmVtO1xuICAgIH1cbiAgfVxufVxuXG4vLyDlk43lupTlvI/orr7orqFcbkBtZWRpYSAobWF4LXdpZHRoOiA3NjhweCkge1xuICAuZmlsdGVyLXNlY3Rpb24ge1xuICAgIC5yb3cgPiBkaXYge1xuICAgICAgbWFyZ2luLWJvdHRvbTogMXJlbTtcbiAgICB9XG4gICAgXG4gICAgLmJ0bi1zdGF0cyB7XG4gICAgICBtYXJnaW4tdG9wOiAwO1xuICAgIH1cbiAgfVxuICBcbiAgLm1vZGFsLWRpYWxvZyB7XG4gICAgbWFyZ2luOiAxcmVtO1xuICAgIFxuICAgIC5tb2RhbC1ib2R5IHtcbiAgICAgIHBhZGRpbmc6IDFyZW07XG4gICAgfVxuICB9XG59XG5cbi8vIOaooeaAgeahhuagt+W8j+S/ruWkjVxuLm1vZGFsIHtcbiAgcG9zaXRpb246IGZpeGVkO1xuICB0b3A6IDA7XG4gIGxlZnQ6IDA7XG4gIHotaW5kZXg6IDEwNTA7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDEwMCU7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIG91dGxpbmU6IDA7XG4gIFxuICAmLnNob3cge1xuICAgIGRpc3BsYXk6IGJsb2NrICFpbXBvcnRhbnQ7XG4gIH1cbn1cblxuLm1vZGFsLWRpYWxvZyB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgd2lkdGg6IGF1dG87XG4gIG1hcmdpbjogMS43NXJlbTtcbiAgcG9pbnRlci1ldmVudHM6IG5vbmU7XG4gIFxuICAmLm1vZGFsLWxnIHtcbiAgICBtYXgtd2lkdGg6IDgwMHB4O1xuICB9XG59XG5cbi5tb2RhbC1jb250ZW50IHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICB3aWR0aDogMTAwJTtcbiAgcG9pbnRlci1ldmVudHM6IGF1dG87XG4gIGJhY2tncm91bmQtY29sb3I6ICNmZmY7XG4gIGJhY2tncm91bmQtY2xpcDogcGFkZGluZy1ib3g7XG4gIGJvcmRlcjogMXB4IHNvbGlkIHJnYmEoMCwwLDAsLjIpO1xuICBib3JkZXItcmFkaXVzOiAuM3JlbTtcbiAgb3V0bGluZTogMDtcbn1cblxuLm1vZGFsLWJhY2tkcm9wIHtcbiAgcG9zaXRpb246IGZpeGVkO1xuICB0b3A6IDA7XG4gIGxlZnQ6IDA7XG4gIHotaW5kZXg6IDEwNDA7XG4gIHdpZHRoOiAxMDB2dztcbiAgaGVpZ2h0OiAxMDB2aDtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzAwMDtcbiAgb3BhY2l0eTogMC41O1xufVxuXG4vLyDnoa7kv53mqKHmgIHmoYblnKjpobXpnaLmnIDkuIrlsYJcbi5tb2RhbC5zaG93IHtcbiAgei1pbmRleDogMTA1NTtcbn1cblxuLm1vZGFsLWJhY2tkcm9wLnNob3cge1xuICB6LWluZGV4OiAxMDUwO1xufVxuXG4vLyDnu5/orqHmqKHmgIHmoYbmu5rliqjmoLflvI9cbi5zdGF0aXN0aWNzLXNjcm9sbC1jb250YWluZXIge1xuICBtYXgtaGVpZ2h0OiA0MDBweDsgLy8g6K6+572u5pyA5aSn6auY5bqmXG4gIG92ZXJmbG93LXk6IGF1dG87IC8vIOWeguebtOa7muWKqFxuICBvdmVyZmxvdy14OiBoaWRkZW47IC8vIOmakOiXj+awtOW5s+a7muWKqFxuICBib3JkZXI6IDFweCBzb2xpZCAjZTllY2VmO1xuICBib3JkZXItcmFkaXVzOiA4cHg7XG4gIG1hcmdpbi10b3A6IDFyZW07XG4gIFxuICAvLyDoh6rlrprkuYnmu5rliqjmnaHmoLflvI9cbiAgJjo6LXdlYmtpdC1zY3JvbGxiYXIge1xuICAgIHdpZHRoOiA4cHg7XG4gIH1cbiAgXG4gICY6Oi13ZWJraXQtc2Nyb2xsYmFyLXRyYWNrIHtcbiAgICBiYWNrZ3JvdW5kOiAjZjFmMWYxO1xuICAgIGJvcmRlci1yYWRpdXM6IDRweDtcbiAgfVxuICBcbiAgJjo6LXdlYmtpdC1zY3JvbGxiYXItdGh1bWIge1xuICAgIGJhY2tncm91bmQ6ICNjMWMxYzE7XG4gICAgYm9yZGVyLXJhZGl1czogNHB4O1xuICAgIFxuICAgICY6aG92ZXIge1xuICAgICAgYmFja2dyb3VuZDogI2E4YThhODtcbiAgICB9XG4gIH1cbiAgXG4gIC8vIOihqOagvOagt+W8j+S8mOWMllxuICAudGFibGUge1xuICAgIG1hcmdpbi1ib3R0b206IDA7XG4gICAgXG4gICAgdGhlYWQge1xuICAgICAgcG9zaXRpb246IHN0aWNreTtcbiAgICAgIHRvcDogMDtcbiAgICAgIHotaW5kZXg6IDEwO1xuICAgICAgYmFja2dyb3VuZDogI2Y4ZjlmYTtcbiAgICAgIFxuICAgICAgdGgge1xuICAgICAgICBiYWNrZ3JvdW5kOiAjZjhmOWZhICFpbXBvcnRhbnQ7XG4gICAgICAgIGJvcmRlci1ib3R0b206IDJweCBzb2xpZCAjZGVlMmU2O1xuICAgICAgICBmb250LXdlaWdodDogNjAwO1xuICAgICAgICBjb2xvcjogIzQ5NTA1NztcbiAgICAgICAgcGFkZGluZzogMTJweCA4cHg7XG4gICAgICAgIHdoaXRlLXNwYWNlOiBub3dyYXA7XG4gICAgICB9XG4gICAgfVxuICAgIFxuICAgIHRib2R5IHtcbiAgICAgIHRyIHtcbiAgICAgICAgdHJhbnNpdGlvbjogYmFja2dyb3VuZC1jb2xvciAwLjJzIGVhc2U7XG4gICAgICAgIFxuICAgICAgICAmOmhvdmVyIHtcbiAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjVmNWY1O1xuICAgICAgICB9XG4gICAgICAgIFxuICAgICAgICB0ZCB7XG4gICAgICAgICAgcGFkZGluZzogMTBweCA4cHg7XG4gICAgICAgICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcbiAgICAgICAgICBib3JkZXItYm90dG9tOiAxcHggc29saWQgI2U5ZWNlZjtcbiAgICAgICAgfVxuICAgICAgfVxuICAgIH1cbiAgfVxufVxuXG4vLyDmjpLlkI3lvr3nq6DmoLflvI9cbi5yYW5rLWJhZGdlIHtcbiAgZm9udC1zaXplOiAwLjlyZW07XG4gIHBhZGRpbmc6IDAuNHJlbSAwLjhyZW07XG4gIGJvcmRlci1yYWRpdXM6IDIwcHg7XG4gIGZvbnQtd2VpZ2h0OiA2MDA7XG59XG5cbi8vIOWkp+WtpuWQjeensOagt+W8j1xuLnVuaXZlcnNpdHktbmFtZSB7XG4gIGZvbnQtd2VpZ2h0OiA1MDA7XG4gIGNvbG9yOiAjMmMzZTUwO1xuICBtYXgtd2lkdGg6IDIwMHB4O1xuICBvdmVyZmxvdzogaGlkZGVuO1xuICB0ZXh0LW92ZXJmbG93OiBlbGxpcHNpcztcbiAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcbn1cblxuLy8g5pWw6YeP5b6956ug5qC35byPXG4uY291bnQtYmFkZ2Uge1xuICBmb250LXNpemU6IDAuOXJlbTtcbiAgcGFkZGluZzogMC40cmVtIDAuOHJlbTtcbiAgYm9yZGVyLXJhZGl1czogMjBweDtcbiAgZm9udC13ZWlnaHQ6IDYwMDtcbn1cblxuLy8g6L+b5bqm5p2h5a655Zmo5qC35byPXG4ucHJvZ3Jlc3MtY29udGFpbmVyIHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBcbiAgLnByb2dyZXNzIHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZTllY2VmO1xuICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgICBcbiAgICAucHJvZ3Jlc3MtYmFyIHtcbiAgICAgIGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgxMzVkZWcsICM2NjdlZWEgMCUsICMwMDM2MWYgMTAwJSk7XG4gICAgICBib3JkZXItcmFkaXVzOiAxMHB4O1xuICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgICAgdHJhbnNpdGlvbjogd2lkdGggMC4zcyBlYXNlO1xuICAgICAgXG4gICAgICAucHJvZ3Jlc3MtdGV4dCB7XG4gICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgICAgdG9wOiA1MCU7XG4gICAgICAgIGxlZnQ6IDUwJTtcbiAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7XG4gICAgICAgIGNvbG9yOiB3aGl0ZTtcbiAgICAgICAgZm9udC1zaXplOiAwLjhyZW07XG4gICAgICAgIGZvbnQtd2VpZ2h0OiA2MDA7XG4gICAgICAgIHRleHQtc2hhZG93OiAwIDFweCAycHggcmdiYSgwLCAwLCAwLCAwLjMpO1xuICAgICAgICB3aGl0ZS1zcGFjZTogbm93cmFwO1xuICAgICAgfVxuICAgIH1cbiAgfVxufVxuXG4vLyDnspjmgKfooajlpLTmoLflvI9cbi5zdGlja3ktaGVhZGVyIHtcbiAgcG9zaXRpb246IHN0aWNreTtcbiAgdG9wOiAwO1xuICB6LWluZGV4OiAxMDtcbiAgYmFja2dyb3VuZDogI2Y4ZjlmYTtcbiAgYm94LXNoYWRvdzogMCAycHggNHB4IHJnYmEoMCwgMCwgMCwgMC4xKTtcbn1cblxuLy8g5qih5oCB5qGG5YaF5a655Yy65Z+f5qC35byP5LyY5YyWXG4ubW9kYWwtYm9keSB7XG4gIHBhZGRpbmc6IDEuNXJlbTtcbiAgbWF4LWhlaWdodDogNzB2aDtcbiAgb3ZlcmZsb3cteTogYXV0bztcbiAgXG4gIC5hbGVydC1pbmZvIHtcbiAgICBtYXJnaW4tYm90dG9tOiAxcmVtO1xuICAgIGJvcmRlci1yYWRpdXM6IDhweDtcbiAgICBib3JkZXI6IG5vbmU7XG4gICAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDEzNWRlZywgI2QxZWNmMSAwJSwgI2JlZTVlYiAxMDAlKTtcbiAgfVxufVxuXG4vLyDlk43lupTlvI/orr7orqFcbkBtZWRpYSAobWF4LXdpZHRoOiA3NjhweCkge1xuICAuc3RhdGlzdGljcy1zY3JvbGwtY29udGFpbmVyIHtcbiAgICBtYXgtaGVpZ2h0OiAzMDBweDtcbiAgICBcbiAgICAudGFibGUge1xuICAgICAgZm9udC1zaXplOiAwLjlyZW07XG4gICAgICBcbiAgICAgIHRoLCB0ZCB7XG4gICAgICAgIHBhZGRpbmc6IDhweCA2cHg7XG4gICAgICB9XG4gICAgfVxuICB9XG4gIFxuICAudW5pdmVyc2l0eS1uYW1lIHtcbiAgICBtYXgtd2lkdGg6IDE1MHB4O1xuICB9XG4gIFxuICAucHJvZ3Jlc3MtdGV4dCB7XG4gICAgZm9udC1zaXplOiAwLjdyZW0gIWltcG9ydGFudDtcbiAgfVxufVxuXG4vLyDmu5rliqjmj5DnpLrmoLflvI9cbi5zdGF0aXN0aWNzLXNjcm9sbC1jb250YWluZXI6OmFmdGVyIHtcbiAgY29udGVudDogJyc7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgYm90dG9tOiAwO1xuICBsZWZ0OiAwO1xuICByaWdodDogMDtcbiAgaGVpZ2h0OiAyMHB4O1xuICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQodHJhbnNwYXJlbnQsIHJnYmEoMjU1LCAyNTUsIDI1NSwgMC44KSk7XG4gIHBvaW50ZXItZXZlbnRzOiBub25lO1xuICBvcGFjaXR5OiAwO1xuICB0cmFuc2l0aW9uOiBvcGFjaXR5IDAuM3MgZWFzZTtcbn1cblxuLnN0YXRpc3RpY3Mtc2Nyb2xsLWNvbnRhaW5lcjpob3Zlcjo6YWZ0ZXIge1xuICBvcGFjaXR5OiAxO1xufVxuIl19 */"
+
+/***/ }),
+
+/***/ "./src/app/coorder/coorder.component.ts":
+/*!**********************************************!*\
+  !*** ./src/app/coorder/coorder.component.ts ***!
+  \**********************************************/
+/*! exports provided: CoorderComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CoorderComponent", function() { return CoorderComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _hm_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../hm.service */ "./src/app/hm.service.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+
+
+
+
+
+var CoorderComponent = /** @class */ (function () {
+    function CoorderComponent(route, router, http, hmService) {
+        var _this = this;
+        this.route = route;
+        this.router = router;
+        this.http = http;
+        this.hmService = hmService;
+        this.orders = []; //all the orders from database
+        this.order = []; //the specific order selected by this hotel i
+        this.hotels = [];
+        this.schools = [];
+        this.school = [];
+        this.students = [];
+        this.student = [];
+        // 新增的筛选相关属性
+        this.uniqueYears = [];
+        this.selectedYear = '';
+        this.selectedRequirement = '';
+        this.selectedStatus = '';
+        this.selectedStudent = '';
+        this.filteredApplications = [];
+        this.dataLoaded = false;
+        // 统计相关属性
+        this.universityStats = [];
+        this.showModal = false; // 添加模态框显示控制
+        this.route.queryParams.subscribe(function (params) {
+            _this.managerID = params["managerID"];
+        });
+        console.log("管理员ID+" + this.managerID);
+    }
+    CoorderComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.http.get('/api/hotels').subscribe(function (Data) {
+            _this.hotels = Data.hotels;
+            for (var _i = 0, _a = _this.hotels; _i < _a.length; _i++) {
+                var h = _a[_i];
+                if (h.userAccount === _this.managerID) {
+                    _this.hotel = h;
+                }
+            }
+        });
+        this.http.get('/api/students/').subscribe(function (Data) {
+            _this.students = (Data.students || []).filter(function (st) { return _this.belongsToThisCoordinator(st); });
+            _this.student = _this.students.slice();
+            console.log('当前协调员学生:', _this.students);
+            _this.http.get('/api/schools').subscribe(function (schoolData) {
+                var studentIds = new Set(_this.students.filter(function (st) { return st._id; }).map(function (st) { return st._id.toString(); }));
+                _this.schools = (schoolData.schools || []).filter(function (sc) {
+                    return sc.userAccount && studentIds.has(sc.userAccount.toString());
+                });
+                _this.school = _this.schools.slice();
+                console.log('当前协调员申请数据:', _this.schools);
+                _this.initializeYears();
+                _this.initializeFilters();
+                _this.dataLoaded = true;
+            });
+        });
+        this.hotelMSub = this.hmService.getHotelMUpdatedListener().subscribe(function (hotels) {
+            _this.hotels = hotels;
+        });
+    };
+    CoorderComponent.prototype.belongsToThisCoordinator = function (student) {
+        if (!student || !student.coordinator || !this.managerID) {
+            return false;
+        }
+        return student.coordinator.toString().trim() === this.managerID.toString().trim();
+    };
+    // 初始化学年数据
+    CoorderComponent.prototype.initializeYears = function () {
+        var _this = this;
+        this.uniqueYears = Array.from(new Set(this.students
+            .filter(function (student) { return student && student.year; })
+            .map(function (student) { return student.year.toString(); })));
+        this.uniqueYears.sort(function (a, b) {
+            var aNum = /^\d{4}/.test(a);
+            var bNum = /^\d{4}/.test(b);
+            if (aNum && bNum) {
+                return b.localeCompare(a);
+            }
+            if (aNum) {
+                return -1;
+            }
+            if (bNum) {
+                return 1;
+            }
+            return a.localeCompare(b);
+        });
+        if (this.uniqueYears.length > 0) {
+            var yearWithApps = this.uniqueYears.find(function (year) { return _this.getYearApplicationCount(year) > 0; });
+            this.selectedYear = yearWithApps || this.uniqueYears[0];
+        }
+        console.log('初始化的学年:', this.uniqueYears);
+    };
+    // 初始化筛选
+    CoorderComponent.prototype.initializeFilters = function () {
+        this.applyFilters();
+    };
+    // 选择学年
+    CoorderComponent.prototype.selectYear = function (year) {
+        this.selectedYear = year;
+        this.applyFilters();
+    };
+    // 获取指定学年的申请数量
+    CoorderComponent.prototype.getYearApplicationCount = function (year) {
+        var _this = this;
+        if (!this.school || this.school.length === 0) {
+            return 0;
+        }
+        return this.school.filter(function (app) {
+            // 通过ID匹配学生
+            var student = _this.students.find(function (st) { return st._id && app.userAccount && st._id.toString() === app.userAccount.toString(); });
+            return student && student.year && student.year.toString() === year;
+        }).length;
+    };
+    // 获取当前学年的所有申请
+    CoorderComponent.prototype.getCurrentYearApplications = function () {
+        var _this = this;
+        if (!this.school || this.school.length === 0) {
+            return [];
+        }
+        return this.school.filter(function (app) {
+            // 通过ID匹配学生
+            var student = _this.students.find(function (st) { return st._id && app.userAccount && st._id.toString() === app.userAccount.toString(); });
+            return student && student.year && student.year.toString() === _this.selectedYear;
+        });
+    };
+    // 获取当前学年的所有学生
+    CoorderComponent.prototype.getCurrentYearStudents = function () {
+        var _this = this;
+        return this.students.filter(function (student) { return student.year && student.year.toString() === _this.selectedYear; });
+    };
+    // 应用筛选
+    CoorderComponent.prototype.applyFilters = function () {
+        var _this = this;
+        var filtered = this.getCurrentYearApplications();
+        console.log('筛选前的申请数量:', filtered.length);
+        console.log('当前筛选条件:', {
+            requirement: this.selectedRequirement,
+            status: this.selectedStatus,
+            student: this.selectedStudent
+        });
+        // 按申请要求筛选
+        if (this.selectedRequirement) {
+            if (this.selectedRequirement === 'interview') {
+                filtered = filtered.filter(function (app) {
+                    var hasInterview = app.interview &&
+                        (app.interview.toString().toLowerCase() === 'yes' ||
+                            app.interview.toString().toLowerCase() === '有' ||
+                            app.interview.toString().toLowerCase() === 'true');
+                    console.log('面试筛选:', app.interview, '结果:', hasInterview);
+                    return hasInterview;
+                });
+            }
+            else if (this.selectedRequirement === 'videoEssay') {
+                // 筛选所有有Video Essay的申请（不管是申请前还是申请后）
+                filtered = filtered.filter(function (app) {
+                    var hasVideoEssay = app.videoEssay &&
+                        (app.videoEssay.toString().includes('有') ||
+                            app.videoEssay.toString().toLowerCase().includes('yes') ||
+                            app.videoEssay.toString().toLowerCase().includes('true'));
+                    console.log('Video Essay筛选:', app.videoEssay, '结果:', hasVideoEssay);
+                    return hasVideoEssay;
+                });
+            }
+            else if (this.selectedRequirement === 'videoEssayBefore') {
+                // 筛选申请前需要Video Essay的申请
+                filtered = filtered.filter(function (app) {
+                    var hasVideoEssayBefore = app.videoEssay &&
+                        app.videoEssay.toString().includes('在提交申请前');
+                    console.log('Video Essay(申请前)筛选:', app.videoEssay, '结果:', hasVideoEssayBefore);
+                    return hasVideoEssayBefore;
+                });
+            }
+            else if (this.selectedRequirement === 'videoEssayAfter') {
+                // 筛选申请后需要Video Essay的申请
+                filtered = filtered.filter(function (app) {
+                    var hasVideoEssayAfter = app.videoEssay &&
+                        app.videoEssay.toString().includes('在提交申请后');
+                    console.log('Video Essay(申请后)筛选:', app.videoEssay, '结果:', hasVideoEssayAfter);
+                    return hasVideoEssayAfter;
+                });
+            }
+            else if (this.selectedRequirement === 'both') {
+                filtered = filtered.filter(function (app) {
+                    var hasInterview = app.interview &&
+                        (app.interview.toString().toLowerCase() === 'yes' ||
+                            app.interview.toString().toLowerCase() === '有' ||
+                            app.interview.toString().toLowerCase() === 'true');
+                    var hasVideoEssay = app.videoEssay &&
+                        (app.videoEssay.toString().includes('有') ||
+                            app.videoEssay.toString().toLowerCase().includes('yes') ||
+                            app.videoEssay.toString().toLowerCase().includes('true'));
+                    return hasInterview && hasVideoEssay;
+                });
+            }
+        }
+        // 按状态筛选
+        if (this.selectedStatus) {
+            filtered = filtered.filter(function (app) { return app.state.toString() === _this.selectedStatus; });
+        }
+        // 按学生筛选
+        if (this.selectedStudent) {
+            filtered = filtered.filter(function (app) { return app.userAccount.toString() === _this.selectedStudent; });
+        }
+        this.filteredApplications = filtered;
+        console.log('筛选后的申请数量:', this.filteredApplications.length);
+        console.log('当前学年:', this.selectedYear);
+    };
+    // 清除所有筛选
+    CoorderComponent.prototype.clearFilters = function () {
+        this.selectedRequirement = '';
+        this.selectedStatus = '';
+        this.selectedStudent = '';
+        this.applyFilters();
+    };
+    // 显示统计信息
+    CoorderComponent.prototype.showStatistics = function () {
+        console.log('开始显示统计信息...');
+        try {
+            this.calculateUniversityStats();
+            this.showModal = true;
+            console.log('统计计算完成，显示模态框');
+        }
+        catch (error) {
+            console.error('统计计算出错:', error);
+            alert('统计计算出错，请检查数据');
+        }
+    };
+    // 计算大学统计信息
+    CoorderComponent.prototype.calculateUniversityStats = function () {
+        console.log('开始计算大学统计...');
+        console.log('当前筛选的申请数量:', this.filteredApplications.length);
+        if (!this.filteredApplications || this.filteredApplications.length === 0) {
+            console.log('没有筛选的申请数据');
+            this.universityStats = [];
+            return;
+        }
+        var universityCount = {};
+        // 统计每个大学的申请数量
+        this.filteredApplications.forEach(function (app, index) {
+            try {
+                var university = app.univName ? app.univName.toString() : '未知大学';
+                universityCount[university] = (universityCount[university] || 0) + 1;
+                console.log("\u5904\u7406\u7B2C" + (index + 1) + "\u4E2A\u7533\u8BF7: " + university);
+            }
+            catch (error) {
+                console.error("\u5904\u7406\u7B2C" + (index + 1) + "\u4E2A\u7533\u8BF7\u65F6\u51FA\u9519:", error, app);
+            }
+        });
+        console.log('大学统计结果:', universityCount);
+        // 转换为数组并排序
+        this.universityStats = Object.keys(universityCount).map(function (university) { return ({
+            university: university,
+            count: universityCount[university]
+        }); }).sort(function (a, b) { return b.count - a.count; });
+        // 计算百分比
+        var totalCount = this.filteredApplications.length;
+        this.universityStats.forEach(function (stat) {
+            stat.percentage = totalCount > 0 ? (stat.count / totalCount) * 100 : 0;
+        });
+        console.log('最终统计结果:', this.universityStats);
+    };
+    // 关闭统计模态框
+    CoorderComponent.prototype.closeStatisticsModal = function () {
+        console.log('关闭统计模态框');
+        this.showModal = false;
+    };
+    // 获取学生姓名
+    CoorderComponent.prototype.getStudentName = function (studentId) {
+        if (!studentId)
+            return '未知学生';
+        var student = this.students.find(function (st) { return st._id.toString() === studentId.toString(); });
+        if (student) {
+            return student.firstName + " " + student.lastName;
+        }
+        else {
+            console.log('未找到学生:', studentId);
+            console.log('所有学生ID:', this.students.map(function (s) { return s._id; }));
+            return studentId; // 如果找不到学生，返回原始ID
+        }
+    };
+    // 获取申请要求文本
+    CoorderComponent.prototype.getRequirementText = function (requirement) {
+        var texts = {
+            'interview': '需要面试',
+            'videoEssay': '需要Video Essay',
+            'videoEssayBefore': 'Video Essay(申请前)',
+            'videoEssayAfter': 'Video Essay(申请后)',
+            'both': '面试 + Video Essay'
+        };
+        return texts[requirement] || requirement;
+    };
+    // 获取状态样式类
+    CoorderComponent.prototype.getStatusClass = function (state) {
+        var stateLower = state.toString().toLowerCase();
+        if (stateLower.includes('完成'))
+            return 'status-completed';
+        if (stateLower.includes('进行'))
+            return 'status-progress';
+        if (stateLower.includes('offer'))
+            return 'status-offer';
+        if (stateLower.includes('拒信'))
+            return 'status-rejected';
+        return 'status-default';
+    };
+    // 获取面试要求样式类
+    CoorderComponent.prototype.getInterviewClass = function (interview) {
+        if (!interview)
+            return 'requirement-none';
+        var interviewLower = interview.toString().toLowerCase();
+        if (interviewLower === 'yes' || interviewLower === '有' || interviewLower === 'true') {
+            return 'requirement-required';
+        }
+        return 'requirement-none';
+    };
+    // 获取Video Essay样式类
+    CoorderComponent.prototype.getVideoEssayClass = function (videoEssay) {
+        if (!videoEssay)
+            return 'requirement-none';
+        var videoEssayStr = videoEssay.toString();
+        if (videoEssayStr.includes('有')) {
+            return 'requirement-required';
+        }
+        return 'requirement-none';
+    };
+    CoorderComponent.prototype.sele = function (form) {
+        var studentID = document.getElementById("studName").value;
+        console.log("输出学生ID为" + studentID);
+        var navigationExtras = {
+            queryParams: {
+                "managerID": this.hotel.userAccount,
+                "studentID": studentID,
+            }
+        };
+        this.router.navigate(['/hmordersearch'], navigationExtras);
+    };
+    //direct to the hotel manage page
+    CoorderComponent.prototype.hotelman = function (hotel) {
+        var navigationExtras = {
+            queryParams: {
+                "managerID": hotel.userAccount,
+            }
+        };
+        this.router.navigate(['/comanage'], navigationExtras);
+    };
+    //direct to the hotel manager main page
+    CoorderComponent.prototype.main = function (hotel) {
+        var navigationExtras = {
+            queryParams: {
+                "managerID": hotel.userAccount,
+            }
+        };
+        this.router.navigate(['/coordmain'], navigationExtras);
+    };
+    //direct to the hotel order 
+    CoorderComponent.prototype.hmorder = function (hotel) {
+        var navigationExtras = {
+            queryParams: {
+                "managerID": hotel.userAccount,
+            }
+        };
+        this.router.navigate(['/coorder'], navigationExtras);
+    };
+    CoorderComponent.prototype.delete = function (s) {
+        var _this = this;
+        console.log(s._id);
+        this.http.delete('/api/schools/' + s._id).subscribe(function (oooData) {
+            console.log("删除这个申请项目成功");
+            // 从school数组中移除
+            _this.school = _this.school.filter(function (app) { return app._id !== s._id; });
+            // 重新应用筛选
+            _this.applyFilters();
+        });
+    };
+    //direct to the school detail page
+    CoorderComponent.prototype.hmschooldetail = function (s) {
+        var navigationExtras = {
+            queryParams: {
+                "managerID": this.managerID,
+                "studentID": s.userAccount,
+                "fullName": this.getStudentName(s.userAccount),
+                "schoolID": s._id,
+            }
+        };
+        this.router.navigate(['/cooschool'], navigationExtras);
+    };
+    CoorderComponent.prototype.ngOnDestroy = function () {
+        this.hotelMSub.unsubscribe();
+    };
+    CoorderComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-coorder',
+            template: __webpack_require__(/*! ./coorder.component.html */ "./src/app/coorder/coorder.component.html"),
+            styles: [__webpack_require__(/*! ./coorder.component.scss */ "./src/app/coorder/coorder.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"],
+            _hm_service__WEBPACK_IMPORTED_MODULE_3__["HmService"]])
+    ], CoorderComponent);
+    return CoorderComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/coordmain/coordmain.component.html":
+/*!****************************************************!*\
+  !*** ./src/app/coordmain/coordmain.component.html ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n<header>\n\t<nav class=\"navbar navbar-inverse\" role=\"navigation\">\n\t\t<div class=\"container-fluid\">\n\t\t<div class=\"navbar-header\">\n\t\t\t\t<a class=\"navbar-brand\" >一个很神秘的网页</a>\n\t\t</div>\n\t\t<div class=\"nav  navbar-right\">\n\t\t  <ul class=\"nav navbar-nav\">\n\t\t\t<li class=\"active\"><a (click)=\"main(hotel)\">HomePage</a></li>\n\t\t\t<li class=\"dropdown\">\n\t\t\t  <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n\t\t\t\t{{hotel.userAccount}} <b class=\"caret\"></b>\n\t\t\t  </a>\n\n\t\t\t</li>\n\t\t\t<li class=\"nav navbar-nav navbar-right\">\n\t\t\t  <a href=\"/main\">Log Out</a>\n\t\t\t</li>\n\t\t  </ul>\n\t\t</div>\n\t  </div>\n\t</nav>\n\t\n  </header>\n  \n  <ol class=\"breadcrumb\">\n\t<li class=\"active\">Home - {{hotel.userAccount}}</li>\n</ol>\n\n<div class=\"container-fluid\">\n\t<div class=\"row content\">\n\t  <div class=\"col-sm-3 sidenav\">\n\t\t<h4>{{hotel.userAccount}}  </h4>\n\t\t<ul class=\"nav nav-pills nav-stacked\">\n\t\t  <li class=\"active\"><a (click)=\"main(hotel)\">Home</a></li>\n\t\t\t<li><a (click)=\"hotelman(hotel)\">学生管理</a></li>\n\t\t\t<li><a (click)=\"hmorder(hotel)\">学生申请</a></li>\n\t\t</ul><br>\n\t\t\n\t  </div>\n\n\t  <div class=\"col-sm-9\">\n\t\t<div>\n\t\t\t<div class=\"row text-center\">\n\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t  <div class=\"btn-group\">\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  mwlCalendarPreviousView\n\t\t\t\t\t  [view]=\"view\"\n\t\t\t\t\t  [(viewDate)]=\"viewDate\"\n\t\t\t\t\t  (viewDateChange)=\"closeOpenMonthViewDay()\"\n\t\t\t\t\t>\n\t\t\t\t\t  Previous\n\t\t\t\t\t</div>\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-outline-secondary\"\n\t\t\t\t\t  mwlCalendarToday\n\t\t\t\t\t  [(viewDate)]=\"viewDate\"\n\t\t\t\t\t>\n\t\t\t\t\t  Today\n\t\t\t\t\t</div>\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  mwlCalendarNextView\n\t\t\t\t\t  [view]=\"view\"\n\t\t\t\t\t  [(viewDate)]=\"viewDate\"\n\t\t\t\t\t  (viewDateChange)=\"closeOpenMonthViewDay()\"\n\t\t\t\t\t>\n\t\t\t\t\t  Next\n\t\t\t\t\t</div>\n\t\t\t\t  </div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t  <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t  <div class=\"btn-group\">\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  (click)=\"setView(CalendarView.Month)\"\n\t\t\t\t\t  [class.active]=\"view === CalendarView.Month\"\n\t\t\t\t\t>\n\t\t\t\t\t  Month\n\t\t\t\t\t</div>\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  (click)=\"setView(CalendarView.Week)\"\n\t\t\t\t\t  [class.active]=\"view === CalendarView.Week\"\n\t\t\t\t\t>\n\t\t\t\t\t  Week\n\t\t\t\t\t</div>\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  (click)=\"setView(CalendarView.Day)\"\n\t\t\t\t\t  [class.active]=\"view === CalendarView.Day\"\n\t\t\t\t\t>\n\t\t\t\t\t  Day\n\t\t\t\t\t</div>\n\t\t\t\t  </div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t  <br/>\n\t\t\t  <div [ngSwitch]=\"view\">\n\t\t\t\t<mwl-calendar-month-view\n\t\t\t\t  *ngSwitchCase=\"CalendarView.Month\"\n\t\t\t\t  [viewDate]=\"viewDate\"\n\t\t\t\t  [events]=\"events\"\n\t\t\t\t  [refresh]=\"refresh\"\n\t\t\t\t  [activeDayIsOpen]=\"activeDayIsOpen\"\n\t\t\t\t  (dayClicked)=\"dayClicked($event.day)\"\n\t\t\t\t  (eventClicked)=\"handleEvent('Clicked', $event.event)\"\n\t\t\t\t  (eventTimesChanged)=\"eventTimesChanged($event)\"\n\t\t\t\t>\n\t\t\t\t</mwl-calendar-month-view>\n\t\t\t\t<mwl-calendar-week-view\n\t\t\t\t\t*ngSwitchCase=\"CalendarView.Week\"\n\t\t\t\t\t[viewDate]=\"viewDate\"\n\t\t\t\t\t[events]=\"events\"\n\t\t\t\t\t[refresh]=\"refresh\"\n\t\t\t\t\t(eventClicked)=\"handleEvent('Clicked', $event.event)\"\n\t\t\t\t\t(eventTimesChanged)=\"eventTimesChanged($event)\"\n\t\t\t\t>\n\t\t\t\t</mwl-calendar-week-view>\n\t\t\t\t<mwl-calendar-day-view\n\t\t\t\t\t*ngSwitchCase=\"CalendarView.Day\"\n\t\t\t\t\t[viewDate]=\"viewDate\"\n\t\t\t\t\t[events]=\"events\"\n\t\t\t\t\t[refresh]=\"refresh\"\n\t\t\t\t\t(eventClicked)=\"handleEvent('Clicked', $event.event)\"\n\t\t\t\t\t(eventTimesChanged)=\"eventTimesChanged($event)\"\n\t\t\t\t>\n\t\t\t\t</mwl-calendar-day-view>\n\t\t\t  </div>\t\t  \n\t\t</div>\n\n\n\t\t<h4><small>进度更新</small></h4>\n\n\t\t<hr>\n\n\t\t<br><br>\n\t  </div>\n\t</div>\n</div>\n\n  \n  "
+
+/***/ }),
+
+/***/ "./src/app/coordmain/coordmain.component.scss":
+/*!****************************************************!*\
+  !*** ./src/app/coordmain/coordmain.component.scss ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/* Set height of the grid so .sidenav can be 100% (adjust if needed) */\n.row.content {\n  height: 1500px; }\n/* Set gray background color and 100% height */\n.sidenav {\n  background-color: #f1f1f1;\n  height: 100%; }\n/* On small screens, set height to 'auto' for sidenav and grid */\n@media screen and (max-width: 767px) {\n  .sidenav {\n    height: auto;\n    padding: 15px; }\n  .row.content {\n    height: auto; } }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9lY28vRG9jdW1lbnRzL01pY2hpL01pY2hpL3NyYy9hcHAvY29vcmRtYWluL2Nvb3JkbWFpbi5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxzRUFBQTtBQUNBO0VBQWMsY0FBYyxFQUFBO0FBRTVCLDhDQUFBO0FBQ0E7RUFDRSx5QkFBeUI7RUFDekIsWUFBWSxFQUFBO0FBSWQsZ0VBQUE7QUFDQTtFQUNFO0lBQ0UsWUFBWTtJQUNaLGFBQWEsRUFBQTtFQUVmO0lBQWMsWUFBWSxFQUFBLEVBQUciLCJmaWxlIjoic3JjL2FwcC9jb29yZG1haW4vY29vcmRtYWluLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLyogU2V0IGhlaWdodCBvZiB0aGUgZ3JpZCBzbyAuc2lkZW5hdiBjYW4gYmUgMTAwJSAoYWRqdXN0IGlmIG5lZWRlZCkgKi9cbi5yb3cuY29udGVudCB7aGVpZ2h0OiAxNTAwcHh9XG4gICAgXG4vKiBTZXQgZ3JheSBiYWNrZ3JvdW5kIGNvbG9yIGFuZCAxMDAlIGhlaWdodCAqL1xuLnNpZGVuYXYge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjFmMWYxO1xuICBoZWlnaHQ6IDEwMCU7XG59XG5cblxuLyogT24gc21hbGwgc2NyZWVucywgc2V0IGhlaWdodCB0byAnYXV0bycgZm9yIHNpZGVuYXYgYW5kIGdyaWQgKi9cbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDc2N3B4KSB7XG4gIC5zaWRlbmF2IHtcbiAgICBoZWlnaHQ6IGF1dG87XG4gICAgcGFkZGluZzogMTVweDtcbiAgfVxuICAucm93LmNvbnRlbnQge2hlaWdodDogYXV0bzt9IFxufVxuIl19 */"
+
+/***/ }),
+
+/***/ "./src/app/coordmain/coordmain.component.ts":
+/*!**************************************************!*\
+  !*** ./src/app/coordmain/coordmain.component.ts ***!
+  \**************************************************/
+/*! exports provided: CoordmainComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CoordmainComponent", function() { return CoordmainComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/index.js");
+/* harmony import */ var angular_calendar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angular-calendar */ "./node_modules/angular-calendar/fesm5/angular-calendar.js");
+/* harmony import */ var _hm_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../hm.service */ "./src/app/hm.service.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
+
+
+
+
+
+var colors = {
+    red: {
+        primary: '#ad2121',
+        secondary: '#FAE3E3',
+    },
+    blue: {
+        primary: '#1e90ff',
+        secondary: '#D1E8FF',
+    },
+    yellow: {
+        primary: '#e3bc08',
+        secondary: '#FDF1BA',
+    },
+};
+var CoordmainComponent = /** @class */ (function () {
+    function CoordmainComponent(hmService, http, route, router) {
+        var _this = this;
+        this.hmService = hmService;
+        this.http = http;
+        this.route = route;
+        this.router = router;
+        this.hotels = [];
+        this.view = angular_calendar__WEBPACK_IMPORTED_MODULE_3__["CalendarView"].Month;
+        this.CalendarView = angular_calendar__WEBPACK_IMPORTED_MODULE_3__["CalendarView"];
+        this.viewDate = new Date();
+        this.events = [
+        // {
+        //   start: startOfDay(new Date("2021/10/31")),
+        //   title: 'An event with no end date',
+        //   color: colors.yellow,
+        // },
+        ];
+        this.activeDayIsOpen = true;
+        this.schools = [];
+        this.school = [];
+        this.students = [];
+        this.student = [];
+        this.route.queryParams.subscribe(function (params) {
+            _this.managerID = params["managerID"];
+            //console.log(this.managerID);
+        });
+    }
+    CoordmainComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.http.get('/api/hotels').subscribe(function (Data) {
+            //console.log(Data);
+            _this.hotels = Data.hotels;
+            //console.log(this.hotels[0].email);
+            for (var _i = 0, _a = _this.hotels; _i < _a.length; _i++) {
+                var h = _a[_i];
+                if (h.userAccount === _this.managerID) {
+                    _this.hotel = h;
+                    console.log("管理者信息" + _this.hotel);
+                }
+            }
+            //this.hotel = this.hotels[0];
+            if (_this.hotel) {
+                console.log("happy" + _this.hotel.email);
+            }
+            else {
+                console.warn("No hotel/manager profile found for", _this.managerID);
+            }
+        });
+        this.hotelMSub = this.hmService.getHotelMUpdatedListener().subscribe(function (hotels) {
+            _this.hotels = hotels;
+        });
+        this.http.get('/api/students/').subscribe(function (Data) {
+            _this.students = (Data.students || []).filter(function (st) { return _this.belongsToThisCoordinator(st); });
+            _this.student = _this.students.slice();
+            console.log("当前协调员学生:", _this.students);
+            _this.http.get('/api/schools').subscribe(function (schoolData) {
+                _this.schools = schoolData.schools;
+                var _loop_1 = function (sc) {
+                    if (sc.state === "进行中") { //筛选原始school列表中 状态为进行中的数组
+                        var matched = _this.student.find(function (test) {
+                            return test._id && sc.userAccount &&
+                                sc.userAccount.toString() === test._id.toString();
+                        });
+                        if (matched) {
+                            sc.userAccount = matched.firstName + " " + matched.lastName;
+                            _this.school.push(sc); // 只保留当前协调员名下学生的申请
+                        }
+                    }
+                };
+                for (var _i = 0, _a = _this.schools; _i < _a.length; _i++) {
+                    var sc = _a[_i];
+                    _loop_1(sc);
+                }
+                console.log("新选校列表为" + _this.school.length);
+                for (var _b = 0, _c = _this.school; _b < _c.length; _b++) {
+                    var s = _c[_b];
+                    if (s.ddl1 != " ") {
+                        var data = s.ddl1;
+                        var tit = s.userAccount + " 【 " + s.univName + "】 " + s.majorName;
+                        var url = s._id;
+                        var fullName = s.userAccount;
+                        _this.addEvent(tit, data, url, fullName);
+                    }
+                    if (s.ddl2 != " ") {
+                        var data = s.ddl2;
+                        var tit = s.userAccount + " 【 " + s.univName + "】 " + s.majorName;
+                        var url = s._id;
+                        var fullName = s.userAccount;
+                        _this.addEvent2(tit, data, url, fullName);
+                    }
+                    if (s.ddl3 != " ") {
+                        var data = s.ddl3;
+                        var tit = s.userAccount + " 【 " + s.univName + "】 " + s.majorName;
+                        var url = s._id;
+                        var fullName = s.userAccount;
+                        _this.addEvent3(tit, data, url, fullName);
+                    }
+                }
+            });
+        });
+    };
+    CoordmainComponent.prototype.belongsToThisCoordinator = function (student) {
+        if (!student || !student.coordinator || !this.managerID) {
+            return false;
+        }
+        return student.coordinator.toString().trim() === this.managerID.toString().trim();
+    };
+    CoordmainComponent.prototype.addEvent = function (tit, data, url, fullName) {
+        this.events = this.events.concat([
+            {
+                title: tit,
+                start: Object(date_fns__WEBPACK_IMPORTED_MODULE_2__["startOfDay"])(new Date(data)),
+                color: colors.red,
+                id: url,
+                meta: fullName,
+            },
+        ]);
+    };
+    CoordmainComponent.prototype.addEvent2 = function (tit, data, url, fullName) {
+        this.events = this.events.concat([
+            {
+                title: tit,
+                start: Object(date_fns__WEBPACK_IMPORTED_MODULE_2__["startOfDay"])(new Date(data)),
+                color: colors.yellow,
+                id: url,
+                meta: fullName,
+            },
+        ]);
+    };
+    CoordmainComponent.prototype.addEvent3 = function (tit, data, url, fullName) {
+        this.events = this.events.concat([
+            {
+                title: tit,
+                start: Object(date_fns__WEBPACK_IMPORTED_MODULE_2__["startOfDay"])(new Date(data)),
+                color: colors.blue,
+                id: url,
+                meta: fullName,
+            },
+        ]);
+    };
+    CoordmainComponent.prototype.setView = function (view) {
+        this.view = view;
+    };
+    CoordmainComponent.prototype.handleEvent = function (action, event) {
+        console.log("输出测试" + event.meta);
+        var navigationExtras = {
+            queryParams: {
+                "managerID": this.managerID,
+                "fullName": event.meta,
+                "schoolID": event.id,
+            }
+        };
+        this.router.navigate(['/hmoschool'], navigationExtras);
+    };
+    CoordmainComponent.prototype.dayClicked = function (_a) {
+        var date = _a.date, events = _a.events;
+        if (Object(date_fns__WEBPACK_IMPORTED_MODULE_2__["isSameMonth"])(date, this.viewDate)) {
+            if ((Object(date_fns__WEBPACK_IMPORTED_MODULE_2__["isSameDay"])(this.viewDate, date) && this.activeDayIsOpen === true) ||
+                events.length === 0) {
+                this.activeDayIsOpen = false;
+            }
+            else {
+                this.activeDayIsOpen = true;
+            }
+            this.viewDate = date;
+        }
+    };
+    //direct to the hotel manage page
+    CoordmainComponent.prototype.hotelman = function (hotel) {
+        var navigationExtras = {
+            queryParams: {
+                "managerID": hotel.userAccount,
+            }
+        };
+        this.router.navigate(['/comanage'], navigationExtras);
+    };
+    //direct to the hotel manager main page
+    CoordmainComponent.prototype.main = function (hotel) {
+        var navigationExtras = {
+            queryParams: {
+                "managerID": hotel.userAccount,
+            }
+        };
+        this.router.navigate(['/coordmain'], navigationExtras);
+    };
+    //direct to the hotel order 
+    CoordmainComponent.prototype.hmorder = function (hotel) {
+        var navigationExtras = {
+            queryParams: {
+                "managerID": hotel.userAccount,
+            }
+        };
+        this.router.navigate(['/coorder'], navigationExtras);
+    };
+    CoordmainComponent.prototype.ngOnDestroy = function () {
+        this.hotelMSub.unsubscribe();
+    };
+    CoordmainComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-coordmain',
+            template: __webpack_require__(/*! ./coordmain.component.html */ "./src/app/coordmain/coordmain.component.html"),
+            styles: [__webpack_require__(/*! ./coordmain.component.scss */ "./src/app/coordmain/coordmain.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_hm_service__WEBPACK_IMPORTED_MODULE_4__["HmService"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClient"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_6__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"]])
+    ], CoordmainComponent);
+    return CoordmainComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/cooschool/cooschool.component.html":
+/*!****************************************************!*\
+  !*** ./src/app/cooschool/cooschool.component.html ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<nav class=\"navbar navbar-inverse\" role=\"navigation\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n        <a class=\"navbar-brand\" >一个很神秘的网页</a>\n      </div>\n      <div class=\"nav  navbar-right\">\n        <ul class=\"nav navbar-nav\">\n          <li class=\"active\"><a (click)=\"main(hotel)\">HomePage</a></li>\n\n          <li class=\"nav navbar-nav navbar-right\">\n            <a href=\"/main\">Log Out</a>\n          </li>\n        </ul>\n      </div>\n    </div>\n</nav>\n  <ol class=\"breadcrumb\">\n      <li><a (click)=\"main(hotel)\">Home</a></li>\n      <li><a (click)=\"main(hotel)\">{{hotel.userAccount}}</a></li>\n      <li><a (click)=\"hotelman(hotel)\">Manage Student</a></li>\n      <li >  {{fullName}}  </li>\n      <li class=\"active\"> 申请项目详细</li>\n  </ol>\n\n  <div class=\"container-fluid\">\n    <div class=\"row content\">\n      <div class=\"col-sm-3 sidenav\">\n      <h4>{{hotel.userAccount}}  </h4>\n      <ul class=\"nav nav-pills nav-stacked\">\n        <li ><a (click)=\"main(hotel)\">Home-{{hotel.userAccount}}</a></li>\n\n        <li><a (click)=\"hotelman(hotel)\">学生管理</a></li>\n        <li><a (click)=\"hmorder(hotel)\">学生申请</a></li>\n      </ul><br>\n      \n      </div>\n    \n      <div class=\"col-sm-9\">\n        <h2>{{fullName}} </h2>  \n      <hr>\n      <h5>此页面仅为展示信息</h5>\n\n      <br>\n      <hr>\n      <h3>申请项目详细       \n        <a href=\"{{school.link}}\">\n         <span class=\"glyphicon glyphicon-link\"></span>\n        </a>\n      </h3>\n\n      <br>\n      <form id=\"form1\" action=\"\" method=\"post\">\n        <table>\n              <tr>\n                <td>University\n                </td>\n                <td><div class=\"input-group\">\t\t\n                  <input class=\"form-control\" id=\"univName\" value=\"{{school.univName}}\" [(ngModel)]=\"univName\"  name=\"univName\" style=\"width: 785px;\" disabled=\"\"></div>\n                </td>\n              </tr>\n              <tr>\n                  <td>School</td>\n                  <td><div class=\"input-group\">\n                    <input  class=\"form-control\" id=\"schoolName\" [(ngModel)]=\"schoolName\" value=\"{{school.schoolName}}\"  name=\"schoolName\" style=\"width: 785px;\" disabled=\"\"></div>\n                  </td>\n              </tr>\n              <tr>\n                  <td>Major\n                  </td>\n                  <td><div class=\"input-group\">\n                    <input  class=\"form-control\" value=\"{{school.majorName}}\" [(ngModel)]=\"majorName\"  id=\"majorName\"  name=\"majorName\" disabled=\"\" style=\"width: 785px;\"></div>\n                  </td>\n              </tr>\n              <tr>\n                <td>Deadline 1\n                </td>\n                <td><div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.ddl1}}\" [(ngModel)]=\"ddl1\"  id=\"ddl1\"  name=\"ddl1\" disabled=\"\" style=\"width: 785px; \"></div>\n                </td>\n              </tr>\n              <tr>\n                <td>Deadline 2\n                </td>\n                <td><div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.ddl2}}\" [(ngModel)]=\"ddl2\"  id=\"ddl2\" name=\"ddl2\"  disabled=\"\" style=\"width: 785px; \"></div>\n                </td>\n              </tr>\n              <tr>\n                <td>Deadline 3\n                </td>\n                <td><div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.ddl3}}\" [(ngModel)]=\"ddl3\"  id=\"ddl3\"  name=\"ddl3\" disabled=\"\" style=\"width: 785px; \"></div>\n                </td>\n              </tr>\n              \n              <tr>\n                <td>Interview\n                </td>\n                <td><div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.interview}}\" [(ngModel)]=\"interview\"  id=\"interview\" disabled=\"\" name=\"interview\" style=\"width: 785px; \"></div>\n                </td>\n              </tr>\n              <tr>\n                <td>Video Essay\n                </td>\n                <td><div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.videoEssay}}\" [(ngModel)]=\"videoEssay\"  id=\"videoEssay\" disabled=\"\" name=\"videoEssay\" style=\"width: 785px; \"></div>\n                </td>\n              </tr>\n              <tr>\n                <td>Link\n                </td>\n                <td>\n                  <div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.link}}\" [(ngModel)]=\"link\"  id=\"link\"  name=\"link\" disabled=\"\" style=\"width: 785px; \">\n                  </div>\n                </td>\n              </tr>\n              <tr>\n                <td>申请账号\n                </td>\n                <td><div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.applyAccount}}\" [(ngModel)]=\"applyAccount\"  id=\"applyAccount\" disabled=\"\" name=\"applyAccount\" style=\"width: 785px; \"></div>\n                </td>\n              </tr>\n              <tr>\n                <td>申请密码\n                </td>\n                <td><div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.applyPassword}}\" [(ngModel)]=\"applyPassword\"  id=\"applyPassword\" disabled=\"\" name=\"applyPassword\" style=\"width: 785px; \"></div>\n                </td>\n              </tr>\n              <tr>\n                <td>推荐信数量\n                </td>\n                <td><div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.recommNumber}}\" [(ngModel)]=\"recommNumber\"  id=\"recommNumber\" disabled=\"\" name=\"recommNumber\" style=\"width: 785px; \"></div>\n                </td>\n              </tr>\n              <tr>\n                <td>备注\n                </td>\n                <td><div class=\"input-group\">\n                  <input class=\"form-control\" value=\"{{school.other}}\" [(ngModel)]=\"other\"  id=\"other\"  name=\"other\" disabled=\"\" style=\"width: 785px; \"></div>\n                </td>\n              </tr>\n        </table>\n      </form>\n      <hr>\n      <h3>推荐信</h3>\n        <div class=\"row\">\n          <div class=\"col-sm-4 tuijian\">\n            <h4>\n              此选校所添加的推荐信总数：\n              <small class=\"text-muted\">{{recomletters.length}}</small>\n            </h4>\n            <div *ngIf=\"recomletters.length > 0\">\n              <div class=\"panel-group\" id=\"accordion\" *ngFor=\"let l of recomletters\">\n                <div class=\"panel panel-success\" *ngIf=\"l.state=='已提交'\">\n                  <div class=\"panel-heading\">\n                      <div class=\"row\">\n                        <div class=\"col-sm-10\"><b>{{l.recommenderName}} </b></div>\n                        <div class=\"col-sm-2\"><small>{{l.state}}</small></div>\n                      </div>\n                  </div>\n                  <div class=\"panel-body\">\n                    <div class=\"row\">\n                      <div class=\"col-sm-6\"><b>{{l.type}} </b></div>\n                      <div class=\"col-sm-5\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"panel panel-default\" *ngIf=\"l.state=='未提交'\">\n                  <div class=\"panel-heading\">\n                      <div class=\"row\">\n                        <div class=\"col-sm-10\"><b>{{l.recommenderName}} </b></div>\n                        <div class=\"col-sm-2\"><small>{{l.state}}</small></div>\n                      </div>\n                  </div>\n                  <div class=\"panel-body\">\n                    <div class=\"row\">\n                      <div class=\"col-sm-6\"><b>{{l.type}} </b></div>\n                      <div class=\"col-sm-5\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"panel panel-danger\" *ngIf=\"l.state=='弃用'\">\n                  <div class=\"panel-heading\">\n                      <div class=\"row\">\n                        <div class=\"col-sm-10\"><b>{{l.recommenderName}} </b></div>\n                        <div class=\"col-sm-2\"><small>{{l.state}}</small></div>\n                      </div>\n                  </div>\n                  <div class=\"panel-body\">\n                    <div class=\"row\">\n                      <div class=\"col-sm-6\"><b>{{l.type}} </b></div>\n                      <div class=\"col-sm-5\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n          <div class=\"col-sm-4 caozuo\">            \n          </div>\n        </div>\n      \n\n      <hr>\n      <h3>文书</h3>\n        <div class=\"row\">\n          <div class=\"col-sm-4 tuijian\">\n            <h4>\n              此选校所添加的文书总数：\n              <small class=\"text-muted\">{{statements.length}}</small>\n            </h4>\n\n            <div class=\"container\" *ngIf=\"statements.length > 0\">\n              <div class=\"row clearfix\" *ngFor=\"let st of statements\">\n                <div class=\"col-md-6 column\">\n                  <div class=\"panel panel-info\" >\n                    <div class=\"panel-heading\" >\n                    <h4 class=\"panel-title\">\n                      <a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#{{st._id}}\">\n                      <b> {{st.stype}} </b> （ {{st.words}} 字） <br>\n                      </a>\n                    </h4>\n                    </div>\n                    <div id=\"{{st._id}}\" class=\"panel-collapse collapse\">\n                    <div class=\"panel-body\">\n                      {{st.question}}\n                    </div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n          <div class=\"col-sm-4 caozuo\">\n\n          </div>\n        </div>\n\n      </div>\n    </div>\n  </div>\n\n  \n\n  \n\n  "
+
+/***/ }),
+
+/***/ "./src/app/cooschool/cooschool.component.scss":
+/*!****************************************************!*\
+  !*** ./src/app/cooschool/cooschool.component.scss ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/* Set height of the grid so .sidenav can be 100% (adjust if needed) */\n.row.content {\n  height: 1500px; }\n/* Set gray background color and 100% height */\n.sidenav {\n  background-color: #f1f1f1;\n  height: 100%; }\n/* On small screens, set height to 'auto' for sidenav and grid */\n@media screen and (max-width: 767px) {\n  .sidenav {\n    height: auto;\n    padding: 15px; }\n  .row.content {\n    height: auto; } }\n.tuijian {\n  width: 600px; }\n.caozuo {\n  width: 300px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9lY28vRG9jdW1lbnRzL01pY2hpL01pY2hpL3NyYy9hcHAvY29vc2Nob29sL2Nvb3NjaG9vbC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxzRUFBQTtBQUNBO0VBQWMsY0FBYyxFQUFBO0FBRTVCLDhDQUFBO0FBQ0E7RUFDRSx5QkFBeUI7RUFDekIsWUFBWSxFQUFBO0FBSWQsZ0VBQUE7QUFDQTtFQUNFO0lBQ0UsWUFBWTtJQUNaLGFBQWEsRUFBQTtFQUVmO0lBQWMsWUFBWSxFQUFBLEVBQUc7QUFHL0I7RUFDRSxZQUFZLEVBQUE7QUFFZDtFQUNFLFlBQVksRUFBQSIsImZpbGUiOiJzcmMvYXBwL2Nvb3NjaG9vbC9jb29zY2hvb2wuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKiBTZXQgaGVpZ2h0IG9mIHRoZSBncmlkIHNvIC5zaWRlbmF2IGNhbiBiZSAxMDAlIChhZGp1c3QgaWYgbmVlZGVkKSAqL1xuLnJvdy5jb250ZW50IHtoZWlnaHQ6IDE1MDBweH1cbiAgICBcbi8qIFNldCBncmF5IGJhY2tncm91bmQgY29sb3IgYW5kIDEwMCUgaGVpZ2h0ICovXG4uc2lkZW5hdiB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmMWYxZjE7XG4gIGhlaWdodDogMTAwJTtcbn1cblxuXG4vKiBPbiBzbWFsbCBzY3JlZW5zLCBzZXQgaGVpZ2h0IHRvICdhdXRvJyBmb3Igc2lkZW5hdiBhbmQgZ3JpZCAqL1xuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogNzY3cHgpIHtcbiAgLnNpZGVuYXYge1xuICAgIGhlaWdodDogYXV0bztcbiAgICBwYWRkaW5nOiAxNXB4O1xuICB9XG4gIC5yb3cuY29udGVudCB7aGVpZ2h0OiBhdXRvO30gXG59XG5cbi50dWlqaWFue1xuICB3aWR0aDogNjAwcHg7XG59XG4uY2FvenVve1xuICB3aWR0aDogMzAwcHg7XG59XG4iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/cooschool/cooschool.component.ts":
+/*!**************************************************!*\
+  !*** ./src/app/cooschool/cooschool.component.ts ***!
+  \**************************************************/
+/*! exports provided: CooschoolComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CooschoolComponent", function() { return CooschoolComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _hm_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../hm.service */ "./src/app/hm.service.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _recletter_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../recletter.service */ "./src/app/recletter.service.ts");
+/* harmony import */ var _statement_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../statement.service */ "./src/app/statement.service.ts");
+
+
+
+
+
+
+
+var CooschoolComponent = /** @class */ (function () {
+    function CooschoolComponent(route, router, http, hmService, statementService, recomletterService) {
+        var _this = this;
+        this.route = route;
+        this.router = router;
+        this.http = http;
+        this.hmService = hmService;
+        this.statementService = statementService;
+        this.recomletterService = recomletterService;
+        this.students = []; //all the orders from database
+        this.hotels = [];
+        this.schools = [];
+        //推荐人信息
+        this.recommenders = [];
+        //推荐信信息
+        this.recomletters = [];
+        //文书信息
+        this.statements = [];
+        this.route.queryParams.subscribe(function (params) {
+            _this.managerID = params["managerID"];
+            _this.fullName = params["fullName"];
+            _this.studentID = params["studentID"];
+            _this.schoolID = params["schoolID"];
+        });
+        console.log(" school的ID为" + this.schoolID);
+    }
+    CooschoolComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.http.get('/api/hotels').subscribe(function (Data) {
+            _this.hotels = Data.hotels;
+            for (var _i = 0, _a = _this.hotels; _i < _a.length; _i++) {
+                var h = _a[_i];
+                if (h.userAccount === _this.managerID) {
+                    _this.hotel = h;
+                    _this.name = _this.hotel.name;
+                    _this.location = _this.hotel.location;
+                    _this.phone = _this.hotel.phone;
+                    _this.price = _this.hotel.price;
+                    console.log("管理者信息");
+                    console.log(_this.hotel);
+                }
+            }
+        });
+        //展示 申请项目的详细信息
+        this.http.get('/api/schools').subscribe(function (Data) {
+            //console.log(orderData);
+            _this.schools = Data.schools;
+            for (var _i = 0, _a = _this.schools; _i < _a.length; _i++) {
+                var s = _a[_i];
+                if (s._id === _this.schoolID) {
+                    _this.school = s;
+                    _this.studentID = s.userAccount;
+                    console.log("进入了吗" + _this.studentID);
+                    _this.state = _this.school.state; //申请状态（四种：进行，完成，收到offer，收到拒信）
+                    _this.univName = _this.school.univName; //大学名称
+                    _this.schoolName = _this.school.schoolName; //学院名称
+                    _this.majorName = _this.school.majorName; //专业名称
+                    _this.ddl1 = _this.school.ddl1; //DDL 1
+                    _this.ddl2 = _this.school.ddl2; //DDL 2
+                    _this.ddl3 = _this.school.ddl3; //DDL 3
+                    _this.interview = _this.school.interview; //面试 （两种：有-参加时间，无，）
+                    _this.videoEssay = _this.school.videoEssay; // videoEssay(三种：无，申请前完成，申请后完成)
+                    _this.link = _this.school.link; //链接
+                    _this.applyAccount = _this.school.applyAccount; //申请账号
+                    _this.applyPassword = _this.school.applyPassword; //申请用密码
+                    _this.recommNumber = _this.school.recommNumber; //推荐信数量
+                    _this.other = _this.school.other;
+                }
+            }
+        });
+        //展示 学生个人信息
+        this.http.get('/api/students').subscribe(function (Data) {
+            _this.students = Data.students;
+            for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
+                var h = _a[_i];
+                var studentId = h._id ? h._id.toString() : "";
+                var matchesSelected = _this.studentID && studentId === _this.studentID.toString();
+                var matchesFullNameParam = _this.fullName && studentId === _this.fullName.toString();
+                if (matchesSelected || matchesFullNameParam) {
+                    _this.student = h;
+                    _this.studentID = h._id;
+                    _this.fullName = (h.firstName || "") + " " + (h.lastName || "");
+                    console.log("Student Personal Information");
+                    console.log(_this.student);
+                }
+            }
+        });
+        //展示 此学生 推荐人信息
+        this.http.get('/api/studentrecommenderdetail/' + this.studentID).subscribe(function (orderData) {
+            //console.log(orderData);
+            _this.recommenders = orderData.recommenders;
+        });
+        //展示 这个选校的 推荐信 信息
+        this.http.get('/api/schoolrecomletterlist/' + this.schoolID).subscribe(function (Data) {
+            //console.log(Data);
+            _this.recomletters = Data.recomletters;
+        });
+        //展示 这个选校的 文书 信息
+        this.http.get('/api/statementdetail/' + this.schoolID).subscribe(function (Data) {
+            //console.log(Data);
+            _this.statements = Data.statements;
+        });
+        this.hotelMSub = this.hmService.getHotelMUpdatedListener().subscribe(function (hotels) {
+            _this.hotels = hotels;
+        });
+    };
+    CooschoolComponent.prototype.updateLetterNoSubmit = function (l) {
+        var Recomletter = {
+            schoolID: l.schoolID,
+            studentID: l.studentID,
+            recommender: l.recommender,
+            recommenderName: l.recommenderName,
+            type: l.type,
+            state: "未提交",
+        };
+        this.http.put('/api/recomletters/' + l._id, Recomletter)
+            .subscribe(function (data) {
+            var options = {
+                overlay: true,
+                overlayClickToClose: true,
+                showCloseButton: true,
+                duration: 5000
+            };
+            if (data[0] === undefined) {
+                console.log("Undefine");
+            }
+        });
+        alert("更新推荐信状态成功!!");
+        window.location.reload();
+    };
+    CooschoolComponent.prototype.updateLetterSubmit = function (l) {
+        var Recomletter = {
+            schoolID: l.schoolID,
+            studentID: l.studentID,
+            recommender: l.recommender,
+            recommenderName: l.recommenderName,
+            type: l.type,
+            state: "已提交",
+        };
+        this.http.put('/api/recomletters/' + l._id, Recomletter)
+            .subscribe(function (data) {
+            var options = {
+                overlay: true,
+                overlayClickToClose: true,
+                showCloseButton: true,
+                duration: 5000
+            };
+            if (data[0] === undefined) {
+                console.log("Undefine");
+            }
+        });
+        alert("更新推荐信状态成功!!");
+        window.location.reload();
+    };
+    CooschoolComponent.prototype.updateLetterDiscard = function (l) {
+        var Recomletter = {
+            schoolID: l.schoolID,
+            studentID: l.studentID,
+            recommender: l.recommender,
+            recommenderName: l.recommenderName,
+            type: l.type,
+            state: "弃用",
+        };
+        this.http.put('/api/recomletters/' + l._id, Recomletter)
+            .subscribe(function (data) {
+            var options = {
+                overlay: true,
+                overlayClickToClose: true,
+                showCloseButton: true,
+                duration: 5000
+            };
+            if (data[0] === undefined) {
+                console.log("Undefine");
+            }
+        });
+        alert("更新推荐信状态成功!!");
+        window.location.reload();
+    };
+    //direct to the hotel manage page
+    CooschoolComponent.prototype.hotelman = function (hotel) {
+        var navigationExtras = {
+            queryParams: {
+                "managerID": hotel.userAccount,
+            }
+        };
+        this.router.navigate(['/hmmanage'], navigationExtras);
+    };
+    //direct to the modify password page
+    CooschoolComponent.prototype.modifyP = function (hotel) {
+        var navigationExtras = {
+            queryParams: {
+                "managerID": hotel.userAccount,
+            }
+        };
+        this.router.navigate(['/hmmodifypass'], navigationExtras);
+    };
+    //direct to the complete information page
+    CooschoolComponent.prototype.comp = function (hotel) {
+        var navigationExtras = {
+            queryParams: {
+                "managerID": hotel.userAccount,
+            }
+        };
+        this.router.navigate(['/hmtask'], navigationExtras);
+    };
+    //direct to the hotel manager main page
+    CooschoolComponent.prototype.main = function (hotel) {
+        var navigationExtras = {
+            queryParams: {
+                "managerID": hotel.userAccount,
+            }
+        };
+        this.router.navigate(['/hmmain'], navigationExtras);
+    };
+    //direct to the hotel order 
+    CooschoolComponent.prototype.hmorder = function (hotel) {
+        var navigationExtras = {
+            queryParams: {
+                "managerID": hotel.userAccount,
+            }
+        };
+        this.router.navigate(['/hmorder'], navigationExtras);
+    };
+    //direct to the register page
+    CooschoolComponent.prototype.hmregister = function (hotel) {
+        var navigationExtras = {
+            queryParams: {
+                "managerID": hotel.userAccount,
+            }
+        };
+        this.router.navigate(['/hmregister'], navigationExtras);
+    };
+    //direct to the addschool page
+    CooschoolComponent.prototype.hmaddschool = function (hotel, student) {
+        var navigationExtras = {
+            queryParams: {
+                "managerID": hotel.userAccount,
+                "studentID": this.student._id,
+            }
+        };
+        this.router.navigate(['/hmaddschool'], navigationExtras);
+    };
+    //direct to the register page
+    CooschoolComponent.prototype.hmstudent = function (hotel) {
+        var navigationExtras = {
+            queryParams: {
+                "managerID": hotel.userAccount,
+                "studentID": this.studentID,
+            }
+        };
+        this.router.navigate(['/hmstudent'], navigationExtras);
+    };
+    //direct to the blog page
+    CooschoolComponent.prototype.hmblog = function (hotel) {
+        var navigationExtras = {
+            queryParams: {
+                "managerID": hotel.userAccount,
+            }
+        };
+        this.router.navigate(['/hmblog'], navigationExtras);
+    };
+    //direct to the interview page
+    CooschoolComponent.prototype.hminterview = function (hotel) {
+        var navigationExtras = {
+            queryParams: {
+                "managerID": hotel.userAccount,
+            }
+        };
+        this.router.navigate(['/hminterview'], navigationExtras);
+    };
+    CooschoolComponent.prototype.ngOnDestroy = function () {
+        this.hotelMSub.unsubscribe();
+    };
+    CooschoolComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-cooschool',
+            template: __webpack_require__(/*! ./cooschool.component.html */ "./src/app/cooschool/cooschool.component.html"),
+            styles: [__webpack_require__(/*! ./cooschool.component.scss */ "./src/app/cooschool/cooschool.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"],
+            _hm_service__WEBPACK_IMPORTED_MODULE_3__["HmService"],
+            _statement_service__WEBPACK_IMPORTED_MODULE_6__["StatementService"],
+            _recletter_service__WEBPACK_IMPORTED_MODULE_5__["RecomletterService"]])
+    ], CooschoolComponent);
+    return CooschoolComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/costudent/costudent.component.html":
+/*!****************************************************!*\
+  !*** ./src/app/costudent/costudent.component.html ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<nav class=\"navbar navbar-inverse\" role=\"navigation\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n        <a class=\"navbar-brand\" >一个很神秘的网页</a>\n      </div>\n      <div class=\"nav  navbar-right\">\n        <ul class=\"nav navbar-nav\">\n          <li class=\"active\"><a (click)=\"main(hotel)\">HomePage</a></li>\n\n          <li class=\"nav navbar-nav navbar-right\">\n            <a href=\"/main\">Log Out</a>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </nav>\n  <ol class=\"breadcrumb\">\n      <li><a (click)=\"main(hotel)\">Home</a></li>\n      <li><a (click)=\"main(hotel)\">{{hotel.userAccount}}</a></li>\n      <li><a (click)=\"hotelman(hotel)\">Manage Student</a></li>\n      <li class=\"active\">{{student.firstName}} {{student.lastName}}</li>\n  </ol>\n\n  <div class=\"container-fluid\">\n    <div class=\"row content\">\n      <div class=\"col-sm-2 sidenav\">\n      <h4>{{hotel.userAccount}}  </h4>\n      <ul class=\"nav nav-pills nav-stacked\">\n        <li ><a (click)=\"main(hotel)\">Home-{{hotel.userAccount}}</a></li>\n        <li class=\"active\"><a (click)=\"hotelman(hotel)\">学生管理</a></li>\n        <li><a (click)=\"hmorder(hotel)\">学生申请</a></li>\n\n      </ul><br>\n      \n      </div>\n    \n      <div class=\"col-sm-10\">\n        <h2>{{student.firstName}} {{student.lastName}}</h2>\n      <p>{{student.userAccount}}</p>\n      <ul class=\"nav nav-tabs\">\n        <li class=\"nav-item\">\n          <a class=\"nav-link \" data-toggle=\"tab\" href=\"#profile\" >个人信息</a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link \" data-toggle=\"tab\" href=\"#otherinfo\" >补充信息</a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link \" data-toggle=\"tab\" href=\"#edu\" >教育信息</a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link \" data-toggle=\"tab\" href=\"#exp\" >工作经历</a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" data-toggle=\"tab\" href=\"#dropdown1\">推荐人信息</a>\n        </li>\n        <li class=\"nav-item \">\n          <a class=\"nav-link active\" data-toggle=\"tab\" href=\"#dropdown2\">申请项目</a>\n        </li>\n        <li class=\"nav-item \">\n          <a class=\"nav-link active\" data-toggle=\"tab\" href=\"#dropdown3\">发送通知</a>\n        </li>\n        <li class=\"nav-item \">\n          <a class=\"nav-link active\" data-toggle=\"tab\" href=\"#dropdown4\">进度更新</a>\n        </li>\n      </ul>\n      <div id=\"myTabContent\" class=\"tab-content\">\n        <div class=\"tab-pane fade \" id=\"profile\">\n          <div id=\"personal\" >\n            <h3>基本信息</h3> \n            <hr>\n            <table class=\"table table-bordered\" >\n              <tbody>\n                <tr>\n                <td >名字 Firstname</td>\n                <td >\t\n                  <input class=\"form-control\" id=\"firstName\" value=\"{{student.firstName}}\" [(ngModel)]=\"firstName\"  name=\"firstName\" style=\"width: 200px;\" disabled=\"\">\n                </td>\n                <td >姓氏 Lastname</td>\n                <td ><input class=\"form-control\" id=\"lastName\" value=\"{{student.lastName}}\" [(ngModel)]=\"lastName\"  name=\"lastName\" style=\"width: 200px;\" disabled=\"\"></td>\n                <td >性别 Gender</td>\n                <td><input class=\"form-control\" id=\"gender\" value=\"{{student.gender}}\" [(ngModel)]=\"gender\"  name=\"gender\" style=\"width: 200px;\" disabled=\"\"></td>\n                </tr>\n                <tr>\n                <td >出生年月日 dob</td>\n                <td >\t\n                  <input class=\"form-control\" id=\"dob\" value=\"{{student.dob}}\" [(ngModel)]=\"dob\"  name=\"dob\" style=\"width: 200px;\" disabled=\"\">\n                  <small class=\"form-text text-muted\">格式为MM/DD/YYYY</small>\n                </td>\n                <td >现住址 currentAddress\t</td>\n                <td colspan=\"3\"><input class=\"form-control\" id=\"currentAddress\" value=\"{{student.currentAddress}}\" [(ngModel)]=\"currentAddress\"  name=\"currentAddress\" style=\"width: 500px;\" disabled=\"\">\n                  <small class=\"form-text text-muted\">请填写英文地址，并包含邮编。</small></td>\n                </tr>\n                <tr>\n                <td >国籍</td>\n                <td >\t\n                  <input class=\"form-control\" id=\"citizen\" value=\"{{student.citizen}}\" [(ngModel)]=\"citizen\"  name=\"citizen\" style=\"width: 200px;\" disabled=\"\">\n                </td>\n                <td >永久居住地址 Permanent Address</td>\n                <td colspan=\"3\"><input class=\"form-control\" id=\"permanentAddress\" value=\"{{student.permanentAddress}}\" [(ngModel)]=\"permanentAddress\"  name=\"permanentAddress\" style=\"width:500px;\" disabled=\"\">\n                  <small class=\"form-text text-muted\">请填写英文地址，并包含邮编。</small></td>\n                </tr>\n                <tr>\n                <td >电话 Cellphone</td>\n                <td >\t\n                  <input class=\"form-control\" id=\"phone\" value=\"{{student.phone}}\" [(ngModel)]=\"phone\"  name=\"phone\" style=\"width: 200px;\" disabled=\"\">\n                </td>\n                <td >邮箱 Email</td>\n                <td ><input class=\"form-control\" id=\"email\" value=\"{{student.email}}\" [(ngModel)]=\"email\"  name=\"email\" style=\"width: 200px;\" disabled=\"\"></td>\n                <td >SSN </td>\n                <td><input class=\"form-control\" id=\"ssn\" value=\"{{student.ssn}}\" [(ngModel)]=\"ssn\"  name=\"ssn\" style=\"width: 200px;\" disabled=\"\"></td>\n                </tr>\n                <tr>\n                <td >护照号 Passport</td>\n                <td colspan=\"2\">\t\n                  <input class=\"form-control\" id=\"passport\" value=\"{{student.passport}}\" [(ngModel)]=\"passport\"  name=\"passport\" style=\"width: 200px;\" disabled=\"\">\n                </td>\n                <td >美签号码 Visa Number</td>\n                <td colspan=\"2\"><input class=\"form-control\" id=\"visa\" value=\"{{student.visa}}\" [(ngModel)]=\"visa\"  name=\"visa\" style=\"width: 200px;\" disabled=\"\"></td>\n                </tr>\n                <tr>\n                <td >用于申请的邮箱 Email</td>\n                <td colspan=\"2\">\t\n                  <input class=\"form-control\" id=\"appEmail\" value=\"{{student.appEmail}}\" [(ngModel)]=\"appEmail\"  name=\"appEmail\" style=\"width: 200px;\" disabled=\"\">\n                </td>\n                <td >用于申请的邮箱密码 Password</td>\n                <td colspan=\"2\"><input class=\"form-control\" id=\"appPsw\" value=\"{{student.appPsw}}\" [(ngModel)]=\"appPsw\"  name=\"appPsw\" style=\"width: 200px;\" disabled=\"\"></td>\n                </tr> \n              </tbody>\n            </table>\n\n          </div>\n          <div id=\"family\" >\n            <h3>家庭信息</h3>\n            <hr>\n            <form id=\"form2\" action=\"\" method=\"post\">\n            <table class=\"table table-bordered\" >\n              <tbody>\n                <tr>\n                <td ></td>\n                <td >\t\n                  Father 父亲\n                </td>\n                <td >Mother 母亲</td>\n                </tr>\n                <tr>\n                <td >姓名 <br> <small class=\"form-text text-muted\">如是英文姓名，名字在前，姓氏在后</small></td>\n                <td >\t\n                  <input class=\"form-control\" id=\"MomName\" value=\"{{student.MomName}}\" [(ngModel)]=\"MomName\"  name=\"MomName\" style=\"width: 200px;\" disabled=\"\">\n                  \n                </td>\n                <td>\n                  <input class=\"form-control\" id=\"FatName\" value=\"{{student.FatName}}\" [(ngModel)]=\"FatName\"  name=\"FatName\" style=\"width: 200px;\" disabled=\"\">\n                </td>\n                </tr>\n                <tr>\n                <td >Address 家庭住址 <br> <small class=\"form-text text-muted\">请填写英文地址，并包含邮编。</small></td>\n                <td >\t\n                  <input class=\"form-control\" id=\"MomAddress\" value=\"{{student.MomAddress}}\" [(ngModel)]=\"MomAddress\"  name=\"MomAddress\" style=\"width: 400px;\" disabled=\"\">\n                  \n                </td>\n                <td>\n                  <input class=\"form-control\" id=\"FatAddress\" value=\"{{student.FatAddress}}\" [(ngModel)]=\"FatAddress\"  name=\"FatAddress\" style=\"width: 400px;\" disabled=\"\">\n                </td>\n                </tr>\n                <tr>\n                <td >Organization Name & Address 所在公司名称与地址<br> <small class=\"form-text text-muted\">公司地址请提供英文地址，并包含邮箱</small></td>\n                <td >\t\n                  <input class=\"form-control\" id=\"MomOrganazation\" value=\"{{student.MomOrganazation}}\" [(ngModel)]=\"MomOrganazation\"  name=\"MomOrganazation\" style=\"width: 400px;\" disabled=\"\">\n                  \n                </td>\n                <td>\n                  <input class=\"form-control\" id=\"FatOrganazation\" value=\"{{student.FatOrganazation}}\" [(ngModel)]=\"FatOrganazation\"  name=\"FatOrganazation\" style=\"width: 400px;\" disabled=\"\">\n                </td>\n                </tr>\n                <tr>\n                <td >Position 职务 </td>\n                <td >\t\n                  <input class=\"form-control\" id=\"MomJob\" value=\"{{student.MomJob}}\" [(ngModel)]=\"MomJob\"  name=\"MomJob\" style=\"width: 200px;\" disabled=\"\">\n                  \n                </td>\n                <td>\n                  <input class=\"form-control\" id=\"FatJob\" value=\"{{student.FatJob}}\" [(ngModel)]=\"FatJob\"  name=\"FatJob\" style=\"width: 200px;\" disabled=\"\">\n                </td>\n                </tr>\n                <tr>\n                <td >Level of Education 最高学历 </td>\n                <td >\t\n                  <input class=\"form-control\" id=\"MomEducation\" value=\"{{student.MomEducation}}\" [(ngModel)]=\"MomEducation\"  name=\"MomEducation\" style=\"width: 200px;\" disabled=\"\">\n                  \n                </td>\n                <td>\n                  <input class=\"form-control\" id=\"FatEducation\" value=\"{{student.FatEducation}}\" [(ngModel)]=\"FatEducation\"  name=\"FatEducation\" style=\"width: 200px;\" disabled=\"\">\n                </td>\n                </tr>\n                <tr>\n                <td >School Name 毕业学校</td>\n                <td >\t\n                  <input class=\"form-control\" id=\"MomSchool\" value=\"{{student.MomSchool}}\" [(ngModel)]=\"MomSchool\"  name=\"MomSchool\" style=\"width: 200px;\" disabled=\"\">\n                  \n                </td>\n                <td>\n                  <input class=\"form-control\" id=\"FatSchool\" value=\"{{student.FatSchool}}\" [(ngModel)]=\"FatSchool\"  name=\"FatSchool\" style=\"width: 200px;\" disabled=\"\">\n                </td>\n                </tr>\n                <tr>\n                <td >Year of Graduation 毕业时间</td>\n                <td >\t\n                  <input class=\"form-control\" id=\"MomGraduation\" value=\"{{student.MomGraduation}}\" [(ngModel)]=\"MomGraduation\"  name=\"MomGraduation\" style=\"width: 200px;\" disabled=\"\">\n                  \n                </td>\n                <td>\n                  <input class=\"form-control\" id=\"FatGraduation\" value=\"{{student.FatGraduation}}\" [(ngModel)]=\"FatGraduation\"  name=\"FatGraduation\" style=\"width: 200px;\" disabled=\"\">\n                </td>\n                </tr>\n                <tr>\n                <td >Phone 电话 </td>\n                <td >\t\n                  <input class=\"form-control\" id=\"MomPhone\" value=\"{{student.MomPhone}}\" [(ngModel)]=\"MomPhone\"  name=\"MomPhone\" style=\"width: 200px;\" disabled=\"\">\n                  \n                </td>\n                <td>\n                  <input class=\"form-control\" id=\"FatPhone\" value=\"{{student.FatPhone}}\" [(ngModel)]=\"FatPhone\"  name=\"FatPhone\" style=\"width: 200px;\" disabled=\"\">\n                </td>\n                </tr>\n                <tr>\n                <td >Email  邮箱  </td>\n                <td >\t\n                  <input class=\"form-control\" id=\"MomEmail\" value=\"{{student.MomEmail}}\" [(ngModel)]=\"MomEmail\"  name=\"MomEmail\" style=\"width: 200px;\" disabled=\"\">\n                  \n                </td>\n                <td>\n                  <input class=\"form-control\" id=\"FatEmail\" value=\"{{student.FatEmail}}\" [(ngModel)]=\"FatEmail\"  name=\"FatEmail\" style=\"width: 200px;\" disabled=\"\">\n                </td>\n                </tr>\n              </tbody>\n            </table>\n            </form>\n          </div>\n          <div id=\"yer\">\n            <h3>申请年份</h3>\n            <hr>\n            <div class=\"input-group mb-3\">\n              <input type=\"text\" class=\"form-control\" id=\"styear\" value=\"{{student.year}}\" disabled=\"\">\n              <hr>申请协调人\n              <input type=\"text\" class=\"form-control\" id=\"stcoord\" value=\"{{student.coordinator}}\" disabled=\"\">\n              <hr>\n            </div>\n          </div>\n        </div>\n        <div class=\"tab-pane fade \" id=\"otherinfo\">               \n          <div id=\"standardtest\" >\n            <h3>标化成绩</h3>\n            <hr>\n            <table class=\"table table-bordered\" >\n              <tbody>\n                <tr>\n                  <td colspan=\"10\">\n                    <h4>TOEFL/IELTS</h4> <small class=\"form-text text-muted\">如果是IELTS成绩，请在总分中标记</small>\n                  </td>\n                </tr>\n                <tr>\n                <td >总分 Total Score</td>\n                <td >\t\n                  <input class=\"form-control\" id=\"TOEFL\" value=\"{{student.TOEFL}}\" [(ngModel)]=\"TOEFL\"  name=\"TOEFL\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td >阅读 Reading</td>\n                <td ><input class=\"form-control\" id=\"TOEFLR\" value=\"{{student.TOEFLR}}\" [(ngModel)]=\"TOEFLR\"  name=\"TOEFLR\" style=\"width: 50px;\" disabled=\"\"></td>\n                <td >听力 Listening</td>\n                <td><input class=\"form-control\" id=\"TOEFLL\" value=\"{{student.TOEFLL}}\" [(ngModel)]=\"TOEFLL\"  name=\"TOEFLL\" style=\"width: 50px;\" disabled=\"\"></td>\n                <td >口语 Speaking</td>\n                <td ><input class=\"form-control\" id=\"TOEFLS\" value=\"{{student.TOEFLS}}\" [(ngModel)]=\"TOEFLS\"  name=\"TOEFLS\" style=\"width: 50px;\" disabled=\"\"></td>\n                <td >写作 Writing</td>\n                <td><input class=\"form-control\" id=\"TOEFLW\" value=\"{{student.TOEFLW}}\" [(ngModel)]=\"TOEFLW\"  name=\"TOEFLW\" style=\"width: 50px;\" disabled=\"\"></td>\n                </tr>\n                <tr>\n                <td colspan=\"10\">\n                  <h4>GRE</h4> <small class=\"form-text text-muted\">如果没有考过GRE可以不填写</small>\n                </td>\n                </tr>\n                <tr>\n                <td >总分 Total Score</td>\n                <td >\t\n                  <input class=\"form-control\" id=\"GRE\" value=\"{{student.GRE}}\" [(ngModel)]=\"GRE\"  name=\"GRE\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td >Verbal</td>\n                <td ><input class=\"form-control\" id=\"GREV\" value=\"{{student.GREV}}\" [(ngModel)]=\"GREV\"  name=\"GREV\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td >Percentile</td>\n                <td ><input class=\"form-control\" id=\"GREVP\" value=\"{{student.GREVP}}\" [(ngModel)]=\"GREVP\"  name=\"GREVP\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td >Quantitative</td>\n                <td ><input class=\"form-control\" id=\"GREQ\" value=\"{{student.GREQ}}\" [(ngModel)]=\"GREQ\"  name=\"GREQ\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td >Percentile</td>\n                <td ><input class=\"form-control\" id=\"GREQP\" value=\"{{student.GREQP}}\" [(ngModel)]=\"GREQP\"  name=\"GREQP\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                </tr>\n                <tr>\n                <td colspan=\"2\" ></td>\n                <td >Analytical Writing</td>\n                <td ><input class=\"form-control\" id=\"GREW\" value=\"{{student.GREW}}\" [(ngModel)]=\"GREW\"  name=\"GREW\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td >Percentile</td>\n                <td ><input class=\"form-control\" id=\"GREWP\" value=\"{{student.GREWP}}\" [(ngModel)]=\"GREWP\"  name=\"GREWP\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td colspan=\"4\"></td>\n                </tr>\n                <tr>\n                <td colspan=\"10\">\n                  <h4>GMAT</h4> <small class=\"form-text text-muted\">如果没有考过GMAT可以不填写</small>\n                </td>\n                </tr>\n                <tr>\n                <td >总分 Total Score</td>\n                <td >\t\n                  <input class=\"form-control\" id=\"GMAT\" value=\"{{student.GMAT}}\" [(ngModel)]=\"GMAT\"  name=\"GMAT\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td >Verbal</td>\n                <td ><input class=\"form-control\" id=\"GMATV\" value=\"{{student.GMATV}}\" [(ngModel)]=\"GMATV\"  name=\"GMATV\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td >Percentile</td>\n                <td ><input class=\"form-control\" id=\"GMATVP\" value=\"{{student.GMATVP}}\" [(ngModel)]=\"GMATVP\"  name=\"GMATVP\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td >Quantitative</td>\n                <td ><input class=\"form-control\" id=\"GMATQ\" value=\"{{student.GMATQ}}\" [(ngModel)]=\"GMATQ\"  name=\"GMATQ\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td >Percentile</td>\n                <td ><input class=\"form-control\" id=\"GMATQP\" value=\"{{student.GMATQP}}\" [(ngModel)]=\"GMATQP\"  name=\"GMATQP\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                </tr>\n                <tr>\n                <td colspan=\"2\" ></td>\n                <td >Analytical Writing</td>\n                <td ><input class=\"form-control\" id=\"GMATW\" value=\"{{student.GMATW}}\" [(ngModel)]=\"GMATW\"  name=\"GMATW\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td >Percentile</td>\n                <td ><input class=\"form-control\" id=\"GMATWP\" value=\"{{student.GMATWP}}\" [(ngModel)]=\"GMATWP\"  name=\"GMATWP\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td >Reasoning</td>\n                <td ><input class=\"form-control\" id=\"GMATR\" value=\"{{student.GMATR}}\" [(ngModel)]=\"GMATR\"  name=\"GMATR\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                <td >Percentile</td>\n                <td ><input class=\"form-control\" id=\"GMATRP\" value=\"{{student.GMATRP}}\" [(ngModel)]=\"GMATRP\"  name=\"GMATRP\" style=\"width: 80px;\" disabled=\"\">\n                </td>\n                </tr>\n                <tr>\n                <td colspan=\"2\">\n                  <h4>Others</h4> \n                </td>\n                <td colspan=\"8\">\n                  <input class=\"form-control\" id=\"OtherStandardTest\" value=\"{{student.OtherStandardTest}}\" [(ngModel)]=\"OtherStandardTest\"  name=\"OtherStandardTest\" style=\"width: 900px;\" disabled=\"\">\n                </td>\n                </tr>\n                \n              </tbody>\n            </table>\n            \n          </div>\n          <div id=\"skills\" >\n            <h3>技能</h3>\n            <hr>\n            <table class=\"table table-bordered\" >\n              <tbody>\n                <tr>\n                  <td colspan=\"2\">\n                    <p>比如：计算机语言: C (2 yrs ) C++ JAVA (5 yrs )Python; 统计软件SPSS, SAS, Stata; 经济学软件Eview;会计软件UFIDA, ERP; 金融终端 Bloomberg Reuters </p> <br> <b>写明使用的时间长短，是否精通</b> \n                  </td>\n                </tr>\n                <tr>\n                <td >Language Ability 语言能力</td>\n                <td style=\"width: 900px;\">\t\n                  <input class=\"form-control\" id=\"Language\" value=\"{{student.Language}}\" [(ngModel)]=\"Language\"  name=\"Language\" style=\"width: 800px;\" disabled=\"\">\n    \n                </td>\t\n                </tr>\n                <tr>\n                <td >Computer Skills 计算机技能</td>\n                <td style=\"width: 900px;\">\t\n                  <input class=\"form-control\" id=\"ComputerSkills\" value=\"{{student.ComputerSkills}}\" [(ngModel)]=\"ComputerSkills\"  name=\"ComputerSkills\" style=\"width: 800px;\" disabled=\"\">\n    \n                </td>\n                </tr>\n                <tr>\n                <td >Other Skills & Certificates <br> 其他技能和证书 <br><small class=\"form-text text-muted\">证书: CFA CPA 证券资格证等</small></td>\n                <td style=\"width: 900px;\">\t\n                  <input class=\"form-control\" id=\"OtherSkills\" value=\"{{student.OtherSkills}}\" [(ngModel)]=\"OtherSkills\"  name=\"OtherSkills\" style=\"width: 800px;\" disabled=\"\">\n    \n                </td>\t\n                </tr>\n                <tr>\n                <td >Hobbies 爱好 <br><small class=\"form-text text-muted\">如： 10年的钢琴舞台演出经历， 6年书法训练获全国级奖项10次</small></td>\n                <td style=\"width: 900px;\">\t\n                  <input class=\"form-control\" id=\"Hobbies\" value=\"{{student.Hobbies}}\" [(ngModel)]=\"Hobbies\"  name=\"Hobbies\" style=\"width: 800px;\" disabled=\"\">\n    \n                </td>\n                </tr>\n              </tbody>\n            </table>\n          </div>\n        </div>\n        <div class=\"tab-pane fade \" id=\"edu\">\n          <div id=\"Education\">\n            <div class=\"row\">\n              <div class=\"col-sm-10\">\n                <h3>\n                  所添加的教育经历总数：\n                  <small class=\"text-muted\">{{education.length}}</small>\n              </h3>\n              </div>\n              <div class=\"col-sm-2\">          \n              </div>\n            </div>\n          \n\n\t\t\t\t\t<br>\n\t\t\t\t\t<div class=\"panel-group\" id=\"accordion\" *ngIf=\"education.length > 0\">\n\t\t\t\t\t\t<div class=\"panel panel-primary\" *ngFor=\"let e of education\">\n\t\t\t\t\t\t  <div class=\"panel-heading\">\n\t\t\t\t\t\t\t<h4 class=\"panel-title\">\n\t\t\t\t\t\t\t  <a data-toggle=\"collapse\" data-parent=\"#accordion\" \n\t\t\t\t\t\t\t\thref=\"#{{e._id}}\">\n\t\t\t\t\t\t\t\t<b>{{e.educationName}} </b> ({{e.type}})\n\t\t\t\t\t\t\t  </a>\n\t\t\t\t\t\t\t</h4>\n\t\t\t\t\t\t  </div>\n\t\t\t\t\t\t  <div id=\"{{e._id}}\" class=\"panel-collapse collapse in\">\n\t\t\t\t\t\t\t<div class=\"panel-body\">\n\t\t\t\t\t\t\t\t<table class=\"table table-bordered\" >\n\t\t\t\t\t\t\t\t\t<tbody>\n\t\t\t\t\t\t\t\t\t  <tr >\n\t\t\t\t\t\t\t\t\t\t<td style=\"width: 30%; background-color: lightgray;\">University 学校</td>\n\t\t\t\t\t\t\t\t\t\t<td colspan=\"4\" style=\"width: 70%;\">\t\n\t\t\t\t\t\t\t\t\t\t\t{{e.educationName}}\n\t\t\t\t\t\t\t\t\t\t</td>\t\n\t\t\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t\t\t<td style=\"background-color: lightgray;\">Address 学校地址</td>\n\t\t\t\t\t\t\t\t\t\t<td colspan=\"4\">\t\n\t\t\t\t\t\t\t\t\t\t\t{{e.educationLocation}}\n\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t\t\t<td style=\"background-color: lightgray;\">在校日期 </td>\n\t\t\t\t\t\t\t\t\t\t<td style=\"background-color: lightgray;\">From</td>\n\t\t\t\t\t\t\t\t\t\t<td >\t\n\t\t\t\t\t\t\t\t\t\t\t{{e.educationStart}}\n\t\t\t\t\t\t\t\t\t\t</td>\t\n\t\t\t\t\t\t\t\t\t\t<td style=\"background-color: lightgray;\">To</td>\n\t\t\t\t\t\t\t\t\t\t<td >\t\n\t\t\t\t\t\t\t\t\t\t\t{{e.educationEnd}}\n\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t\t\t<td style=\"background-color: lightgray;\">Major 专业 </td>\n\t\t\t\t\t\t\t\t\t\t<td colspan=\"4\">\t\n\t\t\t\t\t\t\t\t\t\t\t{{e.major}}\n\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t\t\t<td style=\"background-color: lightgray;\">Degree 学位 </td>\n\t\t\t\t\t\t\t\t\t\t<td colspan=\"4\">\t\n\t\t\t\t\t\t\t\t\t\t\t{{e.Degree}}\n\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t\t\t  <tr >\n\t\t\t\t\t\t\t\t\t\t<td style=\"background-color: lightgray;\">Overall GPA\n\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t\t<td colspan=\"4\">\t\n\t\t\t\t\t\t\t\t\t\t\t{{e.GPA}}\n\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t\t\t<td style=\"background-color: lightgray;\">Major GPA 专业GPA </td>\n\t\t\t\t\t\t\t\t\t\t<td colspan=\"4\">\t\n\t\t\t\t\t\t\t\t\t\t\t{{e.MajorGPA}}\n\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t\t\t<td style=\"background-color: lightgray;\">Second Degree or Minor 二学位或辅修</td>\n\t\t\t\t\t\t\t\t\t\t<td colspan=\"4\">\t\n\t\t\t\t\t\t\t\t\t\t\t{{e.SecondDegree}}\n\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t\t\t  <tr >\n\t\t\t\t\t\t\t\t\t\t<td style=\"background-color: lightgray;\">Overall GPA\n\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t\t<td colspan=\"4\">\t\n\t\t\t\t\t\t\t\t\t\t\t{{e.SecondGPA}}\n\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t\t\t<td style=\"background-color: lightgray;\">其他信息</td>\n\t\t\t\t\t\t\t\t\t\t<td colspan=\"4\">\t\n\t\t\t\t\t\t\t\t\t\t\t{{e.other}}\n\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t  </tr> \n\t\t\t\t\t\t\t\t\t</tbody>\n\t\t\t\t\t\t\t\t</table>\n\t\t\t\t\t\t\t</div>\n              <div class=\"panel-footer\">\n                <div class=\"row\">\n                  <div class=\"col-sm-10\">\n                    \n                  </div>\n\n                </div>\n                \n              </div>\n\t\t\t\t\t\t  </div> \n\n\t\t\t\t\t\t</div>\n            \n\t\t\t\t\t</div>\n\t\t\t\t  </div>\n\n        </div>\n        <div class=\"tab-pane fade \" id=\"exp\">\n          <h3>\n            所添加的工作经历总数：\n            <small class=\"text-muted\">{{experience.length}}</small>\n          </h3>\n          <br>\n          <div id=\"Experience\">\n            <br>\n            <div class=\"panel-group\" id=\"accordion\" *ngIf=\"experience.length > 0\">\n              <div class=\"panel panel-primary\" *ngFor=\"let ex of experience\">\n                <div class=\"panel-heading\">\n                <h4 class=\"panel-title\">\n                  <a data-toggle=\"collapse\" data-parent=\"#accordion\" \n                  href=\"#{{ex._id}}\">\n                  <b>{{ex.institution}} </b> ({{ex.type}})\n                  </a>\n                </h4>\n                </div>\n                <div id=\"{{ex._id}}\" class=\"panel-collapse collapse in\">\n                <div class=\"panel-body\">\n                  <table class=\"table table-bordered\" >\n                    <tbody>\n                      <tr >\n                      <td style=\"width: 30%; background-color: lightgray;\">Company/Institution <br> 公司/研究单位 </td>\n                      <td colspan=\"4\" style=\"width: 70%;\">\t\n                        {{ex.institution}}\n                      </td>\t\n                      </tr>\n                      <tr>\n                      <td style=\"background-color: lightgray;\">Address 地址</td>\n                      <td colspan=\"4\">\t\n                        {{ex.institutionLocation}}\n                      </td>\n                      </tr>\n                      <tr>\n                      <td style=\"background-color: lightgray;\">在职日期 </td>\n                      <td style=\"background-color: lightgray;\">From</td>\n                      <td >\t\n                        {{ex.experienceStart}}\n                      </td>\t\n                      <td style=\"background-color: lightgray;\">To</td>\n                      <td >\t\n                        {{ex.experienceEnd}}\n                      </td>\n                      </tr>\n                      <tr>\n                      <td style=\"background-color: lightgray;\">Position or Title 职位 </td>\n                      <td colspan=\"4\">\t\n                        {{ex.experienceposition}}\n                      </td>\n                      </tr>\n                      <tr>\n                      <td style=\"background-color: lightgray;\">Responsibilities 职责 </td>\n                      <td colspan=\"4\">\t\n                        {{ex.responsibilities}}\n                      </td>\n                      </tr>\n                      <tr >\n                      <td style=\"background-color: lightgray;\">Project  项目简介 \n                      </td>\n                      <td colspan=\"4\">\t\n                        {{ex.project}}\n                      </td>\n                      </tr>\n                      <tr>\n                      <td style=\"background-color: lightgray;\">Achievement 成就 </td>\n                      <td colspan=\"4\">\t\n                        {{ex.achievement}}\n                      </td>\n                      </tr> \n                    </tbody>\n                  </table>\n                </div>\n                <div class=\"panel-footer\">\n                  <div class=\"row\">\n                    <div class=\"col-sm-10\">\n                      \n                    </div>\n\n                  </div>\n                  \n                </div>\n                </div>\n              </div>\n            </div>\n          </div>\n\n        </div>\n\n        <div class=\"tab-pane fade \" id=\"dropdown1\">\n          <h3>\n            学生所添加的推荐人总数：\n            <small class=\"text-muted\">{{recommenders.length}}</small>\n          </h3>\n          <hr>\n          <div class=\"panel-group\" id=\"accordion\" *ngIf=\"recommenders.length > 0\">\n            <div class=\"panel panel-primary\" *ngFor=\"let k of recommenders\">\n              <div class=\"panel-heading\">\n                <h4 class=\"panel-title\">\n                  <a data-toggle=\"collapse\" data-parent=\"#accordion\" \n                    href=\"#{{k._id}}\">\n                  <b> {{k.firstName}} {{k.lastName}}</b>\n                  </a>\n                </h4>\n              </div>\n              <div id=\"{{k._id}}\" class=\"panel-collapse collapse in\">\n                <div class=\"panel-body\">\n                  <table class=\"table table-hover\">\n                    <thead style=\"background-color: lightgray;\">\n                      <tr>\n                        <th scope=\"col\" >性别</th>\n                        <th scope=\"col\" >职称title</th>\n                        <th scope=\"col\" >学历</th>\n                        <th scope=\"col\">Relationship</th>\n                        <th scope=\"col\">所在单位</th>\n                      </tr>\n                    </thead>\n                    <tbody >\n                      <tr class=\"table-dark\" >\n                        <td>{{k.gender}} </td>\n                        <td>{{k.title}}</td>\n                        <td>{{k.education}}</td>\n                        <td>{{k.relation}}</td>\n                        <td>{{k.organization}}</td>  \n                      </tr>\n                    </tbody>\n                    <thead style=\"background-color: lightgray;\">\n                      <tr>\n                        <th scope=\"col\" >职务</th>\n                        <th scope=\"col\" >Email</th>\n                        <th scope=\"col\">电话</th>\n                        <th scope=\"col\" >地址</th>\n                        <th scope=\"col\">在此单位工作时间年限</th>\n                      </tr>\n                    </thead>\n                    <tbody >\n                      <tr class=\"table-dark\" >\n                        <td>{{k.position}} </td>\n                        <td>{{k.email}}</td>\n                        <td>{{k.phone}}</td>\n                        <td>{{k.location}}</td>\n                        <td>{{k.duration}}</td>  \n                      </tr>\n                    </tbody>\n                    <thead style=\"background-color: lightgray;\">\n                      <tr>\n                        <th colspan=\"5\">其他信息（推荐人与被推荐人关系发展，以及熟悉程度）</th>\n                      </tr>\n                    </thead>\n                    <tbody>\n                      <tr>\n                        <td colspan=\"5\">{{k.other}}</td>\n                      </tr>\n                    </tbody>\n                  </table>\n                </div>\n                <div class=\"panel-footer\">\n                  <div class=\"row\">\n                    <div class=\"col-sm-10\">\n                      \n                    </div>\n                    <div class=\"col-sm-2\">\n                      <button href=\"/anew/todel/@a.id\" (click)=\"studentrec(k)\">More</button>\n                      \n                    </div>\n                  </div>\n                  \n                </div>\n              </div>\n            </div>\n          </div>\n          \n        </div>\n        <div class=\"tab-pane fade in active\" id=\"dropdown2\">\n\n          <table class=\"table table-hover\" *ngIf=\"schools.length >=  0\">\n            <thead>\n              <tr>\n                <th scope=\"col\" colspan=\"6\"><h3>\n                  已添加项目总数：\n                  <small class=\"text-muted\">{{schools.length}}</small>\n                </h3></th>\n                <th scope=\"col\" colspan=\"4\"> \n                  <button type=\"button\" class=\"btn btn-warning\" (click)=\"exportAsExcelFile()\">生成excel</button></th>\n              </tr>\n            </thead>\n            <thead>\n              <tr>\n                <th scope=\"col\" style=\"width:50px\">States</th>\n                <th scope=\"col\" style=\"width:200px\">University</th>\n                <th scope=\"col\" style=\"width:200px\">School</th>\n                <th scope=\"col\" style=\"width:200px\">Major</th>\n                <th scope=\"col\" style=\"width:90px\">Deadline 1</th>\n                <th scope=\"col\" style=\"width:90px\">Deadline 2</th>\n                <th scope=\"col\" style=\"width:90px\">Deadline 3</th>\n                <th scope=\"col\" style=\"width:20px\">RecNum</th>\n                <th scope=\"col\" style=\"width:20px\"></th>\n              </tr>\n            </thead>\n            <tbody *ngFor=\"let s of schools\" >\n\n              <tr class=\"table\" >\n                <th scope=\"row\" >{{s.state}}\n                </th>\n                <td>{{s.univName}} \n                   \n                  <span class=\"label label-info\" *ngIf=\"s.level=='保底'\">Safe</span>\n                  <span class=\"label label-success\" *ngIf=\"s.level=='冲刺'\">冲刺</span>\n                  <span class=\"label label-warning\" *ngIf=\"s.level=='不可能'\">风险</span>\n                  <span class=\"badge badge-secondary\" *ngIf=\"s.videoEssay=='有，在提交申请前'\">VE前</span>\n                  <span class=\"badge badge-secondary\" *ngIf=\"s.videoEssay=='有，在提交申请后'\">VE后</span>\n                  <span class=\"label label-danger\" *ngIf=\"s.interview=='yes'\">面试</span>\n                  <span class=\"label label-primary\" *ngIf=\"s.gre=='Required'\">GRE</span>\n                  <div class=\"btn-group\" *ngIf=\"s.other!=''&&s.other!=null\">\n                    <button class=\"btn btn-secondary btn-sm dropdown-toggle\" type=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                      备注\n                    </button>\n                    <div class=\"dropdown-menu\">\n                      {{s.other}}\n                    </div>\n                  </div>\n                </td>\n                <td>{{s.schoolName}}</td>\n                <td>{{s.majorName}}</td>\n                <td>{{s.ddl1}}</td>\n                <td>{{s.ddl2}}</td>\n                <td>{{s.ddl3}}</td>\n                <td>{{s.recommNumber}}</td>\n                <td>\n                  <button href=\"/anew/todel/@a.id\" (click)=\"hmschooldetail(s)\">More</button>\n                </td>\n              </tr>\n\n            </tbody>\n          </table>\n        </div>\n        <div class=\"tab-pane fade \" id=\"dropdown3\">\n          <div class=\"col-sm-9\">\n            <div class=\"container\">\n              <div class=\"row clearfix\">\n                <div class=\"col-md-12 column\">\n                  <div class=\"row clearfix\">\n                    <div class=\"col-md-7 column\">\n                      <br>\n                      <form (submit)=\"addNotif(postForm)\" #postForm=\"ngForm\" ngNativeValidate>\n                        <fieldset>\n                          <fieldset class=\"form-group\">\n                            <div class=\"form-check\">\n                              <label class=\"form-check-label\">\n                                <input type=\"radio\" class=\"form-check-input\" name=\"type\" id=\"immedi\" value=\"紧急\"  ngModel required>\n                                紧急\n                              </label>\n                              <label class=\"form-check-label\">\n                                <input type=\"radio\" class=\"form-check-input\" name=\"type\" id=\"normal\" value=\"一般\"  ngModel required>\n                                一般\n                              </label>\n                              <label class=\"form-check-label\">\n                                <input type=\"radio\" class=\"form-check-input\" name=\"type\" id=\"medium\" value=\"比较紧急\" ngModel required>\n                                比较紧急\n                              </label>\n                            </div>\n                          </fieldset>\n                          <div class=\"form-group\">\n                            <label for=\"exampleTextarea\" class=\"form-label mt-4\">通知内容</label>\n                            <input class=\"form-control\" id=\"exampleTextarea\" rows=\"3\" style=\"margin-top: 0px; margin-bottom: 0px; height: 108px;\" ngModel required>\n                          </div>\n                          <div class=\"form-group\">\n                            <label for=\"exampleInputPassword1\">通知日期</label>\n                            <input class=\"form-control\" name=\"ddl1\" type=\"date\" placeholder=\"date\" style=\"width:50%\" ngModel required>\n                          </div>\n              \n                          <button  class=\"btn btn-primary\">发送通知</button>\n                        </fieldset>\n                      </form>\n                    </div>\n                    <div class=\"col-md-3 column\" *ngIf=\"notifs.length > 0\">\n                      <blockquote *ngFor=\"let n of notifs\">\n                        <p>\n                         {{n.content}}\n                        </p> <small>{{n.ndate}}  {{n.nstate}}</small>\n                      </blockquote>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n          \n          \n        </div>\n        <div class=\"tab-pane fade \" id=\"dropdown4\">\n          <div class=\"col-sm-9\">\n            <div class=\"container\">\n              <div class=\"row clearfix\">\n                <div class=\"col-md-12 column\">\n                  <div class=\"row clearfix\">\n                    <div class=\"col-md-7 column\">\n                      <br>\n                      <form (submit)=\"addTask(postForm)\" #postForm=\"ngForm\" ngNativeValidate>\n                        <fieldset>\n                          <fieldset class=\"form-group\">\n                            <div class=\"form-check\">\n                              <label class=\"form-check-label\">\n                                <input type=\"radio\" class=\"form-check-input\" name=\"ttype\" id=\"yuxin\" value=\"yuxin\"  ngModel required>\n                                yuxin &nbsp;\n                              </label>\n                              <label class=\"form-check-label\">\n                                <input type=\"radio\" class=\"form-check-input\" name=\"ttype\" id=\"yi\" value=\"小伊\"  ngModel required>\n                                小伊 &nbsp;\n                              </label>\n                              <label class=\"form-check-label\">\n                                <input type=\"radio\" class=\"form-check-input\" name=\"ttype\" id=\"dasong\" value=\"大松\" ngModel required>\n                                Yimei &nbsp;\n                              </label>\n                              <label class=\"form-check-label\">\n                                <input type=\"radio\" class=\"form-check-input\" name=\"ttype\" id=\"oth\" value=\"其他\" ngModel required>\n                                其他 &nbsp;\n                              </label>\n                            </div>\n                          </fieldset>\n                          <div class=\"form-group\">\n                            <label for=\"exampleTextarea\" class=\"form-label mt-4\">进度内容</label>\n                            <input class=\"form-control\" id=\"exampleText\" rows=\"3\" style=\"margin-top: 0px; margin-bottom: 0px; height: 108px;\" ngModel required>\n                          </div>\n                          <div class=\"form-group\">\n                            <label for=\"exampleInputPassword1\">进度发布日期</label>\n                            <input class=\"form-control\" name=\"tddl\" type=\"date\" placeholder=\"date\" style=\"width:50%\" ngModel required>\n                          </div>\n              \n                          <button  class=\"btn btn-primary\">更新进度</button>\n                        </fieldset>\n                      </form>\n                    </div>\n                    <div class=\"col-md-3 column\" *ngIf=\"tasks.length > 0\">\n                      <blockquote *ngFor=\"let ts of tasks\">\n                        <p>\n                         {{ts.content}}\n                        </p> <b style=\"font-size: 12px;\">{{ts.assigned}} </b><small>{{ts.tdate}}  {{ts.tstate}}</small>\n                      </blockquote>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n          \n          \n        </div>\n      </div>\n\n\n\n      </div>\n    </div>\n  </div>\n  \n  \n\n  "
+
+/***/ }),
+
+/***/ "./src/app/costudent/costudent.component.scss":
+/*!****************************************************!*\
+  !*** ./src/app/costudent/costudent.component.scss ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/* Set height of the grid so .sidenav can be 100% (adjust if needed) */\n.row.content {\n  height: 4000px; }\n/* Set gray background color and 100% height */\n.sidenav {\n  background-color: #f1f1f1;\n  height: 100%; }\n/* On small screens, set height to 'auto' for sidenav and grid */\n@media screen and (max-width: 1000px) {\n  .sidenav {\n    height: auto;\n    padding: 15px; }\n  .row.content {\n    height: auto; } }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9lY28vRG9jdW1lbnRzL01pY2hpL01pY2hpL3NyYy9hcHAvY29zdHVkZW50L2Nvc3R1ZGVudC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxzRUFBQTtBQUNBO0VBQ0UsY0FBYyxFQUFBO0FBR2hCLDhDQUFBO0FBQ0E7RUFDRSx5QkFBeUI7RUFDekIsWUFBWSxFQUFBO0FBSWQsZ0VBQUE7QUFDQTtFQUNFO0lBQ0UsWUFBWTtJQUNaLGFBQWEsRUFBQTtFQUVmO0lBQWMsWUFBWSxFQUFBLEVBQUciLCJmaWxlIjoic3JjL2FwcC9jb3N0dWRlbnQvY29zdHVkZW50LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLyogU2V0IGhlaWdodCBvZiB0aGUgZ3JpZCBzbyAuc2lkZW5hdiBjYW4gYmUgMTAwJSAoYWRqdXN0IGlmIG5lZWRlZCkgKi9cbi5yb3cuY29udGVudCB7XG4gIGhlaWdodDogNDAwMHB4O1xufVxuICAgIFxuLyogU2V0IGdyYXkgYmFja2dyb3VuZCBjb2xvciBhbmQgMTAwJSBoZWlnaHQgKi9cbi5zaWRlbmF2IHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2YxZjFmMTtcbiAgaGVpZ2h0OiAxMDAlO1xufVxuXG5cbi8qIE9uIHNtYWxsIHNjcmVlbnMsIHNldCBoZWlnaHQgdG8gJ2F1dG8nIGZvciBzaWRlbmF2IGFuZCBncmlkICovXG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAxMDAwcHgpIHtcbiAgLnNpZGVuYXYge1xuICAgIGhlaWdodDogYXV0bztcbiAgICBwYWRkaW5nOiAxNXB4O1xuICB9XG4gIC5yb3cuY29udGVudCB7aGVpZ2h0OiBhdXRvO30gXG59XG4iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/costudent/costudent.component.ts":
+/*!**************************************************!*\
+  !*** ./src/app/costudent/costudent.component.ts ***!
+  \**************************************************/
+/*! exports provided: CostudentComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CostudentComponent", function() { return CostudentComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _hm_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../hm.service */ "./src/app/hm.service.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _notif_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../notif.service */ "./src/app/notif.service.ts");
+/* harmony import */ var _task_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../task.service */ "./src/app/task.service.ts");
+/* harmony import */ var xlsx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! xlsx */ "./node_modules/xlsx/xlsx.js");
+/* harmony import */ var xlsx__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(xlsx__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var file_saver__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! file-saver */ "./node_modules/file-saver/dist/FileSaver.min.js");
+/* harmony import */ var file_saver__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(file_saver__WEBPACK_IMPORTED_MODULE_8__);
+
+
+
+
+
+
+
+
+
+var CostudentComponent = /** @class */ (function () {
+    function CostudentComponent(route, router, http, notifService, taskService, hmService) {
+        var _this = this;
+        this.route = route;
+        this.router = router;
+        this.http = http;
+        this.notifService = notifService;
+        this.taskService = taskService;
+        this.hmService = hmService;
+        this.students = []; //all the orders from database
+        this.hotels = [];
+        //教育背景信息
+        this.educations = [];
+        this.education = [];
+        //工作背景信息
+        this.experiences = [];
+        this.experience = [];
+        //通知信息
+        this.notifs = [];
+        //进度信息
+        this.tasks = [];
+        //school 信息
+        this.schools = [];
+        //推荐人信息
+        this.recommenders = [];
+        this.excelData = [];
+        this.route.queryParams.subscribe(function (params) {
+            _this.managerID = params["managerID"];
+            _this.studentID = params["studentID"];
+        });
+        console.log("学生 ID 为+" + this.studentID);
+    }
+    CostudentComponent.prototype.addNotif = function (form) {
+        var content = document.getElementById("exampleTextarea").value;
+        //console.log(content);
+        this.notifService.addNotif("", this.studentID, content, form.value.ddl1, "未读", form.value.type);
+        alert("发送通知成功!!");
+        window.location.reload();
+    };
+    CostudentComponent.prototype.addTask = function (form) {
+        var cont = document.getElementById("exampleText").value;
+        console.log(cont + "负责人" + form.value.ttype);
+        this.taskService.addTask("", this.studentID, this.studentName, form.value.ttype, cont, form.value.tddl, "未完成", "");
+        alert("更新进度成功!!");
+        window.location.reload();
+    };
+    CostudentComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.http.get('/api/hotels').subscribe(function (Data) {
+            _this.hotels = Data.hotels;
+            for (var _i = 0, _a = _this.hotels; _i < _a.length; _i++) {
+                var h = _a[_i];
+                if (h.userAccount === _this.managerID) {
+                    _this.hotel = h;
+                    _this.name = _this.hotel.name;
+                    _this.location = _this.hotel.location;
+                    _this.phone = _this.hotel.phone;
+                    _this.price = _this.hotel.price;
+                    console.log("管理者信息");
+                    console.log(_this.hotel);
+                }
+            }
+        });
+        //展示 学生个人信息
+        this.http.get('/api/students').subscribe(function (Data) {
+            _this.students = Data.students;
+            for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
+                var h = _a[_i];
+                if (h._id === _this.studentID) {
+                    _this.student = h;
+                    _this.studentName = _this.student.firstName + " " + _this.student.lastName;
+                    //this.Sname=this.student.name;
+                    //this.Slocation = this.student.location;
+                    console.log("Student Personal Information");
+                    console.log(_this.student);
+                }
+            }
+        });
+        //展示 此学生 教育背景信息
+        this.http.get('/api/educations/').subscribe(function (Data) {
+            _this.educations = Data.educations;
+            for (var _i = 0, _a = _this.educations; _i < _a.length; _i++) {
+                var y = _a[_i];
+                if (y.userAccount === _this.studentID) {
+                    _this.education.push(y);
+                }
+            }
+            console.log("学生的教育背景" + _this.education);
+        });
+        //展示 此学生 工作背景信息
+        this.http.get('/api/experiences/').subscribe(function (Data) {
+            _this.experiences = Data.experiences;
+            for (var _i = 0, _a = _this.experiences; _i < _a.length; _i++) {
+                var i = _a[_i];
+                if (i.userAccount === _this.studentID) {
+                    _this.experience.push(i);
+                }
+            }
+            console.log("学生的工作背景" + _this.experience);
+        });
+        //展示 此学生 选校信息
+        this.http.get('/api/studentschooldetail/' + this.studentID).subscribe(function (orderData) {
+            console.log(orderData);
+            _this.schools = orderData.schools;
+        });
+        //展示 此学生 推荐人信息
+        this.http.get('/api/studentrecommenderdetail/' + this.studentID).subscribe(function (orderData) {
+            console.log(orderData);
+            _this.recommenders = orderData.recommenders;
+        });
+        //展示 此学生通知信息
+        this.http.get('/api/notifdetail/' + this.studentID).subscribe(function (o) {
+            console.log(o);
+            _this.notifs = o.notifs;
+        });
+        //展示 此学生进度信息
+        this.http.get('/api/taskdetail/' + this.studentID).subscribe(function (o) {
+            console.log(o);
+            //this.tasks = o.tasks;
+            for (var i = o.tasks.length - 1; i >= 0; i--) {
+                _this.tasks.push(o.tasks[i]);
+            }
+        });
+        this.hotelMSub = this.hmService.getHotelMUpdatedListener().subscribe(function (hotels) {
+            _this.hotels = hotels;
+        });
+    };
+    //教育经历修改
+    CostudentComponent.prototype.deleteE = function (e) {
+        console.log(e._id);
+        this.http.delete('/api/education/' + e._id).subscribe(function (oooData) {
+            window.location.reload();
+        });
+    };
+    //工作经历修改
+    CostudentComponent.prototype.deleteEx = function (ex) {
+        console.log(ex._id);
+        this.http.delete('/api/experience/' + ex._id).subscribe(function (oooData) {
+            window.location.reload();
+        });
+    };
+    //推荐人删除
+    CostudentComponent.prototype.deleteRD = function (k) {
+        console.log(k._id);
+        this.http.delete('/api/recommenders/' + k._id).subscribe(function (oooData) {
+            window.location.reload();
+        });
+    };
+    //更新学生年级信息
+    CostudentComponent.prototype.updatePersonal = function () {
+        var Student = {
+            userAccount: this.student.userAccount,
+            firstName: this.student.firstName,
+            lastName: this.student.lastName,
+            email: this.student.email,
+            phone: this.student.phone,
+            dob: this.student.dob,
+            currentAddress: this.student.currentAddress,
+            permanentAddress: this.student.permanentAddress,
+            gender: this.student.gender,
+            ssn: this.student.ssn,
+            passport: this.student.passport,
+            visa: this.student.visa,
+            appEmail: this.student.appEmail,
+            appPsw: this.student.appPsw,
+            citizen: this.student.citizen,
+            //标化成绩类
+            TOEFL: this.student.TOEFL,
+            TOEFLR: this.student.TOEFLR,
+            TOEFLL: this.student.TOEFLL,
+            TOEFLS: this.student.TOEFLS,
+            TOEFLW: this.student.TOEFLW,
+            GRE: this.student.GRE,
+            GREV: this.student.GREV,
+            GREVP: this.student.GMATVP,
+            GREQ: this.student.GREQ,
+            GREQP: this.student.GREQP,
+            GREW: this.student.GREW,
+            GREWP: this.student.GREWP,
+            GMAT: this.student.GMAT,
+            GMATV: this.student.GMATV,
+            GMATVP: this.student.GMATVP,
+            GMATQ: this.student.GMATQ,
+            GMATQP: this.student.GMATQP,
+            GMATW: this.student.GMATW,
+            GMATWP: this.student.GMATWP,
+            GMATR: this.student.GMATR,
+            GMATRP: this.student.GMATRP,
+            OtherStandardTest: this.student.OtherStandardTest,
+            //Skills & Hobbies
+            Language: this.student.Language,
+            ComputerSkills: this.student.ComputerSkills,
+            OtherSkills: this.student.OtherSkills,
+            Hobbies: this.student.Hobbies,
+            //Professional Interest专业兴趣
+            Professional1: this.student.Professional1,
+            Professional2: this.student.Professional2,
+            Professional3: this.student.Professional3,
+            //Career Plan职业规划
+            CareerPlan1: this.student.CareerPlan1,
+            CareerPlan2: this.student.CareerPlan2,
+            //Personal Strength个人优势
+            Strength1: this.student.Strength1,
+            Strength2: this.student.Strength2,
+            //母亲信息
+            MomName: this.student.MomName,
+            MomAddress: this.student.MomAddress,
+            MomOrganazation: this.student.MomOrganazation,
+            MomJob: this.student.MomJob,
+            MomEducation: this.student.MomEducation,
+            MomSchool: this.student.MomSchool,
+            MomGraduation: this.student.MomGraduation,
+            MomPhone: this.student.MomPhone,
+            MomEmail: this.student.MomEmail,
+            //父亲信息
+            FatName: this.student.FatName,
+            FatAddress: this.student.FatAddress,
+            FatOrganazation: this.student.FatOrganazation,
+            FatJob: this.student.FatJob,
+            FatEducation: this.student.FatEducation,
+            FatSchool: this.student.FatSchool,
+            FatGraduation: this.student.FatGraduation,
+            FatPhone: this.student.FatPhone,
+            FatEmail: this.student.FatEmail,
+            //年级
+            year: document.getElementById("styear").value,
+            coordinator: document.getElementById("stcoord").value,
+        };
+        this.http.put('/api/students/' + this.student.userAccount, Student)
+            .subscribe(function (data) {
+            var options = {
+                overlay: true,
+                overlayClickToClose: true,
+                showCloseButton: true,
+                duration: 5000
+            };
+            if (data[0] === undefined) {
+                console.log("Undefine");
+            }
+        });
+        alert("更新学生年级成功!!");
+        window.location.reload();
+    };
+    //将json数组生成excel
+    CostudentComponent.prototype.exportAsExcelFile = function () {
+        var json = this.schools;
+        var worksheet = xlsx__WEBPACK_IMPORTED_MODULE_7__["utils"].json_to_sheet(json);
+        var workbook = { Sheets: { 'data': worksheet }, SheetNames: ['data'] };
+        var excelBuffer = xlsx__WEBPACK_IMPORTED_MODULE_7__["write"](workbook, { bookType: 'xlsx', type: 'array' });
+        //这里类型如果不正确，下载出来的可能是类似xml文件的东西或者是类似二进制的东西等
+        this.saveAsExcelFile(excelBuffer, this.studentName + "的选校列表");
+    };
+    CostudentComponent.prototype.saveAsExcelFile = function (buffer, fileName) {
+        var data = new Blob([buffer], {
+            type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8'
+        });
+        file_saver__WEBPACK_IMPORTED_MODULE_8__["saveAs"](data, fileName + '_export_' + new Date().getTime() + '.xlsx');
+        // 如果写成.xlsx,可能不能打开下载的文件，这可能与Excel版本有关
+    };
+    //direct to the hotel manage page
+    CostudentComponent.prototype.hotelman = function (hotel) {
+        var navigationExtras = {
+            queryParams: {
+                "managerID": hotel.userAccount,
+            }
+        };
+        this.router.navigate(['/comanage'], navigationExtras);
+    };
+    //direct to the hotel manager main page
+    CostudentComponent.prototype.main = function (hotel) {
+        var navigationExtras = {
+            queryParams: {
+                "managerID": hotel.userAccount,
+            }
+        };
+        this.router.navigate(['/coordmain'], navigationExtras);
+    };
+    //direct to the hotel order 
+    CostudentComponent.prototype.hmorder = function (hotel) {
+        var navigationExtras = {
+            queryParams: {
+                "managerID": hotel.userAccount,
+            }
+        };
+        this.router.navigate(['/coorder'], navigationExtras);
+    };
+    //direct to the addschool page
+    CostudentComponent.prototype.hmaddschool = function (hotel, student) {
+        var navigationExtras = {
+            queryParams: {
+                "managerID": hotel.userAccount,
+                "studentID": this.student._id,
+            }
+        };
+        this.router.navigate(['/hmaddschool'], navigationExtras);
+    };
+    //direct to the school detail page
+    CostudentComponent.prototype.hmschooldetail = function (s) {
+        var fullName = this.studentName
+            || (this.student ? (this.student.firstName + " " + this.student.lastName) : "");
+        var navigationExtras = {
+            queryParams: {
+                "managerID": this.managerID,
+                "studentID": this.studentID,
+                "fullName": fullName,
+                "schoolID": s._id,
+            }
+        };
+        this.router.navigate(['/cooschool'], navigationExtras);
+    };
+    //direct to the 推荐人更多信息 page
+    CostudentComponent.prototype.studentrec = function (k) {
+        var navigationExtras = {
+            queryParams: {
+                "managerID": this.managerID,
+                "studentID": this.student._id,
+                "recommenderID": k._id,
+            }
+        };
+        this.router.navigate(['/hmstudentrec'], navigationExtras);
+    };
+    CostudentComponent.prototype.ngOnDestroy = function () {
+        this.hotelMSub.unsubscribe();
+    };
+    CostudentComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-costudent',
+            template: __webpack_require__(/*! ./costudent.component.html */ "./src/app/costudent/costudent.component.html"),
+            styles: [__webpack_require__(/*! ./costudent.component.scss */ "./src/app/costudent/costudent.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"],
+            _notif_service__WEBPACK_IMPORTED_MODULE_5__["NotifService"],
+            _task_service__WEBPACK_IMPORTED_MODULE_6__["TaskService"],
+            _hm_service__WEBPACK_IMPORTED_MODULE_3__["HmService"]])
+    ], CostudentComponent);
+    return CostudentComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/education.service.ts":
 /*!**************************************!*\
   !*** ./src/app/education.service.ts ***!
@@ -3249,7 +4930,7 @@ var HminterviewComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<header>\n\t<nav class=\"navbar navbar-inverse\" role=\"navigation\">\n\t\t<div class=\"container-fluid\">\n\t\t<div class=\"navbar-header\">\n\t\t\t\t<a class=\"navbar-brand\" >一个很神秘的网页</a>\n\t\t</div>\n\t\t<div class=\"nav  navbar-right\">\n\t\t  <ul class=\"nav navbar-nav\">\n\t\t\t<li class=\"active\"><a (click)=\"main(hotel)\">HomePage</a></li>\n\t\t\t<li class=\"dropdown\">\n\t\t\t  <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n\t\t\t\t{{hotel.userAccount}} <b class=\"caret\"></b>\n\t\t\t  </a>\n\t\t\t  <ul class=\"dropdown-menu\">\n\t\t\t\t\t\t\t<li><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n\t\t\t\t\t\t\t<li><a (click)=\"comp(hotel)\">进度更新</a></li>\n\t\t\t\t\t\t\t<li class=\"divider\"></li>\n\t\t\t\t<li><a (click)=\"hotelman(hotel)\">学生管理</a></li>\n\t\t\t\t<li><a (click)=\"hmregister(hotel)\">登记账号</a></li>\n\t\t\t\t\t\t</ul>\n\t\t\t</li>\n\t\t\t<li class=\"nav navbar-nav navbar-right\">\n\t\t\t  <a href=\"/mainpage\">Log Out</a>\n\t\t\t</li>\n\t\t  </ul>\n\t\t</div>\n\t  </div>\n\t</nav>\n\t\n  </header>\n  \n  <ol class=\"breadcrumb\">\n\t<li class=\"active\">Home - {{hotel.userAccount}}</li>\n</ol>\n\n<div class=\"container-fluid\">\n\t<div class=\"row content\">\n\t  <div class=\"col-sm-3 sidenav\">\n\t\t<h4>{{hotel.userAccount}}  </h4>\n\t\t<ul class=\"nav nav-pills nav-stacked\">\n\t\t  <li class=\"active\"><a (click)=\"main(hotel)\">Home</a></li>\n\t\t  <li ><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n\t\t\t<li><a (click)=\"comp(hotel)\">进度更新</a></li>\n\t\t\t<li><a (click)=\"hotelman(hotel)\">学生管理</a></li>\n\t\t\t<li><a (click)=\"hmorder(hotel)\">学生申请</a></li>\n\t\t\t<li><a (click)=\"hmregister(hotel)\">登记账号</a></li>\n\t\t\t<li ><a (click)=\"hmblog(hotel)\">Blog管理</a></li>\n\t\t\t<li ><a (click)=\"hminterview(hotel)\">面试题库</a></li>\n\t\t</ul><br>\n\t\t\n\t  </div>\n\n\t  <div class=\"col-sm-9\">\n\t\t<div>\n\t\t\t<div class=\"row text-center\">\n\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t  <div class=\"btn-group\">\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  mwlCalendarPreviousView\n\t\t\t\t\t  [view]=\"view\"\n\t\t\t\t\t  [(viewDate)]=\"viewDate\"\n\t\t\t\t\t  (viewDateChange)=\"closeOpenMonthViewDay()\"\n\t\t\t\t\t>\n\t\t\t\t\t  Previous\n\t\t\t\t\t</div>\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-outline-secondary\"\n\t\t\t\t\t  mwlCalendarToday\n\t\t\t\t\t  [(viewDate)]=\"viewDate\"\n\t\t\t\t\t>\n\t\t\t\t\t  Today\n\t\t\t\t\t</div>\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  mwlCalendarNextView\n\t\t\t\t\t  [view]=\"view\"\n\t\t\t\t\t  [(viewDate)]=\"viewDate\"\n\t\t\t\t\t  (viewDateChange)=\"closeOpenMonthViewDay()\"\n\t\t\t\t\t>\n\t\t\t\t\t  Next\n\t\t\t\t\t</div>\n\t\t\t\t  </div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t  <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t  <div class=\"btn-group\">\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  (click)=\"setView(CalendarView.Month)\"\n\t\t\t\t\t  [class.active]=\"view === CalendarView.Month\"\n\t\t\t\t\t>\n\t\t\t\t\t  Month\n\t\t\t\t\t</div>\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  (click)=\"setView(CalendarView.Week)\"\n\t\t\t\t\t  [class.active]=\"view === CalendarView.Week\"\n\t\t\t\t\t>\n\t\t\t\t\t  Week\n\t\t\t\t\t</div>\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  (click)=\"setView(CalendarView.Day)\"\n\t\t\t\t\t  [class.active]=\"view === CalendarView.Day\"\n\t\t\t\t\t>\n\t\t\t\t\t  Day\n\t\t\t\t\t</div>\n\t\t\t\t  </div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t  <br/>\n\t\t\t  <div [ngSwitch]=\"view\">\n\t\t\t\t<mwl-calendar-month-view\n\t\t\t\t  *ngSwitchCase=\"CalendarView.Month\"\n\t\t\t\t  [viewDate]=\"viewDate\"\n\t\t\t\t  [events]=\"events\"\n\t\t\t\t  [refresh]=\"refresh\"\n\t\t\t\t  [activeDayIsOpen]=\"activeDayIsOpen\"\n\t\t\t\t  (dayClicked)=\"dayClicked($event.day)\"\n\t\t\t\t  (eventClicked)=\"handleEvent('Clicked', $event.event)\"\n\t\t\t\t  (eventTimesChanged)=\"eventTimesChanged($event)\"\n\t\t\t\t>\n\t\t\t\t</mwl-calendar-month-view>\n\t\t\t\t<mwl-calendar-week-view\n\t\t\t\t\t*ngSwitchCase=\"CalendarView.Week\"\n\t\t\t\t\t[viewDate]=\"viewDate\"\n\t\t\t\t\t[events]=\"events\"\n\t\t\t\t\t[refresh]=\"refresh\"\n\t\t\t\t\t(eventClicked)=\"handleEvent('Clicked', $event.event)\"\n\t\t\t\t\t(eventTimesChanged)=\"eventTimesChanged($event)\"\n\t\t\t\t>\n\t\t\t\t</mwl-calendar-week-view>\n\t\t\t\t<mwl-calendar-day-view\n\t\t\t\t\t*ngSwitchCase=\"CalendarView.Day\"\n\t\t\t\t\t[viewDate]=\"viewDate\"\n\t\t\t\t\t[events]=\"events\"\n\t\t\t\t\t[refresh]=\"refresh\"\n\t\t\t\t\t(eventClicked)=\"handleEvent('Clicked', $event.event)\"\n\t\t\t\t\t(eventTimesChanged)=\"eventTimesChanged($event)\"\n\t\t\t\t>\n\t\t\t\t</mwl-calendar-day-view>\n\t\t\t  </div>\t\t  \n\t\t</div>\n\n\n\t\t<h4><small>更新日志</small></h4>\n\n\t\t<hr>\n\t\t<h2>Version 2.22</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Mar 2, 2026.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span></h5><br>\n\t\t<p>1. 更新学年2026</p>\n\t\t<p>2. 更新求职页面</p>\n\n\n\n\t\t<hr>\n\t\t<h2>Version 2.21</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Dec 24, 2025.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span><span class=\"label label-danger\">学生系统</span></h5><br>\n\t\t<p>1. 添加项目“不申请”选项</p>\n\t\t<p>2. 学生系统中可以查看不申请的项目列表</p>\n\n\n\n\t\t<hr>\n\t\t<h2>Version 2.20</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Aug 18, 2025.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span><span class=\"label label-danger\">学生系统</span></h5><br>\n\t\t<p>1. 添加面试题库功能</p>\n\t\t<p>2. 学年更新至2025</p>\n\t\t<p>3. 学生系统中可以贡献题库</p>\n\n\n\t\t<hr>\n\t\t<h2>Version 2.19</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Mar 18, 2024.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span></h5><br>\n\t\t<p>1. 添加项目GRE选项</p>\n\t\t<p>2. 学年更新至2024</p>\n\n\t\t<hr>\n\t\t<h2>Version 2.18</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Sep 25, 2023.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span></h5><br>\n\t\t<p>1. 选校列表中加入 显示备注功能</p>\n\n\n\t\t<hr>\n\t\t<h2>Version 2.17</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Sep 12, 2023.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> <span class=\"label label-danger\">学生系统</span></h5><br>\n\t\t<p>1. 修复在添加学校界面 无法添加备注的bug</p>\n\t\t<p>2. 增加学生项目 面试，videessay 图标显示</p>\n\t\t<p>3. 修复学生界面，修改简历信息后，学生账号消失的bug</p>\n\n\t\t<hr>\n\t\t<h2>Version 2.16</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Aug 20, 2023.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> </h5><br>\n\t\t<p>1. 学年更新至2023</p>\n\n\n\t\t<hr>\n\t\t<h2>Version 2.15</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Aug 25, 2022.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> </h5><br>\n\t\t<p>1. 增加学生项目标签</p>\n\t\t<p>2. 修复学生学年bug，增加学年选项</p>\n\n\n\t\t<hr>\n\t\t<h2>Version 2.14</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Aug 01, 2022.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> </h5><br>\n\t\t<p>1. 优化添加选校功能，增加备注一栏</p>\n\t\t<p>2. 添加任务功能，为每个学生增加留学进度更新</p>\n\t\t\n\n\t\t<hr>\n\t\t<h2>Version 2.13</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Apr 26, 2022.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span><span class=\"label label-danger\">学生系统</span> </h5><br>\n\t\t<p>1. 新增学生排序功能，添加2021年度和2022年度分类</p>\n\t\t<p>2. 学生系统中将个人信息和简历信息区分</p>\n\t\t<p>3. 学生系统中添加推荐人界面重构，新增FAQ板块</p>\n\n\t\t\n\t\t<hr>\n\t\t<h2>Version 2.12</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Nov 13, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> </h5><br>\n\t\t<p>1. 新增推荐人、推荐信、和文书删除功能</p>\n\t\t<p>2. 新增展示学校推荐信总数</p>\n\t\t\n\t\t\n\t\t<hr>\n\t\t<h2>Version 2.11</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Oct 24, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> <span class=\"label label-danger\">学生系统</span></h5><br>\n\t\t<p>1. 新增查看日历事项中具体信息</p>\n\t\t<p>2. 学生系统中增加日历视图功能</p>\n\t\t<p>3. Debug 部分页面无法获取学生个人信息</p>\n\n\t\t<hr>\n\t\t<h2>Version 2.10</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Oct 22, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> </h5><br>\n\t\t<p>1. 新增日历事项</p>\n\n\n\t\t<hr>\n\t\t<h2>Version 2.9</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Oct 16, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> <span class=\"label label-danger\">学生系统</span></h5><br>\n\t\t<p>1. Debug学生系统不能修改职业规划</p>\n\t\t<p>2. Debug管理员系统无法下载学生列表</p>\n\n\t\t<hr>\n\t\t<h2>Version 2.8</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Oct 08, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> </h5><br>\n\t\t<p>1. 新增管理员系统中，可以下载学生的选校列表</p>\n\n\t\t<hr>\n\t\t<h2>Version 2.7</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Oct 02, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> </h5><br>\n\t\t<p>1. 新增管理员系统中，可以查看推荐人被引用的全部列表</p>\n\t\t\n\n\t\t<hr>\n\t\t<h2>Version 2.6</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Sep 27, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> <span class=\"label label-primary\">主页</span></h5><br>\n\t\t<p>1. 新增管理员系统中，对于学生的工作经历和教育背景 信息删除功能</p>\n\t\t<p>2. 添加 主页-留学申请 页面中其他服务内容，包含文书、咨询、简历修改</p><br>\n\n\n\t\t<hr>\n\t\t<h2>Version 2.5</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Sep 23, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span><span class=\"label label-primary\">主页</span></h5><br>\n\t\t<p>1. 新增管理员系统中可以查询学生的个人信息，包含工作经历，教育背景等信息</p><br>\n\t\t<p>2. 更新 主页-留学申请-研究生申请 页面中Q&A部分信息</p><br>\n\t\t<hr>\n\t\n\t\t<h2>Version 2.4</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Aug 21, 2021.</h5>\n\t\t<h5><span class=\"label label-primary\">主页</span></h5><br>\n\t\t<p>1. 新增 主页-留学生请 页面，及其子项（高中、本科、研究生）</p><br>\n\t\t<hr>\n\n\t\t<h2>Version 2.3</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Aug 08, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span><span class=\"label label-danger\">学生系统</span></h5><br>\n\t\t<p>1. 新增 通知系统</p><br>\n\t\t<p>1. 新增 文书系统</p><br>\n\t\t<hr>\n\n\t\t<br><br>\n\t  </div>\n\t</div>\n</div>\n\n  \n  "
+module.exports = "\n<header>\n\t<nav class=\"navbar navbar-inverse\" role=\"navigation\">\n\t\t<div class=\"container-fluid\">\n\t\t<div class=\"navbar-header\">\n\t\t\t\t<a class=\"navbar-brand\" >一个很神秘的网页</a>\n\t\t</div>\n\t\t<div class=\"nav  navbar-right\">\n\t\t  <ul class=\"nav navbar-nav\">\n\t\t\t<li class=\"active\"><a (click)=\"main(hotel)\">HomePage</a></li>\n\t\t\t<li class=\"dropdown\">\n\t\t\t  <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n\t\t\t\t{{hotel.userAccount}} <b class=\"caret\"></b>\n\t\t\t  </a>\n\t\t\t  <ul class=\"dropdown-menu\">\n\t\t\t\t\t\t\t<li><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n\t\t\t\t\t\t\t<li><a (click)=\"comp(hotel)\">进度更新</a></li>\n\t\t\t\t\t\t\t<li class=\"divider\"></li>\n\t\t\t\t<li><a (click)=\"hotelman(hotel)\">学生管理</a></li>\n\t\t\t\t<li><a (click)=\"hmregister(hotel)\">登记账号</a></li>\n\t\t\t\t\t\t</ul>\n\t\t\t</li>\n\t\t\t<li class=\"nav navbar-nav navbar-right\">\n\t\t\t  <a href=\"/mainpage\">Log Out</a>\n\t\t\t</li>\n\t\t  </ul>\n\t\t</div>\n\t  </div>\n\t</nav>\n\t\n  </header>\n  \n  <ol class=\"breadcrumb\">\n\t<li class=\"active\">Home - {{hotel.userAccount}}</li>\n</ol>\n\n<div class=\"container-fluid\">\n\t<div class=\"row content\">\n\t  <div class=\"col-sm-3 sidenav\">\n\t\t<h4>{{hotel.userAccount}}  </h4>\n\t\t<ul class=\"nav nav-pills nav-stacked\">\n\t\t  <li class=\"active\"><a (click)=\"main(hotel)\">Home</a></li>\n\t\t  <li ><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n\t\t\t<li><a (click)=\"comp(hotel)\">进度更新</a></li>\n\t\t\t<li><a (click)=\"hotelman(hotel)\">学生管理</a></li>\n\t\t\t<li><a (click)=\"hmorder(hotel)\">学生申请</a></li>\n\t\t\t<li><a (click)=\"hmregister(hotel)\">登记账号</a></li>\n\t\t\t<li ><a (click)=\"hmblog(hotel)\">Blog管理</a></li>\n\t\t\t<li ><a (click)=\"hminterview(hotel)\">面试题库</a></li>\n\t\t</ul><br>\n\t\t\n\t  </div>\n\n\t  <div class=\"col-sm-9\">\n\t\t<div>\n\t\t\t<div class=\"row text-center\">\n\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t  <div class=\"btn-group\">\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  mwlCalendarPreviousView\n\t\t\t\t\t  [view]=\"view\"\n\t\t\t\t\t  [(viewDate)]=\"viewDate\"\n\t\t\t\t\t  (viewDateChange)=\"closeOpenMonthViewDay()\"\n\t\t\t\t\t>\n\t\t\t\t\t  Previous\n\t\t\t\t\t</div>\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-outline-secondary\"\n\t\t\t\t\t  mwlCalendarToday\n\t\t\t\t\t  [(viewDate)]=\"viewDate\"\n\t\t\t\t\t>\n\t\t\t\t\t  Today\n\t\t\t\t\t</div>\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  mwlCalendarNextView\n\t\t\t\t\t  [view]=\"view\"\n\t\t\t\t\t  [(viewDate)]=\"viewDate\"\n\t\t\t\t\t  (viewDateChange)=\"closeOpenMonthViewDay()\"\n\t\t\t\t\t>\n\t\t\t\t\t  Next\n\t\t\t\t\t</div>\n\t\t\t\t  </div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t  <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t  <div class=\"btn-group\">\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  (click)=\"setView(CalendarView.Month)\"\n\t\t\t\t\t  [class.active]=\"view === CalendarView.Month\"\n\t\t\t\t\t>\n\t\t\t\t\t  Month\n\t\t\t\t\t</div>\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  (click)=\"setView(CalendarView.Week)\"\n\t\t\t\t\t  [class.active]=\"view === CalendarView.Week\"\n\t\t\t\t\t>\n\t\t\t\t\t  Week\n\t\t\t\t\t</div>\n\t\t\t\t\t<div\n\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t  (click)=\"setView(CalendarView.Day)\"\n\t\t\t\t\t  [class.active]=\"view === CalendarView.Day\"\n\t\t\t\t\t>\n\t\t\t\t\t  Day\n\t\t\t\t\t</div>\n\t\t\t\t  </div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t  <br/>\n\t\t\t  <div [ngSwitch]=\"view\">\n\t\t\t\t<mwl-calendar-month-view\n\t\t\t\t  *ngSwitchCase=\"CalendarView.Month\"\n\t\t\t\t  [viewDate]=\"viewDate\"\n\t\t\t\t  [events]=\"events\"\n\t\t\t\t  [refresh]=\"refresh\"\n\t\t\t\t  [activeDayIsOpen]=\"activeDayIsOpen\"\n\t\t\t\t  (dayClicked)=\"dayClicked($event.day)\"\n\t\t\t\t  (eventClicked)=\"handleEvent('Clicked', $event.event)\"\n\t\t\t\t  (eventTimesChanged)=\"eventTimesChanged($event)\"\n\t\t\t\t>\n\t\t\t\t</mwl-calendar-month-view>\n\t\t\t\t<mwl-calendar-week-view\n\t\t\t\t\t*ngSwitchCase=\"CalendarView.Week\"\n\t\t\t\t\t[viewDate]=\"viewDate\"\n\t\t\t\t\t[events]=\"events\"\n\t\t\t\t\t[refresh]=\"refresh\"\n\t\t\t\t\t(eventClicked)=\"handleEvent('Clicked', $event.event)\"\n\t\t\t\t\t(eventTimesChanged)=\"eventTimesChanged($event)\"\n\t\t\t\t>\n\t\t\t\t</mwl-calendar-week-view>\n\t\t\t\t<mwl-calendar-day-view\n\t\t\t\t\t*ngSwitchCase=\"CalendarView.Day\"\n\t\t\t\t\t[viewDate]=\"viewDate\"\n\t\t\t\t\t[events]=\"events\"\n\t\t\t\t\t[refresh]=\"refresh\"\n\t\t\t\t\t(eventClicked)=\"handleEvent('Clicked', $event.event)\"\n\t\t\t\t\t(eventTimesChanged)=\"eventTimesChanged($event)\"\n\t\t\t\t>\n\t\t\t\t</mwl-calendar-day-view>\n\t\t\t  </div>\t\t  \n\t\t</div>\n\n\n\t\t<h4><small>更新日志</small></h4>\n\n\n\t\t<hr>\n\t\t<h2>Version 2.3</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Mar 2, 2026.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span><span class=\"label label-danger\">学生系统</span></h5><br>\n\t\t<p>1. 修改管理员端获取学生信息不一致bug</p>\n\t\t<p>2. 添加 Coordinator角色及页面</p>\n\t\t<p>3. 修改学生通知界面bug</p>\n\n\n\n\t\t<hr>\n\t\t<h2>Version 2.22</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Mar 2, 2026.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span></h5><br>\n\t\t<p>1. 更新学年2026</p>\n\t\t<p>2. 更新求职页面</p>\n\n\n\n\t\t<hr>\n\t\t<h2>Version 2.21</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Dec 24, 2025.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span><span class=\"label label-danger\">学生系统</span></h5><br>\n\t\t<p>1. 添加项目“不申请”选项</p>\n\t\t<p>2. 学生系统中可以查看不申请的项目列表</p>\n\n\n\n\t\t<hr>\n\t\t<h2>Version 2.20</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Aug 18, 2025.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span><span class=\"label label-danger\">学生系统</span></h5><br>\n\t\t<p>1. 添加面试题库功能</p>\n\t\t<p>2. 学年更新至2025</p>\n\t\t<p>3. 学生系统中可以贡献题库</p>\n\n\n\t\t<hr>\n\t\t<h2>Version 2.19</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Mar 18, 2024.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span></h5><br>\n\t\t<p>1. 添加项目GRE选项</p>\n\t\t<p>2. 学年更新至2024</p>\n\n\t\t<hr>\n\t\t<h2>Version 2.18</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Sep 25, 2023.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span></h5><br>\n\t\t<p>1. 选校列表中加入 显示备注功能</p>\n\n\n\t\t<hr>\n\t\t<h2>Version 2.17</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Sep 12, 2023.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> <span class=\"label label-danger\">学生系统</span></h5><br>\n\t\t<p>1. 修复在添加学校界面 无法添加备注的bug</p>\n\t\t<p>2. 增加学生项目 面试，videessay 图标显示</p>\n\t\t<p>3. 修复学生界面，修改简历信息后，学生账号消失的bug</p>\n\n\t\t<hr>\n\t\t<h2>Version 2.16</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Aug 20, 2023.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> </h5><br>\n\t\t<p>1. 学年更新至2023</p>\n\n\n\t\t<hr>\n\t\t<h2>Version 2.15</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Aug 25, 2022.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> </h5><br>\n\t\t<p>1. 增加学生项目标签</p>\n\t\t<p>2. 修复学生学年bug，增加学年选项</p>\n\n\n\t\t<hr>\n\t\t<h2>Version 2.14</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Aug 01, 2022.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> </h5><br>\n\t\t<p>1. 优化添加选校功能，增加备注一栏</p>\n\t\t<p>2. 添加任务功能，为每个学生增加留学进度更新</p>\n\t\t\n\n\t\t<hr>\n\t\t<h2>Version 2.13</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Apr 26, 2022.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span><span class=\"label label-danger\">学生系统</span> </h5><br>\n\t\t<p>1. 新增学生排序功能，添加2021年度和2022年度分类</p>\n\t\t<p>2. 学生系统中将个人信息和简历信息区分</p>\n\t\t<p>3. 学生系统中添加推荐人界面重构，新增FAQ板块</p>\n\n\t\t\n\t\t<hr>\n\t\t<h2>Version 2.12</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Nov 13, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> </h5><br>\n\t\t<p>1. 新增推荐人、推荐信、和文书删除功能</p>\n\t\t<p>2. 新增展示学校推荐信总数</p>\n\t\t\n\t\t\n\t\t<hr>\n\t\t<h2>Version 2.11</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Oct 24, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> <span class=\"label label-danger\">学生系统</span></h5><br>\n\t\t<p>1. 新增查看日历事项中具体信息</p>\n\t\t<p>2. 学生系统中增加日历视图功能</p>\n\t\t<p>3. Debug 部分页面无法获取学生个人信息</p>\n\n\t\t<hr>\n\t\t<h2>Version 2.10</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Oct 22, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> </h5><br>\n\t\t<p>1. 新增日历事项</p>\n\n\n\t\t<hr>\n\t\t<h2>Version 2.9</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Oct 16, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> <span class=\"label label-danger\">学生系统</span></h5><br>\n\t\t<p>1. Debug学生系统不能修改职业规划</p>\n\t\t<p>2. Debug管理员系统无法下载学生列表</p>\n\n\t\t<hr>\n\t\t<h2>Version 2.8</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Oct 08, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> </h5><br>\n\t\t<p>1. 新增管理员系统中，可以下载学生的选校列表</p>\n\n\t\t<hr>\n\t\t<h2>Version 2.7</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Oct 02, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> </h5><br>\n\t\t<p>1. 新增管理员系统中，可以查看推荐人被引用的全部列表</p>\n\t\t\n\n\t\t<hr>\n\t\t<h2>Version 2.6</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Sep 27, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span> <span class=\"label label-primary\">主页</span></h5><br>\n\t\t<p>1. 新增管理员系统中，对于学生的工作经历和教育背景 信息删除功能</p>\n\t\t<p>2. 添加 主页-留学申请 页面中其他服务内容，包含文书、咨询、简历修改</p><br>\n\n\n\t\t<hr>\n\t\t<h2>Version 2.5</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Sep 23, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span><span class=\"label label-primary\">主页</span></h5><br>\n\t\t<p>1. 新增管理员系统中可以查询学生的个人信息，包含工作经历，教育背景等信息</p><br>\n\t\t<p>2. 更新 主页-留学申请-研究生申请 页面中Q&A部分信息</p><br>\n\t\t<hr>\n\t\n\t\t<h2>Version 2.4</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Aug 21, 2021.</h5>\n\t\t<h5><span class=\"label label-primary\">主页</span></h5><br>\n\t\t<p>1. 新增 主页-留学生请 页面，及其子项（高中、本科、研究生）</p><br>\n\t\t<hr>\n\n\t\t<h2>Version 2.3</h2>\n\t\t<h5><span class=\"glyphicon glyphicon-time\"></span> Post by Yi, Aug 08, 2021.</h5>\n\t\t<h5><span class=\"label label-success\">管理员系统</span><span class=\"label label-danger\">学生系统</span></h5><br>\n\t\t<p>1. 新增 通知系统</p><br>\n\t\t<p>1. 新增 文书系统</p><br>\n\t\t<hr>\n\n\t\t<br><br>\n\t  </div>\n\t</div>\n</div>\n\n  \n  "
 
 /***/ }),
 
@@ -7337,7 +9018,7 @@ var HmstudentrecComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n\n<header>\n\t<nav class=\"navbar navbar-inverse\" role=\"navigation\">\n\t\t<div class=\"container-fluid\">\n\t\t<div class=\"navbar-header\">\n\t\t\t\t<a class=\"navbar-brand\" >一个很神秘的网页</a>\n\t\t</div>\n\t\t<div class=\"nav  navbar-right\">\n\t\t  <ul class=\"nav navbar-nav\">\n\t\t\t<li class=\"active\"><a (click)=\"main(hotel)\">HomePage</a></li>\n\t\t\t<li class=\"dropdown\">\n\t\t\t  <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n\t\t\t\t{{hotel.userAccount}} <b class=\"caret\"></b>\n\t\t\t  </a>\n\t\t\t  <ul class=\"dropdown-menu\">\n\t\t\t\t\t\t\t<li><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n\t\t\t\t\t\t\t<li><a (click)=\"comp(hotel)\">Complete info</a></li>\n\t\t\t\t\t\t\t<li class=\"divider\"></li>\n\t\t\t\t\t\t</ul>\n\t\t\t</li>\n\t\t\t<li class=\"nav navbar-nav navbar-right\">\n\t\t\t  <a href=\"/mainpage\">Log Out</a>\n\t\t\t</li>\n\t\t  </ul>\n\t\t</div>\n\t  </div>\n\t</nav>\n\t\n  </header>\n  \n  <ol class=\"breadcrumb\">\n  <li><a (click)=\"main(hotel)\">Home</a></li>\n\t<li ><a (click)=\"main(hotel)\">{{hotel.userAccount}}</a></li>\n  <li class=\"active\">进度更新</li>\n</ol>\n\n<div class=\"container-fluid\">\n\t<div class=\"row content\">\n\t  <div class=\"col-sm-2 sidenav\">\n\t\t<h4>{{hotel.userAccount}}  </h4>\n\t\t<ul class=\"nav nav-pills nav-stacked\">\n\t\t  <li ><a (click)=\"main(hotel)\">Home</a></li>\n      <li ><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n      <li class=\"active\"><a (click)=\"comp(hotel)\">进度更新</a></li>\n      <li><a (click)=\"hotelman(hotel)\">学生管理</a></li>\n      <li><a (click)=\"hmorder(hotel)\">学生申请</a></li>\n      <li ><a (click)=\"hmregister(hotel)\">登记账号</a></li>\n      <li ><a (click)=\"hmblog(hotel)\">Blog管理</a></li>\n      <li ><a (click)=\"hminterview(hotel)\">面试题库</a></li>\n\t\t</ul><br>\n\t\t\n\t  </div>\n  \n\t  <div class=\"col-sm-10\">\n      <div id=\"register\">\n        <ul class=\"nav nav-tabs\">\n          <li class=\"nav-item\">\n            <a class=\"nav-link \" data-toggle=\"tab\" href=\"#yuxin\" >Yuxin</a>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link \" data-toggle=\"tab\" href=\"#yi\" >小伊</a>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link \" data-toggle=\"tab\" href=\"#dasong\" >大松</a>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link \" data-toggle=\"tab\" href=\"#oth\" >其他</a>\n          </li>\n        </ul>\n        <div id=\"myTabContent\" class=\"tab-content\">\n          <div class=\"tab-pane fade in active\" id=\"yuxin\">               \n            <div class=\"col-sm-12\">\n              <div class=\"container\">\n                <div class=\"row clearfix\" >\n                  <div class=\"col-md-12 column\" >\n                    <div class=\"row clearfix\"  >\n                      <div class=\"col-md-6 column\" >\n                        <br>\n                        <h3>未完成</h3>\n                        <br>\n                        <div *ngIf=\"tasks.length > 0\">\n                          <div *ngFor=\"let ts of tasks\">\n                            <div *ngIf=\"ts.assigned=='yuxin'\">\n                              <div class=\"list-group\" *ngIf=\"ts.tstate=='未完成'\">\n                                <a  (click)=\"update(ts)\" class=\"list-group-item list-group-item-action flex-column align-items-start\" >\n                                  <div class=\"d-flex w-100 justify-content-between\">\n                                    <h3 class=\"mb-1\">{{ts.studentname}}</h3>\n                                    <small>{{ts.tdate}}</small>\n                                  </div>\n                                  <p class=\"mb-1\"> {{ts.content}}</p>\n                                </a>\n                              </div>\n                            </div>\n                          </div>\n                        </div>\n\n \n\n                      </div>\n                      <div class=\"col-md-6 column\" *ngIf=\"tasks.length > 0\">\n                        <br>\n                        <h3>已完成</h3>\n                        <br>\n                        <div *ngFor=\"let ts of tasks\">\n                          <div *ngIf=\"ts.assigned=='yuxin'\">\n                            <div class=\"list-group\" *ngIf=\"ts.tstate=='完成'\">\n                              <blockquote >\n                                <p>\n                                 {{ts.content}}\n                                </p> <b style=\"font-size: 12px;\">{{ts.studentname}}</b><small>{{ts.tdate}}  {{ts.tstate}}</small>\n                              </blockquote>\n                            </div>\n                          </div>\n                        </div>\n                        \n                      </div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n  \n  \n  \n  \n  \n  \n          </div>\n          <div class=\"tab-pane fade \" id=\"yi\">               \n            <div class=\"col-sm-12\">\n              <div class=\"container\">\n                <div class=\"row clearfix\" >\n                  <div class=\"col-md-12 column\" >\n                    <div class=\"row clearfix\"  >\n                      <div class=\"col-md-6 column\" >\n                        <br>\n                        <h3>未完成</h3>\n                        <br>\n                        <div *ngIf=\"tasks.length > 0\">\n                          <div *ngFor=\"let ts of tasks\">\n                            <div *ngIf=\"ts.assigned=='小伊'\">\n                              <div class=\"list-group\" *ngIf=\"ts.tstate=='未完成'\">\n                                <a  (click)=\"update(ts)\" class=\"list-group-item list-group-item-action flex-column align-items-start\" >\n                                  <div class=\"d-flex w-100 justify-content-between\">\n                                    <h3 class=\"mb-1\">{{ts.studentname}}</h3>\n                                    <small>{{ts.tdate}}</small>\n                                  </div>\n                                  <p class=\"mb-1\"> {{ts.content}}</p>\n                                </a>\n                              </div>\n                            </div>\n                          </div>\n                        </div>\n\n \n\n                      </div>\n                      <div class=\"col-md-6 column\" *ngIf=\"tasks.length > 0\">\n                        <br>\n                        <h3>已完成</h3>\n                        <br>\n                        <div *ngFor=\"let ts of tasks\">\n                          <div *ngIf=\"ts.assigned=='小伊'\">\n                            <div class=\"list-group\" *ngIf=\"ts.tstate=='完成'\">\n                              <blockquote >\n                                <p>\n                                 {{ts.content}}\n                                </p> <b style=\"font-size: 12px;\">{{ts.studentname}}</b><small>{{ts.tdate}}  {{ts.tstate}}</small>\n                              </blockquote>\n                            </div>\n                          </div>\n                        </div>\n                        \n                      </div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n  \n  \n  \n  \n  \n  \n          </div>\n          <div class=\"tab-pane fade \" id=\"dasong\">               \n            <div class=\"col-sm-12\">\n              <div class=\"container\">\n                <div class=\"row clearfix\" >\n                  <div class=\"col-md-12 column\" >\n                    <div class=\"row clearfix\"  >\n                      <div class=\"col-md-6 column\" >\n                        <br>\n                        <h3>未完成</h3>\n                        <br>\n                        <div *ngIf=\"tasks.length > 0\">\n                          <div *ngFor=\"let ts of tasks\">\n                            <div *ngIf=\"ts.assigned=='大松'\">\n                              <div class=\"list-group\" *ngIf=\"ts.tstate=='未完成'\">\n                                <a  (click)=\"update(ts)\" class=\"list-group-item list-group-item-action flex-column align-items-start\" >\n                                  <div class=\"d-flex w-100 justify-content-between\">\n                                    <h3 class=\"mb-1\">{{ts.studentname}}</h3>\n                                    <small>{{ts.tdate}}</small>\n                                  </div>\n                                  <p class=\"mb-1\"> {{ts.content}}</p>\n                                </a>\n                              </div>\n                            </div>\n                          </div>\n                        </div>\n\n \n\n                      </div>\n                      <div class=\"col-md-6 column\" *ngIf=\"tasks.length > 0\">\n                        <br>\n                        <h3>已完成</h3>\n                        <br>\n                        <div *ngFor=\"let ts of tasks\">\n                          <div *ngIf=\"ts.assigned=='大松'\">\n                            <div class=\"list-group\" *ngIf=\"ts.tstate=='完成'\">\n                              <blockquote >\n                                <p>\n                                 {{ts.content}}\n                                </p> <b style=\"font-size: 12px;\">{{ts.studentname}}</b><small>{{ts.tdate}}  {{ts.tstate}}</small>\n                              </blockquote>\n                            </div>\n                          </div>\n                        </div>\n                        \n                      </div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n  \n  \n  \n  \n  \n  \n          </div>\n          <div class=\"tab-pane fade \" id=\"oth\">               \n            <div class=\"col-sm-12\">\n              <div class=\"container\">\n                <div class=\"row clearfix\" >\n                  <div class=\"col-md-12 column\" >\n                    <div class=\"row clearfix\"  >\n                      <div class=\"col-md-6 column\" >\n                        <br>\n                        <h3>未完成</h3>\n                        <br>\n                        <div *ngIf=\"tasks.length > 0\">\n                          <div *ngFor=\"let ts of tasks\">\n                            <div *ngIf=\"ts.assigned=='其他'\">\n                              <div class=\"list-group\" *ngIf=\"ts.tstate=='未完成'\">\n                                <a  (click)=\"update(ts)\" class=\"list-group-item list-group-item-action flex-column align-items-start\" >\n                                  <div class=\"d-flex w-100 justify-content-between\">\n                                    <h3 class=\"mb-1\">{{ts.studentname}}</h3>\n                                    <small>{{ts.tdate}}</small>\n                                  </div>\n                                  <p class=\"mb-1\"> {{ts.content}}</p>\n                                </a>\n                              </div>\n                            </div>\n                          </div>\n                        </div>\n\n \n\n                      </div>\n                      <div class=\"col-md-6 column\" *ngIf=\"tasks.length > 0\">\n                        <br>\n                        <h3>已完成</h3>\n                        <br>\n                        <div *ngFor=\"let ts of tasks\">\n                          <div *ngIf=\"ts.assigned=='其他'\">\n                            <div class=\"list-group\" *ngIf=\"ts.tstate=='完成'\">\n                              <blockquote >\n                                <p>\n                                 {{ts.content}}\n                                </p> <b style=\"font-size: 12px;\">{{ts.studentname}}</b><small>{{ts.tdate}}  {{ts.tstate}}</small>\n                              </blockquote>\n                            </div>\n                          </div>\n                        </div>\n                        \n                      </div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n  \n  \n  \n  \n  \n  \n          </div>\n  \n  \n        </div>\n\n        \n      <hr>\n\n        \n        \n\n\t  </div>\n\n\t</div>\n</div>\n\n\n"
+module.exports = "\n\n<header>\n\t<nav class=\"navbar navbar-inverse\" role=\"navigation\">\n\t\t<div class=\"container-fluid\">\n\t\t<div class=\"navbar-header\">\n\t\t\t\t<a class=\"navbar-brand\" >一个很神秘的网页</a>\n\t\t</div>\n\t\t<div class=\"nav  navbar-right\">\n\t\t  <ul class=\"nav navbar-nav\">\n\t\t\t<li class=\"active\"><a (click)=\"main(hotel)\">HomePage</a></li>\n\t\t\t<li class=\"dropdown\">\n\t\t\t  <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n\t\t\t\t{{hotel.userAccount}} <b class=\"caret\"></b>\n\t\t\t  </a>\n\t\t\t  <ul class=\"dropdown-menu\">\n\t\t\t\t\t\t\t<li><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n\t\t\t\t\t\t\t<li><a (click)=\"comp(hotel)\">Complete info</a></li>\n\t\t\t\t\t\t\t<li class=\"divider\"></li>\n\t\t\t\t\t\t</ul>\n\t\t\t</li>\n\t\t\t<li class=\"nav navbar-nav navbar-right\">\n\t\t\t  <a href=\"/mainpage\">Log Out</a>\n\t\t\t</li>\n\t\t  </ul>\n\t\t</div>\n\t  </div>\n\t</nav>\n\t\n  </header>\n  \n  <ol class=\"breadcrumb\">\n  <li><a (click)=\"main(hotel)\">Home</a></li>\n\t<li ><a (click)=\"main(hotel)\">{{hotel.userAccount}}</a></li>\n  <li class=\"active\">进度更新</li>\n</ol>\n\n<div class=\"container-fluid\">\n\t<div class=\"row content\">\n\t  <div class=\"col-sm-2 sidenav\">\n\t\t<h4>{{hotel.userAccount}}  </h4>\n\t\t<ul class=\"nav nav-pills nav-stacked\">\n\t\t  <li ><a (click)=\"main(hotel)\">Home</a></li>\n      <li ><a (click)=\"modifyP(hotel)\">Change Password</a></li>\n      <li class=\"active\"><a (click)=\"comp(hotel)\">进度更新</a></li>\n      <li><a (click)=\"hotelman(hotel)\">学生管理</a></li>\n      <li><a (click)=\"hmorder(hotel)\">学生申请</a></li>\n      <li ><a (click)=\"hmregister(hotel)\">登记账号</a></li>\n      <li ><a (click)=\"hmblog(hotel)\">Blog管理</a></li>\n      <li ><a (click)=\"hminterview(hotel)\">面试题库</a></li>\n\t\t</ul><br>\n\t\t\n\t  </div>\n  \n\t  <div class=\"col-sm-10\">\n      <div id=\"register\">\n        <ul class=\"nav nav-tabs\">\n          <li class=\"nav-item\">\n            <a class=\"nav-link \" data-toggle=\"tab\" href=\"#yuxin\" >Yuxin</a>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link \" data-toggle=\"tab\" href=\"#yi\" >小伊</a>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link \" data-toggle=\"tab\" href=\"#dasong\" >Yimei</a>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link \" data-toggle=\"tab\" href=\"#oth\" >其他</a>\n          </li>\n        </ul>\n        <div id=\"myTabContent\" class=\"tab-content\">\n          <div class=\"tab-pane fade in active\" id=\"yuxin\">               \n            <div class=\"col-sm-12\">\n              <div class=\"container\">\n                <div class=\"row clearfix\" >\n                  <div class=\"col-md-12 column\" >\n                    <div class=\"row clearfix\"  >\n                      <div class=\"col-md-6 column\" >\n                        <br>\n                        <h3>未完成</h3>\n                        <br>\n                        <div *ngIf=\"tasks.length > 0\">\n                          <div *ngFor=\"let ts of tasks\">\n                            <div *ngIf=\"ts.assigned=='yuxin'\">\n                              <div class=\"list-group\" *ngIf=\"ts.tstate=='未完成'\">\n                                <a  (click)=\"update(ts)\" class=\"list-group-item list-group-item-action flex-column align-items-start\" >\n                                  <div class=\"d-flex w-100 justify-content-between\">\n                                    <h3 class=\"mb-1\">{{ts.studentname}}</h3>\n                                    <small>{{ts.tdate}}</small>\n                                  </div>\n                                  <p class=\"mb-1\"> {{ts.content}}</p>\n                                </a>\n                              </div>\n                            </div>\n                          </div>\n                        </div>\n\n \n\n                      </div>\n                      <div class=\"col-md-6 column\" *ngIf=\"tasks.length > 0\">\n                        <br>\n                        <h3>已完成</h3>\n                        <br>\n                        <div *ngFor=\"let ts of tasks\">\n                          <div *ngIf=\"ts.assigned=='yuxin'\">\n                            <div class=\"list-group\" *ngIf=\"ts.tstate=='完成'\">\n                              <blockquote >\n                                <p>\n                                 {{ts.content}}\n                                </p> <b style=\"font-size: 12px;\">{{ts.studentname}}</b><small>{{ts.tdate}}  {{ts.tstate}}</small>\n                              </blockquote>\n                            </div>\n                          </div>\n                        </div>\n                        \n                      </div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n  \n  \n  \n  \n  \n  \n          </div>\n          <div class=\"tab-pane fade \" id=\"yi\">               \n            <div class=\"col-sm-12\">\n              <div class=\"container\">\n                <div class=\"row clearfix\" >\n                  <div class=\"col-md-12 column\" >\n                    <div class=\"row clearfix\"  >\n                      <div class=\"col-md-6 column\" >\n                        <br>\n                        <h3>未完成</h3>\n                        <br>\n                        <div *ngIf=\"tasks.length > 0\">\n                          <div *ngFor=\"let ts of tasks\">\n                            <div *ngIf=\"ts.assigned=='小伊'\">\n                              <div class=\"list-group\" *ngIf=\"ts.tstate=='未完成'\">\n                                <a  (click)=\"update(ts)\" class=\"list-group-item list-group-item-action flex-column align-items-start\" >\n                                  <div class=\"d-flex w-100 justify-content-between\">\n                                    <h3 class=\"mb-1\">{{ts.studentname}}</h3>\n                                    <small>{{ts.tdate}}</small>\n                                  </div>\n                                  <p class=\"mb-1\"> {{ts.content}}</p>\n                                </a>\n                              </div>\n                            </div>\n                          </div>\n                        </div>\n\n \n\n                      </div>\n                      <div class=\"col-md-6 column\" *ngIf=\"tasks.length > 0\">\n                        <br>\n                        <h3>已完成</h3>\n                        <br>\n                        <div *ngFor=\"let ts of tasks\">\n                          <div *ngIf=\"ts.assigned=='小伊'\">\n                            <div class=\"list-group\" *ngIf=\"ts.tstate=='完成'\">\n                              <blockquote >\n                                <p>\n                                 {{ts.content}}\n                                </p> <b style=\"font-size: 12px;\">{{ts.studentname}}</b><small>{{ts.tdate}}  {{ts.tstate}}</small>\n                              </blockquote>\n                            </div>\n                          </div>\n                        </div>\n                        \n                      </div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n  \n  \n  \n  \n  \n  \n          </div>\n          <div class=\"tab-pane fade \" id=\"dasong\">               \n            <div class=\"col-sm-12\">\n              <div class=\"container\">\n                <div class=\"row clearfix\" >\n                  <div class=\"col-md-12 column\" >\n                    <div class=\"row clearfix\"  >\n                      <div class=\"col-md-6 column\" >\n                        <br>\n                        <h3>未完成</h3>\n                        <br>\n                        <div *ngIf=\"tasks.length > 0\">\n                          <div *ngFor=\"let ts of tasks\">\n                            <div *ngIf=\"ts.assigned=='大松'\">\n                              <div class=\"list-group\" *ngIf=\"ts.tstate=='未完成'\">\n                                <a  (click)=\"update(ts)\" class=\"list-group-item list-group-item-action flex-column align-items-start\" >\n                                  <div class=\"d-flex w-100 justify-content-between\">\n                                    <h3 class=\"mb-1\">{{ts.studentname}}</h3>\n                                    <small>{{ts.tdate}}</small>\n                                  </div>\n                                  <p class=\"mb-1\"> {{ts.content}}</p>\n                                </a>\n                              </div>\n                            </div>\n                          </div>\n                        </div>\n\n \n\n                      </div>\n                      <div class=\"col-md-6 column\" *ngIf=\"tasks.length > 0\">\n                        <br>\n                        <h3>已完成</h3>\n                        <br>\n                        <div *ngFor=\"let ts of tasks\">\n                          <div *ngIf=\"ts.assigned=='大松'\">\n                            <div class=\"list-group\" *ngIf=\"ts.tstate=='完成'\">\n                              <blockquote >\n                                <p>\n                                 {{ts.content}}\n                                </p> <b style=\"font-size: 12px;\">{{ts.studentname}}</b><small>{{ts.tdate}}  {{ts.tstate}}</small>\n                              </blockquote>\n                            </div>\n                          </div>\n                        </div>\n                        \n                      </div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n  \n  \n  \n  \n  \n  \n          </div>\n          <div class=\"tab-pane fade \" id=\"oth\">               \n            <div class=\"col-sm-12\">\n              <div class=\"container\">\n                <div class=\"row clearfix\" >\n                  <div class=\"col-md-12 column\" >\n                    <div class=\"row clearfix\"  >\n                      <div class=\"col-md-6 column\" >\n                        <br>\n                        <h3>未完成</h3>\n                        <br>\n                        <div *ngIf=\"tasks.length > 0\">\n                          <div *ngFor=\"let ts of tasks\">\n                            <div *ngIf=\"ts.assigned=='其他'\">\n                              <div class=\"list-group\" *ngIf=\"ts.tstate=='未完成'\">\n                                <a  (click)=\"update(ts)\" class=\"list-group-item list-group-item-action flex-column align-items-start\" >\n                                  <div class=\"d-flex w-100 justify-content-between\">\n                                    <h3 class=\"mb-1\">{{ts.studentname}}</h3>\n                                    <small>{{ts.tdate}}</small>\n                                  </div>\n                                  <p class=\"mb-1\"> {{ts.content}}</p>\n                                </a>\n                              </div>\n                            </div>\n                          </div>\n                        </div>\n\n \n\n                      </div>\n                      <div class=\"col-md-6 column\" *ngIf=\"tasks.length > 0\">\n                        <br>\n                        <h3>已完成</h3>\n                        <br>\n                        <div *ngFor=\"let ts of tasks\">\n                          <div *ngIf=\"ts.assigned=='其他'\">\n                            <div class=\"list-group\" *ngIf=\"ts.tstate=='完成'\">\n                              <blockquote >\n                                <p>\n                                 {{ts.content}}\n                                </p> <b style=\"font-size: 12px;\">{{ts.studentname}}</b><small>{{ts.tdate}}  {{ts.tstate}}</small>\n                              </blockquote>\n                            </div>\n                          </div>\n                        </div>\n                        \n                      </div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n  \n  \n  \n  \n  \n  \n          </div>\n  \n  \n        </div>\n\n        \n      <hr>\n\n        \n        \n\n\t  </div>\n\n\t</div>\n</div>\n\n\n"
 
 /***/ }),
 
@@ -8775,11 +10456,8 @@ var MainclassComponent = /** @class */ (function () {
     }
     MainclassComponent.prototype.checklogin = function () {
         var _this = this;
-        this.ngOnInit();
-        this.user = this.user;
-        this.studentID = this.studentID;
         //Check if there are empty fields
-        var temp9 = document.getElementById("login-user-account").value;
+        var temp9 = (document.getElementById("login-user-account").value || "").trim();
         var temp10 = document.getElementById("login-user-password").value;
         if (temp9 === "" || temp10 === "") {
             alert("Please enter all fields.");
@@ -8787,81 +10465,85 @@ var MainclassComponent = /** @class */ (function () {
             document.getElementById("login-user-password").value = null;
             return;
         }
-        else { //See if the account exist
-            console.log(this.user);
-            for (var index = 0; index < this.user.length; index++) {
-                if (temp9 == this.user[index].UserAccount) {
-                    //alert("find");
-                    if (temp10 == this.user[index].UserPassword) {
-                        document.getElementById("login-user-account").value = null;
-                        document.getElementById("login-user-password").value = null;
-                        if (this.user[index].Role == "manager") {
-                            alert("Welcome " + this.user[index].Role + "!");
-                            //this.user.length = this.user.length+1;
-                            //window.open("/hmmain","_self");
-                            //direct to the hotel manager page
-                            console.log(this.user[index].UserAccount);
-                            var navigationExtras = {
+        // Always fetch users first, then validate — avoids racing ngOnInit's async load
+        // (which previously caused "No such account" even when the account existed).
+        this.http.get('/api/users').subscribe(function (userData) {
+            _this.user = userData.user;
+            _this.validateLogin(temp9, temp10);
+        }, function () {
+            alert("Unable to reach login service. Please try again.");
+        });
+    };
+    MainclassComponent.prototype.validateLogin = function (temp9, temp10) {
+        var _this = this;
+        console.log(this.user);
+        var _loop_1 = function (index) {
+            if (temp9 != this_1.user[index].UserAccount) {
+                return "continue";
+            }
+            if (temp10 != this_1.user[index].UserPassword) {
+                document.getElementById("login-user-password").value = null;
+                alert("Your password is incorrect.");
+                return { value: void 0 };
+            }
+            document.getElementById("login-user-account").value = null;
+            document.getElementById("login-user-password").value = null;
+            if (this_1.user[index].Role == "manager") {
+                alert("Welcome " + this_1.user[index].Role + "!");
+                console.log(this_1.user[index].UserAccount);
+                var navigationExtras = {
+                    queryParams: {
+                        "managerID": this_1.user[index].UserAccount,
+                    }
+                };
+                this_1.router.navigate(['/hmmain'], navigationExtras);
+                return { value: void 0 };
+            }
+            if (this_1.user[index].Role == "coordinator") {
+                alert("Welcome " + this_1.user[index].Role + "!");
+                console.log(this_1.user[index].UserAccount);
+                var navigationExtras = {
+                    queryParams: {
+                        "managerID": this_1.user[index].UserAccount,
+                    }
+                };
+                this_1.router.navigate(['/coordmain'], navigationExtras);
+                return { value: void 0 };
+            }
+            if (this_1.user[index].Role == "student") {
+                alert("Welcome " + this_1.user[index].Role + "!");
+                this_1.http.get('/api/students').subscribe(function (Data) {
+                    _this.students = Data.students;
+                    console.log(_this.students);
+                    for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
+                        var h = _a[_i];
+                        if (h.userAccount == _this.user[index].UserAccount) {
+                            _this.studentID = h._id;
+                            console.log("此学生ID为" + _this.studentID);
+                            var NavigationExtras = {
                                 queryParams: {
-                                    "managerID": this.user[index].UserAccount,
+                                    "studentUserAcc": _this.user[index].UserAccount,
+                                    "studentID": _this.studentID,
                                 }
                             };
-                            this.router.navigate(['/hmmain'], navigationExtras);
-                            return;
-                        }
-                        if (this.user[index].Role == "student") {
-                            alert("Welcome " + this.user[index].Role + "!");
-                            //console.log(this.user[index].UserAccount);
-                            // API_PATH + '/students'
-                            this.http.get('/api/students').subscribe(function (Data) {
-                                _this.students = Data.students;
-                                console.log(_this.students);
-                                for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
-                                    var h = _a[_i];
-                                    if (h.userAccount == _this.user[index].UserAccount) {
-                                        _this.studentID = h._id;
-                                        console.log("此学生ID为" + _this.studentID);
-                                        var NavigationExtras = {
-                                            queryParams: {
-                                                "studentUserAcc": _this.user[index].UserAccount,
-                                                "studentID": _this.studentID,
-                                            }
-                                        };
-                                        _this.router.navigate(['/studentmain'], NavigationExtras);
-                                    }
-                                }
-                                //console.log("学生id为"+this.studentID);
-                            });
-                            //console.log("学生id2为"+this.studentID);
-                            // this.user.length = this.user.length+1;
-                            // const NavigationExtras: NavigationExtras = {
-                            //   queryParams: {
-                            //     "studentUserAcc" : this.user[index].UserAccount,
-                            //   }
-                            // };
-                            // window.open("/hotels","_self");
-                            //this.router.navigate(['/studentmain'], NavigationExtras);
-                            return;
+                            _this.router.navigate(['/studentmain'], NavigationExtras);
                         }
                     }
-                    else {
-                        document.getElementById("login-user-password").value = null;
-                        alert("Your password is incorrect.");
-                        return;
-                    }
-                }
-                else {
-                    continue;
-                }
+                });
+                return { value: void 0 };
             }
-            if (index == this.user.length) {
-                console.log(index);
-                alert("No such account.");
-                document.getElementById("login-user-account").value = null;
-                document.getElementById("login-user-password").value = null;
-                return;
-            }
+            alert("Unknown role: " + this_1.user[index].Role);
+            return { value: void 0 };
+        };
+        var this_1 = this;
+        for (var index = 0; index < this.user.length; index++) {
+            var state_1 = _loop_1(index);
+            if (typeof state_1 === "object")
+                return state_1.value;
         }
+        alert("No such account.");
+        document.getElementById("login-user-account").value = null;
+        document.getElementById("login-user-password").value = null;
     };
     MainclassComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -9071,6 +10753,17 @@ var MainpageComponent = /** @class */ (function () {
                                 }
                             };
                             this.router.navigate(['/hmmain'], navigationExtras);
+                            return;
+                        }
+                        if (this.user[index].Role == "coordinator") {
+                            alert("Welcome " + this.user[index].Role + "!");
+                            console.log(this.user[index].UserAccount);
+                            var navigationExtras = {
+                                queryParams: {
+                                    "managerID": this.user[index].UserAccount,
+                                }
+                            };
+                            this.router.navigate(['/coordmain'], navigationExtras);
                             return;
                         }
                         if (this.user[index].Role == "student") {
@@ -11041,7 +12734,7 @@ var StudentinterviewComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-inverse\" role=\"navigation\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n        <a class=\"navbar-brand\" >{{student.firstName}} {{student.lastName}}</a>\n      </div>\n      <div class=\"nav  navbar-right\">\n        <ul class=\"nav navbar-nav\">\n          <li class=\"active\"><a (click)=\"studentmain(student)\">Home</a></li>\n          <li class=\"dropdown\">\n            <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n              推荐人 <b class=\"caret\"></b>\n            </a>\n            <ul class=\"dropdown-menu\">\n              <li><a (click)=\"rec(student)\">全部推荐人信息</a></li>\n              <li><a (click)=\"addRecom(student)\">添加新的推荐人</a></li>\n            </ul>\n          </li>\n          <li class=\"nav navbar-nav navbar-right\">\n            <a href=\"/mainpage\">Log Out</a>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </nav>\n\t  <div class=\"container-fluid\">\n\t\t<div class=\"row content\">\n\t\t  <div class=\"col-sm-3 sidenav\">\n\t\t\t  <h3></h3>\n\t\t\t<ul class=\"nav nav-pills nav-stacked\">\n\t\t\t  <li class=\"active\"><a (click)=\"studentmain(student)\">申请状态</a></li>\n\t\t\t\t<li><a (click)=\"info(student)\">个人信息</a></li>\n\t\t\t\t<li ><a (click)=\"resume(student)\">简历信息</a></li>\n\t\t\t\t<li><a (click)=\"rec(student)\">推荐人信息</a></li>\n\t\t\t\t<li><a (click)=\"addRecom(student)\">添加推荐人</a></li>\n\t\t\t\t<li><a (click)=\"studentinterview(student)\">面试题库</a></li>\n\t\t\t\t<li><a (click)=\"studentaddinte(student)\">贡献面试题目</a></li>\n\t\t\t</ul><br>\t\n\t\t  </div>\n\t  \n\t\t  <div class=\"col-sm-9\">\n\t\t\t<div *ngIf=\"notifs.length > 0\">\n\t\t\t\t<div *ngFor=\"let n of notifs\">\n\t\t\t\t\t<div *ngIf=\"n.nstate=='未读'\">\n\t\t\t\t\t<div class=\"alert alert-dismissible alert-warning\" *ngIf=\"n.ntype=='比较紧急'\">\n\t\t\t\t\t\t<button type=\"button\" class=\"close\" data-dismiss=\"alert\"aria-hidden=\"true\">&times;</button>\n\t\t\t\t\t\t<div class=\"toast show\" role=\"alert\" aria-live=\"assertive\" aria-atomic=\"true\">\n\t\t\t\t\t\t\t<div class=\"toast-header\">\n\t\t\t\t\t\t\t  <strong class=\"me-auto\">未读{{n.ntype}}消息 </strong>\n\t\t\t\t\t\t\t  <small>{{n.ndate}}</small>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"toast-body\">\n\t\t\t\t\t\t\t\t{{n.content}}\n\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-warning btn-sm\" href=\"/anew/todel/@a.id\"  (click)=\"updateNotif(n)\">标记为已读消息</button>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"alert alert-dismissible alert-success\" *ngIf=\"n.ntype=='一般'\">\n\t\t\t\t\t\t<button type=\"button\" class=\"close\" data-dismiss=\"alert\"aria-hidden=\"true\">&times;</button>\n\t\t\t\t\t\t<div class=\"toast show\" role=\"alert\" aria-live=\"assertive\" aria-atomic=\"true\">\n\t\t\t\t\t\t\t<div class=\"toast-header\">\n\t\t\t\t\t\t\t  <strong class=\"me-auto\">未读{{n.ntype}}消息 </strong>\n\t\t\t\t\t\t\t  <small>{{n.ndate}}</small>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"toast-body\">\n\t\t\t\t\t\t\t\t{{n.content}}\n\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-success btn-sm\" href=\"/anew/todel/@a.id\"  (click)=\"updateNotif(n)\">标记为已读消息</button>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"alert alert-dismissible alert-danger\" *ngIf=\"n.ntype=='紧急'\">\n\t\t\t\t\t\t<button type=\"button\" class=\"close\" data-dismiss=\"alert\"aria-hidden=\"true\">&times;</button>\n\t\t\t\t\t\t<div class=\"toast show\" role=\"alert\" aria-live=\"assertive\" aria-atomic=\"true\">\n\t\t\t\t\t\t\t<div class=\"toast-header\">\n\t\t\t\t\t\t\t  <strong class=\"me-auto\">未读{{n.ntype}}消息 </strong>\n\t\t\t\t\t\t\t  <small>{{n.ndate}}</small>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"toast-body\">\n\t\t\t\t\t\t\t\t{{n.content}}\n\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-danger btn-sm\" href=\"/anew/todel/@a.id\"  (click)=\"updateNotif(n)\">标记为已读消息</button>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-sm-10\">\n\t\t\t\t<h4>已添加的选校列表：{{school.length}}</h4>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-sm-2\">\n\t\t\t\t\t<button type=\"button\" class=\"btn btn-primary\" data-toggle=\"collapse\" data-target=\"#demo\">日历视图</button>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div id=\"demo\" class=\"collapse\">\n\t\t\t<h5>请注意：日历视图的日期要比真实deadline提前一天！红色点为round1，黄色为round2，蓝色为round3！已完成的项目不会显示在日历视图中</h5>\n\t\t\t<hr>\n\t\t\t<div>\n\t\t\t\t<div class=\"row text-center\">\n\t\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t\t  <div class=\"btn-group\">\n\t\t\t\t\t\t<div\n\t\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t\t  mwlCalendarPreviousView\n\t\t\t\t\t\t  [view]=\"view\"\n\t\t\t\t\t\t  [(viewDate)]=\"viewDate\"\n\t\t\t\t\t\t  (viewDateChange)=\"closeOpenMonthViewDay()\"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t  Previous\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div\n\t\t\t\t\t\t  class=\"btn btn-outline-secondary\"\n\t\t\t\t\t\t  mwlCalendarToday\n\t\t\t\t\t\t  [(viewDate)]=\"viewDate\"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t  Today\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div\n\t\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t\t  mwlCalendarNextView\n\t\t\t\t\t\t  [view]=\"view\"\n\t\t\t\t\t\t  [(viewDate)]=\"viewDate\"\n\t\t\t\t\t\t  (viewDateChange)=\"closeOpenMonthViewDay()\"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t  Next\n\t\t\t\t\t\t</div>\n\t\t\t\t\t  </div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t\t  <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t\t  <div class=\"btn-group\">\n\t\t\t\t\t\t<div\n\t\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t\t  (click)=\"setView(CalendarView.Month)\"\n\t\t\t\t\t\t  [class.active]=\"view === CalendarView.Month\"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t  Month\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div\n\t\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t\t  (click)=\"setView(CalendarView.Week)\"\n\t\t\t\t\t\t  [class.active]=\"view === CalendarView.Week\"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t  Week\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div\n\t\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t\t  (click)=\"setView(CalendarView.Day)\"\n\t\t\t\t\t\t  [class.active]=\"view === CalendarView.Day\"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t  Day\n\t\t\t\t\t\t</div>\n\t\t\t\t\t  </div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t  <br/>\n\t\t\t\t  <div [ngSwitch]=\"view\">\n\t\t\t\t\t<mwl-calendar-month-view\n\t\t\t\t\t  *ngSwitchCase=\"CalendarView.Month\"\n\t\t\t\t\t  [viewDate]=\"viewDate\"\n\t\t\t\t\t  [events]=\"events\"\n\t\t\t\t\t  [refresh]=\"refresh\"\n\t\t\t\t\t  [activeDayIsOpen]=\"activeDayIsOpen\"\n\t\t\t\t\t  (dayClicked)=\"dayClicked($event.day)\"\n\t\t\t\t\t  (eventClicked)=\"handleEvent('Clicked', $event.event)\"\n\t\t\t\t\t  (eventTimesChanged)=\"eventTimesChanged($event)\"\n\t\t\t\t\t>\n\t\t\t\t\t</mwl-calendar-month-view>\n\t\t\t\t\t<mwl-calendar-week-view\n\t\t\t\t\t\t*ngSwitchCase=\"CalendarView.Week\"\n\t\t\t\t\t\t[viewDate]=\"viewDate\"\n\t\t\t\t\t\t[events]=\"events\"\n\t\t\t\t\t\t[refresh]=\"refresh\"\n\t\t\t\t\t\t(eventClicked)=\"handleEvent('Clicked', $event.event)\"\n\t\t\t\t\t\t(eventTimesChanged)=\"eventTimesChanged($event)\"\n\t\t\t\t\t>\n\t\t\t\t\t</mwl-calendar-week-view>\n\t\t\t\t\t<mwl-calendar-day-view\n\t\t\t\t\t\t*ngSwitchCase=\"CalendarView.Day\"\n\t\t\t\t\t\t[viewDate]=\"viewDate\"\n\t\t\t\t\t\t[events]=\"events\"\n\t\t\t\t\t\t[refresh]=\"refresh\"\n\t\t\t\t\t\t(eventClicked)=\"handleEvent('Clicked', $event.event)\"\n\t\t\t\t\t\t(eventTimesChanged)=\"eventTimesChanged($event)\"\n\t\t\t\t\t>\n\t\t\t\t\t</mwl-calendar-day-view>\n\t\t\t\t  </div>\t\t  \n\t\t\t</div>\n\n\t\t\t</div>\n\t\t\t  <hr>\n\t\t\t  <div class=\"panel-group\" id=\"accordion\" *ngIf=\"school.length > 0\">\n\t\t\t\t<div *ngFor=\"let k of school\">\n\t\t\t\t<div class=\"panel panel-success\"  *ngIf=\"k.state=='Offer'\">\n\t\t\t\t  <div class=\"panel-heading\" >\n\t\t\t\t\t<h4 class=\"panel-title\">\n\t\t\t\t\t  <a data-toggle=\"collapse\" data-parent=\"#accordion\" \n\t\t\t\t\t\thref=\"#{{k._id}}\">\n\t\t\t\t\t  <b> {{k.univName}} </b> 【 {{k.majorName}} 】 <br><small style=\"color: green;\">{{k.state}}</small>\n\t\t\t\t\t  </a>\n\t\t\t\t\t</h4>\n\t\t\t\t  </div>\n\t\t\t\t  <div id=\"{{k._id}}\" class=\"panel-collapse collapse\">\n\t\t\t\t\t<div class=\"panel-body\">\n\t\t\t\t\t\t<table class=\"table table-bordered\" >\n\t\t\t\t\t\t\t<tbody>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 1 </td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 2</td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 3</td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">需要推荐人数量</td>\t\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td >{{k.ddl1}} </td>\n\t\t\t\t\t\t\t\t<td >{{k.ddl2}}</td>\n\t\t\t\t\t\t\t\t<td >{{k.ddl3}}</td>\t\n\t\t\t\t\t\t\t\t<td >{{k.recommNumber}}</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">申请账号</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.applyAccount}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">申请密码</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.applyPassword}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">项目链接</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.link}}\n\t\t\t\t\t\t\t\t\t<a href=\"{{k.link}}\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"glyphicon glyphicon-link\"></span>\n\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t<td >\n\t\t\t\t\t\t\t\t\t<button href=\"/anew/todel/@a.id\" (click)=\"schooldetail(k)\">More</button>\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  \n\t\t\t\t\t\t\t</tbody>\n\t\t\t\t\t\t</table>\n\t\t\t\t\t</div>\n\t\t\t\t  </div>\n\t\t\t\t  <br>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"panel panel-primary\" *ngIf=\"k.state=='进行中'\">\n\t\t\t\t\t<div class=\"panel-heading\">\n\t\t\t\t\t  <h4 class=\"panel-title\">\n\t\t\t\t\t\t<a data-toggle=\"collapse\" data-parent=\"#accordion\" \n\t\t\t\t\t\t  href=\"#{{k._id}}\">\n\t\t\t\t\t\t<b> {{k.univName}} </b>【 {{k.majorName}} 】 <br><small style=\"color: whitesmoke;\">{{k.state}}</small>\n\t\t\t\t\t\t</a>\n\t\t\t\t\t  </h4>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div id=\"{{k._id}}\" class=\"panel-collapse collapse\">\n\t\t\t\t\t  <div class=\"panel-body\">\n\t\t\t\t\t\t<table class=\"table table-bordered\" >\n\t\t\t\t\t\t\t<tbody>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 1 </td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 2</td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 3</td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">需要推荐人数量</td>\t\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td >{{k.ddl1}} </td>\n\t\t\t\t\t\t\t\t<td >{{k.ddl2}}</td>\n\t\t\t\t\t\t\t\t<td >{{k.ddl3}}</td>\t\n\t\t\t\t\t\t\t\t<td >{{k.recommNumber}}</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">申请账号</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.applyAccount}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">申请密码</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.applyPassword}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">项目链接</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.link}}\n\t\t\t\t\t\t\t\t\t<a href=\"{{k.link}}\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"glyphicon glyphicon-link\"></span>\n\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t<td >\n\t\t\t\t\t\t\t\t\t<button href=\"/anew/todel/@a.id\" (click)=\"schooldetail(k)\">More</button>\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  \n\t\t\t\t\t\t\t</tbody>\n\t\t\t\t\t\t</table>\n\t\t\t\t\t  </div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<br>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"panel panel-default\" *ngIf=\"k.state=='不申请'\">\n\t\t\t\t\t<div class=\"panel-heading\">\n\t\t\t\t\t  <h4 class=\"panel-title\">\n\t\t\t\t\t\t<a data-toggle=\"collapse\" data-parent=\"#accordion\" \n\t\t\t\t\t\t  href=\"#{{k._id}}\">\n\t\t\t\t\t\t<b> {{k.univName}} </b>【 {{k.majorName}} 】 <br><small style=\"color: black;\">{{k.state}}</small>\n\t\t\t\t\t\t</a>\n\t\t\t\t\t  </h4>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div id=\"{{k._id}}\" class=\"panel-collapse collapse\">\n\t\t\t\t\t  <div class=\"panel-body\">\n\t\t\t\t\t\t<table class=\"table table-bordered\" >\n\t\t\t\t\t\t\t<tbody>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 1 </td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 2</td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 3</td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">需要推荐人数量</td>\t\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td >{{k.ddl1}} </td>\n\t\t\t\t\t\t\t\t<td >{{k.ddl2}}</td>\n\t\t\t\t\t\t\t\t<td >{{k.ddl3}}</td>\t\n\t\t\t\t\t\t\t\t<td >{{k.recommNumber}}</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">申请账号</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.applyAccount}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">申请密码</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.applyPassword}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">项目链接</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.link}}\n\t\t\t\t\t\t\t\t\t<a href=\"{{k.link}}\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"glyphicon glyphicon-link\"></span>\n\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t<td >\n\t\t\t\t\t\t\t\t\t<button href=\"/anew/todel/@a.id\" (click)=\"schooldetail(k)\">More</button>\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  \n\t\t\t\t\t\t\t</tbody>\n\t\t\t\t\t\t</table>\n\t\t\t\t\t  </div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<br>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"panel panel-warning\" *ngIf=\"k.state=='已完成'\">\n\t\t\t\t\t<div class=\"panel-heading\">\n\t\t\t\t\t  <h4 class=\"panel-title\">\n\t\t\t\t\t\t<a data-toggle=\"collapse\" data-parent=\"#accordion\" \n\t\t\t\t\t\t  href=\"#{{k._id}}\">\n\t\t\t\t\t\t<b> {{k.univName}} </b> 【 {{k.majorName}} 】  <br><small style=\"color: goldenrod;\">{{k.state}}</small>\n\t\t\t\t\t\t</a>\n\t\t\t\t\t  </h4>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div id=\"{{k._id}}\" class=\"panel-collapse collapse\">\n\t\t\t\t\t  <div class=\"panel-body\">\n\t\t\t\t\t\t<table class=\"table table-bordered\" >\n\t\t\t\t\t\t\t<tbody>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 1 </td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 2</td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 3</td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">需要推荐人数量</td>\t\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td >{{k.ddl1}} </td>\n\t\t\t\t\t\t\t\t<td >{{k.ddl2}}</td>\n\t\t\t\t\t\t\t\t<td >{{k.ddl3}}</td>\t\n\t\t\t\t\t\t\t\t<td >{{k.recommNumber}}</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">申请账号</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.applyAccount}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">申请密码</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.applyPassword}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">项目链接</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.link}}\n\t\t\t\t\t\t\t\t\t<a href=\"{{k.link}}\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"glyphicon glyphicon-link\"></span>\n\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t \n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t<td >\n\t\t\t\t\t\t\t\t\t<button href=\"/anew/todel/@a.id\" (click)=\"schooldetail(k)\">More</button>\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  \n\t\t\t\t\t\t\t</tbody>\n\t\t\t\t\t\t</table>\n\t\t\t\t\t  </div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<br>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"panel panel-default\" *ngIf=\"k.state=='拒信'\">\n\t\t\t\t\t<div class=\"panel-heading\">\n\t\t\t\t\t  <h4 class=\"panel-title\">\n\t\t\t\t\t\t<a data-toggle=\"collapse\" data-parent=\"#accordion\" \n\t\t\t\t\t\t  href=\"#{{k._id}}\">\n\t\t\t\t\t\t<b> {{k.univName}} </b> 【 {{k.majorName}} 】  <br><small style=\"color: red;\">{{k.state}}</small>\n\t\t\t\t\t\t</a>\n\t\t\t\t\t  </h4>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div id=\"{{k._id}}\" class=\"panel-collapse collapse\">\n\t\t\t\t\t  <div class=\"panel-body\">\n\t\t\t\t\t\t<table class=\"table table-bordered\" >\n\t\t\t\t\t\t\t<tbody>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 1 </td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 2</td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 3</td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">需要推荐人数量</td>\t\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td >{{k.ddl1}} </td>\n\t\t\t\t\t\t\t\t<td >{{k.ddl2}}</td>\n\t\t\t\t\t\t\t\t<td >{{k.ddl3}}</td>\t\n\t\t\t\t\t\t\t\t<td >{{k.recommNumber}}</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">申请账号</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.applyAccount}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">申请密码</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.applyPassword}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">项目链接</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.link}}\n\t\t\t\t\t\t\t\t\t<a href=\"{{k.link}}\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"glyphicon glyphicon-link\"></span>\n\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t<td >\n\t\t\t\t\t\t\t\t\t<button href=\"/anew/todel/@a.id\" (click)=\"schooldetail(k)\">More</button>\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  \n\t\t\t\t\t\t\t</tbody>\n\t\t\t\t\t\t</table>\n\t\t\t\t\t  </div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<br>\n\t\t\t\t</div>\n\t\t\t\t\n\t\t\t  </div>\n\t\t\t  \n\t\t  </div>\n\t\t</div>\n\t</div>\n\n"
+module.exports = "<nav class=\"navbar navbar-inverse\" role=\"navigation\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n        <a class=\"navbar-brand\" >{{student.firstName}} {{student.lastName}}</a>\n      </div>\n      <div class=\"nav  navbar-right\">\n        <ul class=\"nav navbar-nav\">\n          <li class=\"active\"><a (click)=\"studentmain(student)\">Home</a></li>\n          <li class=\"dropdown\">\n            <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n              推荐人 <b class=\"caret\"></b>\n            </a>\n            <ul class=\"dropdown-menu\">\n              <li><a (click)=\"rec(student)\">全部推荐人信息</a></li>\n              <li><a (click)=\"addRecom(student)\">添加新的推荐人</a></li>\n            </ul>\n          </li>\n          <li class=\"nav navbar-nav navbar-right\">\n            <a href=\"/mainpage\">Log Out</a>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </nav>\n\t  <div class=\"container-fluid\">\n\t\t<div class=\"row content\">\n\t\t  <div class=\"col-sm-3 sidenav\">\n\t\t\t  <h3></h3>\n\t\t\t<ul class=\"nav nav-pills nav-stacked\">\n\t\t\t  <li class=\"active\"><a (click)=\"studentmain(student)\">申请状态</a></li>\n\t\t\t\t<li><a (click)=\"info(student)\">个人信息</a></li>\n\t\t\t\t<li ><a (click)=\"resume(student)\">简历信息</a></li>\n\t\t\t\t<li><a (click)=\"rec(student)\">推荐人信息</a></li>\n\t\t\t\t<li><a (click)=\"addRecom(student)\">添加推荐人</a></li>\n\t\t\t\t<li><a (click)=\"studentinterview(student)\">面试题库</a></li>\n\t\t\t\t<li><a (click)=\"studentaddinte(student)\">贡献面试题目</a></li>\n\t\t\t</ul><br>\t\n\t\t  </div>\n\t  \n\t\t  <div class=\"col-sm-9\">\n\t\t\t<div *ngIf=\"notifs.length > 0\">\n\t\t\t\t<div *ngFor=\"let n of notifs\">\n\t\t\t\t\t<div class=\"alert alert-dismissible\"\n\t\t\t\t\t\t[class.alert-danger]=\"n.ntype=='紧急'\"\n\t\t\t\t\t\t[class.alert-warning]=\"n.ntype=='比较紧急'\"\n\t\t\t\t\t\t[class.alert-success]=\"n.ntype!='紧急' && n.ntype!='比较紧急'\"\n\t\t\t\t\t\t*ngIf=\"n.nstate=='未读'\">\n\t\t\t\t\t\t<button type=\"button\" class=\"close\" aria-hidden=\"true\" (click)=\"updateNotif(n)\">&times;</button>\n\t\t\t\t\t\t<div role=\"alert\" aria-live=\"assertive\" aria-atomic=\"true\">\n\t\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t  <strong>未读{{n.ntype}}消息 </strong>\n\t\t\t\t\t\t\t  <small>{{n.ndate}}</small>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t\t{{n.content}}\n\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-sm\" style=\"margin-left: 8px;\"\n\t\t\t\t\t\t\t\t\t[class.btn-danger]=\"n.ntype=='紧急'\"\n\t\t\t\t\t\t\t\t\t[class.btn-warning]=\"n.ntype=='比较紧急'\"\n\t\t\t\t\t\t\t\t\t[class.btn-success]=\"n.ntype!='紧急' && n.ntype!='比较紧急'\"\n\t\t\t\t\t\t\t\t\t(click)=\"updateNotif(n)\">标记为已读消息</button>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-sm-10\">\n\t\t\t\t<h4>已添加的选校列表：{{school.length}}</h4>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-sm-2\">\n\t\t\t\t\t<button type=\"button\" class=\"btn btn-primary\" data-toggle=\"collapse\" data-target=\"#demo\">日历视图</button>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div id=\"demo\" class=\"collapse\">\n\t\t\t<h5>请注意：日历视图的日期要比真实deadline提前一天！红色点为round1，黄色为round2，蓝色为round3！已完成的项目不会显示在日历视图中</h5>\n\t\t\t<hr>\n\t\t\t<div>\n\t\t\t\t<div class=\"row text-center\">\n\t\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t\t  <div class=\"btn-group\">\n\t\t\t\t\t\t<div\n\t\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t\t  mwlCalendarPreviousView\n\t\t\t\t\t\t  [view]=\"view\"\n\t\t\t\t\t\t  [(viewDate)]=\"viewDate\"\n\t\t\t\t\t\t  (viewDateChange)=\"closeOpenMonthViewDay()\"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t  Previous\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div\n\t\t\t\t\t\t  class=\"btn btn-outline-secondary\"\n\t\t\t\t\t\t  mwlCalendarToday\n\t\t\t\t\t\t  [(viewDate)]=\"viewDate\"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t  Today\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div\n\t\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t\t  mwlCalendarNextView\n\t\t\t\t\t\t  [view]=\"view\"\n\t\t\t\t\t\t  [(viewDate)]=\"viewDate\"\n\t\t\t\t\t\t  (viewDateChange)=\"closeOpenMonthViewDay()\"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t  Next\n\t\t\t\t\t\t</div>\n\t\t\t\t\t  </div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t\t  <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t\t  <div class=\"btn-group\">\n\t\t\t\t\t\t<div\n\t\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t\t  (click)=\"setView(CalendarView.Month)\"\n\t\t\t\t\t\t  [class.active]=\"view === CalendarView.Month\"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t  Month\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div\n\t\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t\t  (click)=\"setView(CalendarView.Week)\"\n\t\t\t\t\t\t  [class.active]=\"view === CalendarView.Week\"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t  Week\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div\n\t\t\t\t\t\t  class=\"btn btn-primary\"\n\t\t\t\t\t\t  (click)=\"setView(CalendarView.Day)\"\n\t\t\t\t\t\t  [class.active]=\"view === CalendarView.Day\"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t  Day\n\t\t\t\t\t\t</div>\n\t\t\t\t\t  </div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t  <br/>\n\t\t\t\t  <div [ngSwitch]=\"view\">\n\t\t\t\t\t<mwl-calendar-month-view\n\t\t\t\t\t  *ngSwitchCase=\"CalendarView.Month\"\n\t\t\t\t\t  [viewDate]=\"viewDate\"\n\t\t\t\t\t  [events]=\"events\"\n\t\t\t\t\t  [refresh]=\"refresh\"\n\t\t\t\t\t  [activeDayIsOpen]=\"activeDayIsOpen\"\n\t\t\t\t\t  (dayClicked)=\"dayClicked($event.day)\"\n\t\t\t\t\t  (eventClicked)=\"handleEvent('Clicked', $event.event)\"\n\t\t\t\t\t  (eventTimesChanged)=\"eventTimesChanged($event)\"\n\t\t\t\t\t>\n\t\t\t\t\t</mwl-calendar-month-view>\n\t\t\t\t\t<mwl-calendar-week-view\n\t\t\t\t\t\t*ngSwitchCase=\"CalendarView.Week\"\n\t\t\t\t\t\t[viewDate]=\"viewDate\"\n\t\t\t\t\t\t[events]=\"events\"\n\t\t\t\t\t\t[refresh]=\"refresh\"\n\t\t\t\t\t\t(eventClicked)=\"handleEvent('Clicked', $event.event)\"\n\t\t\t\t\t\t(eventTimesChanged)=\"eventTimesChanged($event)\"\n\t\t\t\t\t>\n\t\t\t\t\t</mwl-calendar-week-view>\n\t\t\t\t\t<mwl-calendar-day-view\n\t\t\t\t\t\t*ngSwitchCase=\"CalendarView.Day\"\n\t\t\t\t\t\t[viewDate]=\"viewDate\"\n\t\t\t\t\t\t[events]=\"events\"\n\t\t\t\t\t\t[refresh]=\"refresh\"\n\t\t\t\t\t\t(eventClicked)=\"handleEvent('Clicked', $event.event)\"\n\t\t\t\t\t\t(eventTimesChanged)=\"eventTimesChanged($event)\"\n\t\t\t\t\t>\n\t\t\t\t\t</mwl-calendar-day-view>\n\t\t\t\t  </div>\t\t  \n\t\t\t</div>\n\n\t\t\t</div>\n\t\t\t  <hr>\n\t\t\t  <div class=\"panel-group\" id=\"accordion\" *ngIf=\"school.length > 0\">\n\t\t\t\t<div *ngFor=\"let k of school\">\n\t\t\t\t<div class=\"panel panel-success\"  *ngIf=\"k.state=='Offer'\">\n\t\t\t\t  <div class=\"panel-heading\" >\n\t\t\t\t\t<h4 class=\"panel-title\">\n\t\t\t\t\t  <a data-toggle=\"collapse\" data-parent=\"#accordion\" \n\t\t\t\t\t\thref=\"#{{k._id}}\">\n\t\t\t\t\t  <b> {{k.univName}} </b> 【 {{k.majorName}} 】 <br><small style=\"color: green;\">{{k.state}}</small>\n\t\t\t\t\t  </a>\n\t\t\t\t\t</h4>\n\t\t\t\t  </div>\n\t\t\t\t  <div id=\"{{k._id}}\" class=\"panel-collapse collapse\">\n\t\t\t\t\t<div class=\"panel-body\">\n\t\t\t\t\t\t<table class=\"table table-bordered\" >\n\t\t\t\t\t\t\t<tbody>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 1 </td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 2</td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 3</td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">需要推荐人数量</td>\t\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td >{{k.ddl1}} </td>\n\t\t\t\t\t\t\t\t<td >{{k.ddl2}}</td>\n\t\t\t\t\t\t\t\t<td >{{k.ddl3}}</td>\t\n\t\t\t\t\t\t\t\t<td >{{k.recommNumber}}</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">申请账号</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.applyAccount}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">申请密码</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.applyPassword}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">项目链接</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.link}}\n\t\t\t\t\t\t\t\t\t<a href=\"{{k.link}}\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"glyphicon glyphicon-link\"></span>\n\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t<td >\n\t\t\t\t\t\t\t\t\t<button href=\"/anew/todel/@a.id\" (click)=\"schooldetail(k)\">More</button>\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  \n\t\t\t\t\t\t\t</tbody>\n\t\t\t\t\t\t</table>\n\t\t\t\t\t</div>\n\t\t\t\t  </div>\n\t\t\t\t  <br>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"panel panel-primary\" *ngIf=\"k.state=='进行中'\">\n\t\t\t\t\t<div class=\"panel-heading\">\n\t\t\t\t\t  <h4 class=\"panel-title\">\n\t\t\t\t\t\t<a data-toggle=\"collapse\" data-parent=\"#accordion\" \n\t\t\t\t\t\t  href=\"#{{k._id}}\">\n\t\t\t\t\t\t<b> {{k.univName}} </b>【 {{k.majorName}} 】 <br><small style=\"color: whitesmoke;\">{{k.state}}</small>\n\t\t\t\t\t\t</a>\n\t\t\t\t\t  </h4>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div id=\"{{k._id}}\" class=\"panel-collapse collapse\">\n\t\t\t\t\t  <div class=\"panel-body\">\n\t\t\t\t\t\t<table class=\"table table-bordered\" >\n\t\t\t\t\t\t\t<tbody>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 1 </td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 2</td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 3</td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">需要推荐人数量</td>\t\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td >{{k.ddl1}} </td>\n\t\t\t\t\t\t\t\t<td >{{k.ddl2}}</td>\n\t\t\t\t\t\t\t\t<td >{{k.ddl3}}</td>\t\n\t\t\t\t\t\t\t\t<td >{{k.recommNumber}}</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">申请账号</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.applyAccount}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">申请密码</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.applyPassword}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">项目链接</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.link}}\n\t\t\t\t\t\t\t\t\t<a href=\"{{k.link}}\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"glyphicon glyphicon-link\"></span>\n\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t<td >\n\t\t\t\t\t\t\t\t\t<button href=\"/anew/todel/@a.id\" (click)=\"schooldetail(k)\">More</button>\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  \n\t\t\t\t\t\t\t</tbody>\n\t\t\t\t\t\t</table>\n\t\t\t\t\t  </div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<br>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"panel panel-default\" *ngIf=\"k.state=='不申请'\">\n\t\t\t\t\t<div class=\"panel-heading\">\n\t\t\t\t\t  <h4 class=\"panel-title\">\n\t\t\t\t\t\t<a data-toggle=\"collapse\" data-parent=\"#accordion\" \n\t\t\t\t\t\t  href=\"#{{k._id}}\">\n\t\t\t\t\t\t<b> {{k.univName}} </b>【 {{k.majorName}} 】 <br><small style=\"color: black;\">{{k.state}}</small>\n\t\t\t\t\t\t</a>\n\t\t\t\t\t  </h4>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div id=\"{{k._id}}\" class=\"panel-collapse collapse\">\n\t\t\t\t\t  <div class=\"panel-body\">\n\t\t\t\t\t\t<table class=\"table table-bordered\" >\n\t\t\t\t\t\t\t<tbody>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 1 </td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 2</td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 3</td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">需要推荐人数量</td>\t\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td >{{k.ddl1}} </td>\n\t\t\t\t\t\t\t\t<td >{{k.ddl2}}</td>\n\t\t\t\t\t\t\t\t<td >{{k.ddl3}}</td>\t\n\t\t\t\t\t\t\t\t<td >{{k.recommNumber}}</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">申请账号</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.applyAccount}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">申请密码</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.applyPassword}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">项目链接</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.link}}\n\t\t\t\t\t\t\t\t\t<a href=\"{{k.link}}\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"glyphicon glyphicon-link\"></span>\n\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t<td >\n\t\t\t\t\t\t\t\t\t<button href=\"/anew/todel/@a.id\" (click)=\"schooldetail(k)\">More</button>\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  \n\t\t\t\t\t\t\t</tbody>\n\t\t\t\t\t\t</table>\n\t\t\t\t\t  </div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<br>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"panel panel-warning\" *ngIf=\"k.state=='已完成'\">\n\t\t\t\t\t<div class=\"panel-heading\">\n\t\t\t\t\t  <h4 class=\"panel-title\">\n\t\t\t\t\t\t<a data-toggle=\"collapse\" data-parent=\"#accordion\" \n\t\t\t\t\t\t  href=\"#{{k._id}}\">\n\t\t\t\t\t\t<b> {{k.univName}} </b> 【 {{k.majorName}} 】  <br><small style=\"color: goldenrod;\">{{k.state}}</small>\n\t\t\t\t\t\t</a>\n\t\t\t\t\t  </h4>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div id=\"{{k._id}}\" class=\"panel-collapse collapse\">\n\t\t\t\t\t  <div class=\"panel-body\">\n\t\t\t\t\t\t<table class=\"table table-bordered\" >\n\t\t\t\t\t\t\t<tbody>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 1 </td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 2</td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 3</td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">需要推荐人数量</td>\t\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td >{{k.ddl1}} </td>\n\t\t\t\t\t\t\t\t<td >{{k.ddl2}}</td>\n\t\t\t\t\t\t\t\t<td >{{k.ddl3}}</td>\t\n\t\t\t\t\t\t\t\t<td >{{k.recommNumber}}</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">申请账号</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.applyAccount}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">申请密码</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.applyPassword}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">项目链接</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.link}}\n\t\t\t\t\t\t\t\t\t<a href=\"{{k.link}}\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"glyphicon glyphicon-link\"></span>\n\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t \n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t<td >\n\t\t\t\t\t\t\t\t\t<button href=\"/anew/todel/@a.id\" (click)=\"schooldetail(k)\">More</button>\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  \n\t\t\t\t\t\t\t</tbody>\n\t\t\t\t\t\t</table>\n\t\t\t\t\t  </div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<br>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"panel panel-default\" *ngIf=\"k.state=='拒信'\">\n\t\t\t\t\t<div class=\"panel-heading\">\n\t\t\t\t\t  <h4 class=\"panel-title\">\n\t\t\t\t\t\t<a data-toggle=\"collapse\" data-parent=\"#accordion\" \n\t\t\t\t\t\t  href=\"#{{k._id}}\">\n\t\t\t\t\t\t<b> {{k.univName}} </b> 【 {{k.majorName}} 】  <br><small style=\"color: red;\">{{k.state}}</small>\n\t\t\t\t\t\t</a>\n\t\t\t\t\t  </h4>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div id=\"{{k._id}}\" class=\"panel-collapse collapse\">\n\t\t\t\t\t  <div class=\"panel-body\">\n\t\t\t\t\t\t<table class=\"table table-bordered\" >\n\t\t\t\t\t\t\t<tbody>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 1 </td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 2</td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">Deadline 3</td>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">需要推荐人数量</td>\t\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td >{{k.ddl1}} </td>\n\t\t\t\t\t\t\t\t<td >{{k.ddl2}}</td>\n\t\t\t\t\t\t\t\t<td >{{k.ddl3}}</td>\t\n\t\t\t\t\t\t\t\t<td >{{k.recommNumber}}</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">申请账号</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.applyAccount}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">申请密码</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.applyPassword}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td style=\"background-color: gainsboro;\">项目链接</td>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t{{k.link}}\n\t\t\t\t\t\t\t\t\t<a href=\"{{k.link}}\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"glyphicon glyphicon-link\"></span>\n\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  <tr>\n\t\t\t\t\t\t\t\t<td colspan=\"3\">\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t<td >\n\t\t\t\t\t\t\t\t\t<button href=\"/anew/todel/@a.id\" (click)=\"schooldetail(k)\">More</button>\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t  </tr>\n\t\t\t\t\t\t\t  \n\t\t\t\t\t\t\t</tbody>\n\t\t\t\t\t\t</table>\n\t\t\t\t\t  </div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<br>\n\t\t\t\t</div>\n\t\t\t\t\n\t\t\t  </div>\n\t\t\t  \n\t\t  </div>\n\t\t</div>\n\t</div>\n\n"
 
 /***/ }),
 
@@ -11126,17 +12819,21 @@ var StudentmainComponent = /** @class */ (function () {
     }
     StudentmainComponent.prototype.ngOnInit = function () {
         var _this = this;
+        var params = this.route.snapshot.queryParams;
+        this.studentUserAcc = params["studentUserAcc"] || this.studentUserAcc;
+        this.studentID = params["studentID"] || this.studentID;
         this.http.get('/api/students').subscribe(function (Data) {
             _this.students = Data.students;
             for (var _i = 0, _a = _this.students; _i < _a.length; _i++) {
                 var h = _a[_i];
                 if (h.userAccount === _this.studentUserAcc) {
                     _this.student = h;
+                    _this.studentID = h._id;
                     console.log("此学生为" + _this.student.lastName);
                 }
             }
-            //this.studentID = this.student._id;
             console.log("学生id为" + _this.studentID);
+            _this.loadNotifs();
         });
         //展示 此学生 选校信息
         this.http.get('/api/schools/').subscribe(function (orderData) {
@@ -11173,19 +12870,19 @@ var StudentmainComponent = /** @class */ (function () {
                 }
             }
         });
-        //展示 此学生通知信息
-        this.http.get('/api/notifdetail/' + this.studentID).subscribe(function (o) {
-            _this.notif = o.notifs;
-            for (var _i = 0, _a = _this.notif; _i < _a.length; _i++) {
-                var n = _a[_i];
-                if (n.userAccount === _this.studentID) {
-                    _this.notifs.push(n);
-                    console.log(_this.school);
-                }
-            }
-        });
         this.stSub = this.stService.getstudentsUpdatedListener().subscribe(function (students) {
             _this.students = students;
+        });
+    };
+    StudentmainComponent.prototype.loadNotifs = function () {
+        var _this = this;
+        if (!this.studentID) {
+            return;
+        }
+        this.http.get('/api/notifdetail/' + this.studentID).subscribe(function (o) {
+            var list = o.notifs || [];
+            _this.notif = list;
+            _this.notifs = list.filter(function (n) { return n.userAccount == _this.studentID; });
         });
     };
     StudentmainComponent.prototype.updateNotif = function (n) {
@@ -11197,19 +12894,10 @@ var StudentmainComponent = /** @class */ (function () {
             ntype: n.ntype,
         };
         this.http.put('/api/notif/' + n._id, Notif)
-            .subscribe(function (data) {
-            var options = {
-                overlay: true,
-                overlayClickToClose: true,
-                showCloseButton: true,
-                duration: 5000
-            };
-            if (data[0] === undefined) {
-                console.log("Undefine");
-            }
+            .subscribe(function () {
+            n.nstate = "已读";
+            alert("已读这条通知");
         });
-        alert("已读这条通知");
-        window.location.reload();
     };
     StudentmainComponent.prototype.addEvent = function (tit, data) {
         this.events = this.events.concat([

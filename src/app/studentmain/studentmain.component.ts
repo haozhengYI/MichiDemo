@@ -86,7 +86,9 @@ export class StudentmainComponent implements OnInit {
     
 
   ngOnInit() {
-
+    const params = this.route.snapshot.queryParams;
+    this.studentUserAcc = params["studentUserAcc"] || this.studentUserAcc;
+    this.studentID = params["studentID"] || this.studentID;
 
     this.http.get<{students: Student[]}>('http://localhost:3000/students').subscribe((Data) => {
         
@@ -94,12 +96,12 @@ export class StudentmainComponent implements OnInit {
         for(let h of this.students){
             if(h.userAccount===this.studentUserAcc){
               this.student = h;
+              this.studentID = h._id;
               console.log("此学生为"+this.student.lastName);
             }
         }
-        //this.studentID = this.student._id;
         console.log("学生id为"+this.studentID);
-
+        this.loadNotifs();
     });
     //展示 此学生 选校信息
     this.http.get<{schools: School[]}>('http://localhost:3000/schools/').subscribe((orderData) => {
@@ -135,26 +137,22 @@ export class StudentmainComponent implements OnInit {
           }  
       });
 
-      //展示 此学生通知信息
-    this.http.get<{notifs: Notif[]}>('http://localhost:3000/notifdetail/' + this.studentID).subscribe((o) => {
-      
-      this.notif = o.notifs;
-      for(let n of this.notif){
-        if(n.userAccount=== this.studentID){
-          this.notifs.push(n);
-          console.log(this.school);
-        }
-      }
-
-    });   
-
- 
-
 
     this.stSub = this.stService.getstudentsUpdatedListener().subscribe((students: Student[]) => {
     this.students = students;
     });
   }
+  loadNotifs() {
+    if (!this.studentID) {
+      return;
+    }
+    this.http.get<{notifs: Notif[]}>('http://localhost:3000/notifdetail/' + this.studentID).subscribe((o) => {
+      const list = o.notifs || [];
+      this.notif = list;
+      this.notifs = list.filter(n => n.userAccount == this.studentID);
+    });
+  }
+
   updateNotif(n){
     const Notif = {
       userAccount:n.userAccount,//学生的id
@@ -164,19 +162,10 @@ export class StudentmainComponent implements OnInit {
       ntype:n.ntype,//通知类型（"紧急/一般/比较紧急"）
     }
     this.http.put('http://localhost:3000/notif/' + n._id, Notif)
-      .subscribe((data) => {
-        const options = {
-          overlay: true,
-          overlayClickToClose: true,
-          showCloseButton: true,
-          duration: 5000
-        };
-        if (data[0] === undefined) {
-          console.log("Undefine");
-        }
-      })
-      alert("已读这条通知");
-      window.location.reload();  
+      .subscribe(() => {
+        n.nstate = "已读";
+        alert("已读这条通知");
+      });
   }
   addEvent(tit,data){
     this.events = [
