@@ -75,10 +75,13 @@
           <a class="nav-link active" data-toggle="tab" href="#dropdown2">申请项目</a>
         </li>
         <li class="nav-item ">
-          <a class="nav-link active" data-toggle="tab" href="#dropdown3">发送通知</a>
+          <a class="nav-link" data-toggle="tab" href="#dropdown3">发送通知</a>
         </li>
         <li class="nav-item ">
-          <a class="nav-link active" data-toggle="tab" href="#dropdown4">进度更新</a>
+          <a class="nav-link" data-toggle="tab" href="#dropdown4">进度更新</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#appstatus">申请状态</a>
         </li>
       </ul>
       <div id="myTabContent" class="tab-content">
@@ -970,6 +973,125 @@
           </div>
           
           
+        </div>
+        <div class="tab-pane fade" id="appstatus">
+          <div class="col-sm-12" *ngIf="student">
+            <br>
+            <h3>申请状态</h3>
+            <p class="text-muted">点击各步骤可在「未完成」与「已完成」之间切换；未存储时默认显示为「未完成」。</p>
+            <hr>
+
+            <div class="app-status-section">
+              <h4 class="app-status-phase">前期</h4>
+              <div class="list-group app-status-list">
+                <a class="list-group-item list-group-item-action app-status-item"
+                   [class.done]="isAppStatusDone('dingxiao')"
+                   href="javascript:void(0)"
+                   (click)="toggleAppStatus('dingxiao', $event)">
+                  <span class="app-status-label">1️⃣ 定校</span>
+                  <span class="badge" [class.badge-success]="isAppStatusDone('dingxiao')" [class.badge-secondary]="!isAppStatusDone('dingxiao')">
+                    {{ getAppStatus('dingxiao') }}
+                  </span>
+                </a>
+                <a class="list-group-item list-group-item-action app-status-item"
+                   [class.done]="isAppStatusDone('jianli')"
+                   href="javascript:void(0)"
+                   (click)="toggleAppStatus('jianli', $event)">
+                  <span class="app-status-label">2️⃣ 出简历</span>
+                  <span class="badge" [class.badge-success]="isAppStatusDone('jianli')" [class.badge-secondary]="!isAppStatusDone('jianli')">
+                    {{ getAppStatus('jianli') }}
+                  </span>
+                </a>
+                <div class="list-group-item app-status-parent">
+                  <span class="app-status-label">3️⃣ 确定推荐人</span>
+                </div>
+                <a class="list-group-item list-group-item-action app-status-item app-status-sub"
+                   [class.done]="isAppStatusDone('tuijianren1')"
+                   href="javascript:void(0)"
+                   (click)="toggleAppStatus('tuijianren1', $event)">
+                  <span class="app-status-label">3.1 出套词信</span>
+                  <span class="badge" [class.badge-success]="isAppStatusDone('tuijianren1')" [class.badge-secondary]="!isAppStatusDone('tuijianren1')">
+                    {{ getAppStatus('tuijianren1') }}
+                  </span>
+                </a>
+                <a class="list-group-item list-group-item-action app-status-item app-status-sub"
+                   [class.done]="isAppStatusDone('tuijianren2')"
+                   href="javascript:void(0)"
+                   (click)="toggleAppStatus('tuijianren2', $event)">
+                  <span class="app-status-label">3.2 出推荐信</span>
+                  <span class="badge" [class.badge-success]="isAppStatusDone('tuijianren2')" [class.badge-secondary]="!isAppStatusDone('tuijianren2')">
+                    {{ getAppStatus('tuijianren2') }}
+                  </span>
+                </a>
+              </div>
+            </div>
+
+            <div class="app-status-section">
+              <h4 class="app-status-phase">中期</h4>
+              <div class="list-group app-status-list">
+                <a class="list-group-item list-group-item-action app-status-item"
+                   [class.done]="isAppStatusDone('wenshu')"
+                   href="javascript:void(0)"
+                   (click)="toggleAppStatus('wenshu', $event)">
+                  <span class="app-status-label">4️⃣ 文书创作</span>
+                  <span class="badge" [class.badge-success]="isAppStatusDone('wenshu')" [class.badge-secondary]="!isAppStatusDone('wenshu')">
+                    {{ getAppStatus('wenshu') }}
+                  </span>
+                </a>
+                <a class="list-group-item list-group-item-action app-status-item"
+                   [class.done]="isAppStatusDone('mianshi')"
+                   href="javascript:void(0)"
+                   (click)="toggleAppStatus('mianshi', $event)">
+                  <span class="app-status-label">5️⃣ 准备面试</span>
+                  <span class="badge" [class.badge-success]="isAppStatusDone('mianshi')" [class.badge-secondary]="!isAppStatusDone('mianshi')">
+                    {{ getAppStatus('mianshi') }}
+                  </span>
+                </a>
+                <a class="list-group-item list-group-item-action app-status-item"
+                   [class.done]="isAppStatusDone('tijiao')"
+                   href="javascript:void(0)"
+                   (click)="toggleAppStatus('tijiao', $event)">
+                  <span class="app-status-label">6️⃣ 提交申请</span>
+                  <span class="badge" [class.badge-success]="isAppStatusDone('tijiao')" [class.badge-secondary]="!isAppStatusDone('tijiao')">
+                    {{ getAppStatus('tijiao') }}
+                  </span>
+                </a>
+                <a class="list-group-item list-group-item-action app-status-item"
+                   [class.done]="isAppStatusDone('shenhetuijian')"
+                   href="javascript:void(0)"
+                   (click)="toggleAppStatus('shenhetuijian', $event)">
+                  <span class="app-status-label">7️⃣ 审核推荐信提交状态</span>
+                  <span class="badge" [class.badge-success]="isAppStatusDone('shenhetuijian')" [class.badge-secondary]="!isAppStatusDone('shenhetuijian')">
+                    {{ getAppStatus('shenhetuijian') }}
+                  </span>
+                </a>
+              </div>
+            </div>
+
+            <div class="app-status-section">
+              <h4 class="app-status-phase">后期</h4>
+              <div class="list-group app-status-list">
+                <a class="list-group-item list-group-item-action app-status-item"
+                   [class.done]="isAppStatusDone('shenhecailiao')"
+                   href="javascript:void(0)"
+                   (click)="toggleAppStatus('shenhecailiao', $event)">
+                  <span class="app-status-label">8️⃣ 查询项目是否缺少材料</span>
+                  <span class="badge" [class.badge-success]="isAppStatusDone('shenhecailiao')" [class.badge-secondary]="!isAppStatusDone('shenhecailiao')">
+                    {{ getAppStatus('shenhecailiao') }}
+                  </span>
+                </a>
+                <a class="list-group-item list-group-item-action app-status-item"
+                   [class.done]="isAppStatusDone('querenoffer')"
+                   href="javascript:void(0)"
+                   (click)="toggleAppStatus('querenoffer', $event)">
+                  <span class="app-status-label">9️⃣ 确认 offer</span>
+                  <span class="badge" [class.badge-success]="isAppStatusDone('querenoffer')" [class.badge-secondary]="!isAppStatusDone('querenoffer')">
+                    {{ getAppStatus('querenoffer') }}
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 

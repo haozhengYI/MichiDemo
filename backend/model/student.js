@@ -76,6 +76,17 @@ const studentSchema = mongoose.Schema({
   //申请年级
   year: String,
   coordinator:String,//协调员
+  //申请状态
+  dingxiao:String,//定校
+  jianli:String,//简历
+  tuijianren1:String,//推荐人阶段1，出套词信
+  tuijianren2:String,//推荐人阶段2，出推荐信
+  wenshu:String,//文书阶段
+  mianshi:String,//面试阶段
+  tijiao:String,//提交阶段
+  shenhetuijian:String,//审核推荐信阶段
+  shenhecailiao:String,//审核材料阶段
+  querenoffer:String,//确认offer阶段
 });
 
 module.exports = mongoose.model('Student', studentSchema);

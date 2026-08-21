@@ -72,6 +72,10 @@ export class StudentmainComponent implements OnInit {
   notif: Notif[] = [];
   private stSub: Subscription;
 
+  private readonly earlyFields = ['dingxiao', 'jianli', 'tuijianren1', 'tuijianren2'];
+  private readonly midFields = ['wenshu', 'mianshi', 'tijiao', 'shenhetuijian'];
+  private readonly lateFields = ['shenhecailiao', 'querenoffer'];
+
   constructor(
     public stService: StService,
     private http: HttpClient,
@@ -142,6 +146,76 @@ export class StudentmainComponent implements OnInit {
     this.students = students;
     });
   }
+  getAppStatus(field: string): string {
+    if (!this.student) {
+      return '未完成';
+    }
+    const value = (this.student as any)[field];
+    if (!value) {
+      return '未完成';
+    }
+    return String(value);
+  }
+
+  isAppStatusDone(field: string): boolean {
+    return this.getAppStatus(field) === '已完成';
+  }
+
+  private fieldsDoneCount(fields: string[]): number {
+    let count = 0;
+    for (let i = 0; i < fields.length; i++) {
+      if (this.isAppStatusDone(fields[i])) {
+        count++;
+      }
+    }
+    return count;
+  }
+
+  private isFieldsComplete(fields: string[]): boolean {
+    return this.fieldsDoneCount(fields) === fields.length;
+  }
+
+  isEarlyComplete(): boolean {
+    return this.isFieldsComplete(this.earlyFields);
+  }
+
+  isMidComplete(): boolean {
+    return this.isFieldsComplete(this.midFields);
+  }
+
+  isLateComplete(): boolean {
+    return this.isFieldsComplete(this.lateFields);
+  }
+
+  shouldShowMidPhase(): boolean {
+    return this.isEarlyComplete();
+  }
+
+  shouldShowLatePhase(): boolean {
+    return this.isEarlyComplete() && this.isMidComplete();
+  }
+
+  phaseSummary(phase: 'early' | 'mid' | 'late'): string {
+    const fields = phase === 'early' ? this.earlyFields : (phase === 'mid' ? this.midFields : this.lateFields);
+    if (this.isFieldsComplete(fields)) {
+      return '已完成';
+    }
+    return this.fieldsDoneCount(fields) + '/' + fields.length;
+  }
+
+  currentAppPhaseLabel(): string {
+    if (!this.isEarlyComplete()) {
+      return '前期';
+    }
+    if (!this.isMidComplete()) {
+      return '中期';
+    }
+    if (!this.isLateComplete()) {
+      return '后期';
+    }
+    return '已完成';
+  }
+
   loadNotifs() {
     if (!this.studentID) {
       return;

@@ -374,6 +374,17 @@ app.post('/studentadd', (req,res,next) =>{
     //申请年级
     year: req.body.year,
     coordinator:req.body.coordinator,//学生对应的协调员
+    //申请状态
+    dingxiao:req.body.dingxiao,//定校
+    jianli:req.body.jianli,//简历
+    tuijianren1:req.body.tuijianren1,//推荐人阶段1，出套词信
+    tuijianren2:req.body.tuijianren2,//推荐人阶段2，出推荐信
+    wenshu:req.body.wenshu,//文书阶段
+    mianshi:req.body.mianshi,//面试阶段
+    tijiao:req.body.tijiao,//提交阶段
+    shenhetuijian:req.body.shenhetuijian,//审核推荐信阶段
+    shenhecailiao:req.body.shenhecailiao,//审核材料阶段
+    querenoffer:req.body.querenoffer,//确认offer阶段
   });
   student.save();
   res.status(201).json({
@@ -479,6 +490,17 @@ app.put('/students/:userAccount', (req, res, next)=>{
       //申请年级
       year: req.body.year,
       coordinator:req.body.coordinator,//学生对应的协调员
+      //申请状态
+      dingxiao:req.body.dingxiao,//定校
+      jianli:req.body.jianli,//简历
+      tuijianren1:req.body.tuijianren1 || req.body.tuijian1,//推荐人阶段1，出套词信
+      tuijianren2:req.body.tuijianren2,//推荐人阶段2，出推荐信
+      wenshu:req.body.wenshu,//文书阶段
+      mianshi:req.body.mianshi,//面试阶段
+      tijiao:req.body.tijiao,//提交阶段
+      shenhetuijian:req.body.shenhetuijian,//审核推荐信阶段
+      shenhecailiao:req.body.shenhecailiao,//审核材料阶段
+      querenoffer:req.body.querenoffer,//确认offer阶段
     }
   })
   .exec()
@@ -494,6 +516,39 @@ app.put('/students/:userAccount', (req, res, next)=>{
   });
   res.status(201).json({
     message: 'Handling PUT requests to /Connections',
+  });
+});
+
+// 只更新申请状态字段，避免整份学生文档覆盖导致 tuijianren1 等字段丢失
+app.put('/students/:userAccount/appstatus', (req, res) => {
+  const allowed = {
+    dingxiao: true,
+    jianli: true,
+    tuijianren1: true,
+    tuijianren2: true,
+    wenshu: true,
+    mianshi: true,
+    tijiao: true,
+    shenhetuijian: true,
+    shenhecailiao: true,
+    querenoffer: true
+  };
+  let field = req.body.field;
+  if (field === 'tuijian1') {
+    field = 'tuijianren1';
+  }
+  const value = req.body.value;
+  if (!allowed[field] || (value !== '已完成' && value !== '未完成')) {
+    return res.status(400).json({ message: 'Invalid application status' });
+  }
+  const update = {};
+  update[field] = value;
+  Student.update({ userAccount: req.params.userAccount }, { $set: update }, (err, result) => {
+    if (err) {
+      console.log(err);
+      return res.status(500).json({ error: err });
+    }
+    res.status(200).json(result);
   });
 });
 

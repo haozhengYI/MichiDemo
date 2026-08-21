@@ -15,5 +15,104 @@
     height: auto;
     padding: 15px;
   }
-  .row.content {height: auto;} 
+  .row.content {height: auto;}
+}
+
+.app-status {
+  margin: 8px 0 16px;
+}
+.app-status-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.app-status-title {
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+}
+.app-status-current {
+  font-size: 13px;
+  color: #777;
+}
+.app-status-row {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+  background: #fff;
+}
+.app-status-phase {
+  width: 56px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.app-status-phase-name {
+  font-weight: 600;
+  color: #333;
+}
+.app-status-phase-count {
+  font-size: 12px;
+  color: #888;
+  margin-top: 2px;
+}
+.app-status-steps {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  gap: 8px;
+}
+.app-status-chip {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid #e6e6e6;
+  border-radius: 6px;
+  background: #fff;
+}
+.app-status-chip.done {
+  background: #f4f6f5;
+  border-color: #d7ddd9;
+}
+.app-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+  flex-shrink: 0;
+  background: #bbb;
+}
+.app-status-chip.done .app-status-dot {
+  background: #2f6fed;
+}
+.app-status-chip-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.2;
+}
+.app-status-chip-state {
+  font-size: 12px;
+  color: #888;
+  margin-top: 2px;
+}
+
+@media screen and (max-width: 767px) {
+  .app-status-row {
+    flex-direction: column;
+  }
+  .app-status-steps {
+    flex-wrap: wrap;
+  }
+  .app-status-chip {
+    min-width: calc(50% - 8px);
+  }
 }

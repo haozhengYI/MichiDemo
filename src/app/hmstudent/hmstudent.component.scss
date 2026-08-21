@@ -110,3 +110,47 @@
   color: #c9302c;
   margin-left: 4px;
 }
+
+.app-status-section {
+  margin-bottom: 28px;
+  max-width: 720px;
+}
+.app-status-phase {
+  margin: 0 0 12px;
+  font-weight: 600;
+  color: #333;
+}
+.app-status-list {
+  margin-bottom: 0;
+}
+.app-status-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+}
+.app-status-item:hover {
+  background-color: #f5f8ff;
+}
+.app-status-item.done {
+  background-color: #e8f5e9;
+}
+.app-status-item.done:hover {
+  background-color: #dcedc8;
+}
+.app-status-parent {
+  background-color: #f7f7f7;
+  font-weight: 600;
+  color: #555;
+}
+.app-status-sub {
+  padding-left: 36px;
+}
+.app-status-label {
+  font-size: 15px;
+}
+.app-status-item .badge {
+  font-size: 12px;
+  min-width: 56px;
+}

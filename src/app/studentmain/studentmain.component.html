@@ -16,7 +16,7 @@
             </ul>
           </li>
           <li class="nav navbar-nav navbar-right">
-            <a href="/mainpage">Log Out</a>
+            <a href="/main">Log Out</a>
           </li>
         </ul>
       </div>
@@ -169,6 +169,101 @@
 			</div>
 
 			</div>
+			  <hr>
+			  <div class="app-status" *ngIf="student">
+				<div class="app-status-header">
+					<span class="app-status-title">申请状态</span>
+					<span class="app-status-current">当前阶段：{{ currentAppPhaseLabel() }}</span>
+				</div>
+				<div class="app-status-row">
+					<div class="app-status-phase">
+						<div class="app-status-phase-name">前期</div>
+						<div class="app-status-phase-count">{{ phaseSummary('early') }}</div>
+					</div>
+					<div class="app-status-steps">
+						<div class="app-status-chip" [class.done]="isAppStatusDone('dingxiao')">
+							<span class="app-status-dot"></span>
+							<div class="app-status-chip-text">
+								<div class="app-status-chip-label">定校</div>
+								<div class="app-status-chip-state">{{ getAppStatus('dingxiao') }}</div>
+							</div>
+						</div>
+						<div class="app-status-chip" [class.done]="isAppStatusDone('jianli')">
+							<span class="app-status-dot"></span>
+							<div class="app-status-chip-text">
+								<div class="app-status-chip-label">简历创作</div>
+								<div class="app-status-chip-state">{{ getAppStatus('jianli') }}</div>
+							</div>
+						</div>
+						<div class="app-status-chip" [class.done]="isAppStatusDone('tuijianren1')">
+							<span class="app-status-dot"></span>
+							<div class="app-status-chip-text">
+								<div class="app-status-chip-label">教授套词信</div>
+								<div class="app-status-chip-state">{{ getAppStatus('tuijianren1') }}</div>
+							</div>
+						</div>
+						<div class="app-status-chip" [class.done]="isAppStatusDone('tuijianren2')">
+							<span class="app-status-dot"></span>
+							<div class="app-status-chip-text">
+								<div class="app-status-chip-label">推荐信</div>
+								<div class="app-status-chip-state">{{ getAppStatus('tuijianren2') }}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="app-status-row" *ngIf="shouldShowMidPhase()">
+					<div class="app-status-phase">
+						<div class="app-status-phase-name">中期</div>
+						<div class="app-status-phase-count">{{ phaseSummary('mid') }}</div>
+					</div>
+					<div class="app-status-steps">
+						<div class="app-status-chip" [class.done]="isAppStatusDone('wenshu')">
+							<span class="app-status-dot"></span>
+							<div class="app-status-chip-text">
+								<div class="app-status-chip-label">文书创作</div>
+								<div class="app-status-chip-state">{{ getAppStatus('wenshu') }}</div>
+							</div>
+						</div>
+						<div class="app-status-chip" [class.done]="isAppStatusDone('mianshi')">
+							<span class="app-status-dot"></span>
+							<div class="app-status-chip-text">
+								<div class="app-status-chip-label">准备面试</div>
+								<div class="app-status-chip-state">{{ getAppStatus('mianshi') }}</div>
+							</div>
+						</div>
+						<div class="app-status-chip" [class.done]="isAppStatusDone('tijiao')">
+							<span class="app-status-dot"></span>
+							<div class="app-status-chip-text">
+								<div class="app-status-chip-label">提交申请</div>
+								<div class="app-status-chip-state">{{ getAppStatus('tijiao') }}</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="app-status-row" *ngIf="shouldShowLatePhase()">
+					<div class="app-status-phase">
+						<div class="app-status-phase-name">后期</div>
+						<div class="app-status-phase-count">{{ phaseSummary('late') }}</div>
+					</div>
+					<div class="app-status-steps">
+						<div class="app-status-chip" [class.done]="isAppStatusDone('shenhecailiao')">
+							<span class="app-status-dot"></span>
+							<div class="app-status-chip-text">
+								<div class="app-status-chip-label">审核项目材料</div>
+								<div class="app-status-chip-state">{{ getAppStatus('shenhecailiao') }}</div>
+							</div>
+						</div>
+						<div class="app-status-chip" [class.done]="isAppStatusDone('querenoffer')">
+							<span class="app-status-dot"></span>
+							<div class="app-status-chip-text">
+								<div class="app-status-chip-label">确认 offer</div>
+								<div class="app-status-chip-state">{{ getAppStatus('querenoffer') }}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			  </div>
 			  <hr>
 			  <div class="panel-group" id="accordion" *ngIf="school.length > 0">
 				<div *ngFor="let k of school">

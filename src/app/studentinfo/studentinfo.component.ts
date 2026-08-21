@@ -306,6 +306,17 @@ export class StudentinfoComponent implements OnInit {
         //年级
         year:this.student.year,
         coordinator:this.student.coordinator,
+        //申请状态
+        dingxiao:this.student.dingxiao,//定校
+        jianli:this.student.jianli,//简历
+        tuijianren1:this.student.tuijianren1,//推荐人阶段1，出套词信
+        tuijianren2:this.student.tuijianren2,//推荐人阶段2，出推荐信
+        wenshu:this.student.wenshu,//文书阶段
+        mianshi:this.student.mianshi,//面试阶段
+        tijiao:this.student.tijiao,//提交阶段
+        shenhetuijian:this.student.shenhetuijian,//审核推荐信阶段
+        shenhecailiao:this.student.shenhecailiao,//审核材料阶段
+        querenoffer:this.student.querenoffer,//确认offer阶段
     }
     this.http.put('http://localhost:3000/students/' + this.studentUserAcc, Student)
       .subscribe((data) => {

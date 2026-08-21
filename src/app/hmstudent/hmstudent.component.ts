@@ -389,6 +389,46 @@ export class HmstudentComponent implements OnInit {
       );
   }
 
+  //申请状态：空值显示为「未完成」
+  getAppStatus(field: string): string {
+    if (!this.student) {
+      return '未完成';
+    }
+    const value = (this.student as any)[field];
+    if (!value) {
+      return '未完成';
+    }
+    return String(value);
+  }
+
+  isAppStatusDone(field: string): boolean {
+    return this.getAppStatus(field) === '已完成';
+  }
+
+  //点击切换申请状态：未完成 <-> 已完成
+  toggleAppStatus(field: string, event?: Event) {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    if (!this.student) {
+      return;
+    }
+    const previous = (this.student as any)[field];
+    const next = this.isAppStatusDone(field) ? '未完成' : '已完成';
+    (this.student as any)[field] = next;
+    this.http.put('http://localhost:3000/students/' + this.student.userAccount + '/appstatus', {
+      field: field,
+      value: next
+    }).subscribe(
+      () => {},
+      () => {
+        (this.student as any)[field] = previous;
+        alert('更新申请状态失败');
+      }
+    );
+  }
+
   //更新学生年级信息
   updatePersonal(){
     const Student = {
@@ -468,6 +508,17 @@ export class HmstudentComponent implements OnInit {
         //年级
         year:(document.getElementById("styear") as HTMLInputElement).value,
         coordinator:(document.getElementById("stcoord") as HTMLInputElement).value,
+        //申请状态
+        dingxiao:this.student.dingxiao,//定校
+        jianli:this.student.jianli,//简历
+        tuijianren1:this.student.tuijianren1,//推荐人阶段1，出套词信
+        tuijianren2:this.student.tuijianren2,//推荐人阶段2，出推荐信
+        wenshu:this.student.wenshu,//文书阶段
+        mianshi:this.student.mianshi,//面试阶段
+        tijiao:this.student.tijiao,//提交阶段
+        shenhetuijian:this.student.shenhetuijian,//审核推荐信阶段
+        shenhecailiao:this.student.shenhecailiao,//审核材料阶段
+        querenoffer:this.student.querenoffer,//确认offer阶段
     }
     this.http.put('http://localhost:3000/students/' + this.student.userAccount, Student)
       .subscribe((data) => {

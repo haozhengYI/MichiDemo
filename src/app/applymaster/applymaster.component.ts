@@ -177,7 +177,7 @@ export class ApplymasterComponent implements OnInit {
        
       }
     };
-    this.router.navigate(['/mainclass'], navigationExtras);
+    this.router.navigate(['/main'], navigationExtras);
   }
   class() {
     const navigationExtras: NavigationExtras = {
