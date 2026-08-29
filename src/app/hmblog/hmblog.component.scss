@@ -1,18 +1,126 @@
 /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
-.row.content {height: 1500px}
-    
+.row.content {height: auto; min-height: 1000px;}
+
 /* Set gray background color and 100% height */
 .sidenav {
   background-color: #f1f1f1;
   height: 100%;
+  min-height: 1000px;
 }
-
 
 /* On small screens, set height to 'auto' for sidenav and grid */
 @media screen and (max-width: 767px) {
   .sidenav {
     height: auto;
     padding: 15px;
+    min-height: 0;
   }
-  .row.content {height: auto;} 
+  .row.content {height: auto;}
+}
+
+.contract-page {
+  padding-bottom: 40px;
+}
+
+.contract-tabs {
+  margin-bottom: 18px;
+}
+
+.contract-tabs > li > a {
+  cursor: pointer;
+}
+
+.form-section {
+  border: 1px solid #ddd;
+  padding: 12px 16px 8px;
+  margin-bottom: 16px;
+  background: #fff;
+}
+
+.form-section legend {
+  width: auto;
+  padding: 0 8px;
+  margin-bottom: 8px;
+  font-size: 16px;
+  border: none;
+}
+
+.discount-item {
+  margin-bottom: 8px;
+}
+
+.custom-discount-add {
+  margin-top: 4px;
+  padding-top: 4px;
+}
+
+.custom-discount-add .form-group {
+  margin-bottom: 8px;
+}
+
+.discount-item .btn-link {
+  padding: 0 0 0 8px;
+  vertical-align: baseline;
+}
+
+
+.export-actions {
+  margin: 12px 0 28px;
+}
+
+.export-actions .btn {
+  margin-right: 10px;
+  margin-bottom: 8px;
+}
+
+.preview-panel {
+  border: 1px solid #ccc;
+  background: #fafafa;
+  padding: 12px;
+  position: sticky;
+  top: 12px;
+  max-height: calc(100vh - 40px);
+  overflow: auto;
+}
+
+.preview-panel h4 {
+  margin-top: 0;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 8px;
+}
+
+.contract-preview {
+  background: #fff;
+  padding: 16px 18px;
+  font-size: 12px;
+  line-height: 1.55;
+  border: 1px solid #e5e5e5;
+}
+
+.contract-preview ::ng-deep .en,
+.contract-preview ::ng-deep li.en,
+.contract-preview ::ng-deep h4.en-h {
+  font-style: italic;
+  color: #333;
+}
+
+.contract-preview ::ng-deep table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+}
+
+.contract-preview ::ng-deep table td {
+  border: 1px solid #333;
+  padding: 6px 8px;
+  vertical-align: top;
+  min-height: 28px;
+}
+
+.contract-preview ::ng-deep .contract-header img {
+  height: 96px;
+}
+
+.tab-placeholder {
+  margin-top: 8px;
 }

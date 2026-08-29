@@ -2,7 +2,7 @@
 	<nav class="navbar navbar-inverse" role="navigation">
 		<div class="container-fluid">
 		<div class="navbar-header">
-				<a class="navbar-brand" >一个很神秘的网页</a>
+				<a class="navbar-brand">一个很神秘的网页</a>
 		</div>
 		<div class="nav  navbar-right">
 		  <ul class="nav navbar-nav">
@@ -24,74 +24,285 @@
 		</div>
 	  </div>
 	</nav>
-	
-  </header>
-  
-  <ol class="breadcrumb">
+</header>
+
+<ol class="breadcrumb">
   <li><a (click)="main(hotel)">Home</a></li>
-	<li ><a (click)="main(hotel)">{{hotel.userAccount}}</a></li>
-  <li class="active">Blog管理</li>
+	<li><a (click)="main(hotel)">{{hotel.userAccount}}</a></li>
+  <li class="active">合同生成</li>
 </ol>
 
 <div class="container-fluid">
 	<div class="row content">
 	  <div class="col-sm-3 sidenav">
-		<h4>{{hotel.userAccount}}  </h4>
+		<h4>{{hotel.userAccount}}</h4>
 		<ul class="nav nav-pills nav-stacked">
-		  <li ><a (click)="main(hotel)">Home</a></li>
-      <li ><a (click)="modifyP(hotel)">Change Password</a></li>
+		  <li><a (click)="main(hotel)">Home</a></li>
+      <li><a (click)="modifyP(hotel)">Change Password</a></li>
       <li><a (click)="comp(hotel)">进度更新</a></li>
       <li><a (click)="hotelman(hotel)">学生管理</a></li>
       <li><a (click)="hmorder(hotel)">学生申请</a></li>
       <li><a (click)="hmregister(hotel)">登记账号</a></li>
-      <li class="active"><a (click)="hmblog(hotel)">Blog管理</a></li>
-      <li ><a (click)="hminterview(hotel)">面试题库</a></li>
+      <li class="active"><a (click)="hmblog(hotel)">合同生成</a></li>
+      <li><a (click)="hminterview(hotel)">面试题库</a></li>
 		</ul><br>
-		
 	  </div>
-  
-	  <div class="col-sm-9">
-      <div class="container">
-        <div class="row clearfix">
-          <div class="col-md-12 column">
-            <div class="row clearfix">
-              <div class="col-md-7 column">
-                <div class="page-header">
-                  <h1>
-                    添加新的Blog文章 
-                  </h1>
-                </div>
-                <form (submit)="addblog(postForm)" #postForm="ngForm" ngNativeValidate>
-                  <div class="form-group">
-                     <label for="exampleInputEmail1">Blog 标题</label><input  class="form-control" name="blogTitle" ngModel >
-                  </div>
-                  <div class="form-group">
-                     <label for="exampleInputPassword1">Blog 副标题</label><input class="form-control" name="blogSubtitle" ngModel>
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">图片链接</label><input  class="form-control" name="blogPicture" ngModel>
-                 </div>
-                 <div class="form-group">
-                    <label for="exampleInputPassword1">文章链接</label><input  class="form-control" name="blogLink" ngModel>
-                 </div>
-                 <div class="form-group">
-                  <label for="exampleInputPassword1">发布日期</label><input class="form-control" name="blogTime" type="date" placeholder="date" ngModel >
-               </div>
-                 <button type="submit" class="btn btn-default">Submit</button>
-                </form>
+
+	  <div class="col-sm-9 contract-page" *ngIf="hotel">
+      <div class="page-header">
+        <h1>合同生成</h1>
+        <p class="text-muted">选择合同类型后调整费用条款，右侧预览完整协议书，可导出 Word / PDF。</p>
+      </div>
+
+      <ul class="nav nav-tabs contract-tabs">
+        <li [class.active]="activeTab === 'undergrad'">
+          <a (click)="selectTab('undergrad')">本科申请合同</a>
+        </li>
+        <li [class.active]="activeTab === 'masters'">
+          <a (click)="selectTab('masters')">硕士申请合同</a>
+        </li>
+        <li [class.active]="activeTab === 'halfDiy'">
+          <a (click)="selectTab('halfDiy')">半DIY申请合同</a>
+        </li>
+      </ul>
+
+      <div class="row" *ngIf="activeTab === 'masters'">
+        <div class="col-md-5">
+          <fieldset class="form-section">
+            <legend>协议编号</legend>
+            <div class="form-group">
+              <label>协议编号 / AGREEMENT NUMBER</label>
+              <input type="text" class="form-control" [(ngModel)]="agreementNumber" placeholder="100297DM">
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>入学与费用</legend>
+            <div class="form-group">
+              <label>入学年份</label>
+              <input type="number" class="form-control" [(ngModel)]="admissionYear">
+            </div>
+            <div class="form-group">
+              <label>咨询服务费（美元）</label>
+              <input type="number" class="form-control" [(ngModel)]="totalFee">
+            </div>
+            <div class="form-group">
+              <label>第一期款项 / 定金（美元）</label>
+              <input type="number" class="form-control" [(ngModel)]="deposit">
+            </div>
+            <div class="form-group">
+              <label>第二期款项（美元）</label>
+              <div class="input-group">
+                <input type="number" class="form-control" [(ngModel)]="secondPayment">
+                <span class="input-group-btn">
+                  <button type="button" class="btn btn-default" (click)="syncSecondFromTotal()">自动计算</button>
+                </span>
               </div>
-              <div class="col-md-3 column" *ngIf="blogs.length > 0">
-                <blockquote *ngFor="let b of blogs">
-                  <p>
-                   {{b.blogTitle}}
-                  </p> <small>{{b.blogTime}}</small>
-                </blockquote>
+              <small class="text-muted">可点「自动计算」= 总费用 − 定金</small>
+            </div>
+            <div class="form-group">
+              <label>第二期付款期限（工作日）</label>
+              <input type="number" class="form-control" [(ngModel)]="paymentDeadlineDays">
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>有条件费用减免（勾选启用）</legend>
+            <div class="discount-item" *ngFor="let d of discounts">
+              <label class="checkbox-inline">
+                <input type="checkbox" [(ngModel)]="d.enabled"> 启用
+              </label>
+              <button *ngIf="d.isCustom" type="button" class="btn btn-link btn-xs text-danger" (click)="removeDiscount(d)">删除</button>
+
+              <div class="row" *ngIf="d.id === 'gre' || d.id === 'gpa'">
+                <div class="col-xs-4">
+                  <label>年份</label>
+                  <input type="number" class="form-control input-sm" [(ngModel)]="d.year" [disabled]="!d.enabled">
+                </div>
+                <div class="col-xs-4">
+                  <label>{{d.scoreLabel}} 门槛</label>
+                  <input type="text" class="form-control input-sm" [(ngModel)]="d.scoreValue" [disabled]="!d.enabled">
+                </div>
+                <div class="col-xs-4">
+                  <label>减免金额</label>
+                  <input type="number" class="form-control input-sm" [(ngModel)]="d.amount" [disabled]="!d.enabled">
+                </div>
+              </div>
+
+              <div class="row" *ngIf="d.id === 'school' || d.id === 'recLetter'">
+                <div class="col-xs-12">
+                  <p class="discount-desc">{{d.label}}</p>
+                  <label>减免金额（美元）</label>
+                  <input type="number" class="form-control input-sm" [(ngModel)]="d.amount" [disabled]="!d.enabled">
+                </div>
+              </div>
+
+              <div class="row" *ngIf="d.isCustom">
+                <div class="col-xs-12">
+                  <label>中文条款</label>
+                  <textarea class="form-control input-sm" rows="2" [(ngModel)]="d.zhTemplate" [disabled]="!d.enabled"></textarea>
+                  <label style="margin-top:6px;">英文条款</label>
+                  <textarea class="form-control input-sm" rows="2" [(ngModel)]="d.enTemplate" [disabled]="!d.enabled"></textarea>
+                </div>
+              </div>
+              <hr>
+            </div>
+
+            <div class="custom-discount-add">
+              <p class="discount-desc"><strong>添加自定义减免条款</strong></p>
+              <div class="form-group">
+                <label>中文</label>
+                <textarea class="form-control input-sm" rows="2" [(ngModel)]="customZhDraft"
+                  placeholder="例如：2026年秋季学期托福达到110分及以上，减免美元 500 整"></textarea>
+              </div>
+              <div class="form-group">
+                <label>英文</label>
+                <textarea class="form-control input-sm" rows="2" [(ngModel)]="customEnDraft"
+                  placeholder="e.g. For the fall semester of 2026, if TOEFL reaches 110 or above, discount of USD 500,"></textarea>
+              </div>
+              <button type="button" class="btn btn-default btn-sm" (click)="addCustomDiscount()">添加条款</button>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>退款</legend>
+            <div class="form-group">
+              <label>未获任何录取时退还金额（美元）</label>
+              <input type="number" class="form-control" [(ngModel)]="refundAmount">
+            </div>
+          </fieldset>
+
+          <div class="export-actions">
+            <button type="button" class="btn btn-primary" (click)="exportWord()">导出 Word</button>
+            <button type="button" class="btn btn-success" (click)="exportPdf()">导出 PDF</button>
+          </div>
+        </div>
+
+        <div class="col-md-7">
+          <div class="preview-panel">
+            <h4>合同预览 — {{contractTitle}}</h4>
+            <div class="contract-preview" [innerHTML]="getPreviewHtml()"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" *ngIf="activeTab === 'undergrad'">
+        <div class="col-md-5">
+          <fieldset class="form-section">
+            <legend>协议编号</legend>
+            <div class="form-group">
+              <label>协议编号 / AGREEMENT NUMBER</label>
+              <input type="text" class="form-control" [(ngModel)]="agreementNumber" placeholder="100297DM">
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>入学与费用</legend>
+            <div class="form-group">
+              <label>入学年份</label>
+              <input type="number" class="form-control" [(ngModel)]="ugAdmissionYear">
+            </div>
+            <div class="form-group">
+              <label>咨询服务费（美元）</label>
+              <input type="number" class="form-control" [(ngModel)]="ugTotalFee">
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>退款</legend>
+            <div class="form-group">
+              <label>未获任何录取时退还金额（美元）</label>
+              <input type="number" class="form-control" [(ngModel)]="ugRefundAmount">
+            </div>
+          </fieldset>
+
+          <div class="export-actions">
+            <button type="button" class="btn btn-primary" (click)="exportWord()">导出 Word</button>
+            <button type="button" class="btn btn-success" (click)="exportPdf()">导出 PDF</button>
+          </div>
+        </div>
+
+        <div class="col-md-7">
+          <div class="preview-panel">
+            <h4>合同预览 — {{contractTitle}}</h4>
+            <div class="contract-preview" [innerHTML]="getPreviewHtml()"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" *ngIf="activeTab === 'halfDiy'">
+        <div class="col-md-5">
+          <fieldset class="form-section">
+            <legend>协议编号</legend>
+            <div class="form-group">
+              <label>协议编号 / AGREEMENT NUMBER</label>
+              <input type="text" class="form-control" [(ngModel)]="agreementNumber" placeholder="100297DM">
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>入学与费用</legend>
+            <div class="form-group">
+              <label>入学年份</label>
+              <input type="number" class="form-control" [(ngModel)]="admissionYear">
+            </div>
+            <div class="form-group">
+              <label>咨询服务费（美元）</label>
+              <input type="number" class="form-control" [(ngModel)]="diyTotalFee">
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>有条件费用返还（可选）</legend>
+            <label class="checkbox-inline" style="margin-bottom:10px;">
+              <input type="checkbox" [(ngModel)]="diyRebateEnabled"> 启用本条款
+            </label>
+            <div *ngIf="diyRebateEnabled">
+              <div class="form-group">
+                <label>目标项目（中文，写入合同）</label>
+                <textarea class="form-control input-sm" rows="3" [(ngModel)]="diyRebateProgramZh"></textarea>
+              </div>
+              <div class="form-group">
+                <label>目标项目（英文，写入合同）</label>
+                <textarea class="form-control input-sm" rows="3" [(ngModel)]="diyRebateProgramEn"></textarea>
+              </div>
+              <div class="form-group">
+                <label>返还金额（美元）</label>
+                <input type="number" class="form-control" [(ngModel)]="diyRebateAmount">
+              </div>
+              <div class="form-group">
+                <label>返还期限（工作日）</label>
+                <input type="number" class="form-control" [(ngModel)]="diyRebateDays">
               </div>
             </div>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>服务时效及申请信息补救机制（可选）</legend>
+            <label class="checkbox-inline" style="margin-bottom:10px;">
+              <input type="checkbox" [(ngModel)]="diyServiceTimelineEnabled"> 启用本条款
+            </label>
+            <div *ngIf="diyServiceTimelineEnabled">
+              <div class="form-group">
+                <label>首轮反馈工作日数</label>
+                <input type="number" class="form-control" [(ngModel)]="diyFeedbackDays">
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="export-actions">
+            <button type="button" class="btn btn-primary" (click)="exportWord()">导出 Word</button>
+            <button type="button" class="btn btn-success" (click)="exportPdf()">导出 PDF</button>
+          </div>
+        </div>
+
+        <div class="col-md-7">
+          <div class="preview-panel">
+            <h4>合同预览 — {{contractTitle}}</h4>
+            <div class="contract-preview" [innerHTML]="getPreviewHtml()"></div>
           </div>
         </div>
       </div>
 	  </div>
 	</div>
 </div>
-
