@@ -53,6 +53,8 @@ export class HMmainComponent implements OnInit {
   hotels: HotelM[] = [];
   hotel : HotelM;
 
+  
+
   view: CalendarView = CalendarView.Month;
   CalendarView = CalendarView;
   viewDate: Date = new Date();
@@ -116,6 +118,8 @@ export class HMmainComponent implements OnInit {
             this.student.push(st) ;
           }
       });
+
+
 
       this.http.get<{schools: School[]}>('http://localhost:3000/schools').subscribe((Data) => {
           this.schools = Data.schools;

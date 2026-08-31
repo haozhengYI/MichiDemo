@@ -139,7 +139,58 @@
 		<h4><small>进度更新</small></h4>
 
 		<hr>
+		<div id="dasong">
+            <div class="col-sm-12">
+              <div class="container">
+                <div class="row clearfix" >
+                  <div class="col-md-12 column" >
+                    <div class="row clearfix"  >
+                      <div class="col-md-6 column" >
+                        <br>
+                        <h3>未完成</h3>
+                        <br>
+                        <div *ngIf="tasks.length > 0">
+                          <div *ngFor="let ts of tasks">
+                            <div *ngIf="ts.assigned=='大松'">
+                              <div class="list-group" *ngIf="ts.tstate=='未完成'">
+                                <a  (click)="update(ts)" class="list-group-item list-group-item-action flex-column align-items-start" >
+                                  <div class="d-flex w-100 justify-content-between">
+                                    <h3 class="mb-1">{{ts.studentname}}</h3>
+                                    <small>{{ts.tdate}}</small>
+                                  </div>
+                                  <p class="mb-1"> {{ts.content}}</p>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
 
+ 
+
+                      </div>
+                      <div class="col-md-6 column" *ngIf="tasks.length > 0">
+                        <br>
+                        <h3>已完成</h3>
+                        <br>
+                        <div *ngFor="let ts of tasks">
+                          <div *ngIf="ts.assigned=='大松'">
+                            <div class="list-group" *ngIf="ts.tstate=='完成'">
+                              <blockquote >
+                                <p>
+                                 {{ts.content}}
+                                </p> <b style="font-size: 12px;">{{ts.studentname}}</b><small>{{ts.tdate}}  {{ts.tstate}}</small>
+                              </blockquote>
+                            </div>
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 		<br><br>
 	  </div>
 	</div>

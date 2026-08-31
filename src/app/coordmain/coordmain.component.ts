@@ -26,6 +26,8 @@ import {HotelM} from './../hm.model';
 import { HttpClient } from '@angular/common/http';
 import {School} from './../school.model';
 import {Student} from './../st.model';
+import {Task} from  '../task.model';
+import { TaskService } from '../task.service';
 import { ActivatedRoute,  NavigationExtras,Router } from '@angular/router';
 
 const colors: any = {
@@ -52,7 +54,9 @@ const colors: any = {
 export class CoordmainComponent implements OnInit {
   hotels: HotelM[] = [];
   hotel : HotelM;
-
+  //进度信息
+  tasks: Task[] = [];
+  task : Task;
   view: CalendarView = CalendarView.Month;
   CalendarView = CalendarView;
   viewDate: Date = new Date();
@@ -109,9 +113,20 @@ export class CoordmainComponent implements OnInit {
         }
     });
 
+
     this.hotelMSub = this.hmService.getHotelMUpdatedListener().subscribe((hotels: HotelM[]) => {
     this.hotels = hotels;
     });
+
+        //展示 此学生进度信息
+        this.http.get<{tasks: Task[]}>('http://localhost:3000/tasks').subscribe((o) => {
+          //console.log("测试"+ o[1]);
+          //this.tasks = o.tasks;
+          for(var i=o.tasks.length-1;i>=0;i--){
+            this.tasks.push(o.tasks[i]);
+          }
+          //console.log("测试2"+this.tasks[1].tstate);
+        });
 
     this.http.get<{students: Student[]}>('http://localhost:3000/students/').subscribe((Data) => {
           this.students = (Data.students || []).filter(st => this.belongsToThisCoordinator(st));
@@ -235,6 +250,33 @@ export class CoordmainComponent implements OnInit {
     }
   }
 
+  update(n){
+    const Task = {
+      userAccount:n.userAccount,//学生的id
+      studentname:n.studentname,//学生名字
+      assigned:n.assigned,// 被Assigned人信息
+      content: n.content,//存储通知内容
+      tdate:n.tdate,//通知日期
+      tstate:"完成",//通知状态（"未读/已读"）
+      ttype:n.ttype,//通知类型（"紧急/一般/比较紧急"）
+    }
+    this.http.put('http://localhost:3000/task/' + n._id, Task)
+      .subscribe((data) => {
+        const options = {
+          overlay: true,
+          overlayClickToClose: true,
+          showCloseButton: true,
+          duration: 5000
+        };
+        if (data[0] === undefined) {
+          console.log("Undefine");
+        }
+      })
+      alert("已完成该进度");
+      window.location.reload();  
+  }
+
+  
     //direct to the hotel manage page
     hotelman(hotel) {
       const navigationExtras: NavigationExtras = {
