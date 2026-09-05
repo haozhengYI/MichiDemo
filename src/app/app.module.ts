@@ -71,6 +71,7 @@ import {ComanageComponent} from './comanage/comanage.component';
 import { CoorderComponent } from './coorder/coorder.component';
 import {CostudentComponent} from './costudent/costudent.component';
 import { CooschoolComponent } from './cooschool/cooschool.component';
+import { CocontractComponent } from './cocontract/cocontract.component';
 
 // FullCalendarModule.registerPlugins([ // register FullCalendar plugins
 //   dayGridPlugin,
@@ -141,7 +142,8 @@ import { CooschoolComponent } from './cooschool/cooschool.component';
     ComanageComponent,
     CoorderComponent,
     CostudentComponent,
-    CooschoolComponent
+    CooschoolComponent,
+    CocontractComponent
   ],
   imports: [
     BrowserModule,

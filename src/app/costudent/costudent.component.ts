@@ -361,6 +361,17 @@ export class CostudentComponent implements OnInit {
     };
     this.router.navigate(['/cooschool'], navigationExtras);
   }
+
+    //direct to the 合同页面  
+    cocontr(hotel) {
+      const navigationExtras: NavigationExtras = {
+        queryParams: {
+         "managerID" : hotel.userAccount,
+        }
+      };
+      this.router.navigate(['/cocontract'], navigationExtras);
+    }
+  
   
   //direct to the 推荐人更多信息 page
   studentrec(k) {

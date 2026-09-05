@@ -140,6 +140,15 @@ export class ComanageComponent implements OnInit {
     this.router.navigate(['/coorder'], navigationExtras);
   }
   
+    //direct to the 合同页面  
+    cocontr(hotel) {
+      const navigationExtras: NavigationExtras = {
+        queryParams: {
+         "managerID" : hotel.userAccount,
+        }
+      };
+      this.router.navigate(['/cocontract'], navigationExtras);
+    }
  
 
   more(o){

@@ -53,6 +53,7 @@ import {ComanageComponent} from './comanage/comanage.component';
 import  { CoorderComponent } from './coorder/coorder.component';
 import {CostudentComponent} from './costudent/costudent.component';
 import { CooschoolComponent } from './cooschool/cooschool.component';
+import { CocontractComponent } from './cocontract/cocontract.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/main', pathMatch: 'full' },
@@ -110,6 +111,7 @@ const routes: Routes = [
   {path: 'coorder', component: CoorderComponent},
   {path: 'costudent', component: CostudentComponent},
   {path: 'cooschool', component: CooschoolComponent},
+  {path: 'cocontract', component: CocontractComponent},
 ];
 
 @NgModule({
