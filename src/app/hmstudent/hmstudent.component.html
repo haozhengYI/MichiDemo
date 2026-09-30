@@ -719,11 +719,19 @@
           <h3>
             推荐信分配功能
             <small class="text-muted">已绑定 {{recomletters.length}} 封</small>
-            <button type="button" class="btn btn-warning" style="margin-left: 12px;"
-              *ngIf="recommenders.length > 0 && schools.length > 0"
-              (click)="exportRecMatrixAsExcelFile()">生成excel</button>
           </h3>
           <p class="text-muted">行是申请项目，列是推荐人。空格子选择类型即可绑定；已绑定格子可改类型、状态，或取消绑定。</p>
+          <div class="rec-export" *ngIf="recommenders.length > 0 && schools.length > 0">
+            <label for="recExportSelect">导出推荐人项目列表</label>
+            <select id="recExportSelect" class="form-control rec-export-select"
+              [(ngModel)]="selectedRecId"
+              [ngModelOptions]="{standalone: true}">
+              <option value="">选择推荐人</option>
+              <option *ngFor="let k of recommenders" [value]="k._id">{{recDisplayName(k)}}（已分配 {{countLettersForRec(k)}}）</option>
+            </select>
+            <button type="button" class="btn btn-warning" [disabled]="!selectedRecId" (click)="exportRecSchoolList()">生成 Excel</button>
+            <span class="text-muted rec-export-hint">文件名为「推荐人全名_School List」，只含该推荐人已绑定的大学、项目和两个申请 deadline。</span>
+          </div>
           <div class="rec-legend">
             <span class="rec-legend-item rec-pending">未提交</span>
             <span class="rec-legend-item rec-submitted">已提交</span>
@@ -754,6 +762,8 @@
                     <a (click)="hmschooldetail(s)">{{s.univName}}</a>
                     <div class="rec-school-sub">{{s.schoolName}}</div>
                     <div class="rec-school-sub">{{s.majorName}}</div>
+                    <div class="rec-ddl">申请Deadline 1 <span>{{s.ddl1}}</span></div>
+                    <div class="rec-ddl">申请Deadline 2 <span>{{s.ddl2}}</span></div>
                     <div class="rec-needed">所需推荐信 <span>{{s.recommNumber}}</span></div>
                     <div class="rec-col-meta">已分配 {{countLettersForSchool(s)}}</div>
                   </td>

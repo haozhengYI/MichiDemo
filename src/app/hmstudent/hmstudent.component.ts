@@ -59,6 +59,7 @@ export class HmstudentComponent implements OnInit {
   recomletters: Recomletter[] = [];
   letterMap: { [key: string]: Recomletter } = {};
   busyKeys: { [key: string]: boolean } = {};
+  selectedRecId = '';
   private hotelMSub: Subscription;
   excelData = [];
 
@@ -546,51 +547,50 @@ export class HmstudentComponent implements OnInit {
     this.saveAsExcelFile(excelBuffer, this.studentName+"的选校列表");
   }
 
-  letterTypeLabel(type: any): string {
-    if (type === 'Rother') {
-      return 'other';
+  exportRecSchoolList() {
+    let rec: Recommender = null;
+    for (let i = 0; i < this.recommenders.length; i++) {
+      if (String(this.recommenders[i]._id) === String(this.selectedRecId)) {
+        rec = this.recommenders[i];
+        break;
+      }
     }
-    return type || '';
-  }
-
-  exportRecMatrixAsExcelFile() {
+    if (!rec) {
+      alert('请先选择一位推荐人');
+      return;
+    }
     const rows = [];
     for (let i = 0; i < this.schools.length; i++) {
       const s = this.schools[i];
-      const row: any = {
-        'University': s.univName,
-        'School': s.schoolName,
-        'Major': s.majorName,
-        '所需推荐信': s.recommNumber,
-        '已分配': this.countLettersForSchool(s)
-      };
-      for (let j = 0; j < this.recommenders.length; j++) {
-        const rec = this.recommenders[j];
-        let colName = this.recDisplayName(rec);
-        if (rec.organization) {
-          colName = colName + ' (' + rec.organization + ')';
-        }
-        const letter = this.getLetter(s, rec);
-        if (letter) {
-          row[colName] = this.letterTypeLabel(letter.type) + ' / ' + letter.state;
-        } else {
-          row[colName] = '';
-        }
+      if (!this.getLetter(s, rec)) {
+        continue;
       }
-      rows.push(row);
+      rows.push({
+        'University ': s.univName || '',
+        'Program': s.majorName || '',
+        'Deadline 1': s.ddl1 || '',
+        'Deadline 2': s.ddl2 || ''
+      });
+    }
+    if (rows.length === 0) {
+      alert('该推荐人还没有分配项目');
+      return;
     }
     const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(rows);
-    const workbook: XLSX.WorkBook = { Sheets: { 'data': worksheet }, SheetNames: ['data'] };
+    const workbook: XLSX.WorkBook = { Sheets: { 'School List': worksheet }, SheetNames: ['School List'] };
     const excelBuffer: any = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
-    this.saveAsExcelFile(excelBuffer, this.studentName + '的推荐信分配');
+    const fileName = this.recDisplayName(rec).trim() + '_School List';
+    this.saveAsExcelFile(excelBuffer, fileName, true);
   }
  
-  private saveAsExcelFile(buffer: any, fileName: string) {
+  private saveAsExcelFile(buffer: any, fileName: string, exactName?: boolean) {
     const data: Blob = new Blob([buffer], {
         type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8'
     });
-    FileSaver.saveAs(data, fileName + '_export_' + new Date().getTime() + '.xlsx');
-        // 如果写成.xlsx,可能不能打开下载的文件，这可能与Excel版本有关
+    const downloadName = exactName
+      ? fileName + '.xlsx'
+      : fileName + '_export_' + new Date().getTime() + '.xlsx';
+    FileSaver.saveAs(data, downloadName);
   }
 
   //direct to the hotel manage page
