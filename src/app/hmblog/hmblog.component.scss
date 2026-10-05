@@ -121,6 +121,20 @@
   height: 96px;
 }
 
+.contract-preview ::ng-deep table.header-bar,
+.contract-preview ::ng-deep table.header-bar td {
+  border: none !important;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+.contract-preview ::ng-deep table.sign-cols,
+.contract-preview ::ng-deep table.sign-cols td {
+  border: none !important;
+  background: transparent;
+}
+
 .tab-placeholder {
   margin-top: 8px;
 }

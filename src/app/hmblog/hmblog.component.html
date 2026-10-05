@@ -59,7 +59,10 @@
           <a (click)="selectTab('undergrad')">本科申请合同</a>
         </li>
         <li [class.active]="activeTab === 'masters'">
-          <a (click)="selectTab('masters')">硕士申请合同</a>
+          <a (click)="selectTab('masters')">硕士申请合同（旧版）</a>
+        </li>
+        <li [class.active]="activeTab === 'mastersV2'">
+          <a (click)="selectTab('mastersV2')">硕士申请合同（新版）</a>
         </li>
         <li [class.active]="activeTab === 'halfDiy'">
           <a (click)="selectTab('halfDiy')">半DIY申请合同</a>
@@ -287,6 +290,184 @@
                 <label>首轮反馈工作日数</label>
                 <input type="number" class="form-control" [(ngModel)]="diyFeedbackDays">
               </div>
+            </div>
+          </fieldset>
+
+          <div class="export-actions">
+            <button type="button" class="btn btn-primary" (click)="exportWord()">导出 Word</button>
+            <button type="button" class="btn btn-success" (click)="exportPdf()">导出 PDF</button>
+          </div>
+        </div>
+
+        <div class="col-md-7">
+          <div class="preview-panel">
+            <h4>合同预览 — {{contractTitle}}</h4>
+            <div class="contract-preview" [innerHTML]="getPreviewHtml()"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" *ngIf="activeTab === 'mastersV2'">
+        <div class="col-md-5">
+          <fieldset class="form-section">
+            <legend>合同语言</legend>
+            <label class="radio-inline">
+              <input type="radio" name="v2Language" value="bilingual" [(ngModel)]="v2Language"> 中英文双语
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="v2Language" value="zh" [(ngModel)]="v2Language"> 仅中文
+            </label>
+            <p class="text-muted" style="margin-top:8px;">默认生成中英文双版本。选「仅中文」后，预览与导出都不含英文。</p>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>协议编号</legend>
+            <div class="form-group">
+              <label>协议编号（显示在每一页页眉右侧）</label>
+              <input type="text" class="form-control" [(ngModel)]="agreementNumber" placeholder="100297DM">
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>服务内容</legend>
+            <div class="form-group">
+              <label>选校数量（不少于）</label>
+              <input type="number" class="form-control" [(ngModel)]="v2SchoolCount">
+            </div>
+            <div class="form-group">
+              <label>每篇文书修改次数上限</label>
+              <input type="number" class="form-control" [(ngModel)]="v2EssayRevisions">
+            </div>
+            <label class="checkbox-inline" style="margin-bottom:10px;">
+              <input type="checkbox" [(ngModel)]="v2InternshipEnabled"> 添加第4点：实习推荐信（默认不添加）
+            </label>
+            <div class="form-group" *ngIf="v2InternshipEnabled">
+              <label>实习推荐信封数</label>
+              <input type="number" class="form-control" [(ngModel)]="v2InternshipCount">
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>服务费用</legend>
+            <div class="form-group">
+              <label>服务总费用（美元）</label>
+              <input type="number" class="form-control" [(ngModel)]="v2TotalFee">
+            </div>
+            <div class="form-group">
+              <label>第一期款项 / 首付款（美元）</label>
+              <input type="number" class="form-control" [(ngModel)]="v2FirstPayment">
+            </div>
+            <div class="form-group">
+              <label>第二期款项（美元）</label>
+              <div class="input-group">
+                <input type="number" class="form-control" [(ngModel)]="v2SecondPayment">
+                <span class="input-group-btn">
+                  <button type="button" class="btn btn-default" (click)="syncV2SecondFromTotal()">自动计算</button>
+                </span>
+              </div>
+              <small class="text-muted">可点「自动计算」= 总费用 − 首付款</small>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>奖学金（勾选启用）</legend>
+            <div class="discount-item">
+              <label class="checkbox-inline">
+                <input type="checkbox" [(ngModel)]="v2GreEnabled"> 启用 GRE 奖学金
+              </label>
+              <div class="row" *ngIf="v2GreEnabled" style="margin-top:8px;">
+                <div class="col-xs-4">
+                  <label>学年</label>
+                  <input type="number" class="form-control input-sm" [(ngModel)]="v2GreYear">
+                </div>
+                <div class="col-xs-4">
+                  <label>考试起始</label>
+                  <input type="date" class="form-control input-sm" [(ngModel)]="v2GreStart">
+                </div>
+                <div class="col-xs-4">
+                  <label>考试截止</label>
+                  <input type="date" class="form-control input-sm" [(ngModel)]="v2GreEnd">
+                </div>
+              </div>
+              <hr>
+            </div>
+            <div class="discount-item">
+              <label class="checkbox-inline">
+                <input type="checkbox" [(ngModel)]="v2GpaEnabled"> 启用 GPA 奖学金
+              </label>
+              <div class="row" *ngIf="v2GpaEnabled" style="margin-top:8px;">
+                <div class="col-xs-4">
+                  <label>基准 GPA</label>
+                  <input type="text" class="form-control input-sm" [(ngModel)]="v2GpaBaseline">
+                </div>
+                <div class="col-xs-4">
+                  <label>学年</label>
+                  <input type="number" class="form-control input-sm" [(ngModel)]="v2GpaYear">
+                </div>
+                <div class="col-xs-4">
+                  <label>达标 GPA</label>
+                  <input type="text" class="form-control input-sm" [(ngModel)]="v2GpaTarget">
+                </div>
+              </div>
+              <hr>
+            </div>
+            <div class="discount-item" *ngFor="let d of v2ExtraClauses">
+              <label class="checkbox-inline">
+                <input type="checkbox" [(ngModel)]="d.enabled"> 启用
+              </label>
+              <button *ngIf="d.isCustom" type="button" class="btn btn-link btn-xs text-danger" (click)="removeV2CustomClause(d)">删除</button>
+              <div class="row" *ngIf="!d.isCustom">
+                <div class="col-xs-12">
+                  <p class="discount-desc">{{d.label}}</p>
+                  <label>减免金额（美元）</label>
+                  <input type="number" class="form-control input-sm" [(ngModel)]="d.amount" [disabled]="!d.enabled">
+                </div>
+              </div>
+              <div class="row" *ngIf="d.isCustom">
+                <div class="col-xs-12">
+                  <label>中文条款</label>
+                  <textarea class="form-control input-sm" rows="2" [(ngModel)]="d.zhTemplate" [disabled]="!d.enabled"></textarea>
+                  <label style="margin-top:6px;">英文条款</label>
+                  <textarea class="form-control input-sm" rows="2" [(ngModel)]="d.enTemplate" [disabled]="!d.enabled"></textarea>
+                </div>
+              </div>
+              <hr>
+            </div>
+            <div class="custom-discount-add">
+              <p class="discount-desc"><strong>添加自定义减免条款</strong></p>
+              <div class="form-group">
+                <label>中文</label>
+                <textarea class="form-control input-sm" rows="2" [(ngModel)]="v2CustomZhDraft"
+                  placeholder="例如：2026年秋季学期托福达到110分及以上，减免美元 500 整"></textarea>
+              </div>
+              <div class="form-group">
+                <label>英文</label>
+                <textarea class="form-control input-sm" rows="2" [(ngModel)]="v2CustomEnDraft"
+                  placeholder="e.g. For the fall semester of 2026, if TOEFL reaches 110 or above, discount of USD 500,"></textarea>
+              </div>
+              <button type="button" class="btn btn-default btn-sm" (click)="addV2CustomClause()">添加条款</button>
+            </div>
+            <div *ngIf="v2GreEnabled || v2GpaEnabled">
+              <div class="form-group">
+                <label>成绩公布后提交证明（日）</label>
+                <input type="number" class="form-control" [(ngModel)]="v2ScholarshipProofDays">
+              </div>
+              <div class="form-group">
+                <label>核实后发放期限（工作日）</label>
+                <input type="number" class="form-control" [(ngModel)]="v2ScholarshipPayDays">
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>服务期限</legend>
+            <div class="form-group">
+              <label>服务起始日</label>
+              <input type="date" class="form-control" [(ngModel)]="v2ServiceStart">
+            </div>
+            <div class="form-group">
+              <label>服务截止日</label>
+              <input type="date" class="form-control" [(ngModel)]="v2ServiceEnd">
             </div>
           </fieldset>
 

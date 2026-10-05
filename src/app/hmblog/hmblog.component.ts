@@ -24,7 +24,7 @@ export interface DiscountOption {
   isCustom?: boolean;
 }
 
-export type ContractTab = 'undergrad' | 'masters' | 'halfDiy';
+export type ContractTab = 'undergrad' | 'masters' | 'mastersV2' | 'halfDiy';
 
 @Component({
   selector: 'app-hmblog',
@@ -120,6 +120,55 @@ export class HmblogComponent implements OnInit, OnDestroy {
   ugRefundAmount = 16000;
   ugAdmissionYear = 2026;
 
+  // —— 新版硕士合同字段（与旧版费用/减免分开） ——
+  v2Language: 'bilingual' | 'zh' = 'bilingual';
+  v2SchoolCount = 12;
+  v2EssayRevisions = 5;
+  v2InternshipEnabled = false;
+  v2InternshipCount = 1;
+  v2TotalFee = 18000;
+  v2FirstPayment = 9000;
+  v2SecondPayment = 9000;
+  v2GreEnabled = true;
+  v2GreYear = 2027;
+  v2GreStart = '2027-09-01';
+  v2GreEnd = '2027-12-31';
+  v2GpaEnabled = true;
+  v2GpaBaseline = '3.5';
+  v2GpaYear = 2027;
+  v2GpaTarget = '3.6';
+  v2ScholarshipProofDays = 30;
+  v2ScholarshipPayDays = 15;
+  v2ServiceStart = '2026-10-04';
+  v2ServiceEnd = '2028-09-01';
+  v2ExtraClauses: DiscountOption[] = [
+    {
+      id: 'recLetter',
+      enabled: false,
+      year: 2027,
+      scoreLabel: '',
+      scoreValue: '',
+      amount: 1000,
+      label: '申请周期内获得美国或中国世界500强企业出具的推荐信',
+      zhTemplate: '委托方能够在申请周期内获得一封由美国或中国世界500强企业出具的推荐信，减免美元 {{amount}} 整',
+      enTemplate: 'Party A can obtain a letter of recommendation from a Global 500 company in the US or China during the application period, discount of USD {{amount}}.'
+    },
+    {
+      id: 'school',
+      enabled: false,
+      year: 2027,
+      scoreLabel: '',
+      scoreValue: '',
+      amount: 2000,
+      label: '本科毕业于大陆 985/211，或美国 U.S. News 排名前 10 大学',
+      zhTemplate: '委托方本科毕业于中国大陆985/211高校，或本科就读于美国《U.S. News》排名前10的大学，减免美元 {{amount}} 整。',
+      enTemplate: 'Party A has obtained an undergraduate degree from a “985” or “211” university in mainland China, or from a university ranked in the Top 10 of the U.S. News & World Report Best Colleges ranking in the United States, discount of USD {{amount}}'
+    }
+  ];
+  v2CustomZhDraft = '';
+  v2CustomEnDraft = '';
+  private v2CustomSeq = 1;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -203,6 +252,9 @@ export class HmblogComponent implements OnInit, OnDestroy {
     if (this.activeTab === 'halfDiy') {
       return '半DIY申请合同';
     }
+    if (this.activeTab === 'mastersV2') {
+      return '硕士申请合同（新版）';
+    }
     return '硕士申请合同';
   }
 
@@ -226,6 +278,39 @@ export class HmblogComponent implements OnInit, OnDestroy {
 
   getEnabledDiscounts(): DiscountOption[] {
     return this.discounts.filter(d => d.enabled);
+  }
+
+  getEnabledV2Extras(): DiscountOption[] {
+    return this.v2ExtraClauses.filter(d => d.enabled);
+  }
+
+  addV2CustomClause() {
+    const zh = (this.v2CustomZhDraft || '').trim();
+    const en = (this.v2CustomEnDraft || '').trim();
+    if (!zh && !en) {
+      alert('请至少填写中文或英文减免条款。');
+      return;
+    }
+    this.v2ExtraClauses.push({
+      id: 'custom-' + this.v2CustomSeq++,
+      enabled: true,
+      year: this.v2GreYear,
+      scoreLabel: '',
+      scoreValue: '',
+      amount: 0,
+      zhTemplate: zh,
+      enTemplate: en,
+      isCustom: true
+    });
+    this.v2CustomZhDraft = '';
+    this.v2CustomEnDraft = '';
+  }
+
+  removeV2CustomClause(d: DiscountOption) {
+    if (!d.isCustom) {
+      return;
+    }
+    this.v2ExtraClauses = this.v2ExtraClauses.filter(item => item.id !== d.id);
   }
 
   addCustomDiscount() {
@@ -261,6 +346,10 @@ export class HmblogComponent implements OnInit, OnDestroy {
     this.secondPayment = Number(this.totalFee) - Number(this.deposit);
   }
 
+  syncV2SecondFromTotal() {
+    this.v2SecondPayment = Number(this.v2TotalFee) - Number(this.v2FirstPayment);
+  }
+
   private escapeHtml(text: string): string {
     if (text == null) {
       return '';
@@ -286,6 +375,9 @@ export class HmblogComponent implements OnInit, OnDestroy {
     }
     if (this.activeTab === 'halfDiy') {
       return this.buildHalfDiyContractHtml();
+    }
+    if (this.activeTab === 'mastersV2') {
+      return this.buildMastersV2ContractHtml();
     }
     return this.buildMastersContractHtml();
   }
@@ -981,14 +1073,415 @@ export class HmblogComponent implements OnInit, OnDestroy {
 </div>`;
   }
 
+  private formatUsd(n: number | string): string {
+    const num = Number(n);
+    if (isNaN(num)) {
+      return this.escapeHtml(String(n));
+    }
+    const fixed = num.toFixed(2);
+    const parts = fixed.split('.');
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return parts.join('.');
+  }
+
+  private parseIsoDate(iso: string): { y: number; m: number; d: number } | null {
+    const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(iso || ''));
+    if (!match) {
+      return null;
+    }
+    return { y: Number(match[1]), m: Number(match[2]), d: Number(match[3]) };
+  }
+
+  private formatZhDate(iso: string): string {
+    const parsed = this.parseIsoDate(iso);
+    if (!parsed) {
+      return this.escapeHtml(iso || '');
+    }
+    return parsed.y + '年' + parsed.m + '月' + parsed.d + '日';
+  }
+
+  /** 用系统字体画出页眉右侧协议编号，供 PDF 每页贴上 */
+  private renderAgreementBadge(text: string): { data: string; w: number; h: number } | null {
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    if (!ctx) {
+      return null;
+    }
+    const label = this.v2Language === 'zh' ? '协议编号' : '协议编号 / Agreement No.';
+    const scale = 2;
+    ctx.font = '14px "Songti SC", "SimSun", serif';
+    const labelW = ctx.measureText(label).width;
+    ctx.font = 'bold 16px "Songti SC", "SimSun", serif';
+    const numW = ctx.measureText(text).width;
+    const cssW = Math.ceil(Math.max(labelW, numW)) + 6;
+    const cssH = 42;
+    canvas.width = cssW * scale;
+    canvas.height = cssH * scale;
+    ctx.scale(scale, scale);
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, cssW, cssH);
+    ctx.fillStyle = '#111111';
+    ctx.textAlign = 'right';
+    ctx.textBaseline = 'top';
+    ctx.font = '14px "Songti SC", "SimSun", serif';
+    ctx.fillText(label, cssW - 2, 2);
+    ctx.font = 'bold 16px "Songti SC", "SimSun", serif';
+    ctx.fillText(text, cssW - 2, 22);
+    return { data: canvas.toDataURL('image/png'), w: cssW, h: cssH };
+  }
+
+  private formatEnDate(iso: string): string {
+    const months = ['January', 'February', 'March', 'April', 'May', 'June',
+      'July', 'August', 'September', 'October', 'November', 'December'];
+    const parsed = this.parseIsoDate(iso);
+    if (!parsed || parsed.m < 1 || parsed.m > 12) {
+      return this.escapeHtml(iso || '');
+    }
+    return months[parsed.m - 1] + ' ' + parsed.d + ', ' + parsed.y;
+  }
+
+  /** 还原《研究生申请服务合同_中英对照版》；红字为可填项，实习推荐信与奖学金可关 */
+  private buildMastersV2ContractHtml(): string {
+    const bilingual = this.v2Language === 'bilingual';
+    const en = function (html: string): string {
+      return bilingual ? html : '';
+    };
+    const partyRow = (labelZh: string, labelEn: string, value: string) => {
+      const label = bilingual
+        ? (labelZh + '<br/><span style="font-style:italic;color:#333;">' + labelEn + '</span>')
+        : labelZh;
+      const cell = 'border:1px solid #333;padding:6px 8px;vertical-align:top;';
+      return '<tr><td style="width:42%;background:#f7f7f7;' + cell + '">' + label +
+        '</td><td style="' + cell + '">' + value + '</td></tr>';
+    };
+    const esc = (value: any) => this.escapeHtml(value == null ? '' : String(value));
+    const fee = this.formatMoney(this.v2TotalFee);
+    const feeUsd = this.formatUsd(this.v2TotalFee);
+    const first = this.formatMoney(this.v2FirstPayment);
+    const firstUsd = this.formatUsd(this.v2FirstPayment);
+    const second = this.formatMoney(this.v2SecondPayment);
+    const secondUsd = this.formatUsd(this.v2SecondPayment);
+    const schools = esc(this.v2SchoolCount);
+    const revisions = esc(this.v2EssayRevisions);
+    const startZh = this.formatZhDate(this.v2ServiceStart);
+    const endZh = this.formatZhDate(this.v2ServiceEnd);
+    const startEn = this.formatEnDate(this.v2ServiceStart);
+    const endEn = this.formatEnDate(this.v2ServiceEnd);
+
+    const ag = esc((this.agreementNumber || '').trim());
+    const agLabel = bilingual ? '协议编号 / Agreement No.' : '协议编号';
+    const agreementBadge = ag
+      ? (agLabel + '<br/><strong>' + ag + '</strong>')
+      : '';
+
+    let serviceNo = 1;
+    const serviceItem = (zhTitle: string, zhRest: string, enTitle: string, enRest: string) => {
+      const n = serviceNo++;
+      let html = '<p><strong>' + n + '. ' + zhTitle + '：</strong>' + zhRest + '</p>';
+      if (bilingual) {
+        html += '<p class="en"><strong>(' + n + ') ' + enTitle + ':</strong> ' + enRest + '</p>';
+      }
+      return html;
+    };
+
+    let services = '';
+    services += serviceItem(
+      '背景评估与申请规划',
+      '对甲方的学术背景、GPA、标化成绩、科研/实习/课外经历进行全面评估，制定个性化申请时间规划表，明确各阶段任务及截止日期。',
+      'Profile Assessment and Application Planning',
+      'Conduct a comprehensive assessment of Party A’s academic background, GPA, standardized test scores, and research, internship and extracurricular experience; prepare a personalized application timeline specifying the tasks and deadlines for each stage.'
+    );
+    services += serviceItem(
+      '标化考试规划',
+      '根据目标项目要求，为甲方制定GRE/GMAT及托福/雅思的考试时间规划与目标分数建议，并提示送分要求（考试培训本身不在本合同服务范围内）。',
+      'Standardized Test Planning',
+      'Based on the requirements of the target programs, prepare a GRE/GMAT and TOEFL/IELTS testing schedule, recommend target scores, and advise Party A of score-reporting requirements. Test preparation courses are excluded from the scope of services under this Agreement.'
+    );
+    services += serviceItem(
+      '背景提升指导',
+      '针对申请方向为甲方提供科研、实习、项目经历等背景提升建议，并协助梳理、包装已有经历。',
+      'Profile Development Guidance',
+      'Recommend research, internship and project opportunities or activities to strengthen Party A’s profile in the intended field of study, and assist Party A in organizing and presenting existing experience.'
+    );
+    if (this.v2InternshipEnabled) {
+      const count = esc(this.v2InternshipCount);
+      const letterWord = Number(this.v2InternshipCount) === 1 ? 'letter' : 'letters';
+      services += serviceItem(
+        '实习推荐信',
+        '乙方为甲方提供' + count + '封实习推荐信，由乙方或乙方合作机构的实习指导人根据甲方实际参与的实习/项目内容出具，并按目标院校要求完成网上提交。',
+        'Internship Recommendation Letter',
+        'Party B shall provide Party A with ' + count + ' internship recommendation ' + letterWord + ', to be issued by an internship supervisor at Party B or one of Party B’s partner organizations on the basis of the internship or project activities in which Party A actually participated, and shall arrange for its online submission in accordance with the requirements of the target institutions.'
+      );
+    }
+    services += serviceItem(
+      '选校定位',
+      '根据甲方背景及意向国家/地区、专业方向，提供不少于' + schools + '所院校/项目的选校清单（按冲刺、主申、保底分层），并说明推荐理由（含项目匹配度、录取难度、就业与学费情况等），经甲方确认后确定最终申请清单。',
+      'Institution and Program Selection',
+      'Based on Party A’s profile, preferred countries or regions, and intended field of study, provide a list of at least ' + schools + ' institutions/programs, grouped into reach, target and safe categories, together with the reasons for each recommendation, including program fit, admission competitiveness, employment prospects and tuition fees. The final application list shall be established upon Party A’s confirmation.'
+    );
+    services += serviceItem(
+      '文书写作',
+      '协助甲方构思、修改及润色目标项目所需的全部申请文书，包括目的陈述（SOP/Statement of Purpose）、个人陈述（Personal Statement）、多元化陈述（Diversity Statement）及各院校附加短文（Supplemental Essays），每篇修改不超过' + revisions + '次，并根据不同院校要求进行针对性调整。',
+      'Application Essay Preparation',
+      'Assist Party A in brainstorming, revising and polishing all application essays required by the target programs, including Statements of Purpose (SOPs), Personal Statements, Diversity Statements and institution-specific Supplemental Essays. Each essay shall be subject to no more than ' + revisions + ' revisions and shall be tailored to the requirements of the relevant institution.'
+    );
+    services += serviceItem(
+      '简历（CV/Resume）撰写',
+      '根据申请目标对甲方简历进行内容优化、结构调整及格式润色。',
+      'CV/Resume Preparation',
+      'Assist Party A in optimizing the content, structure and formatting of Party A’s CV/resume in light of the application objectives.'
+    );
+    services += serviceItem(
+      '学术推荐信指导',
+      '协助甲方确定推荐人名单、准备推荐人沟通材料，并对推荐信内容提供结构与语言层面的编辑、润色建议；跟踪推荐人提交进度。',
+      'Academic Recommendation Letter Guidance',
+      'Assist Party A in identifying recommenders and preparing materials for communication with them; provide structural and language editing and polishing suggestions for recommendation letters; and monitor the recommenders’ submission progress.'
+    );
+    services += serviceItem(
+      '网申填写与提交',
+      '协助甲方完成所有目标院校网申系统的注册、信息填写、材料上传、推荐人邀请、申请费缴纳指导及最终提交，确保在截止日期前完成。',
+      'Online Application Completion and Submission',
+      'Assist Party A with account registration, data entry, document uploads, recommender invitations, guidance on payment of application fees, and final submission through the application portals of all target institutions, ensuring completion before the applicable deadlines.'
+    );
+    services += serviceItem(
+      '材料核对与送分指导',
+      '协助甲方核对各院校申请材料清单（成绩单、学位证明、WES等学历认证、标化成绩送分等），确保材料完整、准确。',
+      'Document Verification and Score-Reporting Guidance',
+      'Assist Party A in checking each institution’s required application materials, including transcripts, proof of degree, credential evaluations such as WES evaluations, and standardized test score reports, to ensure completeness and accuracy.'
+    );
+    services += serviceItem(
+      '面试辅导',
+      '如目标院校要求面试，乙方为甲方提供面试准备指导及模拟面试。',
+      'Interview Preparation',
+      'Where a target institution requires an interview, Party B shall provide Party A with interview preparation guidance and mock interviews.'
+    );
+    services += serviceItem(
+      '申请跟进与录取后服务',
+      '跟踪各院校申请状态，协助处理补件、更新材料（Update Letter）及候补名单（Waitlist）信函；录取后协助甲方进行Offer比较与选校决策、接受录取及缴纳押金、I-20/CAS等录取文件申请指导。',
+      'Application Follow-up and Post-Admission Services',
+      'Monitor application status at each institution; assist with requests for additional documents, update letters and waitlist correspondence; and, following admission, assist Party A in comparing offers and selecting an institution, accepting an offer and paying the deposit, and applying for admission-related documents such as an I-20 or CAS.'
+    );
+
+    const extraClauses = this.getEnabledV2Extras();
+    let scholarship = '';
+    if (this.v2GreEnabled || this.v2GpaEnabled || extraClauses.length) {
+      let clauseNo = 1;
+      let items = '';
+      if (this.v2GreEnabled) {
+        const year = esc(this.v2GreYear);
+        const greStartZh = this.formatZhDate(this.v2GreStart);
+        const greEndZh = this.formatZhDate(this.v2GreEnd);
+        const greStartEn = this.formatEnDate(this.v2GreStart);
+        const greEndEn = this.formatEnDate(this.v2GreEnd);
+        const n = clauseNo++;
+        items += `<p>${n}.GRE奖学金：甲方于${year}年秋季学期（即${greStartZh}至${greEndZh}期间）参加GRE考试，且官方成绩总分达到320分及以上的，乙方一次性奖励甲方美元 1,000 元整（USD $1,000.00）。同一期间多次考试达标的，仅奖励一次。</p>`;
+        items += en('<p class="en">GRE Scholarship: If Party A takes the GRE during the Fall ' + year + ' semester, namely between ' + greStartEn + ' and ' + greEndEn + ', and obtains an official total score of 320 or above, Party B shall pay Party A a one-time award of One Thousand United States Dollars (USD $1,000.00). Only one award shall be payable, even if Party A achieves the qualifying score on multiple tests during the same period.</p>');
+      }
+      if (this.v2GpaEnabled) {
+        const baseline = esc(this.v2GpaBaseline);
+        const target = esc(this.v2GpaTarget);
+        const year = esc(this.v2GpaYear);
+        const n = clauseNo++;
+        items += `<p>${n}.GPA奖学金：以本合同签署时甲方最近一份官方成绩单所载累计GPA为基准（基准GPA：${baseline}/4.0），甲方于${year}年秋季学期结束后出具的官方成绩单所载累计GPA较基准提高0.1分及以上（即达到${target}/4.0及以上）的，乙方一次性奖励甲方美元 1,000 元整（USD $1,000.00）；提高不足0.1分的不予奖励，提高超过0.1分的亦仅奖励一次，不累计计算。</p>`;
+        items += en('<p class="en">GPA Scholarship: The cumulative GPA stated on Party A’s most recent official transcript as of the date this Agreement is signed shall serve as the baseline GPA (baseline GPA: ' + baseline + '/4.0). If the cumulative GPA stated on Party A’s official transcript issued after the end of the Fall ' + year + ' semester increases by at least 0.1 over the baseline (i.e., reaches ' + target + '/4.0 or above), Party B shall pay Party A a one-time award of One Thousand United States Dollars (USD $1,000.00). No award shall be payable for an increase of less than 0.1. An increase of more than 0.1 shall likewise qualify for only one award, with no cumulative awards.</p>');
+      }
+      for (let i = 0; i < extraClauses.length; i++) {
+        const clause = extraClauses[i];
+        const zhText = esc(this.fillDiscountText(clause.zhTemplate, clause).trim());
+        const enText = esc(this.fillDiscountText(clause.enTemplate, clause).trim());
+        const n = clauseNo++;
+        if (zhText) {
+          items += '<p>' + n + '.' + zhText + '</p>';
+        }
+        if (enText) {
+          items += en('<p class="en">(' + n + ') ' + enText + '</p>');
+        }
+      }
+      if (this.v2GreEnabled || this.v2GpaEnabled) {
+        const proof = esc(this.v2ScholarshipProofDays);
+        const payDays = esc(this.v2ScholarshipPayDays);
+        const payNo = clauseNo;
+        items += `<p>${payNo}.发放方式：甲方应在成绩公布后${proof}日内向乙方提供官方成绩报告或官方成绩单作为证明，乙方核实无误后于${payDays}个工作日内以银行转账方式向甲方发放奖学金。如发现甲方提供的成绩证明存在虚假、篡改等情形，乙方有权拒绝发放并追回已发放的奖学金。</p>`;
+        items += en('<p class="en">Payment Procedure: Party A shall provide Party B with an official score report or official transcript as supporting evidence within ' + proof + ' days after the results are released. Upon verification, Party B shall pay the scholarship to Party A by bank transfer within ' + payDays + ' business days. If any supporting evidence is found to be false or altered, Party B may refuse payment and recover any scholarship already paid.</p>');
+      }
+      scholarship = `
+  <h3>第三条　奖学金（学业激励）</h3>
+  ${en('<h4 class="en-h">Article 3  Scholarships (Academic Incentives)</h4>')}
+  <p>为激励甲方提升学术及标化成绩，乙方在甲方满足以下条件时向甲方发放奖学金：</p>
+  ${en('<p class="en">To encourage Party A to improve academic performance and standardized test scores, Party B shall award scholarships to Party A upon satisfaction of the following conditions:</p>')}
+  ${items}`;
+    }
+
+    return `
+<div class="contract">
+  <div class="contract-header" style="margin-bottom:16px;">
+    <table class="header-bar" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;border:none;margin:0;">
+      <tr>
+        <td style="width:22%;border:none;"></td>
+        <td style="text-align:center;border:none;">
+          <img src="${this.logoSrc()}" alt="MICHI ACADEMY" style="height:96px;"/>
+          <div style="font-size:14pt;font-weight:bold;margin-top:8px;">MICHI ACADEMY INC</div>
+        </td>
+        <td class="agreement-no" style="width:28%;text-align:right;vertical-align:top;border:none;font-size:11pt;line-height:1.35;">${agreementBadge}</td>
+      </tr>
+    </table>
+  </div>
+
+  <h2 style="text-align:center;font-size:16pt;">研究生（硕士）申请指导服务合同</h2>
+  ${en('<h3 style="text-align:center;font-size:12pt;font-weight:normal;font-style:italic;">Master’s Degree Application Advisory Services Agreement</h3>')}
+
+  <table class="meta party" width="100%" cellpadding="6" cellspacing="0" style="border-collapse:collapse;width:100%;margin:8px 0 14px;">
+    ${partyRow('甲方（委托方/学生）', 'Party A (Client/Student)', '&nbsp;')}
+    ${partyRow('身份证号 / 护照号', 'National ID No. / Passport No.', '&nbsp;')}
+    ${partyRow('联系电话', 'Telephone', '&nbsp;')}
+    ${partyRow('电子邮箱', 'Email', '&nbsp;')}
+    ${partyRow('通讯地址', 'Mailing Address', '&nbsp;')}
+  </table>
+  <table class="meta party" width="100%" cellpadding="6" cellspacing="0" style="border-collapse:collapse;width:100%;margin:0 0 16px;">
+    ${partyRow('乙方（服务方）', 'Party B (Service Provider)', 'Michi Academy Inc.')}
+    ${partyRow('授权代表', 'Authorized Representative', 'Yuxin Zhang')}
+    ${partyRow('护照号', 'Passport No.', 'EJ4957304')}
+    ${partyRow('公司注册号', 'Employer Identification Number', '86-2816027')}
+    ${partyRow('联系电话', 'Telephone', '7819576246')}
+    ${partyRow('电子邮箱', 'Email', 'yuxinmichi@michiacademy.com')}
+    ${partyRow('通讯地址', 'Mailing Address', '214 Duffield St, Brooklyn, NY, 11201')}
+  </table>
+
+  <p>鉴于甲方拟申请海外研究生（硕士）学位项目，委托乙方提供申请指导相关服务；乙方同意接受委托，双方本着平等自愿、诚实信用的原则，经协商一致，就以下事项达成本合同（以下简称“本合同”），共同遵照执行。</p>
+  ${en('<p class="en">WHEREAS Party A intends to apply to overseas graduate (master’s) degree programs and engages Party B to provide application advisory services, and Party B agrees to accept such engagement; THEREFORE, With regard for the principles of equality, voluntariness, honesty and good faith, the parties have, through mutual consultation, entered into this agreement (the “Agreement”) and agree to be bound by the following terms.</p>')}
+
+  <h3>第一条　服务内容</h3>
+  ${en('<h4 class="en-h">Article 1  Scope of Services</h4>')}
+  <p>乙方向甲方提供研究生（硕士）申请全流程指导服务（“全包服务”），具体包括：</p>
+  ${en('<p class="en">Party B shall provide Party A with comprehensive advisory services throughout the Master’s Degree application process (the “Comprehensive Services”), including the following:</p>')}
+  ${services}
+  <p>说明：部分院校会需要甲方提供学历学位证书、成绩单（含官方评分标准说明）、语言/标化成绩证明、学术写作样本等材料。以上材料的真实性及原始文件由甲方自行提供及负责；乙方负责提供遴选建议、修改及语言润色。</p>
+  ${en('<p class="en">Note: Several institutions may require Party A to provide academic qualification and degree certificates, transcripts (including an explanation of the official grading scale), language and standardized test score reports, academic writing samples, and other materials. Party A shall provide the original documents and shall be responsible for the authenticity of these materials. Party B shall provide advice on the selection of materials, revisions and language polishing.</p>')}
+  <p>以上服务不包括：语言及标化考试（如雅思、托福、GRE、GMAT等）培训及考试报名费用，院校申请费、送分费、学历认证费等第三方费用，学位证书/成绩单等官方文件的开具或翻译认证，签证材料办理，机票与住宿安排，以及院校最终录取决定（录取与否由目标院校独立决定，乙方不作任何录取保证）。</p>
+  ${en('<p class="en">The foregoing services exclude: language and standardized test preparation courses and test registration fees (including IELTS, TOEFL, GRE, GMAT, etc.); third-party charges such as institution application fees, score-reporting fees and credential evaluation fees; the issuance or certified translation of official documents such as degree certificates and transcripts; visa document processing; flight and accommodation arrangements; and final admission decisions. Admission decisions shall be made independently by the target institutions, and Party B makes no guarantee of admission.</p>')}
+
+  <h3>第二条　服务费用及支付方式</h3>
+  ${en('<h4 class="en-h">Article 2  Service Fees and Payment Methods</h4>')}
+  <p>本合同项下服务总费用为美元 ${fee} 元整（USD $${feeUsd}）。服务费分两期支付：</p>
+  ${en('<p class="en">The total service fee under this Agreement shall be USD $' + feeUsd + ', payable in two installments:</p>')}
+  <p style="padding-left:2em;">第一期款项（首付款）美元 ${first} 元整（USD $${firstUsd}），付款期限：本合同签署之日起【5】个工作日内；</p>
+  ${en('<p class="en" style="padding-left:2em;">The first installment (Initial Payment) shall be USD $' + firstUsd + ', payable within [5] business days from the date this Agreement is signed;</p>')}
+  <p style="padding-left:2em;">第二期款项美元 ${second} 元整（USD $${secondUsd}），付款期限：甲方收到第一份院校/项目录取通知（含有条件录取）之日起【7】个工作日内。</p>
+  ${en('<p class="en" style="padding-left:2em;">The second installment shall be USD $' + secondUsd + ', payable within [7] business days from the date Party A receives the first offer of admission from an institution/program, including a conditional offer.</p>')}
+  <p>付款方式：银行转账 / 第三方支付平台（收款账户以本条下列乙方指定账户为准）。以人民币支付的，按付款当日【中国银行】公布的美元现汇卖出价折算；汇款手续费由甲方承担。甲方未按期足额付款的，乙方有权暂缓提供服务直至甲方足额付款为止。</p>
+  ${en('<p class="en">Payment Method: Bank transfer or a third-party payment platform, to the account designated by Party B below in this Article. Payments in Renminbi shall be converted at the USD foreign exchange selling rate published by [Bank of China] on the payment date. Party A shall bear all remittance charges. If Party A fails to make any payment in full when due, Party B may suspend services until full payment has been received.</p>')}
+  <p>付款方式</p>
+  ${en('<p class="en">Payment Details</p>')}
+  <p>*支付宝： 18510211741伊昊正</p>
+  ${en('<p class="en">* Alipay: 18510211741&nbsp;&nbsp;&nbsp;&nbsp;Account Holder: Haozheng Yi</p>')}
+  <p>*开户行：中国工商银行扬州市江都支行　户名：张俊</p>
+  <p>银行账号: 6212 8811 0800 0035 691</p>
+  ${en('<p class="en">Account No.: 6212 8811 0800 0035 691</p>')}
+
+  ${scholarship}
+
+  <h3>第四条　退费条款</h3>
+  ${en('<h4 class="en-h">Article 4  Refund</h4>')}
+  <p>1.退费条件：若甲方按本合同第一条确定的最终申请清单完成全部院校申请后，所申请的全部院校/项目均未录取甲方（即“一个不中”），甲方无需支付本合同约定的第二期申请服务费。</p>
+  ${en('<p class="en">Conditions for a Refund: If Party A completes all applications on the final application list established under Article 1 of this Agreement and receives no offer of admission from any institution/program applied to (i.e., no successful application), Party A shall not be required to pay the second installment of the application service fee under this Agreement.</p>')}
+  <p>2.退款流程：甲方须在最后一所院校公布结果之日起【30】日内，向乙方提供全部院校的拒信或申请系统结果截图作为证明；乙方核实无误后于【15】个工作日内书面确认免除第二期服务费。甲方已提前支付第二期服务费的，乙方应在该期限内原路退回或转账至甲方指定账户。</p>
+  ${en('<p class="en">Refund Procedure: Within [30] days after the last institution releases its decision, Party A shall provide Party B with rejection letters or screenshots of application portal results for all institutions as supporting evidence. Upon verification, Party B shall confirm in writing, within [15] business days, that the second installment of the service fee is waived. If Party A has paid the second installment in advance, Party B shall, within the same period, refund it through the original payment channel or transfer it to an account designated by Party A.</p>')}
+  <p>3.不予提款情形：发生以下任一情形的，第二期服务费不予免除，甲方应在乙方书面通知之日起【7】个工作日内支付：1） 甲方获得任一院校/项目的录取（含有条件录取），无论甲方是否接受该录取；2） 甲方未按双方确认的最终申请清单提交全部申请，或擅自撤回、放弃任一申请；3）甲方提供虚假材料或隐瞒重要信息，导致申请被拒或录取被撤销；4） 甲方未按乙方要求的时间节点提供材料或反馈，导致错过申请截止日期；5）甲方未完成目标院校要求的面试或其他申请环节。</p>
+  ${en('<p class="en">Circumstances Excluding a Refund: If any of the following occurs, the second installment of the service fee shall not be waived and Party A shall pay it within [7] business days after Party B gives written notice: (1) Party A receives an offer of admission from any institution/program, including a conditional offer, regardless of whether Party A accepts it; (2) Party A fails to submit all applications on the final application list confirmed by both parties, or unilaterally withdraws or abandons any application without authorization; (3) Party A provides false materials or conceals material information, resulting in an application being rejected or an offer being revoked; (4) Party A fails to provide materials or feedback by the deadlines required by Party B, resulting in a missed application deadline; (5) Party A fails to complete an interview or any other application requirement imposed by a target institution.</p>')}
+  <p>4.其他：已发放的奖学金不因第二期服务费的免除而退还或抵扣。</p>
+  ${en('<p class="en">Other: Scholarships already paid shall not be repayable or subject to offset as a result of the waiver of the second installment of the service fee.</p>')}
+
+  <h3>第五条　服务期限</h3>
+  ${en('<h4 class="en-h">Article 5  Service Term</h4>')}
+  <p>本合同服务期限自${startZh}起至甲方完成入学确认（含缴纳押金及I-20/CAS等录取文件签发）之日止，全部申请均未获录取的至全部申请结果公布之日止，或至${endZh}止（以先到者为准）。因目标院校流程调整导致的期限顺延，双方可协商书面确认。</p>
+  ${en('<p class="en">The service term under this Agreement shall commence on ' + startEn + ' and shall end on the earlier of: (1) the date Party A completes enrollment confirmation, including payment of the deposit and issuance of admission-related documents such as an I-20 or CAS, or, if none of the applications results in admission, the date all application decisions have been released; and (2) ' + endEn + '. Any extension necessitated by changes to the procedures of a target institution may be agreed upon and confirmed in writing by the parties.</p>')}
+
+  <h3>第六条　双方权利与义务</h3>
+  ${en('<h4 class="en-h">Article 6  Rights and Obligations of the Parties</h4>')}
+  <p>1.甲方应及时、真实、完整地向乙方提供学习经历、成绩单、语言及标化成绩、科研/实习经历、身份证明等各项申请所需材料及信息，并对所提供材料的真实性负责；因甲方提供材料不实或不完整导致的后果由甲方自行承担。</p>
+  ${en('<p class="en">(1) Party A shall provide Party B, in a timely, truthful and complete manner, with all materials and information required for the applications, including educational history, transcripts, language and standardized test scores, research and internship experience, and identification documents. Party A shall be responsible for the authenticity of the materials provided and shall bear any consequences arising from false or incomplete materials.</p>')}
+  <p>2.甲方应在乙方要求的合理期限内对文书稿件、选校清单、材料清单等进行确认或反馈，逾期未反馈的，视为默认乙方当前版本。</p>
+  ${en('<p class="en">(2) Party A shall confirm or provide feedback on essay drafts, institution selection lists, document checklists and other materials within the reasonable periods specified by Party B. Failure to provide feedback within such periods shall be deemed acceptance of Party B’s then-current version.</p>')}
+  <p>3.乙方应按照本合同约定的内容和标准，按时、保质完成各项服务，并对服务过程中知悉的甲方个人信息及隐私予以保密。</p>
+  ${en('<p class="en">(3) Party B shall complete all services on time and to the quality standards stipulated in this Agreement, and shall keep confidential Party A’s personal information and private matters learned in the course of providing the services.</p>')}
+  <p>4.乙方应如实告知甲方所申请院校的相关要求及流程，不得夸大录取可能性或作出录取保证。</p>
+  ${en('<p class="en">(4) Party B shall truthfully inform Party A of the relevant requirements and procedures of the institutions to which Party A applies, and shall not exaggerate the likelihood of admission or guarantee admission.</p>')}
+
+  <h3>第七条　保密条款</h3>
+  ${en('<h4 class="en-h">Article 7  Confidentiality</h4>')}
+  <p>双方对在履行本合同过程中知悉的对方个人信息、商业信息及其他非公开信息负有保密义务，未经对方书面同意不得向无关第三方披露，法律法规另有规定的除外。</p>
+  ${en('<p class="en">Each party shall keep confidential the other party’s personal information, business information and other non-public information learned in the course of performing this Agreement, and shall not disclose such information to unrelated third parties without the other party’s written consent, except as otherwise provided by applicable laws and regulations.</p>')}
+
+  <h3>第八条　声明与免责</h3>
+  ${en('<h4 class="en-h">Article 8  Acknowledgments and Disclaimer</h4>')}
+  <p>双方确认：本服务为申请指导性质，乙方尽最大努力协助甲方准备并提交高质量的申请材料，但院校的最终录取决定、院校奖学金评审结果均由相关院校及第三方独立作出，乙方不对最终录取结果、院校奖学金获批结果作任何明示或默示的保证，本合同第四条另有约定的除外。</p>
+  ${en('<p class="en">The parties acknowledge that the services are advisory in nature. Party B shall use its best efforts to assist Party A in preparing and submitting high-quality application materials. However, final admission decisions and institutional scholarship determinations are made independently by the relevant institutions and third parties. Party B makes no express or implied warranty as to the final admission outcome or the award of any institutional scholarship, except as otherwise provided in Article 4 of this Agreement.</p>')}
+
+  <h3>第九条　合同变更、解除与违约责任</h3>
+  ${en('<h4 class="en-h">Article 9  Amendment, Termination and Liability for Breach</h4>')}
+  <p>本合同经双方书面协商一致可以变更或解除。任何一方无正当理由单方解除合同的，应承担相应违约责任。本合同所称“服务开始”，指乙方向甲方交付背景评估及申请规划之日。甲方在服务开始前单方解除合同的，乙方扣除已发生的合理费用后退还已收取的服务费用；甲方在服务开始后单方解除合同的，乙方已收取的第一期服务费不予退还，已支付的第二期服务费予以退还；乙方无正当理由单方解除合同，或因乙方违约导致甲方无法按期完成申请的，乙方应退回甲方已缴纳的全部费用。本合同第四条约定的第二期服务费免除按该条执行。</p>
+  ${en('<p class="en">This Agreement may be amended or terminated by mutual written agreement of the parties. A party that unilaterally terminates this Agreement without justifiable cause shall bear the corresponding liability for breach. For purposes of this Agreement, “commencement of services” means the date Party B delivers the profile assessment and application plan to Party A. If Party A unilaterally terminates this Agreement before commencement of services, Party B shall refund the service fees received after deducting reasonable expenses already incurred. If Party A unilaterally terminates this Agreement after commencement of services, the first installment received by Party B shall be non-refundable, and any second installment paid shall be refunded. If Party B unilaterally terminates this Agreement without justifiable cause, or if Party B’s breach prevents Party A from completing the applications on time, Party B shall refund all fees paid by Party A. Any waiver of the second installment under Article 4 shall be governed by that Article.</p>')}
+
+  <h3>第十条　争议解决</h3>
+  ${en('<h4 class="en-h">Article 10  Dispute Resolution</h4>')}
+  <p>因本合同引起的或与本合同有关的任何争议，双方应友好协商解决；协商不成的，任何一方均可在甲方户口所在地法院提起诉讼。本合同的订立、效力、解释及争议解决均适用中华人民共和国法律。</p>
+  ${en('<p class="en">Any dispute arising out of or in connection with this Agreement shall be resolved through amicable consultation between the parties. If no resolution is reached, either party may bring proceedings before a court at the place of Party A’s household registration. The formation, validity and interpretation of this Agreement, and the resolution of disputes relating to it, shall be governed by the laws of the People’s Republic of China.</p>')}
+
+  <h3>第十一条　其他约定</h3>
+  ${en('<h4 class="en-h">Article 11  Miscellaneous</h4>')}
+  <p>本合同未尽事宜，由双方另行协商并签订补充协议，补充协议与本合同具有同等法律效力。本合同一式两份，甲、乙双方各执一份，自双方签字（盖章）之日起生效。</p>
+  ${en('<p class="en">Any matters not provided for in this Agreement shall be separately negotiated by the parties and set out in a supplemental agreement, which shall have the same legal effect as this Agreement. This Agreement shall be executed in two counterparts, with each party retaining one, and shall take effect on the date it is signed (or sealed) by both parties.</p>')}
+
+  <p>（以下无正文）</p>
+  ${en('<p class="en">(No further substantive provisions follow.)</p>')}
+  <table class="sign-cols" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%;margin-top:28px;">
+    <tr>
+      <td style="width:50%;vertical-align:top;border:none;padding:8px 28px 8px 0;">
+        <p style="margin:0 0 28px;"><strong>甲方（签字）</strong>${bilingual ? '<br/><span style="font-style:italic;color:#333;">Party A (Signature)</span>' : ''}</p>
+        <p style="margin:0;">日期：　　年　　月　　日${bilingual ? '<br/><span style="font-style:italic;color:#333;">Date</span>' : ''}</p>
+      </td>
+      <td style="width:50%;vertical-align:top;border:none;padding:8px 0 8px 28px;">
+        <p style="margin:0 0 28px;"><strong>乙方（签字/盖章）</strong>${bilingual ? '<br/><span style="font-style:italic;color:#333;">Party B (Signature/Seal)</span>' : ''}</p>
+        <p style="margin:0;">日期：　　年　　月　　日${bilingual ? '<br/><span style="font-style:italic;color:#333;">Date</span>' : ''}</p>
+      </td>
+    </tr>
+  </table>
+</div>`;
+  }
+
   private wrapDocument(body: string, title: string): string {
+    const repeatHeader = this.activeTab === 'mastersV2';
+    const ag = this.escapeHtml((this.agreementNumber || '').trim());
+    const headerLabel = this.v2Language === 'zh'
+      ? '协议编号'
+      : '协议编号 / Agreement No.';
+    const wordHeader = repeatHeader && ag ? `
+<div style="mso-element:header" id="h1">
+  <p class="MsoHeader" style="text-align:right;margin:0;font-size:11pt;">${headerLabel}<br/><b>${ag}</b></p>
+</div>` : '';
+    const pageStyle = repeatHeader && ag ? `
+  @page Section1 {
+    size: 21cm 29.7cm;
+    margin: 2.2cm 1.8cm 1.8cm 1.8cm;
+    mso-header-margin: 0.8cm;
+    mso-header: h1;
+  }
+  div.Section1 { page: Section1; }
+  p.MsoHeader { margin: 0; text-align: right; }` : `
+  @page { margin: 18mm; }`;
+    const sectionOpen = repeatHeader && ag ? '<div class="Section1">' : '';
+    const sectionClose = repeatHeader && ag ? '</div>' : '';
+    const htmlNs = repeatHeader && ag
+      ? ' xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"'
+      : '';
     return `<!DOCTYPE html>
-<html>
+<html${htmlNs}>
 <head>
 <meta charset="utf-8">
 <title>${title}</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View></w:WordDocument></xml><![endif]-->
 <style>
-  @page { margin: 18mm; }
+  ${pageStyle}
   body { font-family: "Songti SC", "SimSun", "Times New Roman", serif; font-size: 11pt; line-height: 1.55; color: #111; margin: 18mm; }
   h2, h3 { margin: 14px 0 6px; }
   h4.en-h { margin: 0 0 8px; font-weight: normal; font-style: italic; font-size: 11pt; }
@@ -996,6 +1489,7 @@ export class HmblogComponent implements OnInit, OnDestroy {
   table.meta { border-collapse: collapse; margin: 12px 0 20px; }
   table.meta td { border: 1px solid #333; vertical-align: top; min-height: 28px; }
   table.meta td:first-child { width: 48%; background: #f7f7f7; }
+  table.header-bar, table.header-bar td { border: none; background: transparent; padding: 0; }
   ul.star, ul.disc { padding-left: 22px; margin: 6px 0; }
   p { margin: 8px 0; }
   .contract-header img { height: 96px; }
@@ -1004,7 +1498,7 @@ export class HmblogComponent implements OnInit, OnDestroy {
   }
 </style>
 </head>
-<body>${body}</body>
+<body>${wordHeader}${sectionOpen}${body}${sectionClose}</body>
 </html>`;
   }
 
@@ -1013,7 +1507,11 @@ export class HmblogComponent implements OnInit, OnDestroy {
   }
 
   exportWord() {
-    const html = this.wrapDocument(this.buildContractBodyHtml(), this.contractTitle);
+    let body = this.buildContractBodyHtml();
+    if (this.activeTab === 'mastersV2') {
+      body = body.replace(/(<td class="agreement-no"[^>]*>)[\s\S]*?(<\/td>)/, '$1$2');
+    }
+    const html = this.wrapDocument(body, this.contractTitle);
     const blob = new Blob(['\ufeff', html], { type: 'application/msword;charset=utf-8' });
     FileSaver.saveAs(blob, this.contractTitle + '_' + (this.agreementNumber || 'draft') + '.doc');
   }
@@ -1146,6 +1644,12 @@ export class HmblogComponent implements OnInit, OnDestroy {
             return Math.max(startY + 40, idealEnd - 18);
           };
 
+          let agreementBadge = null;
+          const agreementNo = (self.agreementNumber || '').trim();
+          if (self.activeTab === 'mastersV2' && agreementNo) {
+            agreementBadge = self.renderAgreementBadge(agreementNo);
+          }
+
           let sliceY = 0;
           let page = 0;
           while (sliceY < canvas.height - 1) {
@@ -1167,6 +1671,22 @@ export class HmblogComponent implements OnInit, OnDestroy {
             const company = 'MICHI ACADEMY INC';
             const textW = pdf.getStringUnitWidth(company) * 11 / pdf.internal.scaleFactor;
             pdf.text(company, (pageW - textW) / 2, marginTop + logoH + 4.5);
+            if (agreementBadge) {
+              try {
+                const badgeWmm = agreementBadge.w * 0.26;
+                const badgeHmm = agreementBadge.h * 0.26;
+                pdf.addImage(
+                  agreementBadge.data,
+                  'PNG',
+                  pageW - marginX - badgeWmm,
+                  marginTop,
+                  badgeWmm,
+                  badgeHmm
+                );
+              } catch (e) {
+                // ignore header badge failure
+              }
+            }
 
             const idealEnd = sliceY + maxSlicePx;
             let splitY = idealEnd;
