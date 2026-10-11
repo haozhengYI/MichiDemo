@@ -261,6 +261,181 @@ export class HmstudentComponent implements OnInit {
     return n;
   }
 
+  countLettersForSchoolType(school: School, type: string): number {
+    if (!school) {
+      return 0;
+    }
+    const want = String(type || '').toLowerCase();
+    let n = 0;
+    for (let i = 0; i < this.recomletters.length; i++) {
+      const letter = this.recomletters[i];
+      if (String(letter.schoolID) !== String(school._id)) {
+        continue;
+      }
+      if (String(letter.type || '').toLowerCase() === want) {
+        n++;
+      }
+    }
+    return n;
+  }
+
+  isRecShort(school: School): boolean {
+    return this.recGap(school).short;
+  }
+
+  recGapText(school: School): string {
+    return this.recGap(school).text;
+  }
+
+  private recGap(school: School): { short: boolean, text: string } {
+    const need = this.parseRecNeed(school ? school.recommNumber : '');
+    const assigned = this.countLettersForSchool(school);
+    const academic = this.countLettersForSchoolType(school, 'Academic');
+    const professional = this.countLettersForSchoolType(school, 'Professional');
+    const parts = [];
+    if (need.total !== null && assigned < need.total) {
+      parts.push('已分配 ' + assigned + '，需要 ' + need.total);
+    }
+    if (need.academic !== null && academic < need.academic) {
+      parts.push('Academic 已分配 ' + academic + '，需要 ' + need.academic);
+    }
+    if (need.professional !== null && professional < need.professional) {
+      parts.push('Professional 已分配 ' + professional + '，需要 ' + need.professional);
+    }
+    return { short: parts.length > 0, text: parts.join('\n') };
+  }
+
+  private parseRecNeed(raw: any): { total: number | null, academic: number | null, professional: number | null } {
+    const empty = { total: null, academic: null, professional: null };
+    const text = this.normalizeRecText(raw);
+    if (!text) {
+      return empty;
+    }
+    if (/^optional$/i.test(text) || /^\d+\s*\(?\s*optional\s*\)?$/i.test(text)) {
+      return empty;
+    }
+    if (/^up\s*to\s*\d+/i.test(text) || /0\s*required/i.test(text)) {
+      return empty;
+    }
+    if (/^(prefer|建议)/i.test(text) && !/必须|至少|最少|least|required/i.test(text)) {
+      return empty;
+    }
+
+    let academic = this.maxRecTypeCount(text, 'academic|acedemic|学术');
+    let professional = this.maxRecTypeCount(text, 'professional|工作推荐信|工作推荐|工作|专业');
+    if (academic === null && /必须.{0,8}学术|一定要.{0,8}学术/.test(text)) {
+      academic = 1;
+    }
+    if (professional === null && /必须.{0,8}工作|一定要.{0,8}工作|必须.{0,12}professional/i.test(text)) {
+      professional = 1;
+    }
+    if (academic === null && /\(\s*(?:academic|acedemic|学术)\s*\)/i.test(text)) {
+      academic = 1;
+    }
+    if (professional === null && /\(\s*professional\s*\)/i.test(text)) {
+      professional = 1;
+    }
+
+    const outside = text.replace(/\([^)]*\)/g, ' ');
+    let total: number | null = null;
+    const lead = outside.match(/^\s*(\d+)/);
+    if (lead) {
+      const after = outside.slice(lead[0].length);
+      const attached = /^\s*(?:封|个)?\s*(academic|acedemic|professional|学术|工作|专业|[A-Za-z\u4e00-\u9fff])/i.test(after);
+      if (attached) {
+        total = this.sumNumberedRecPhrases(outside);
+      }
+      if (total === null) {
+        total = this.recTextNumber(lead[1]);
+      }
+    }
+    if (total === null) {
+      const least = text.match(/(?:至少|最少|必须|least|只要|只需)\s*(\d+|[一二两三四五])/i);
+      if (least && !this.isSoftRecClause(this.recClauseAround(text, least.index || 0, least[0].length))) {
+        total = this.recTextNumber(least[1]);
+      }
+    }
+    const required = text.match(/(\d+)\s*required/i);
+    if (required) {
+      const requiredCount = this.recTextNumber(required[1]);
+      if (requiredCount > 0 && (total === null || requiredCount < total)) {
+        total = requiredCount;
+      }
+    }
+    const typeSum = (academic || 0) + (professional || 0);
+    if (typeSum > 0 && (total === null || total < typeSum)) {
+      total = typeSum;
+    }
+    return { total: total, academic: academic, professional: professional };
+  }
+
+  private normalizeRecText(raw: any): string {
+    return String(raw || '')
+      .replace(/[（]/g, '(')
+      .replace(/[）]/g, ')')
+      .replace(/`/g, '')
+      .replace(/[０-９]/g, function (d) { return String('０１２３４５６７８９'.indexOf(d)); })
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  private recTextNumber(token: string): number {
+    const map: { [key: string]: number } = { '一': 1, '二': 2, '两': 2, '三': 3, '四': 4, '五': 5 };
+    if (map[token] != null) {
+      return map[token];
+    }
+    const n = parseInt(token, 10);
+    return isNaN(n) ? 0 : n;
+  }
+
+  private recClauseAround(text: string, index: number, length: number): string {
+    const seps = /[，。,.;；（）()\n]/;
+    let start = index;
+    while (start > 0 && !seps.test(text.charAt(start - 1))) {
+      start--;
+    }
+    let end = index + length;
+    while (end < text.length && !seps.test(text.charAt(end))) {
+      end++;
+    }
+    return text.slice(start, end);
+  }
+
+  private isSoftRecClause(clause: string): boolean {
+    return /偏好|优先|建议|preferred|prefer/i.test(clause) && !/必须|至少|最少|需要|要求|least|required/i.test(clause);
+  }
+
+  private maxRecTypeCount(text: string, wordPattern: string): number | null {
+    const re = new RegExp('(\\d+|[一二两三四五])\\s*(?:封|个)?\\s*(?:课堂)?\\s*(?:' + wordPattern + ')', 'ig');
+    let best: number | null = null;
+    let match = re.exec(text);
+    while (match) {
+      if (!this.isSoftRecClause(this.recClauseAround(text, match.index, match[0].length))) {
+        const n = this.recTextNumber(match[1]);
+        if (n > 0) {
+          best = best === null ? n : Math.max(best, n);
+        }
+      }
+      match = re.exec(text);
+    }
+    return best;
+  }
+
+  private sumNumberedRecPhrases(text: string): number | null {
+    const re = /(\d+|[一二两三四五])\s*(?:封|个)?\s*[A-Za-z\u4e00-\u9fff]/g;
+    let sum = 0;
+    let found = 0;
+    let match = re.exec(text);
+    while (match) {
+      if (!this.isSoftRecClause(this.recClauseAround(text, match.index, match[0].length))) {
+        sum += this.recTextNumber(match[1]);
+        found++;
+      }
+      match = re.exec(text);
+    }
+    return found ? sum : null;
+  }
+
   countLettersForRec(rec: Recommender): number {
     if (!rec) {
       return 0;
@@ -548,6 +723,10 @@ export class HmstudentComponent implements OnInit {
   }
 
   exportRecSchoolList() {
+    if (this.selectedRecId === '__all__') {
+      this.exportAllRecSchoolList();
+      return;
+    }
     let rec: Recommender = null;
     for (let i = 0; i < this.recommenders.length; i++) {
       if (String(this.recommenders[i]._id) === String(this.selectedRecId)) {
@@ -581,6 +760,62 @@ export class HmstudentComponent implements OnInit {
     const excelBuffer: any = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
     const fileName = this.recDisplayName(rec).trim() + '_School List';
     this.saveAsExcelFile(excelBuffer, fileName, true);
+  }
+
+  exportAllRecSchoolList() {
+    if (this.recommenders.length === 0 || this.schools.length === 0) {
+      alert('还没有推荐人或申请项目');
+      return;
+    }
+    const columns = this.recExportColumns();
+    const rows = [];
+    for (let i = 0; i < this.schools.length; i++) {
+      const s = this.schools[i];
+      const row: any = {
+        'University ': s.univName || '',
+        'Program': s.majorName || '',
+        'Deadline 1': s.ddl1 || '',
+        'Deadline 2': s.ddl2 || ''
+      };
+      for (let j = 0; j < columns.length; j++) {
+        row[columns[j].name] = this.getLetter(s, columns[j].rec) ? '✅' : '';
+      }
+      rows.push(row);
+    }
+    const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(rows);
+    const workbook: XLSX.WorkBook = { Sheets: { 'School List': worksheet }, SheetNames: ['School List'] };
+    const excelBuffer: any = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
+    this.saveAsExcelFile(excelBuffer, '全部推荐人_School List', true);
+  }
+
+  private recExportColumns(): { rec: Recommender, name: string }[] {
+    const baseNames: string[] = [];
+    const totals: { [name: string]: number } = {};
+    for (let i = 0; i < this.recommenders.length; i++) {
+      const name = this.recDisplayName(this.recommenders[i]).trim() || '推荐人';
+      baseNames.push(name);
+      totals[name] = (totals[name] || 0) + 1;
+    }
+    const seen: { [name: string]: number } = {};
+    const used: { [name: string]: boolean } = {};
+    const columns: { rec: Recommender, name: string }[] = [];
+    for (let i = 0; i < this.recommenders.length; i++) {
+      let name = baseNames[i];
+      if (totals[name] > 1) {
+        seen[name] = (seen[name] || 0) + 1;
+        const org = this.recommenders[i].organization ? String(this.recommenders[i].organization) : '';
+        name = org ? name + ' (' + org + ')' : name + ' ' + seen[name];
+      }
+      let unique = name;
+      let n = 2;
+      while (used[unique]) {
+        unique = name + ' ' + n;
+        n++;
+      }
+      used[unique] = true;
+      columns.push({ rec: this.recommenders[i], name: unique });
+    }
+    return columns;
   }
  
   private saveAsExcelFile(buffer: any, fileName: string, exactName?: boolean) {

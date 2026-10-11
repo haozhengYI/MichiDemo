@@ -727,10 +727,11 @@
               [(ngModel)]="selectedRecId"
               [ngModelOptions]="{standalone: true}">
               <option value="">选择推荐人</option>
+              <option value="__all__">全部推荐人</option>
               <option *ngFor="let k of recommenders" [value]="k._id">{{recDisplayName(k)}}（已分配 {{countLettersForRec(k)}}）</option>
             </select>
             <button type="button" class="btn btn-warning" [disabled]="!selectedRecId" (click)="exportRecSchoolList()">生成 Excel</button>
-            <span class="text-muted rec-export-hint">文件名为「推荐人全名_School List」，只含该推荐人已绑定的大学、项目和两个申请 deadline。</span>
+            <span class="text-muted rec-export-hint">单人文件名为「推荐人全名_School List」。选「全部推荐人」会导出总表，推荐人列只标 ✅。</span>
           </div>
           <div class="rec-legend">
             <span class="rec-legend-item rec-pending">未提交</span>
@@ -758,14 +759,16 @@
               </thead>
               <tbody>
                 <tr *ngFor="let s of schools">
-                  <td class="col-school">
+                  <td class="col-school" [class.rec-school-short]="isRecShort(s)">
                     <a (click)="hmschooldetail(s)">{{s.univName}}</a>
+                    <span class="rec-short-warn" *ngIf="isRecShort(s)">⚠️</span>
                     <div class="rec-school-sub">{{s.schoolName}}</div>
                     <div class="rec-school-sub">{{s.majorName}}</div>
                     <div class="rec-ddl">申请Deadline 1 <span>{{s.ddl1}}</span></div>
                     <div class="rec-ddl">申请Deadline 2 <span>{{s.ddl2}}</span></div>
                     <div class="rec-needed">所需推荐信 <span>{{s.recommNumber}}</span></div>
                     <div class="rec-col-meta">已分配 {{countLettersForSchool(s)}}</div>
+                    <div class="rec-short-note" *ngIf="isRecShort(s)">{{recGapText(s)}}</div>
                   </td>
                   <td *ngFor="let k of recommenders" [ngClass]="cellStateClass(getLetter(s, k))">
                     <ng-container *ngIf="getLetter(s, k) as letter; else emptyCell">
